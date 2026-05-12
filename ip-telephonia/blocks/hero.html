@@ -1,1 +1,318 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+<section class="ip-telephony-hero" aria-labelledby="ip-telephony-title">
+  <div class="ip-telephony-hero__gradient">
+    <div class="ip-telephony-hero__content">
+      <h1 class="ip-telephony-hero__title" id="ip-telephony-title">
+        IP телефония для бизнеса уже интегрирована в CRM
+      </h1>
+      <p class="ip-telephony-hero__subtitle">
+        Запись звонка, AI-расшифровка звонков, Отчеты по эффективности
+      </p>
+      <a class="ip-telephony-hero__button" href="#connect" aria-label="Подключить IP телефонию бесплатно">
+        ПОДКЛЮЧИТЬ БЕСПЛАТНО
+      </a>
+    </div>
+
+    <div class="ip-telephony-hero__image-wrap">
+      <img
+        class="ip-telephony-hero__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/5.1440w.png.webp?1778228180222"
+        alt="Интерфейс CRM с IP-телефонией"
+        loading="eager"
+      >
+    </div>
+  </div>
+
+  <div class="ip-telephony-benefits">
+    <div class="ip-telephony-benefits__grid" aria-label="Преимущества IP телефонии">
+      <article class="ip-telephony-benefit-card">
+        <span class="ip-telephony-benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12.4l4.2 4.1L19.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Прием звонков, чатов мессенджеров и e-mail в одной системе</p>
+      </article>
+
+      <article class="ip-telephony-benefit-card">
+        <span class="ip-telephony-benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12.4l4.2 4.1L19.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Аренда городского номера</p>
+      </article>
+
+      <article class="ip-telephony-benefit-card">
+        <span class="ip-telephony-benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12.4l4.2 4.1L19.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Подключение собственных номеров</p>
+      </article>
+
+      <article class="ip-telephony-benefit-card">
+        <span class="ip-telephony-benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12.4l4.2 4.1L19.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Полноценная виртуальная АТС</p>
+      </article>
+
+      <article class="ip-telephony-benefit-card">
+        <span class="ip-telephony-benefit-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12.4l4.2 4.1L19.5 6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>Сквозная аналитика и коллтрекинг</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ip-telephony-hero,
+  .ip-telephony-hero * {
+    box-sizing: border-box;
+  }
+
+  .ip-telephony-hero {
+    --hero-blue: #12bdf2;
+    --hero-cyan: #28d4e7;
+    --hero-teal: #20d9c4;
+    --hero-deep: #08a9e8;
+    --button: #d7f45b;
+    --button-hover: #e7ff72;
+    --text: #15374a;
+
+    width: 100%;
+    overflow: hidden;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--text);
+    background: #f7fcff;
+  }
+
+  .ip-telephony-hero__gradient {
+    position: relative;
+    min-height: 760px;
+    padding: 92px 24px 0;
+    text-align: center;
+    background:
+      radial-gradient(circle at 17% 20%, rgba(255, 255, 255, .32) 0 120px, transparent 260px),
+      radial-gradient(circle at 83% 28%, rgba(213, 255, 255, .3) 0 130px, transparent 280px),
+      linear-gradient(135deg, var(--hero-blue) 0%, var(--hero-cyan) 45%, var(--hero-teal) 100%);
+  }
+
+  .ip-telephony-hero__gradient::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 168px;
+    background: linear-gradient(180deg, rgba(247, 252, 255, 0) 0%, #f7fcff 82%);
+    pointer-events: none;
+  }
+
+  .ip-telephony-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  .ip-telephony-hero__title {
+    max-width: 980px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: clamp(36px, 5.1vw, 72px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .ip-telephony-hero__subtitle {
+    max-width: 820px;
+    margin: 26px auto 0;
+    color: rgba(255, 255, 255, .94);
+    font-size: clamp(18px, 2.1vw, 27px);
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .ip-telephony-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    margin-top: 36px;
+    padding: 0 36px;
+    border-radius: 999px;
+    background: var(--button);
+    color: #1f3c23;
+    box-shadow: 0 16px 30px rgba(55, 148, 58, .22);
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease;
+  }
+
+  .ip-telephony-hero__button:hover,
+  .ip-telephony-hero__button:focus-visible {
+    background: var(--button-hover);
+    box-shadow: 0 20px 38px rgba(55, 148, 58, .3);
+    transform: translateY(-2px);
+  }
+
+  .ip-telephony-hero__button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, .75);
+    outline-offset: 4px;
+  }
+
+  .ip-telephony-hero__image-wrap {
+    position: relative;
+    z-index: 2;
+    width: min(1110px, calc(100vw - 40px));
+    margin: 62px auto -118px;
+  }
+
+  .ip-telephony-hero__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(7, 73, 113, .28), 0 10px 32px rgba(7, 73, 113, .14);
+  }
+
+  .ip-telephony-benefits {
+    position: relative;
+    padding: 178px 24px 78px;
+    background: linear-gradient(180deg, #f7fcff 0%, #ffffff 100%);
+  }
+
+  .ip-telephony-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .ip-telephony-benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 184px;
+    margin: 0;
+    padding: 30px 18px 26px;
+    border: 1px solid rgba(20, 181, 232, .12);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .9);
+    box-shadow: 0 18px 50px rgba(31, 111, 154, .08);
+    text-align: center;
+  }
+
+  .ip-telephony-benefit-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    color: var(--hero-deep);
+    background: linear-gradient(135deg, rgba(18, 189, 242, .13), rgba(32, 217, 196, .18));
+  }
+
+  .ip-telephony-benefit-card__icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .ip-telephony-benefit-card p {
+    margin: 0;
+    color: #17384c;
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 1100px) {
+    .ip-telephony-benefits__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .ip-telephony-hero__gradient {
+      min-height: 640px;
+      padding: 64px 18px 0;
+    }
+
+    .ip-telephony-hero__subtitle {
+      margin-top: 20px;
+    }
+
+    .ip-telephony-hero__button {
+      width: min(100%, 330px);
+      min-height: 56px;
+      margin-top: 30px;
+      padding: 0 22px;
+      font-size: 13px;
+    }
+
+    .ip-telephony-hero__image-wrap {
+      width: calc(100vw - 28px);
+      margin-top: 44px;
+      margin-bottom: -72px;
+    }
+
+    .ip-telephony-hero__image {
+      border-radius: 18px;
+      box-shadow: 0 18px 46px rgba(7, 73, 113, .24);
+    }
+
+    .ip-telephony-benefits {
+      padding: 112px 16px 54px;
+    }
+
+    .ip-telephony-benefits__grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 440px;
+    }
+
+    .ip-telephony-benefit-card {
+      min-height: 0;
+      padding: 24px 22px;
+      border-radius: 20px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .ip-telephony-hero__gradient {
+      min-height: 590px;
+      padding-top: 54px;
+    }
+
+    .ip-telephony-hero__title {
+      font-size: 32px;
+    }
+
+    .ip-telephony-hero__subtitle {
+      font-size: 17px;
+    }
+  }
+</style>
