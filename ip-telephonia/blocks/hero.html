@@ -115,34 +115,23 @@
     --text: #15374a;
 
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     font-family: "Montserrat", Arial, sans-serif;
     color: var(--text);
-    background: #f7fcff;
+    background: #ffffff;
   }
 
   .ip-telephony-hero__gradient {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     min-height: 760px;
-    padding: 92px 24px 0;
+    padding: 92px 24px 42px;
+    overflow: visible;
     text-align: center;
     background:
       radial-gradient(circle at 17% 20%, rgba(255, 255, 255, .32) 0 120px, transparent 260px),
       radial-gradient(circle at 83% 28%, rgba(213, 255, 255, .3) 0 130px, transparent 280px),
       linear-gradient(135deg, var(--hero-blue) 0%, var(--hero-cyan) 45%, var(--hero-teal) 100%);
-  }
-
-  .ip-telephony-hero__gradient::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -118px;
-    z-index: 0;
-    height: 118px;
-    background: inherit;
-    pointer-events: none;
   }
 
   .ip-telephony-hero__content {
@@ -244,7 +233,7 @@
     position: relative;
     z-index: 2;
     width: min(1110px, calc(100vw - 40px));
-    margin: 62px auto -118px;
+    margin: 76px auto -96px;
     padding: 14px;
     border: 1px solid rgba(255, 255, 255, .5);
     border-radius: 36px;
@@ -281,11 +270,14 @@
 
   .ip-telephony-benefits {
     position: relative;
-    padding: 178px 24px 78px;
-    background: linear-gradient(180deg, #f7fcff 0%, #ffffff 100%);
+    z-index: 1;
+    padding: 178px 24px 88px;
+    background: #ffffff;
   }
 
   .ip-telephony-benefits__grid {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 18px;
@@ -344,12 +336,7 @@
   @media (max-width: 760px) {
     .ip-telephony-hero__gradient {
       min-height: 640px;
-      padding: 64px 18px 0;
-    }
-
-    .ip-telephony-hero__gradient::after {
-      bottom: -72px;
-      height: 72px;
+      padding: 64px 18px 34px;
     }
 
     .ip-telephony-hero__features {
@@ -372,8 +359,8 @@
 
     .ip-telephony-hero__image-wrap {
       width: calc(100vw - 28px);
-      margin-top: 44px;
-      margin-bottom: -72px;
+      margin-top: 56px;
+      margin-bottom: -64px;
       padding: 8px;
       border-radius: 24px;
       box-shadow:
@@ -388,7 +375,7 @@
     }
 
     .ip-telephony-benefits {
-      padding: 112px 16px 54px;
+      padding: 126px 16px 64px;
     }
 
     .ip-telephony-benefits__grid {
@@ -408,6 +395,7 @@
     .ip-telephony-hero__gradient {
       min-height: 590px;
       padding-top: 54px;
+      padding-bottom: 30px;
     }
 
     .ip-telephony-hero__title {
