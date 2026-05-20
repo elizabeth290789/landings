@@ -148,7 +148,10 @@
     transform: scaleX(1);
   }
 
-  .ip-telephony-menu__cta {
+  .ip-telephony-menu__cta,
+  .ip-telephony-menu__cta:visited,
+  .ip-telephony-menu__cta:focus,
+  .ip-telephony-menu__cta:active {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -156,12 +159,12 @@
     min-height: 46px;
     padding: 0 24px;
     border-radius: 999px;
-    background: linear-gradient(135deg, #bdf300 0%, #b1eb00 100%);
+    background: linear-gradient(135deg, #bdf300 0%, #b4eb00 100%);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, .38),
-      0 12px 24px rgba(100, 141, 0, .24),
-      0 0 0 1px rgba(155, 201, 0, .28);
-    color: #1b1b1b;
+      0 12px 24px rgba(94, 132, 0, .24),
+      0 0 0 1px rgba(145, 188, 0, .34);
+    color: #111111;
     font-size: 13px;
     line-height: 1;
     font-weight: 800;
@@ -170,19 +173,20 @@
     text-decoration: none;
     white-space: nowrap;
     transform: translateZ(0);
-    transition: background .28s ease, box-shadow .28s ease, transform .28s ease, filter .28s ease;
+    transition: background .28s ease, box-shadow .28s ease, transform .24s ease;
   }
 
   .ip-telephony-menu__cta:hover,
   .ip-telephony-menu__cta:focus-visible {
-    background: linear-gradient(135deg, #d2ff2f 0%, #bfff05 100%);
+    background: linear-gradient(135deg, #d7ff2f 0%, #c9f913 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, .46),
-      0 16px 30px rgba(94, 132, 0, .34),
-      0 0 28px rgba(189, 243, 0, .5);
-    color: #1b1b1b;
-    filter: saturate(1.08) brightness(1.03);
-    transform: translateY(-2px);
+      inset 0 1px 0 rgba(255, 255, 255, .5),
+      0 16px 28px rgba(90, 128, 0, .3),
+      0 0 26px rgba(191, 247, 28, .45),
+      0 0 0 1px rgba(170, 220, 8, .44);
+    color: #111111;
+    text-decoration: none;
+    transform: translateY(-1px);
   }
 
   .ip-telephony-menu__spacer {
