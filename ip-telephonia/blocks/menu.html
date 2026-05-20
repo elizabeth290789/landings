@@ -67,6 +67,7 @@
     align-items: center;
     flex: 0 0 auto;
     min-width: 0;
+    cursor: pointer;
     text-decoration: none;
     transition: transform .22s ease, opacity .22s ease;
   }
@@ -272,3 +273,20 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var logoLink = document.querySelector('.ip-telephony-menu__logo-link');
+    if (!logoLink) {
+      return;
+    }
+
+    logoLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
