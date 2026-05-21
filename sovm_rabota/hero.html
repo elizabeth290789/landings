@@ -37,7 +37,7 @@
     <div class="b24-collab-hero__visual" aria-hidden="true">
       <img
         class="b24-collab-hero__hero-image"
-        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/main/content_animated_copilot_slider_block/slide-1.1600w.png.webp?1779359894795"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/main/content_animated_copilot_slider_block/slide-1.1920w.png.webp?1779359894795"
         alt=""
         loading="eager"
       />
@@ -249,12 +249,10 @@
   }
 
   .b24-collab-hero__visual {
-    width: min(92%, 1060px);
-    max-width: 1060px;
-    margin: clamp(22px, 3.4vw, 30px) auto 0;
-    padding: clamp(1px, 0.25vw, 3px) 0 0;
-    min-height: clamp(220px, 31vw, 360px);
-    max-height: clamp(280px, 39vw, 460px);
+    width: min(92%, 1140px);
+    max-width: 1140px;
+    margin: clamp(56px, 6vw, 80px) auto 0;
+    padding: 0;
     animation-delay: 0.5s;
     position: relative;
     overflow: visible;
@@ -273,11 +271,12 @@
 
   .b24-collab-hero__hero-image {
     display: block;
-    width: min(114%, 1240px);
-    max-width: none;
-    margin: -1% auto -3.2%;
-    transform: translateX(-2.6%) scale(1.06);
-    transform-origin: center bottom;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    transform: translateX(-1.8%) scale(1.04);
+    transform-origin: center center;
     border-radius: clamp(20px, 2vw, 30px);
     box-shadow:
       0 24px 58px rgba(3, 8, 24, 0.5),
@@ -299,11 +298,9 @@
   @media (max-width: 1024px) {
     .b24-collab-hero__title { letter-spacing: -0.025em; }
     .b24-collab-hero__visual {
-      width: min(94%, 980px);
-      margin-top: clamp(22px, 4vw, 30px);
+      width: min(94%, 1040px);
+      margin-top: clamp(48px, 6vw, 72px);
       padding: 0;
-      min-height: clamp(200px, 34vw, 320px);
-      max-height: clamp(250px, 41vw, 390px);
     }
 
     .b24-collab-hero__visual::before {
@@ -313,9 +310,8 @@
     }
 
     .b24-collab-hero__hero-image {
-      width: 114%;
-      margin-bottom: -4.5%;
-      transform: translateX(-2.8%) scale(1.05);
+      width: 100%;
+      transform: translateX(-1.6%) scale(1.03);
     }
   }
 
@@ -360,10 +356,8 @@
 
     .b24-collab-hero__visual {
       width: min(96%, 560px);
-      margin-top: 18px;
+      margin-top: 42px;
       padding-top: 0;
-      min-height: clamp(170px, 52vw, 250px);
-      max-height: clamp(210px, 62vw, 300px);
     }
 
     .b24-collab-hero__visual::before {
@@ -373,9 +367,8 @@
     }
 
     .b24-collab-hero__hero-image {
-      width: 116%;
-      margin-bottom: -6%;
-      transform: translateX(-4.4%) scale(1.04);
+      width: 100%;
+      transform: translateX(-2.2%) scale(1.02);
       border-radius: 18px;
     }
   }
