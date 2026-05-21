@@ -1,1 +1,447 @@
+<section class="b24-collab-hero" aria-labelledby="b24-collab-hero-title">
+  <div class="b24-collab-hero__bg-blur b24-collab-hero__bg-blur--one"></div>
+  <div class="b24-collab-hero__bg-blur b24-collab-hero__bg-blur--two"></div>
 
+  <div class="b24-collab-hero__container">
+    <div class="b24-collab-hero__content">
+      <div class="b24-collab-hero__chips" aria-label="Ключевые возможности">
+        <span class="b24-collab-hero__chip">Мессенджер</span>
+        <span class="b24-collab-hero__chip">AI</span>
+        <span class="b24-collab-hero__chip">Видеозвонки</span>
+        <span class="b24-collab-hero__chip">Задачи</span>
+        <span class="b24-collab-hero__chip">Документы</span>
+      </div>
+
+      <h1 class="b24-collab-hero__title" id="b24-collab-hero-title">
+        Битрикс24 — пространство для современной командной работы
+      </h1>
+
+      <p class="b24-collab-hero__subtitle">
+        Чаты, звонки, задачи, документы и AI — в одном месте. Для команды, клиентов и подрядчиков.
+      </p>
+
+      <div class="b24-collab-hero__actions">
+        <a href="#" class="b24-collab-hero__btn b24-collab-hero__btn--primary">Получить бесплатно</a>
+        <a href="#" class="b24-collab-hero__btn b24-collab-hero__btn--ghost">Посмотреть демо</a>
+      </div>
+
+      <p class="b24-collab-hero__trust">Бесплатно для неограниченного числа пользователей</p>
+    </div>
+
+    <div class="b24-collab-hero__visual" aria-hidden="true">
+      <article class="b24-collab-hero__card b24-collab-hero__card--chat">
+        <header class="b24-collab-hero__chat-header">
+          <span class="b24-collab-hero__dot"></span>
+          <span class="b24-collab-hero__dot"></span>
+          <span class="b24-collab-hero__dot"></span>
+          <strong># Проект / Маркетинг</strong>
+        </header>
+        <div class="b24-collab-hero__chat-body">
+          <div class="b24-collab-hero__msg b24-collab-hero__msg--in">
+            <span class="b24-collab-hero__avatar">АЛ</span>
+            <p>Запускаем лендинг в пятницу, финализирую блоки до 16:00.</p>
+          </div>
+          <div class="b24-collab-hero__msg b24-collab-hero__msg--out">
+            <p>Отлично, я добавлю AI-резюме встречи и задачи в спринт ✅</p>
+          </div>
+          <div class="b24-collab-hero__msg b24-collab-hero__msg--in">
+            <span class="b24-collab-hero__avatar">МР</span>
+            <p>Созвон через 10 минут, ссылку кинул в календарь.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="b24-collab-hero__card b24-collab-hero__card--call">
+        <p class="b24-collab-hero__card-label">Видеозвонок · Live</p>
+        <div class="b24-collab-hero__people">
+          <span>АА</span><span>ИК</span><span>ЕП</span>
+        </div>
+        <p class="b24-collab-hero__card-meta">6 участников • запись включена</p>
+      </article>
+
+      <article class="b24-collab-hero__card b24-collab-hero__card--ai">
+        <p class="b24-collab-hero__card-label">AI Follow-up</p>
+        <p class="b24-collab-hero__ai-summary">Сводка: согласовали дедлайн, бюджет и запуск A/B теста.</p>
+        <ul>
+          <li>Обновить прототип до 18:00</li>
+          <li>Подготовить письмо клиенту</li>
+        </ul>
+      </article>
+
+      <article class="b24-collab-hero__card b24-collab-hero__card--task">
+        <p>Задача: финальный QA лендинга</p>
+        <span>Сегодня · High priority</span>
+      </article>
+
+      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--1">👍</span>
+      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--2">🔥</span>
+      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--3">✅</span>
+      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--4">💬</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b24-collab-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 56px) 0;
+    background: linear-gradient(137deg, #f8fbff 0%, #f4f5ff 42%, #f8faff 100%);
+    isolation: isolate;
+  }
+
+  .b24-collab-hero__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3vw, 32px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(20px, 4vw, 56px);
+    align-items: center;
+  }
+
+  .b24-collab-hero__bg-blur {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0.55;
+  }
+
+  .b24-collab-hero__bg-blur--one {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #e4dcff 0%, transparent 72%);
+    top: -120px;
+    right: -60px;
+  }
+
+  .b24-collab-hero__bg-blur--two {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #dcecff 0%, transparent 70%);
+    left: -120px;
+    bottom: -120px;
+  }
+
+  .b24-collab-hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .b24-collab-hero__chip {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1;
+    color: #2c3b62;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(111, 133, 190, 0.24);
+    backdrop-filter: blur(6px);
+  }
+
+  .b24-collab-hero__title {
+    margin: 0;
+    color: #0f1f3d;
+    font-size: clamp(30px, 4.2vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+  }
+
+  .b24-collab-hero__subtitle {
+    margin: 20px 0 0;
+    color: #40506f;
+    font-size: clamp(17px, 1.5vw, 22px);
+    line-height: 1.45;
+    max-width: 52ch;
+  }
+
+  .b24-collab-hero__actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .b24-collab-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 26px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+
+  .b24-collab-hero__btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .b24-collab-hero__btn--primary {
+    background: linear-gradient(135deg, #d8ff58 0%, #b8ec35 100%);
+    color: #162100;
+    box-shadow: 0 12px 30px rgba(144, 206, 21, 0.35);
+  }
+
+  .b24-collab-hero__btn--primary:hover {
+    box-shadow: 0 16px 34px rgba(144, 206, 21, 0.45);
+  }
+
+  .b24-collab-hero__btn--ghost {
+    color: #21315a;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(99, 120, 177, 0.35);
+  }
+
+  .b24-collab-hero__trust {
+    margin: 14px 0 0;
+    color: #61708f;
+    font-size: 14px;
+  }
+
+  .b24-collab-hero__visual {
+    position: relative;
+    min-height: clamp(420px, 44vw, 560px);
+  }
+
+  .b24-collab-hero__card {
+    position: absolute;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(9px);
+    border: 1px solid rgba(122, 137, 196, 0.18);
+    box-shadow: 0 20px 40px rgba(52, 75, 127, 0.15);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .b24-collab-hero__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 46px rgba(52, 75, 127, 0.2);
+  }
+
+  .b24-collab-hero__card--chat {
+    inset: 38px 65px 80px 0;
+    padding: 16px;
+  }
+
+  .b24-collab-hero__chat-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #2d3d67;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .b24-collab-hero__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #94a3c9;
+  }
+
+  .b24-collab-hero__chat-body { display: grid; gap: 10px; }
+
+  .b24-collab-hero__msg {
+    display: inline-flex;
+    gap: 9px;
+    max-width: 90%;
+    border-radius: 16px;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .b24-collab-hero__msg p { margin: 0; }
+
+  .b24-collab-hero__msg--in {
+    background: #ffffff;
+    color: #253660;
+    box-shadow: inset 0 0 0 1px rgba(122, 137, 196, 0.16);
+  }
+
+  .b24-collab-hero__msg--out {
+    margin-left: auto;
+    background: #eaf8c5;
+    color: #1f2f12;
+  }
+
+  .b24-collab-hero__avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #dbe5ff;
+    color: #24407b;
+    font-size: 11px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .b24-collab-hero__card-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2f63ff;
+  }
+
+  .b24-collab-hero__card--call {
+    top: 0;
+    right: 0;
+    width: min(230px, 46%);
+    padding: 14px;
+  }
+
+  .b24-collab-hero__people {
+    margin: 12px 0 8px;
+    display: flex;
+  }
+
+  .b24-collab-hero__people span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f2f4ff, #dce6ff);
+    border: 2px solid #fff;
+    font-size: 11px;
+    color: #264b8a;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    margin-right: -10px;
+  }
+
+  .b24-collab-hero__card-meta {
+    margin: 0;
+    color: #4e5f82;
+    font-size: 13px;
+  }
+
+  .b24-collab-hero__card--ai {
+    right: 18px;
+    bottom: 54px;
+    width: min(280px, 58%);
+    padding: 14px;
+  }
+
+  .b24-collab-hero__ai-summary {
+    margin: 8px 0;
+    color: #2b3c66;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .b24-collab-hero__card--ai ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #526286;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .b24-collab-hero__card--task {
+    left: 28px;
+    bottom: 0;
+    width: min(240px, 52%);
+    padding: 12px 14px;
+  }
+
+  .b24-collab-hero__card--task p {
+    margin: 0;
+    color: #1f2f55;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .b24-collab-hero__card--task span {
+    display: block;
+    margin-top: 6px;
+    color: #607091;
+    font-size: 12px;
+  }
+
+  .b24-collab-hero__emoji {
+    position: absolute;
+    font-size: 26px;
+    line-height: 1;
+    animation: b24-collab-hero-float 3.6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 14px rgba(35, 56, 104, 0.18));
+    pointer-events: none;
+  }
+
+  .b24-collab-hero__emoji--1 { top: 16%; left: -2%; animation-delay: 0s; }
+  .b24-collab-hero__emoji--2 { top: 6%; right: 22%; animation-delay: 0.7s; }
+  .b24-collab-hero__emoji--3 { bottom: 17%; right: -1%; animation-delay: 1.2s; }
+  .b24-collab-hero__emoji--4 { bottom: 4%; left: 46%; animation-delay: 2s; }
+
+  @keyframes b24-collab-hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @media (max-width: 1024px) {
+    .b24-collab-hero__container {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .b24-collab-hero__title { max-width: 100%; }
+
+    .b24-collab-hero__visual {
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-collab-hero {
+      padding: 26px 0 34px;
+    }
+
+    .b24-collab-hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .b24-collab-hero__btn {
+      width: 100%;
+    }
+
+    .b24-collab-hero__visual {
+      min-height: 470px;
+    }
+
+    .b24-collab-hero__card--chat {
+      inset: 40px 0 120px 0;
+    }
+
+    .b24-collab-hero__card--call {
+      width: 178px;
+      right: 8px;
+      top: 0;
+    }
+
+    .b24-collab-hero__card--ai {
+      width: 200px;
+      right: 8px;
+      bottom: 64px;
+    }
+
+    .b24-collab-hero__card--task {
+      left: 12px;
+      width: 190px;
+    }
+
+    .b24-collab-hero__emoji {
+      font-size: 22px;
+    }
+  }
+</style>
