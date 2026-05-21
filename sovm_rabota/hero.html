@@ -29,54 +29,12 @@
     </div>
 
     <div class="b24-collab-hero__visual" aria-hidden="true">
-      <article class="b24-collab-hero__card b24-collab-hero__card--chat">
-        <header class="b24-collab-hero__chat-header">
-          <span class="b24-collab-hero__dot"></span>
-          <span class="b24-collab-hero__dot"></span>
-          <span class="b24-collab-hero__dot"></span>
-          <strong># Проект / Маркетинг</strong>
-        </header>
-        <div class="b24-collab-hero__chat-body">
-          <div class="b24-collab-hero__msg b24-collab-hero__msg--in">
-            <span class="b24-collab-hero__avatar">АЛ</span>
-            <p>Запускаем лендинг в пятницу, финализирую блоки до 16:00.</p>
-          </div>
-          <div class="b24-collab-hero__msg b24-collab-hero__msg--out">
-            <p>Отлично, я добавлю AI-резюме встречи и задачи в спринт ✅</p>
-          </div>
-          <div class="b24-collab-hero__msg b24-collab-hero__msg--in">
-            <span class="b24-collab-hero__avatar">МР</span>
-            <p>Созвон через 10 минут, ссылку кинул в календарь.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="b24-collab-hero__card b24-collab-hero__card--call">
-        <p class="b24-collab-hero__card-label">Видеозвонок · Live</p>
-        <div class="b24-collab-hero__people">
-          <span>АА</span><span>ИК</span><span>ЕП</span>
-        </div>
-        <p class="b24-collab-hero__card-meta">6 участников • запись включена</p>
-      </article>
-
-      <article class="b24-collab-hero__card b24-collab-hero__card--ai">
-        <p class="b24-collab-hero__card-label">AI Follow-up</p>
-        <p class="b24-collab-hero__ai-summary">Сводка: согласовали дедлайн, бюджет и запуск A/B теста.</p>
-        <ul>
-          <li>Обновить прототип до 18:00</li>
-          <li>Подготовить письмо клиенту</li>
-        </ul>
-      </article>
-
-      <article class="b24-collab-hero__card b24-collab-hero__card--task">
-        <p>Задача: финальный QA лендинга</p>
-        <span>Сегодня · High priority</span>
-      </article>
-
-      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--1">👍</span>
-      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--2">🔥</span>
-      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--3">✅</span>
-      <span class="b24-collab-hero__emoji b24-collab-hero__emoji--4">💬</span>
+      <img
+        class="b24-collab-hero__hero-image"
+        src="https://cdn-ru.bitrix24.ru/b5391009/landing/b15/b15411feb4f4970be9d7495c1dbca31d/chatgpt_image_21_maya_2026_g_22_13_57_1x.png"
+        alt=""
+        loading="eager"
+      />
     </div>
   </div>
 </section>
@@ -86,7 +44,10 @@
     position: relative;
     overflow: hidden;
     padding: clamp(28px, 5vw, 56px) 0;
-    background: linear-gradient(137deg, #f8fbff 0%, #f4f5ff 42%, #f8faff 100%);
+    background:
+      radial-gradient(circle at 78% 26%, rgba(70, 188, 255, 0.26) 0%, transparent 42%),
+      radial-gradient(circle at 16% 84%, rgba(179, 239, 255, 0.45) 0%, transparent 48%),
+      linear-gradient(136deg, #e7f6ff 0%, #dff3ff 38%, #eaf9ff 100%);
     isolation: isolate;
   }
 
@@ -210,14 +171,29 @@
     min-height: clamp(420px, 44vw, 560px);
   }
 
-  .b24-collab-hero__card {
-    position: absolute;
+  .b24-collab-hero__hero-image {
+    display: block;
+    width: min(100%, 620px);
+    margin: 0 auto;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(9px);
-    border: 1px solid rgba(122, 137, 196, 0.18);
-    box-shadow: 0 20px 40px rgba(52, 75, 127, 0.15);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    box-shadow: 0 28px 56px rgba(13, 75, 120, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(6px);
+  }
+
+  .b24-collab-hero__visual::before {
+    content: "";
+    position: absolute;
+    inset: 8% 6% auto;
+    height: 72%;
+    border-radius: 28px;
+    background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.65), rgba(123, 208, 255, 0.22) 64%, transparent 86%);
+    filter: blur(6px);
+    z-index: -1;
+  }
+
+  .b24-collab-hero__card {
   }
 
   .b24-collab-hero__card:hover {
