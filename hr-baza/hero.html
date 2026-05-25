@@ -59,21 +59,20 @@
 
   .kb-hero__inner {
     display: grid;
-    grid-template-columns: 520px 1fr;
-    gap: 96px;
+    grid-template-columns: 520px minmax(680px, 1fr);
+    column-gap: 120px;
     align-items: center;
-    max-width: 1440px;
+    max-width: 1500px;
     width: 100%;
     margin: 0 auto;
-    padding: 90px 72px 80px;
+    padding: 80px;
     box-sizing: border-box;
-    min-height: min(820px, calc(100vh - 70px));
     overflow: visible;
   }
 
   .kb-hero__content {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     width: 520px;
     max-width: 520px;
     text-align: left;
@@ -102,11 +101,11 @@
   .cta-row {
     margin-top: 40px;
     display: flex;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: nowrap;
     align-items: center;
     position: relative;
-    z-index: 4;
+    z-index: 10;
   }
 
   .kb-btn {
@@ -213,7 +212,7 @@
   .kb-hero__media {
     position: relative;
     z-index: 1;
-    min-width: 0;
+    min-width: 680px;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -222,9 +221,9 @@
   }
 
   .kb-hero__image {
-    width: min(760px, 100%);
+    width: 760px;
     max-width: 760px;
-    transform: translateY(-50px);
+    transform: translateY(-40px);
     display: block;
     height: auto;
     border-radius: 28px;
