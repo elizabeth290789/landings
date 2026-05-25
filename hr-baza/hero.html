@@ -59,22 +59,23 @@
 
   .kb-hero__inner {
     display: grid;
-    grid-template-columns: 520px minmax(820px, 1fr);
-    column-gap: 80px;
+    grid-template-columns: 520px 1fr;
+    gap: 96px;
     align-items: center;
-    max-width: 1500px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 72px;
+    padding: 90px 72px 80px;
+    box-sizing: border-box;
     min-height: min(820px, calc(100vh - 70px));
     overflow: visible;
   }
 
   .kb-hero__content {
+    position: relative;
+    z-index: 3;
     width: 520px;
     max-width: 520px;
-    flex-shrink: 0;
-    z-index: 2;
     text-align: left;
     align-self: center;
   }
@@ -97,12 +98,15 @@
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .kb-hero__cta {
+  .kb-hero__cta,
+  .cta-row {
     margin-top: 40px;
     display: flex;
     gap: 16px;
     flex-wrap: nowrap;
     align-items: center;
+    position: relative;
+    z-index: 4;
   }
 
   .kb-btn {
@@ -207,18 +211,20 @@
   }
 
   .kb-hero__media {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
     width: 100%;
-    min-width: 820px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     overflow: visible;
-    transform: translateY(-70px);
   }
 
   .kb-hero__image {
-    width: 900px;
-    max-width: none;
+    width: min(760px, 100%);
+    max-width: 760px;
+    transform: translateY(-50px);
     display: block;
     height: auto;
     border-radius: 28px;
@@ -227,10 +233,10 @@
 
   @media (max-width: 1100px) {
     .kb-hero__inner {
-      column-gap: 40px;
-      grid-template-columns: minmax(380px, 0.9fr) minmax(620px, 1.1fr);
+      gap: 40px;
+      grid-template-columns: minmax(380px, 0.9fr) minmax(540px, 1.1fr);
       min-height: auto;
-      padding: 0 28px;
+      padding: 40px 28px 32px;
     }
 
     .kb-hero__title {
@@ -262,6 +268,9 @@
 
     .kb-hero__media {
       justify-self: center;
+    }
+
+    .kb-hero__image {
       transform: translateY(-12px);
     }
   }
@@ -319,7 +328,7 @@
       font-size: 16px;
     }
 
-    .kb-hero__media {
+    .kb-hero__image {
       transform: none;
     }
   }
