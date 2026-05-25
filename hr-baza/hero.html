@@ -1,1 +1,273 @@
+<section class="block-wrapper kb-hero" aria-label="Первый экран корпоративной базы знаний">
+  <div class="kb-hero__inner">
+    <div class="kb-hero__content">
+      <h1 class="kb-hero__title">Корпоративная база знаний Битрикс24</h1>
 
+      <p class="kb-hero__subtitle">
+        База знаний для сотрудников компании. Храните таблицы, документы и процессы в одном месте без ограничений
+        по количеству статей.
+      </p>
+
+      <div class="kb-hero__cta" role="group" aria-label="Основные действия">
+        <a href="#" class="kb-btn kb-btn--primary">запросить демо</a>
+        <a href="#" class="kb-btn kb-btn--secondary">попробовать бесплатно</a>
+      </div>
+
+      <div class="kb-hero__awards" aria-label="Премии">
+        <a class="kb-award" href="#" aria-label="Премия Выбор пользователей">
+          <span class="kb-award__icon" aria-hidden="true">🏆</span>
+          <span class="kb-award__text">Выбор пользователей среди корпоративных порталов</span>
+        </a>
+        <a class="kb-award" href="#" aria-label="Премия Лидер внедрений">
+          <span class="kb-award__icon" aria-hidden="true">⭐</span>
+          <span class="kb-award__text">Лидер по числу внедрений в сегменте SMB и Enterprise</span>
+        </a>
+        <a class="kb-award" href="#" aria-label="Премия Надежная платформа">
+          <span class="kb-award__icon" aria-hidden="true">🥇</span>
+          <span class="kb-award__text">Надёжная платформа для внутренней документации компаний</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="kb-hero__media" aria-hidden="true">
+      <div class="kb-hero__media-bg"></div>
+      <img
+        class="kb-hero__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/knowledge-base/1.1600w.png.webp?1779436408272"
+        alt="Интерфейс корпоративной базы знаний Битрикс24"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .kb-hero,
+  .kb-hero * {
+    box-sizing: border-box;
+  }
+
+  .kb-hero {
+    width: 100%;
+    overflow: hidden;
+    color: #ffffff;
+    padding: clamp(36px, 5vw, 64px) clamp(16px, 4vw, 48px);
+    background:
+      radial-gradient(50% 65% at 85% 20%, rgba(175, 97, 255, 0.33) 0%, rgba(175, 97, 255, 0) 100%),
+      radial-gradient(40% 60% at 5% 15%, rgba(68, 114, 255, 0.25) 0%, rgba(68, 114, 255, 0) 100%),
+      linear-gradient(111deg, #1f1b69 0%, #36218e 50%, #6c2dc4 100%);
+  }
+
+  .kb-hero__inner {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(320px, 45%) minmax(360px, 55%);
+    align-items: center;
+    gap: clamp(28px, 3vw, 52px);
+    min-height: min(760px, calc(100vh - 90px));
+  }
+
+  .kb-hero__content {
+    max-width: 600px;
+  }
+
+  .kb-hero__title {
+    margin: 0;
+    font-size: clamp(40px, 5vw, 66px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  .kb-hero__subtitle {
+    margin: clamp(16px, 2vw, 22px) 0 0;
+    max-width: 560px;
+    font-size: clamp(18px, 1.45vw, 24px);
+    line-height: 1.55;
+    color: rgba(237, 241, 255, 0.9);
+  }
+
+  .kb-hero__cta {
+    margin-top: clamp(24px, 2.4vw, 34px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .kb-btn {
+    min-height: 62px;
+    padding: 16px 34px;
+    border-radius: 999px;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.01em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease, background-color 0.25s ease;
+  }
+
+  .kb-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .kb-btn--primary {
+    background: #c9fb38;
+    color: #172035;
+    box-shadow: 0 14px 30px rgba(17, 24, 39, 0.28);
+  }
+
+  .kb-btn--primary:hover {
+    filter: brightness(1.04);
+    box-shadow: 0 18px 36px rgba(17, 24, 39, 0.35);
+  }
+
+  .kb-btn--secondary {
+    color: #f7f8ff;
+    border: 1px solid rgba(247, 248, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+  }
+
+  .kb-btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 14px 30px rgba(41, 24, 87, 0.32);
+  }
+
+  .kb-hero__awards {
+    margin-top: clamp(24px, 2.8vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 480px;
+  }
+
+  .kb-award {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.38;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.09);
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+  }
+
+  .kb-award:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.36);
+    opacity: 1;
+  }
+
+  .kb-award__icon {
+    flex-shrink: 0;
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  .kb-hero__media {
+    position: relative;
+    width: min(100%, 720px);
+    justify-self: end;
+    padding-right: clamp(0px, 2vw, 26px);
+  }
+
+  .kb-hero__media-bg {
+    position: absolute;
+    inset: 10% -4% -8% 8%;
+    background: radial-gradient(circle at center, rgba(179, 119, 255, 0.38) 0%, rgba(179, 119, 255, 0) 70%);
+    filter: blur(28px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .kb-hero__image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: clamp(24px, 2.3vw, 32px);
+    box-shadow: 0 26px 50px rgba(31, 10, 74, 0.44);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  @media (max-width: 1080px) {
+    .kb-hero__inner {
+      grid-template-columns: 1fr 1fr;
+      min-height: auto;
+    }
+
+    .kb-hero__title {
+      font-size: clamp(36px, 4.5vw, 54px);
+    }
+
+    .kb-hero__media {
+      width: min(100%, 620px);
+      padding-right: 0;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .kb-hero__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .kb-hero__content,
+    .kb-hero__media {
+      max-width: 680px;
+      width: 100%;
+      justify-self: center;
+    }
+
+    .kb-hero__media {
+      order: 2;
+    }
+
+    .kb-hero__awards {
+      order: 3;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .kb-hero {
+      padding: 28px 16px 34px;
+    }
+
+    .kb-hero__title {
+      font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .kb-hero__subtitle {
+      font-size: 17px;
+    }
+
+    .kb-hero__cta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .kb-btn {
+      width: 100%;
+      min-height: 56px;
+    }
+
+    .kb-award {
+      width: 100%;
+    }
+  }
+</style>
