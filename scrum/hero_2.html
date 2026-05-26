@@ -144,4 +144,90 @@
       padding: 16px 24px;
     }
   }
+
+  /* Mobile header fix: keep only logo (left) and CTA button (right). */
+  @media (max-width: 768px) {
+    :is(
+        .header,
+        .top-header,
+        .site-header,
+        .b24-header,
+        .landing-header,
+        .bitrix24-header
+      ) {
+      overflow-x: clip;
+    }
+
+    :is(
+        .header__inner,
+        .top-header__inner,
+        .site-header__inner,
+        .b24-header__inner,
+        .landing-header__inner,
+        .bitrix24-header__inner,
+        .header-inner,
+        .topbar__inner
+      ) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    :is(
+        .header nav,
+        .top-header nav,
+        .site-header nav,
+        .b24-header nav,
+        .landing-header nav,
+        .bitrix24-header nav,
+        .header .nav,
+        .header .menu,
+        .header .menu-list,
+        .header .main-menu,
+        .header .top-menu,
+        .top-header .nav,
+        .top-header .menu,
+        .site-header .nav,
+        .site-header .menu
+      ) {
+      display: none !important;
+    }
+
+    :is(
+        .header .cta,
+        .header .btn,
+        .header .button,
+        .header .header-cta,
+        .header .top-cta,
+        .top-header .cta,
+        .top-header .btn,
+        .site-header .cta,
+        .site-header .btn,
+        .b24-header .cta,
+        .b24-header .btn,
+        .landing-header .cta,
+        .landing-header .btn,
+        .bitrix24-header .cta,
+        .bitrix24-header .btn
+      ) {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    :is(
+        .header .logo,
+        .header .brand,
+        .header .header-logo,
+        .top-header .logo,
+        .site-header .logo,
+        .b24-header .logo,
+        .landing-header .logo,
+        .bitrix24-header .logo
+      ) {
+      min-width: 0;
+      flex: 0 1 auto;
+    }
+  }
 </style>
