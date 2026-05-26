@@ -1,1 +1,296 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+<header class="ip-telephony-menu" aria-label="Главное меню IP-телефонии">
+  <div class="ip-telephony-menu__container">
+    <a class="ip-telephony-menu__logo-link" href="#top" aria-label="Bitrix24 — на начало страницы">
+      <img
+        class="ip-telephony-menu__logo"
+        src="https://www.bitrix24.ru/upload/landing/b91/d5ckuwwyq14z5y61av9wtxk1as4wvepx.png?1778228180222"
+        alt="Bitrix24"
+        loading="eager"
+      >
+    </a>
+
+    <nav class="ip-telephony-menu__nav" aria-label="Разделы лендинга">
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/hr-baza/#b283506">Возможности</a>
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/hr-baza/#b283526">КЭДО</a>
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/hr-baza/#b284674">Автоматизация</a>
+    </nav>
+
+    <a
+      class="ip-telephony-menu__cta"
+      href="https://www.bitrix24.ru/create.php?b24_type=crm_telephony"
+    >
+      ЗАПРОСИТЬ ДЕМО
+    </a>
+  </div>
+</header>
+<div class="ip-telephony-menu__spacer" aria-hidden="true"></div>
+
+<style>
+  .ip-telephony-menu,
+  .ip-telephony-menu *,
+  .ip-telephony-menu__spacer {
+    box-sizing: border-box;
+  }
+
+  .ip-telephony-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    min-height: 78px;
+    border-bottom: 1px solid rgba(255, 255, 255, .34);
+    background: rgba(255, 255, 255, .58);
+    box-shadow: 0 18px 42px rgba(3, 37, 65, .08), inset 0 1px 0 rgba(255, 255, 255, .36);
+    backdrop-filter: blur(18px) saturate(142%);
+    -webkit-backdrop-filter: blur(18px) saturate(142%);
+    font-family: "Montserrat", Arial, sans-serif;
+  }
+
+  .ip-telephony-menu__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    width: min(1180px, calc(100% - 48px));
+    min-height: 78px;
+    margin: 0 auto;
+  }
+
+  .ip-telephony-menu__logo-link {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform .22s ease, opacity .22s ease;
+  }
+
+  .ip-telephony-menu__logo-link:hover,
+  .ip-telephony-menu__logo-link:focus-visible {
+    opacity: .92;
+    transform: translateY(-1px);
+  }
+
+  .ip-telephony-menu__logo-link:focus-visible,
+  .ip-telephony-menu__link:focus-visible,
+  .ip-telephony-menu__cta:focus-visible {
+    outline: 3px solid rgba(14, 165, 233, .26);
+    outline-offset: 6px;
+  }
+
+  .ip-telephony-menu__logo {
+    display: block;
+    width: auto;
+    max-width: 178px;
+    height: 38px;
+    object-fit: contain;
+  }
+
+  .ip-telephony-menu__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .ip-telephony-menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    color: #172033;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .22s ease, background-color .22s ease, transform .22s ease;
+  }
+
+  .ip-telephony-menu__link::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 8px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+    opacity: 0;
+    transform: scaleX(.4);
+    transform-origin: center;
+    transition: opacity .22s ease, transform .22s ease;
+  }
+
+  .ip-telephony-menu__link:hover,
+  .ip-telephony-menu__link:focus-visible {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, .08);
+    transform: translateY(-1px);
+  }
+
+  .ip-telephony-menu__link:hover::after,
+  .ip-telephony-menu__link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .ip-telephony-menu__cta,
+  .ip-telephony-menu__cta:visited,
+  .ip-telephony-menu__cta:focus,
+  .ip-telephony-menu__cta:active {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-height: 46px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #bdf300 0%, #b4eb00 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .38),
+      0 12px 24px rgba(94, 132, 0, .24),
+      0 0 0 1px rgba(145, 188, 0, .34);
+    color: #111111;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transform: translateZ(0);
+    transition: background .28s ease, box-shadow .28s ease, transform .24s ease;
+  }
+
+  .ip-telephony-menu__cta:hover,
+  .ip-telephony-menu__cta:focus-visible {
+    background: linear-gradient(135deg, #d7ff2f 0%, #c9f913 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .5),
+      0 16px 28px rgba(90, 128, 0, .3),
+      0 0 26px rgba(191, 247, 28, .45),
+      0 0 0 1px rgba(170, 220, 8, .44);
+    color: #111111;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .ip-telephony-menu__spacer {
+    width: 100%;
+    height: 78px;
+  }
+
+  @media (max-width: 760px) {
+    .ip-telephony-menu {
+      min-height: 72px;
+    }
+
+    .ip-telephony-menu__container {
+      gap: 18px;
+      width: min(100% - 32px, 1180px);
+      min-height: 72px;
+    }
+
+    .ip-telephony-menu__logo {
+      max-width: 146px;
+      height: 32px;
+    }
+
+    .ip-telephony-menu__nav {
+      justify-content: flex-start;
+      gap: 6px;
+      padding: 10px 0;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ip-telephony-menu__nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ip-telephony-menu__link {
+      min-height: 38px;
+      padding: 0 12px;
+      font-size: 13px;
+      background: rgba(14, 165, 233, .06);
+    }
+
+    .ip-telephony-menu__cta {
+      min-height: 40px;
+      padding: 0 16px;
+      font-size: 11px;
+      letter-spacing: .03em;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .34),
+        0 10px 20px rgba(100, 141, 0, .22),
+        0 0 0 1px rgba(155, 201, 0, .24);
+    }
+
+    .ip-telephony-menu__link::after {
+      left: 14px;
+      right: 14px;
+      bottom: 6px;
+    }
+
+    .ip-telephony-menu__spacer {
+      height: 72px;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .ip-telephony-menu__container {
+      width: min(100% - 24px, 1180px);
+      gap: 8px;
+    }
+
+    .ip-telephony-menu__logo {
+      max-width: 112px;
+      height: 28px;
+    }
+
+    .ip-telephony-menu__link {
+      min-height: 36px;
+      padding: 0 10px;
+      font-size: 12px;
+    }
+
+    .ip-telephony-menu__cta {
+      min-height: 36px;
+      padding: 0 12px;
+      font-size: 10px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var logoLink = document.querySelector('.ip-telephony-menu__logo-link');
+    if (!logoLink) {
+      return;
+    }
+
+    logoLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
