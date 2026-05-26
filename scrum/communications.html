@@ -1,0 +1,192 @@
+<section class="scrum-communications" aria-labelledby="scrum-communications-title">
+  <div class="scrum-communications__container">
+    <h2 id="scrum-communications-title" class="scrum-communications__title">Коммуникации внутри Битрикс24 Скрам</h2>
+    <p class="scrum-communications__subtitle">
+      С Битрикс24 для общения команды вам не понадобятся другие сервисы. Все нужные инструменты для работы в офисе
+      или из дома уже подключены.
+    </p>
+
+    <div class="scrum-communications__tabs" role="tablist" aria-label="Инструменты коммуникации">
+      <button
+        class="scrum-communications__tab is-active"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        data-src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/8.1899w.png.webp?1779436408272"
+      >
+        <span aria-hidden="true">💬</span>
+        Мессенджер
+      </button>
+      <button
+        class="scrum-communications__tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/9.1900w.png.webp?1779436408272"
+      >
+        <span aria-hidden="true">📹</span>
+        Видеозвонки
+      </button>
+      <button
+        class="scrum-communications__tab"
+        type="button"
+        role="tab"
+        aria-selected="false"
+        data-src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/10.1900w.png.webp?1779436408272"
+      >
+        <span aria-hidden="true">📅</span>
+        Календарь
+      </button>
+    </div>
+
+    <div class="scrum-communications__image-wrap">
+      <img
+        id="scrum-communications-image"
+        class="scrum-communications__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/8.1899w.png.webp?1779436408272"
+        alt="Интерфейс Битрикс24 Мессенджер"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrum-communications {
+    padding: 48px 16px;
+  }
+
+  .scrum-communications__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 56px 28px 32px;
+    background: linear-gradient(180deg, #eef5ff 0%, #e9f2ff 100%);
+    border-radius: 36px;
+    text-align: center;
+  }
+
+  .scrum-communications__title {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.12;
+    font-weight: 800;
+    color: #0f2945;
+  }
+
+  .scrum-communications__subtitle {
+    max-width: 760px;
+    margin: 18px auto 0;
+    font-size: clamp(16px, 2.3vw, 20px);
+    line-height: 1.5;
+    color: #48627b;
+  }
+
+  .scrum-communications__tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .scrum-communications__tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d5e4f7;
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 11px 18px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    color: #23405d;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(32, 88, 168, 0.08);
+  }
+
+  .scrum-communications__tab:hover {
+    border-color: #82b4ff;
+    transform: translateY(-1px);
+  }
+
+  .scrum-communications__tab.is-active {
+    border-color: #2477ff;
+    box-shadow: inset 0 -3px 0 #2477ff, 0 4px 12px rgba(36, 119, 255, 0.18);
+    color: #0e3f8f;
+  }
+
+  .scrum-communications__image-wrap {
+    margin-top: 26px;
+  }
+
+  .scrum-communications__image {
+    width: 100%;
+    max-width: 1040px;
+    height: auto;
+    border-radius: 24px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(35, 66, 107, 0.16);
+  }
+
+  @media (max-width: 768px) {
+    .scrum-communications {
+      padding: 28px 12px;
+    }
+
+    .scrum-communications__container {
+      padding: 36px 16px 20px;
+      border-radius: 24px;
+    }
+
+    .scrum-communications__tabs {
+      margin-top: 22px;
+      gap: 10px;
+    }
+
+    .scrum-communications__tab {
+      font-size: 15px;
+      padding: 10px 14px;
+    }
+
+    .scrum-communications__image {
+      border-radius: 16px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const tabs = document.querySelectorAll('.scrum-communications__tab');
+    const image = document.getElementById('scrum-communications-image');
+
+    if (!tabs.length || !image) return;
+
+    const altMap = {
+      'Мессенджер': 'Интерфейс Битрикс24 Мессенджер',
+      'Видеозвонки': 'Интерфейс Битрикс24 Видеозвонки',
+      'Календарь': 'Интерфейс Битрикс24 Календарь'
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((btn) => {
+          btn.classList.remove('is-active');
+          btn.setAttribute('aria-selected', 'false');
+        });
+
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const src = tab.getAttribute('data-src');
+        if (src) {
+          image.src = src;
+          const tabName = tab.textContent.trim();
+          image.alt = altMap[tabName] || 'Интерфейс коммуникаций Битрикс24';
+        }
+      });
+    });
+  })();
+</script>
