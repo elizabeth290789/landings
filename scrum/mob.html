@@ -1,1 +1,148 @@
+<section class="scrum-mobile" aria-labelledby="scrum-mobile-title">
+  <div class="scrum-mobile__container">
+    <h2 id="scrum-mobile-title" class="scrum-mobile__title">Мобильные задачи</h2>
 
+    <p class="scrum-mobile__subtitle">
+      Создавайте задачи прямо из сообщения в чате, формируйте чек-листы, устанавливайте сроки, контролируйте
+      выполнение.
+    </p>
+
+    <a class="scrum-mobile__button" href="#" aria-label="Попробовать бесплатно">Попробовать бесплатно</a>
+
+    <div class="scrum-mobile__image-wrap">
+      <img
+        class="scrum-mobile__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/13.1920w.png.webp?1779436408272"
+        alt="Мобильные задачи Битрикс24"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrum-mobile {
+    padding: 64px 16px 0;
+    overflow-x: clip;
+  }
+
+  .scrum-mobile__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 72px 24px 0;
+    border-radius: 42px;
+    background: #eef0f6;
+    text-align: center;
+  }
+
+  .scrum-mobile__title {
+    margin: 0;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #15081f;
+    letter-spacing: -0.02em;
+  }
+
+  .scrum-mobile__subtitle {
+    margin: 24px auto 0;
+    max-width: 700px;
+    font-size: clamp(18px, 2.2vw, 34px);
+    line-height: 1.35;
+    color: #1b1430;
+  }
+
+  .scrum-mobile__button {
+    margin-top: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 62px;
+    padding: 14px 34px;
+    border-radius: 999px;
+    background: #00b845;
+    color: #fff;
+    font-size: clamp(20px, 2.1vw, 34px);
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 10px 22px rgba(0, 184, 69, 0.28);
+  }
+
+  .scrum-mobile__button:hover {
+    background: #00a33d;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 163, 61, 0.28);
+  }
+
+  .scrum-mobile__button:focus-visible {
+    outline: 3px solid rgba(0, 163, 61, 0.3);
+    outline-offset: 4px;
+  }
+
+  .scrum-mobile__image-wrap {
+    margin: 52px auto 0;
+    max-width: 1060px;
+    transform: translateY(48px);
+  }
+
+  .scrum-mobile__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    .scrum-mobile__container {
+      border-radius: 34px;
+      padding-top: 56px;
+    }
+
+    .scrum-mobile__subtitle {
+      max-width: 640px;
+    }
+
+    .scrum-mobile__image-wrap {
+      margin-top: 42px;
+      transform: translateY(36px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scrum-mobile {
+      padding: 40px 12px 0;
+    }
+
+    .scrum-mobile__container {
+      border-radius: 24px;
+      padding: 42px 14px 0;
+    }
+
+    .scrum-mobile__title {
+      font-size: clamp(32px, 9vw, 48px);
+    }
+
+    .scrum-mobile__subtitle {
+      margin-top: 18px;
+      max-width: 100%;
+      font-size: clamp(17px, 4.8vw, 22px);
+      line-height: 1.4;
+    }
+
+    .scrum-mobile__button {
+      width: 100%;
+      max-width: 340px;
+      min-height: 56px;
+      margin-top: 26px;
+      padding: 12px 22px;
+      font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .scrum-mobile__image-wrap {
+      margin-top: 30px;
+      transform: translateY(22px);
+    }
+  }
+</style>
