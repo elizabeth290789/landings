@@ -1,1 +1,264 @@
+<section class="kb-new-hero" aria-label="Первый экран корпоративной базы знаний">
+  <div class="kb-new-hero__inner">
+    <div class="kb-new-hero__content">
+      <h1>Битрикс24 Скрам</h1>
+      <p>
+        Помогает завершать проекты быстрее, удерживать фокус и снизить хаос в задачах.
+      </p>
+      <div class="kb-new-hero__actions" role="group" aria-label="Основные действия">
+                <a href="#" class="kb-new-hero__btn kb-new-hero__btn--secondary">начать бесплатно</a>
+      </div>
+    </div>
 
+    <div class="kb-new-hero__screen">
+      <img
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/1.1900w.png.webp?1779436408272"
+        alt="Интерфейс Скрама"
+        loading="eager"
+      />
+    </div>
+
+    <div class="kb-new-hero__awards" aria-label="Премии">
+      <a class="kb-new-hero__award" href="#" aria-label="Премия Russian Intranet Awards 2023">
+        <span class="kb-new-hero__award-icon" aria-hidden="true">🏆</span>
+        <span class="kb-new-hero__award-copy">
+          <span class="kb-new-hero__award-title">Самая популярная платформа<br />для интранета</span>
+          <span class="kb-new-hero__award-subtitle">Премия Russian Intranet Awards 2023</span>
+        </span>
+      </a>
+
+      <span class="kb-new-hero__awards-divider" aria-hidden="true"></span>
+
+      <a class="kb-new-hero__award" href="#" aria-label="Гран-При «Цифровая пирамида — 2024»">
+        <span class="kb-new-hero__award-icon" aria-hidden="true">⭐</span>
+        <span class="kb-new-hero__award-copy">
+          <span class="kb-new-hero__award-title">Универсальная HR Tech-платформа года</span>
+          <span class="kb-new-hero__award-subtitle">Гран-При «Цифровая пирамида – 2024»</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .kb-new-hero,
+  .kb-new-hero * {
+    box-sizing: border-box;
+  }
+
+  .kb-new-hero {
+    background: linear-gradient(115deg, #20349b 0%, #8b2be2 100%);
+    overflow: hidden;
+  }
+
+  .kb-new-hero__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 90px 40px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kb-new-hero__content {
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .kb-new-hero__content h1 {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 62px;
+    color: #fff;
+  }
+
+  .kb-new-hero__content p {
+    max-width: 820px;
+    margin: 24px auto 0;
+    font-size: 24px;
+    line-height: 34px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .kb-new-hero__actions {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .kb-new-hero__btn {
+    min-height: 72px;
+    white-space: nowrap;
+    padding: 18px 38px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1.1;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .kb-new-hero__btn--primary {
+    background: #c7f11f;
+    color: #1d2438;
+    box-shadow: 0 12px 28px rgba(25, 31, 56, 0.26);
+  }
+
+  .kb-new-hero__btn--secondary {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+    background: transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .kb-new-hero__screen {
+    margin-top: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .kb-new-hero__screen img {
+    width: min(1120px, 92vw);
+    max-width: 1120px;
+    height: auto;
+    display: block;
+    border-radius: 32px;
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.32);
+  }
+
+  .kb-new-hero__awards {
+    margin-top: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+    color: #fff;
+    flex-wrap: nowrap;
+  }
+
+  .kb-new-hero__award {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    max-width: 420px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.98);
+  }
+
+  .kb-new-hero__award-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #b84cff 0%, #7b2dff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(34px, 2vw, 40px);
+    line-height: 1;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .kb-new-hero__award-copy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kb-new-hero__awards-divider {
+    width: 1px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.16);
+    flex-shrink: 0;
+  }
+
+  .kb-new-hero__award-title {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .kb-new-hero__award-subtitle {
+    margin-top: 6px;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  @media (max-width: 680px) {
+    .kb-new-hero__inner {
+      padding: 50px 16px 64px;
+    }
+
+    .kb-new-hero__content h1 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+
+    .kb-new-hero__content p {
+      margin-top: 18px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .kb-new-hero__actions {
+      margin-top: 24px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .kb-new-hero__btn {
+      width: 100%;
+      max-width: 360px;
+      min-height: 54px;
+    }
+
+    .kb-new-hero__screen {
+      margin-top: 36px;
+    }
+
+    .kb-new-hero__screen img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .kb-new-hero__awards {
+      margin-top: 32px;
+      gap: 20px;
+    }
+
+    .kb-new-hero__award {
+      gap: 12px;
+      max-width: 46%;
+    }
+
+    .kb-new-hero__awards-divider {
+      height: 64px;
+    }
+
+    .kb-new-hero__award-icon {
+      width: 56px;
+      height: 56px;
+      font-size: 28px;
+    }
+
+    .kb-new-hero__award-title {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .kb-new-hero__award-subtitle {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+</style>
