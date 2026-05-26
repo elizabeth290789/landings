@@ -39,7 +39,7 @@
 
       <div class="scrum-roles__visual">
         <img
-          src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/721/b05f6whudzgosnmy83eiqt6p1zp6etfo.1440w.webp?1779436408272"
+          src="https://www.bitrix24.ru/upload/landing/152/x3b1xsqcfa0ivnf6eioybjiwrwm8cegg.jpg"
           alt="Распределение ролей в Scrum-команде"
           loading="lazy"
         />
@@ -66,8 +66,8 @@
 
   .scrum-roles__layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
-    gap: 24px;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 18px;
     align-items: center;
   }
 
@@ -135,18 +135,22 @@
     margin: 0;
     justify-self: stretch;
     position: relative;
-    padding-left: 8px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
   }
 
   .scrum-roles__visual img {
     display: block;
     width: 100%;
-    max-width: 700px;
+    max-width: 840px;
     height: auto;
     margin-left: auto;
-    transform: translateX(-10px);
-    border-radius: 22px;
-    box-shadow: 0 26px 54px rgba(23, 55, 116, 0.18);
+    object-fit: contain;
+    transform: none;
+    border-radius: 20px;
+    border: 1px solid #e3ecff;
+    box-shadow: 0 18px 42px rgba(23, 55, 116, 0.16);
     background: #eef4ff;
   }
 
@@ -156,8 +160,8 @@
     }
 
     .scrum-roles__layout {
-      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.02fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: 16px;
     }
 
     .scrum-role-card {
@@ -175,8 +179,7 @@
     }
 
     .scrum-roles__visual img {
-      max-width: 640px;
-      transform: translateX(-4px);
+      max-width: 760px;
     }
   }
 
@@ -191,7 +194,7 @@
 
     .scrum-roles__layout {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 20px;
     }
 
     .scrum-role-card {
@@ -208,8 +211,13 @@
       line-height: 26px;
     }
 
+    .scrum-roles__visual {
+      justify-content: center;
+    }
+
     .scrum-roles__visual img {
       margin: 0;
+      width: 100%;
       max-width: 100%;
       transform: none;
     }
