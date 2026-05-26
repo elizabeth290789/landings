@@ -2,8 +2,6 @@
   <div class="scrum-roles__container">
     <div class="scrum-roles__layout">
       <div class="scrum-roles__content">
-        <h2>Распределение ролей</h2>
-
         <div class="scrum-roles__list" role="list">
           <article class="scrum-role-card" role="listitem">
             <div class="scrum-role-card__badge" aria-hidden="true">1</div>
@@ -73,15 +71,6 @@
     align-items: center;
   }
 
-  .scrum-roles__content h2 {
-    margin: 0 0 26px;
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-    font-size: clamp(30px, 4vw, 44px);
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #1d2e5f;
-  }
 
   .scrum-roles__list {
     display: grid;
@@ -124,19 +113,22 @@
 
   .scrum-role-card__body h3 {
     margin: 0;
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-    font-size: clamp(18px, 2.2vw, 21px);
-    line-height: 1.25;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
     font-weight: 600;
-    color: #20366e;
+    font-size: 28px;
+    line-height: 36px;
+    color: rgb(22, 22, 22);
   }
 
   .scrum-role-card__body p {
     margin: 8px 0 0;
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-    font-size: 16px;
-    line-height: 1.45;
-    color: #3d4c74;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: rgb(18, 18, 18);
   }
 
   .scrum-roles__visual {
@@ -168,8 +160,14 @@
       padding: 15px 16px;
     }
 
+    .scrum-role-card__body h3 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
     .scrum-role-card__body p {
-      font-size: 15px;
+      font-size: 17px;
+      line-height: 27px;
     }
   }
 
@@ -187,8 +185,18 @@
       gap: 24px;
     }
 
-    .scrum-roles__content h2 {
-      margin-bottom: 20px;
+    .scrum-role-card {
+      padding: 14px 14px;
+    }
+
+    .scrum-role-card__body h3 {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .scrum-role-card__body p {
+      font-size: 16px;
+      line-height: 26px;
     }
 
     .scrum-roles__visual img {
