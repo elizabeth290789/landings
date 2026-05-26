@@ -66,8 +66,8 @@
 
   .scrum-roles__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
-    gap: 40px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(500px, 1.1fr);
+    gap: 24px;
     align-items: center;
   }
 
@@ -133,16 +133,20 @@
 
   .scrum-roles__visual {
     margin: 0;
+    justify-self: stretch;
+    position: relative;
+    padding-left: 8px;
   }
 
   .scrum-roles__visual img {
     display: block;
     width: 100%;
-    max-width: 560px;
+    max-width: 700px;
     height: auto;
     margin-left: auto;
+    transform: translateX(-10px);
     border-radius: 22px;
-    box-shadow: 0 28px 50px rgba(23, 55, 116, 0.2);
+    box-shadow: 0 26px 54px rgba(23, 55, 116, 0.18);
     background: #eef4ff;
   }
 
@@ -152,8 +156,8 @@
     }
 
     .scrum-roles__layout {
-      grid-template-columns: minmax(0, 1fr) minmax(340px, 0.92fr);
-      gap: 28px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.02fr);
+      gap: 20px;
     }
 
     .scrum-role-card {
@@ -168,6 +172,11 @@
     .scrum-role-card__body p {
       font-size: 17px;
       line-height: 27px;
+    }
+
+    .scrum-roles__visual img {
+      max-width: 640px;
+      transform: translateX(-4px);
     }
   }
 
@@ -202,6 +211,7 @@
     .scrum-roles__visual img {
       margin: 0;
       max-width: 100%;
+      transform: none;
     }
   }
 </style>
