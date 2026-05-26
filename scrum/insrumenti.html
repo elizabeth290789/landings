@@ -1,0 +1,305 @@
+<section class="scrum-tools" aria-labelledby="scrum-tools-title">
+  <style>
+    .scrum-tools {
+      --st-bg: #f5f9ff;
+      --st-card: #ffffff;
+      --st-text: #1f2d3d;
+      --st-muted: #5f738c;
+      --st-primary: #2f7ef7;
+      --st-primary-soft: #e9f2ff;
+      --st-border: #dfeafa;
+      --st-shadow: 0 12px 30px rgba(26, 76, 146, 0.08);
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #fbfdff 0%, var(--st-bg) 100%);
+      padding: clamp(36px, 5vw, 72px) 16px;
+      color: var(--st-text);
+    }
+
+    .scrum-tools__container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .scrum-tools__head {
+      text-align: center;
+      margin-bottom: clamp(24px, 4vw, 42px);
+    }
+
+    .scrum-tools__title {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .scrum-tools__subtitle {
+      margin: 14px auto 0;
+      max-width: 780px;
+      font-size: clamp(16px, 2.1vw, 21px);
+      color: var(--st-muted);
+      line-height: 1.45;
+    }
+
+    .scrum-tools__grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .st-card {
+      background: var(--st-card);
+      border: 1px solid var(--st-border);
+      box-shadow: var(--st-shadow);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .st-card:hover {
+      transform: translateY(-4px);
+      border-color: #cdddf7;
+      box-shadow: 0 16px 38px rgba(36, 98, 184, 0.14);
+    }
+
+    .st-card__body {
+      padding: clamp(18px, 2vw, 24px);
+    }
+
+    .st-card h3 {
+      margin: 0;
+      font-size: clamp(22px, 2.2vw, 29px);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .st-card p {
+      margin: 10px 0 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--st-muted);
+    }
+
+    .st-top {
+      min-height: 320px;
+    }
+
+    .st-backlog,
+    .st-sprint {
+      grid-column: span 6;
+    }
+
+    .st-visual {
+      margin: 0;
+      padding: 18px;
+      background: linear-gradient(180deg, #f8fbff 0%, #edf5ff 100%);
+      border-bottom: 1px solid #e3eefc;
+    }
+
+    .st-board {
+      border: 1px solid #dce9fb;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .st-line,
+    .st-chip {
+      display: inline-block;
+      border-radius: 999px;
+      height: 8px;
+      background: #d9e7fc;
+      margin: 0 6px 10px 0;
+    }
+
+    .st-line.w-lg { width: 78%; }
+    .st-line.w-md { width: 58%; }
+    .st-line.w-sm { width: 36%; }
+
+    .st-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .st-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      border: 2px solid #84adf7;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .st-check::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 1px;
+      width: 7px;
+      height: 11px;
+      border-right: 2px solid #2f7ef7;
+      border-bottom: 2px solid #2f7ef7;
+      transform: rotate(35deg);
+    }
+
+    .st-chip {
+      height: 24px;
+      padding: 0 10px;
+      line-height: 24px;
+      font-size: 12px;
+      color: #2e62b0;
+      background: #e8f2ff;
+    }
+
+    .st-chip.is-green { background: #e8f9ee; color: #2f8f52; }
+    .st-chip.is-orange { background: #fff4e7; color: #bc6f1e; }
+
+    .st-timeline {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .st-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #79aaf8;
+      box-shadow: 0 0 0 5px #e7f0ff;
+    }
+
+    .st-flag {
+      width: 18px;
+      height: 14px;
+      background: #2f7ef7;
+      clip-path: polygon(0 0, 100% 12%, 68% 49%, 100% 86%, 0 100%);
+      margin-left: 4px;
+    }
+
+    .st-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      display: block;
+      background: linear-gradient(180deg, #f3f8ff 0%, #eaf2ff 100%);
+      padding: 10px;
+    }
+
+    .st-points,
+    .st-epics {
+      grid-column: span 4;
+    }
+
+    .st-kanban {
+      grid-column: span 4;
+    }
+
+    @media (max-width: 1024px) {
+      .scrum-tools__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .st-backlog,
+      .st-sprint,
+      .st-points,
+      .st-epics,
+      .st-kanban {
+        grid-column: span 1;
+      }
+
+      .st-top {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .scrum-tools {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .scrum-tools__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .st-backlog,
+      .st-sprint,
+      .st-points,
+      .st-epics,
+      .st-kanban {
+        grid-column: auto;
+      }
+    }
+  </style>
+
+  <div class="scrum-tools__container">
+    <header class="scrum-tools__head">
+      <h2 id="scrum-tools-title" class="scrum-tools__title">Инструменты для работы по Scrum</h2>
+      <p class="scrum-tools__subtitle">Всё, что нужно команде для планирования, оценки задач и контроля спринтов</p>
+    </header>
+
+    <div class="scrum-tools__grid">
+      <article class="st-card st-top st-backlog">
+        <div class="st-visual">
+          <div class="st-board">
+            <div class="st-row"><span class="st-check"></span><span class="st-line w-lg"></span></div>
+            <div class="st-row"><span class="st-check"></span><span class="st-line w-md"></span></div>
+            <div class="st-row"><span class="st-check"></span><span class="st-line w-sm"></span></div>
+            <span class="st-chip">Фильтр</span>
+            <span class="st-chip is-green">#backend</span>
+            <span class="st-chip is-orange">#urgent</span>
+          </div>
+        </div>
+        <div class="st-card__body">
+          <h3>Бэклог</h3>
+          <p>Добавляйте задачи в бэклог — колонку со списком всех намеченных работ по проекту. Используйте фильтры для быстрого поиска, ставьте теги, связывайте задачи между собой.</p>
+        </div>
+      </article>
+
+      <article class="st-card st-top st-sprint">
+        <div class="st-visual">
+          <div class="st-board">
+            <div class="st-timeline"><span class="st-dot"></span><span class="st-line w-lg"></span></div>
+            <div class="st-timeline"><span class="st-dot"></span><span class="st-line w-md"></span></div>
+            <div class="st-timeline"><span class="st-dot"></span><span class="st-line w-sm"></span></div>
+            <div class="st-row" style="margin-top: 8px;"><span class="st-flag"></span><span class="st-chip">Старт спринта</span></div>
+          </div>
+        </div>
+        <div class="st-card__body">
+          <h3>Спринт</h3>
+          <p>Оценивайте приоритет задач в бэклоге и планируйте, над чем будете работать в ближайшем временном отрезке — спринте.</p>
+        </div>
+      </article>
+
+      <article class="st-card st-points">
+        <img class="st-img" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/5.768w.png.webp?1779436408272" alt="Стори Поинты в Scrum" loading="lazy" />
+        <div class="st-card__body">
+          <h3>Стори Поинты</h3>
+          <p>Оценивайте количество усилий, которые нужны, чтобы выполнить задачу или более крупный отрезок работы, в Стори Поинтах.</p>
+        </div>
+      </article>
+
+      <article class="st-card st-epics">
+        <img class="st-img" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/4.1152w.png.webp?1779436408272" alt="Эпики и Definition of Done" loading="lazy" />
+        <div class="st-card__body">
+          <h3>Эпики и DoD</h3>
+          <p>Объединяйте связанные задачи в крупные этапы работы — Эпики. Определяйте DoD (Definition of Done) — условия, при которых задачу можно считать завершенной.</p>
+        </div>
+      </article>
+
+      <article class="st-card st-kanban">
+        <img class="st-img" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/6.768w.png.webp?1779436408272" alt="Канбан-доска активного спринта" loading="lazy" />
+        <div class="st-card__body">
+          <h3>Канбан-доска</h3>
+          <p>Активный спринт — это виртуальная доска с задачами. Канбан наглядно показывает, на какой стадии сейчас задачи, сколько завершено и где нужно «поднажать».</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
