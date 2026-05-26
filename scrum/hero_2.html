@@ -1,1 +1,113 @@
+<section class="scrum-hero" aria-labelledby="scrum-hero-title">
+  <div class="scrum-hero__container">
+    <h1 id="scrum-hero-title" class="scrum-hero__title">Битрикс24 Скрам</h1>
+    <p class="scrum-hero__subtitle">
+      Помогает завершать проекты быстрее, удерживать фокус и снизить хаос в задачах.
+    </p>
+    <a class="scrum-hero__cta" href="#" role="button">начать бесплатно</a>
 
+    <div class="scrum-hero__visual">
+      <img
+        class="scrum-hero__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/1.1900w.png.webp?1779436408272"
+        alt="Интерфейс Битрикс24 Скрам"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrum-hero {
+    background: #f5f9ff;
+    padding: clamp(56px, 8vw, 96px) 16px clamp(28px, 6vw, 64px);
+  }
+
+  .scrum-hero__container {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .scrum-hero__title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1a2f57;
+  }
+
+  .scrum-hero__subtitle {
+    margin: clamp(16px, 2.2vw, 22px) auto 0;
+    max-width: 760px;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.5;
+    color: #4e648b;
+  }
+
+  .scrum-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: clamp(22px, 3vw, 34px);
+    padding: 14px 30px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #2f8bff 0%, #1e73f0 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 14px 28px rgba(35, 114, 241, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+
+  .scrum-hero__cta:hover,
+  .scrum-hero__cta:focus-visible {
+    transform: translateY(-2px);
+    background: linear-gradient(180deg, #4398ff 0%, #2a7cf3 100%);
+    box-shadow: 0 18px 30px rgba(35, 114, 241, 0.36);
+    outline: none;
+  }
+
+  .scrum-hero__visual {
+    margin-top: clamp(28px, 5vw, 52px);
+    border-radius: clamp(16px, 2vw, 24px);
+    overflow: hidden;
+    box-shadow: 0 28px 65px rgba(16, 44, 94, 0.16);
+    background: #ffffff;
+  }
+
+  .scrum-hero__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 1024px) {
+    .scrum-hero {
+      padding-top: clamp(48px, 7vw, 72px);
+    }
+
+    .scrum-hero__visual {
+      margin-top: clamp(24px, 4.5vw, 38px);
+      box-shadow: 0 22px 52px rgba(16, 44, 94, 0.14);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .scrum-hero {
+      padding-inline: 12px;
+    }
+
+    .scrum-hero__subtitle {
+      max-width: 95%;
+    }
+
+    .scrum-hero__cta {
+      width: min(100%, 320px);
+      padding: 14px 22px;
+    }
+  }
+</style>
