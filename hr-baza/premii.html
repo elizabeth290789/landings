@@ -1,1 +1,132 @@
+<div class="awards-cards-block" aria-label="Премии Битрикс24 Enterprise HRM">
+  <div class="awards-cards-block__grid">
+    <article class="awards-cards-block__card">
+      <a
+        class="awards-cards-block__award-link"
+        href="https://abazhur.rivelty.ru/riawards-2023-results/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Премия Russian Intranet Awards 2023
+      </a>
 
+      <h3 class="awards-cards-block__title">Самая популярная платформа<br>для интранета</h3>
+
+      <p class="awards-cards-block__text">
+        Битрикс24 стал лидером в Enterprise-сегменте. На платформе реализовано 11 из 19 проектов, вошедших в
+        лонг-лист премии.
+      </p>
+      <p class="awards-cards-block__text">
+        Продукт был признан наиболее гибким и функциональным инструментом для реализации корпоративных порталов,
+        интранетов, HR-сервисов.
+      </p>
+    </article>
+
+    <article class="awards-cards-block__card">
+      <a
+        class="awards-cards-block__award-link"
+        href="https://hrsummit.ru/hrclubnews/10062024"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Гран-При «Цифровая пирамида – 2024»
+      </a>
+
+      <h3 class="awards-cards-block__title">Универсальная HR<br>Tech-платформа года</h3>
+
+      <p class="awards-cards-block__text">
+        В 2024 году решение Битрикс24 Enterprise HRM стало лучшей «Универсальной HR Tech-платформой года».
+      </p>
+      <p class="awards-cards-block__text">
+        Премия «Цифровая пирамида-2024» отмечает лучшие разработки по цифровизации HR и развитию HR-технологий. В
+        состав жюри входят вице-президенты компаний, директора по персоналу, эксперты в области управления
+        персоналом.
+      </p>
+    </article>
+  </div>
+</div>
+
+<style>
+  .awards-cards-block {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .awards-cards-block__grid {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .awards-cards-block__card {
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 18px;
+    padding: 30px;
+    color: #ffffff;
+    background: linear-gradient(145deg, #4a1db0 0%, #5a24b6 100%);
+    box-sizing: border-box;
+  }
+
+  .awards-cards-block__award-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #b8ff52;
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+  }
+
+  .awards-cards-block__award-link:hover,
+  .awards-cards-block__award-link:focus-visible {
+    opacity: 0.85;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .awards-cards-block__title {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .awards-cards-block__text {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1.42;
+  }
+
+  .awards-cards-block__text:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .awards-cards-block__grid {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .awards-cards-block__card {
+      padding: 24px;
+    }
+
+    .awards-cards-block__award-link {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .awards-cards-block__title {
+      font-size: 34px;
+    }
+
+    .awards-cards-block__text {
+      font-size: 23px;
+    }
+  }
+</style>
