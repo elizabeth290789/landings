@@ -1,266 +1,233 @@
-<section class="kb-new-hero" aria-label="Первый экран корпоративной базы знаний">
-  <div class="kb-new-hero__inner">
-    <div class="kb-new-hero__content">
-      <h1>Корпоративная база знаний Битрикс24</h1>
-      <p>
-        База знаний для сотрудников компании. Храните таблицы, документы и процессы в одном месте без ограничений по
-        количеству статей.
-      </p>
-      <div class="kb-new-hero__actions" role="group" aria-label="Основные действия">
-        <a href="#" class="kb-new-hero__btn kb-new-hero__btn--primary">запросить демо</a>
-        <a href="#" class="kb-new-hero__btn kb-new-hero__btn--secondary">попробовать бесплатно</a>
-      </div>
-    </div>
+<section class="scrum-hero" aria-labelledby="scrum-hero-title">
+  <div class="scrum-hero__container">
+    <h1 id="scrum-hero-title" class="scrum-hero__title">Битрикс24 Скрам</h1>
+    <p class="scrum-hero__subtitle">
+      Помогает завершать проекты быстрее, удерживать фокус и&nbsp;снизить хаос в задачах.
+    </p>
+    <a
+      class="scrum-hero__cta"
+      href="https://www.bitrix24.ru/create.php?b24_type=tasks_scrum"
+      role="button"
+      >начать бесплатно</a
+    >
 
-    <div class="kb-new-hero__screen">
+    <div class="scrum-hero__visual">
       <img
-        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/knowledge-base/1.1600w.png.webp?1779436408272"
-        alt="Интерфейс корпоративной базы знаний Битрикс24"
+        class="scrum-hero__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/scrum/1.1900w.png.webp?1779436408272"
+        alt="Интерфейс Битрикс24 Скрам"
         loading="eager"
+        decoding="async"
       />
-    </div>
-
-    <div class="kb-new-hero__awards" aria-label="Премии">
-      <a class="kb-new-hero__award" href="#" aria-label="Премия Russian Intranet Awards 2023">
-        <span class="kb-new-hero__award-icon" aria-hidden="true">🏆</span>
-        <span class="kb-new-hero__award-copy">
-          <span class="kb-new-hero__award-title">Самая популярная платформа<br />для интранета</span>
-          <span class="kb-new-hero__award-subtitle">Премия Russian Intranet Awards 2023</span>
-        </span>
-      </a>
-
-      <span class="kb-new-hero__awards-divider" aria-hidden="true"></span>
-
-      <a class="kb-new-hero__award" href="#" aria-label="Гран-При «Цифровая пирамида — 2024»">
-        <span class="kb-new-hero__award-icon" aria-hidden="true">⭐</span>
-        <span class="kb-new-hero__award-copy">
-          <span class="kb-new-hero__award-title">Универсальная HR Tech-платформа года</span>
-          <span class="kb-new-hero__award-subtitle">Гран-При «Цифровая пирамида – 2024»</span>
-        </span>
-      </a>
     </div>
   </div>
 </section>
 
 <style>
-  .kb-new-hero,
-  .kb-new-hero * {
-    box-sizing: border-box;
+  .scrum-hero {
+    background: #f5f9ff;
+    padding: clamp(48px, 7vw, 84px) 16px clamp(24px, 5vw, 56px);
   }
 
-  .kb-new-hero {
-    background: linear-gradient(115deg, #20349b 0%, #8b2be2 100%);
-    overflow: hidden;
-  }
-
-  .kb-new-hero__inner {
-    max-width: 1240px;
+  .scrum-hero__container {
+    width: min(1240px, 100%);
     margin: 0 auto;
-    padding: 90px 40px 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .kb-new-hero__content {
     text-align: center;
-    max-width: 900px;
   }
 
-  .kb-new-hero__content h1 {
+  .scrum-hero__title {
     margin: 0;
-    font-family: Montserrat, sans-serif;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 62px;
-    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.35rem, 7vw, 72px);
+    line-height: clamp(2.65rem, 7.6vw, 78px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: rgb(15, 41, 69);
   }
 
-  .kb-new-hero__content p {
-    max-width: 820px;
-    margin: 24px auto 0;
-    font-size: 24px;
-    line-height: 34px;
-    color: rgba(255, 255, 255, 0.9);
+  .scrum-hero__subtitle {
+    margin: clamp(18px, 2.4vw, 26px) auto 0;
+    max-width: min(900px, 86vw);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.2rem, 3.2vw, 28px);
+    line-height: clamp(1.9rem, 4.2vw, 40px);
+    color: rgb(72, 98, 123);
   }
 
-  .kb-new-hero__actions {
-    margin-top: 36px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .kb-new-hero__btn {
-    min-height: 72px;
-    white-space: nowrap;
-    padding: 18px 38px;
-    border-radius: 999px;
+  .scrum-hero__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    font-size: 17px;
-    line-height: 1.1;
+    margin-top: clamp(26px, 3.4vw, 38px);
+    padding: 18px 38px;
+    border-radius: 999px;
+    background: #c4f000;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1rem, 1.8vw, 18px);
     font-weight: 700;
+    letter-spacing: 0.3px;
     text-transform: uppercase;
-  }
-
-  .kb-new-hero__btn--primary {
-    background: #c7f11f;
-    color: #1d2438;
-    box-shadow: 0 12px 28px rgba(25, 31, 56, 0.26);
-  }
-
-  .kb-new-hero__btn--secondary {
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    color: #fff;
-    background: transparent;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .kb-new-hero__screen {
-    margin-top: 56px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .kb-new-hero__screen img {
-    width: min(1120px, 92vw);
-    max-width: 1120px;
-    height: auto;
-    display: block;
-    border-radius: 32px;
-    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.32);
-  }
-
-  .kb-new-hero__awards {
-    margin-top: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 64px;
-    color: #fff;
-    flex-wrap: nowrap;
-  }
-
-  .kb-new-hero__award {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    max-width: 420px;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.98);
+    opacity: 1;
+    mix-blend-mode: normal;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .kb-new-hero__award-icon {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #b84cff 0%, #7b2dff 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: clamp(34px, 2vw, 40px);
-    line-height: 1;
-    flex-shrink: 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  .scrum-hero__cta,
+  .scrum-hero__cta:link,
+  .scrum-hero__cta:visited,
+  .scrum-hero__cta span {
+    color: #000;
+    opacity: 1;
+    text-decoration: none;
   }
 
-  .kb-new-hero__award-copy {
-    display: flex;
-    flex-direction: column;
+  .scrum-hero__cta:hover,
+  .scrum-hero__cta:focus,
+  .scrum-hero__cta:focus-visible,
+  .scrum-hero__cta:active,
+  .scrum-hero__cta:hover span,
+  .scrum-hero__cta:focus span,
+  .scrum-hero__cta:focus-visible span,
+  .scrum-hero__cta:active span {
+    color: #000;
+    opacity: 1;
+    text-decoration: none;
+    transform: translateY(-3px);
+    background-color: #d2ff0a;
+    box-shadow: 0 14px 30px rgba(196, 240, 0, 0.48), 0 6px 14px rgba(16, 44, 94, 0.18);
+    outline: none;
+    filter: none;
+    mix-blend-mode: normal;
   }
 
-  .kb-new-hero__awards-divider {
-    width: 1px;
-    height: 72px;
-    background: rgba(255, 255, 255, 0.16);
-    flex-shrink: 0;
+  .scrum-hero__visual {
+    margin-top: clamp(28px, 5vw, 52px);
+    border-radius: clamp(16px, 2vw, 24px);
+    overflow: hidden;
+    box-shadow: 0 28px 65px rgba(16, 44, 94, 0.16);
+    background: #ffffff;
   }
 
-  .kb-new-hero__award-title {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #fff;
+  .scrum-hero__image {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
-  .kb-new-hero__award-subtitle {
-    margin-top: 6px;
-    font-size: 16px;
-    line-height: 22px;
-    color: rgba(255, 255, 255, 0.82);
-  }
-
-  @media (max-width: 680px) {
-    .kb-new-hero__inner {
-      padding: 50px 16px 64px;
+  @media (max-width: 1024px) {
+    .scrum-hero {
+      padding-top: clamp(48px, 7vw, 72px);
     }
 
-    .kb-new-hero__content h1 {
-      font-size: 36px;
-      line-height: 42px;
+    .scrum-hero__visual {
+      margin-top: clamp(24px, 4.5vw, 38px);
+      box-shadow: 0 22px 52px rgba(16, 44, 94, 0.14);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .scrum-hero {
+      padding-inline: 12px;
     }
 
-    .kb-new-hero__content p {
-      margin-top: 18px;
-      font-size: 18px;
-      line-height: 28px;
+    .scrum-hero__subtitle {
+      max-width: 100%;
+      font-size: clamp(1.1rem, 5vw, 1.4rem);
+      line-height: 1.55;
     }
 
-    .kb-new-hero__actions {
-      margin-top: 24px;
-      flex-direction: column;
+    .scrum-hero__cta {
+      width: min(100%, 340px);
+      padding: 16px 24px;
+    }
+  }
+
+  /* Mobile header fix: keep only logo (left) and CTA button (right). */
+  @media (max-width: 768px) {
+    :is(
+        .header,
+        .top-header,
+        .site-header,
+        .b24-header,
+        .landing-header,
+        .bitrix24-header
+      ) {
+      overflow-x: clip;
+    }
+
+    :is(
+        .header__inner,
+        .top-header__inner,
+        .site-header__inner,
+        .b24-header__inner,
+        .landing-header__inner,
+        .bitrix24-header__inner,
+        .header-inner,
+        .topbar__inner
+      ) {
+      display: flex;
       align-items: center;
-    }
-
-    .kb-new-hero__btn {
-      width: 100%;
-      max-width: 360px;
-      min-height: 54px;
-    }
-
-    .kb-new-hero__screen {
-      margin-top: 36px;
-    }
-
-    .kb-new-hero__screen img {
-      width: 100%;
-      border-radius: 20px;
-    }
-
-    .kb-new-hero__awards {
-      margin-top: 32px;
-      gap: 20px;
-    }
-
-    .kb-new-hero__award {
+      justify-content: space-between;
       gap: 12px;
-      max-width: 46%;
+      min-width: 0;
     }
 
-    .kb-new-hero__awards-divider {
-      height: 64px;
+    :is(
+        .header nav,
+        .top-header nav,
+        .site-header nav,
+        .b24-header nav,
+        .landing-header nav,
+        .bitrix24-header nav,
+        .header .nav,
+        .header .menu,
+        .header .menu-list,
+        .header .main-menu,
+        .header .top-menu,
+        .top-header .nav,
+        .top-header .menu,
+        .site-header .nav,
+        .site-header .menu
+      ) {
+      display: none !important;
     }
 
-    .kb-new-hero__award-icon {
-      width: 56px;
-      height: 56px;
-      font-size: 28px;
+    :is(
+        .header .cta,
+        .header .btn,
+        .header .button,
+        .header .header-cta,
+        .header .top-cta,
+        .top-header .cta,
+        .top-header .btn,
+        .site-header .cta,
+        .site-header .btn,
+        .b24-header .cta,
+        .b24-header .btn,
+        .landing-header .cta,
+        .landing-header .btn,
+        .bitrix24-header .cta,
+        .bitrix24-header .btn
+      ) {
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
 
-    .kb-new-hero__award-title {
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .kb-new-hero__award-subtitle {
-      font-size: 14px;
-      line-height: 18px;
+    :is(
+        .header .logo,
+        .header .brand,
+        .header .header-logo,
+        .top-header .logo,
+        .site-header .logo,
+        .b24-header .logo,
+        .landing-header .logo,
+        .bitrix24-header .logo
+      ) {
+      min-width: 0;
+      flex: 0 1 auto;
     }
   }
 </style>
