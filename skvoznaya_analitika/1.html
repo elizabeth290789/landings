@@ -1,1 +1,135 @@
+<section class="traffic-channels" aria-label="Учет рекламных каналов">
+  <article class="traffic-channels__card">
+    <div class="traffic-channels__content">
+      <h2 class="traffic-channels__title">Учет всех рекламных каналов</h2>
+      <ul class="traffic-channels__list">
+        <li class="traffic-channels__item">
+          Быстрое подключение VK, Яндекс.Директ, Google Ads и других рекламных источников
+        </li>
+        <li class="traffic-channels__item">
+          Все сайты, магазины и CRM-формы, созданные в Битрикс24, подключаются автоматически
+        </li>
+        <li class="traffic-channels__item">
+          Подключение офлайн-источников, например, звонков или раздачи флаеров
+        </li>
+      </ul>
+    </div>
 
+    <div class="traffic-channels__image-wrap">
+      <img
+        class="traffic-channels__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/3.1440w.png.webp?1779436408272"
+        alt="Учет всех рекламных каналов в CRM аналитике"
+        loading="lazy"
+      />
+    </div>
+  </article>
+</section>
+
+<style>
+  .traffic-channels {
+    --text-color: rgb(18, 18, 18);
+    --card-bg: #f5f8ff;
+    --accent: #1f86ff;
+
+    width: min(100%, 1400px);
+    margin-inline: auto;
+    font-family: Montserrat, sans-serif;
+  }
+
+  .traffic-channels__card {
+    background: var(--card-bg);
+    border-radius: 40px;
+    padding: clamp(36px, 3.2vw, 56px);
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(420px, 1.25fr);
+    gap: clamp(24px, 3.5vw, 56px);
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .traffic-channels__content {
+    max-width: 560px;
+  }
+
+  .traffic-channels__title {
+    margin: 0;
+    font-size: clamp(34px, 2.35vw, 38px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-color);
+  }
+
+  .traffic-channels__list {
+    margin: clamp(20px, 1.8vw, 28px) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 16px;
+  }
+
+  .traffic-channels__item {
+    position: relative;
+    padding-left: 34px;
+    font-size: clamp(17px, 1.15vw, 18px);
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--text-color);
+  }
+
+  .traffic-channels__item::before {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #35a7ff 0%, var(--accent) 100%);
+    box-shadow: 0 0 0 6px rgba(31, 134, 255, 0.12);
+    transform: translateY(-50%);
+  }
+
+  .traffic-channels__image-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .traffic-channels__image {
+    width: min(100%, 820px);
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  @media (max-width: 1024px) {
+    .traffic-channels__card {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      border-radius: 32px;
+      padding: clamp(30px, 5vw, 42px);
+    }
+
+    .traffic-channels__title {
+      font-size: clamp(30px, 6vw, 36px);
+    }
+
+    .traffic-channels__content {
+      max-width: 100%;
+    }
+
+    .traffic-channels__image-wrap {
+      justify-content: center;
+    }
+
+    .traffic-channels__image {
+      width: 100%;
+      max-width: 760px;
+    }
+  }
+</style>
