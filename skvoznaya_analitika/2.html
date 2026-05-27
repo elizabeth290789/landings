@@ -1,1 +1,141 @@
+<section class="analytics-comparison" aria-label="Сквозная аналитика: сравнение отчетов">
+  <div class="analytics-comparison__container">
+    <div class="analytics-comparison__grid">
+      <article class="analytics-comparison__card">
+        <h3 class="analytics-comparison__title">Отчёт по окупаемости рекламы</h3>
+        <p class="analytics-comparison__text">Показывает, какие рекламные каналы приносят прибыль, а какие — сливают бюджет. CRM автоматически собирает данные о расходах, трафике и продажах в реальном времени.</p>
+        <div class="analytics-comparison__image-wrap">
+          <img class="analytics-comparison__image" src="https://www.bitrix24.ru/upload/landing/b65/6y330vnu11rl30lss0wf7o40efjk4g87.webp" alt="Отчёт по окупаемости рекламы в сквозной аналитике" loading="lazy" />
+        </div>
+      </article>
 
+      <article class="analytics-comparison__card">
+        <h3 class="analytics-comparison__title">Влияние трафика на продажи</h3>
+        <p class="analytics-comparison__text">CRM помогает оценить эффективность работы менеджеров с клиентами из разных источников. Вы можете увидеть, как менеджеры обрабатывают сделки и какой трафик они лучше всего конвертируют в сделки.</p>
+        <div class="analytics-comparison__image-wrap">
+          <img class="analytics-comparison__image" src="https://www.bitrix24.ru/upload/landing/136/yc24gmcd6n4lacoxpm24g7dxefawcoyt.webp" alt="Влияние трафика на продажи в CRM" loading="lazy" />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .analytics-comparison,
+  .analytics-comparison * {
+    box-sizing: border-box;
+  }
+
+  .analytics-comparison {
+    background: #ffffff;
+    padding: 72px 0;
+  }
+
+  .analytics-comparison__container {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .analytics-comparison__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(32px, 4.2vw, 64px);
+    align-items: start;
+  }
+
+  .analytics-comparison__card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 20px;
+  }
+
+  .analytics-comparison__title {
+    margin: 0;
+    min-height: 64px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 32px;
+    color: rgb(18, 18, 18);
+  }
+
+  .analytics-comparison__text {
+    margin: 0;
+    min-height: 174px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    color: rgb(18, 18, 18);
+    text-wrap: pretty;
+  }
+
+  .analytics-comparison__image-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .analytics-comparison__image {
+    display: block;
+    width: 100%;
+    height: clamp(260px, 28vw, 360px);
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  @media (max-width: 1024px) {
+    .analytics-comparison {
+      padding: 56px 0;
+    }
+
+    .analytics-comparison__container {
+      width: min(1240px, calc(100% - 32px));
+    }
+
+    .analytics-comparison__grid {
+      gap: 28px;
+    }
+
+    .analytics-comparison__text {
+      min-height: 203px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .analytics-comparison {
+      padding: 42px 0;
+    }
+
+    .analytics-comparison__container {
+      width: min(1240px, calc(100% - 24px));
+    }
+
+    .analytics-comparison__grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .analytics-comparison__card {
+      gap: 16px;
+    }
+
+    .analytics-comparison__title,
+    .analytics-comparison__text {
+      min-height: 0;
+    }
+
+    .analytics-comparison__title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .analytics-comparison__text {
+      font-size: 17px;
+      line-height: 28px;
+    }
+
+    .analytics-comparison__image {
+      height: clamp(220px, 54vw, 320px);
+    }
+  }
+</style>
