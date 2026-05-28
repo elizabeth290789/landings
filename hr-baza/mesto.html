@@ -2,16 +2,16 @@
   <div class="mesto-block__container">
 
     <div class="mesto-block__grid">
-      <a href="#" class="mesto-block__chip">Корпоративный портал</a>
-      <a href="#" class="mesto-block__chip">Автоматизация HR-процессов</a>
-      <a href="#" class="mesto-block__chip">Адаптация новичков</a>
-      <a href="#" class="mesto-block__chip">Корпоративный университет</a>
-      <a href="#" class="mesto-block__chip">Оценка 360</a>
-      <a href="#" class="mesto-block__chip">База знаний сотрудников</a>
-      <a href="#" class="mesto-block__chip">Геймификация и вовлечение</a>
-      <a href="#" class="mesto-block__chip">Внутренние коммуникации</a>
-      <a href="#" class="mesto-block__chip">Бронирование рабочих мест</a>
-      <a href="#" class="mesto-block__chip">Повышение эффективности</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b283726" class="mesto-block__chip mesto-block__chip--link">Корпоративный портал</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b284674" class="mesto-block__chip mesto-block__chip--link">Автоматизация HR-процессов</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b283582" class="mesto-block__chip mesto-block__chip--link">Адаптация новичков</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b283614" class="mesto-block__chip mesto-block__chip--link">Корпоративный университет</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b283606" class="mesto-block__chip mesto-block__chip--link">Оценка 360</a>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b284666" class="mesto-block__chip mesto-block__chip--link">База знаний сотрудников</a>
+      <div class="mesto-block__chip mesto-block__chip--static">Геймификация и вовлечение</div>
+      <div class="mesto-block__chip mesto-block__chip--static">Внутренние коммуникации</div>
+      <a href="https://www.bitrix24.ru/promo/hr-baza/#b283726" class="mesto-block__chip mesto-block__chip--link">Бронирование рабочих мест</a>
+      <div class="mesto-block__chip mesto-block__chip--static">Повышение эффективности</div>
     </div>
   </div>
 </section>
@@ -57,9 +57,13 @@
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .mesto-block__chip:hover {
+  .mesto-block__chip--link:hover {
     background-color: rgba(47, 111, 222, 0.08);
     box-shadow: 0 8px 20px rgba(47, 111, 222, 0.14);
+  }
+
+  .mesto-block__chip--static {
+    cursor: default;
   }
 
   .mesto-block__chip:focus-visible {
