@@ -4,12 +4,20 @@
     <p class="analytics-hero__subtitle">
       Помогает бизнесу принимать решения на основе данных. Создавайте свои отчёты по окупаемости рекламы в удобном конструкторе
     </p>
-    <a
-      class="analytics-hero__cta"
-      href="https://www.bitrix24.ru/create.php?b24_type=crm_analytics"
-      role="button"
-      >бесплатная консультация</a
-    >
+    <div class="analytics-hero__actions" role="group" aria-label="Основные действия">
+      <a
+        class="analytics-hero__cta analytics-hero__cta--primary"
+        href="https://www.bitrix24.ru/create.php?b24_type=crm_analytics"
+        role="button"
+        >Бесплатная консультация</a
+      >
+      <a
+        class="analytics-hero__cta analytics-hero__cta--secondary"
+        href="https://www.bitrix24.ru/create.php?b24_type=crm_analytics"
+        role="button"
+        >Попробовать демо</a
+      >
+    </div>
 
     <div class="analytics-hero__visual">
       <img
@@ -55,52 +63,88 @@
     color: rgb(72, 98, 123);
   }
 
+  .analytics-hero__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: clamp(26px, 3.4vw, 38px);
+  }
+
   .analytics-hero__cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: clamp(26px, 3.4vw, 38px);
-    padding: 18px 38px;
+    height: 60px;
+    padding: 0 36px;
+    border: 2px solid transparent;
     border-radius: 999px;
-    background: #c4f000;
-    color: #000;
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(1rem, 1.8vw, 18px);
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    line-height: 1;
     text-decoration: none;
+    white-space: nowrap;
     opacity: 1;
     mix-blend-mode: normal;
-    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
   .analytics-hero__cta,
   .analytics-hero__cta:link,
-  .analytics-hero__cta:visited,
-  .analytics-hero__cta span {
-    color: #000;
+  .analytics-hero__cta:visited {
     opacity: 1;
     text-decoration: none;
   }
 
-  .analytics-hero__cta:hover,
-  .analytics-hero__cta:focus,
-  .analytics-hero__cta:focus-visible,
-  .analytics-hero__cta:active,
-  .analytics-hero__cta:hover span,
-  .analytics-hero__cta:focus span,
-  .analytics-hero__cta:focus-visible span,
-  .analytics-hero__cta:active span {
-    color: #000;
-    opacity: 1;
-    text-decoration: none;
-    transform: translateY(-3px);
-    background-color: #dbff2f;
-    box-shadow: 0 18px 34px rgba(196, 240, 0, 0.6), 0 8px 18px rgba(16, 44, 94, 0.22);
+  .analytics-hero__cta--primary,
+  .analytics-hero__cta--primary:link,
+  .analytics-hero__cta--primary:visited {
+    background: #bdf300;
+    color: #12112f;
+  }
+
+  .analytics-hero__cta--secondary,
+  .analytics-hero__cta--secondary:link,
+  .analytics-hero__cta--secondary:visited {
+    background: transparent;
+    border-color: #3277fd;
+    color: #3277fd;
+  }
+
+  .analytics-hero__cta--primary:hover,
+  .analytics-hero__cta--primary:focus,
+  .analytics-hero__cta--primary:focus-visible,
+  .analytics-hero__cta--primary:active {
+    background: #bdf300;
+    color: #12112f;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35);
     outline: none;
     filter: none;
     mix-blend-mode: normal;
+  }
+
+  .analytics-hero__cta--secondary:hover,
+  .analytics-hero__cta--secondary:focus,
+  .analytics-hero__cta--secondary:focus-visible,
+  .analytics-hero__cta--secondary:active {
+    background: #3277fd;
+    border-color: #3277fd;
+    color: #fff;
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .analytics-hero__cta:focus-visible {
+    box-shadow: 0 0 0 4px rgba(50, 119, 253, 0.18);
+  }
+
+  .analytics-hero__cta--primary:focus-visible {
+    box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35), 0 0 0 4px rgba(189, 243, 0, 0.28);
   }
 
   .analytics-hero__visual {
@@ -140,9 +184,13 @@
       line-height: 1.55;
     }
 
+    .analytics-hero__actions {
+      gap: 14px;
+    }
+
     .analytics-hero__cta {
       width: min(100%, 340px);
-      padding: 16px 24px;
+      padding: 0 24px;
     }
 
     .analytics-hero__visual {
