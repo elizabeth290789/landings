@@ -1,0 +1,31 @@
+<div id="b287602" class="consultation-form-anchor"></div>
+
+<div class="consultation-form-block">
+  <h2>Бесплатная консультация</h2>
+  <p>по внедрению корпоративного портала Битрикс24</p>
+
+  <script data-b24-form="inline/3812/fd4dws" data-skip-moving="true">
+    (function(w,d,u){var s=d.createElement('script');
+      s.async=true;
+      s.src=u+'?'+(Date.now()/180000|0);
+      var h=d.getElementsByTagName('script')[0];
+      h.parentNode.insertBefore(s,h);})(window,document,'https://bitrix24.team/upload/crm/form/loader_3812_fd4dws.js');
+  </script>
+</div>
+
+<style>
+.consultation-form-anchor{display: block;
+  position: relative;
+  top: -110px;
+  visibility: hidden;}.consultation-form-block{background: linear-gradient(135deg, #2934a1 0%, #692eca 100%);
+  border-radius: 32px;
+  padding: 60px 40px;
+  text-align: center;
+  color: #ffffff;}.consultation-form-block h2{margin: 0 0 16px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;}.consultation-form-block p{margin: 0 0 40px;
+  font-size: 22px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.88);}</style>
