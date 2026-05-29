@@ -68,7 +68,7 @@
 
 <style>
   .korportal-block {
-    padding: 100px 20px;
+    padding: 80px 20px;
     background: #ffffff;
     color: rgb(18, 17, 47);
     font-family: "Noto Sans", sans-serif;
@@ -133,6 +133,10 @@
   }
 
   @media (max-width: 991px) {
+    .korportal-block {
+      padding: 64px 20px;
+    }
+
     .korportal-block__title {
       margin-bottom: 40px;
       font-size: 36px;
@@ -149,6 +153,12 @@
 
     .korportal-block__icon {
       margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .korportal-block {
+      padding: 56px 16px;
     }
   }
 </style>

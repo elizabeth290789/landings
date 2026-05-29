@@ -60,11 +60,6 @@
         </p>
       </article>
     </div>
-
-    <div class="hr-automation-block__actions" role="group" aria-label="Основные действия">
-      <a class="hr-automation-block__button" href="https://www.bitrix24.ru/promo/hr-baza/#demo-form" target="_self">ЗАПРОСИТЬ ДЕМО</a>
-      <a class="hr-automation-block__button" href="#" target="_self">ПОПРОБОВАТЬ БЕСПЛАТНО</a>
-    </div>
   </div>
 </section>
 
@@ -75,7 +70,7 @@
   }
 
   .hr-automation-block {
-    padding: 100px 20px;
+    padding: 80px 20px;
     background: #ffffff;
     color: rgb(18, 17, 47);
     font-family: "Noto Sans", sans-serif;
@@ -138,52 +133,9 @@
     line-height: 22px;
   }
 
-  .hr-automation-block__actions {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 48px;
-  }
-
-  .hr-automation-block__button,
-  .hr-automation-block__button:visited,
-  .hr-automation-block__button:focus,
-  .hr-automation-block__button:active {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    height: 44px;
-    padding: 0 28px;
-    border: 0;
-    border-radius: 999px;
-    background: #bdf300;
-    color: rgb(18, 17, 47);
-    font-family: "Noto Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-    box-shadow: 0 10px 20px rgba(94, 132, 0, .16), inset 0 1px 0 rgba(255, 255, 255, .38);
-    transition: background-color .24s ease, box-shadow .24s ease, transform .24s ease;
-  }
-
-  .hr-automation-block__button:hover,
-  .hr-automation-block__button:focus-visible {
-    background: #d7ff2f;
-    color: rgb(18, 17, 47);
-    text-decoration: none;
-    box-shadow: 0 14px 26px rgba(94, 132, 0, .24), 0 0 24px rgba(191, 247, 28, .36), inset 0 1px 0 rgba(255, 255, 255, .5);
-    transform: translateY(-1px);
-  }
-
   @media (max-width: 991px) {
     .hr-automation-block {
-      padding: 72px 20px;
+      padding: 64px 20px;
     }
 
     .hr-automation-block__title {
@@ -203,27 +155,11 @@
     .hr-automation-block__icon {
       margin: 0 auto;
     }
-
-    .hr-automation-block__actions {
-      max-width: 560px;
-      margin: 40px auto 0;
-      gap: 12px;
-    }
   }
 
   @media (max-width: 575px) {
     .hr-automation-block {
-      padding: 64px 16px;
-    }
-
-    .hr-automation-block__actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .hr-automation-block__button {
-      width: 100%;
-      white-space: normal;
+      padding: 56px 16px;
     }
   }
 </style>
