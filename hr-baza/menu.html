@@ -250,19 +250,3 @@
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var logoLink = document.querySelector('.ip-telephony-menu__logo-link');
-    if (!logoLink) {
-      return;
-    }
-
-    logoLink.addEventListener('click', function (event) {
-      event.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
