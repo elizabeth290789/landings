@@ -14,6 +14,35 @@
           s.src=u+'?'+(Date.now()/180000|0);
           var h=d.getElementsByTagName('script')[0];
           h.parentNode.insertBefore(s,h);})(window,document,'https://bitrix24.team/upload/crm/form/loader_3812_fd4dws.js');
+
+        window.addEventListener("b24:form:init", function(event){
+          let form = event.detail.object;
+          let blockedEmails = ['@mail', '@inbox.ru', '@rambler', '@yandex.ru', '@gmail', '@live.come', '@outlook.com', '@yahoo', '@vk.com', '@vk.ru', '@ya.ru', '@bk.ru', 'list.ru'];
+
+          if (Number(form.identification.id) === 2626) {
+            form.subscribe('field:change:selected', (data) => {
+              if (data.field.type == 'email') {
+                let errorEmail = false;
+
+                blockedEmails.forEach(function(item) {
+                  if (data.data.item.value.indexOf(item) !== -1) {
+                    errorEmail = true;
+                  }
+                });
+
+                if (errorEmail) {
+                  data.field.hint = 'Укажите, пожалуйста, корпоративный e-mail';
+                  document.querySelector(".b24-form-btn").disabled = true;
+                  document.querySelector(".b24-form-btn").style.opacity = "0.5";
+                } else {
+                  data.field.hint = '';
+                  document.querySelector(".b24-form-btn").style.opacity = "1";
+                  document.querySelector(".b24-form-btn").disabled = false;
+                }
+              }
+            });
+          }
+        });
       </script>
     </div>
   </div>
