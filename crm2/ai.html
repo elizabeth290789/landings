@@ -25,8 +25,8 @@
                 Агент Марта — ваш персональный помощник в Битрикс24. Поможет настроить CRM под задачи вашего бизнеса: создаст воронки продаж, стадии и пользовательские поля.
               </p>
             </div>
-            <div class="crm2-ai__media">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/0b1/rh19zx97kehmk7n6yb1qi7ubadto2xcw.1099w.png.webp?1780063682225" alt="Агент Марта помогает настроить CRM" loading="lazy" />
+            <div class="crm2-ai__media crm2-ai__media--crm">
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/2.1176w.png.webp?1780063682225" alt="Агент Марта помогает настроить CRM" loading="lazy" />
             </div>
           </article>
 
@@ -38,8 +38,8 @@
                 Искусственный интеллект на базе BitrixGPT анализирует чаты и расшифровывает звонки с клиентами, выделяет ключевые моменты и заполняет карточку сделки в CRM без участия менеджера.
               </p>
             </div>
-            <div class="crm2-ai__media">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/936/1iry8rq7n8ws9uvwmip7v2ceyg91bcag.1099w.png.webp?1780063682225" alt="BitrixGPT заполняет карточку сделки в CRM" loading="lazy" />
+            <div class="crm2-ai__media crm2-ai__media--crm">
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/10.1901w.png.webp?1780063682225" alt="BitrixGPT заполняет карточку сделки в CRM" loading="lazy" />
             </div>
           </article>
 
@@ -52,7 +52,7 @@
               </p>
             </div>
             <div class="crm2-ai__media">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/0ef/riuo4f9d36lnqh5ksb9d6gbwqmhf3hsb.1099w.png.webp?1780063682225" alt="Создание скриптов продаж с помощью ИИ" loading="lazy" />
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/771.768w.png.webp?1780063682225" alt="Создание скриптов продаж с помощью ИИ" loading="lazy" />
             </div>
           </article>
 
@@ -65,7 +65,7 @@
               </p>
             </div>
             <div class="crm2-ai__media">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/8d9/58xtgfhs6j9patziic3468j98o319mkc.1099w.png.webp?1780063682225" alt="Речевая аналитика звонков в CRM" loading="lazy" />
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/772.768w.png.webp?1780063682225" alt="Речевая аналитика звонков в CRM" loading="lazy" />
             </div>
           </article>
 
@@ -78,7 +78,7 @@
               </p>
             </div>
             <div class="crm2-ai__media">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/afe/3us1beb0iqhoyv9joqikz4ffsueb8jfs.1099w.png.webp?1780063682225" alt="Рекомендации AI для повторных продаж" loading="lazy" />
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/72.1176w.png.webp?1780063682225" alt="Рекомендации AI для повторных продаж" loading="lazy" />
             </div>
           </article>
 
@@ -90,8 +90,8 @@
                 После анализа звонка AI самостоятельно создаст дела по результатам разговора с клиентом. Теперь вы не упустите важные детали или напоминания, а процент успешных сделок будет расти.
               </p>
             </div>
-            <div class="crm2-ai__media crm2-ai__media--compact">
-              <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/5f2/io177tnvx7sy3qhaf6qzyfvgu9vdrwua.623w.png.webp?1780063682225" alt="Автоматическое создание дел после звонка" loading="lazy" />
+            <div class="crm2-ai__media">
+              <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/773.768w.png.webp?1780063682225" alt="Автоматическое создание дел после звонка" loading="lazy" />
             </div>
           </article>
         </div>
@@ -481,7 +481,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 360px;
+    height: clamp(360px, 35vw, 430px);
+    min-height: 0;
+    padding: clamp(10px, 1.6vw, 22px);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 28px;
@@ -494,8 +496,7 @@
   .crm2-ai__media img {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 430px;
+    height: 100%;
     object-fit: contain;
     object-position: center;
     user-select: none;
@@ -503,10 +504,8 @@
     filter: drop-shadow(0 22px 34px rgba(3, 8, 36, 0.28));
   }
 
-  .crm2-ai__media--compact img {
-    width: auto;
-    max-width: 100%;
-    max-height: 455px;
+  .crm2-ai__media--crm {
+    padding: clamp(6px, 1vw, 14px);
   }
 
   .crm2-ai__controls {
@@ -595,7 +594,7 @@
     }
 
     .crm2-ai__media {
-      min-height: 310px;
+      height: 330px;
     }
   }
 
@@ -642,12 +641,8 @@
     }
 
     .crm2-ai__media {
-      min-height: 0;
+      height: clamp(220px, 62vw, 300px);
       border-radius: 22px;
-    }
-
-    .crm2-ai__media img {
-      max-height: 300px;
     }
 
     .crm2-ai__controls {
@@ -682,8 +677,8 @@
       padding: 20px;
     }
 
-    .crm2-ai__media img {
-      max-height: 250px;
+    .crm2-ai__media {
+      height: clamp(200px, 66vw, 250px);
     }
 
     .crm2-ai__dot {
