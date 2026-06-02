@@ -110,8 +110,11 @@
 
 <style>
   .crm2-hero-custom,
-  .crm2-hero-custom * {
+  .crm2-hero-custom *,
+  .crm2-hero-custom *::before,
+  .crm2-hero-custom *::after {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .crm2-hero-custom {
@@ -132,7 +135,7 @@
     padding: clamp(34px, 4vw, 64px) clamp(16px, 4vw, 56px) clamp(38px, 4.5vw, 68px);
     overflow: hidden;
     color: var(--crm2-white);
-    font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background:
       radial-gradient(circle at 18% 24%, rgba(35, 126, 255, 0.92) 0%, rgba(35, 126, 255, 0.48) 28%, rgba(35, 126, 255, 0) 54%),
       radial-gradient(circle at 50% 8%, rgba(143, 55, 236, 0.84) 0%, rgba(143, 55, 236, 0.46) 34%, rgba(143, 55, 236, 0) 58%),
@@ -223,7 +226,7 @@
   .crm2-hero-title {
     max-width: 780px;
     margin: 0;
-    font-family: Futura-PT, Futura-PT-Bold, "PT Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 50px;
@@ -291,7 +294,7 @@
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
     box-shadow: 0 14px 34px rgba(18, 21, 88, 0.18), 0 0 22px rgba(202, 255, 22, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.22);
-    font-family: Futura-PT, Futura-PT-Bold, "PT Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -469,7 +472,7 @@
 
   .crm2-hero-custom .crm2-trust-panel .crm2-trust-item > p,
   .crm2-hero-custom .crm2-trust-panel .crm2-trust-item > p > strong {
-    font-family: Futura-PT, Futura-PT-Bold, "PT Sans", Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
     font-style: normal !important;
     font-weight: 600 !important;
     font-size: 17px !important;
