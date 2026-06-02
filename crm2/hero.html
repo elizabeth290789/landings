@@ -7,10 +7,17 @@
 
   <div class="crm2-hero-inner">
     <div class="crm2-hero-content">
-      <h1 class="crm2-hero-title">Бесплатная CRM №1 в России</h1>
+      <h1 class="crm2-hero-title">Бесплатная онлайн CRM</h1>
 
       <p class="crm2-hero-subtitle">
-        Управляйте клиентами, автоматизируйте продажи и контролируйте работу менеджеров в одной CRM-системе
+        Управляйте клиентами, автоматизируйте работу менеджеров и увеличивайте продажи с
+        <a
+          class="crm2-hero-subtitle-link"
+          href="https://json.tv/analytic/analiz-populyarnosti-crm-na-rossijskom-rynke/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >CRM-системой №1</a>
+        в России
       </p>
 
       <ul class="crm2-feature-chips" aria-label="Преимущества CRM">
@@ -226,13 +233,33 @@
   }
 
   .crm2-hero-subtitle {
-    max-width: 800px;
+    max-width: 960px;
     margin: clamp(16px, 1.8vw, 24px) 0 0;
     color: rgba(255, 255, 255, 0.94);
     font-size: clamp(18px, 1.45vw, 24px);
     line-height: 1.4;
     font-weight: 500;
     text-wrap: balance;
+  }
+
+  .crm2-hero-subtitle-link {
+    color: var(--crm2-lime);
+    text-decoration: none;
+    text-underline-offset: 0.16em;
+    transition: color 0.2s ease, filter 0.2s ease;
+  }
+
+  .crm2-hero-subtitle-link:hover,
+  .crm2-hero-subtitle-link:focus-visible {
+    color: var(--crm2-lime-hover);
+    text-decoration: underline;
+    filter: brightness(1.08);
+  }
+
+  .crm2-hero-subtitle-link:focus-visible {
+    outline: 2px solid rgba(202, 255, 22, 0.6);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   .crm2-feature-chips {
