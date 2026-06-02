@@ -217,7 +217,7 @@
   }
 
   .crm2-ai__product {
-    overflow: hidden;
+    overflow: visible;
     padding: clamp(28px, 4vw, 48px);
     border-radius: 32px;
     background: var(--crm2-ai-surface);
@@ -226,11 +226,15 @@
   .crm2-ai__tabs {
     display: flex;
     gap: 10px;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
-    margin: 0 0 clamp(28px, 3.4vw, 44px);
-    padding: 0 0 4px;
+    margin: -4px 0 clamp(28px, 3.4vw, 44px);
+    padding: 4px 32px 12px;
     overflow-x: auto;
     overflow-y: hidden;
+    scroll-padding-right: 32px;
+    scroll-padding-left: 32px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -458,9 +462,10 @@
     }
 
     .crm2-ai__tabs {
-      margin-right: -20px;
-      margin-left: -20px;
-      padding: 0 20px 4px;
+      padding-right: 24px;
+      padding-left: 24px;
+      scroll-padding-right: 24px;
+      scroll-padding-left: 24px;
     }
 
     .crm2-ai__tab {
@@ -502,10 +507,10 @@
     }
 
     .crm2-ai__tabs {
-      margin-right: -18px;
-      margin-left: -18px;
-      padding-right: 18px;
-      padding-left: 18px;
+      padding-right: 24px;
+      padding-left: 24px;
+      scroll-padding-right: 24px;
+      scroll-padding-left: 24px;
     }
   }
 
