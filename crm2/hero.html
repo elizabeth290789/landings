@@ -274,29 +274,33 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    gap: 12px;
+    gap: 14px 18px;
     list-style: none;
   }
 
   .crm2-feature-chips li {
+    flex: 0 0 auto;
     display: flex;
     align-items: stretch;
+    width: auto;
+    min-width: max-content;
   }
 
   .crm2-feature-chip {
     width: auto;
-    min-width: 250px;
+    min-width: max-content;
+    flex: 0 0 auto;
     height: 46px;
     min-height: 46px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 0 18px;
+    padding: 0 32px;
     border: 1px solid rgba(194, 255, 0, 0.6);
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.13));
-    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 14px 34px rgba(18, 21, 88, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    box-shadow: none;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -306,9 +310,9 @@
     text-align: center;
     white-space: nowrap;
     overflow-wrap: normal;
-    word-break: keep-all;
+    word-break: normal;
     cursor: pointer;
-    outline: none;
+    outline: none !important;
     appearance: none;
     -webkit-appearance: none;
     backdrop-filter: blur(16px);
@@ -316,12 +320,11 @@
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
 
-  .crm2-feature-chips li:nth-child(4) .crm2-feature-chip {
-    min-width: 306px;
-  }
-
+  .crm2-feature-chips li:nth-child(4) .crm2-feature-chip,
   .crm2-feature-chips li:nth-child(7) .crm2-feature-chip {
-    min-width: 286px;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
   }
 
   .crm2-feature-chip span {
@@ -337,27 +340,31 @@
     color: rgba(255, 255, 255, 0.38);
     font-size: 13px;
     font-weight: 900;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    box-shadow: none;
     transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
   }
 
-  .crm2-feature-chip.is-active {
-    border-color: rgba(194, 255, 0, 0.72);
+  .crm2-feature-chip.is-active,
+  .crm2-feature-chip.active,
+  .crm2-feature-chip.selected,
+  .crm2-feature-chip.checked {
+    border: 1px solid rgba(198, 255, 0, 0.9);
+    outline: none !important;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.31), rgba(202, 255, 22, 0.16));
-    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 18px 38px rgba(18, 21, 88, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    box-shadow: none;
   }
 
   .crm2-feature-chip.is-active span {
     border-color: #19de1d;
     background: #19de1d;
     color: #fff;
-    box-shadow: 0 0 0 4px rgba(25, 222, 29, 0.16);
+    box-shadow: none;
   }
 
   .crm2-feature-chip:not(.is-active) {
     border-color: rgba(255, 255, 255, 0.28);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07));
-    box-shadow: 0 12px 28px rgba(18, 21, 88, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    box-shadow: none;
     opacity: 0.82;
   }
 
@@ -366,14 +373,27 @@
     transform: translateY(-3px);
     border-color: rgba(202, 255, 22, 0.9);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(202, 255, 22, 0.17));
-    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 20px 42px rgba(18, 21, 88, 0.24), 0 0 26px rgba(202, 255, 22, 0.17);
+    box-shadow: none;
     opacity: 1;
   }
 
+  .crm2-feature-chip:hover,
+  .crm2-feature-chip:active,
   .crm2-feature-chip:focus,
   .crm2-feature-chip:focus-visible,
-  .crm2-feature-chip:active {
-    outline: none;
+  .crm2-feature-chip.active,
+  .crm2-feature-chip.selected,
+  .crm2-feature-chip.checked,
+  .crm2-feature-chip.is-active,
+  input:checked + .crm2-feature-chip,
+  button.crm2-feature-chip:focus,
+  button.crm2-feature-chip:focus-visible {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .crm2-feature-chip::-moz-focus-inner {
+    border: 0;
   }
 
   .crm2-hero-cta {
@@ -548,18 +568,14 @@
     }
 
     .crm2-feature-chips li {
-      flex: 1 1 calc(50% - 12px);
-      min-width: min(100%, 270px);
+      flex: 0 0 auto;
+      width: auto;
+      min-width: max-content;
     }
 
     .crm2-feature-chip {
-      width: 100%;
-      min-width: 0;
-    }
-
-    .crm2-feature-chips li:nth-child(4) .crm2-feature-chip,
-    .crm2-feature-chips li:nth-child(7) .crm2-feature-chip {
-      min-width: 0;
+      width: auto;
+      min-width: max-content;
     }
 
     .crm2-product-image {
@@ -592,15 +608,20 @@
     }
 
     .crm2-feature-chips li {
-      flex-basis: 100%;
+      flex: 0 0 auto;
+      width: auto;
+      min-width: max-content;
     }
 
     .crm2-feature-chip {
+      width: auto;
+      min-width: max-content;
       height: 44px;
       min-height: 44px;
-      justify-content: flex-start;
-      padding: 0 14px;
-      text-align: left;
+      justify-content: center;
+      padding-right: 32px;
+      padding-left: 32px;
+      text-align: center;
     }
 
     .crm2-hero-cta {
@@ -649,6 +670,44 @@
       text-align: left;
       text-wrap: pretty;
     }
+  }
+
+
+  .crm2-hero-custom .crm2-feature-chip,
+  .crm2-hero-custom .crm2-feature-chip:hover,
+  .crm2-hero-custom .crm2-feature-chip:active,
+  .crm2-hero-custom .crm2-feature-chip:focus,
+  .crm2-hero-custom .crm2-feature-chip:focus-visible,
+  .crm2-hero-custom .crm2-feature-chip.active,
+  .crm2-hero-custom .crm2-feature-chip.selected,
+  .crm2-hero-custom .crm2-feature-chip.checked,
+  .crm2-hero-custom .crm2-feature-chip.is-active,
+  .crm2-hero-custom input:checked + label.crm2-feature-chip,
+  .crm2-hero-custom input:checked + .crm2-feature-chip,
+  .crm2-hero-custom button.crm2-feature-chip:focus,
+  .crm2-hero-custom button.crm2-feature-chip:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .crm2-hero-custom .crm2-feature-chip:hover,
+  .crm2-hero-custom .crm2-feature-chip:active,
+  .crm2-hero-custom .crm2-feature-chip:focus,
+  .crm2-hero-custom .crm2-feature-chip:focus-visible,
+  .crm2-hero-custom .crm2-feature-chip.active,
+  .crm2-hero-custom .crm2-feature-chip.selected,
+  .crm2-hero-custom .crm2-feature-chip.checked,
+  .crm2-hero-custom .crm2-feature-chip.is-active,
+  .crm2-hero-custom input:checked + label.crm2-feature-chip,
+  .crm2-hero-custom input:checked + .crm2-feature-chip {
+    border: 1px solid rgba(198, 255, 0, 0.9) !important;
+  }
+
+  .crm2-hero-custom .crm2-feature-chip,
+  .crm2-hero-custom .crm2-feature-chip * {
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   @media (max-width: 380px) {
