@@ -125,7 +125,7 @@
     padding: clamp(34px, 4vw, 64px) clamp(16px, 4vw, 56px) clamp(38px, 4.5vw, 68px);
     overflow: hidden;
     color: var(--crm2-white);
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background:
       radial-gradient(circle at 18% 24%, rgba(35, 126, 255, 0.92) 0%, rgba(35, 126, 255, 0.48) 28%, rgba(35, 126, 255, 0) 54%),
       radial-gradient(circle at 50% 8%, rgba(143, 55, 236, 0.84) 0%, rgba(143, 55, 236, 0.46) 34%, rgba(143, 55, 236, 0) 58%),
@@ -214,30 +214,30 @@
   }
 
   .crm2-hero-title {
-    max-width: 960px;
+    max-width: 780px;
     margin: 0;
     color: #fff;
-    font-size: clamp(46px, 5.35vw, 78px);
-    line-height: 0.98;
-    font-weight: 900;
-    letter-spacing: -0.045em;
+    font-size: clamp(42px, 5vw, 76px);
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: -0.03em;
     text-wrap: balance;
-    text-shadow: 0 16px 44px rgba(18, 28, 86, 0.3);
+    text-shadow: 0 14px 36px rgba(18, 28, 86, 0.26);
   }
 
   .crm2-hero-subtitle {
-    max-width: 840px;
+    max-width: 800px;
     margin: clamp(16px, 1.8vw, 24px) 0 0;
-    color: rgba(255, 255, 255, 0.93);
-    font-size: clamp(18px, 1.45vw, 23px);
-    line-height: 1.45;
-    font-weight: 600;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(18px, 1.45vw, 24px);
+    line-height: 1.4;
+    font-weight: 500;
     text-wrap: balance;
   }
 
   .crm2-feature-chips {
     width: 100%;
-    max-width: 996px;
+    max-width: 1060px;
     margin: clamp(24px, 2.6vw, 36px) auto 0;
     padding: 0;
     display: flex;
@@ -252,23 +252,23 @@
   }
 
   .crm2-feature-chip {
-    width: 240px;
+    width: 250px;
     min-height: 46px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 16px;
+    padding: 11px 16px;
     border: 1px solid rgba(202, 255, 22, 0.76);
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
     box-shadow: 0 14px 34px rgba(18, 21, 88, 0.18), 0 0 22px rgba(202, 255, 22, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     color: #fff;
     font: inherit;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.01em;
+    font-size: 16px;
+    line-height: 1.24;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     text-align: center;
     cursor: pointer;
     appearance: none;
@@ -338,8 +338,8 @@
     text-transform: uppercase;
     font-size: 14px;
     line-height: 1.15;
-    font-weight: 900;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: 0.018em;
     transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
   }
 
@@ -494,14 +494,15 @@
     }
 
     .crm2-hero-title {
-      font-size: clamp(32px, 9.2vw, 38px);
-      line-height: 1.06;
-      letter-spacing: -0.035em;
+      max-width: 480px;
+      font-size: clamp(38px, 10vw, 46px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
     }
 
     .crm2-hero-subtitle {
       font-size: 16px;
-      line-height: 1.46;
+      line-height: 1.42;
     }
 
     .crm2-feature-chips {
@@ -516,8 +517,10 @@
     .crm2-feature-chip {
       min-height: 44px;
       justify-content: flex-start;
-      padding: 11px 14px;
-      font-size: 13px;
+      padding: 10px 14px;
+      font-size: 15px;
+      line-height: 1.24;
+      font-weight: 600;
       text-align: left;
     }
 
@@ -578,7 +581,7 @@
     }
 
     .crm2-feature-chip {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 </style>
