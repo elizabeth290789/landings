@@ -217,7 +217,7 @@
 
   .crm2-hero-content {
     width: 100%;
-    max-width: 1040px;
+    max-width: 1168px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,33 +267,36 @@
 
   .crm2-feature-chips {
     width: 100%;
-    max-width: 1060px;
+    max-width: 1168px;
     margin: clamp(24px, 2.6vw, 36px) auto 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
     gap: 12px;
     list-style: none;
   }
 
   .crm2-feature-chips li {
     display: flex;
+    align-items: stretch;
   }
 
   .crm2-feature-chip {
-    width: 250px;
+    width: auto;
+    min-width: 250px;
     height: 46px;
     min-height: 46px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 0 16px;
-    border: 1px solid rgba(202, 255, 22, 0.76);
+    padding: 0 18px;
+    border: 1px solid rgba(194, 255, 0, 0.6);
     border-radius: 999px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
-    box-shadow: 0 14px 34px rgba(18, 21, 88, 0.18), 0 0 22px rgba(202, 255, 22, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.13));
+    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 14px 34px rgba(18, 21, 88, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -301,12 +304,24 @@
     line-height: 18px;
     color: #ffffff;
     text-align: center;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
     cursor: pointer;
+    outline: none;
     appearance: none;
     -webkit-appearance: none;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  .crm2-feature-chips li:nth-child(4) .crm2-feature-chip {
+    min-width: 306px;
+  }
+
+  .crm2-feature-chips li:nth-child(7) .crm2-feature-chip {
+    min-width: 286px;
   }
 
   .crm2-feature-chip span {
@@ -326,6 +341,12 @@
     transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
   }
 
+  .crm2-feature-chip.is-active {
+    border-color: rgba(194, 255, 0, 0.72);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.31), rgba(202, 255, 22, 0.16));
+    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 18px 38px rgba(18, 21, 88, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  }
+
   .crm2-feature-chip.is-active span {
     border-color: #19de1d;
     background: #19de1d;
@@ -340,17 +361,19 @@
     opacity: 0.82;
   }
 
-  .crm2-feature-chip:hover {
+  .crm2-feature-chip:hover,
+  .crm2-feature-chip:focus-visible {
     transform: translateY(-3px);
     border-color: rgba(202, 255, 22, 0.9);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.29), rgba(255, 255, 255, 0.15));
-    box-shadow: 0 20px 42px rgba(18, 21, 88, 0.24), 0 0 26px rgba(202, 255, 22, 0.17);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(202, 255, 22, 0.17));
+    box-shadow: 0 8px 24px rgba(194, 255, 0, 0.18), 0 20px 42px rgba(18, 21, 88, 0.24), 0 0 26px rgba(202, 255, 22, 0.17);
     opacity: 1;
   }
 
-  .crm2-feature-chip:focus-visible {
-    outline: 3px solid rgba(255, 255, 255, 0.58);
-    outline-offset: 4px;
+  .crm2-feature-chip:focus,
+  .crm2-feature-chip:focus-visible,
+  .crm2-feature-chip:active {
+    outline: none;
   }
 
   .crm2-hero-cta {
@@ -531,6 +554,12 @@
 
     .crm2-feature-chip {
       width: 100%;
+      min-width: 0;
+    }
+
+    .crm2-feature-chips li:nth-child(4) .crm2-feature-chip,
+    .crm2-feature-chips li:nth-child(7) .crm2-feature-chip {
+      min-width: 0;
     }
 
     .crm2-product-image {
