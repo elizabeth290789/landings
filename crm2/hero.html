@@ -14,13 +14,13 @@
       </p>
 
       <ul class="crm2-feature-chips" aria-label="Преимущества CRM">
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Управление базой клиентов</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Лиды и сделки</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Воронка продаж</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Мессенджеры и соцсети</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Сквозная аналитика</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Задачи и проекты</li>
-        <li class="crm2-feature-chip"><span aria-hidden="true">✓</span>Автоматизация продаж</li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Управление базой клиентов</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Лиды и сделки</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Воронка продаж</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Мессенджеры и соцсети</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Сквозная аналитика</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Задачи и проекты</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Автоматизация продаж</button></li>
       </ul>
 
       <a
@@ -91,6 +91,15 @@
     </a>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.crm2-feature-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const isActive = chip.classList.toggle('is-active');
+      chip.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+</script>
 
 <style>
   .crm2-hero-custom,
@@ -198,7 +207,7 @@
 
   .crm2-hero-content {
     width: 100%;
-    max-width: 980px;
+    max-width: 1040px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +237,7 @@
 
   .crm2-feature-chips {
     width: 100%;
-    max-width: 920px;
+    max-width: 996px;
     margin: clamp(24px, 2.6vw, 36px) auto 0;
     padding: 0;
     display: flex;
@@ -238,25 +247,35 @@
     list-style: none;
   }
 
+  .crm2-feature-chips li {
+    display: flex;
+  }
+
   .crm2-feature-chip {
+    width: 240px;
     min-height: 46px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 18px;
-    border: 1px solid rgba(202, 255, 22, 0.46);
+    padding: 12px 16px;
+    border: 1px solid rgba(202, 255, 22, 0.76);
     border-radius: 999px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.19), rgba(255, 255, 255, 0.1));
-    box-shadow: 0 14px 34px rgba(18, 21, 88, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.12));
+    box-shadow: 0 14px 34px rgba(18, 21, 88, 0.18), 0 0 22px rgba(202, 255, 22, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     color: #fff;
+    font: inherit;
     font-size: 14px;
     line-height: 1.2;
     font-weight: 800;
     letter-spacing: -0.01em;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
 
   .crm2-feature-chip span {
@@ -266,19 +285,41 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.42);
     border-radius: 50%;
-    background: #19de1d;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.13);
+    color: rgba(255, 255, 255, 0.38);
     font-size: 13px;
     font-weight: 900;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  }
+
+  .crm2-feature-chip.is-active span {
+    border-color: #19de1d;
+    background: #19de1d;
+    color: #fff;
     box-shadow: 0 0 0 4px rgba(25, 222, 29, 0.16);
+  }
+
+  .crm2-feature-chip:not(.is-active) {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07));
+    box-shadow: 0 12px 28px rgba(18, 21, 88, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    opacity: 0.82;
   }
 
   .crm2-feature-chip:hover {
     transform: translateY(-3px);
-    border-color: rgba(202, 255, 22, 0.82);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.27), rgba(255, 255, 255, 0.14));
-    box-shadow: 0 20px 42px rgba(18, 21, 88, 0.24), 0 0 24px rgba(202, 255, 22, 0.14);
+    border-color: rgba(202, 255, 22, 0.9);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.29), rgba(255, 255, 255, 0.15));
+    box-shadow: 0 20px 42px rgba(18, 21, 88, 0.24), 0 0 26px rgba(202, 255, 22, 0.17);
+    opacity: 1;
+  }
+
+  .crm2-feature-chip:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.58);
+    outline-offset: 4px;
   }
 
   .crm2-hero-cta {
@@ -428,9 +469,13 @@
       max-width: 760px;
     }
 
-    .crm2-feature-chip {
+    .crm2-feature-chips li {
       flex: 1 1 calc(50% - 12px);
       min-width: min(100%, 270px);
+    }
+
+    .crm2-feature-chip {
+      width: 100%;
     }
 
     .crm2-product-image {
@@ -464,8 +509,11 @@
       margin-top: 22px;
     }
 
+    .crm2-feature-chips li {
+      flex-basis: 100%;
+    }
+
     .crm2-feature-chip {
-      flex: 1 1 100%;
       min-height: 44px;
       justify-content: flex-start;
       padding: 11px 14px;
