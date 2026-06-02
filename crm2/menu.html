@@ -186,9 +186,9 @@
     text-decoration: none !important;
     text-shadow: none !important;
     -webkit-text-stroke: 0 transparent;}.b24-landing-header__link:hover::after,
-  .b24-landing-header__link:active::after,
   .b24-landing-header__link:focus::after,
-  .b24-landing-header__link:focus-visible::after,
+  .b24-landing-header__link:focus-visible::after{opacity: 1;
+    transform: scaleX(1);}.b24-landing-header__link:active::after,
   .b24-landing-header__link.current::after,
   .b24-landing-header__link.is-current::after,
   .b24-landing-header__link.active::after,
@@ -196,8 +196,8 @@
   .b24-landing-header__link.selected::after,
   .b24-landing-header__link.is-selected::after,
   .b24-landing-header__link[aria-current]::after,
-  .b24-landing-header__link[aria-selected='true']::after{opacity: 1;
-    transform: scaleX(1);}.b24-landing-header__discount-badge{display: inline-flex;
+  .b24-landing-header__link[aria-selected='true']::after{opacity: 0;
+    transform: scaleX(0.35);}.b24-landing-header__discount-badge{display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 20px;
