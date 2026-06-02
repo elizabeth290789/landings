@@ -124,8 +124,60 @@
     opacity: 0.96;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
-    transition: opacity 0.18s ease, transform 0.18s ease;}.b24-landing-header__link:hover,
-  .b24-landing-header__link:focus-visible{opacity: 0.8;}.b24-landing-header__discount-badge{display: inline-flex;
+    padding: 0 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      opacity 0.18s ease,
+      transform 0.18s ease;}.b24-landing-header__link::after{content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 5px;
+    height: 2px;
+    border-radius: 999px;
+    background: #2f73ff;
+    opacity: 0;
+    transform: scaleX(0.35);
+    transform-origin: center;
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;}.b24-landing-header__link:hover,
+  .b24-landing-header__link:active,
+  .b24-landing-header__link:focus,
+  .b24-landing-header__link:focus-visible,
+  .b24-landing-header__link.current,
+  .b24-landing-header__link.is-current,
+  .b24-landing-header__link.active,
+  .b24-landing-header__link.is-active,
+  .b24-landing-header__link.selected,
+  .b24-landing-header__link.is-selected,
+  .b24-landing-header__link[aria-current],
+  .b24-landing-header__link[aria-selected='true']{color: var(--b24-header-text);
+    background: rgba(47, 115, 255, 0.08);
+    opacity: 1;}.b24-landing-header__link:active,
+  .b24-landing-header__link.current,
+  .b24-landing-header__link.is-current,
+  .b24-landing-header__link.active,
+  .b24-landing-header__link.is-active,
+  .b24-landing-header__link.selected,
+  .b24-landing-header__link.is-selected,
+  .b24-landing-header__link[aria-current],
+  .b24-landing-header__link[aria-selected='true']{background: rgba(47, 115, 255, 0.1);}.b24-landing-header__link:hover::after,
+  .b24-landing-header__link:active::after,
+  .b24-landing-header__link:focus::after,
+  .b24-landing-header__link:focus-visible::after,
+  .b24-landing-header__link.current::after,
+  .b24-landing-header__link.is-current::after,
+  .b24-landing-header__link.active::after,
+  .b24-landing-header__link.is-active::after,
+  .b24-landing-header__link.selected::after,
+  .b24-landing-header__link.is-selected::after,
+  .b24-landing-header__link[aria-current]::after,
+  .b24-landing-header__link[aria-selected='true']::after{opacity: 1;
+    transform: scaleX(1);}.b24-landing-header__discount-badge{display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 20px;
@@ -232,10 +284,31 @@
       transition:
         background-color 0.18s ease,
         color 0.18s ease,
-        transform 0.18s ease;}.b24-landing-header__link:hover,
-    .b24-landing-header__link:focus-visible{background: rgba(18, 18, 18, 0.06);
+        transform 0.18s ease;}.b24-landing-header__link::after{left: 14px;
+      right: 14px;
+      bottom: 5px;}.b24-landing-header__link:hover,
+    .b24-landing-header__link:active,
+    .b24-landing-header__link:focus,
+    .b24-landing-header__link:focus-visible,
+    .b24-landing-header__link.current,
+    .b24-landing-header__link.is-current,
+    .b24-landing-header__link.active,
+    .b24-landing-header__link.is-active,
+    .b24-landing-header__link.selected,
+    .b24-landing-header__link.is-selected,
+    .b24-landing-header__link[aria-current],
+    .b24-landing-header__link[aria-selected='true']{color: var(--b24-header-text);
+      background: rgba(47, 115, 255, 0.08);
       opacity: 1;
-      transform: translateX(2px);}.b24-landing-header__button{width: 100%;
+      transform: translateX(2px);}.b24-landing-header__link:active,
+    .b24-landing-header__link.current,
+    .b24-landing-header__link.is-current,
+    .b24-landing-header__link.active,
+    .b24-landing-header__link.is-active,
+    .b24-landing-header__link.selected,
+    .b24-landing-header__link.is-selected,
+    .b24-landing-header__link[aria-current],
+    .b24-landing-header__link[aria-selected='true']{background: rgba(47, 115, 255, 0.1);}.b24-landing-header__button{width: 100%;
       min-height: 48px;
       margin-top: 8px;
       padding: 14px 18px;
