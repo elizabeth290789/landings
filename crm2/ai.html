@@ -479,33 +479,33 @@
 
   .crm2-ai__media {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    height: clamp(360px, 35vw, 430px);
     min-height: 0;
-    padding: clamp(10px, 1.6vw, 22px);
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 28px;
-    background:
-      radial-gradient(circle at 74% 16%, rgba(202, 255, 22, 0.22), transparent 28%),
-      rgba(3, 12, 50, 0.18);
-    box-shadow: 0 26px 58px rgba(8, 12, 48, 0.26);
+    padding: 0;
+    overflow: visible;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .crm2-ai__media img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 16px;
     object-fit: contain;
     object-position: center;
     user-select: none;
     -webkit-user-drag: none;
-    filter: drop-shadow(0 22px 34px rgba(3, 8, 36, 0.28));
   }
 
   .crm2-ai__media--crm {
-    padding: clamp(6px, 1vw, 14px);
+    padding: 0;
   }
 
   .crm2-ai__controls {
@@ -592,10 +592,6 @@
       min-height: 520px;
       padding: clamp(26px, 4vw, 44px);
     }
-
-    .crm2-ai__media {
-      height: 330px;
-    }
   }
 
   @media (max-width: 767px) {
@@ -640,11 +636,6 @@
       margin-bottom: 14px;
     }
 
-    .crm2-ai__media {
-      height: clamp(220px, 62vw, 300px);
-      border-radius: 22px;
-    }
-
     .crm2-ai__controls {
       grid-template-columns: auto auto;
       justify-content: space-between;
@@ -675,10 +666,6 @@
 
     .crm2-ai__slide {
       padding: 20px;
-    }
-
-    .crm2-ai__media {
-      height: clamp(200px, 66vw, 250px);
     }
 
     .crm2-ai__dot {
