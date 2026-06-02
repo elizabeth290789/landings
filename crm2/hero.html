@@ -368,14 +368,27 @@
     line-height: 1.15;
     font-weight: 700;
     letter-spacing: 0.018em;
-    transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+    transition: all 0.25s ease;
   }
 
   .crm2-hero-cta:hover,
   .crm2-hero-cta:focus-visible {
-    transform: translateY(-3px);
-    background: var(--crm2-lime-hover);
-    box-shadow: 0 22px 44px rgba(202, 255, 22, 0.38), 0 14px 30px rgba(17, 24, 75, 0.22);
+    transform: translateY(-2px);
+    background: var(--crm2-lime);
+    color: #101510;
+    filter: brightness(1.08);
+    box-shadow:
+      0 12px 30px rgba(189, 243, 0, 0.35),
+      0 0 20px rgba(189, 243, 0, 0.25);
+  }
+
+  .crm2-hero-cta:active {
+    transform: translateY(-1px);
+    color: #101510;
+    filter: brightness(1.05);
+    box-shadow:
+      0 10px 26px rgba(189, 243, 0, 0.32),
+      0 0 18px rgba(189, 243, 0, 0.22);
   }
 
   .crm2-hero-cta:focus-visible {
