@@ -8,13 +8,15 @@
     </div>
 
     <div class="crm2-ai__product" data-crm2-ai-tabs>
-      <div class="crm2-ai__tabs" role="tablist" aria-label="Возможности AI в CRM">
-        <button class="crm2-ai__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="crm2-ai-panel-1" id="crm2-ai-tab-1" data-tab-index="0">Стартуйте сразу</button>
-        <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-2" id="crm2-ai-tab-2" data-tab-index="1" tabindex="-1">AI заполняет CRM</button>
-        <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-3" id="crm2-ai-tab-3" data-tab-index="2" tabindex="-1">Скрипты продаж</button>
-        <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-4" id="crm2-ai-tab-4" data-tab-index="3" tabindex="-1">Речевая аналитика</button>
-        <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-5" id="crm2-ai-tab-5" data-tab-index="4" tabindex="-1">Повторные продажи</button>
-        <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-6" id="crm2-ai-tab-6" data-tab-index="5" tabindex="-1">Автоматические дела</button>
+      <div class="crm2-ai__tabs-scroll">
+        <div class="crm2-ai__tabs" role="tablist" aria-label="Возможности AI в CRM">
+          <button class="crm2-ai__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="crm2-ai-panel-1" id="crm2-ai-tab-1" data-tab-index="0">Стартуйте сразу</button>
+          <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-2" id="crm2-ai-tab-2" data-tab-index="1" tabindex="-1">AI заполняет CRM</button>
+          <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-3" id="crm2-ai-tab-3" data-tab-index="2" tabindex="-1">Скрипты продаж</button>
+          <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-4" id="crm2-ai-tab-4" data-tab-index="3" tabindex="-1">Речевая аналитика</button>
+          <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-5" id="crm2-ai-tab-5" data-tab-index="4" tabindex="-1">Повторные продажи</button>
+          <button class="crm2-ai__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai-panel-6" id="crm2-ai-tab-6" data-tab-index="5" tabindex="-1">Автоматические дела</button>
+        </div>
       </div>
 
       <div class="crm2-ai__viewport">
@@ -163,8 +165,11 @@
 
 <style>
   .crm2-ai,
-  .crm2-ai * {
+  .crm2-ai *,
+  .crm2-ai *::before,
+  .crm2-ai *::after {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .crm2-ai {
@@ -176,10 +181,10 @@
     --crm2-ai-max-width: 1220px;
 
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     padding: clamp(72px, 8vw, 120px) clamp(16px, 4vw, 56px);
     color: var(--crm2-ai-text);
-    font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #ffffff;
   }
 
@@ -198,7 +203,7 @@
   .crm2-ai__title {
     max-width: 850px;
     margin: 0 auto;
-    font-family: Futura-PT, Futura-PT-Bold, "PT Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(38px, 5vw, 56px);
     font-weight: 700;
     line-height: 1.1;
@@ -223,24 +228,28 @@
     background: var(--crm2-ai-surface);
   }
 
-  .crm2-ai__tabs {
-    display: flex;
-    gap: 10px;
+  .crm2-ai__tabs-scroll {
     width: 100%;
     max-width: 100%;
-    min-width: 0;
     margin: -4px 0 clamp(28px, 3.4vw, 44px);
     padding: 4px 32px 12px;
     overflow-x: auto;
-    overflow-y: hidden;
-    scroll-padding-right: 32px;
+    overflow-y: visible;
     scroll-padding-left: 32px;
+    scroll-padding-right: 32px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
 
-  .crm2-ai__tabs::-webkit-scrollbar {
+  .crm2-ai__tabs-scroll::-webkit-scrollbar {
     display: none;
+  }
+
+  .crm2-ai__tabs {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    min-width: 100%;
   }
 
   .crm2-ai__tab {
@@ -461,7 +470,7 @@
       border-radius: 24px;
     }
 
-    .crm2-ai__tabs {
+    .crm2-ai__tabs-scroll {
       padding-right: 24px;
       padding-left: 24px;
       scroll-padding-right: 24px;
@@ -506,7 +515,7 @@
       padding: 18px;
     }
 
-    .crm2-ai__tabs {
+    .crm2-ai__tabs-scroll {
       padding-right: 24px;
       padding-left: 24px;
       scroll-padding-right: 24px;
