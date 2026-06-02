@@ -244,8 +244,10 @@
     flex: 0 0 auto;
     min-height: 56px;
     padding: 15px 22px 17px;
-    border: 0;
+    border: none;
     border-radius: 18px 18px 16px 16px;
+    outline: none;
+    box-shadow: none;
     color: #364152;
     background: var(--crm2-ai-tab);
     font: inherit;
@@ -254,6 +256,13 @@
     white-space: nowrap;
     cursor: pointer;
     transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .crm2-ai__tab::before,
+  .crm2-ai__tab::after {
+    border: none;
+    outline: none;
+    box-shadow: none;
   }
 
   .crm2-ai__tab::after {
@@ -269,24 +278,59 @@
   }
 
   .crm2-ai__tab:hover,
-  .crm2-ai__tab:focus-visible {
-    color: #111111;
-    background: #ffffff;
+  .crm2-ai__tab:focus,
+  .crm2-ai__tab:focus-visible,
+  .crm2-ai__tab:active,
+  .crm2-ai__tab.is-active,
+  .crm2-ai__tab.is-current,
+  .crm2-ai__tab.is-selected,
+  .crm2-ai__tab[aria-current="true"],
+  .crm2-ai__tab[aria-selected="true"],
+  .crm2-ai__tab[aria-pressed="true"] {
+    border: none;
     outline: none;
   }
 
-  .crm2-ai__tab:focus-visible {
-    box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.18);
-  }
-
-  .crm2-ai__tab.is-active {
+  .crm2-ai__tab:hover,
+  .crm2-ai__tab:focus,
+  .crm2-ai__tab:focus-visible,
+  .crm2-ai__tab:active {
     color: #111111;
     background: #ffffff;
-    box-shadow: 0 14px 32px rgba(17, 24, 39, 0.08);
+    box-shadow: none;
+  }
+
+  .crm2-ai__tab.is-active,
+  .crm2-ai__tab.is-current,
+  .crm2-ai__tab.is-selected,
+  .crm2-ai__tab[aria-current="true"],
+  .crm2-ai__tab[aria-selected="true"],
+  .crm2-ai__tab[aria-pressed="true"] {
+    color: #111111;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transform: translateY(-1px);
   }
 
-  .crm2-ai__tab.is-active::after {
+  .crm2-ai__tab.is-active:hover,
+  .crm2-ai__tab.is-active:focus,
+  .crm2-ai__tab.is-active:focus-visible,
+  .crm2-ai__tab.is-active:active,
+  .crm2-ai__tab[aria-selected="true"]:hover,
+  .crm2-ai__tab[aria-selected="true"]:focus,
+  .crm2-ai__tab[aria-selected="true"]:focus-visible,
+  .crm2-ai__tab[aria-selected="true"]:active {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .crm2-ai__tab.is-active::after,
+  .crm2-ai__tab.is-current::after,
+  .crm2-ai__tab.is-selected::after,
+  .crm2-ai__tab[aria-current="true"]::after,
+  .crm2-ai__tab[aria-selected="true"]::after,
+  .crm2-ai__tab[aria-pressed="true"]::after {
     background: var(--crm2-ai-blue);
   }
 
