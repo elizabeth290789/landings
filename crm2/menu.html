@@ -216,25 +216,15 @@
     display: none !important;}.b24-landing-header__discount-badge{display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 20px;
+    flex: 0 0 auto;
     margin-left: 7px;
-    padding: 3px 8px 2px;
+    padding: 4px 8px;
     border-radius: 999px;
-    background: var(--b24-header-accent);
-    color: var(--b24-header-cta-text);
-    font-size: 11px;
+    background: linear-gradient(135deg, #7B61FF 0%, #D946EF 100%);
+    color: #fff;
+    font-size: 12px;
     line-height: 1;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    box-shadow: 0 8px 18px rgba(202, 255, 22, 0.28);
-    transform: translateY(0) scale(1);
-    animation: b24-discount-badge-in 0.45s ease both;
-    transition: transform 0.22s ease, filter 0.22s ease, box-shadow 0.22s ease;}.b24-landing-header__link:hover .b24-landing-header__discount-badge,
-  .b24-landing-header__link:focus-visible .b24-landing-header__discount-badge{transform: translateY(-1px) scale(1.04);
-    filter: brightness(1.08);
-    box-shadow: 0 10px 22px rgba(202, 255, 22, 0.36), 0 0 14px rgba(202, 255, 22, 0.22);}@keyframes b24-discount-badge-in{from{opacity: 0;
-      transform: translateY(2px) scale(0.86);}to{opacity: 1;
-      transform: translateY(0) scale(1);}}.b24-landing-header__button{display: inline-flex;
+    font-weight: 700;}.b24-landing-header__button{display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 44px;
@@ -467,7 +457,7 @@
       <a class="b24-landing-header__link" href="https://www.bitrix24.ru/promo/crm-system/#b290090">AI в CRM</a>
       <a class="b24-landing-header__link" href="https://www.bitrix24.ru/promo/crm-system/#b279690">Мобильная CRM</a>
       <a class="b24-landing-header__link" href="https://www.bitrix24.ru/promo/crm-system/#b279714">Безопасность</a>
-      <a class="b24-landing-header__link" href="https://www.bitrix24.ru/promo/crm-system/#b279722">Скидки</a>
+      <a class="b24-landing-header__link" href="https://www.bitrix24.ru/promo/crm-system/#b279722">Скидки<span class="b24-landing-header__discount-badge">−30%</span></a>
       <a class="b24-landing-header__button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&b24_type=crm">Создать бесплатно</a>
     </nav>
   </div>
