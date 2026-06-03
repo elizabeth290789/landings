@@ -270,41 +270,47 @@
     animation-delay: 0.42s;
   }
 
+  .b24-collab-hero__hero-image,
+  .b24-collab-hero__hero-image::before,
+  .b24-collab-hero__hero-image::after {
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .b24-collab-hero__hero-image::before,
+  .b24-collab-hero__hero-image::after {
+    content: none !important;
+    display: none !important;
+  }
+
   .b24-collab-hero__hero-image {
     width: 100% !important;
     max-width: 1100px !important;
     flex: 0 1 auto !important;
     flex-basis: auto !important;
     margin: 56px auto 0;
-    padding: 0;
-    display: block !important;
+    display: flex !important;
+    justify-content: center;
     animation-delay: 0.5s;
     position: relative;
     left: auto !important;
     right: auto !important;
     transform: none !important;
     overflow: visible;
-    background: transparent;
     border: none;
     outline: none;
-    box-shadow: none;
     backdrop-filter: none;
   }
 
   .b24-collab-hero__mockup {
-    position: relative;
-    z-index: 1;
     display: block;
     width: 100%;
     max-width: 1100px;
     height: auto;
     margin: 0 auto;
-    object-fit: contain;
-    left: auto;
-    right: auto;
-    transform: none;
-    border-radius: 0;
-    box-shadow: none;
   }
 
   @keyframes b24-collab-hero-fade-up {
@@ -328,10 +334,6 @@
       padding: 0;
     }
 
-    .b24-collab-hero__mockup {
-      width: 100%;
-      transform: none;
-    }
   }
 
   @media (max-width: 640px) {
@@ -380,11 +382,6 @@
       padding-top: 0;
     }
 
-    .b24-collab-hero__mockup {
-      width: 100%;
-      transform: none;
-      border-radius: 0;
-    }
   }
 
   @media (max-width: 420px) {
