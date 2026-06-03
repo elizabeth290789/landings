@@ -35,7 +35,7 @@
       <div class="b24-collab-tabs__screen-shell">
         <img
           class="b24-collab-tabs__screen"
-          src="https://cdn-ru.bitrix24.ru/b5391009/landing/1f9/1f9c0b42fb44366c829434759f1c2397/img_screen_680_06a_1x.png"
+          src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/1.1600w.png.webp?1780063682225"
           alt="Интерфейс Битрикс24 для рабочих чатов и каналов"
           loading="lazy"
         />
@@ -241,10 +241,14 @@
 
   .b24-collab-tabs__screen-shell {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     width: 100%;
+    height: clamp(300px, 48vw, 560px);
     border: 1px solid rgba(188, 214, 255, 0.26);
-    border-radius: clamp(20px, 2.4vw, 34px);
+    border-radius: clamp(20px, 2.2vw, 24px);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 28px 74px rgba(2, 10, 34, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(18px);
@@ -262,10 +266,9 @@
   .b24-collab-tabs__screen {
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 300px;
-    object-fit: cover;
-    object-position: top center;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .b24-collab-tabs__caption {
@@ -334,8 +337,8 @@
       font-size: 15px;
     }
 
-    .b24-collab-tabs__screen {
-      min-height: 220px;
+    .b24-collab-tabs__screen-shell {
+      height: clamp(220px, 56vw, 430px);
     }
   }
 
@@ -362,11 +365,8 @@
     }
 
     .b24-collab-tabs__screen-shell {
-      border-radius: 18px;
-    }
-
-    .b24-collab-tabs__screen {
-      min-height: 170px;
+      height: clamp(170px, 58vw, 290px);
+      border-radius: 20px;
     }
   }
 </style>
@@ -393,25 +393,25 @@
       {
         title: 'Общение',
         text: 'Обсуждайте рабочие вопросы в чатах и каналах.',
-        image: 'https://cdn-ru.bitrix24.ru/b5391009/landing/1f9/1f9c0b42fb44366c829434759f1c2397/img_screen_680_06a_1x.png',
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/1.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для рабочих чатов и каналов'
       },
       {
         title: 'Встречи',
         text: 'Проводите созвоны без ссылок и лишних приложений.',
-        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/3.1440w.png.webp?1780063682225',
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для видеовстреч команды'
       },
       {
         title: 'Работа',
         text: 'Превращайте обсуждения в задачи и проекты.',
-        image: 'https://cdn-ru.bitrix24.ru/b5391009/landing/e30/e305a7b61fc44b46f8f9cacb6636b326/img_screen_680_06b_1x.png',
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/1.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для задач и проектов'
       },
       {
         title: 'AI',
         text: 'Получайте итоги встреч и готовые задачи автоматически.',
-        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/42.1440w.png.webp?1780063682225',
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/88.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 с AI-помощником'
       }
     ];
