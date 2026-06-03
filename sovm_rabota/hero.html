@@ -49,7 +49,7 @@
   .b24-collab-hero {
     position: relative;
     overflow: hidden;
-    padding: clamp(80px, 8vw, 100px) 0 clamp(44px, 5vw, 72px);
+    padding: clamp(42px, 5vw, 62px) 0 clamp(36px, 4vw, 58px);
     background:
       radial-gradient(circle at 50% 12%, rgba(95, 142, 255, 0.25) 0%, rgba(95, 142, 255, 0) 46%),
       radial-gradient(circle at 12% 78%, rgba(91, 121, 255, 0.2) 0%, rgba(91, 121, 255, 0) 52%),
@@ -62,13 +62,14 @@
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 clamp(16px, 3vw, 32px);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .b24-collab-hero__content {
-    width: min(100%, 960px);
+    width: min(100%, 860px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,10 +154,19 @@
     animation: b24-collab-hero-fade-up 0.8s ease forwards;
   }
 
-  .b24-collab-hero__chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 16px; animation-delay: 0.08s; }
+  .b24-collab-hero__chips {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: clamp(6px, 1vw, 12px);
+    width: 100%;
+    margin-bottom: 16px;
+    animation-delay: 0.08s;
+  }
 
   .b24-collab-hero__chip {
-    padding: 9px 15px;
+    padding: 9px clamp(10px, 1.1vw, 15px);
+    white-space: nowrap;
     border-radius: 999px;
     font-size: 13px;
     line-height: 1;
@@ -176,11 +186,11 @@
   .b24-collab-hero__title {
     margin: 0;
     color: #ffffff;
-    font-size: clamp(44px, 5vw, 72px);
-    line-height: 1.05;
+    font-size: clamp(42px, 4.2vw, 64px);
+    line-height: 1.04;
     font-weight: 700;
     letter-spacing: -0.03em;
-    max-width: 900px;
+    max-width: 760px;
     text-align: center;
     animation-delay: 0.16s;
   }
@@ -190,7 +200,7 @@
     color: #d4e3ff;
     font-size: clamp(19px, 1.8vw, 24px);
     line-height: 1.5;
-    max-width: 700px;
+    max-width: 680px;
     animation-delay: 0.25s;
   }
 
@@ -249,9 +259,9 @@
   }
 
   .b24-collab-hero__visual {
-    width: min(92%, 1180px);
-    max-width: 1180px;
-    margin: clamp(56px, 6vw, 80px) auto 0;
+    width: min(100%, 1120px);
+    max-width: 1120px;
+    margin: clamp(48px, 6vw, 72px) auto 0;
     padding: 0;
     animation-delay: 0.5s;
     position: relative;
@@ -278,7 +288,7 @@
     position: relative;
     z-index: 1;
     display: block;
-    width: min(100%, 1180px);
+    width: min(100%, 1120px);
     height: auto;
     margin: 0 auto;
     object-fit: contain;
@@ -313,24 +323,24 @@
     }
 
     .b24-collab-hero__hero-image {
-      width: min(100%, 1180px);
+      width: 100%;
       transform: none;
     }
   }
 
   @media (max-width: 640px) {
     .b24-collab-hero {
-      padding: 46px 0 24px;
+      padding: 42px 0 24px;
     }
 
     .b24-collab-hero__chips {
-      gap: 10px;
+      gap: 6px;
       margin-bottom: 16px;
     }
 
     .b24-collab-hero__chip {
-      font-size: 12px;
-      padding: 8px 12px;
+      font-size: clamp(10px, 2.7vw, 12px);
+      padding: 7px clamp(7px, 2vw, 12px);
     }
 
     .b24-collab-hero__title {
@@ -358,7 +368,7 @@
     }
 
     .b24-collab-hero__visual {
-      width: min(96%, 560px);
+      width: min(100%, 560px);
       margin-top: 42px;
       padding-top: 0;
     }
@@ -369,9 +379,20 @@
     }
 
     .b24-collab-hero__hero-image {
-      width: min(100%, 1180px);
+      width: 100%;
       transform: none;
       border-radius: 0;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .b24-collab-hero__chips {
+      gap: 4px;
+    }
+
+    .b24-collab-hero__chip {
+      font-size: clamp(8.5px, 2.45vw, 10px);
+      padding: 6px 5px;
     }
   }
 </style>
