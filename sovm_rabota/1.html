@@ -17,16 +17,16 @@
     </div>
 
     <div class="b24-collab-tabs__nav-wrap" role="tablist" aria-label="Возможности совместной работы">
-      <button class="b24-collab-tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="b24-collab-panel" data-tab-index="0">
+      <button class="b24-collab-tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="b24-collab-panel" data-slide="0">
         <span aria-hidden="true">💬</span> Общение
       </button>
-      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-tab-index="1">
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="1">
         <span aria-hidden="true">📞</span> Встречи
       </button>
-      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-tab-index="2">
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="2">
         <span aria-hidden="true">📋</span> Работа
       </button>
-      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-tab-index="3">
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="3">
         <span aria-hidden="true">🤖</span> AI
       </button>
     </div>
@@ -373,22 +373,6 @@
 
 <script>
   (function () {
-    const root = document.querySelector('.b24-collab-tabs');
-
-    if (!root) {
-      return;
-    }
-
-    const tabs = Array.from(root.querySelectorAll('.b24-collab-tabs__tab'));
-    const stage = root.querySelector('.b24-collab-tabs__stage');
-    const image = root.querySelector('.b24-collab-tabs__screen');
-    const captionTitle = root.querySelector('.b24-collab-tabs__caption-title');
-    const captionText = root.querySelector('.b24-collab-tabs__caption-text');
-    const switchDelay = 5000;
-    const animationDelay = 180;
-    let activeIndex = 0;
-    let autoplayId;
-
     const slides = [
       {
         title: 'Общение',
@@ -416,47 +400,48 @@
       }
     ];
 
-    const setActiveTab = function (nextIndex) {
-      tabs.forEach(function (tab, index) {
-        const isActive = index === nextIndex;
-        tab.classList.toggle('is-active', isActive);
-        tab.setAttribute('aria-selected', String(isActive));
-      });
-    };
+    const initCollabTabs = function (root) {
+      const tabs = Array.from(root.querySelectorAll('.b24-collab-tabs__tab'));
+      const image = root.querySelector('.b24-collab-tabs__screen');
+      const captionTitle = root.querySelector('.b24-collab-tabs__caption-title');
+      const captionText = root.querySelector('.b24-collab-tabs__caption-text');
 
-    const showSlide = function (nextIndex) {
-      if (nextIndex === activeIndex || !slides[nextIndex]) {
+      if (!tabs.length || !image || !captionTitle || !captionText) {
         return;
       }
 
-      activeIndex = nextIndex;
-      setActiveTab(nextIndex);
-      stage.classList.add('is-switching');
+      const setActiveTab = function (activeIndex) {
+        tabs.forEach(function (tab, index) {
+          const isActive = index === activeIndex;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', String(isActive));
+        });
+      };
 
-      window.setTimeout(function () {
+      const showSlide = function (nextIndex) {
         const slide = slides[nextIndex];
+
+        if (!slide) {
+          return;
+        }
+
+        setActiveTab(nextIndex);
         image.src = slide.image;
         image.alt = slide.alt;
         captionTitle.textContent = slide.title;
         captionText.textContent = slide.text;
-        stage.classList.remove('is-switching');
-      }, animationDelay);
-    };
+      };
 
-    const startAutoplay = function () {
-      window.clearInterval(autoplayId);
-      autoplayId = window.setInterval(function () {
-        showSlide((activeIndex + 1) % slides.length);
-      }, switchDelay);
-    };
+      tabs.forEach(function (tab, fallbackIndex) {
+        tab.addEventListener('click', function (event) {
+          event.preventDefault();
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        showSlide(Number(tab.dataset.tabIndex));
-        startAutoplay();
+          const slideIndex = Number(tab.dataset.slide);
+          showSlide(Number.isNaN(slideIndex) ? fallbackIndex : slideIndex);
+        });
       });
-    });
+    };
 
-    startAutoplay();
+    document.querySelectorAll('.b24-collab-tabs').forEach(initCollabTabs);
   })();
 </script>
