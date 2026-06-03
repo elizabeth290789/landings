@@ -241,34 +241,29 @@
 
   .b24-collab-tabs__screen-shell {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     width: 100%;
-    height: clamp(300px, 48vw, 560px);
-    border: 1px solid rgba(188, 214, 255, 0.26);
-    border-radius: clamp(20px, 2.2vw, 24px);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 28px 74px rgba(2, 10, 34, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-    backdrop-filter: blur(18px);
+    max-width: 900px;
+    margin: 32px auto 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    overflow: visible;
   }
 
-  .b24-collab-tabs__screen-shell::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 24%, transparent 72%, rgba(104, 164, 255, 0.13));
-    pointer-events: none;
+  .b24-collab-tabs__screen-shell::before,
+  .b24-collab-tabs__screen-shell::after {
+    content: none;
   }
 
   .b24-collab-tabs__screen {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
     object-position: center;
+    border-radius: 18px;
   }
 
   .b24-collab-tabs__caption {
@@ -337,9 +332,6 @@
       font-size: 15px;
     }
 
-    .b24-collab-tabs__screen-shell {
-      height: clamp(220px, 56vw, 430px);
-    }
   }
 
   @media (max-width: 520px) {
@@ -364,10 +356,6 @@
       font-size: 16px;
     }
 
-    .b24-collab-tabs__screen-shell {
-      height: clamp(170px, 58vw, 290px);
-      border-radius: 20px;
-    }
   }
 </style>
 
