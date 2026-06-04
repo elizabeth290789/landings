@@ -1,8 +1,4 @@
 <section class="b24-collab-hero" aria-labelledby="b24-collab-hero-title">
-  <div class="b24-collab-hero__bg-blur b24-collab-hero__bg-blur--one"></div>
-  <div class="b24-collab-hero__bg-blur b24-collab-hero__bg-blur--two"></div>
-  <div class="b24-collab-hero__bg-glow b24-collab-hero__bg-glow--one"></div>
-  <div class="b24-collab-hero__bg-glow b24-collab-hero__bg-glow--two"></div>
   <span class="b24-collab-hero__particle b24-collab-hero__particle--1"></span>
   <span class="b24-collab-hero__particle b24-collab-hero__particle--2"></span>
   <span class="b24-collab-hero__particle b24-collab-hero__particle--3"></span>
@@ -46,20 +42,26 @@
 </section>
 
 <style>
+  /* Hero and the following sections share this single page-level canvas. */
   body {
-    background-color: #07163f;
+    background-color: #07183f;
     background-image:
-      radial-gradient(circle at top right, rgba(90, 110, 255, 0.35), transparent 35%),
-      radial-gradient(circle at bottom left, rgba(50, 100, 255, 0.18), transparent 40%),
-      linear-gradient(180deg, #07163f 0%, #0a245f 35%, #0b2a6e 65%, #081b4b 100%);
+      radial-gradient(circle at 15% 38%, rgba(43, 116, 255, 0.28), transparent 24%),
+      radial-gradient(circle at 86% 18%, rgba(111, 93, 255, 0.32), transparent 28%),
+      radial-gradient(circle at 75% 70%, rgba(48, 91, 220, 0.18), transparent 30%),
+      linear-gradient(180deg, #07183f 0%, #0b2360 45%, #07183f 100%);
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .b24-collab-hero {
     position: relative;
     overflow: hidden;
     padding: clamp(42px, 5vw, 62px) 0 clamp(36px, 4vw, 58px);
-    background: transparent;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     isolation: isolate;
   }
 
@@ -92,56 +94,15 @@
     text-align: center;
   }
 
-  .b24-collab-hero__bg-blur,
-  .b24-collab-hero__bg-glow,
+  .b24-collab-hero::before,
+  .b24-collab-hero::after {
+    content: none !important;
+    background: none !important;
+  }
+
   .b24-collab-hero__particle {
     pointer-events: none;
     z-index: -1;
-  }
-
-  .b24-collab-hero__bg-blur {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(32px);
-  }
-
-  .b24-collab-hero__bg-blur--one {
-    width: min(46vw, 620px);
-    height: min(46vw, 620px);
-    background: radial-gradient(circle, rgba(122, 127, 255, 0.44) 0%, rgba(122, 127, 255, 0) 74%);
-    top: -200px;
-    right: -160px;
-  }
-
-  .b24-collab-hero__bg-blur--two {
-    width: min(42vw, 560px);
-    height: min(42vw, 560px);
-    background: radial-gradient(circle, rgba(58, 138, 255, 0.4) 0%, rgba(58, 138, 255, 0) 76%);
-    left: -180px;
-    bottom: -220px;
-  }
-
-  .b24-collab-hero__bg-glow {
-    position: absolute;
-    border-radius: 999px;
-    filter: blur(74px);
-  }
-
-  .b24-collab-hero__bg-glow--one {
-    width: min(80vw, 980px);
-    height: min(80vw, 980px);
-    left: 50%;
-    top: -44%;
-    transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(72, 144, 255, 0.3) 0%, rgba(72, 144, 255, 0.02) 72%, transparent 100%);
-  }
-
-  .b24-collab-hero__bg-glow--two {
-    width: min(56vw, 690px);
-    height: min(56vw, 690px);
-    right: -14%;
-    bottom: -34%;
-    background: radial-gradient(circle, rgba(126, 102, 255, 0.22) 0%, rgba(126, 102, 255, 0.02) 74%, transparent 100%);
   }
 
   .b24-collab-hero__particle {
