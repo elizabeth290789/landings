@@ -46,15 +46,20 @@
 </section>
 
 <style>
+  body {
+    background-color: #07163f;
+    background-image:
+      radial-gradient(circle at top right, rgba(90, 110, 255, 0.35), transparent 35%),
+      radial-gradient(circle at bottom left, rgba(50, 100, 255, 0.18), transparent 40%),
+      linear-gradient(180deg, #07163f 0%, #0a245f 35%, #0b2a6e 65%, #081b4b 100%);
+    background-repeat: no-repeat;
+  }
+
   .b24-collab-hero {
     position: relative;
     overflow: hidden;
     padding: clamp(42px, 5vw, 62px) 0 clamp(36px, 4vw, 58px);
-    background:
-      radial-gradient(circle at 50% 12%, rgba(95, 142, 255, 0.25) 0%, rgba(95, 142, 255, 0) 46%),
-      radial-gradient(circle at 12% 78%, rgba(91, 121, 255, 0.2) 0%, rgba(91, 121, 255, 0) 52%),
-      radial-gradient(circle at 84% 70%, rgba(52, 139, 255, 0.18) 0%, rgba(52, 139, 255, 0) 54%),
-      linear-gradient(150deg, #050f27 0%, #071737 44%, #060f24 100%);
+    background: transparent;
     isolation: isolate;
   }
 
