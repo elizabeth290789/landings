@@ -1,0 +1,340 @@
+<section class="b24-calls" aria-labelledby="b24-calls-title">
+  <span class="b24-calls__glow" aria-hidden="true"></span>
+  <span class="b24-calls__spark b24-calls__spark--one" aria-hidden="true"></span>
+  <span class="b24-calls__spark b24-calls__spark--two" aria-hidden="true"></span>
+
+  <div class="b24-calls__container">
+    <div class="b24-calls__content">
+      <p class="b24-calls__eyebrow"><span aria-hidden="true"></span> Видеозвонки в Битрикс24</p>
+      <h2 class="b24-calls__title" id="b24-calls-title">Созвоны без ссылок и хаоса</h2>
+      <p class="b24-calls__subtitle">
+        Звонок приходит прямо в приложение — как обычный вызов коллеге. Без браузеров, ссылок и переключения между сервисами.
+      </p>
+
+      <div class="b24-calls__cards">
+        <article class="b24-calls__card">
+          <span class="b24-calls__icon" aria-hidden="true">📞</span>
+          <h3 class="b24-calls__card-title">Быстрое подключение</h3>
+          <p class="b24-calls__card-text">Без браузеров и бесконечных ссылок</p>
+        </article>
+
+        <article class="b24-calls__card">
+          <span class="b24-calls__icon" aria-hidden="true">🎥</span>
+          <h3 class="b24-calls__card-title">HD-видео и демонстрация экрана</h3>
+          <p class="b24-calls__card-text">Для встреч, обсуждений и презентаций</p>
+        </article>
+
+        <article class="b24-calls__card">
+          <span class="b24-calls__icon" aria-hidden="true">👥</span>
+          <h3 class="b24-calls__card-title">Звонки для больших команд</h3>
+          <p class="b24-calls__card-text">Онлайн-встречи для всей компании</p>
+        </article>
+
+        <article class="b24-calls__card">
+          <span class="b24-calls__icon" aria-hidden="true">🤖</span>
+          <h3 class="b24-calls__card-title">AI Follow-up</h3>
+          <p class="b24-calls__card-text">BitrixGPT зафиксирует договорённости и создаст задачи</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="b24-calls__visual">
+      <img
+        class="b24-calls__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1600w.png.webp?1780063682225"
+        alt="Интерфейс видеозвонка в Битрикс24"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .b24-calls {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: clamp(56px, 8vw, 112px) clamp(20px, 4vw, 56px) clamp(64px, 9vw, 128px);
+    overflow: hidden;
+    color: #ffffff;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .b24-calls,
+  .b24-calls * {
+    box-sizing: border-box;
+  }
+
+  .b24-calls::before,
+  .b24-calls::after {
+    content: none !important;
+  }
+
+  .b24-calls__glow {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: -7%;
+    width: min(52vw, 760px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(41, 142, 255, 0.36);
+    filter: blur(110px);
+    opacity: 0.48;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .b24-calls__spark {
+    position: absolute;
+    z-index: -1;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(207, 228, 255, 0.82);
+    box-shadow: 0 0 20px rgba(103, 174, 255, 0.8);
+    pointer-events: none;
+    animation: b24-calls-float 8s ease-in-out infinite;
+  }
+
+  .b24-calls__spark--one {
+    top: 14%;
+    left: 7%;
+  }
+
+  .b24-calls__spark--two {
+    right: 10%;
+    bottom: 13%;
+    animation-delay: 1.4s;
+  }
+
+  .b24-calls__container {
+    display: grid;
+    grid-template-columns: minmax(480px, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(42px, 5.5vw, 86px);
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .b24-calls__content,
+  .b24-calls__visual {
+    min-width: 0;
+  }
+
+  .b24-calls__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding: 9px 16px;
+    border: 1px solid rgba(176, 204, 255, 0.32);
+    border-radius: 999px;
+    color: #e2edff;
+    background: rgba(13, 36, 88, 0.44);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .b24-calls__eyebrow span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #68d5ff;
+    box-shadow: 0 0 12px rgba(104, 213, 255, 0.9);
+  }
+
+  .b24-calls__title {
+    max-width: 630px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 60px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  .b24-calls__subtitle {
+    max-width: 650px;
+    margin: clamp(16px, 2vw, 24px) 0 0;
+    color: #d2e2ff;
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.5;
+  }
+
+  .b24-calls__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: clamp(28px, 3.5vw, 44px);
+  }
+
+  .b24-calls__card {
+    min-height: 178px;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 36px rgba(2, 10, 39, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    transition: transform 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
+  }
+
+  .b24-calls__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(151, 202, 255, 0.3);
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .b24-calls__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(163, 215, 255, 0.2);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(64, 177, 255, 0.2), rgba(120, 107, 255, 0.16));
+    box-shadow: 0 10px 24px rgba(31, 124, 255, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .b24-calls__card-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  .b24-calls__card-text {
+    margin: 8px 0 0;
+    color: #c9daf6;
+    font-size: 14px;
+    line-height: 1.48;
+  }
+
+  .b24-calls__visual {
+    position: relative;
+  }
+
+  .b24-calls__visual::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 8% 5%;
+    border-radius: 50%;
+    background: rgba(48, 153, 255, 0.4);
+    filter: blur(75px);
+    opacity: 0.58;
+    pointer-events: none;
+  }
+
+  .b24-calls__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 24px;
+    filter: drop-shadow(0 30px 50px rgba(2, 10, 39, 0.38));
+  }
+
+  @media (max-width: 1180px) {
+    .b24-calls__container {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .b24-calls__content,
+    .b24-calls__visual {
+      width: min(100%, 920px);
+      margin: 0 auto;
+    }
+
+    .b24-calls__content {
+      text-align: center;
+    }
+
+    .b24-calls__title,
+    .b24-calls__subtitle {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .b24-calls__cards {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-calls {
+      padding: 48px 20px 68px;
+    }
+
+    .b24-calls__container {
+      gap: 32px;
+    }
+
+    .b24-calls__eyebrow {
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+
+    .b24-calls__title {
+      font-size: clamp(32px, 10vw, 42px);
+      letter-spacing: -0.032em;
+    }
+
+    .b24-calls__subtitle {
+      font-size: 16px;
+    }
+
+    .b24-calls__cards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .b24-calls__card {
+      min-height: 0;
+      padding: 20px;
+    }
+
+    .b24-calls__icon {
+      margin-bottom: 17px;
+    }
+
+    .b24-calls__image {
+      border-radius: 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b24-calls__spark {
+      animation: none;
+    }
+
+    .b24-calls__card {
+      transition: none;
+    }
+  }
+
+  @keyframes b24-calls-float {
+    0%, 100% { transform: translateY(0); opacity: 0.65; }
+    50% { transform: translateY(-12px); opacity: 1; }
+  }
+</style>
