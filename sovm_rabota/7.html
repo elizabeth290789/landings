@@ -1,0 +1,371 @@
+<section class="b24-collab-workspace" aria-labelledby="b24-collab-workspace-title">
+  <span class="b24-collab-workspace__glow b24-collab-workspace__glow--left" aria-hidden="true"></span>
+  <span class="b24-collab-workspace__glow b24-collab-workspace__glow--right" aria-hidden="true"></span>
+
+  <div class="b24-collab-workspace__container">
+    <header class="b24-collab-workspace__header">
+      <p class="b24-collab-workspace__badge"><span aria-hidden="true">✦</span> Рабочее пространство</p>
+      <h2 class="b24-collab-workspace__title" id="b24-collab-workspace-title">Все инструменты команды в одном пространстве</h2>
+      <p class="b24-collab-workspace__subtitle">
+        Документы, файлы, доски, база знаний, почта и автоматизация процессов уже встроены в Битрикс24 — команда работает в одной системе без лишних сервисов.
+      </p>
+    </header>
+
+    <div class="b24-collab-workspace__grid">
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--blue">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">📝</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">Документы и Диск</h3>
+          <p class="b24-collab-workspace__card-text">Совместное редактирование и хранение файлов</p>
+        </div>
+      </article>
+
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--violet">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">🎨</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">Онлайн-доски</h3>
+          <p class="b24-collab-workspace__card-text">Мозговые штурмы и визуальное планирование</p>
+        </div>
+      </article>
+
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--cyan">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">🏢</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">Корпоративная соцсеть</h3>
+          <p class="b24-collab-workspace__card-text">Новости компании и внутренние коммуникации</p>
+        </div>
+      </article>
+
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--purple">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">⚙️</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">Автоматизация процессов</h3>
+          <p class="b24-collab-workspace__card-text">Согласования и рутинные операции без ручной работы</p>
+        </div>
+      </article>
+
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--indigo">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">📚</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">База знаний</h3>
+          <p class="b24-collab-workspace__card-text">Инструкции и регламенты всегда под рукой</p>
+        </div>
+      </article>
+
+      <article class="b24-collab-workspace__card b24-collab-workspace__card--sky">
+        <span class="b24-collab-workspace__icon" aria-hidden="true">📧</span>
+        <div class="b24-collab-workspace__card-content">
+          <h3 class="b24-collab-workspace__card-title">Корпоративная почта</h3>
+          <p class="b24-collab-workspace__card-text">Рабочая переписка внутри единой системы</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="b24-collab-workspace__summary">
+      <span class="b24-collab-workspace__summary-icon" aria-hidden="true">✦</span>
+      <span>Битрикс24 заменяет набор разрозненных сервисов и помогает команде работать в едином цифровом офисе.</span>
+    </p>
+  </div>
+</section>
+
+<style>
+  .b24-collab-workspace {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: clamp(76px, 9vw, 132px) clamp(20px, 4vw, 56px) clamp(84px, 10vw, 148px);
+    overflow: hidden;
+    color: #ffffff;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .b24-collab-workspace,
+  .b24-collab-workspace * {
+    box-sizing: border-box;
+  }
+
+  .b24-collab-workspace__glow {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
+  .b24-collab-workspace__glow--left {
+    bottom: 4%;
+    left: -15%;
+    width: min(54vw, 760px);
+    aspect-ratio: 1;
+    background: rgba(35, 145, 255, 0.22);
+  }
+
+  .b24-collab-workspace__glow--right {
+    top: 5%;
+    right: -16%;
+    width: min(58vw, 820px);
+    aspect-ratio: 1;
+    background: rgba(128, 75, 255, 0.22);
+  }
+
+  .b24-collab-workspace__container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  .b24-collab-workspace__header {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .b24-collab-workspace__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding: 9px 16px;
+    border: 1px solid rgba(186, 207, 255, 0.3);
+    border-radius: 999px;
+    color: #eaf2ff;
+    background: rgba(70, 107, 193, 0.22);
+    box-shadow: 0 12px 32px rgba(4, 15, 51, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .b24-collab-workspace__badge span {
+    color: #a9d7ff;
+    text-shadow: 0 0 14px rgba(91, 181, 255, 0.95);
+  }
+
+  .b24-collab-workspace__title {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: clamp(40px, 4.4vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .b24-collab-workspace__subtitle {
+    max-width: 850px;
+    margin: clamp(18px, 2vw, 24px) auto 0;
+    color: #cbdcf7;
+    font-size: clamp(17px, 1.45vw, 20px);
+    line-height: 1.55;
+  }
+
+  .b24-collab-workspace__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 18px;
+    margin-top: clamp(44px, 5vw, 66px);
+  }
+
+  .b24-collab-workspace__card {
+    --card-accent: 99, 167, 255;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 190px;
+    padding: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 22px 45px rgba(1, 8, 35, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(18px);
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .b24-collab-workspace__card::after {
+    content: "";
+    position: absolute;
+    right: -58px;
+    bottom: -88px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(var(--card-accent), 0.13);
+    filter: blur(32px);
+    pointer-events: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .b24-collab-workspace__card--violet { --card-accent: 163, 111, 255; }
+  .b24-collab-workspace__card--cyan { --card-accent: 69, 218, 238; }
+  .b24-collab-workspace__card--purple { --card-accent: 138, 115, 255; }
+  .b24-collab-workspace__card--indigo { --card-accent: 102, 138, 255; }
+  .b24-collab-workspace__card--sky { --card-accent: 65, 190, 255; }
+
+  .b24-collab-workspace__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 28px 60px rgba(3, 10, 43, 0.28), 0 0 38px rgba(var(--card-accent), 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .b24-collab-workspace__card:hover::after {
+    background: rgba(var(--card-accent), 0.2);
+    transform: scale(1.12);
+  }
+
+  .b24-collab-workspace__icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 28px rgba(var(--card-accent), 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .b24-collab-workspace__card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .b24-collab-workspace__card-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .b24-collab-workspace__card-text {
+    margin: 9px 0 0;
+    color: #c7d8f3;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .b24-collab-workspace__summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0 0;
+    padding: 20px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    color: #e3edff;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 20px 42px rgba(2, 9, 37, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(18px);
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .b24-collab-workspace__summary-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(135deg, #52c5ff, #8c70ff);
+    box-shadow: 0 8px 22px rgba(83, 129, 255, 0.38);
+    font-size: 13px;
+  }
+
+  @media (max-width: 960px) {
+    .b24-collab-workspace__container {
+      max-width: 800px;
+    }
+
+    .b24-collab-workspace__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-collab-workspace {
+      padding: 58px 20px 82px;
+    }
+
+    .b24-collab-workspace__badge {
+      margin-bottom: 15px;
+      padding: 8px 13px;
+      font-size: 12px;
+    }
+
+    .b24-collab-workspace__title {
+      font-size: clamp(32px, 10vw, 42px);
+      letter-spacing: -0.035em;
+    }
+
+    .b24-collab-workspace__subtitle {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .b24-collab-workspace__grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .b24-collab-workspace__card {
+      flex-direction: row;
+      gap: 16px;
+      min-height: 0;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .b24-collab-workspace__icon {
+      margin-bottom: 0;
+    }
+
+    .b24-collab-workspace__card-title {
+      font-size: 18px;
+    }
+
+    .b24-collab-workspace__card-text {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    .b24-collab-workspace__summary {
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 14px;
+      padding: 17px;
+      border-radius: 18px;
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b24-collab-workspace__card,
+    .b24-collab-workspace__card::after {
+      transition: none;
+    }
+  }
+</style>
