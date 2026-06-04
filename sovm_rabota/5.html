@@ -1,0 +1,411 @@
+<section class="b24-workflow" aria-labelledby="b24-workflow-title">
+  <span class="b24-workflow__glow" aria-hidden="true"></span>
+  <span class="b24-workflow__orb b24-workflow__orb--one" aria-hidden="true"></span>
+  <span class="b24-workflow__orb b24-workflow__orb--two" aria-hidden="true"></span>
+
+  <div class="b24-workflow__container">
+    <header class="b24-workflow__header">
+      <p class="b24-workflow__eyebrow"><span aria-hidden="true">↗</span> Задачи и проекты</p>
+      <h2 class="b24-workflow__title" id="b24-workflow-title">Обсуждение там, где идёт работа</h2>
+      <p class="b24-workflow__subtitle">
+        Задачи, комментарии, звонки и документы объединены в одном пространстве — команда видит контекст и быстрее двигает проекты вперёд.
+      </p>
+    </header>
+
+    <div class="b24-workflow__visual">
+      <img
+        class="b24-workflow__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/1.1600w.png.webp?1780063682225"
+        alt="Интерфейс задач и проектов в Битрикс24"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="b24-workflow__benefits">
+      <div class="b24-workflow__cards">
+        <article class="b24-workflow__card">
+          <span class="b24-workflow__icon" aria-hidden="true">💬</span>
+          <div>
+            <h3 class="b24-workflow__card-title">Чат внутри задачи</h3>
+            <p class="b24-workflow__card-text">Вся история обсуждений рядом с работой</p>
+          </div>
+        </article>
+
+        <article class="b24-workflow__card">
+          <span class="b24-workflow__icon" aria-hidden="true">📋</span>
+          <div>
+            <h3 class="b24-workflow__card-title">Канбан и проекты</h3>
+            <p class="b24-workflow__card-text">Гибкое управление задачами и этапами</p>
+          </div>
+        </article>
+
+        <article class="b24-workflow__card">
+          <span class="b24-workflow__icon" aria-hidden="true">📎</span>
+          <div>
+            <h3 class="b24-workflow__card-title">Файлы и комментарии</h3>
+            <p class="b24-workflow__card-text">Документы, решения и правки не теряются</p>
+          </div>
+        </article>
+
+        <article class="b24-workflow__card">
+          <span class="b24-workflow__icon" aria-hidden="true">⚡</span>
+          <div>
+            <h3 class="b24-workflow__card-title">Быстрые решения</h3>
+            <p class="b24-workflow__card-text">Меньше переключений — выше скорость работы</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <p class="b24-workflow__note">
+      <span class="b24-workflow__note-icon" aria-hidden="true">✓</span>
+      Обсуждение, файлы и решения остаются внутри задачи — команда всегда понимает, что делать дальше.
+    </p>
+  </div>
+</section>
+
+<style>
+  .b24-workflow {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: clamp(64px, 8vw, 120px) clamp(20px, 4vw, 56px) clamp(72px, 9vw, 132px);
+    overflow: hidden;
+    color: #ffffff;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .b24-workflow,
+  .b24-workflow * {
+    box-sizing: border-box;
+  }
+
+  .b24-workflow::before,
+  .b24-workflow::after {
+    content: none !important;
+  }
+
+  .b24-workflow__glow {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: -8%;
+    width: min(62vw, 900px);
+    aspect-ratio: 1.35;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(49, 160, 255, 0.4), rgba(125, 78, 255, 0.32));
+    filter: blur(110px);
+    opacity: 0.58;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .b24-workflow__orb {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    background: #b5d8ff;
+    box-shadow: 0 0 22px rgba(108, 174, 255, 0.86);
+    pointer-events: none;
+    animation: b24-workflow-float 8s ease-in-out infinite;
+  }
+
+  .b24-workflow__orb--one {
+    top: 14%;
+    right: 7%;
+    width: 5px;
+    height: 5px;
+  }
+
+  .b24-workflow__orb--two {
+    bottom: 12%;
+    left: 6%;
+    width: 4px;
+    height: 4px;
+    animation-delay: 1.7s;
+  }
+
+  .b24-workflow__container {
+    display: grid;
+    grid-template-columns: minmax(560px, 1.18fr) minmax(440px, 0.82fr);
+    grid-template-areas:
+      "visual header"
+      "visual benefits"
+      "visual note";
+    align-items: center;
+    column-gap: clamp(44px, 6vw, 96px);
+    width: 100%;
+    max-width: 1460px;
+    margin: 0 auto;
+  }
+
+  .b24-workflow__header {
+    grid-area: header;
+    align-self: end;
+    min-width: 0;
+  }
+
+  .b24-workflow__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px;
+    padding: 9px 16px;
+    border: 1px solid rgba(183, 198, 255, 0.3);
+    border-radius: 999px;
+    color: #e7edff;
+    background: rgba(43, 83, 161, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .b24-workflow__eyebrow span {
+    color: #9dcbff;
+    text-shadow: 0 0 12px rgba(126, 185, 255, 0.9);
+  }
+
+  .b24-workflow__title {
+    max-width: 650px;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 60px);
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  .b24-workflow__subtitle {
+    max-width: 670px;
+    margin: clamp(16px, 2vw, 24px) 0 0;
+    color: #d2e2ff;
+    font-size: clamp(17px, 1.45vw, 21px);
+    line-height: 1.5;
+  }
+
+  .b24-workflow__benefits {
+    grid-area: benefits;
+    min-width: 0;
+  }
+
+  .b24-workflow__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: clamp(28px, 3vw, 42px);
+  }
+
+  .b24-workflow__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 184px;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 38px rgba(2, 10, 39, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    transition: transform 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
+  }
+
+  .b24-workflow__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(166, 191, 255, 0.3);
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .b24-workflow__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 19px;
+    border: 1px solid rgba(183, 207, 255, 0.2);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(65, 178, 255, 0.2), rgba(131, 91, 255, 0.18));
+    box-shadow: 0 10px 24px rgba(61, 114, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.13);
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .b24-workflow__card-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+
+  .b24-workflow__card-text {
+    margin: 8px 0 0;
+    color: #c9daf6;
+    font-size: 14px;
+    line-height: 1.48;
+  }
+
+  .b24-workflow__note {
+    grid-area: note;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: start;
+    margin: 16px 0 0;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    color: #dfebff;
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(14px);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .b24-workflow__note-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(135deg, #52baff, #826eff);
+    box-shadow: 0 7px 18px rgba(72, 137, 255, 0.3);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .b24-workflow__visual {
+    position: relative;
+    grid-area: visual;
+    min-width: 0;
+  }
+
+  .b24-workflow__visual::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 8% 3%;
+    border-radius: 45%;
+    background: linear-gradient(135deg, rgba(53, 164, 255, 0.46), rgba(138, 86, 255, 0.34));
+    filter: blur(76px);
+    opacity: 0.68;
+    pointer-events: none;
+  }
+
+  .b24-workflow__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 24px;
+    filter: drop-shadow(0 32px 54px rgba(2, 10, 39, 0.4));
+  }
+
+  @media (max-width: 1180px) {
+    .b24-workflow__container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "visual"
+        "benefits"
+        "note";
+      row-gap: 0;
+      width: min(100%, 920px);
+    }
+
+    .b24-workflow__header {
+      text-align: center;
+    }
+
+    .b24-workflow__title,
+    .b24-workflow__subtitle {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .b24-workflow__visual {
+      margin-top: 42px;
+    }
+
+    .b24-workflow__cards {
+      margin-top: 42px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-workflow {
+      padding: 52px 20px 72px;
+    }
+
+    .b24-workflow__eyebrow {
+      margin-bottom: 15px;
+      padding: 8px 13px;
+      font-size: 12px;
+    }
+
+    .b24-workflow__title {
+      font-size: clamp(32px, 10vw, 42px);
+      letter-spacing: -0.032em;
+    }
+
+    .b24-workflow__subtitle {
+      font-size: 16px;
+    }
+
+    .b24-workflow__visual {
+      margin-top: 32px;
+    }
+
+    .b24-workflow__cards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .b24-workflow__card {
+      flex-direction: row;
+      gap: 15px;
+      min-height: 0;
+      padding: 18px;
+    }
+
+    .b24-workflow__icon {
+      flex: 0 0 auto;
+      margin-bottom: 0;
+    }
+
+    .b24-workflow__note {
+      align-items: flex-start;
+      margin-top: 14px;
+      padding: 13px 14px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b24-workflow__orb {
+      animation: none;
+    }
+
+    .b24-workflow__card {
+      transition: none;
+    }
+  }
+
+  @keyframes b24-workflow-float {
+    0%, 100% { transform: translateY(0); opacity: 0.65; }
+    50% { transform: translateY(-12px); opacity: 1; }
+  }
+</style>
