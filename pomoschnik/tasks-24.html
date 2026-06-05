@@ -35,7 +35,7 @@
       </button>
     </div>
 
-    <a class="b24-ai-helper-action b24-ai-helper-action--primary b24-ai-helper-action--disabled" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&amp;b24_type=tasks" data-b24-ai-helper-cta aria-disabled="true" tabindex="-1">
+    <a class="b24-ai-helper-action b24-ai-helper-action--primary" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&amp;b24_type=tasks" data-b24-ai-helper-cta>
       Зарегистрироваться бесплатно
     </a>
 
@@ -326,7 +326,8 @@
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
-    transition: transform 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease;
+    cursor: pointer;
+    transition: transform 0.24s ease, box-shadow 0.24s ease, opacity 0.24s ease, filter 0.24s ease;
   }
 
   .b24-ai-helper-action:hover,
@@ -347,36 +348,31 @@
   .b24-ai-helper-action--primary:hover,
   .b24-ai-helper-action--primary:focus,
   .b24-ai-helper-action--primary:focus-visible,
-  .b24-ai-helper-action--primary:active,
-  .b24-ai-helper-action--primary.b24-ai-helper-action--disabled {
+  .b24-ai-helper-action--primary:active {
     color: #ffffff;
     background: linear-gradient(135deg, #27c2f4 0%, var(--b24-ai-helper-blue-strong) 100%);
   }
 
   .b24-ai-helper-action--primary {
+    opacity: 0.85;
+    filter: saturate(0.9);
     box-shadow: 0 14px 28px rgba(7, 139, 211, 0.3);
   }
 
-  .b24-ai-helper-action--primary:not(.b24-ai-helper-action--disabled):hover,
-  .b24-ai-helper-action--primary:not(.b24-ai-helper-action--disabled):focus,
-  .b24-ai-helper-action--primary:not(.b24-ai-helper-action--disabled):focus-visible,
-  .b24-ai-helper-action--primary:not(.b24-ai-helper-action--disabled):active {
+  .b24-ai-helper-action--primary.b24-ai-helper-action--active {
+    opacity: 1;
+    filter: none;
+  }
+
+  .b24-ai-helper-action--primary:hover,
+  .b24-ai-helper-action--primary:focus,
+  .b24-ai-helper-action--primary:focus-visible,
+  .b24-ai-helper-action--primary:active {
     box-shadow: 0 0 0 3px rgba(46,167,248,.25), 0 12px 30px rgba(33, 150, 243, 0.35);
   }
 
-  .b24-ai-helper-action--primary:not(.b24-ai-helper-action--disabled):active {
+  .b24-ai-helper-action--primary:active {
     transform: translateY(-1px);
-  }
-
-  .b24-ai-helper-action--disabled,
-  .b24-ai-helper-action--disabled:hover,
-  .b24-ai-helper-action--disabled:focus,
-  .b24-ai-helper-action--disabled:focus-visible,
-  .b24-ai-helper-action--disabled:active {
-    opacity: 0.48;
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
   }
 
   .b24-ai-helper-note {
@@ -468,9 +464,7 @@
       b24AiHelperLaunch.setAttribute('aria-expanded', String(isOpen));
       b24AiHelperCard.setAttribute('aria-hidden', String(!isOpen));}b24AiHelperLaunch.addEventListener('click', function (){b24AiHelperSetOpen(!b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open'));});
 
-    function b24AiHelperEnableCta(){b24AiHelperCta.classList.remove('b24-ai-helper-action--disabled');
-      b24AiHelperCta.removeAttribute('aria-disabled');
-      b24AiHelperCta.removeAttribute('tabindex');}
+    function b24AiHelperHighlightCta(){b24AiHelperCta.classList.add('b24-ai-helper-action--active');}
 
 
     b24AiHelperOptions.forEach(function (b24AiHelperOption){b24AiHelperOption.addEventListener('click', function (){b24AiHelperOptions.forEach(function (b24AiHelperItem){b24AiHelperItem.classList.remove('b24-ai-helper-option--selected');
@@ -478,9 +472,7 @@
 
         b24AiHelperOption.classList.add('b24-ai-helper-option--selected');
         b24AiHelperOption.setAttribute('aria-pressed', 'true');
-        b24AiHelperEnableCta();});});
-
-    b24AiHelperCta.addEventListener('click', function (event){if (b24AiHelperCta.getAttribute('aria-disabled') === 'true'){event.preventDefault();}});
+        b24AiHelperHighlightCta();});});
 
     document.addEventListener('keydown', function (event){if (event.key === 'Escape'){b24AiHelperSetOpen(false);}});})();
 </script>
