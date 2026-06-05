@@ -48,8 +48,8 @@
   .b24-ai-helper-widget *{box-sizing: border-box;}.b24-ai-helper-widget{--b24-ai-helper-blue: #2fc6f6;
     --b24-ai-helper-blue-dark: #16a8e5;
     --b24-ai-helper-blue-strong: #078bd3;
-    --b24-ai-helper-text: #172033;
-    --b24-ai-helper-muted: #667085;
+    --b24-ai-helper-text: #1f2a44;
+    --b24-ai-helper-muted: #5b667a;
     --b24-ai-helper-border: rgba(47, 198, 246, 0.18);
     --b24-ai-helper-shadow: 0 24px 70px rgba(22, 48, 93, 0.18);
     font-family: "Montserrat", Arial, sans-serif;
@@ -88,8 +88,8 @@
     stroke-width: 1.8;}.b24-ai-helper-card{position: absolute;
     right: 0;
     bottom: 82px;
-    width: min(390px, calc(100vw - 48px));
-    padding: 24px;
+    width: min(380px, calc(100vw - 48px));
+    padding: 26px;
     border: 1px solid var(--b24-ai-helper-border);
     border-radius: 20px;
     background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
@@ -115,18 +115,18 @@
     box-shadow: 0 10px 22px rgba(22, 48, 93, 0.08);}.b24-ai-helper-avatar__spark{font-size: 23px;
     line-height: 1;}.b24-ai-helper-card__intro{min-width: 0;}.b24-ai-helper-title{margin: 0;
     color: var(--b24-ai-helper-text);
-    font-size: 21px;
-    font-weight: 800;
-    line-height: 1.22;}.b24-ai-helper-subtitle{margin: 8px 0 0;
-    color: #526579;
-    font-size: 13px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.18;}.b24-ai-helper-subtitle{margin: 8px 0 0;
+    color: #42536a;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.55;}.b24-ai-helper-options{display: grid;
-    gap: 10px;
-    margin-top: 20px;}.b24-ai-helper-option{display: grid;
-    gap: 5px;
+    gap: 12px;
+    margin-top: 22px;}.b24-ai-helper-option{display: grid;
+    gap: 8px;
     width: 100%;
-    padding: 14px 16px;
+    padding: 17px 18px;
     border: 1px solid rgba(47, 198, 246, 0.16);
     border-radius: 16px;
     color: var(--b24-ai-helper-text);
@@ -143,20 +143,20 @@
     transform: translateY(-1px);}.b24-ai-helper-option--selected{border-color: #35bff4;
     background: linear-gradient(180deg, #eefaff 0%, #e7f6ff 100%);
     box-shadow: 0 14px 30px rgba(47, 198, 246, 0.18);
-    transform: translateY(-1px);}.b24-ai-helper-option__title{font-size: 14px;
-    font-weight: 800;
+    transform: translateY(-1px);}.b24-ai-helper-option__title{font-size: 16px;
+    font-weight: 700;
     line-height: 1.3;}.b24-ai-helper-option__description{color: var(--b24-ai-helper-muted);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 1.45;}.b24-ai-helper-action{display: flex;
+    line-height: 1.5;}.b24-ai-helper-action{display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
-    margin-top: 14px;
-    padding: 15px 18px;
+    min-height: 54px;
+    margin-top: 16px;
+    padding: 16px 20px;
     border-radius: 14px;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 1.2;
     text-align: center;
     text-decoration: none;
@@ -170,10 +170,10 @@
     cursor: not-allowed;
     box-shadow: none;
     transform: none;}.b24-ai-helper-note{margin: 10px 0 0;
-    color: var(--b24-ai-helper-muted);
-    font-size: 11px;
+    color: #5f6b7d;
+    font-size: 12.5px;
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.35;
     text-align: center;}@keyframes b24-ai-helper-pulse{0%, 100%{opacity: 0.62;
       transform: scale(0.94);}50%{opacity: 0.22;
       transform: scale(1.08);}}@media (max-width: 560px){.b24-ai-helper-widget{right: 16px;
@@ -185,9 +185,11 @@
       width: 100%;
       max-height: calc(100vh - 112px);
       overflow-y: auto;
-      padding: 20px;}.b24-ai-helper-title{font-size: 18px;}.b24-ai-helper-subtitle,
-    .b24-ai-helper-option__title,
-    .b24-ai-helper-action{font-size: 13px;}.b24-ai-helper-option{padding: 13px 14px;}}</style>
+      padding: 20px;}.b24-ai-helper-title{font-size: 20px;
+      line-height: 1.2;}.b24-ai-helper-subtitle{font-size: 14px;
+      line-height: 1.45;}.b24-ai-helper-option{gap: 6px;
+      padding: 14px 15px;}.b24-ai-helper-option__title{font-size: 14px;}.b24-ai-helper-option__description{font-size: 13px;
+      line-height: 1.45;}.b24-ai-helper-action{font-size: 15px;}.b24-ai-helper-note{font-size: 12px;}}</style>
 
 <script>
   (function (){var b24AiHelperWidget = document.querySelector('[data-b24-ai-helper-widget]');
