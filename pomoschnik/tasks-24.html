@@ -432,20 +432,49 @@
     var b24AiHelperCard = b24AiHelperWidget.querySelector('.b24-ai-helper-card');
     var b24AiHelperOptions = b24AiHelperWidget.querySelectorAll('[data-b24-ai-helper-option]');
     var b24AiHelperCta = b24AiHelperWidget.querySelector('[data-b24-ai-helper-cta]');
+    var b24AiHelperAutoOpenedKey = 'b24AiHelperAutoOpened';
+    var b24AiHelperUserInteractedKey = 'b24AiHelperUserInteracted';
+    var b24AiHelperAutoOpenDelay = 15000;
+    var b24AiHelperAutoOpened = sessionStorage.getItem(b24AiHelperAutoOpenedKey) === 'true';
+    var b24AiHelperUserInteracted = sessionStorage.getItem(b24AiHelperUserInteractedKey) === 'true';
+
+    function b24AiHelperRememberAutoOpened(){b24AiHelperAutoOpened = true;
+      sessionStorage.setItem(b24AiHelperAutoOpenedKey, 'true');}
+
+    function b24AiHelperRememberUserInteraction(){b24AiHelperUserInteracted = true;
+      sessionStorage.setItem(b24AiHelperUserInteractedKey, 'true');}
 
     function b24AiHelperSetOpen(isOpen){b24AiHelperWidget.classList.toggle('b24-ai-helper-widget--open', isOpen);
       b24AiHelperLaunch.setAttribute('aria-expanded', String(isOpen));
-      b24AiHelperCard.setAttribute('aria-hidden', String(!isOpen));}b24AiHelperLaunch.addEventListener('click', function (){b24AiHelperSetOpen(!b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open'));});
+      b24AiHelperCard.setAttribute('aria-hidden', String(!isOpen));}
+
+    b24AiHelperSetOpen(false);
+
+    var b24AiHelperAutoOpenTimer = setTimeout(function (){if (b24AiHelperAutoOpened || b24AiHelperUserInteracted || b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open')){return;}
+
+      b24AiHelperSetOpen(true);
+      b24AiHelperRememberAutoOpened();}, b24AiHelperAutoOpenDelay);
+
+    b24AiHelperLaunch.addEventListener('click', function (){b24AiHelperRememberUserInteraction();
+      clearTimeout(b24AiHelperAutoOpenTimer);
+      b24AiHelperSetOpen(!b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open'));});
 
     function b24AiHelperHighlightCta(){b24AiHelperCta.classList.add('b24-ai-helper-action--active');}
 
 
-    b24AiHelperOptions.forEach(function (b24AiHelperOption){b24AiHelperOption.addEventListener('click', function (){b24AiHelperOptions.forEach(function (b24AiHelperItem){b24AiHelperItem.classList.remove('b24-ai-helper-option--selected');
+    b24AiHelperOptions.forEach(function (b24AiHelperOption){b24AiHelperOption.addEventListener('click', function (){b24AiHelperRememberUserInteraction();
+        clearTimeout(b24AiHelperAutoOpenTimer);
+        b24AiHelperOptions.forEach(function (b24AiHelperItem){b24AiHelperItem.classList.remove('b24-ai-helper-option--selected');
           b24AiHelperItem.setAttribute('aria-pressed', 'false');});
 
         b24AiHelperOption.classList.add('b24-ai-helper-option--selected');
         b24AiHelperOption.setAttribute('aria-pressed', 'true');
         b24AiHelperHighlightCta();});});
 
-    document.addEventListener('keydown', function (event){if (event.key === 'Escape'){b24AiHelperSetOpen(false);}});})();
+    b24AiHelperCta.addEventListener('click', function (){b24AiHelperRememberUserInteraction();
+      clearTimeout(b24AiHelperAutoOpenTimer);});
+
+    document.addEventListener('keydown', function (event){if (event.key === 'Escape' && b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open')){b24AiHelperRememberUserInteraction();
+        clearTimeout(b24AiHelperAutoOpenTimer);
+        b24AiHelperSetOpen(false);}});})();
 </script>
