@@ -1,1 +1,233 @@
+<div class="b24-ai-helper-widget" data-b24-ai-helper-widget>
+  <button class="b24-ai-helper-launch" type="button" aria-label="Открыть помощника" aria-expanded="false">
+    <span class="b24-ai-helper-launch__glow" aria-hidden="true"></span>
+    <span class="b24-ai-helper-launch__icon" aria-hidden="true">
+      <svg class="b24-ai-helper-launch__svg" viewBox="0 0 28 28" role="img" focusable="false">
+        <path d="M14 3.2c-6.15 0-11.14 4.28-11.14 9.57 0 3.17 1.8 5.99 4.58 7.73l-.62 3.27a.92.92 0 0 0 1.38.96l3.58-2.09c.72.13 1.46.2 2.22.2 6.15 0 11.14-4.28 11.14-9.57S20.15 3.2 14 3.2Z" />
+        <path d="M9.4 12.35h9.2M9.4 16.05h5.8" />
+      </svg>
+    </span>
+  </button>
 
+  <section class="b24-ai-helper-card" aria-label="Помощник выбора старта в Битрикс24" aria-hidden="true">
+    <button class="b24-ai-helper-close" type="button" aria-label="Закрыть помощника">×</button>
+
+    <div class="b24-ai-helper-card__header">
+      <div class="b24-ai-helper-avatar" aria-hidden="true">
+        <span class="b24-ai-helper-avatar__spark">✦</span>
+      </div>
+      <div class="b24-ai-helper-card__intro">
+        <p class="b24-ai-helper-eyebrow">AI assistant</p>
+        <h2 class="b24-ai-helper-title">Поможем выбрать удобный старт</h2>
+      </div>
+    </div>
+
+    <div class="b24-ai-helper-message">
+      <p class="b24-ai-helper-message__text">
+        Привет! Я подскажу, как быстрее начать работу в Битрикс24. Выберите удобный вариант: можно оставить заявку — мы всё покажем и поможем настроить. Или посмотреть продукт самостоятельно — просто зарегистрируйтесь, это бесплатно и ни к чему не обязывает.
+      </p>
+    </div>
+
+    <div class="b24-ai-helper-actions" aria-label="Варианты старта">
+      <a class="b24-ai-helper-action b24-ai-helper-action--primary" href="#FORM_LINK_HERE" data-b24-ai-helper-action="form">
+        Оставить заявку
+      </a>
+      <a class="b24-ai-helper-action b24-ai-helper-action--secondary" href="#REGISTRATION_LINK_HERE" data-b24-ai-helper-action="registration">
+        Посмотреть самостоятельно
+      </a>
+    </div>
+
+    <p class="b24-ai-helper-confirm" aria-live="polite"></p>
+  </section>
+</div>
+
+<style>
+  .b24-ai-helper-widget,
+  .b24-ai-helper-widget *{box-sizing: border-box;}.b24-ai-helper-widget{--b24-ai-helper-blue: #2fc6f6;
+    --b24-ai-helper-blue-dark: #16a8e5;
+    --b24-ai-helper-text: #172033;
+    --b24-ai-helper-muted: #667085;
+    --b24-ai-helper-border: rgba(47, 198, 246, 0.18);
+    --b24-ai-helper-shadow: 0 24px 70px rgba(22, 48, 93, 0.18);
+    font-family: "Montserrat", Arial, sans-serif;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;}.b24-ai-helper-launch{position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--b24-ai-helper-blue) 0%, var(--b24-ai-helper-blue-dark) 100%);
+    box-shadow: 0 18px 36px rgba(47, 198, 246, 0.32);
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;}.b24-ai-helper-launch:hover,
+  .b24-ai-helper-launch:focus-visible{transform: translateY(-2px);
+    box-shadow: 0 22px 44px rgba(47, 198, 246, 0.42);
+    outline: none;}.b24-ai-helper-launch__glow{position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: rgba(47, 198, 246, 0.16);
+    animation: b24-ai-helper-pulse 2.5s ease-in-out infinite;}.b24-ai-helper-launch__icon{position: relative;
+    z-index: 1;
+    display: flex;
+    width: 34px;
+    height: 34px;}.b24-ai-helper-launch__svg{width: 100%;
+    height: 100%;
+    fill: rgba(255, 255, 255, 0.96);
+    stroke: var(--b24-ai-helper-blue-dark);
+    stroke-linecap: round;
+    stroke-width: 1.8;}.b24-ai-helper-card{position: absolute;
+    right: 0;
+    bottom: 82px;
+    width: min(390px, calc(100vw - 48px));
+    padding: 24px;
+    border: 1px solid var(--b24-ai-helper-border);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: var(--b24-ai-helper-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px) scale(0.98);
+    transform-origin: right bottom;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;}.b24-ai-helper-widget.b24-ai-helper-widget--open .b24-ai-helper-card{opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);}.b24-ai-helper-widget.b24-ai-helper-widget--open .b24-ai-helper-launch{opacity: 0.92;}.b24-ai-helper-close{position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #7b8798;
+    background: #f4f8fb;
+    font: 500 24px/1 "Montserrat", Arial, sans-serif;
+    cursor: pointer;
+    transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease;}.b24-ai-helper-close:hover,
+  .b24-ai-helper-close:focus-visible{color: var(--b24-ai-helper-text);
+    background: #eaf6fc;
+    outline: none;
+    transform: rotate(90deg);}.b24-ai-helper-card__header{display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding-right: 34px;}.b24-ai-helper-avatar{flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #29c8ff 0%, #1b9dff 52%, #69dcff 100%);
+    box-shadow: 0 12px 26px rgba(47, 198, 246, 0.26);}.b24-ai-helper-avatar__spark{font-size: 24px;
+    line-height: 1;}.b24-ai-helper-card__intro{min-width: 0;}.b24-ai-helper-eyebrow{margin: 0 0 5px;
+    color: var(--b24-ai-helper-blue-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;}.b24-ai-helper-title{margin: 0;
+    color: var(--b24-ai-helper-text);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;}.b24-ai-helper-message{position: relative;
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 18px;
+    color: var(--b24-ai-helper-text);
+    background: linear-gradient(180deg, #f6fbff 0%, #eef9ff 100%);}.b24-ai-helper-message::before{content: "";
+    position: absolute;
+    top: -7px;
+    left: 30px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px 0 0;
+    background: #f6fbff;
+    transform: rotate(45deg);}.b24-ai-helper-message__text{position: relative;
+    margin: 0;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;}.b24-ai-helper-actions{display: grid;
+    gap: 10px;
+    margin-top: 18px;}.b24-ai-helper-action{display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;}.b24-ai-helper-action:hover,
+  .b24-ai-helper-action:focus-visible{transform: translateY(-1px);
+    outline: none;}.b24-ai-helper-action--primary{color: #ffffff;
+    background: linear-gradient(135deg, var(--b24-ai-helper-blue) 0%, var(--b24-ai-helper-blue-dark) 100%);
+    box-shadow: 0 12px 24px rgba(47, 198, 246, 0.28);}.b24-ai-helper-action--primary:hover,
+  .b24-ai-helper-action--primary:focus-visible{box-shadow: 0 14px 28px rgba(47, 198, 246, 0.36);}.b24-ai-helper-action--secondary{color: var(--b24-ai-helper-blue-dark);
+    background: #eef9ff;
+    box-shadow: inset 0 0 0 1px rgba(47, 198, 246, 0.22);}.b24-ai-helper-action--secondary:hover,
+  .b24-ai-helper-action--secondary:focus-visible{color: #0c8ed0;
+    background: #e4f6ff;}.b24-ai-helper-confirm{min-height: 20px;
+    margin: 14px 0 0;
+    color: #12a7df;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.45;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;}.b24-ai-helper-confirm.b24-ai-helper-confirm--visible{opacity: 1;
+    transform: translateY(0);}@keyframes b24-ai-helper-pulse{0%, 100%{opacity: 0.62;
+      transform: scale(0.94);}50%{opacity: 0.22;
+      transform: scale(1.08);}}@media (max-width: 560px){.b24-ai-helper-widget{right: 16px;
+      bottom: 16px;
+      left: 16px;}.b24-ai-helper-launch{margin-left: auto;
+      width: 58px;
+      height: 58px;}.b24-ai-helper-card{right: 0;
+      bottom: 76px;
+      width: 100%;
+      max-height: calc(100vh - 112px);
+      overflow-y: auto;
+      padding: 20px;}.b24-ai-helper-title{font-size: 18px;}.b24-ai-helper-message__text,
+    .b24-ai-helper-action{font-size: 13px;}}</style>
+
+<script>
+  (function (){var b24AiHelperWidget = document.querySelector('[data-b24-ai-helper-widget]');
+
+    if (!b24AiHelperWidget){return;}var b24AiHelperLaunch = b24AiHelperWidget.querySelector('.b24-ai-helper-launch');
+    var b24AiHelperCard = b24AiHelperWidget.querySelector('.b24-ai-helper-card');
+    var b24AiHelperClose = b24AiHelperWidget.querySelector('.b24-ai-helper-close');
+    var b24AiHelperConfirm = b24AiHelperWidget.querySelector('.b24-ai-helper-confirm');
+    var b24AiHelperActions = b24AiHelperWidget.querySelectorAll('[data-b24-ai-helper-action]');
+
+    var b24AiHelperMessages ={form: 'Отлично, сейчас откроем форму заявки',
+      registration: 'Супер, сейчас откроем регистрацию. Это бесплатно и ни к чему не обязывает'};
+
+    function b24AiHelperSetOpen(isOpen){b24AiHelperWidget.classList.toggle('b24-ai-helper-widget--open', isOpen);
+      b24AiHelperLaunch.setAttribute('aria-expanded', String(isOpen));
+      b24AiHelperCard.setAttribute('aria-hidden', String(!isOpen));}b24AiHelperLaunch.addEventListener('click', function (){b24AiHelperSetOpen(!b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open'));});
+
+    b24AiHelperClose.addEventListener('click', function (){b24AiHelperSetOpen(false);});
+
+    b24AiHelperActions.forEach(function (b24AiHelperAction){b24AiHelperAction.addEventListener('click', function (event){var b24AiHelperType = b24AiHelperAction.getAttribute('data-b24-ai-helper-action');
+        var b24AiHelperHref = b24AiHelperAction.getAttribute('href');
+
+        if (!b24AiHelperHref){return;}event.preventDefault();
+        b24AiHelperConfirm.textContent = b24AiHelperMessages[b24AiHelperType]|| '';
+        b24AiHelperConfirm.classList.add('b24-ai-helper-confirm--visible');
+
+        window.setTimeout(function (){window.location.href = b24AiHelperHref;}, 650);});});
+
+    document.addEventListener('keydown', function (event){if (event.key === 'Escape'){b24AiHelperSetOpen(false);}});})();
+</script>
