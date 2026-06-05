@@ -9,7 +9,7 @@
     </span>
   </button>
 
-  <section class="b24-ai-helper-card" aria-label="Помощник выбора старта в Битрикс24" aria-hidden="true">
+  <section class="b24-ai-helper-card" aria-label="Помощник выбора сценария задач в Битрикс24" aria-hidden="true">
     <button class="b24-ai-helper-close" type="button" aria-label="Закрыть помощника">×</button>
 
     <div class="b24-ai-helper-card__header">
@@ -18,26 +18,38 @@
       </div>
       <div class="b24-ai-helper-card__intro">
         <p class="b24-ai-helper-eyebrow">AI assistant</p>
-        <h2 class="b24-ai-helper-title">Поможем выбрать удобный старт</h2>
+        <h2 class="b24-ai-helper-title">Для какой команды вы выбираете задачи?</h2>
       </div>
     </div>
 
     <div class="b24-ai-helper-message">
       <p class="b24-ai-helper-message__text">
-        Привет! Я подскажу, как быстрее начать работу в Битрикс24. Выберите удобный вариант: можно оставить заявку — мы всё покажем и поможем настроить. Или посмотреть продукт самостоятельно — просто зарегистрируйтесь, это бесплатно и ни к чему не обязывает.
+        Подберём удобный сценарий работы с задачами и проектами.
       </p>
     </div>
 
-    <div class="b24-ai-helper-actions" aria-label="Варианты старта">
-      <a class="b24-ai-helper-action b24-ai-helper-action--primary" href="#FORM_LINK_HERE" data-b24-ai-helper-action="form">
-        Оставить заявку
-      </a>
-      <a class="b24-ai-helper-action b24-ai-helper-action--secondary" href="#REGISTRATION_LINK_HERE" data-b24-ai-helper-action="registration">
-        Посмотреть самостоятельно
-      </a>
+    <div class="b24-ai-helper-options" aria-label="Размер команды">
+      <button class="b24-ai-helper-option" type="button" data-b24-ai-helper-option="Только для себя" aria-pressed="false">
+        <span class="b24-ai-helper-option__title">👤 Только для себя</span>
+        <span class="b24-ai-helper-option__description">Личные задачи, планы и контроль дедлайнов</span>
+      </button>
+      <button class="b24-ai-helper-option" type="button" data-b24-ai-helper-option="До 10 человек" aria-pressed="false">
+        <span class="b24-ai-helper-option__title">👥 До 10 человек</span>
+        <span class="b24-ai-helper-option__description">Совместная работа, проекты и коммуникации команды</span>
+      </button>
+      <button class="b24-ai-helper-option" type="button" data-b24-ai-helper-option="Более 10 человек" aria-pressed="false">
+        <span class="b24-ai-helper-option__title">🏢 Более 10 человек</span>
+        <span class="b24-ai-helper-option__description">Единое пространство для отделов и крупных проектов</span>
+      </button>
     </div>
 
     <p class="b24-ai-helper-confirm" aria-live="polite"></p>
+
+    <a class="b24-ai-helper-action b24-ai-helper-action--primary b24-ai-helper-action--disabled" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&amp;b24_type=tasks" data-b24-ai-helper-cta aria-disabled="true" tabindex="-1">
+      Зарегистрироваться бесплатно
+    </a>
+
+    <p class="b24-ai-helper-note">Настройка не требуется. Начать работу можно сразу после регистрации.</p>
   </section>
 </div>
 
@@ -157,29 +169,33 @@
     color: #344054;
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.6;}.b24-ai-helper-actions{display: grid;
+    line-height: 1.6;}.b24-ai-helper-options{display: grid;
     gap: 10px;
-    margin-top: 18px;}.b24-ai-helper-action{display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: 13px 18px;
-    border-radius: 14px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;}.b24-ai-helper-action:hover,
-  .b24-ai-helper-action:focus-visible{transform: translateY(-1px);
-    outline: none;}.b24-ai-helper-action--primary{color: #ffffff;
-    background: linear-gradient(135deg, var(--b24-ai-helper-blue) 0%, var(--b24-ai-helper-blue-dark) 100%);
-    box-shadow: 0 12px 24px rgba(47, 198, 246, 0.28);}.b24-ai-helper-action--primary:hover,
-  .b24-ai-helper-action--primary:focus-visible{box-shadow: 0 14px 28px rgba(47, 198, 246, 0.36);}.b24-ai-helper-action--secondary{color: var(--b24-ai-helper-blue-dark);
-    background: #eef9ff;
-    box-shadow: inset 0 0 0 1px rgba(47, 198, 246, 0.22);}.b24-ai-helper-action--secondary:hover,
-  .b24-ai-helper-action--secondary:focus-visible{color: #0c8ed0;
-    background: #e4f6ff;}.b24-ai-helper-confirm{min-height: 20px;
+    margin-top: 18px;}.b24-ai-helper-option{display: grid;
+    gap: 5px;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(47, 198, 246, 0.16);
+    border-radius: 16px;
+    color: var(--b24-ai-helper-text);
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(22, 48, 93, 0.06);
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;}.b24-ai-helper-option:hover,
+  .b24-ai-helper-option:focus-visible{border-color: rgba(47, 198, 246, 0.32);
+    background: #f8fcff;
+    box-shadow: 0 12px 26px rgba(22, 48, 93, 0.1);
+    outline: none;
+    transform: translateY(-1px);}.b24-ai-helper-option--selected{border-color: rgba(47, 198, 246, 0.5);
+    background: linear-gradient(180deg, #f5fcff 0%, #eaf8ff 100%);
+    box-shadow: 0 14px 30px rgba(47, 198, 246, 0.16);}.b24-ai-helper-option__title{font-size: 14px;
+    font-weight: 800;
+    line-height: 1.3;}.b24-ai-helper-option__description{color: var(--b24-ai-helper-muted);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.45;}.b24-ai-helper-confirm{min-height: 20px;
     margin: 14px 0 0;
     color: #12a7df;
     font-size: 13px;
@@ -188,7 +204,32 @@
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.18s ease, transform 0.18s ease;}.b24-ai-helper-confirm.b24-ai-helper-confirm--visible{opacity: 1;
-    transform: translateY(0);}@keyframes b24-ai-helper-pulse{0%, 100%{opacity: 0.62;
+    transform: translateY(0);}.b24-ai-helper-action{display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin-top: 14px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.18s ease;}.b24-ai-helper-action:hover,
+  .b24-ai-helper-action:focus-visible{transform: translateY(-1px);
+    outline: none;}.b24-ai-helper-action--primary{color: #ffffff;
+    background: linear-gradient(135deg, var(--b24-ai-helper-blue) 0%, var(--b24-ai-helper-blue-dark) 100%);
+    box-shadow: 0 12px 24px rgba(47, 198, 246, 0.28);}.b24-ai-helper-action--primary:hover,
+  .b24-ai-helper-action--primary:focus-visible{box-shadow: 0 14px 28px rgba(47, 198, 246, 0.36);}.b24-ai-helper-action--disabled{opacity: 0.48;
+    pointer-events: none;
+    cursor: default;
+    box-shadow: none;}.b24-ai-helper-note{margin: 10px 0 0;
+    color: var(--b24-ai-helper-muted);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.45;
+    text-align: center;}@keyframes b24-ai-helper-pulse{0%, 100%{opacity: 0.62;
       transform: scale(0.94);}50%{opacity: 0.22;
       transform: scale(1.08);}}@media (max-width: 560px){.b24-ai-helper-widget{right: 16px;
       bottom: 16px;
@@ -200,7 +241,8 @@
       max-height: calc(100vh - 112px);
       overflow-y: auto;
       padding: 20px;}.b24-ai-helper-title{font-size: 18px;}.b24-ai-helper-message__text,
-    .b24-ai-helper-action{font-size: 13px;}}</style>
+    .b24-ai-helper-option__title,
+    .b24-ai-helper-action{font-size: 13px;}.b24-ai-helper-option{padding: 13px 14px;}}</style>
 
 <script>
   (function (){var b24AiHelperWidget = document.querySelector('[data-b24-ai-helper-widget]');
@@ -209,25 +251,31 @@
     var b24AiHelperCard = b24AiHelperWidget.querySelector('.b24-ai-helper-card');
     var b24AiHelperClose = b24AiHelperWidget.querySelector('.b24-ai-helper-close');
     var b24AiHelperConfirm = b24AiHelperWidget.querySelector('.b24-ai-helper-confirm');
-    var b24AiHelperActions = b24AiHelperWidget.querySelectorAll('[data-b24-ai-helper-action]');
-
-    var b24AiHelperMessages ={form: 'Отлично, сейчас откроем форму заявки',
-      registration: 'Супер, сейчас откроем регистрацию. Это бесплатно и ни к чему не обязывает'};
+    var b24AiHelperOptions = b24AiHelperWidget.querySelectorAll('[data-b24-ai-helper-option]');
+    var b24AiHelperCta = b24AiHelperWidget.querySelector('[data-b24-ai-helper-cta]');
 
     function b24AiHelperSetOpen(isOpen){b24AiHelperWidget.classList.toggle('b24-ai-helper-widget--open', isOpen);
       b24AiHelperLaunch.setAttribute('aria-expanded', String(isOpen));
       b24AiHelperCard.setAttribute('aria-hidden', String(!isOpen));}b24AiHelperLaunch.addEventListener('click', function (){b24AiHelperSetOpen(!b24AiHelperWidget.classList.contains('b24-ai-helper-widget--open'));});
 
+    function b24AiHelperEnableCta(){b24AiHelperCta.classList.remove('b24-ai-helper-action--disabled');
+      b24AiHelperCta.removeAttribute('aria-disabled');
+      b24AiHelperCta.removeAttribute('tabindex');}
+
     b24AiHelperClose.addEventListener('click', function (){b24AiHelperSetOpen(false);});
 
-    b24AiHelperActions.forEach(function (b24AiHelperAction){b24AiHelperAction.addEventListener('click', function (event){var b24AiHelperType = b24AiHelperAction.getAttribute('data-b24-ai-helper-action');
-        var b24AiHelperHref = b24AiHelperAction.getAttribute('href');
+    b24AiHelperOptions.forEach(function (b24AiHelperOption){b24AiHelperOption.addEventListener('click', function (){var b24AiHelperSelectedTitle = b24AiHelperOption.getAttribute('data-b24-ai-helper-option');
 
-        if (!b24AiHelperHref){return;}event.preventDefault();
-        b24AiHelperConfirm.textContent = b24AiHelperMessages[b24AiHelperType]|| '';
+        b24AiHelperOptions.forEach(function (b24AiHelperItem){b24AiHelperItem.classList.remove('b24-ai-helper-option--selected');
+          b24AiHelperItem.setAttribute('aria-pressed', 'false');});
+
+        b24AiHelperOption.classList.add('b24-ai-helper-option--selected');
+        b24AiHelperOption.setAttribute('aria-pressed', 'true');
+        b24AiHelperConfirm.textContent = '✅ Вы выбрали: ' + b24AiHelperSelectedTitle;
         b24AiHelperConfirm.classList.add('b24-ai-helper-confirm--visible');
+        b24AiHelperEnableCta();});});
 
-        window.setTimeout(function (){window.location.href = b24AiHelperHref;}, 650);});});
+    b24AiHelperCta.addEventListener('click', function (event){if (b24AiHelperCta.getAttribute('aria-disabled') === 'true'){event.preventDefault();}});
 
     document.addEventListener('keydown', function (event){if (event.key === 'Escape'){b24AiHelperSetOpen(false);}});})();
 </script>
