@@ -11,13 +11,8 @@
 
   <section class="b24-ai-helper-card" aria-label="Помощник выбора сценария задач в Битрикс24" aria-hidden="true">
     <div class="b24-ai-helper-card__header">
-      <div class="b24-ai-helper-avatar" aria-hidden="true">
-        <span class="b24-ai-helper-avatar__spark">✦</span>
-      </div>
-      <div class="b24-ai-helper-card__intro">
-        <h2 class="b24-ai-helper-title">Для какой команды вы выбираете задачи?</h2>
-        <p class="b24-ai-helper-subtitle">Подберём удобный сценарий работы с задачами и проектами.</p>
-      </div>
+      <h2 class="b24-ai-helper-title">Выберите размер команды</h2>
+      <p class="b24-ai-helper-subtitle">Это поможет подобрать подходящий сценарий работы.</p>
     </div>
 
     <div class="b24-ai-helper-options" aria-label="Размер команды">
@@ -187,54 +182,32 @@
   }
 
   .b24-ai-helper-card__header {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-
-  .b24-ai-helper-avatar {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border: 1px solid rgba(47, 198, 246, 0.22);
-    border-radius: 16px;
-    color: var(--b24-ai-helper-blue-strong);
-    background: linear-gradient(135deg, #f4fbff 0%, #e8f8ff 100%);
-    box-shadow: 0 10px 22px rgba(22, 48, 93, 0.08);
-  }
-
-  .b24-ai-helper-avatar__spark {
-    font-size: 23px;
-    line-height: 1;
-  }
-
-  .b24-ai-helper-card__intro {
-    min-width: 0;
+    display: block;
+    text-align: left;
   }
 
   .b24-ai-helper-title {
     margin: 0;
-    color: var(--b24-ai-helper-text);
-    font-size: 25px;
+    color: #1f2a44;
+    font-size: 30px;
     font-weight: 700;
-    line-height: 1.18;
+    line-height: 1.15;
+    text-align: left;
   }
 
   .b24-ai-helper-subtitle {
-    margin: 8px 0 0;
-    color: #42536a;
+    margin: 12px 0 0;
+    color: #5f6f89;
     font-size: 16px;
-    font-weight: 500;
-    line-height: 1.55;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
   }
 
   .b24-ai-helper-options {
     display: grid;
     gap: 12px;
-    margin-top: 22px;
+    margin-top: 28px;
   }
 
   .b24-ai-helper-option {
@@ -419,13 +392,13 @@
     }
 
     .b24-ai-helper-title {
-      font-size: 20px;
-      line-height: 1.2;
+      font-size: 26px;
+      line-height: 1.15;
     }
 
     .b24-ai-helper-subtitle {
-      font-size: 14px;
-      line-height: 1.45;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     .b24-ai-helper-option {
