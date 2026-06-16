@@ -301,10 +301,16 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease,
+      color 0.25s ease;
   }
 
-  .b24-collab-hero__btn:hover { transform: translateY(-2px); }
+  .b24-collab-hero__btn:hover { transform: translateY(-1px); }
+
+  .b24-collab-hero__btn:active { transform: translateY(0); }
 
   .b24-collab-hero__btn--primary {
     background: #c7f52b;
@@ -313,8 +319,20 @@
   }
 
   .b24-collab-hero__btn--primary:hover {
-    background: #d5ff4a;
-    box-shadow: 0 20px 38px rgba(164, 220, 32, 0.4);
+    color: #142100;
+    background: linear-gradient(135deg, #cfff18, #b8ff1a);
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.45),
+      0 0 22px rgba(190, 255, 40, 0.45),
+      0 12px 34px rgba(180, 255, 30, 0.28);
+    filter: none;
+  }
+
+  .b24-collab-hero__btn--primary:active {
+    color: #142100;
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.35),
+      0 0 14px rgba(190, 255, 40, 0.32);
   }
 
   .b24-collab-hero__btn--ghost {
