@@ -18,16 +18,16 @@
 
     <div class="b24-collab-tabs__nav-wrap" role="tablist" aria-label="Возможности совместной работы">
       <button class="b24-collab-tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="b24-collab-panel" data-slide="0">
-        <span aria-hidden="true">💬</span> Общение
+        Общение
       </button>
       <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="1">
-        <span aria-hidden="true">📞</span> Встречи
+        Встречи
       </button>
       <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="2">
-        <span aria-hidden="true">📋</span> Работа
+        Работа
       </button>
       <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="3">
-        <span aria-hidden="true">🤖</span> AI
+        AI
       </button>
     </div>
 
@@ -39,11 +39,6 @@
           alt="Интерфейс Битрикс24 для рабочих чатов и каналов"
           loading="lazy"
         />
-      </div>
-
-      <div class="b24-collab-tabs__caption">
-        <h3 class="b24-collab-tabs__caption-title">Общение</h3>
-        <p class="b24-collab-tabs__caption-text">Обсуждайте рабочие вопросы в чатах и каналах.</p>
       </div>
     </div>
   </div>
@@ -131,8 +126,7 @@
 
   .b24-collab-tabs__header,
   .b24-collab-tabs__stage,
-  .b24-collab-tabs__screen-shell,
-  .b24-collab-tabs__caption {
+  .b24-collab-tabs__screen-shell {
     background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
@@ -151,11 +145,13 @@
     justify-content: center;
     margin: 0 0 14px;
     padding: 9px 16px;
-    border: 1px solid rgba(176, 204, 255, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
-    color: #dce9ff;
-    background: rgba(13, 36, 88, 0.44);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.25), 0 0 48px rgba(99, 102, 241, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     font-size: 14px;
     line-height: 1;
   }
@@ -164,9 +160,9 @@
     margin: 0 auto;
     max-width: 940px;
     color: #ffffff;
-    font-size: clamp(34px, 4vw, 58px);
-    font-weight: 700;
-    line-height: 1.06;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 600;
+    line-height: 1.05;
     letter-spacing: -0.035em;
   }
 
@@ -188,8 +184,9 @@
     max-width: 100%;
     border: 1px solid rgba(187, 212, 255, 0.22);
     border-radius: 999px;
-    background: rgba(9, 28, 75, 0.32);
+    background: rgba(9, 28, 75, 0.22);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
@@ -200,10 +197,12 @@
     gap: 8px;
     min-height: 48px;
     padding: 0 22px;
-    border: 1px solid rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
     color: #f3f7ff;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     font: inherit;
     font-size: 16px;
     font-weight: 650;
@@ -214,32 +213,26 @@
   }
 
   .b24-collab-tabs__tab:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-1px);
   }
 
   .b24-collab-tabs__tab.is-active {
-    color: #06183f;
-    border-color: rgba(255, 255, 255, 0.98);
-    background: #ffffff;
-    box-shadow: 0 16px 34px rgba(5, 18, 58, 0.24), 0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+    color: #17347a;
+    border-color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
   }
 
   .b24-collab-tabs__stage {
-    margin: clamp(26px, 3.5vw, 44px) auto 0;
-    transition: opacity 0.36s ease, transform 0.36s ease;
-  }
-
-  .b24-collab-tabs__stage.is-switching {
-    opacity: 0;
-    transform: translateY(12px) scale(0.985);
+    margin: clamp(22px, 3vw, 36px) auto 0;
   }
 
   .b24-collab-tabs__screen-shell {
     position: relative;
     width: 100%;
-    max-width: 900px;
-    margin: 32px auto 0;
+    max-width: 1020px;
+    margin: 20px auto 0;
     padding: 0;
     border: 0;
     background: transparent;
@@ -260,27 +253,14 @@
     object-fit: contain;
     object-position: center;
     border-radius: 18px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.28s ease, transform 0.28s ease;
   }
 
-  .b24-collab-tabs__caption {
-    max-width: 720px;
-    margin: clamp(18px, 2.6vw, 30px) auto 0;
-  }
-
-  .b24-collab-tabs__caption-title {
-    margin: 0;
-    color: #ffffff;
-    font-size: clamp(24px, 2.6vw, 36px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-  }
-
-  .b24-collab-tabs__caption-text {
-    margin: 8px auto 0;
-    color: #d4e3ff;
-    font-size: clamp(16px, 1.55vw, 20px);
-    line-height: 1.5;
+  .b24-collab-tabs__screen.is-switching {
+    opacity: 0;
+    transform: translateY(8px) scale(0.992);
   }
 
   @keyframes b24-collab-tabs-float {
@@ -359,26 +339,18 @@
   (function () {
     const slides = [
       {
-        title: 'Общение',
-        text: 'Обсуждайте рабочие вопросы в чатах и каналах.',
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/1.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для рабочих чатов и каналов'
       },
       {
-        title: 'Встречи',
-        text: 'Проводите созвоны без ссылок и лишних приложений.',
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для видеовстреч команды'
       },
       {
-        title: 'Работа',
-        text: 'Превращайте обсуждения в задачи и проекты.',
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/1.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 для задач и проектов'
       },
       {
-        title: 'AI',
-        text: 'Получайте итоги встреч и готовые задачи автоматически.',
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/88.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 с AI-помощником'
       }
@@ -387,10 +359,10 @@
     const initCollabTabs = function (root) {
       const tabs = Array.from(root.querySelectorAll('.b24-collab-tabs__tab'));
       const image = root.querySelector('.b24-collab-tabs__screen');
-      const captionTitle = root.querySelector('.b24-collab-tabs__caption-title');
-      const captionText = root.querySelector('.b24-collab-tabs__caption-text');
+      let activeIndex = 0;
+      let switchTimer = null;
 
-      if (!tabs.length || !image || !captionTitle || !captionText) {
+      if (!tabs.length || !image) {
         return;
       }
 
@@ -405,15 +377,20 @@
       const showSlide = function (nextIndex) {
         const slide = slides[nextIndex];
 
-        if (!slide) {
+        if (!slide || nextIndex === activeIndex) {
           return;
         }
 
+        activeIndex = nextIndex;
         setActiveTab(nextIndex);
-        image.src = slide.image;
-        image.alt = slide.alt;
-        captionTitle.textContent = slide.title;
-        captionText.textContent = slide.text;
+        window.clearTimeout(switchTimer);
+        image.classList.add('is-switching');
+
+        switchTimer = window.setTimeout(function () {
+          image.src = slide.image;
+          image.alt = slide.alt;
+          image.classList.remove('is-switching');
+        }, 140);
       };
 
       tabs.forEach(function (tab, fallbackIndex) {
