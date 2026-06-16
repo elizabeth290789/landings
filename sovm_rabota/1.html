@@ -140,20 +140,82 @@
   }
 
   .b24-collab-tabs__eyebrow {
+    position: relative;
+    z-index: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0 0 14px;
     padding: 9px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    border: 1px solid transparent;
     border-radius: 999px;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 24px rgba(139, 92, 246, 0.25), 0 0 48px rgba(99, 102, 241, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    color: rgba(255, 255, 255, 0.95);
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)) padding-box,
+      linear-gradient(115deg, rgba(255, 255, 255, 0.15), rgba(139, 92, 246, 0.65) 52%, rgba(99, 102, 241, 0.55)) border-box;
+    box-shadow:
+      0 0 16px rgba(139, 92, 246, 0.25),
+      0 0 40px rgba(99, 102, 241, 0.18),
+      0 0 80px rgba(139, 92, 246, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -10px 22px rgba(99, 102, 241, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     font-size: 14px;
+    font-weight: 500;
     line-height: 1;
+    letter-spacing: 0.2px;
+    text-shadow: 0 0 12px rgba(199, 215, 255, 0.24);
+    transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+
+  .b24-collab-tabs__eyebrow::before,
+  .b24-collab-tabs__eyebrow::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 999px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .b24-collab-tabs__eyebrow::before {
+    width: 34px;
+    height: 34px;
+    top: -17px;
+    left: 18px;
+    background: radial-gradient(circle, rgba(226, 244, 255, 0.82) 0 8%, rgba(125, 170, 255, 0.34) 24%, rgba(125, 170, 255, 0) 68%);
+    filter: blur(1px);
+  }
+
+  .b24-collab-tabs__eyebrow::after {
+    width: 46px;
+    height: 46px;
+    right: 10px;
+    bottom: -25px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 6%, rgba(147, 197, 253, 0.28) 22%, rgba(139, 92, 246, 0) 66%);
+    filter: blur(1.5px);
+  }
+
+  .b24-collab-tabs__eyebrow:hover {
+    color: #ffffff;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055)) padding-box,
+      linear-gradient(115deg, rgba(255, 255, 255, 0.24), rgba(139, 92, 246, 0.78) 50%, rgba(99, 102, 241, 0.68)) border-box;
+    box-shadow:
+      0 0 20px rgba(139, 92, 246, 0.33),
+      0 0 52px rgba(99, 102, 241, 0.24),
+      0 0 92px rgba(139, 92, 246, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -10px 24px rgba(99, 102, 241, 0.1);
+  }
+
+  .b24-collab-tabs__eyebrow:hover::before,
+  .b24-collab-tabs__eyebrow:hover::after {
+    opacity: 1;
+    filter: blur(1px) brightness(1.12);
   }
 
   .b24-collab-tabs__title {
