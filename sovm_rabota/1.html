@@ -160,22 +160,26 @@
     border-radius: 999px;
     color: #ffffff;
     background:
-      radial-gradient(ellipse at 3% 50%, rgba(178, 142, 255, 0.36) 0 7%, transparent 22%),
-      radial-gradient(ellipse at 97% 52%, rgba(94, 196, 255, 0.34) 0 8%, transparent 23%),
+      radial-gradient(ellipse at 3% 50%, rgba(178, 142, 255, 0.34) 0 7%, transparent 22%),
+      radial-gradient(ellipse at 97% 52%, rgba(94, 214, 255, 0.38) 0 8%, transparent 23%),
+      radial-gradient(ellipse at 72% 16%, rgba(77, 232, 224, 0.14) 0 6%, transparent 24%),
+      radial-gradient(ellipse at 28% 88%, rgba(45, 214, 177, 0.1) 0 5%, transparent 26%),
       radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.24) 0 10%, transparent 38%),
       radial-gradient(ellipse at 50% 100%, rgba(136, 114, 255, 0.18) 0 14%, transparent 46%),
-      linear-gradient(118deg, rgba(18, 31, 82, 0.97) 0%, rgba(35, 50, 124, 0.96) 34%, rgba(55, 45, 132, 0.95) 64%, rgba(22, 72, 139, 0.97) 100%);
+      linear-gradient(118deg, rgba(14, 27, 76, 0.97) 0%, rgba(31, 47, 123, 0.96) 32%, rgba(58, 43, 133, 0.95) 63%, rgba(18, 78, 145, 0.97) 100%);
     box-shadow:
       0 0 0 1px rgba(207, 226, 255, 0.2),
       0 0 30px rgba(174, 103, 255, 0.38),
-      0 0 58px rgba(71, 174, 255, 0.28),
+      0 0 62px rgba(64, 203, 255, 0.3),
       0 0 104px rgba(120, 103, 255, 0.18),
+      0 0 88px rgba(48, 210, 184, 0.08),
       0 16px 54px rgba(20, 78, 178, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.5),
       inset 0 -14px 32px rgba(18, 48, 113, 0.28),
       inset 0 0 18px rgba(255, 255, 255, 0.16),
-      inset 0 0 38px rgba(93, 191, 255, 0.2),
-      inset 0 0 58px rgba(159, 112, 255, 0.18);
+      inset 0 0 42px rgba(78, 210, 255, 0.22),
+      inset 0 0 58px rgba(159, 112, 255, 0.18),
+      inset 0 0 26px rgba(49, 219, 184, 0.08);
     backdrop-filter: blur(20px) saturate(1.25);
     -webkit-backdrop-filter: blur(20px) saturate(1.25);
     font-size: clamp(17px, 1.42vw, 20px);
@@ -202,9 +206,9 @@
     inset: -1px;
     padding: 1px;
     background:
-      linear-gradient(112deg, #d6b6ff 0%, #867dff 27%, #62d8ff 55%, #ffffff 76%, #a789ff 100%);
+      linear-gradient(112deg, #d6b6ff 0%, #867dff 25%, #58dcff 52%, #7df4e4 61%, #ffffff 77%, #a789ff 100%);
     background-size: 220% 220%;
-    filter: drop-shadow(0 0 10px rgba(197, 138, 255, 0.64)) drop-shadow(0 0 18px rgba(93, 209, 255, 0.46));
+    filter: drop-shadow(0 0 10px rgba(197, 138, 255, 0.64)) drop-shadow(0 0 18px rgba(87, 216, 255, 0.48)) drop-shadow(0 0 12px rgba(67, 229, 197, 0.16));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -219,17 +223,19 @@
     background:
       radial-gradient(circle at 4% 50%, rgba(255, 255, 255, 1) 0 1px, rgba(160, 224, 255, 0.68) 2px, transparent 7px),
       radial-gradient(circle at 6% 47%, rgba(180, 136, 255, 0.68) 0 2px, transparent 8px),
-      radial-gradient(circle at 96% 50%, rgba(255, 255, 255, 1) 0 1px, rgba(112, 205, 255, 0.68) 2px, transparent 8px),
-      radial-gradient(circle at 94% 48%, rgba(204, 143, 255, 0.6) 0 2px, transparent 8px),
+      radial-gradient(circle at 96% 50%, rgba(255, 255, 255, 1) 0 1px, rgba(111, 224, 255, 0.72) 2px, transparent 8px),
+      radial-gradient(circle at 94% 48%, rgba(204, 143, 255, 0.58) 0 2px, transparent 8px),
+      radial-gradient(circle at 88% 35%, rgba(91, 236, 215, 0.26) 0 1px, transparent 6px),
       radial-gradient(circle at 50% 54%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
       radial-gradient(circle at 40% 38%, rgba(138, 216, 255, 0.16) 0 1px, transparent 2px),
-      linear-gradient(101deg, transparent 0%, transparent 38%, rgba(255, 255, 255, 0.08) 45%, rgba(207, 234, 255, 0.32) 50%, rgba(172, 125, 255, 0.1) 55%, transparent 62%, transparent 100%);
-    background-size: auto, auto, auto, auto, auto, auto, 230% 100%;
-    background-position: center, center, center, center, center, center, -160% 0;
+      linear-gradient(101deg, transparent 0%, transparent 38%, rgba(255, 255, 255, 0.08) 45%, rgba(196, 242, 255, 0.34) 49%, rgba(106, 238, 223, 0.16) 51%, rgba(172, 125, 255, 0.1) 56%, transparent 62%, transparent 100%);
+    background-size: auto, auto, auto, auto, auto, auto, auto, 230% 100%;
+    background-position: center, center, center, center, center, center, center, -160% 0;
     box-shadow:
       inset 18px 0 22px -20px rgba(151, 93, 255, 0.46),
-      inset -18px 0 22px -20px rgba(57, 173, 255, 0.48);
-    filter: drop-shadow(0 0 8px rgba(133, 205, 255, 0.32));
+      inset -18px 0 22px -20px rgba(57, 199, 255, 0.5),
+      inset -7px 0 16px -18px rgba(59, 225, 193, 0.28);
+    filter: drop-shadow(0 0 8px rgba(120, 219, 255, 0.34));
     animation:
       b24-collab-tabs-eyebrow-shimmer 7.2s ease-in-out infinite,
       b24-collab-tabs-eyebrow-dots 5.6s ease-in-out infinite;
@@ -242,8 +248,9 @@
     box-shadow:
       0 0 0 1px rgba(224, 238, 255, 0.26),
       0 0 38px rgba(191, 117, 255, 0.48),
-      0 0 76px rgba(85, 190, 255, 0.34),
+      0 0 78px rgba(72, 211, 255, 0.36),
       0 0 118px rgba(155, 129, 255, 0.22),
+      0 0 92px rgba(52, 220, 190, 0.1),
       0 18px 60px rgba(27, 97, 204, 0.26),
       inset 0 1px 0 rgba(255, 255, 255, 0.6),
       inset 0 -14px 34px rgba(18, 48, 113, 0.22),
@@ -253,7 +260,7 @@
   }
 
   .b24-collab-tabs__eyebrow:hover::before {
-    filter: drop-shadow(0 0 11px rgba(183, 108, 255, 0.7)) drop-shadow(0 0 20px rgba(79, 197, 255, 0.44));
+    filter: drop-shadow(0 0 11px rgba(183, 108, 255, 0.7)) drop-shadow(0 0 20px rgba(79, 207, 255, 0.46)) drop-shadow(0 0 14px rgba(76, 229, 202, 0.16));
     animation-duration: 3.2s;
   }
 
@@ -366,22 +373,24 @@
     background:
       radial-gradient(circle at 9% 8%, rgba(255, 255, 255, 0.55) 0 2px, rgba(118, 202, 255, 0.26) 4px, transparent 14px),
       radial-gradient(circle at 91% 8%, rgba(255, 255, 255, 0.5) 0 2px, rgba(173, 110, 255, 0.28) 4px, transparent 15px),
-      radial-gradient(circle at 11% 92%, rgba(109, 194, 255, 0.22) 0 2px, transparent 13px),
+      radial-gradient(circle at 11% 92%, rgba(98, 213, 255, 0.24) 0 2px, transparent 13px),
       radial-gradient(circle at 89% 92%, rgba(151, 106, 255, 0.22) 0 2px, transparent 13px),
-      linear-gradient(90deg, transparent 16%, rgba(116, 208, 255, 0.26) 24%, transparent 34%, transparent 66%, rgba(177, 110, 255, 0.24) 76%, transparent 84%) top / 100% 1px no-repeat,
-      linear-gradient(90deg, transparent 20%, rgba(132, 103, 255, 0.16) 30%, transparent 42%, transparent 58%, rgba(89, 190, 255, 0.16) 70%, transparent 80%) bottom / 100% 1px no-repeat,
-      linear-gradient(180deg, transparent 18%, rgba(151, 105, 255, 0.16) 30%, transparent 42%, transparent 58%, rgba(88, 188, 255, 0.14) 70%, transparent 82%) left / 1px 100% no-repeat,
-      linear-gradient(180deg, transparent 18%, rgba(87, 189, 255, 0.16) 30%, transparent 42%, transparent 58%, rgba(166, 105, 255, 0.14) 70%, transparent 82%) right / 1px 100% no-repeat;
+      radial-gradient(circle at 74% 6%, rgba(88, 238, 214, 0.16) 0 2px, transparent 16px),
+      radial-gradient(circle at 26% 94%, rgba(54, 218, 184, 0.1) 0 2px, transparent 15px),
+      linear-gradient(90deg, transparent 16%, rgba(100, 222, 255, 0.28) 24%, transparent 34%, transparent 66%, rgba(177, 110, 255, 0.24) 76%, transparent 84%) top / 100% 1px no-repeat,
+      linear-gradient(90deg, transparent 20%, rgba(132, 103, 255, 0.16) 30%, transparent 42%, transparent 58%, rgba(78, 210, 255, 0.17) 70%, transparent 80%) bottom / 100% 1px no-repeat,
+      linear-gradient(180deg, transparent 18%, rgba(151, 105, 255, 0.16) 30%, transparent 42%, transparent 58%, rgba(73, 214, 255, 0.15) 70%, transparent 82%) left / 1px 100% no-repeat,
+      linear-gradient(180deg, transparent 18%, rgba(80, 214, 255, 0.17) 30%, transparent 42%, transparent 58%, rgba(166, 105, 255, 0.14) 70%, transparent 82%) right / 1px 100% no-repeat;
     filter:
       drop-shadow(0 0 10px rgba(126, 91, 255, 0.26))
-      drop-shadow(0 0 18px rgba(73, 180, 255, 0.18));
+      drop-shadow(0 0 18px rgba(70, 204, 255, 0.2)) drop-shadow(0 0 14px rgba(55, 220, 190, 0.08));
     animation: b24-collab-tabs-hud-breathe 7.4s ease-in-out infinite;
   }
 
   .b24-collab-tabs__screen-shell::after {
     inset: -16px;
     border-radius: 28px;
-    background: linear-gradient(108deg, transparent 0%, transparent 42%, rgba(255, 255, 255, 0.08) 48%, rgba(115, 211, 255, 0.24) 50%, rgba(174, 110, 255, 0.1) 52%, transparent 58%, transparent 100%);
+    background: linear-gradient(108deg, transparent 0%, transparent 42%, rgba(255, 255, 255, 0.08) 48%, rgba(105, 225, 255, 0.26) 49%, rgba(91, 236, 217, 0.12) 51%, rgba(174, 110, 255, 0.1) 53%, transparent 58%, transparent 100%);
     background-size: 240% 100%;
     background-position: -160% 0;
     mix-blend-mode: screen;
@@ -395,7 +404,7 @@
     z-index: 3;
     pointer-events: none;
     border-radius: 24px;
-    filter: drop-shadow(0 0 11px rgba(123, 92, 255, 0.28)) drop-shadow(0 0 20px rgba(67, 185, 255, 0.18));
+    filter: drop-shadow(0 0 11px rgba(123, 92, 255, 0.28)) drop-shadow(0 0 20px rgba(65, 205, 255, 0.2)) drop-shadow(0 0 14px rgba(60, 225, 195, 0.08));
     transition: filter 0.45s ease, opacity 0.45s ease;
   }
 
@@ -405,8 +414,8 @@
     height: clamp(54px, 8vw, 104px);
     opacity: 0.9;
     background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(113, 209, 255, 0.66) 22%, rgba(126, 97, 255, 0.44) 58%, transparent 78%) top left / 100% 2px no-repeat,
-      linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(177, 112, 255, 0.58) 24%, rgba(75, 188, 255, 0.36) 60%, transparent 80%) top left / 2px 100% no-repeat;
+      linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(104, 224, 255, 0.68) 22%, rgba(121, 101, 255, 0.44) 57%, rgba(92, 232, 211, 0.18) 66%, transparent 80%) top left / 100% 2px no-repeat,
+      linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(177, 112, 255, 0.56) 24%, rgba(73, 208, 255, 0.38) 58%, rgba(70, 224, 194, 0.14) 68%, transparent 82%) top left / 2px 100% no-repeat;
     animation: b24-collab-tabs-hud-twinkle 6.6s ease-in-out infinite;
   }
 
@@ -419,7 +428,7 @@
     left: -2px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 12px rgba(133, 211, 255, 0.5), 0 0 22px rgba(172, 104, 255, 0.34);
+    box-shadow: 0 0 12px rgba(122, 224, 255, 0.52), 0 0 22px rgba(172, 104, 255, 0.34), 0 0 18px rgba(68, 226, 196, 0.12);
   }
 
   .b24-collab-tabs__hud-corner--tl { top: 0; left: 0; }
@@ -429,7 +438,7 @@
 
   .b24-collab-tabs__screen-shell:hover::before {
     opacity: 0.96;
-    filter: drop-shadow(0 0 13px rgba(171, 101, 255, 0.34)) drop-shadow(0 0 24px rgba(77, 196, 255, 0.26));
+    filter: drop-shadow(0 0 13px rgba(171, 101, 255, 0.34)) drop-shadow(0 0 24px rgba(75, 214, 255, 0.28)) drop-shadow(0 0 16px rgba(59, 226, 195, 0.1));
   }
 
   .b24-collab-tabs__screen-shell:hover::after {
@@ -438,7 +447,7 @@
   }
 
   .b24-collab-tabs__screen-shell:hover .b24-collab-tabs__hud-frame {
-    filter: drop-shadow(0 0 14px rgba(177, 107, 255, 0.42)) drop-shadow(0 0 28px rgba(75, 199, 255, 0.28));
+    filter: drop-shadow(0 0 14px rgba(177, 107, 255, 0.42)) drop-shadow(0 0 28px rgba(75, 216, 255, 0.3)) drop-shadow(0 0 18px rgba(60, 226, 196, 0.1));
   }
 
   .b24-collab-tabs__screen-shell:hover .b24-collab-tabs__hud-corner {
@@ -475,9 +484,9 @@
   }
 
   @keyframes b24-collab-tabs-eyebrow-shimmer {
-    0%, 58%, 100% { background-position: center, center, center, center, center, center, -160% 0; opacity: 0.82; }
+    0%, 58%, 100% { background-position: center, center, center, center, center, center, center, -160% 0; opacity: 0.82; }
     69% { opacity: 1; }
-    82% { background-position: center, center, center, center, center, center, 160% 0; opacity: 0.94; }
+    82% { background-position: center, center, center, center, center, center, center, 160% 0; opacity: 0.94; }
   }
 
   @keyframes b24-collab-tabs-eyebrow-dots {
