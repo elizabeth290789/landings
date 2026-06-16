@@ -7,7 +7,7 @@
 
   <div class="b24-collab-tabs__container">
     <div class="b24-collab-tabs__header">
-      <p class="b24-collab-tabs__eyebrow">Совместная работа в Битрикс24</p>
+      <p class="b24-collab-tabs__eyebrow"><span class="b24-collab-tabs__eyebrow-text">Совместная работа в Битрикс24</span></p>
       <h2 class="b24-collab-tabs__title" id="b24-collab-tabs-title">
         Хватит переключаться между мессенджерами, звонками и задачами
       </h2>
@@ -160,37 +160,41 @@
     border-radius: 999px;
     color: #ffffff;
     background:
-      radial-gradient(ellipse at 3% 50%, rgba(178, 142, 255, 0.34) 0 7%, transparent 22%),
-      radial-gradient(ellipse at 97% 52%, rgba(94, 214, 255, 0.38) 0 8%, transparent 23%),
-      radial-gradient(ellipse at 72% 16%, rgba(77, 232, 224, 0.14) 0 6%, transparent 24%),
-      radial-gradient(ellipse at 28% 88%, rgba(45, 214, 177, 0.1) 0 5%, transparent 26%),
-      radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.24) 0 10%, transparent 38%),
-      radial-gradient(ellipse at 50% 100%, rgba(136, 114, 255, 0.18) 0 14%, transparent 46%),
-      linear-gradient(118deg, rgba(14, 27, 76, 0.97) 0%, rgba(31, 47, 123, 0.96) 32%, rgba(58, 43, 133, 0.95) 63%, rgba(18, 78, 145, 0.97) 100%);
+      radial-gradient(ellipse at 8% 50%, rgba(255, 255, 255, 0.28) 0 3%, transparent 14%),
+      radial-gradient(ellipse at 92% 48%, rgba(211, 246, 255, 0.24) 0 4%, transparent 16%),
+      radial-gradient(ellipse at 15% 18%, rgba(107, 241, 222, 0.22) 0 7%, transparent 27%),
+      radial-gradient(ellipse at 87% 78%, rgba(69, 221, 186, 0.22) 0 6%, transparent 25%),
+      radial-gradient(ellipse at 27% 83%, rgba(126, 116, 255, 0.26) 0 10%, transparent 35%),
+      radial-gradient(ellipse at 76% 24%, rgba(187, 126, 255, 0.24) 0 9%, transparent 32%),
+      linear-gradient(101deg, transparent 0 20%, rgba(214, 248, 255, 0.16) 28%, rgba(76, 229, 255, 0.08) 34%, transparent 44% 100%),
+      linear-gradient(120deg, rgba(5, 11, 34, 0.9) 0%, rgba(10, 28, 76, 0.88) 27%, rgba(38, 36, 116, 0.84) 51%, rgba(28, 18, 86, 0.86) 68%, rgba(6, 42, 89, 0.9) 100%);
+    background-size: 120% 120%, 120% 120%, 140% 140%, 140% 140%, 150% 150%, 150% 150%, 260% 100%, 100% 100%;
+    background-position: center, center, 0% 40%, 100% 60%, 20% 80%, 80% 20%, -120% 0, center;
     box-shadow:
-      0 0 0 1px rgba(207, 226, 255, 0.2),
-      0 0 30px rgba(174, 103, 255, 0.38),
-      0 0 62px rgba(64, 203, 255, 0.3),
-      0 0 104px rgba(120, 103, 255, 0.18),
-      0 0 88px rgba(48, 210, 184, 0.08),
-      0 16px 54px rgba(20, 78, 178, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -14px 32px rgba(18, 48, 113, 0.28),
-      inset 0 0 18px rgba(255, 255, 255, 0.16),
-      inset 0 0 42px rgba(78, 210, 255, 0.22),
-      inset 0 0 58px rgba(159, 112, 255, 0.18),
-      inset 0 0 26px rgba(49, 219, 184, 0.08);
-    backdrop-filter: blur(20px) saturate(1.25);
-    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+      0 0 0 1px rgba(224, 244, 255, 0.26),
+      0 0 22px rgba(229, 244, 255, 0.18),
+      0 0 38px rgba(94, 214, 255, 0.34),
+      0 0 58px rgba(153, 104, 255, 0.32),
+      0 0 92px rgba(52, 224, 194, 0.16),
+      0 18px 56px rgba(6, 20, 66, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.74),
+      inset 0 8px 18px rgba(255, 255, 255, 0.12),
+      inset 0 -16px 34px rgba(2, 10, 42, 0.5),
+      inset 0 0 20px rgba(225, 246, 255, 0.2),
+      inset 0 0 46px rgba(81, 220, 255, 0.2),
+      inset 0 0 64px rgba(160, 111, 255, 0.18),
+      inset -20px 0 36px rgba(55, 224, 194, 0.12);
+    backdrop-filter: blur(22px) saturate(1.45) contrast(1.04);
+    -webkit-backdrop-filter: blur(22px) saturate(1.45) contrast(1.04);
     font-size: clamp(17px, 1.42vw, 20px);
     font-weight: 650;
     line-height: 1;
     letter-spacing: 0.18px;
     text-shadow:
-      0 0 1px rgba(255, 255, 255, 0.95),
-      0 0 10px rgba(238, 247, 255, 0.56),
-      0 0 20px rgba(120, 190, 255, 0.2);
-    transition: box-shadow 0.45s ease, color 0.45s ease, filter 0.45s ease;
+      0 1px 1px rgba(0, 8, 28, 0.42),
+      0 0 8px rgba(255, 255, 255, 0.24);
+    animation: b24-collab-tabs-eyebrow-iridescence 10.5s ease-in-out infinite;
+    transition: box-shadow 0.45s ease, color 0.45s ease, filter 0.45s ease, background-position 0.45s ease;
   }
 
   .b24-collab-tabs__eyebrow::before,
@@ -206,68 +210,86 @@
     inset: -1px;
     padding: 1px;
     background:
-      linear-gradient(112deg, #d6b6ff 0%, #867dff 25%, #58dcff 52%, #7df4e4 61%, #ffffff 77%, #a789ff 100%);
-    background-size: 220% 220%;
-    filter: drop-shadow(0 0 10px rgba(197, 138, 255, 0.64)) drop-shadow(0 0 18px rgba(87, 216, 255, 0.48)) drop-shadow(0 0 12px rgba(67, 229, 197, 0.16));
+      linear-gradient(112deg, #f8fdff 0%, #9eeeff 14%, #6ff5de 28%, #8194ff 44%, #c88dff 61%, #ffffff 76%, #58ddff 88%, #b99aff 100%);
+    background-size: 260% 260%;
+    filter:
+      drop-shadow(0 0 10px rgba(222, 244, 255, 0.52))
+      drop-shadow(0 0 18px rgba(83, 219, 255, 0.44))
+      drop-shadow(0 0 14px rgba(68, 232, 202, 0.28))
+      drop-shadow(0 0 18px rgba(170, 111, 255, 0.34));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    animation: b24-collab-tabs-eyebrow-border 6.8s ease-in-out infinite;
+    animation: b24-collab-tabs-eyebrow-border 7.4s ease-in-out infinite;
     transition: filter 0.45s ease, opacity 0.45s ease;
   }
 
   .b24-collab-tabs__eyebrow::after {
     z-index: 1;
-    inset: 0;
-    opacity: 0.9;
+    inset: 2px;
+    opacity: 0.88;
     background:
-      radial-gradient(circle at 4% 50%, rgba(255, 255, 255, 1) 0 1px, rgba(160, 224, 255, 0.68) 2px, transparent 7px),
-      radial-gradient(circle at 6% 47%, rgba(180, 136, 255, 0.68) 0 2px, transparent 8px),
-      radial-gradient(circle at 96% 50%, rgba(255, 255, 255, 1) 0 1px, rgba(111, 224, 255, 0.72) 2px, transparent 8px),
-      radial-gradient(circle at 94% 48%, rgba(204, 143, 255, 0.58) 0 2px, transparent 8px),
-      radial-gradient(circle at 88% 35%, rgba(91, 236, 215, 0.26) 0 1px, transparent 6px),
-      radial-gradient(circle at 50% 54%, rgba(255, 255, 255, 0.16) 0 1px, transparent 2px),
-      radial-gradient(circle at 40% 38%, rgba(138, 216, 255, 0.16) 0 1px, transparent 2px),
-      linear-gradient(101deg, transparent 0%, transparent 38%, rgba(255, 255, 255, 0.08) 45%, rgba(196, 242, 255, 0.34) 49%, rgba(106, 238, 223, 0.16) 51%, rgba(172, 125, 255, 0.1) 56%, transparent 62%, transparent 100%);
-    background-size: auto, auto, auto, auto, auto, auto, auto, 230% 100%;
-    background-position: center, center, center, center, center, center, center, -160% 0;
+      linear-gradient(180deg, rgba(255, 255, 255, 0.56) 0%, rgba(213, 247, 255, 0.3) 16%, rgba(255, 255, 255, 0.02) 38%, transparent 56%) top 7px center / 72% 38% no-repeat,
+      radial-gradient(ellipse at 50% 52%, rgba(2, 10, 42, 0.34) 0 36%, transparent 58%),
+      radial-gradient(circle at 7% 50%, rgba(255, 255, 255, 0.96) 0 1px, rgba(130, 236, 255, 0.72) 2px, transparent 8px),
+      radial-gradient(circle at 93% 51%, rgba(255, 255, 255, 0.92) 0 1px, rgba(115, 245, 220, 0.64) 2px, transparent 9px),
+      radial-gradient(circle at 18% 27%, rgba(99, 239, 218, 0.36) 0 1px, transparent 7px),
+      radial-gradient(circle at 84% 30%, rgba(202, 147, 255, 0.36) 0 1px, transparent 8px),
+      linear-gradient(101deg, transparent 0%, transparent 33%, rgba(255, 255, 255, 0.05) 41%, rgba(235, 252, 255, 0.42) 47%, rgba(106, 238, 223, 0.22) 51%, rgba(170, 125, 255, 0.12) 56%, transparent 64%, transparent 100%);
+    background-size: 72% 38%, auto, auto, auto, auto, auto, 245% 100%;
+    background-position: top 7px center, center, center, center, center, center, -165% 0;
     box-shadow:
-      inset 18px 0 22px -20px rgba(151, 93, 255, 0.46),
-      inset -18px 0 22px -20px rgba(57, 199, 255, 0.5),
-      inset -7px 0 16px -18px rgba(59, 225, 193, 0.28);
-    filter: drop-shadow(0 0 8px rgba(120, 219, 255, 0.34));
+      inset 24px 0 28px -24px rgba(196, 154, 255, 0.52),
+      inset -24px 0 28px -24px rgba(91, 227, 255, 0.56),
+      inset -10px 0 18px -16px rgba(60, 237, 202, 0.42),
+      inset 0 12px 18px -18px rgba(255, 255, 255, 0.82);
+    mix-blend-mode: screen;
+    filter: blur(0.05px) drop-shadow(0 0 9px rgba(175, 231, 255, 0.34));
     animation:
-      b24-collab-tabs-eyebrow-shimmer 7.2s ease-in-out infinite,
-      b24-collab-tabs-eyebrow-dots 5.6s ease-in-out infinite;
+      b24-collab-tabs-eyebrow-shimmer 8.2s ease-in-out infinite,
+      b24-collab-tabs-eyebrow-dots 5.8s ease-in-out infinite;
     transition: opacity 0.45s ease, filter 0.45s ease;
   }
 
   .b24-collab-tabs__eyebrow:hover {
     color: #ffffff;
-    filter: brightness(1.06);
+    filter: brightness(1.08) saturate(1.08);
     box-shadow:
-      0 0 0 1px rgba(224, 238, 255, 0.26),
-      0 0 38px rgba(191, 117, 255, 0.48),
-      0 0 78px rgba(72, 211, 255, 0.36),
-      0 0 118px rgba(155, 129, 255, 0.22),
-      0 0 92px rgba(52, 220, 190, 0.1),
-      0 18px 60px rgba(27, 97, 204, 0.26),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6),
-      inset 0 -14px 34px rgba(18, 48, 113, 0.22),
-      inset 0 0 22px rgba(255, 255, 255, 0.2),
-      inset 0 0 46px rgba(105, 204, 255, 0.26),
-      inset 0 0 66px rgba(177, 126, 255, 0.24);
+      0 0 0 1px rgba(238, 251, 255, 0.38),
+      0 0 26px rgba(229, 248, 255, 0.24),
+      0 0 48px rgba(79, 225, 255, 0.44),
+      0 0 74px rgba(177, 111, 255, 0.4),
+      0 0 108px rgba(62, 235, 203, 0.24),
+      0 20px 62px rgba(8, 38, 102, 0.36),
+      inset 0 1px 0 rgba(255, 255, 255, 0.86),
+      inset 0 8px 20px rgba(255, 255, 255, 0.15),
+      inset 0 -16px 34px rgba(2, 10, 42, 0.44),
+      inset 0 0 24px rgba(255, 255, 255, 0.22),
+      inset 0 0 54px rgba(94, 230, 255, 0.28),
+      inset 0 0 72px rgba(181, 126, 255, 0.24),
+      inset -22px 0 40px rgba(62, 238, 202, 0.18);
   }
 
   .b24-collab-tabs__eyebrow:hover::before {
-    filter: drop-shadow(0 0 11px rgba(183, 108, 255, 0.7)) drop-shadow(0 0 20px rgba(79, 207, 255, 0.46)) drop-shadow(0 0 14px rgba(76, 229, 202, 0.16));
+    filter:
+      drop-shadow(0 0 12px rgba(240, 252, 255, 0.66))
+      drop-shadow(0 0 24px rgba(78, 225, 255, 0.58))
+      drop-shadow(0 0 18px rgba(70, 239, 204, 0.38))
+      drop-shadow(0 0 22px rgba(183, 111, 255, 0.46));
     animation-duration: 3.2s;
   }
 
   .b24-collab-tabs__eyebrow:hover::after {
     opacity: 1;
-    filter: drop-shadow(0 0 11px rgba(184, 224, 255, 0.5)) brightness(1.12);
-    animation-duration: 3.6s, 4.2s;
+    filter: blur(0.05px) drop-shadow(0 0 12px rgba(204, 242, 255, 0.56)) brightness(1.16) saturate(1.1);
+    animation-duration: 3.5s, 4.1s;
+  }
+
+
+  .b24-collab-tabs__eyebrow-text {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
   }
 
   .b24-collab-tabs__title {
@@ -477,22 +499,29 @@
     transform: translateY(8px) scale(0.992);
   }
 
+  @keyframes b24-collab-tabs-eyebrow-iridescence {
+    0%, 100% { background-position: center, center, 0% 40%, 100% 60%, 20% 80%, 80% 20%, -120% 0, center; }
+    42% { background-position: center, center, 18% 34%, 84% 66%, 28% 72%, 72% 28%, 20% 0, center; }
+    64% { background-position: center, center, 28% 46%, 70% 54%, 38% 68%, 64% 32%, 118% 0, center; }
+  }
+
   @keyframes b24-collab-tabs-eyebrow-border {
-    0%, 42%, 100% { background-position: 0% 50%; opacity: 0.88; }
-    58% { background-position: 100% 50%; opacity: 1; }
-    76% { background-position: 68% 50%; opacity: 0.92; }
+    0%, 40%, 100% { background-position: 0% 50%; opacity: 0.9; }
+    56% { background-position: 100% 50%; opacity: 1; }
+    78% { background-position: 62% 50%; opacity: 0.94; }
   }
 
   @keyframes b24-collab-tabs-eyebrow-shimmer {
-    0%, 58%, 100% { background-position: center, center, center, center, center, center, center, -160% 0; opacity: 0.82; }
-    69% { opacity: 1; }
-    82% { background-position: center, center, center, center, center, center, center, 160% 0; opacity: 0.94; }
+    0%, 55%, 100% { background-position: top 7px center, center, center, center, center, center, -165% 0; opacity: 0.8; }
+    68% { opacity: 1; }
+    83% { background-position: top 7px right 14%, center, center, center, center, center, 165% 0; opacity: 0.92; }
   }
 
   @keyframes b24-collab-tabs-eyebrow-dots {
-    0%, 100% { filter: drop-shadow(0 0 7px rgba(125, 211, 252, 0.28)); }
-    48% { filter: drop-shadow(0 0 11px rgba(167, 139, 250, 0.44)); }
-    66% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.42)); }
+    0%, 100% { filter: blur(0.05px) drop-shadow(0 0 7px rgba(125, 211, 252, 0.28)); }
+    42% { filter: blur(0.05px) drop-shadow(0 0 10px rgba(70, 238, 203, 0.36)); }
+    58% { filter: blur(0.05px) drop-shadow(0 0 12px rgba(167, 139, 250, 0.42)); }
+    72% { filter: blur(0.05px) drop-shadow(0 0 15px rgba(255, 255, 255, 0.42)); }
   }
 
   @keyframes b24-collab-tabs-hud-breathe {
