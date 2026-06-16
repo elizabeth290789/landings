@@ -24,7 +24,6 @@
 
       <div class="b24-collab-hero__actions">
         <a href="#" class="b24-collab-hero__btn b24-collab-hero__btn--primary">Получить бесплатно</a>
-        <a href="#" class="b24-collab-hero__btn b24-collab-hero__btn--ghost">Посмотреть демо</a>
       </div>
 
       <p class="b24-collab-hero__trust">Бесплатно для неограниченного числа пользователей</p>
@@ -146,8 +145,12 @@
     appearance: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 9px;
-    padding: 10px 15px;
+    width: 150px;
+    min-width: 150px;
+    height: 40px;
+    padding: 0 15px;
     white-space: nowrap;
     border-radius: 999px;
     font-size: 15px;
@@ -255,9 +258,10 @@
   }
 
   .b24-collab-hero__actions {
-    margin-top: clamp(34px, 3.4vw, 44px);
+    margin: clamp(34px, 3.4vw, 44px) auto 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 14px;
     flex-wrap: wrap;
     animation-delay: 0.38s;
@@ -304,6 +308,7 @@
   .b24-collab-hero__trust {
     margin: 10px 0 0;
     color: #a2bbdf;
+    text-align: center;
     font-size: 14px;
     animation-delay: 0.52s;
   }
