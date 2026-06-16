@@ -145,77 +145,95 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 14px;
-    padding: 9px 16px;
+    min-height: 42px;
+    margin: 0 0 18px;
+    padding: 13px 28px;
     overflow: hidden;
     border: 1px solid transparent;
     border-radius: 999px;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.98);
     background:
-      linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)) padding-box,
-      linear-gradient(115deg, rgba(255, 255, 255, 0.15), rgba(139, 92, 246, 0.65) 52%, rgba(99, 102, 241, 0.55)) border-box;
+      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.18), transparent 45%) padding-box,
+      radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.15), transparent 45%) padding-box,
+      linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) padding-box,
+      linear-gradient(
+        112deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(147, 197, 253, 0.78) 18%,
+        rgba(99, 102, 241, 0.86) 43%,
+        rgba(139, 92, 246, 0.9) 68%,
+        rgba(255, 255, 255, 0.62) 100%
+      ) border-box;
     box-shadow:
-      0 0 16px rgba(139, 92, 246, 0.25),
-      0 0 40px rgba(99, 102, 241, 0.18),
-      0 0 80px rgba(139, 92, 246, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16),
-      inset 0 -10px 22px rgba(99, 102, 241, 0.08);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    font-size: 14px;
-    font-weight: 500;
+      0 0 20px rgba(139, 92, 246, 0.25),
+      0 0 50px rgba(59, 130, 246, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -14px 28px rgba(20, 41, 116, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    font-size: clamp(15px, 1.25vw, 17px);
+    font-weight: 650;
     line-height: 1;
-    letter-spacing: 0.2px;
-    text-shadow: 0 0 12px rgba(199, 215, 255, 0.24);
-    transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    letter-spacing: 0.22px;
+    text-shadow: 0 0 14px rgba(213, 226, 255, 0.28);
+    transition: background 0.36s ease, box-shadow 0.36s ease, border-color 0.36s ease, color 0.36s ease;
   }
 
   .b24-collab-tabs__eyebrow::before,
   .b24-collab-tabs__eyebrow::after {
     content: "";
     position: absolute;
-    z-index: 0;
     pointer-events: none;
-    border-radius: 999px;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, filter 0.3s ease;
+    border-radius: inherit;
   }
 
   .b24-collab-tabs__eyebrow::before {
-    width: 34px;
-    height: 34px;
-    top: -17px;
-    left: 18px;
-    background: radial-gradient(circle, rgba(226, 244, 255, 0.82) 0 8%, rgba(125, 170, 255, 0.34) 24%, rgba(125, 170, 255, 0) 68%);
-    filter: blur(1px);
+    z-index: 1;
+    width: 86px;
+    inset: -2px auto -2px -110px;
+    opacity: 0;
+    background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.08) 22%, rgba(191, 219, 254, 0.55) 50%, rgba(139, 92, 246, 0.16) 72%, transparent 100%);
+    filter: blur(0.5px);
+    transform: skewX(-18deg) translateX(0);
+    animation: b24-collab-tabs-eyebrow-scan 7s ease-in-out infinite;
+    transition: opacity 0.36s ease, filter 0.36s ease;
   }
 
   .b24-collab-tabs__eyebrow::after {
-    width: 46px;
-    height: 46px;
-    right: 10px;
-    bottom: -25px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 6%, rgba(147, 197, 253, 0.28) 22%, rgba(139, 92, 246, 0) 66%);
-    filter: blur(1.5px);
+    z-index: 1;
+    inset: 0;
+    opacity: 0.84;
+    background:
+      radial-gradient(circle at 18px 50%, rgba(125, 211, 252, 0.96) 0 2px, rgba(125, 211, 252, 0.28) 3px, transparent 6px),
+      radial-gradient(circle at calc(100% - 18px) 50%, rgba(167, 139, 250, 0.96) 0 2px, rgba(167, 139, 250, 0.28) 3px, transparent 6px);
+    box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.035);
+    animation: b24-collab-tabs-eyebrow-dots 4.8s ease-in-out infinite;
+    transition: opacity 0.36s ease, filter 0.36s ease;
   }
 
   .b24-collab-tabs__eyebrow:hover {
     color: #ffffff;
     background:
-      linear-gradient(rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.055)) padding-box,
-      linear-gradient(115deg, rgba(255, 255, 255, 0.24), rgba(139, 92, 246, 0.78) 50%, rgba(99, 102, 241, 0.68)) border-box;
+      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.24), transparent 45%) padding-box,
+      radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.2), transparent 45%) padding-box,
+      linear-gradient(rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.065)) padding-box,
+      linear-gradient(112deg, rgba(255, 255, 255, 0.86) 0%, rgba(147, 197, 253, 0.9) 18%, rgba(99, 102, 241, 0.98) 43%, rgba(139, 92, 246, 1) 68%, rgba(255, 255, 255, 0.78) 100%) border-box;
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.33),
-      0 0 52px rgba(99, 102, 241, 0.24),
-      0 0 92px rgba(139, 92, 246, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -10px 24px rgba(99, 102, 241, 0.1);
+      0 0 26px rgba(139, 92, 246, 0.34),
+      0 0 68px rgba(59, 130, 246, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.27),
+      inset 0 -14px 30px rgba(20, 41, 116, 0.24);
   }
 
-  .b24-collab-tabs__eyebrow:hover::before,
+  .b24-collab-tabs__eyebrow:hover::before {
+    opacity: 1;
+    filter: blur(0.25px) brightness(1.18);
+    animation-duration: 2.8s;
+  }
+
   .b24-collab-tabs__eyebrow:hover::after {
     opacity: 1;
-    filter: blur(1px) brightness(1.12);
+    filter: brightness(1.16);
   }
 
   .b24-collab-tabs__title {
@@ -325,6 +343,17 @@
     transform: translateY(8px) scale(0.992);
   }
 
+  @keyframes b24-collab-tabs-eyebrow-scan {
+    0%, 58%, 100% { opacity: 0; transform: skewX(-18deg) translateX(0); }
+    66% { opacity: 0.58; }
+    78% { opacity: 0.28; transform: skewX(-18deg) translateX(360px); }
+  }
+
+  @keyframes b24-collab-tabs-eyebrow-dots {
+    0%, 100% { opacity: 0.72; filter: drop-shadow(0 0 6px rgba(125, 211, 252, 0.28)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.36)); }
+  }
+
   @keyframes b24-collab-tabs-float {
     0%, 100% { opacity: 0.35; transform: translate3d(0, 0, 0); }
     50% { opacity: 0.9; transform: translate3d(0, -12px, 0); }
@@ -382,7 +411,9 @@
     }
 
     .b24-collab-tabs__eyebrow {
-      font-size: 12px;
+      min-height: 38px;
+      padding: 11px 24px;
+      font-size: 14px;
     }
 
     .b24-collab-tabs__title {
