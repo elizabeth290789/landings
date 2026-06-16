@@ -264,13 +264,47 @@
     overflow: hidden;
     border: 1px solid rgba(160, 220, 255, 0.35);
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.02);
+    background:
+      linear-gradient(rgba(4, 12, 38, 0.72), rgba(4, 12, 38, 0.72)) padding-box,
+      linear-gradient(135deg, rgba(120, 220, 255, 0.45), rgba(120, 90, 255, 0.22), rgba(80, 240, 220, 0.32)) border-box;
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.06),
       0 0 28px rgba(80, 200, 255, 0.18),
       0 24px 80px rgba(0, 0, 0, 0.28);
     line-height: 0;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .b24-guests__visual::before,
+  .b24-guests__visual::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .b24-guests__visual::before {
+    z-index: 2;
+    inset: -20px -14px -30px;
+    border-radius: inherit;
+    background:
+      radial-gradient(ellipse at 20% 100%, rgba(61, 235, 214, 0.18), transparent 48%),
+      radial-gradient(ellipse at 88% 100%, rgba(93, 202, 255, 0.22), transparent 46%),
+      radial-gradient(ellipse at 76% 8%, rgba(132, 104, 255, 0.15), transparent 42%);
+    filter: blur(18px);
+    opacity: 0.86;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .b24-guests__visual::after {
+    z-index: 2;
+    inset: 1px;
+    border-radius: 23px;
+    background:
+      linear-gradient(180deg, transparent 68%, rgba(59, 229, 216, 0.16) 100%),
+      radial-gradient(ellipse at 12% 100%, rgba(85, 238, 224, 0.24), transparent 34%),
+      radial-gradient(ellipse at 92% 100%, rgba(80, 200, 255, 0.22), transparent 36%);
+    mix-blend-mode: screen;
+    opacity: 0.78;
   }
 
   .b24-guests__visual:hover {
@@ -282,7 +316,14 @@
       0 24px 80px rgba(0, 0, 0, 0.28);
   }
 
+  .b24-guests__visual:hover::before {
+    opacity: 1;
+    filter: blur(16px) saturate(1.08);
+  }
+
   .b24-guests__image {
+    position: relative;
+    z-index: 1;
     display: block;
     width: 100%;
     max-width: none;
@@ -541,6 +582,10 @@
 
     .b24-guests__image {
       border-radius: 16px;
+    }
+
+    .b24-guests__visual::after {
+      border-radius: 17px;
     }
 
     .b24-guests__cards {
