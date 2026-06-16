@@ -15,11 +15,11 @@
       </p>
 
       <div class="b24-collab-hero__chips" aria-label="Ключевые возможности">
-        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Мессенджер</span>
-        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>AI</span>
-        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Видеозвонки</span>
-        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Задачи</span>
-        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Документы</span>
+        <button class="b24-collab-hero__chip" type="button" aria-pressed="true"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Мессенджер</button>
+        <button class="b24-collab-hero__chip" type="button" aria-pressed="true"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>AI</button>
+        <button class="b24-collab-hero__chip" type="button" aria-pressed="true"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Видеозвонки</button>
+        <button class="b24-collab-hero__chip" type="button" aria-pressed="true"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Задачи</button>
+        <button class="b24-collab-hero__chip" type="button" aria-pressed="true"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Документы</button>
       </div>
 
       <div class="b24-collab-hero__actions">
@@ -143,6 +143,7 @@
   }
 
   .b24-collab-hero__chip {
+    appearance: none;
     display: inline-flex;
     align-items: center;
     gap: 9px;
@@ -151,19 +152,53 @@
     border-radius: 999px;
     font-size: 15px;
     line-height: 1;
+    font-family: inherit;
     font-weight: 600;
     color: #f5f9ff;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 10px 28px rgba(4, 16, 45, 0.16);
     backdrop-filter: blur(8px);
-    transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      color 0.25s ease,
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   .b24-collab-hero__chip:hover {
     background: rgba(255, 255, 255, 0.13);
     border-color: rgba(255, 255, 255, 0.42);
     transform: translateY(-2px);
+  }
+
+  .b24-collab-hero__chip[aria-pressed="true"] {
+    transform: scale(1.02);
+  }
+
+  .b24-collab-hero__chip[aria-pressed="true"]:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .b24-collab-hero__chip[aria-pressed="false"] {
+    color: rgba(245, 249, 255, 0.76);
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(214, 226, 255, 0.16);
+    box-shadow: 0 8px 22px rgba(4, 16, 45, 0.1);
+  }
+
+  .b24-collab-hero__chip[aria-pressed="false"]:hover {
+    color: rgba(245, 249, 255, 0.9);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(214, 226, 255, 0.26);
+  }
+
+  .b24-collab-hero__chip:focus-visible {
+    outline: 2px solid rgba(198, 242, 45, 0.78);
+    outline-offset: 3px;
   }
 
   .b24-collab-hero__chip-check {
@@ -179,6 +214,22 @@
     font-size: 14px;
     font-weight: 800;
     line-height: 1;
+    opacity: 1;
+    transform: scale(1);
+    transition:
+      flex-basis 0.25s ease,
+      margin 0.25s ease,
+      opacity 0.2s ease,
+      transform 0.25s ease,
+      width 0.25s ease;
+  }
+
+  .b24-collab-hero__chip[aria-pressed="false"] .b24-collab-hero__chip-check {
+    width: 0;
+    margin-left: -9px;
+    opacity: 0;
+    transform: scale(0.55);
+    flex-basis: 0;
   }
 
   .b24-collab-hero__title {
@@ -392,3 +443,21 @@
     }
   }
 </style>
+
+<script>
+  (() => {
+    const hero = document.querySelector('.b24-collab-hero');
+
+    if (!hero) {
+      return;
+    }
+
+    hero.querySelectorAll('.b24-collab-hero__chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const isSelected = chip.getAttribute('aria-pressed') === 'true';
+
+        chip.setAttribute('aria-pressed', String(!isSelected));
+      });
+    });
+  })();
+</script>
