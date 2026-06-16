@@ -6,14 +6,6 @@
 
   <div class="b24-collab-hero__container">
     <div class="b24-collab-hero__content">
-      <div class="b24-collab-hero__chips" aria-label="Ключевые возможности">
-        <span class="b24-collab-hero__chip">Мессенджер</span>
-        <span class="b24-collab-hero__chip">AI</span>
-        <span class="b24-collab-hero__chip">Видеозвонки</span>
-        <span class="b24-collab-hero__chip">Задачи</span>
-        <span class="b24-collab-hero__chip">Документы</span>
-      </div>
-
       <h1 class="b24-collab-hero__title" id="b24-collab-hero-title">
         Пространство для современной командной работы
       </h1>
@@ -21,6 +13,14 @@
       <p class="b24-collab-hero__subtitle">
         Чаты, звонки, задачи, документы и AI — в одном месте. Для команды, клиентов и подрядчиков.
       </p>
+
+      <div class="b24-collab-hero__chips" aria-label="Ключевые возможности">
+        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Мессенджер</span>
+        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>AI</span>
+        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Видеозвонки</span>
+        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Задачи</span>
+        <span class="b24-collab-hero__chip"><span class="b24-collab-hero__chip-check" aria-hidden="true">✓</span>Документы</span>
+      </div>
 
       <div class="b24-collab-hero__actions">
         <a href="#" class="b24-collab-hero__btn b24-collab-hero__btn--primary">Получить бесплатно</a>
@@ -133,31 +133,52 @@
 
   .b24-collab-hero__chips {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(6px, 1vw, 12px);
+    gap: clamp(8px, 1vw, 12px);
     width: 100%;
-    margin-bottom: 16px;
-    animation-delay: 0.08s;
+    max-width: 760px;
+    margin: clamp(20px, 2.3vw, 28px) auto 0;
+    animation-delay: 0.28s;
   }
 
   .b24-collab-hero__chip {
-    padding: 9px clamp(10px, 1.1vw, 15px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
     white-space: nowrap;
     border-radius: 999px;
-    font-size: 13px;
+    font-size: clamp(14px, 1vw, 16px);
     line-height: 1;
-    color: #e4efff;
-    background: rgba(20, 42, 90, 0.42);
-    border: 1px solid rgba(163, 190, 255, 0.34);
+    font-weight: 600;
+    color: #f5f9ff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 28px rgba(4, 16, 45, 0.16);
     backdrop-filter: blur(8px);
     transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   }
 
   .b24-collab-hero__chip:hover {
-    background: rgba(34, 64, 124, 0.62);
-    border-color: rgba(192, 215, 255, 0.58);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.42);
     transform: translateY(-2px);
+  }
+
+  .b24-collab-hero__chip-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    border-radius: 50%;
+    background: #c6f22d;
+    color: #153000;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
   }
 
   .b24-collab-hero__title {
@@ -169,7 +190,7 @@
     letter-spacing: -0.03em;
     max-width: 760px;
     text-align: center;
-    animation-delay: 0.16s;
+    animation-delay: 0.08s;
   }
 
   .b24-collab-hero__subtitle {
@@ -179,16 +200,16 @@
     line-height: 1.5;
     max-width: 680px;
     text-align: center;
-    animation-delay: 0.25s;
+    animation-delay: 0.18s;
   }
 
   .b24-collab-hero__actions {
-    margin-top: clamp(20px, 2.2vw, 28px);
+    margin-top: clamp(18px, 2vw, 24px);
     display: flex;
     justify-content: center;
     gap: 14px;
     flex-wrap: wrap;
-    animation-delay: 0.34s;
+    animation-delay: 0.38s;
   }
 
   .b24-collab-hero__btn {
@@ -233,7 +254,7 @@
     margin: 10px 0 0;
     color: #a2bbdf;
     font-size: 14px;
-    animation-delay: 0.42s;
+    animation-delay: 0.52s;
   }
 
   .b24-collab-hero__hero-image,
@@ -261,7 +282,7 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    animation-delay: 0.5s;
+    animation-delay: 0.6s;
     overflow: visible;
     border: none;
     outline: none;
@@ -305,13 +326,20 @@
     }
 
     .b24-collab-hero__chips {
-      gap: 6px;
-      margin-bottom: 16px;
+      gap: 8px;
+      margin-top: 18px;
     }
 
     .b24-collab-hero__chip {
-      font-size: clamp(10px, 2.7vw, 12px);
-      padding: 7px clamp(7px, 2vw, 12px);
+      font-size: clamp(13px, 3.5vw, 14px);
+      padding: 9px 14px;
+    }
+
+    .b24-collab-hero__chip-check {
+      width: 20px;
+      height: 20px;
+      flex-basis: 20px;
+      font-size: 13px;
     }
 
     .b24-collab-hero__title {
@@ -349,12 +377,11 @@
 
   @media (max-width: 420px) {
     .b24-collab-hero__chips {
-      gap: 4px;
+      gap: 7px;
     }
 
     .b24-collab-hero__chip {
-      font-size: clamp(8.5px, 2.45vw, 10px);
-      padding: 6px 5px;
+      padding: 8px 12px;
     }
   }
 </style>
