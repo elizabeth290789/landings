@@ -29,6 +29,24 @@
       <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="3">
         AI
       </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="4">
+        Доски
+      </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="5">
+        Календарь
+      </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="6">
+        Документы и диск
+      </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="7">
+        База знаний
+      </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="8">
+        Корпоративная почта
+      </button>
+      <button class="b24-collab-tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="b24-collab-panel" data-slide="9">
+        Соцсеть компании
+      </button>
     </div>
 
     <div class="b24-collab-tabs__stage" id="b24-collab-panel" role="tabpanel" aria-live="polite">
@@ -287,6 +305,7 @@
 
   .b24-collab-tabs__nav-wrap {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
     margin: clamp(24px, 3.2vw, 38px) auto 0;
@@ -307,7 +326,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 130px;
+    width: auto;
     min-width: 130px;
     height: 52px;
     min-height: 52px;
@@ -574,12 +593,12 @@
     }
 
     .b24-collab-tabs__nav-wrap {
-      justify-content: flex-start;
+      justify-content: center;
       width: auto;
       margin-right: 0;
       margin-left: 0;
       padding: 0 16px 2px;
-      overflow-x: auto;
+      overflow-x: visible;
       border: none;
       border-radius: 0;
       background: transparent;
@@ -594,7 +613,7 @@
     }
 
     .b24-collab-tabs__tab {
-      width: 130px;
+      width: auto;
       min-width: 130px;
       height: 52px;
       min-height: 52px;
@@ -649,6 +668,30 @@
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/88.1600w.png.webp?1780063682225',
         alt: 'Интерфейс Битрикс24 с AI-помощником'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chart/3.1176w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для командных досок'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/6.1176w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для календаря команды'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/docs/3.1440w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для документов и диска'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/knowledge-base/4.1176w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для базы знаний'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/mail/5.1440w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для корпоративной почты'
+      },
+      {
+        image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/19.1176w.png.webp?1781520906432',
+        alt: 'Интерфейс Битрикс24 для соцсети компании'
       }
     ];
 
