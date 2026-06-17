@@ -282,15 +282,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(18px, 2.4vw, 34px);
+    padding: clamp(8px, 1.2vw, 16px);
     overflow: hidden;
-    border: 1px solid rgba(160, 220, 255, 0.35);
+    border: 1px solid rgba(180, 230, 255, 0.08);
     border-radius: 24px;
-    background: rgba(4, 12, 38, 0.72);
+    background:
+      radial-gradient(ellipse at 50% 100%, rgba(65, 232, 220, 0.12), transparent 62%),
+      rgba(4, 12, 38, 0.28);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.06),
-      0 0 28px rgba(80, 200, 255, 0.18),
-      0 24px 80px rgba(0, 0, 0, 0.28);
+      0 0 42px rgba(80, 200, 255, 0.14),
+      0 28px 86px rgba(0, 12, 40, 0.22);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
@@ -303,34 +304,33 @@
   }
 
   .b24-collab-ai__visual::before {
-    inset: -20px -14px -30px;
+    inset: -28px -20px -36px;
     border-radius: inherit;
     background:
       radial-gradient(ellipse at 20% 100%, rgba(61, 235, 214, 0.18), transparent 48%),
       radial-gradient(ellipse at 88% 100%, rgba(93, 202, 255, 0.22), transparent 46%),
       radial-gradient(ellipse at 76% 8%, rgba(132, 104, 255, 0.15), transparent 42%);
     filter: blur(18px);
-    opacity: 0.86;
+    opacity: 0.72;
   }
 
   .b24-collab-ai__visual::after {
-    inset: 1px;
-    border-radius: 23px;
+    inset: 0;
+    border-radius: 24px;
     background:
       linear-gradient(180deg, transparent 68%, rgba(59, 229, 216, 0.16) 100%),
       radial-gradient(ellipse at 12% 100%, rgba(85, 238, 224, 0.24), transparent 34%),
       radial-gradient(ellipse at 92% 100%, rgba(80, 200, 255, 0.22), transparent 36%);
     mix-blend-mode: screen;
-    opacity: 0.78;
+    opacity: 0.54;
   }
 
   .b24-collab-ai__visual:hover {
-    border-color: rgba(184, 236, 255, 0.5);
+    border-color: rgba(184, 236, 255, 0.14);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.08),
-      0 0 36px rgba(80, 210, 255, 0.26),
-      0 0 58px rgba(83, 238, 219, 0.12),
-      0 24px 80px rgba(0, 0, 0, 0.28);
+      0 0 50px rgba(80, 210, 255, 0.18),
+      0 0 68px rgba(83, 238, 219, 0.1),
+      0 28px 86px rgba(0, 12, 40, 0.22);
   }
 
   .b24-collab-ai__image {
@@ -350,23 +350,23 @@
   .b24-collab-ai__content {
     min-width: 0;
     display: grid;
-    gap: 16px;
+    gap: 14px;
   }
 
   .b24-collab-ai__cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 14px;
   }
 
   .b24-collab-ai__card {
-    min-height: 176px;
+    min-height: 158px;
     margin: 0;
-    padding: 22px;
-    border: 1px solid rgba(180, 220, 255, 0.12);
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 0.045);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    border: 1px solid rgba(190, 228, 255, 0.08);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.032);
+    box-shadow: 0 14px 34px rgba(0, 12, 40, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.035);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: all 0.25s ease;
@@ -374,9 +374,9 @@
 
   .b24-collab-ai__card:hover {
     transform: translateY(-2px);
-    border-color: rgba(120, 230, 255, 0.22);
-    background: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 20px 50px rgba(80, 220, 255, 0.1), 0 16px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    border-color: rgba(120, 230, 255, 0.16);
+    background: rgba(255, 255, 255, 0.052);
+    box-shadow: 0 18px 42px rgba(80, 220, 255, 0.07), 0 14px 34px rgba(0, 12, 40, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.055);
   }
 
   .b24-collab-ai__icon,
@@ -404,9 +404,9 @@
   }
 
   .b24-collab-ai__icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 22px;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
   }
 
   .b24-collab-ai__icon::before,
@@ -473,20 +473,20 @@
     gap: 14px;
     width: 100%;
     margin: 0;
-    padding: 18px;
-    border: 1px solid rgba(120, 230, 255, 0.18);
-    border-radius: 22px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(80, 220, 255, 0.08));
+    padding: 14px 16px;
+    border: 1px solid rgba(120, 230, 255, 0.11);
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.038), rgba(80, 220, 255, 0.052));
     box-shadow:
-      0 16px 44px rgba(0, 0, 0, 0.14),
-      0 0 28px rgba(80, 220, 255, 0.08);
+      0 14px 36px rgba(0, 12, 40, 0.11),
+      0 0 22px rgba(80, 220, 255, 0.045);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
 
   .b24-collab-ai__note-icon {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     color: #f0fffb;
     border-color: rgba(130, 255, 220, 0.36);
     background:
@@ -494,9 +494,9 @@
       linear-gradient(180deg, rgba(70, 230, 200, 0.26), rgba(15, 90, 110, 0.2));
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-      0 0 22px rgba(60, 255, 210, 0.28),
-      0 0 48px rgba(20, 210, 180, 0.16),
-      0 14px 34px rgba(4, 50, 58, 0.24);
+      0 0 16px rgba(60, 255, 210, 0.2),
+      0 0 34px rgba(20, 210, 180, 0.1),
+      0 12px 28px rgba(4, 50, 58, 0.18);
   }
 
   .b24-collab-ai__note-icon::before {
@@ -551,7 +551,7 @@
     .b24-collab-ai__visual {
       min-height: 0;
       height: auto;
-      padding: clamp(14px, 3vw, 26px);
+      padding: clamp(8px, 2vw, 16px);
     }
 
     .b24-collab-ai__image {
@@ -561,7 +561,7 @@
     }
 
     .b24-collab-ai__card {
-      min-height: 180px;
+      min-height: 156px;
     }
   }
 
@@ -595,7 +595,7 @@
     }
 
     .b24-collab-ai__visual {
-      padding: 12px;
+      padding: 8px;
       border-radius: 18px;
     }
 
@@ -614,7 +614,7 @@
 
     .b24-collab-ai__card {
       min-height: 0;
-      padding: 20px;
+      padding: 18px;
       border-radius: 20px;
     }
 
@@ -630,7 +630,7 @@
 
     .b24-collab-ai__note {
       align-items: flex-start;
-      padding: 16px;
+      padding: 14px;
     }
   }
 
