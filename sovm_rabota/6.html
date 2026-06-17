@@ -275,76 +275,38 @@
 
   .b24-collab-ai__visual {
     position: relative;
-    z-index: 0;
     min-width: 0;
     height: 100%;
     min-height: clamp(520px, 43vw, 670px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(8px, 1.2vw, 16px);
-    overflow: hidden;
-    border: 1px solid rgba(180, 230, 255, 0.08);
-    border-radius: 24px;
-    background:
-      radial-gradient(ellipse at 50% 100%, rgba(65, 232, 220, 0.12), transparent 62%),
-      rgba(4, 12, 38, 0.28);
-    box-shadow:
-      0 0 42px rgba(80, 200, 255, 0.14),
-      0 28px 86px rgba(0, 12, 40, 0.22);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .b24-collab-ai__visual::before,
   .b24-collab-ai__visual::after {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .b24-collab-ai__visual::before {
-    inset: -28px -20px -36px;
-    border-radius: inherit;
-    background:
-      radial-gradient(ellipse at 20% 100%, rgba(61, 235, 214, 0.18), transparent 48%),
-      radial-gradient(ellipse at 88% 100%, rgba(93, 202, 255, 0.22), transparent 46%),
-      radial-gradient(ellipse at 76% 8%, rgba(132, 104, 255, 0.15), transparent 42%);
-    filter: blur(18px);
-    opacity: 0.72;
-  }
-
-  .b24-collab-ai__visual::after {
-    inset: 0;
-    border-radius: 24px;
-    background:
-      linear-gradient(180deg, transparent 68%, rgba(59, 229, 216, 0.16) 100%),
-      radial-gradient(ellipse at 12% 100%, rgba(85, 238, 224, 0.24), transparent 34%),
-      radial-gradient(ellipse at 92% 100%, rgba(80, 200, 255, 0.22), transparent 36%);
-    mix-blend-mode: screen;
-    opacity: 0.54;
-  }
-
-  .b24-collab-ai__visual:hover {
-    border-color: rgba(184, 236, 255, 0.14);
-    box-shadow:
-      0 0 50px rgba(80, 210, 255, 0.18),
-      0 0 68px rgba(83, 238, 219, 0.1),
-      0 28px 86px rgba(0, 12, 40, 0.22);
+    content: none;
   }
 
   .b24-collab-ai__image {
-    position: relative;
-    z-index: 1;
     display: block;
     width: 100%;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    border-radius: 18px;
+    max-width: 980px;
+    height: auto;
     object-fit: contain;
     object-position: center;
-    filter: saturate(1.02);
+    filter:
+      drop-shadow(0 24px 54px rgba(0, 12, 40, 0.22))
+      drop-shadow(0 0 34px rgba(80, 210, 255, 0.1));
   }
 
   .b24-collab-ai__content {
@@ -551,7 +513,6 @@
     .b24-collab-ai__visual {
       min-height: 0;
       height: auto;
-      padding: clamp(8px, 2vw, 16px);
     }
 
     .b24-collab-ai__image {
@@ -594,17 +555,8 @@
       gap: 28px;
     }
 
-    .b24-collab-ai__visual {
-      padding: 8px;
-      border-radius: 18px;
-    }
-
-    .b24-collab-ai__visual::after {
-      border-radius: 17px;
-    }
-
     .b24-collab-ai__image {
-      border-radius: 17px;
+      max-width: 100%;
     }
 
     .b24-collab-ai__cards {
@@ -642,7 +594,6 @@
     }
 
     .b24-collab-ai__card,
-    .b24-collab-ai__visual,
     .b24-collab-ai__eyebrow {
       transition: none;
     }
