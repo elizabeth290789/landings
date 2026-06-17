@@ -182,12 +182,12 @@
     min-height: 218px;
     padding: 24px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 45px rgba(2, 8, 30, 0.18);
-    backdrop-filter: blur(14px);
-    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    border: 1px solid rgba(180, 220, 255, 0.12);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.032));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 16px 40px rgba(0, 0, 0, 0.12), 0 0 30px rgba(54, 190, 219, 0.055);
+    backdrop-filter: blur(12px);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
   }
 
   .b24-crossplatform__card::after {
@@ -198,37 +198,40 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: var(--b24-card-glow, rgba(78, 167, 255, 0.25));
-    filter: blur(30px);
-    opacity: 0.72;
+    background: var(--b24-card-glow, rgba(48, 209, 255, 0.26));
+    filter: blur(32px);
+    opacity: 0.78;
     pointer-events: none;
   }
 
-  .b24-crossplatform__card--desktop { --b24-card-glow: rgba(132, 89, 255, 0.3); }
-  .b24-crossplatform__card--mobile { --b24-card-glow: rgba(53, 217, 224, 0.25); }
-  .b24-crossplatform__card--cloud { --b24-card-glow: rgba(99, 131, 255, 0.3); }
+  .b24-crossplatform__card--desktop { --b24-card-glow: rgba(132, 117, 255, 0.28); }
+  .b24-crossplatform__card--mobile { --b24-card-glow: rgba(53, 217, 224, 0.28); }
+  .b24-crossplatform__card--cloud { --b24-card-glow: rgba(72, 178, 255, 0.28); }
 
   .b24-crossplatform__card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(153, 209, 255, 0.3);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.11), 0 22px 55px rgba(38, 124, 255, 0.16);
+    transform: translateY(-5px);
+    border-color: rgba(128, 224, 255, 0.3);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.04));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.13), 0 24px 58px rgba(0, 8, 31, 0.18), 0 0 38px rgba(48, 209, 255, 0.12);
   }
 
   .b24-crossplatform__card-icon {
     display: grid;
     place-items: center;
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
     margin-bottom: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 17px;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 28px rgba(32, 130, 255, 0.14);
+    border: 1px solid rgba(153, 229, 255, 0.24);
+    border-radius: 50%;
+    color: #effbff;
+    background: radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.36), rgba(74, 207, 255, 0.22) 38%, rgba(78, 105, 255, 0.13) 72%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 30px rgba(32, 176, 255, 0.2), 0 0 24px rgba(48, 209, 255, 0.16);
     font-size: 25px;
+    text-shadow: 0 0 16px rgba(195, 245, 255, 0.72);
   }
 
-  .b24-crossplatform__card-title { margin: 0; font-size: 19px; line-height: 1.25; letter-spacing: -0.02em; }
-  .b24-crossplatform__card-text { margin: 10px 0 0; color: #bfcde2; font-size: 15px; line-height: 1.5; }
+  .b24-crossplatform__card-title { margin: 0; color: #ffffff; font-size: 19px; line-height: 1.25; letter-spacing: -0.02em; }
+  .b24-crossplatform__card-text { margin: 10px 0 0; color: rgba(225, 238, 255, 0.78); font-size: 15px; line-height: 1.5; }
 
   .b24-crossplatform__ecosystem {
     position: relative;
@@ -236,8 +239,23 @@
     align-items: flex-end;
     justify-content: center;
     min-height: 390px;
-    margin: clamp(38px, 5vw, 64px) auto 0;
+    margin: clamp(66px, 7vw, 98px) auto 0;
     perspective: 1200px;
+  }
+
+  .b24-crossplatform__ecosystem::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    z-index: 0;
+    width: min(72vw, 760px);
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(41, 201, 255, 0.18) 0%, rgba(59, 121, 255, 0.1) 42%, rgba(59, 121, 255, 0) 72%);
+    filter: blur(26px);
+    transform: translateX(-50%);
+    pointer-events: none;
   }
 
   .b24-crossplatform__orbit {
@@ -275,7 +293,7 @@
     z-index: 5;
     right: 11%;
     bottom: 0;
-    width: clamp(105px, 12vw, 145px);
+    width: clamp(94px, 10.5vw, 126px);
     aspect-ratio: 0.52;
     padding: 16% 10% 10%;
     border: 6px solid #28314b;
@@ -364,7 +382,7 @@
   @media (max-width: 980px) {
     .b24-crossplatform__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .b24-crossplatform__card { min-height: 200px; }
-    .b24-crossplatform__ecosystem { min-height: 350px; }
+    .b24-crossplatform__ecosystem { min-height: 350px; margin-top: clamp(58px, 7vw, 82px); }
     .b24-crossplatform__laptop { width: min(66vw, 540px); }
     .b24-crossplatform__desktop-app { left: 2%; }
     .b24-crossplatform__phone { right: 4%; }
@@ -378,13 +396,13 @@
     .b24-crossplatform__subtitle { font-size: 16px; }
     .b24-crossplatform__cards { grid-template-columns: 1fr; gap: 12px; margin-top: 34px; }
     .b24-crossplatform__card { min-height: 0; padding: 20px; border-radius: 22px; }
-    .b24-crossplatform__card-icon { width: 46px; height: 46px; margin-bottom: 17px; border-radius: 15px; font-size: 22px; }
-    .b24-crossplatform__ecosystem { min-height: 285px; margin-top: 35px; }
+    .b24-crossplatform__card-icon { width: 46px; height: 46px; margin-bottom: 17px; border-radius: 50%; font-size: 22px; }
+    .b24-crossplatform__ecosystem { min-height: 285px; margin-top: 58px; }
     .b24-crossplatform__orbit { width: 105%; height: 145px; }
     .b24-crossplatform__laptop { width: min(78vw, 390px); }
     .b24-crossplatform__screen { border-width: 4px; border-radius: 11px 11px 5px 5px; }
     .b24-crossplatform__laptop-base { height: 8px; }
-    .b24-crossplatform__phone { right: -2%; width: 82px; border-width: 4px; border-radius: 17px; }
+    .b24-crossplatform__phone { right: -2%; width: 74px; border-width: 4px; border-radius: 17px; }
     .b24-crossplatform__desktop-app { bottom: 22px; left: -3%; width: 120px; padding: 8px; border-radius: 12px; }
     .b24-crossplatform__app-person { grid-template-columns: 18px 1fr; gap: 2px 5px; margin-top: 5px; }
     .b24-crossplatform__cloud, .b24-crossplatform__server { gap: 6px; padding: 7px 8px; border-radius: 10px; }
