@@ -55,7 +55,7 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    padding: clamp(68px, 8vw, 116px) clamp(18px, 4vw, 56px) clamp(84px, 10vw, 148px);
+    padding: clamp(64px, 6vw, 80px) clamp(18px, 4vw, 24px);
     overflow: hidden;
     color: #ffffff;
     background: transparent !important;
@@ -93,7 +93,7 @@
 
   .b24-collab-final__container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
   }
 
@@ -101,7 +101,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: clamp(72px, 7.4vw, 96px) clamp(34px, 6vw, 76px);
+    padding: clamp(48px, 4.5vw, 56px) clamp(36px, 5vw, 64px);
     border: 1px solid rgba(150, 220, 255, 0.18);
     border-radius: 36px;
     background:
@@ -132,7 +132,7 @@
   .b24-collab-final__content {
     position: relative;
     z-index: 1;
-    max-width: 940px;
+    max-width: 820px;
     margin: 0 auto;
     text-align: center;
   }
@@ -143,9 +143,9 @@
     align-items: center;
     justify-content: center;
     gap: 11px;
-    min-height: 48px;
-    margin: 0 0 clamp(28px, 3vw, 38px);
-    padding: 13px 25px;
+    min-height: 42px;
+    margin: 0 0 28px;
+    padding: 10px 20px;
     overflow: hidden;
     color: #ffffff;
     border: 1px solid rgba(168, 241, 255, 0.4);
@@ -161,7 +161,7 @@
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(14px, 1.35vw, 17px);
+    font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 600;
     line-height: 1.2;
   }
@@ -201,9 +201,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: Montserrat, sans-serif;
-    font-size: clamp(64px, 8.1vw, 108px);
+    font-size: clamp(56px, 6.2vw, 72px);
     font-weight: 650;
-    line-height: 0.98;
+    line-height: 1.08;
     letter-spacing: -0.055em;
     text-shadow:
       0 0 24px rgba(90, 240, 255, 0.22),
@@ -211,25 +211,25 @@
   }
 
   .b24-collab-final__title {
-    max-width: 900px;
-    margin: clamp(16px, 2vw, 24px) auto 0;
+    max-width: 760px;
+    margin: 20px auto 0;
     color: #ffffff;
     font-family: Montserrat, sans-serif;
-    font-size: clamp(38px, 4.25vw, 56px);
+    font-size: clamp(34px, 3.5vw, 40px);
     font-weight: 600;
-    line-height: 1.14;
+    line-height: 1.2;
     letter-spacing: -0.035em;
     text-align: center;
   }
 
   .b24-collab-final__subtitle {
-    max-width: 780px;
-    margin: clamp(22px, 2.5vw, 30px) auto 0;
+    max-width: 720px;
+    margin: 20px auto 0;
     color: rgb(210, 226, 255);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(18px, 1.75vw, 23px);
+    font-size: clamp(17px, 1.6vw, 20px);
     font-weight: 400;
-    line-height: 1.52;
+    line-height: 1.5;
     text-align: center;
   }
 
@@ -237,16 +237,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: clamp(36px, 4vw, 48px);
+    margin-top: 32px;
   }
 
   .b24-collab-final__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 258px;
-    min-height: 60px;
-    padding: 17px 32px;
+    min-width: 240px;
+    min-height: 56px;
+    padding: 16px 36px;
     color: #142100;
     border: 0;
     border-radius: 16px;
@@ -283,10 +283,10 @@
   }
 
   .b24-collab-final__note {
-    margin: 13px 0 0;
+    margin: 14px 0 0;
     color: rgba(192, 220, 255, 0.78);
     font-family: Montserrat, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.45;
     text-align: center;
   }
@@ -326,34 +326,34 @@
 
   @media (max-width: 768px) {
     .b24-collab-final {
-      padding: 56px 16px 84px;
+      padding: 48px 16px 56px;
     }
 
     .b24-collab-final__card {
-      padding: 56px 24px;
+      padding: 44px 24px;
       border-radius: 28px;
     }
 
     .b24-collab-final__badge {
-      min-height: 44px;
-      margin-bottom: 28px;
-      padding: 11px 19px;
+      min-height: 40px;
+      margin-bottom: 24px;
+      padding: 9px 17px;
     }
 
     .b24-collab-final__number {
-      font-size: clamp(48px, 14vw, 76px);
+      font-size: clamp(46px, 12vw, 64px);
       letter-spacing: -0.06em;
     }
 
     .b24-collab-final__title {
       margin-top: 15px;
-      font-size: clamp(32px, 8.2vw, 42px);
+      font-size: clamp(30px, 7.4vw, 36px);
       line-height: 1.17;
     }
 
     .b24-collab-final__subtitle {
-      margin-top: 20px;
-      font-size: 18px;
+      margin-top: 18px;
+      font-size: 17px;
       line-height: 1.5;
     }
 
@@ -371,7 +371,7 @@
 
   @media (max-width: 420px) {
     .b24-collab-final__card {
-      padding: 48px 18px;
+      padding: 40px 18px;
       border-radius: 24px;
     }
 
