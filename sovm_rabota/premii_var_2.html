@@ -242,15 +242,29 @@
     display: grid;
     min-height: 570px;
     place-items: center;
-    overflow: hidden;
-    background: transparent;
-    background-image: none;
-    border: 0;
-    box-shadow: none;
+    overflow: visible;
   }
 
-  .b24-premium-award__visual::before {
+  .b24-premium-award__visual,
+  .b24-premium-award__content {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .b24-premium-award__visual::before,
+  .b24-premium-award__visual::after,
+  .b24-premium-award__content::before,
+  .b24-premium-award__content::after {
     content: none;
+    display: none;
   }
 
   .b24-premium-award__halo {
@@ -362,10 +376,6 @@
     justify-content: center;
     flex-direction: column;
     padding: clamp(46px, 5.2vw, 72px) clamp(38px, 5.5vw, 78px);
-    background: transparent;
-    background-image: none;
-    border: 0;
-    box-shadow: none;
   }
 
   .b24-premium-award__eyebrow {
