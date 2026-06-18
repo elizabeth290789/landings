@@ -100,35 +100,10 @@
     box-shadow: none !important;
   }
 
-  .b24-premium-award::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: clamp(105px, 11vw, 155px) max(1%, calc((100% - 1480px) / 2)) clamp(35px, 4vw, 60px);
-    background:
-      radial-gradient(ellipse at 24% 50%, rgba(40, 210, 255, .14), transparent 42%),
-      radial-gradient(ellipse at 80% 34%, rgba(120, 80, 255, .13), transparent 42%);
-    filter: blur(70px);
-    opacity: .8;
-    pointer-events: none;
-  }
-
+  .b24-premium-award::before,
   .b24-premium-award::after {
-    content: "";
-    position: absolute;
-    z-index: -2;
-    top: 20%;
-    left: 50%;
-    width: min(1500px, 112%);
-    height: 72%;
-    background:
-      conic-gradient(from 212deg at 22% 62%, transparent 0 8%, rgba(0, 190, 225, .09) 13%, transparent 24% 100%),
-      conic-gradient(from 28deg at 84% 46%, transparent 0 10%, rgba(110, 65, 230, .1) 17%, transparent 31% 100%),
-      radial-gradient(ellipse at 50% 55%, rgba(5, 28, 91, .2), transparent 67%);
-    filter: blur(52px);
-    opacity: .65;
-    transform: translateX(-50%);
-    pointer-events: none;
+    content: none !important;
+    display: none !important;
   }
 
   .b24-premium-award,
