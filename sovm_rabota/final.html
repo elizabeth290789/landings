@@ -55,7 +55,7 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    padding: clamp(64px, 6vw, 80px) clamp(18px, 4vw, 24px);
+    padding: 48px clamp(18px, 4vw, 24px) 56px;
     overflow: hidden;
     color: #ffffff;
     background: transparent !important;
@@ -93,7 +93,7 @@
 
   .b24-collab-final__container {
     width: 100%;
-    max-width: 960px;
+    max-width: 920px;
     margin: 0 auto;
   }
 
@@ -101,7 +101,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: clamp(48px, 4.5vw, 56px) clamp(36px, 5vw, 64px);
+    padding: 36px clamp(36px, 5vw, 48px) 32px;
     border: 1px solid rgba(150, 220, 255, 0.18);
     border-radius: 36px;
     background:
@@ -144,7 +144,7 @@
     justify-content: center;
     gap: 11px;
     min-height: 42px;
-    margin: 0 0 28px;
+    margin: 0 0 18px;
     padding: 10px 20px;
     overflow: hidden;
     color: #ffffff;
@@ -194,16 +194,16 @@
   }
 
   .b24-collab-final__number {
-    margin: 0;
+    margin: 0 0 14px;
     color: #ffffff;
     background: linear-gradient(90deg, #ffffff 8%, #8ff8ff 52%, #b7fff1 92%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: Montserrat, sans-serif;
-    font-size: clamp(56px, 6.2vw, 72px);
+    font-size: clamp(54px, 5.8vw, 68px);
     font-weight: 650;
-    line-height: 1.08;
+    line-height: 1;
     letter-spacing: -0.055em;
     text-shadow:
       0 0 24px rgba(90, 240, 255, 0.22),
@@ -212,24 +212,24 @@
 
   .b24-collab-final__title {
     max-width: 760px;
-    margin: 20px auto 0;
+    margin: 0 auto 16px;
     color: #ffffff;
     font-family: Montserrat, sans-serif;
-    font-size: clamp(34px, 3.5vw, 40px);
+    font-size: clamp(32px, 3.2vw, 38px);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.16;
     letter-spacing: -0.035em;
     text-align: center;
   }
 
   .b24-collab-final__subtitle {
     max-width: 720px;
-    margin: 20px auto 0;
+    margin: 0 auto;
     color: rgb(210, 226, 255);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(17px, 1.6vw, 20px);
+    font-size: clamp(17px, 1.5vw, 19px);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.45;
     text-align: center;
   }
 
@@ -237,7 +237,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 24px;
   }
 
   .b24-collab-final__button {
@@ -283,7 +283,7 @@
   }
 
   .b24-collab-final__note {
-    margin: 14px 0 0;
+    margin: 10px 0 0;
     color: rgba(192, 220, 255, 0.78);
     font-family: Montserrat, sans-serif;
     font-size: 15px;
@@ -326,17 +326,17 @@
 
   @media (max-width: 768px) {
     .b24-collab-final {
-      padding: 48px 16px 56px;
+      padding: 36px 16px 42px;
     }
 
     .b24-collab-final__card {
-      padding: 44px 24px;
+      padding: 32px 24px 28px;
       border-radius: 28px;
     }
 
     .b24-collab-final__badge {
       min-height: 40px;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       padding: 9px 17px;
     }
 
@@ -346,19 +346,19 @@
     }
 
     .b24-collab-final__title {
-      margin-top: 15px;
+      margin-bottom: 14px;
       font-size: clamp(30px, 7.4vw, 36px);
       line-height: 1.17;
     }
 
     .b24-collab-final__subtitle {
-      margin-top: 18px;
       font-size: 17px;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .b24-collab-final__action {
       width: min(100%, 380px);
+      margin-top: 22px;
       margin-right: auto;
       margin-left: auto;
     }
@@ -371,7 +371,7 @@
 
   @media (max-width: 420px) {
     .b24-collab-final__card {
-      padding: 40px 18px;
+      padding: 28px 18px 26px;
       border-radius: 24px;
     }
 
