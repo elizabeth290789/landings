@@ -101,13 +101,32 @@
     content: "";
     position: absolute;
     z-index: -1;
-    inset: clamp(130px, 14vw, 190px) max(5%, calc((100% - 1320px) / 2)) clamp(70px, 7vw, 100px);
+    inset: clamp(105px, 11vw, 155px) max(1%, calc((100% - 1480px) / 2)) clamp(35px, 4vw, 60px);
     background:
-      radial-gradient(circle at 22% 52%, rgba(31, 220, 255, .22), transparent 43%),
-      radial-gradient(circle at 82% 28%, rgba(133, 75, 255, .22), transparent 42%),
-      radial-gradient(circle at 55% 90%, rgba(24, 211, 205, .12), transparent 40%);
-    filter: blur(48px);
+      radial-gradient(ellipse at 13% 62%, rgba(16, 236, 255, .48), transparent 38%),
+      radial-gradient(ellipse at 31% 88%, rgba(0, 168, 255, .34), transparent 42%),
+      radial-gradient(ellipse at 88% 38%, rgba(126, 55, 255, .5), transparent 40%),
+      radial-gradient(ellipse at 74% 82%, rgba(44, 92, 255, .3), transparent 44%);
+    filter: blur(76px) saturate(1.35);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .b24-premium-award::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    top: 20%;
+    left: 50%;
+    width: min(1500px, 112%);
+    height: 72%;
+    background:
+      conic-gradient(from 212deg at 22% 62%, transparent 0 8%, rgba(0, 220, 255, .2) 13%, transparent 24% 100%),
+      conic-gradient(from 28deg at 84% 46%, transparent 0 10%, rgba(128, 55, 255, .25) 17%, transparent 31% 100%),
+      radial-gradient(ellipse at 50% 55%, rgba(12, 73, 183, .24), transparent 67%);
+    filter: blur(42px);
     opacity: .9;
+    transform: translateX(-50%);
     pointer-events: none;
   }
 
@@ -137,7 +156,9 @@
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, .26),
       0 0 0 1px rgba(255, 255, 255, .04),
-      0 0 28px rgba(49, 226, 244, .2),
+      0 0 18px rgba(49, 226, 244, .35),
+      0 0 42px rgba(49, 226, 244, .24),
+      0 0 66px rgba(105, 79, 255, .14),
       0 14px 44px rgba(0, 9, 37, .28);
     backdrop-filter: blur(18px) saturate(1.2);
     -webkit-backdrop-filter: blur(18px) saturate(1.2);
@@ -176,19 +197,22 @@
     margin: 0 auto;
     overflow: hidden;
     background:
-      radial-gradient(circle at 18% 48%, rgba(40, 230, 255, .26), transparent 34%),
-      radial-gradient(circle at 88% 18%, rgba(150, 80, 255, .34), transparent 38%),
-      radial-gradient(circle at 55% 100%, rgba(20, 210, 220, .18), transparent 42%),
-      linear-gradient(135deg, rgba(20, 115, 210, .35), rgba(35, 55, 170, .42) 48%, rgba(70, 45, 190, .34));
-    border: 1px solid rgba(150, 235, 255, .42);
+      radial-gradient(circle at 14% 55%, rgba(55, 244, 255, .38), transparent 31%),
+      radial-gradient(circle at 48% 4%, rgba(46, 155, 255, .34), transparent 36%),
+      radial-gradient(circle at 88% 12%, rgba(181, 82, 255, .46), transparent 35%),
+      radial-gradient(circle at 46% 108%, rgba(28, 230, 216, .25), transparent 39%),
+      linear-gradient(135deg, rgba(14, 76, 173, .94), rgba(17, 55, 151, .96) 43%, rgba(67, 43, 180, .94));
+    border: 1px solid rgba(188, 249, 255, .78);
     border-radius: 36px;
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, .05) inset,
-      0 0 34px rgba(70, 220, 255, .2),
-      0 0 74px rgba(120, 80, 255, .16),
-      0 30px 90px rgba(0, 0, 0, .32);
-    backdrop-filter: blur(20px) saturate(1.18);
-    -webkit-backdrop-filter: blur(20px) saturate(1.18);
+      0 0 0 1px rgba(255, 255, 255, .1) inset,
+      inset 0 0 70px rgba(52, 221, 255, .12),
+      0 0 18px rgba(91, 235, 255, .48),
+      0 0 48px rgba(64, 215, 255, .3),
+      0 0 94px rgba(132, 70, 255, .28),
+      0 34px 100px rgba(0, 5, 38, .5);
+    backdrop-filter: blur(24px) saturate(1.35);
+    -webkit-backdrop-filter: blur(24px) saturate(1.35);
   }
 
   .b24-premium-award__card::before {
@@ -197,9 +221,11 @@
     z-index: -1;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(60, 240, 255, .18), transparent 32%),
-      radial-gradient(circle at 92% 8%, rgba(170, 90, 255, .28), transparent 32%),
-      linear-gradient(180deg, rgba(215, 252, 255, .12), transparent 15%);
+      radial-gradient(ellipse at 3% 80%, rgba(35, 255, 242, .34), transparent 34%),
+      radial-gradient(ellipse at 66% 48%, rgba(45, 151, 255, .2), transparent 46%),
+      radial-gradient(circle at 96% 6%, rgba(205, 91, 255, .4), transparent 31%),
+      linear-gradient(90deg, rgba(77, 247, 255, .2), transparent 34%),
+      linear-gradient(180deg, rgba(231, 254, 255, .2), transparent 14%);
     border-radius: inherit;
     pointer-events: none;
   }
@@ -211,9 +237,10 @@
     inset: 1px;
     border-radius: 35px;
     box-shadow:
-      inset 1px 0 0 rgba(103, 244, 255, .26),
-      inset 0 1px 0 rgba(224, 252, 255, .18),
-      inset -1px 0 0 rgba(177, 112, 255, .18);
+      inset 2px 0 4px rgba(103, 244, 255, .42),
+      inset 0 2px 5px rgba(224, 252, 255, .38),
+      inset -2px 0 5px rgba(205, 112, 255, .42),
+      inset 0 -1px 3px rgba(74, 224, 255, .3);
     pointer-events: none;
   }
 
@@ -231,9 +258,10 @@
     width: 84%;
     height: 82%;
     background:
-      radial-gradient(ellipse at 42% 50%, rgba(76, 238, 255, .24), transparent 58%),
-      radial-gradient(ellipse at 72% 45%, rgba(137, 92, 255, .14), transparent 62%);
-    filter: blur(14px);
+      radial-gradient(ellipse at 36% 58%, rgba(59, 245, 255, .42), transparent 54%),
+      radial-gradient(ellipse at 74% 42%, rgba(153, 83, 255, .28), transparent 58%),
+      conic-gradient(from 155deg, transparent, rgba(64, 221, 255, .16), transparent 36%);
+    filter: blur(18px) saturate(1.3);
   }
 
   .b24-premium-award__halo {
@@ -246,9 +274,10 @@
     border: 1px solid rgba(157, 244, 255, .2);
     border-radius: 50%;
     box-shadow:
-      0 0 60px rgba(48, 225, 255, .22),
-      0 0 100px rgba(124, 78, 255, .14),
-      inset 0 0 60px rgba(71, 218, 255, .12);
+      0 0 35px rgba(48, 238, 255, .38),
+      0 0 80px rgba(48, 225, 255, .34),
+      0 0 125px rgba(124, 78, 255, .27),
+      inset 0 0 70px rgba(71, 225, 255, .2);
     animation: b24-premium-halo 18s linear infinite;
   }
 
@@ -256,10 +285,12 @@
     position: absolute;
     width: min(91%, 390px);
     height: auto;
-    opacity: .94;
+    opacity: 1;
     filter:
-      drop-shadow(0 0 24px rgba(80, 240, 255, .32))
-      drop-shadow(0 0 48px rgba(120, 90, 255, .18));
+      drop-shadow(0 0 10px rgba(213, 255, 255, .5))
+      drop-shadow(0 0 22px rgba(70, 240, 255, .58))
+      drop-shadow(0 0 44px rgba(70, 240, 255, .36))
+      drop-shadow(0 0 58px rgba(160, 100, 255, .3));
   }
 
   .b24-premium-award__medal {
@@ -279,10 +310,11 @@
     border-radius: 50%;
     box-shadow:
       inset 0 0 0 7px rgba(154, 235, 255, .035),
-      inset 0 0 40px rgba(75, 220, 255, .18),
+      inset 0 0 45px rgba(75, 220, 255, .25),
       0 0 0 7px rgba(93, 220, 255, .025),
-      0 0 50px rgba(56, 231, 255, .3),
-      0 0 82px rgba(122, 82, 255, .18),
+      0 0 28px rgba(56, 240, 255, .5),
+      0 0 65px rgba(56, 231, 255, .42),
+      0 0 105px rgba(139, 75, 255, .3),
       0 24px 55px rgba(1, 8, 40, .38);
   }
 
@@ -301,8 +333,9 @@
     line-height: .92;
     letter-spacing: -.08em;
     text-shadow:
-      0 0 12px rgba(255, 255, 255, .24),
-      0 0 30px rgba(127, 238, 255, .42);
+      0 0 8px rgba(255, 255, 255, .5),
+      0 0 24px rgba(127, 238, 255, .58),
+      0 0 48px rgba(127, 173, 255, .28);
   }
 
   .b24-premium-award__medal-top,
@@ -340,11 +373,12 @@
 
   .b24-premium-award__eyebrow {
     margin: 0 0 20px;
-    color: #81eee5;
+    color: #9bfff4;
     font-size: 12px;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: .16em;
+    text-shadow: 0 0 16px rgba(79, 255, 238, .48);
     text-transform: uppercase;
   }
 
@@ -363,7 +397,7 @@
   .b24-premium-award__description {
     max-width: 690px;
     margin: 22px 0 0;
-    color: rgba(235, 245, 255, .86);
+    color: rgba(244, 249, 255, .94);
     font-size: clamp(16px, 1.35vw, 18px);
     line-height: 1.6;
   }
@@ -386,12 +420,13 @@
     right: 0;
     left: 0;
     height: 1px;
-    background: linear-gradient(90deg, rgba(120, 230, 255, .32), rgba(170, 110, 255, .2), transparent);
+    background: linear-gradient(90deg, rgba(113, 239, 255, .55), rgba(165, 113, 255, .3), transparent);
+    box-shadow: 0 0 12px rgba(82, 225, 255, .2);
   }
 
   .b24-premium-award__criteria p {
     margin: 0 0 13px;
-    color: rgba(216, 240, 248, .52);
+    color: rgba(224, 246, 255, .7);
     font-size: 11px;
     font-weight: 700;
     line-height: 1.2;
@@ -413,7 +448,7 @@
   .b24-premium-award__criteria li {
     position: relative;
     padding-left: 13px;
-    color: rgba(238, 252, 255, .83);
+    color: rgba(245, 253, 255, .92);
     font-size: 13px;
     line-height: 1.25;
   }
@@ -425,9 +460,9 @@
     left: 0;
     width: 4px;
     height: 4px;
-    background: #76fff0;
+    background: #9afff4;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(70, 255, 230, .55);
+    box-shadow: 0 0 6px #7cfff1, 0 0 14px rgba(70, 255, 230, .75);
   }
 
   .b24-premium-award__link {
@@ -439,12 +474,16 @@
     min-height: 52px;
     padding: 14px 19px 14px 23px;
     color: #fff;
-    background: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(50, 180, 255, .16));
-    border: 1px solid rgba(140, 230, 255, .42);
+    background:
+      radial-gradient(circle at 20% 0%, rgba(109, 235, 255, .22), transparent 44%),
+      linear-gradient(135deg, rgba(40, 110, 255, .26), rgba(137, 75, 255, .3));
+    border: 1px solid rgba(150, 242, 255, .68);
     border-radius: 15px;
     box-shadow:
-      0 0 20px rgba(80, 220, 255, .18),
-      inset 0 0 0 1px rgba(255, 255, 255, .05);
+      0 0 18px rgba(80, 220, 255, .34),
+      0 0 38px rgba(145, 95, 255, .22),
+      inset 0 0 0 1px rgba(255, 255, 255, .1),
+      inset 0 1px 12px rgba(255, 255, 255, .08);
     font-size: 14px;
     font-weight: 650;
     line-height: 1;
@@ -463,8 +502,8 @@
     color: #fff;
     border-color: rgba(174, 252, 255, .56);
     box-shadow:
-      0 0 26px rgba(80, 230, 255, .3),
-      0 0 42px rgba(130, 90, 255, .18),
+      0 0 24px rgba(80, 240, 255, .48),
+      0 0 52px rgba(130, 90, 255, .34),
       inset 0 0 0 1px rgba(255, 255, 255, .08);
     text-decoration: none;
     transform: translateY(-1px);
@@ -485,7 +524,7 @@
     max-width: 1220px;
     margin: 17px auto 0;
     padding: 0 5px;
-    color: rgba(210, 225, 255, .52);
+    color: rgba(220, 230, 255, .62);
     font-size: 12px;
     line-height: 1.5;
     text-wrap: pretty;
