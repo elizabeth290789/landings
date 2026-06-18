@@ -89,6 +89,30 @@
 </section>
 
 <style>
+  /*
+   * Bitrix wraps every embedded HTML fragment in its own block containers.
+   * Keep those containers transparent so this section and the award section
+   * below it expose the same page-level cosmic background.
+   */
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform),
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award) {
+    --bg: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::after,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::after {
+    content: none !important;
+    display: none !important;
+  }
+
   .b24-crossplatform {
     position: relative;
     isolation: isolate;

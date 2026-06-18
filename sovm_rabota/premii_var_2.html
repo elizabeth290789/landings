@@ -85,6 +85,30 @@
 </section>
 
 <style>
+  /*
+   * The page builder gives adjacent HTML fragments separate block containers.
+   * Neutralize both containers so their boundary cannot cover the continuous
+   * page-level cosmic background with different solid or gradient layers.
+   */
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform),
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award) {
+    --bg: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::after,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::after {
+    content: none !important;
+    display: none !important;
+  }
+
   .b24-premium-award {
     position: relative;
     isolation: isolate;
