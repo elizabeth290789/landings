@@ -10,11 +10,6 @@
       <span class="b24-collab-final__star b24-collab-final__star--4" aria-hidden="true"></span>
 
       <div class="b24-collab-final__content">
-        <p class="b24-collab-final__badge">
-          <span class="b24-collab-final__badge-dot" aria-hidden="true"></span>
-          <span class="b24-collab-final__badge-text">Команды выбирают Битрикс24</span>
-        </p>
-
         <p class="b24-collab-final__number" aria-label="Более 15 миллионов">15 000 000+</p>
 
         <h2 class="b24-collab-final__title" id="b24-collab-final-title">
@@ -101,7 +96,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: 26px clamp(36px, 5vw, 64px) 24px;
+    padding: 18px clamp(36px, 5vw, 64px) 24px;
     border: 1px solid rgba(150, 220, 255, 0.18);
     border-radius: 36px;
     background:
@@ -135,62 +130,6 @@
     max-width: 980px;
     margin: 0 auto;
     text-align: center;
-  }
-
-  .b24-collab-final__badge {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 11px;
-    min-height: 42px;
-    margin: 0 0 12px;
-    padding: 9px 20px;
-    overflow: hidden;
-    color: #ffffff;
-    border: 1px solid rgba(168, 241, 255, 0.4);
-    border-radius: 999px;
-    background:
-      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.24), transparent 36%),
-      linear-gradient(117deg, rgba(5, 18, 48, 0.88), rgba(10, 54, 83, 0.72), rgba(8, 26, 65, 0.86));
-    box-shadow:
-      0 0 0 1px rgba(117, 235, 255, 0.1),
-      0 0 27px rgba(69, 226, 255, 0.2),
-      0 0 54px rgba(41, 222, 187, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.28);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    font-family: Montserrat, sans-serif;
-    font-size: clamp(14px, 1.2vw, 16px);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  .b24-collab-final__badge::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(100deg, transparent 20%, rgba(116, 255, 224, 0.16) 48%, transparent 75%);
-    transform: translateX(-72%);
-    animation: b24-collab-final-badge-glow 7s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .b24-collab-final__badge-dot,
-  .b24-collab-final__badge-text {
-    position: relative;
-    z-index: 1;
-  }
-
-  .b24-collab-final__badge-dot {
-    width: 8px;
-    height: 8px;
-    flex: 0 0 8px;
-    border-radius: 50%;
-    background: #82fff0;
-    box-shadow: 0 0 8px #63f7eb, 0 0 18px rgba(68, 241, 221, 0.85);
-    animation: b24-collab-final-dot-pulse 2.8s ease-in-out infinite;
   }
 
   .b24-collab-final__number {
@@ -308,17 +247,6 @@
   .b24-collab-final__star--3 { bottom: 20%; left: 15%; width: 3px; height: 3px; animation-delay: 2.2s; }
   .b24-collab-final__star--4 { right: 16%; bottom: 14%; animation-delay: 0.6s; }
 
-  @keyframes b24-collab-final-badge-glow {
-    0%, 18% { transform: translateX(-72%); opacity: 0; }
-    45%, 60% { opacity: 1; }
-    82%, 100% { transform: translateX(72%); opacity: 0; }
-  }
-
-  @keyframes b24-collab-final-dot-pulse {
-    0%, 100% { opacity: 0.72; transform: scale(0.85); }
-    50% { opacity: 1; transform: scale(1.12); }
-  }
-
   @keyframes b24-collab-final-star {
     0%, 100% { opacity: 0.25; transform: scale(0.75); }
     50% { opacity: 0.9; transform: scale(1.2); }
@@ -330,18 +258,12 @@
     }
 
     .b24-collab-final__card {
-      padding: 26px 22px 24px;
+      padding: 18px 22px 24px;
       border-radius: 28px;
     }
 
     .b24-collab-final__container {
       width: 100%;
-    }
-
-    .b24-collab-final__badge {
-      min-height: 40px;
-      margin-bottom: 12px;
-      padding: 9px 17px;
     }
 
     .b24-collab-final__number {
@@ -375,14 +297,8 @@
 
   @media (max-width: 420px) {
     .b24-collab-final__card {
-      padding: 24px 16px 22px;
+      padding: 16px 16px 22px;
       border-radius: 24px;
-    }
-
-    .b24-collab-final__badge {
-      gap: 9px;
-      padding: 10px 14px;
-      font-size: 13px;
     }
 
     .b24-collab-final__number {
@@ -404,8 +320,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .b24-collab-final__badge::after,
-    .b24-collab-final__badge-dot,
     .b24-collab-final__star {
       animation: none;
     }
