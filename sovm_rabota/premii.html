@@ -1,15 +1,11 @@
 <section class="b24-uc-award" aria-labelledby="b24-uc-award-title">
+  <div class="b24-uc-award__badge">
+    <span class="b24-uc-award__badge-dot" aria-hidden="true"></span>
+    <span class="b24-uc-award__badge-text">Рейтинг CNews 2026</span>
+  </div>
+
   <div class="b24-uc-award__card">
     <div class="b24-uc-award__achievement">
-      <div class="b24-uc-award__eyebrow">
-        <span class="b24-uc-award__eyebrow-icon" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="none">
-            <path d="m10 2.4 1.8 4.1 4.5.5-3.4 3 1 4.4-3.9-2.3-3.9 2.3 1-4.4-3.4-3 4.5-.5L10 2.4Z" stroke="currentColor" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Рейтинг CNews 2026
-      </div>
-
       <div class="b24-uc-award__number" aria-hidden="true">
         <span>№1</span>
         <svg class="b24-uc-award__laurel" viewBox="0 0 52 52" fill="none">
@@ -62,6 +58,103 @@
     box-sizing: border-box;
   }
 
+  .b24-uc-award__badge {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: max-content;
+    min-height: 55px;
+    margin: 0 auto clamp(22px, 3vw, 32px);
+    padding: 17px 44px;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.26) 0 9%, transparent 34%),
+      radial-gradient(ellipse at 88% 78%, rgba(115, 99, 255, 0.2) 0 12%, transparent 38%),
+      linear-gradient(117deg, rgba(3, 10, 31, 0.88) 0%, rgba(6, 23, 62, 0.82) 32%, rgba(12, 45, 86, 0.78) 56%, rgba(6, 19, 54, 0.86) 100%);
+    border: 1px solid rgba(181, 245, 255, 0.42);
+    border-radius: 999px;
+    box-shadow:
+      0 0 0 1px rgba(140, 236, 255, 0.16),
+      0 0 28px rgba(80, 226, 255, 0.24),
+      0 0 58px rgba(26, 217, 180, 0.22),
+      0 18px 54px rgba(3, 17, 55, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.54),
+      inset 0 -1px 0 rgba(137, 238, 255, 0.18),
+      inset 0 0 26px rgba(96, 232, 255, 0.18),
+      inset 0 -18px 34px rgba(1, 7, 28, 0.42);
+    backdrop-filter: blur(20px) saturate(1.35);
+    -webkit-backdrop-filter: blur(20px) saturate(1.35);
+    font-size: clamp(17px, 1.42vw, 20px);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0.18px;
+    text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-uc-award__badge::before,
+  .b24-uc-award__badge::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .b24-uc-award__badge::before {
+    z-index: 0;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 12% 56%, rgba(255, 255, 255, 0.32) 0 1px, rgba(114, 241, 255, 0.42) 2px, transparent 11px),
+      radial-gradient(ellipse at 91% 47%, rgba(255, 255, 255, 0.26) 0 1px, rgba(72, 236, 198, 0.4) 2px, transparent 12px),
+      radial-gradient(ellipse at 76% 23%, rgba(0, 255, 190, 0.36) 0 3%, transparent 20%),
+      radial-gradient(ellipse at 31% 80%, rgba(37, 232, 184, 0.3) 0 5%, transparent 28%),
+      radial-gradient(ellipse at 65% 72%, rgba(97, 106, 255, 0.26) 0 8%, transparent 36%),
+      linear-gradient(104deg, transparent 0 12%, rgba(44, 237, 255, 0.1) 21%, rgba(53, 255, 206, 0.34) 31%, rgba(42, 225, 255, 0.2) 42%, transparent 56%),
+      linear-gradient(76deg, transparent 5%, rgba(8, 186, 166, 0.18) 26%, rgba(75, 255, 213, 0.3) 42%, rgba(120, 115, 255, 0.16) 63%, transparent 84%),
+      linear-gradient(136deg, rgba(6, 17, 52, 0.18), rgba(3, 42, 74, 0.34) 42%, rgba(2, 22, 56, 0.2));
+    background-size: auto, auto, 120% 130%, 140% 140%, 150% 150%, 220% 120%, 240% 140%, 100% 100%;
+    background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center;
+    opacity: 0.96;
+    mix-blend-mode: screen;
+    filter: saturate(1.18) blur(0.15px);
+    animation: b24-uc-award-badge-aurora 10.8s ease-in-out infinite;
+  }
+
+  .b24-uc-award__badge::after {
+    z-index: 1;
+    inset: -1px;
+    padding: 1px;
+    background: linear-gradient(112deg, rgba(179, 247, 255, 0.85), rgba(78, 232, 255, 0.76) 20%, rgba(54, 244, 203, 0.82) 39%, rgba(134, 117, 255, 0.68) 62%, rgba(157, 218, 255, 0.76) 82%, rgba(229, 253, 255, 0.82));
+    background-size: 260% 260%;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54), 0 0 14px rgba(71, 228, 255, 0.3), 0 0 22px rgba(42, 235, 196, 0.18);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: b24-uc-award-badge-border 9.6s ease-in-out infinite;
+  }
+
+  .b24-uc-award__badge-dot,
+  .b24-uc-award__badge-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .b24-uc-award__badge-dot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    background: #8ffcff;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 4px rgba(71, 238, 255, 0.14),
+      0 0 18px rgba(85, 230, 255, 0.9),
+      0 0 28px rgba(48, 241, 196, 0.58);
+  }
+
   .b24-uc-award__card {
     position: relative;
     isolation: isolate;
@@ -112,43 +205,10 @@
     padding: clamp(42px, 5vw, 70px) clamp(30px, 5vw, 68px);
   }
 
-  .b24-uc-award__eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    min-height: 34px;
-    padding: 7px 13px 7px 9px;
-    color: #e8fbff;
-    background: rgba(205, 243, 255, 0.1);
-    border: 1px solid rgba(205, 243, 255, 0.22);
-    border-radius: 999px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    font-size: 13px;
-    font-weight: 650;
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-
-  .b24-uc-award__eyebrow-icon {
-    display: grid;
-    width: 20px;
-    height: 20px;
-    place-items: center;
-    color: #8cf5e0;
-    background: rgba(106, 242, 214, 0.13);
-    border-radius: 50%;
-  }
-
-  .b24-uc-award__eyebrow-icon svg {
-    width: 14px;
-    height: 14px;
-  }
-
   .b24-uc-award__number {
     position: relative;
     display: inline-flex;
     align-items: center;
-    margin-top: clamp(22px, 3vw, 34px);
     color: #ffffff;
     filter: drop-shadow(0 0 22px rgba(117, 235, 255, 0.24));
   }
@@ -288,6 +348,16 @@
     outline-offset: 4px;
   }
 
+  @keyframes b24-uc-award-badge-aurora {
+    0%, 100% { background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center; }
+    50% { background-position: center, center, 63% 30%, 34% 72%, 58% 46%, 128% 50%, -35% 54%, center; }
+  }
+
+  @keyframes b24-uc-award-badge-border {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
   @media (max-width: 900px) {
     .b24-uc-award__card {
       grid-template-columns: 1fr;
@@ -303,6 +373,13 @@
   @media (max-width: 640px) {
     .b24-uc-award {
       padding: 48px 16px;
+    }
+
+    .b24-uc-award__badge {
+      min-height: 50px;
+      margin-bottom: 22px;
+      padding: 15px 28px;
+      font-size: 16px;
     }
 
     .b24-uc-award__card {
@@ -341,6 +418,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .b24-uc-award__badge::before,
+    .b24-uc-award__badge::after {
+      animation: none;
+    }
+
     .b24-uc-award__link,
     .b24-uc-award__link svg {
       transition: none;
