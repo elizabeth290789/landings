@@ -104,6 +104,12 @@
     box-shadow: none !important;
   }
 
+  .b24-crossplatform::before,
+  .b24-crossplatform::after {
+    content: none !important;
+    display: none !important;
+  }
+
   .b24-crossplatform,
   .b24-crossplatform * { box-sizing: border-box; }
 
@@ -117,11 +123,7 @@
   }
 
   .b24-crossplatform__glow--left {
-    bottom: 2%;
-    left: -16%;
-    width: min(52vw, 740px);
-    aspect-ratio: 1;
-    background: rgba(38, 139, 255, 0.2);
+    display: none;
   }
 
   .b24-crossplatform__glow--right {
