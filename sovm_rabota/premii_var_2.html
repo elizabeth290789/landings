@@ -86,6 +86,8 @@
 
 <style>
   .b24-premium-award {
+    position: relative;
+    isolation: isolate;
     width: 100%;
     margin: 0;
     padding: clamp(56px, 8vw, 112px) clamp(18px, 4vw, 56px);
@@ -93,6 +95,20 @@
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
+  }
+
+  .b24-premium-award::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: clamp(130px, 14vw, 190px) max(5%, calc((100% - 1320px) / 2)) clamp(70px, 7vw, 100px);
+    background:
+      radial-gradient(circle at 22% 52%, rgba(31, 220, 255, .22), transparent 43%),
+      radial-gradient(circle at 82% 28%, rgba(133, 75, 255, .22), transparent 42%),
+      radial-gradient(circle at 55% 90%, rgba(24, 211, 205, .12), transparent 40%);
+    filter: blur(48px);
+    opacity: .9;
+    pointer-events: none;
   }
 
   .b24-premium-award,
@@ -160,28 +176,44 @@
     margin: 0 auto;
     overflow: hidden;
     background:
-      radial-gradient(circle at 18% 42%, rgba(40, 190, 255, .18), transparent 34%),
-      radial-gradient(circle at 82% 24%, rgba(95, 80, 255, .18), transparent 38%),
-      linear-gradient(135deg, rgba(255, 255, 255, .055), rgba(40, 95, 190, .1));
-    border: 1px solid rgba(150, 220, 255, .26);
+      radial-gradient(circle at 18% 48%, rgba(40, 230, 255, .26), transparent 34%),
+      radial-gradient(circle at 88% 18%, rgba(150, 80, 255, .34), transparent 38%),
+      radial-gradient(circle at 55% 100%, rgba(20, 210, 220, .18), transparent 42%),
+      linear-gradient(135deg, rgba(20, 115, 210, .35), rgba(35, 55, 170, .42) 48%, rgba(70, 45, 190, .34));
+    border: 1px solid rgba(150, 235, 255, .42);
     border-radius: 36px;
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, .045) inset,
-      0 0 54px rgba(60, 210, 255, .1),
-      0 28px 90px rgba(0, 0, 0, .3);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+      0 0 0 1px rgba(255, 255, 255, .05) inset,
+      0 0 34px rgba(70, 220, 255, .2),
+      0 0 74px rgba(120, 80, 255, .16),
+      0 30px 90px rgba(0, 0, 0, .32);
+    backdrop-filter: blur(20px) saturate(1.18);
+    -webkit-backdrop-filter: blur(20px) saturate(1.18);
   }
 
   .b24-premium-award__card::before {
     content: "";
     position: absolute;
     z-index: -1;
-    inset: 1px;
+    inset: 0;
     background:
-      linear-gradient(115deg, rgba(255, 255, 255, .08), transparent 26%),
-      radial-gradient(circle at 44% 110%, rgba(30, 225, 208, .08), transparent 40%);
+      linear-gradient(90deg, rgba(60, 240, 255, .18), transparent 32%),
+      radial-gradient(circle at 92% 8%, rgba(170, 90, 255, .28), transparent 32%),
+      linear-gradient(180deg, rgba(215, 252, 255, .12), transparent 15%);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .b24-premium-award__card::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    inset: 1px;
     border-radius: 35px;
+    box-shadow:
+      inset 1px 0 0 rgba(103, 244, 255, .26),
+      inset 0 1px 0 rgba(224, 252, 255, .18),
+      inset -1px 0 0 rgba(177, 112, 255, .18);
     pointer-events: none;
   }
 
@@ -196,10 +228,12 @@
   .b24-premium-award__visual::before {
     content: "";
     position: absolute;
-    width: 68%;
-    height: 72%;
-    background: radial-gradient(ellipse, rgba(71, 220, 255, .12), transparent 67%);
-    filter: blur(8px);
+    width: 84%;
+    height: 82%;
+    background:
+      radial-gradient(ellipse at 42% 50%, rgba(76, 238, 255, .24), transparent 58%),
+      radial-gradient(ellipse at 72% 45%, rgba(137, 92, 255, .14), transparent 62%);
+    filter: blur(14px);
   }
 
   .b24-premium-award__halo {
@@ -207,11 +241,14 @@
     width: clamp(250px, 27vw, 345px);
     aspect-ratio: 1;
     background:
-      radial-gradient(circle, transparent 34%, rgba(84, 231, 255, .08) 35%, transparent 55%),
-      conic-gradient(from 20deg, transparent, rgba(76, 227, 247, .12), transparent 28%, rgba(123, 108, 255, .14), transparent 58%, rgba(55, 243, 205, .1), transparent);
-    border: 1px solid rgba(126, 236, 255, .12);
+      radial-gradient(circle, transparent 33%, rgba(84, 231, 255, .15) 35%, transparent 56%),
+      conic-gradient(from 20deg, transparent, rgba(76, 227, 247, .22), transparent 28%, rgba(145, 98, 255, .22), transparent 58%, rgba(55, 243, 205, .18), transparent);
+    border: 1px solid rgba(157, 244, 255, .2);
     border-radius: 50%;
-    box-shadow: 0 0 70px rgba(48, 213, 255, .12), inset 0 0 60px rgba(71, 198, 255, .07);
+    box-shadow:
+      0 0 60px rgba(48, 225, 255, .22),
+      0 0 100px rgba(124, 78, 255, .14),
+      inset 0 0 60px rgba(71, 218, 255, .12);
     animation: b24-premium-halo 18s linear infinite;
   }
 
@@ -220,7 +257,9 @@
     width: min(91%, 390px);
     height: auto;
     opacity: .94;
-    filter: drop-shadow(0 0 20px rgba(66, 231, 248, .2));
+    filter:
+      drop-shadow(0 0 24px rgba(80, 240, 255, .32))
+      drop-shadow(0 0 48px rgba(120, 90, 255, .18));
   }
 
   .b24-premium-award__medal {
@@ -234,15 +273,16 @@
     color: #fff;
     background:
       radial-gradient(circle at 34% 25%, rgba(255, 255, 255, .22), transparent 20%),
-      radial-gradient(circle at 50% 74%, rgba(55, 236, 216, .13), transparent 48%),
-      linear-gradient(145deg, rgba(27, 84, 145, .72), rgba(16, 31, 89, .9));
-    border: 1px solid rgba(180, 247, 255, .45);
+      radial-gradient(circle at 50% 74%, rgba(55, 236, 216, .17), transparent 48%),
+      linear-gradient(145deg, rgba(22, 78, 137, .82), rgba(15, 25, 78, .94));
+    border: 1px solid rgba(190, 250, 255, .58);
     border-radius: 50%;
     box-shadow:
       inset 0 0 0 7px rgba(154, 235, 255, .035),
-      inset 0 0 40px rgba(75, 201, 255, .14),
+      inset 0 0 40px rgba(75, 220, 255, .18),
       0 0 0 7px rgba(93, 220, 255, .025),
-      0 0 50px rgba(56, 221, 245, .22),
+      0 0 50px rgba(56, 231, 255, .3),
+      0 0 82px rgba(122, 82, 255, .18),
       0 24px 55px rgba(1, 8, 40, .38);
   }
 
@@ -260,7 +300,9 @@
     font-weight: 650;
     line-height: .92;
     letter-spacing: -.08em;
-    text-shadow: 0 0 28px rgba(127, 238, 255, .28);
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, .24),
+      0 0 30px rgba(127, 238, 255, .42);
   }
 
   .b24-premium-award__medal-top,
@@ -321,19 +363,30 @@
   .b24-premium-award__description {
     max-width: 690px;
     margin: 22px 0 0;
-    color: rgba(232, 247, 255, .7);
+    color: rgba(235, 245, 255, .86);
     font-size: clamp(16px, 1.35vw, 18px);
     line-height: 1.6;
   }
 
   .b24-premium-award__footer {
+    position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 28px;
     margin-top: clamp(34px, 4.5vw, 50px);
     padding-top: 28px;
-    border-top: 1px solid rgba(211, 245, 255, .12);
+    border-top: 0;
+  }
+
+  .b24-premium-award__footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(120, 230, 255, .32), rgba(170, 110, 255, .2), transparent);
   }
 
   .b24-premium-award__criteria p {
@@ -372,9 +425,9 @@
     left: 0;
     width: 4px;
     height: 4px;
-    background: #65eadf;
+    background: #76fff0;
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(101, 234, 223, .7);
+    box-shadow: 0 0 10px rgba(70, 255, 230, .55);
   }
 
   .b24-premium-award__link {
@@ -386,10 +439,12 @@
     min-height: 52px;
     padding: 14px 19px 14px 23px;
     color: #fff;
-    background: linear-gradient(135deg, rgba(114, 238, 244, .17), rgba(97, 102, 255, .14));
-    border: 1px solid rgba(171, 241, 250, .3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(50, 180, 255, .16));
+    border: 1px solid rgba(140, 230, 255, .42);
     border-radius: 15px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 12px 30px rgba(0, 8, 37, .17);
+    box-shadow:
+      0 0 20px rgba(80, 220, 255, .18),
+      inset 0 0 0 1px rgba(255, 255, 255, .05);
     font-size: 14px;
     font-weight: 650;
     line-height: 1;
@@ -407,9 +462,12 @@
   .b24-premium-award__link:focus-visible {
     color: #fff;
     border-color: rgba(174, 252, 255, .56);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 0 28px rgba(80, 225, 242, .13);
+    box-shadow:
+      0 0 26px rgba(80, 230, 255, .3),
+      0 0 42px rgba(130, 90, 255, .18),
+      inset 0 0 0 1px rgba(255, 255, 255, .08);
     text-decoration: none;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   .b24-premium-award__link:hover svg,
@@ -427,7 +485,7 @@
     max-width: 1220px;
     margin: 17px auto 0;
     padding: 0 5px;
-    color: rgba(202, 221, 235, .48);
+    color: rgba(210, 225, 255, .52);
     font-size: 12px;
     line-height: 1.5;
     text-wrap: pretty;
