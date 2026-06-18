@@ -10,11 +10,13 @@
       <span class="b24-collab-final__star b24-collab-final__star--4" aria-hidden="true"></span>
 
       <div class="b24-collab-final__content">
-        <p class="b24-collab-final__number" aria-label="Более 15 миллионов">15 000 000+</p>
+        <div class="b24-collab-final__headline">
+          <p class="b24-collab-final__number" aria-label="Более 15 миллионов">15 000 000+</p>
 
-        <h2 class="b24-collab-final__title" id="b24-collab-final-title">
-          компаний уже зарегистрированы в Битрикс24
-        </h2>
+          <h2 class="b24-collab-final__title" id="b24-collab-final-title">
+            компаний уже зарегистрированы в Битрикс24
+          </h2>
+        </div>
 
         <div class="b24-collab-final__action">
           <a class="b24-collab-final__button" href="https://www.bitrix24.ru/create.php">Получить бесплатно</a>
@@ -127,16 +129,25 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
     text-align: center;
   }
 
+  .b24-collab-final__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
   .b24-collab-final__number {
-    position: relative;
-    top: 6px;
-    margin: 0 0 8px;
+    margin: 0;
     color: #ffffff;
     background: linear-gradient(90deg, #ffffff 8%, #8ff8ff 52%, #b7fff1 92%);
     -webkit-background-clip: text;
@@ -153,10 +164,8 @@
   }
 
   .b24-collab-final__title {
-    position: relative;
-    top: 6px;
     max-width: 920px;
-    margin: 0 auto;
+    margin: 0;
     color: #ffffff;
     font-family: Montserrat, sans-serif;
     font-size: clamp(32px, 3.2vw, 38px);
@@ -167,13 +176,10 @@
   }
 
   .b24-collab-final__action {
-    position: relative;
-    top: -6px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
-    padding-top: 24px;
+    gap: 7px;
   }
 
   .b24-collab-final__button {
@@ -219,7 +225,7 @@
   }
 
   .b24-collab-final__note {
-    margin: 7px 0 0;
+    margin: 0;
     color: rgba(192, 220, 255, 0.78);
     font-family: Montserrat, sans-serif;
     font-size: 15px;
@@ -276,10 +282,8 @@
 
     .b24-collab-final__action {
       width: min(100%, 380px);
-      margin-top: auto;
       margin-right: auto;
       margin-left: auto;
-      padding-top: 24px;
     }
 
     .b24-collab-final__button {
