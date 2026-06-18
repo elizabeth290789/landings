@@ -347,9 +347,11 @@
   }
 
   .b24-premium-award__criteria ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 9px 24px;
+    width: min(100%, 360px);
     margin: 0;
     padding: 0;
     list-style: none;
