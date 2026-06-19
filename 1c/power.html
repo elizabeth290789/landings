@@ -1,1 +1,206 @@
+<style>
+  .b24-1c-integration {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 20px;
+    font-family: inherit;
+    color: #1f2937;
+  }
 
+  .b24-1c-integration__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .b24-1c-integration__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 34px 34px 36px;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 18px 55px rgba(31, 151, 232, 0.12);
+  }
+
+  .b24-1c-integration__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 22px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(43, 169, 255, 0.14), rgba(15, 127, 245, 0.08));
+    color: #1693f5;
+  }
+
+  .b24-1c-integration__icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .b24-1c-integration__title {
+    margin: 0 0 14px;
+    font-size: 30px;
+    line-height: 1.16;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .b24-1c-integration__description {
+    margin: 0 0 28px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #4b5563;
+  }
+
+  .b24-1c-integration__list {
+    display: grid;
+    gap: 14px;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .b24-1c-integration__item {
+    position: relative;
+    padding-left: 32px;
+    font-size: 17px;
+    line-height: 1.42;
+    color: #243244;
+  }
+
+  .b24-1c-integration__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e8f6ff;
+  }
+
+  .b24-1c-integration__item::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 5px;
+    height: 9px;
+    border: solid #1693f5;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .b24-1c-integration__note {
+    margin-top: 30px;
+    padding: 22px 28px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #eef9ff 0%, #f7fcff 100%);
+    color: #23415f;
+    font-size: 18px;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  @media (max-width: 980px) {
+    .b24-1c-integration {
+      padding: 56px 20px;
+    }
+
+    .b24-1c-integration__cards {
+      grid-template-columns: 1fr;
+    }
+
+    .b24-1c-integration__card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-1c-integration {
+      padding: 42px 16px;
+    }
+
+    .b24-1c-integration__card {
+      padding: 26px 22px 28px;
+      border-radius: 24px;
+    }
+
+    .b24-1c-integration__icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 18px;
+      border-radius: 16px;
+    }
+
+    .b24-1c-integration__title {
+      font-size: 25px;
+    }
+
+    .b24-1c-integration__description,
+    .b24-1c-integration__item {
+      font-size: 16px;
+    }
+
+    .b24-1c-integration__note {
+      margin-top: 24px;
+      padding: 18px 18px;
+      font-size: 16px;
+    }
+  }
+</style>
+
+<section class="b24-1c-integration" aria-label="Возможности интеграции Битрикс24 и 1С">
+  <div class="b24-1c-integration__cards">
+    <article class="b24-1c-integration__card">
+      <div class="b24-1c-integration__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25.5 10.5C23.65 6.65 19.72 4 15.17 4C10.7 4 6.83 6.55 4.93 10.28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22.5 10.5H26.5V6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 21.5C8.35 25.35 12.28 28 16.83 28C21.3 28 25.17 25.45 27.07 21.72" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M9.5 21.5H5.5V25.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="b24-1c-integration__title">1С:Синхронизация</h3>
+      <p class="b24-1c-integration__description">Двусторонний обмен данными между 1С и Битрикс24 в режиме реального времени — автоматически, по расписанию или вручную.</p>
+      <ul class="b24-1c-integration__list">
+        <li class="b24-1c-integration__item">Единая клиентская база</li>
+        <li class="b24-1c-integration__item">Банковские счета компаний и контактов</li>
+        <li class="b24-1c-integration__item">Сделки и счета</li>
+        <li class="b24-1c-integration__item">Товары, вариации и свойства товаров</li>
+        <li class="b24-1c-integration__item">Заказы, оплаты и отгрузки</li>
+        <li class="b24-1c-integration__item">Прайсы, цены и остатки</li>
+        <li class="b24-1c-integration__item">Пользовательские поля</li>
+      </ul>
+    </article>
+
+    <article class="b24-1c-integration__card">
+      <div class="b24-1c-integration__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 4H20L26 10V28H9V4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M20 4V10H26" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M13 16H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M13 21H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M5 9V24H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="b24-1c-integration__title">Коннектор к 1С</h3>
+      <p class="b24-1c-integration__description">Работайте с документами и данными 1С прямо внутри Битрикс24 — без переключения между системами.</p>
+      <ul class="b24-1c-integration__list">
+        <li class="b24-1c-integration__item">Единая клиентская база</li>
+        <li class="b24-1c-integration__item">Документы</li>
+        <li class="b24-1c-integration__item">Справочники</li>
+        <li class="b24-1c-integration__item">Отчёты из 1С</li>
+        <li class="b24-1c-integration__item">Реестр печатных форм</li>
+        <li class="b24-1c-integration__item">1СПАРК Риски</li>
+        <li class="b24-1c-integration__item">Телефония</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="b24-1c-integration__note">Интеграция помогает связать продажи, клиентов, документы, оплаты и складские данные в едином рабочем пространстве.</div>
+</section>
