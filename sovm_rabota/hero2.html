@@ -28,19 +28,6 @@
 
       <p class="b24-collab-hero__trust">Бесплатно для неограниченного числа пользователей</p>
 
-      <div class="b24-collab-hero__award" aria-label="Битрикс24 — лидер российского рынка коммуникационных платформ">
-        <span class="b24-collab-hero__award-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" focusable="false" role="img">
-            <path class="b24-collab-hero__award-ribbon" d="M17.2 29.7 13 42l8.8-4.5L29 44l-3.9-12.7"/>
-            <path class="b24-collab-hero__award-ribbon" d="M30.8 29.7 35 42l-8.8-4.5L19 44l3.9-12.7"/>
-            <circle class="b24-collab-hero__award-medal" cx="24" cy="19" r="13"/>
-            <circle class="b24-collab-hero__award-center" cx="24" cy="19" r="6.2"/>
-            <path class="b24-collab-hero__award-spark" d="M24 8.6v4.2M24 25.2v4.2M13.6 19h4.2M30.2 19h4.2"/>
-          </svg>
-        </span>
-        <span class="b24-collab-hero__award-divider" aria-hidden="true"></span>
-        <span class="b24-collab-hero__award-text">Битрикс24 — лидер российского рынка коммуникационных платформ</span>
-      </div>
     </div>
 
     <div class="b24-collab-hero__hero-image" aria-hidden="true">
@@ -50,6 +37,20 @@
         alt=""
         loading="eager"
       />
+    </div>
+
+    <div class="b24-collab-hero__award" aria-label="Битрикс24 — лидер российского рынка коммуникационных платформ">
+      <span class="b24-collab-hero__award-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" focusable="false" role="img">
+          <path class="b24-collab-hero__award-ribbon" d="M17.2 29.7 13 42l8.8-4.5L29 44l-3.9-12.7"/>
+          <path class="b24-collab-hero__award-ribbon" d="M30.8 29.7 35 42l-8.8-4.5L19 44l3.9-12.7"/>
+          <circle class="b24-collab-hero__award-medal" cx="24" cy="19" r="13"/>
+          <circle class="b24-collab-hero__award-center" cx="24" cy="19" r="6.2"/>
+          <path class="b24-collab-hero__award-spark" d="M24 8.6v4.2M24 25.2v4.2M13.6 19h4.2M30.2 19h4.2"/>
+        </svg>
+      </span>
+      <span class="b24-collab-hero__award-divider" aria-hidden="true"></span>
+      <span class="b24-collab-hero__award-text">Битрикс24 — лидер российского рынка коммуникационных платформ</span>
     </div>
   </div>
 </section>
@@ -372,14 +373,14 @@
 
   .b24-collab-hero__award {
     width: min(100%, 410px);
-    margin: 14px auto 0;
+    margin: clamp(24px, 2.3vw, 32px) auto 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     color: rgba(255, 255, 255, 0.94);
     text-align: left;
-    animation-delay: 0.58s;
+    animation-delay: 0.72s;
   }
 
   .b24-collab-hero__award-icon {
@@ -565,7 +566,7 @@
 
     .b24-collab-hero__award {
       width: min(100%, 360px);
-      margin-top: 12px;
+      margin-top: 24px;
       gap: 12px;
       text-align: left;
     }
