@@ -372,15 +372,37 @@
   }
 
   .b24-collab-hero__award {
-    width: min(100%, 410px);
-    margin: clamp(24px, 2.3vw, 32px) auto 0;
-    display: inline-flex;
+    position: relative;
+    width: 100%;
+    min-height: clamp(72px, 7vw, 88px);
+    margin: clamp(10px, 1.4vw, 18px) auto 0;
+    padding: 14px clamp(18px, 3vw, 36px);
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 16px;
     color: rgba(255, 255, 255, 0.94);
     text-align: left;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.045) 24%, rgba(255, 255, 255, 0.055) 50%, rgba(255, 255, 255, 0.045) 76%, rgba(255, 255, 255, 0)),
+      linear-gradient(180deg, rgba(91, 139, 255, 0.05), rgba(7, 24, 63, 0));
+    border-radius: 0;
+    overflow: hidden;
     animation-delay: 0.72s;
+  }
+
+  .b24-collab-hero__award::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2b74ff, #7f5dff, #f060df, #c6f22d, #2b74ff);
+    background-size: 240% 100%;
+    opacity: 0.5;
+    filter: blur(0.1px);
+    animation: b24-collab-hero-trust-line 12s linear infinite;
   }
 
   .b24-collab-hero__award-icon {
@@ -388,11 +410,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
     color: #f060df;
-    filter: drop-shadow(0 0 14px rgba(219, 77, 255, 0.3));
+    filter: drop-shadow(0 0 16px rgba(219, 77, 255, 0.34));
   }
 
   .b24-collab-hero__award-icon svg {
@@ -429,19 +451,17 @@
   }
 
   .b24-collab-hero__award-divider {
-    width: 1px;
-    height: 36px;
-    flex: 0 0 1px;
-    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+    display: none;
   }
 
   .b24-collab-hero__award-text {
     display: block;
-    max-width: 300px;
-    font-size: clamp(15px, 1.3vw, 16px);
+    max-width: min(100%, 720px);
+    font-size: clamp(16px, 1.45vw, 20px);
     font-weight: 600;
     line-height: 1.28;
     letter-spacing: -0.01em;
+    white-space: nowrap;
     text-shadow: 0 0 18px rgba(180, 91, 255, 0.14);
   }
 
@@ -495,6 +515,11 @@
   @keyframes b24-collab-hero-particle-float {
     0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.35; }
     50% { transform: translate3d(0, -10px, 0); opacity: 0.8; }
+  }
+
+  @keyframes b24-collab-hero-trust-line {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 240% 50%; }
   }
 
   @media (min-width: 1280px) {
@@ -565,25 +590,22 @@
     }
 
     .b24-collab-hero__award {
-      width: min(100%, 360px);
-      margin-top: 24px;
+      min-height: 76px;
+      margin-top: 14px;
       gap: 12px;
-      text-align: left;
+      text-align: center;
     }
 
     .b24-collab-hero__award-icon {
-      width: 42px;
-      height: 42px;
-      flex-basis: 42px;
-    }
-
-    .b24-collab-hero__award-divider {
-      height: 32px;
+      width: 48px;
+      height: 48px;
+      flex-basis: 48px;
     }
 
     .b24-collab-hero__award-text {
-      max-width: 250px;
+      max-width: 100%;
       font-size: 15px;
+      white-space: normal;
     }
 
     .b24-collab-hero__hero-image {
@@ -597,17 +619,15 @@
 
   @media (max-width: 480px) {
     .b24-collab-hero__award {
+      min-height: 96px;
       flex-direction: column;
       gap: 7px;
+      padding: 14px 12px 16px;
       text-align: center;
     }
 
-    .b24-collab-hero__award-divider {
-      display: none;
-    }
-
     .b24-collab-hero__award-text {
-      max-width: 310px;
+      max-width: 330px;
     }
   }
 
