@@ -383,25 +383,33 @@
     gap: 16px;
     color: rgba(255, 255, 255, 0.94);
     text-align: left;
-    background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.045) 24%, rgba(255, 255, 255, 0.055) 50%, rgba(255, 255, 255, 0.045) 76%, rgba(255, 255, 255, 0)),
-      linear-gradient(180deg, rgba(91, 139, 255, 0.05), rgba(7, 24, 63, 0));
+    background: transparent;
+    border: 0;
     border-radius: 0;
-    overflow: hidden;
+    box-shadow: none;
+    outline: 0;
+    overflow: visible;
     animation-delay: 0.72s;
   }
 
   .b24-collab-hero__award::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
+    left: clamp(18px, 12vw, 180px);
+    right: clamp(18px, 12vw, 180px);
     bottom: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #2b74ff, #7f5dff, #f060df, #c6f22d, #2b74ff);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(43, 116, 255, 0),
+      rgba(43, 116, 255, 0.6),
+      rgba(127, 93, 255, 0.54),
+      rgba(240, 96, 223, 0.5),
+      rgba(198, 242, 45, 0.52),
+      rgba(43, 116, 255, 0)
+    );
     background-size: 240% 100%;
-    opacity: 0.5;
-    filter: blur(0.1px);
+    opacity: 0.48;
     animation: b24-collab-hero-trust-line 12s linear infinite;
   }
 
