@@ -91,9 +91,9 @@
   .b24-collab-free-info {
     width: 100%;
     margin: 0;
-    padding: clamp(48px, 5.4vw, 72px) clamp(18px, 3vw, 32px);
+    padding: 28px clamp(18px, 3vw, 32px);
     background: #ffffff !important;
-    color: #161c2d;
+    color: rgb(38, 38, 38);
     border: 0;
     box-shadow: none;
   }
@@ -104,31 +104,33 @@
   }
 
   .b24-collab-free-info__container {
-    width: min(100%, 980px);
+    width: min(100%, 1280px);
     margin: 0 auto;
     text-align: center;
   }
 
   .b24-collab-free-info__title {
-    margin: 0;
-    color: #111827;
+    margin: 0 0 12px;
+    color: rgb(38, 38, 38);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(34px, 4vw, 52px);
-    font-weight: 700;
-    line-height: 1.12;
-    letter-spacing: -0.045em;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 29px;
     text-align: center;
+    white-space: nowrap;
   }
 
   .b24-collab-free-info__text {
-    max-width: 780px;
-    margin: 18px auto 0;
-    color: #303846;
+    margin: 0 auto;
+    color: rgb(38, 38, 38);
     font-family: Montserrat, sans-serif;
-    font-size: clamp(17px, 1.6vw, 20px);
+    font-size: 18px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 20px;
     text-align: center;
+    white-space: nowrap;
   }
 
   .b24-collab-free-info__link {
@@ -347,18 +349,19 @@
 
   @media (max-width: 768px) {
     .b24-collab-free-info {
-      padding: 42px 16px 46px;
+      padding: 24px 16px;
     }
 
     .b24-collab-free-info__title {
-      font-size: clamp(28px, 8.2vw, 38px);
-      letter-spacing: -0.04em;
+      font-size: 21px;
+      line-height: 26px;
+      white-space: normal;
     }
 
     .b24-collab-free-info__text {
-      margin-top: 14px;
-      font-size: 16px;
-      line-height: 1.5;
+      font-size: 15px;
+      line-height: 20px;
+      white-space: normal;
     }
 
     .b24-collab-final {
@@ -399,11 +402,13 @@
 
   @media (max-width: 420px) {
     .b24-collab-free-info {
-      padding: 38px 14px 42px;
+      padding: 22px 14px;
     }
 
     .b24-collab-free-info__title {
-      font-size: clamp(26px, 8.8vw, 34px);
+      font-size: 19px;
+      line-height: 24px;
+      margin-bottom: 10px;
     }
 
     .b24-collab-final__card {
