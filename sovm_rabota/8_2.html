@@ -402,6 +402,19 @@
     pointer-events: none;
   }
 
+  .b24-crossplatform__ecosystem::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: calc(50% - clamp(118px, 12vw, 142px));
+    bottom: clamp(70px, 8vw, 118px);
+    width: clamp(126px, 19.5vw, 260px);
+    height: clamp(28px, 4.5vw, 58px);
+    border-radius: 8px;
+    background: #ffffff;
+    pointer-events: none;
+  }
+
   .b24-crossplatform__orbit {
     position: absolute;
     top: 52%;
@@ -550,6 +563,7 @@
     .b24-crossplatform__card { min-height: 200px; }
     .b24-crossplatform__ecosystem { max-width: 920px; margin-top: clamp(48px, 6vw, 72px); }
     .b24-crossplatform__image { width: min(100%, 820px); max-height: clamp(260px, 48vw, 430px); }
+    .b24-crossplatform__ecosystem::after { left: calc(50% - clamp(98px, 12vw, 118px)); bottom: clamp(58px, 8vw, 96px); width: clamp(112px, 19vw, 220px); height: clamp(26px, 4.4vw, 48px); }
     .b24-crossplatform__laptop { width: min(66vw, 540px); }
     .b24-crossplatform__desktop-app { left: 2%; }
     .b24-crossplatform__phone { right: 4%; }
@@ -569,6 +583,7 @@
     .b24-crossplatform__ecosystem { margin-top: 44px; padding: 4px 0; overflow: hidden; }
     .b24-crossplatform__orbit { width: 105%; height: 145px; }
     .b24-crossplatform__image { width: 100%; max-height: 330px; }
+    .b24-crossplatform__ecosystem::after { left: 39%; bottom: clamp(42px, 13vw, 76px); width: clamp(78px, 28vw, 142px); height: clamp(20px, 7vw, 36px); border-radius: 6px; }
     .b24-crossplatform__laptop { width: min(78vw, 390px); }
     .b24-crossplatform__screen { border-width: 4px; border-radius: 11px 11px 5px 5px; }
     .b24-crossplatform__laptop-base { height: 8px; }
