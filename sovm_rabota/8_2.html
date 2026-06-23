@@ -37,48 +37,15 @@
       </article>
     </div>
 
-    <div class="b24-crossplatform__ecosystem" aria-label="Битрикс24 на ноутбуке, смартфоне, в десктопном приложении, облаке и на сервере">
+    <div class="b24-crossplatform__ecosystem" aria-label="Мобильное приложение Битрикс24 на разных устройствах">
       <span class="b24-crossplatform__orbit" aria-hidden="true"></span>
 
-      <div class="b24-crossplatform__cloud" aria-hidden="true">
-        <span class="b24-crossplatform__cloud-icon">☁</span>
-        <span><b>Битрикс24</b>Облако</span>
-      </div>
-
-      <div class="b24-crossplatform__laptop" aria-hidden="true">
-        <div class="b24-crossplatform__screen">
-          <div class="b24-crossplatform__ui-top"><i></i><i></i><i></i><span>Битрикс24</span></div>
-          <div class="b24-crossplatform__ui-body">
-            <div class="b24-crossplatform__ui-side"><i></i><i></i><i></i><i></i></div>
-            <div class="b24-crossplatform__ui-main">
-              <span class="b24-crossplatform__ui-welcome">Добрый день, команда!</span>
-              <div class="b24-crossplatform__ui-stats"><i></i><i></i><i></i></div>
-              <div class="b24-crossplatform__ui-lines"><i></i><i></i><i></i></div>
-            </div>
-          </div>
-        </div>
-        <span class="b24-crossplatform__laptop-base"></span>
-      </div>
-
-      <div class="b24-crossplatform__desktop-app" aria-hidden="true">
-        <div class="b24-crossplatform__app-head"><i></i><span>Чаты</span><b>•••</b></div>
-        <div class="b24-crossplatform__app-person"><span>А</span><i></i><i></i></div>
-        <div class="b24-crossplatform__app-person"><span>М</span><i></i><i></i></div>
-        <div class="b24-crossplatform__app-person"><span>К</span><i></i><i></i></div>
-      </div>
-
-      <div class="b24-crossplatform__phone" aria-hidden="true">
-        <span class="b24-crossplatform__phone-speaker"></span>
-        <div class="b24-crossplatform__phone-logo">Битрикс<span>24</span></div>
-        <div class="b24-crossplatform__phone-card"><i></i><span></span><span></span></div>
-        <div class="b24-crossplatform__phone-grid"><i></i><i></i><i></i><i></i></div>
-        <span class="b24-crossplatform__phone-home"></span>
-      </div>
-
-      <div class="b24-crossplatform__server" aria-hidden="true">
-        <span class="b24-crossplatform__server-icon">▤</span>
-        <span><b>Ваш сервер</b>Коробочная версия</span>
-      </div>
+      <img
+        class="b24-crossplatform__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/mobile-app/1.1900w.png.webp?1781520906432"
+        alt="Мобильное приложение Битрикс24 на смартфонах"
+        loading="lazy"
+      >
     </div>
 
     <p class="b24-crossplatform__summary">
@@ -400,21 +367,23 @@
   .b24-crossplatform__ecosystem {
     position: relative;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    min-height: 390px;
-    margin: clamp(66px, 7vw, 98px) auto 0;
-    perspective: 1200px;
+    width: 100%;
+    max-width: 1080px;
+    margin: clamp(56px, 6.5vw, 86px) auto 0;
+    padding: clamp(10px, 2vw, 22px) 0;
+    overflow: visible;
   }
 
   .b24-crossplatform__ecosystem::before {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: 2%;
+    bottom: 4%;
     z-index: 0;
-    width: min(72vw, 760px);
-    height: 300px;
+    width: min(78vw, 820px);
+    height: clamp(150px, 22vw, 260px);
     border-radius: 50%;
     background: radial-gradient(circle, rgba(41, 201, 255, 0.18) 0%, rgba(59, 121, 255, 0.1) 42%, rgba(59, 121, 255, 0) 72%);
     filter: blur(26px);
@@ -424,14 +393,26 @@
 
   .b24-crossplatform__orbit {
     position: absolute;
-    top: 44%;
+    top: 52%;
     left: 50%;
-    width: min(88%, 980px);
-    height: 215px;
+    width: min(92%, 980px);
+    height: clamp(120px, 20vw, 215px);
     border: 1px solid rgba(114, 183, 255, 0.19);
     border-radius: 50%;
     transform: translate(-50%, -50%) rotate(-5deg);
     box-shadow: 0 0 55px rgba(72, 143, 255, 0.1), inset 0 0 55px rgba(98, 81, 255, 0.08);
+  }
+
+
+  .b24-crossplatform__image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(100%, 980px);
+    max-height: clamp(300px, 42vw, 520px);
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 32px 42px rgba(0, 6, 27, 0.42));
   }
 
   .b24-crossplatform__laptop { position: relative; z-index: 3; width: min(56vw, 610px); filter: drop-shadow(0 32px 40px rgba(0, 6, 27, 0.45)); }
@@ -556,7 +537,8 @@
   @media (max-width: 980px) {
     .b24-crossplatform__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .b24-crossplatform__card { min-height: 200px; }
-    .b24-crossplatform__ecosystem { min-height: 350px; margin-top: clamp(58px, 7vw, 82px); }
+    .b24-crossplatform__ecosystem { max-width: 920px; margin-top: clamp(48px, 6vw, 72px); }
+    .b24-crossplatform__image { width: min(100%, 820px); max-height: clamp(260px, 48vw, 430px); }
     .b24-crossplatform__laptop { width: min(66vw, 540px); }
     .b24-crossplatform__desktop-app { left: 2%; }
     .b24-crossplatform__phone { right: 4%; }
@@ -573,8 +555,9 @@
     .b24-crossplatform__card { min-height: 0; padding: 20px; border-radius: 22px; }
     .b24-crossplatform__card-icon { width: 48px; height: 48px; margin-bottom: 17px; border-radius: 50%; }
     .b24-crossplatform__icon-svg { width: 26px; height: 26px; }
-    .b24-crossplatform__ecosystem { min-height: 285px; margin-top: 58px; }
+    .b24-crossplatform__ecosystem { margin-top: 44px; padding: 4px 0; overflow: hidden; }
     .b24-crossplatform__orbit { width: 105%; height: 145px; }
+    .b24-crossplatform__image { width: 100%; max-height: 330px; }
     .b24-crossplatform__laptop { width: min(78vw, 390px); }
     .b24-crossplatform__screen { border-width: 4px; border-radius: 11px 11px 5px 5px; }
     .b24-crossplatform__laptop-base { height: 8px; }
