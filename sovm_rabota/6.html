@@ -231,7 +231,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: clamp(32px, 2.5vw, 40px);
     width: 100%;
   }
 
@@ -241,7 +241,7 @@
     align-items: center;
     justify-content: center;
     width: min(100%, 1180px);
-    margin: 0 auto clamp(-28px, -2vw, -16px);
+    margin: 0 auto -8px;
     overflow: visible;
   }
 
@@ -357,12 +357,12 @@
     }
 
     .b24-collab-ai__main {
-      gap: 0;
+      gap: 28px;
     }
 
     .b24-collab-ai__visual {
       width: 100%;
-      margin-bottom: -14px;
+      margin-bottom: -6px;
     }
 
     .b24-collab-ai__image {
