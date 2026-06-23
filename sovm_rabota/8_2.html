@@ -124,7 +124,17 @@
   }
 
   .b24-crossplatform__glow--left {
-    display: none;
+    top: 38%;
+    left: 50%;
+    width: min(92vw, 1160px);
+    height: min(42vw, 540px);
+    border-radius: 999px;
+    background:
+      radial-gradient(ellipse at 50% 58%, rgba(230, 253, 255, 0.34) 0 8%, rgba(124, 224, 255, 0.3) 22%, rgba(54, 174, 255, 0.2) 42%, rgba(44, 103, 255, 0.08) 68%, transparent 78%);
+    filter: blur(46px);
+    opacity: 0.9;
+    transform: translateX(-50%);
+    mix-blend-mode: screen;
   }
 
   .b24-crossplatform__glow--right {
@@ -407,25 +417,29 @@
   }
 
   .b24-crossplatform__ecosystem::before {
-    bottom: 1%;
+    bottom: -4%;
     z-index: 0;
-    width: min(80vw, 840px);
-    height: clamp(150px, 22vw, 260px);
-    background: radial-gradient(circle, rgba(41, 201, 255, 0.16) 0%, rgba(59, 121, 255, 0.09) 42%, rgba(59, 121, 255, 0) 72%);
-    filter: blur(28px);
-    transform: translateX(-50%);
+    width: min(94vw, 1040px);
+    height: clamp(210px, 30vw, 385px);
+    background:
+      radial-gradient(ellipse at 50% 64%, rgba(246, 254, 255, 0.54) 0 8%, rgba(164, 229, 255, 0.42) 21%, rgba(81, 191, 255, 0.29) 40%, rgba(54, 128, 255, 0.15) 60%, rgba(54, 128, 255, 0) 78%),
+      radial-gradient(ellipse at 23% 70%, rgba(140, 226, 255, 0.24) 0 19%, rgba(58, 170, 255, 0.13) 42%, transparent 70%),
+      radial-gradient(ellipse at 78% 69%, rgba(152, 230, 255, 0.22) 0 18%, rgba(75, 146, 255, 0.12) 43%, transparent 72%);
+    filter: blur(32px);
+    transform: translateX(-50%) scaleX(1.08);
+    mix-blend-mode: screen;
   }
 
   .b24-crossplatform__ecosystem::after {
-    bottom: -9%;
+    bottom: -13%;
     z-index: 1;
-    width: min(92vw, 960px);
-    height: clamp(170px, 25vw, 300px);
+    width: min(100vw, 1100px);
+    height: clamp(220px, 31vw, 400px);
     background:
-      radial-gradient(ellipse at 50% 62%, rgba(244, 253, 255, 0.36) 0 9%, rgba(150, 220, 255, 0.3) 22%, rgba(120, 200, 255, 0.18) 43%, rgba(120, 200, 255, 0) 72%),
+      radial-gradient(ellipse at 50% 62%, rgba(255, 255, 255, 0.62) 0 8%, rgba(194, 239, 255, 0.52) 20%, rgba(135, 215, 255, 0.32) 42%, rgba(120, 200, 255, 0) 74%),
       radial-gradient(ellipse at 24% 68%, rgba(170, 230, 255, 0.14) 0 18%, rgba(113, 210, 255, 0.08) 38%, rgba(113, 210, 255, 0) 67%),
       radial-gradient(ellipse at 78% 66%, rgba(186, 236, 255, 0.12) 0 16%, rgba(126, 210, 255, 0.07) 39%, rgba(126, 210, 255, 0) 68%);
-    filter: blur(34px);
+    filter: blur(38px);
     transform: translateX(-50%) scaleX(1.06);
     mix-blend-mode: screen;
   }
@@ -550,7 +564,9 @@
     max-height: clamp(300px, 42vw, 520px);
     object-fit: contain;
     object-position: center;
-    filter: drop-shadow(0 32px 42px rgba(0, 6, 27, 0.42));
+    filter:
+      drop-shadow(0 46px 54px rgba(0, 6, 27, 0.48))
+      drop-shadow(0 0 34px rgba(148, 231, 255, 0.22));
   }
 
   .b24-crossplatform__laptop { position: relative; z-index: 3; width: min(56vw, 610px); filter: drop-shadow(0 32px 40px rgba(0, 6, 27, 0.45)); }
