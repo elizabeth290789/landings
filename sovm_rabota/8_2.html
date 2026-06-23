@@ -38,6 +38,16 @@
     </div>
 
     <div class="b24-crossplatform__ecosystem" aria-label="Мобильное приложение Битрикс24 на разных устройствах">
+      <div class="b24-crossplatform__image-decor" aria-hidden="true">
+        <span class="b24-crossplatform__softlight b24-crossplatform__softlight--main"></span>
+        <span class="b24-crossplatform__softlight b24-crossplatform__softlight--left"></span>
+        <span class="b24-crossplatform__softlight b24-crossplatform__softlight--center"></span>
+        <span class="b24-crossplatform__tech-arc b24-crossplatform__tech-arc--wide"></span>
+        <span class="b24-crossplatform__tech-arc b24-crossplatform__tech-arc--small"></span>
+        <span class="b24-crossplatform__particle b24-crossplatform__particle--one"></span>
+        <span class="b24-crossplatform__particle b24-crossplatform__particle--two"></span>
+        <span class="b24-crossplatform__particle b24-crossplatform__particle--three"></span>
+      </div>
       <span class="b24-crossplatform__orbit" aria-hidden="true"></span>
 
       <img
@@ -406,6 +416,7 @@
     position: absolute;
     top: 52%;
     left: 50%;
+    z-index: 1;
     width: min(92%, 980px);
     height: clamp(120px, 20vw, 215px);
     border: 1px solid rgba(114, 183, 255, 0.19);
@@ -413,6 +424,104 @@
     transform: translate(-50%, -50%) rotate(-5deg);
     box-shadow: 0 0 55px rgba(72, 143, 255, 0.1), inset 0 0 55px rgba(98, 81, 255, 0.08);
   }
+
+  .b24-crossplatform__image-decor {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 50px;
+    pointer-events: none;
+  }
+
+  .b24-crossplatform__image-decor::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 26%;
+    width: min(46vw, 520px);
+    height: clamp(96px, 13vw, 150px);
+    border-radius: 999px;
+    background: linear-gradient(101deg, rgba(231, 252, 255, 0), rgba(219, 250, 255, 0.22) 24%, rgba(122, 242, 255, 0.18) 51%, rgba(255, 255, 255, 0.16) 74%, rgba(231, 252, 255, 0));
+    filter: blur(18px);
+    transform: rotate(-5deg);
+  }
+
+  .b24-crossplatform__softlight,
+  .b24-crossplatform__tech-arc,
+  .b24-crossplatform__particle {
+    position: absolute;
+    display: block;
+  }
+
+  .b24-crossplatform__softlight {
+    border-radius: 50%;
+    mix-blend-mode: screen;
+  }
+
+  .b24-crossplatform__softlight--main {
+    top: 4%;
+    left: 31%;
+    width: min(42vw, 470px);
+    height: clamp(150px, 20vw, 245px);
+    background: radial-gradient(circle at 50% 48%, rgba(246, 254, 255, 0.38) 0 12%, rgba(141, 243, 255, 0.24) 31%, rgba(83, 216, 255, 0.11) 54%, rgba(83, 216, 255, 0) 74%);
+    filter: blur(24px);
+  }
+
+  .b24-crossplatform__softlight--left {
+    top: 12%;
+    left: 20%;
+    width: min(28vw, 320px);
+    height: clamp(110px, 15vw, 180px);
+    background: radial-gradient(circle, rgba(220, 255, 248, 0.32) 0 15%, rgba(69, 238, 214, 0.17) 43%, rgba(69, 238, 214, 0) 72%);
+    filter: blur(22px);
+  }
+
+  .b24-crossplatform__softlight--center {
+    top: 22%;
+    left: 45%;
+    width: min(24vw, 280px);
+    height: clamp(84px, 12vw, 145px);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0 11%, rgba(149, 226, 255, 0.19) 40%, rgba(149, 226, 255, 0) 74%);
+    filter: blur(18px);
+  }
+
+  .b24-crossplatform__tech-arc {
+    border: 1px solid rgba(193, 248, 255, 0.24);
+    border-right-color: transparent;
+    border-bottom-color: rgba(62, 224, 255, 0.08);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(92, 229, 255, 0.1);
+  }
+
+  .b24-crossplatform__tech-arc--wide {
+    top: 14%;
+    left: 24%;
+    width: min(52vw, 590px);
+    height: clamp(96px, 13vw, 150px);
+    transform: rotate(-7deg);
+  }
+
+  .b24-crossplatform__tech-arc--small {
+    top: 18%;
+    left: 38%;
+    width: min(24vw, 270px);
+    height: clamp(58px, 8vw, 92px);
+    opacity: 0.72;
+    transform: rotate(9deg);
+  }
+
+  .b24-crossplatform__particle {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(230, 253, 255, 0.86);
+    box-shadow: 0 0 12px rgba(109, 237, 255, 0.72), 0 0 24px rgba(71, 231, 210, 0.28);
+  }
+
+  .b24-crossplatform__particle--one { top: 22%; left: 29%; }
+  .b24-crossplatform__particle--two { top: 15%; left: 54%; width: 4px; height: 4px; opacity: 0.78; }
+  .b24-crossplatform__particle--three { top: 35%; left: 43%; width: 3px; height: 3px; opacity: 0.7; }
 
 
   .b24-crossplatform__image {
