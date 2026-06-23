@@ -1,6 +1,6 @@
 <nav class="b24-collab-menu" aria-label="Основное меню">
   <div class="b24-collab-menu__container">
-    <a class="b24-collab-menu__logo-link" href="https://www.bitrix24.ru/" aria-label="Перейти на сайт Битрикс24">
+    <a class="b24-collab-menu__logo-link" href="#" aria-label="Вернуться к началу лендинга">
       <img
         class="b24-collab-menu__logo"
         src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/d4f/szj80g9amg8b51trrdd67mohmkkuldfv.png.webp?1742975371867"
@@ -8,7 +8,7 @@
       />
     </a>
 
-    <a class="b24-collab-menu__button" href="#">Получить бесплатно</a>
+    <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
   </div>
 </nav>
 
@@ -181,3 +181,13 @@
     }
   }
 </style>
+
+<script>
+  document.querySelector('.b24-collab-menu__logo-link')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+</script>
