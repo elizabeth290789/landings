@@ -1,0 +1,645 @@
+<section class="b24-calls" aria-labelledby="b24-calls-title">
+  <span class="b24-calls__glow b24-calls__glow--left" aria-hidden="true"></span>
+  <span class="b24-calls__glow b24-calls__glow--right" aria-hidden="true"></span>
+
+  <div class="b24-calls__container">
+    <header class="b24-calls__header">
+      <p class="b24-calls__eyebrow"><span class="b24-calls__eyebrow-text">Видеозвонки в Битрикс24</span></p>
+      <h2 class="b24-calls__title" id="b24-calls-title">Созвоны без ссылок и хаоса</h2>
+      <p class="b24-calls__subtitle">
+        Звонок приходит прямо в приложение — как обычный вызов коллеге. Без браузеров, ссылок и переключения между сервисами.
+      </p>
+    </header>
+
+    <div class="b24-calls__layout">
+      <div class="b24-calls__visual">
+        <img
+          class="b24-calls__image"
+          src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1600w.png.webp?1780063682225"
+          alt="Интерфейс видеозвонка в Битрикс24"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="b24-calls__content">
+        <div class="b24-calls__cards">
+          <article class="b24-calls__card">
+            <span class="b24-calls__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 4.8 8.5 3a1.8 1.8 0 0 1 2.8.5l1 2.3a1.8 1.8 0 0 1-.4 2l-1 1a11 11 0 0 0 4.3 4.3l1-1a1.8 1.8 0 0 1 2-.4l2.3 1a1.8 1.8 0 0 1 .5 2.8l-1.8 1.9c-.9.9-2.2 1.3-3.5.9A16.8 16.8 0 0 1 5.7 8.3c-.4-1.3 0-2.6.9-3.5Z"/><path d="M15 5.5a4 4 0 0 1 3.5 3.5M15.5 2.5A7 7 0 0 1 21.5 8.5"/></svg>
+            </span>
+            <h3 class="b24-calls__card-title">Быстрое подключение</h3>
+            <p class="b24-calls__card-text">Без браузеров и бесконечных ссылок</p>
+          </article>
+
+          <article class="b24-calls__card">
+            <span class="b24-calls__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="12" height="9" rx="2.2"/><path d="m15 9.2 4.2-2.4A1.2 1.2 0 0 1 21 7.9v5.2a1.2 1.2 0 0 1-1.8 1L15 11.8V9.2Z"/><path d="M8 19h8M12 15v4"/></svg>
+            </span>
+            <h3 class="b24-calls__card-title">HD-видео и демонстрация экрана</h3>
+            <p class="b24-calls__card-text">Для встреч, обсуждений и презентаций</p>
+          </article>
+
+          <article class="b24-calls__card">
+            <span class="b24-calls__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8.5 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M2.8 19.5a5.7 5.7 0 0 1 11.4 0"/><path d="M16.5 12.2a3 3 0 1 0-1-5.8"/><path d="M15.8 15a5.2 5.2 0 0 1 5.4 4.5"/></svg>
+            </span>
+            <h3 class="b24-calls__card-title">Звонки для больших команд</h3>
+            <p class="b24-calls__card-text">Онлайн-встречи для всей компании</p>
+          </article>
+
+          <article class="b24-calls__card">
+            <span class="b24-calls__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4M9 4h6"/><path d="M9 12h.01M15 12h.01"/><path d="M9 15.5h6"/><path d="M3 12h2M19 12h2"/></svg>
+            </span>
+            <h3 class="b24-calls__card-title">AI Follow-up</h3>
+            <p class="b24-calls__card-text">BitrixGPT зафиксирует договорённости и создаст задачи</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="b24-calls__actions">
+      <a class="b24-calls__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .b24-calls {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: clamp(48px, 7vw, 96px) clamp(20px, 4vw, 56px) clamp(56px, 8vw, 112px);
+    overflow: hidden;
+    color: #ffffff;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .b24-calls,
+  .b24-calls * {
+    box-sizing: border-box;
+  }
+
+  .b24-calls::before,
+  .b24-calls::after {
+    content: none !important;
+  }
+
+  .b24-calls__glow {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.2;
+  }
+
+  .b24-calls__glow--left {
+    width: 360px;
+    height: 360px;
+    top: 28%;
+    left: -250px;
+    background: #26a9ff;
+  }
+
+  .b24-calls__glow--right {
+    width: 320px;
+    height: 320px;
+    right: -220px;
+    bottom: 6%;
+    background: #796cff;
+  }
+
+  .b24-calls__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .b24-calls__header {
+    max-width: 900px;
+    margin: 0 auto clamp(34px, 5vw, 64px);
+    text-align: center;
+  }
+
+  .b24-calls__eyebrow {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    margin: 0 0 18px;
+    padding: 17px 44px;
+    overflow: hidden;
+    border: 1px solid rgba(181, 245, 255, 0.42);
+    border-radius: 999px;
+    color: #ffffff;
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.26) 0 9%, transparent 34%),
+      radial-gradient(ellipse at 88% 78%, rgba(115, 99, 255, 0.2) 0 12%, transparent 38%),
+      linear-gradient(117deg, rgba(3, 10, 31, 0.88) 0%, rgba(6, 23, 62, 0.82) 32%, rgba(12, 45, 86, 0.78) 56%, rgba(6, 19, 54, 0.86) 100%);
+    box-shadow:
+      0 0 0 1px rgba(140, 236, 255, 0.16),
+      0 0 28px rgba(80, 226, 255, 0.24),
+      0 0 58px rgba(26, 217, 180, 0.22),
+      0 0 82px rgba(125, 105, 255, 0.18),
+      0 18px 54px rgba(3, 17, 55, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.54),
+      inset 0 -1px 0 rgba(137, 238, 255, 0.18),
+      inset 0 0 26px rgba(96, 232, 255, 0.18),
+      inset 0 -18px 34px rgba(1, 7, 28, 0.42);
+    backdrop-filter: blur(20px) saturate(1.35);
+    -webkit-backdrop-filter: blur(20px) saturate(1.35);
+    font-size: clamp(17px, 1.42vw, 20px);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0.18px;
+    text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-calls__eyebrow::before,
+  .b24-calls__eyebrow::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .b24-calls__eyebrow::before {
+    z-index: 0;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 12% 56%, rgba(255, 255, 255, 0.32) 0 1px, rgba(114, 241, 255, 0.42) 2px, transparent 11px),
+      radial-gradient(ellipse at 91% 47%, rgba(255, 255, 255, 0.26) 0 1px, rgba(72, 236, 198, 0.4) 2px, transparent 12px),
+      radial-gradient(ellipse at 76% 23%, rgba(0, 255, 190, 0.36) 0 3%, transparent 20%),
+      radial-gradient(ellipse at 31% 80%, rgba(37, 232, 184, 0.3) 0 5%, transparent 28%),
+      radial-gradient(ellipse at 65% 72%, rgba(97, 106, 255, 0.26) 0 8%, transparent 36%),
+      linear-gradient(104deg, transparent 0 12%, rgba(44, 237, 255, 0.1) 21%, rgba(53, 255, 206, 0.34) 31%, rgba(42, 225, 255, 0.2) 42%, transparent 56%),
+      linear-gradient(76deg, transparent 5%, rgba(8, 186, 166, 0.18) 26%, rgba(75, 255, 213, 0.3) 42%, rgba(120, 115, 255, 0.16) 63%, transparent 84%),
+      linear-gradient(136deg, rgba(6, 17, 52, 0.18), rgba(3, 42, 74, 0.34) 42%, rgba(2, 22, 56, 0.2));
+    background-size: auto, auto, 120% 130%, 140% 140%, 150% 150%, 220% 120%, 240% 140%, 100% 100%;
+    background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center;
+    opacity: 0.96;
+    mix-blend-mode: screen;
+    filter: saturate(1.18) blur(0.15px);
+    animation: b24-calls-eyebrow-aurora 10.8s ease-in-out infinite;
+    transition: opacity 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-calls__eyebrow::after {
+    z-index: 1;
+    inset: -1px;
+    padding: 1px;
+    background: linear-gradient(112deg, rgba(179, 247, 255, 0.85), rgba(78, 232, 255, 0.76) 20%, rgba(54, 244, 203, 0.82) 39%, rgba(134, 117, 255, 0.68) 62%, rgba(157, 218, 255, 0.76) 82%, rgba(229, 253, 255, 0.82));
+    background-size: 260% 260%;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54), 0 0 14px rgba(71, 228, 255, 0.3), 0 0 22px rgba(42, 235, 196, 0.18);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: b24-calls-eyebrow-border 9.6s ease-in-out infinite;
+    transition: filter 0.55s ease, opacity 0.55s ease;
+  }
+
+  .b24-calls__eyebrow:hover {
+    border-color: rgba(193, 251, 255, 0.58);
+    filter: brightness(1.06) saturate(1.12);
+    box-shadow: 0 0 0 1px rgba(167, 247, 255, 0.24), 0 0 34px rgba(74, 232, 255, 0.34), 0 0 70px rgba(28, 238, 195, 0.3), 0 0 96px rgba(135, 113, 255, 0.24), 0 20px 60px rgba(3, 24, 68, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.68), inset 0 -1px 0 rgba(153, 246, 255, 0.24), inset 0 0 34px rgba(94, 238, 255, 0.25), inset 0 0 46px rgba(46, 241, 198, 0.16), inset 0 -18px 34px rgba(1, 7, 28, 0.36);
+  }
+
+  .b24-calls__eyebrow:hover::before {
+    opacity: 1;
+    filter: saturate(1.3) brightness(1.12) blur(0.12px);
+    animation-duration: 8s;
+  }
+
+  .b24-calls__eyebrow:hover::after {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(96, 236, 255, 0.42)) drop-shadow(0 0 18px rgba(50, 240, 198, 0.28));
+    animation-duration: 5.8s;
+  }
+
+  .b24-calls__eyebrow-text {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+  }
+
+  .b24-calls__title {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: clamp(36px, 2.8vw, 48px);
+    font-weight: 600;
+    line-height: 1.12;
+    text-align: center;
+    letter-spacing: -0.035em;
+  }
+
+  .b24-calls__subtitle {
+    max-width: 780px;
+    margin: clamp(14px, 2vw, 22px) auto 0;
+    color: #d2e2ff;
+    font-size: clamp(17px, 1.7vw, 23px);
+    line-height: 1.5;
+  }
+
+  .b24-calls__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(360px, 0.85fr);
+    align-items: stretch;
+    gap: clamp(34px, 3.1vw, 44px);
+  }
+
+  .b24-calls__visual {
+    position: relative;
+    z-index: 0;
+    min-width: 0;
+    height: 100%;
+    padding: 1px;
+    overflow: hidden;
+    border: 1px solid rgba(160, 220, 255, 0.35);
+    border-radius: 24px;
+    background:
+      linear-gradient(rgba(4, 12, 38, 0.72), rgba(4, 12, 38, 0.72)) padding-box,
+      linear-gradient(135deg, rgba(120, 220, 255, 0.45), rgba(120, 90, 255, 0.22), rgba(80, 240, 220, 0.32)) border-box;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 0 28px rgba(80, 200, 255, 0.18),
+      0 24px 80px rgba(0, 0, 0, 0.28);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .b24-calls__visual::before,
+  .b24-calls__visual::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .b24-calls__visual::before {
+    z-index: 2;
+    inset: -20px -14px -30px;
+    border-radius: inherit;
+    background:
+      radial-gradient(ellipse at 20% 100%, rgba(61, 235, 214, 0.18), transparent 48%),
+      radial-gradient(ellipse at 88% 100%, rgba(93, 202, 255, 0.22), transparent 46%),
+      radial-gradient(ellipse at 76% 8%, rgba(132, 104, 255, 0.15), transparent 42%);
+    filter: blur(18px);
+    opacity: 0.86;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+  }
+
+  .b24-calls__visual::after {
+    z-index: 2;
+    inset: 1px;
+    border-radius: 23px;
+    background:
+      linear-gradient(180deg, transparent 68%, rgba(59, 229, 216, 0.16) 100%),
+      radial-gradient(ellipse at 12% 100%, rgba(85, 238, 224, 0.24), transparent 34%),
+      radial-gradient(ellipse at 92% 100%, rgba(80, 200, 255, 0.22), transparent 36%);
+    mix-blend-mode: screen;
+    opacity: 0.78;
+  }
+
+  .b24-calls__visual:hover {
+    border-color: rgba(184, 236, 255, 0.5);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 36px rgba(80, 210, 255, 0.26),
+      0 0 58px rgba(83, 238, 219, 0.12),
+      0 24px 80px rgba(0, 0, 0, 0.28);
+  }
+
+  .b24-calls__visual:hover::before {
+    opacity: 1;
+    filter: blur(16px) saturate(1.08);
+  }
+
+  .b24-calls__image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    border-radius: 22px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.02);
+  }
+
+  .b24-calls__content {
+    min-width: 0;
+    display: grid;
+    gap: 16px;
+  }
+
+  .b24-calls__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .b24-calls__card {
+    position: relative;
+    min-height: 176px;
+    margin: 0;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(180, 220, 255, 0.12);
+    border-radius: 22px;
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.14) 0 10%, transparent 36%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.032));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      0 16px 40px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px) saturate(1.18);
+    -webkit-backdrop-filter: blur(12px) saturate(1.18);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+  }
+
+  .b24-calls__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(118deg, transparent 0 18%, rgba(255, 255, 255, 0.12) 31%, rgba(104, 228, 255, 0.08) 43%, transparent 60%),
+      radial-gradient(ellipse at 82% 86%, rgba(89, 227, 255, 0.12), transparent 42%);
+    opacity: 0.72;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+
+  .b24-calls__card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(128, 224, 255, 0.3);
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.17) 0 10%, transparent 36%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.04));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.13),
+      0 24px 58px rgba(0, 8, 31, 0.18);
+  }
+
+  .b24-calls__card:hover::before {
+    opacity: 0.92;
+    transform: translateX(8px);
+  }
+
+  .b24-calls__card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .b24-calls__icon {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    color: #effcff;
+    border: 1px solid rgba(150, 220, 255, 0.28);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(110, 220, 255, 0.28), rgba(60, 110, 255, 0.16) 45%, rgba(20, 35, 90, 0.18) 100%),
+      linear-gradient(180deg, rgba(70, 120, 255, 0.22), rgba(20, 35, 90, 0.18));
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+      0 0 18px rgba(80, 190, 255, 0.18),
+      0 0 36px rgba(70, 160, 255, 0.1),
+      0 14px 34px rgba(4, 22, 72, 0.22);
+    backdrop-filter: blur(10px) saturate(1.18);
+    -webkit-backdrop-filter: blur(10px) saturate(1.18);
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .b24-calls__icon::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background:
+      radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.38), transparent 20%),
+      radial-gradient(circle at 50% 55%, rgba(37, 218, 255, 0.42), transparent 58%),
+      linear-gradient(135deg, rgba(34, 214, 255, 0.32), rgba(75, 95, 255, 0.12) 58%, rgba(12, 26, 72, 0.24));
+    opacity: 0.92;
+    mix-blend-mode: screen;
+  }
+
+  .b24-calls__icon::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle, rgba(37, 226, 255, 0.3), transparent 70%);
+    filter: blur(8px);
+    opacity: 0.72;
+  }
+
+
+  .b24-calls__icon svg {
+    position: relative;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+    stroke-width: 1.85;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter:
+      drop-shadow(0 0 5px rgba(121, 232, 255, 0.55))
+      drop-shadow(0 0 12px rgba(61, 170, 255, 0.32));
+  }
+
+  .b24-calls__card-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+
+  .b24-calls__card-text {
+    margin: 9px 0 0;
+    color: #c9daf6;
+    font-size: 15px;
+    line-height: 1.48;
+  }
+
+  .b24-calls__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: clamp(34px, 3.4vw, 44px) auto 0;
+  }
+
+  .b24-calls__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0 28px;
+    border-radius: 14px;
+    color: #112200;
+    background: #c7f52b;
+    box-shadow: 0 16px 34px rgba(164, 220, 32, 0.32);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .b24-calls__button:hover {
+    color: #142100;
+    background: linear-gradient(135deg, #cfff18, #b8ff1a);
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.45),
+      0 0 22px rgba(190, 255, 40, 0.45),
+      0 12px 34px rgba(180, 255, 30, 0.28);
+    transform: translateY(-1px);
+  }
+
+  .b24-calls__button:active {
+    color: #142100;
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.35),
+      0 0 14px rgba(190, 255, 40, 0.32);
+    transform: translateY(0);
+  }
+
+  @keyframes b24-calls-eyebrow-aurora {
+    0%, 100% { background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center; opacity: 0.9; }
+    34% { background-position: center, center, 62% 24%, 30% 78%, 68% 58%, 22% 48%, 52% 38%, center; opacity: 1; }
+    68% { background-position: center, center, 86% 30%, 42% 72%, 58% 68%, 115% 52%, -45% 46%, center; opacity: 0.94; }
+  }
+
+  @keyframes b24-calls-eyebrow-border {
+    0%, 100% { background-position: 0% 50%; opacity: 0.84; }
+    46% { background-position: 100% 50%; opacity: 1; }
+    72% { background-position: 54% 50%; opacity: 0.9; }
+  }
+
+  @media (max-width: 1100px) {
+    .b24-calls__layout {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 34px;
+    }
+
+    .b24-calls__visual {
+      width: min(100%, 900px);
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .b24-calls__image {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .b24-calls__content {
+      width: min(100%, 900px);
+      margin: 0 auto;
+    }
+
+    .b24-calls__card {
+      min-height: 180px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .b24-calls {
+      padding: 42px 20px 64px;
+    }
+
+    .b24-calls__header {
+      margin-bottom: 30px;
+    }
+
+    .b24-calls__eyebrow {
+      min-height: 46px;
+      margin-bottom: 14px;
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    .b24-calls__title {
+      font-size: clamp(29px, 9vw, 40px);
+      letter-spacing: -0.028em;
+    }
+
+    .b24-calls__subtitle {
+      font-size: 16px;
+    }
+
+    .b24-calls__layout {
+      gap: 28px;
+    }
+
+    .b24-calls__visual {
+      border-radius: 18px;
+    }
+
+    .b24-calls__visual::after {
+      border-radius: 17px;
+    }
+
+    .b24-calls__image {
+      border-radius: 16px;
+    }
+
+    .b24-calls__cards {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .b24-calls__card {
+      min-height: 0;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .b24-calls__icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 18px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b24-calls__eyebrow::before,
+    .b24-calls__eyebrow::after {
+      animation: none;
+    }
+
+    .b24-calls__card {
+      transition: none;
+    }
+  }
+</style>
