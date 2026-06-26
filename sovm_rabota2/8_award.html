@@ -1,0 +1,700 @@
+<section class="b24-premium-award" aria-labelledby="b24-premium-award-title">
+  <div class="b24-premium-award__badge">
+    <span class="b24-premium-award__badge-dot" aria-hidden="true"></span>
+    <span class="b24-premium-award__badge-text">Рейтинг CNews 2026</span>
+  </div>
+
+  <div class="b24-premium-award__card">
+    <div class="b24-premium-award__visual" aria-hidden="true">
+      <div class="b24-premium-award__halo"></div>
+      <svg class="b24-premium-award__laurel" viewBox="0 0 360 400" fill="none">
+        <defs>
+          <linearGradient id="b24-award-metal" x1="48" y1="46" x2="306" y2="349" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E9FFFF"/>
+            <stop offset=".25" stop-color="#73F4ED"/>
+            <stop offset=".54" stop-color="#36BEE8"/>
+            <stop offset=".78" stop-color="#8A8CFF"/>
+            <stop offset="1" stop-color="#D9FAFF"/>
+          </linearGradient>
+          <filter id="b24-award-glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feColorMatrix in="blur" values="0 0 0 0 0.18 0 0 0 0 0.86 0 0 0 0 1 0 0 0 .65 0"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g stroke="url(#b24-award-metal)" stroke-linecap="round" stroke-linejoin="round" filter="url(#b24-award-glow)">
+          <path d="M158 349C87 325 48 269 55 200C59 157 78 119 107 91" stroke-width="5"/>
+          <path d="M202 349C273 325 312 269 305 200C301 157 282 119 253 91" stroke-width="5"/>
+          <path d="M80 286C58 280 41 266 31 246C54 246 72 254 84 271" stroke-width="4"/>
+          <path d="M63 246C42 237 29 220 24 198C47 203 63 215 71 234" stroke-width="4"/>
+          <path d="M61 203C43 188 34 169 36 147C57 157 70 173 74 193" stroke-width="4"/>
+          <path d="M73 161C59 142 56 121 64 101C82 116 91 134 89 154" stroke-width="4"/>
+          <path d="M94 123C85 101 88 80 101 62C114 81 118 101 111 120" stroke-width="4"/>
+          <path d="M280 286C302 280 319 266 329 246C306 246 288 254 276 271" stroke-width="4"/>
+          <path d="M297 246C318 237 331 220 336 198C313 203 297 215 289 234" stroke-width="4"/>
+          <path d="M299 203C317 188 326 169 324 147C303 157 290 173 286 193" stroke-width="4"/>
+          <path d="M287 161C301 142 304 121 296 101C278 116 269 134 271 154" stroke-width="4"/>
+          <path d="M266 123C275 101 272 80 259 62C246 81 242 101 249 120" stroke-width="4"/>
+        </g>
+      </svg>
+
+      <div class="b24-premium-award__medal">
+        <span class="b24-premium-award__medal-top">лидер</span>
+        <strong>№1</strong>
+        <span class="b24-premium-award__medal-bottom">в рейтинге</span>
+      </div>
+      <span class="b24-premium-award__spark b24-premium-award__spark--one"></span>
+      <span class="b24-premium-award__spark b24-premium-award__spark--two"></span>
+      <span class="b24-premium-award__spark b24-premium-award__spark--three"></span>
+    </div>
+
+    <div class="b24-premium-award__content">
+      <p class="b24-premium-award__eyebrow">Лидер российского рынка UC</p>
+      <h2 class="b24-premium-award__title" id="b24-premium-award-title">
+        Битрикс24 — №1 в рейтинге платформ унифицированных коммуникаций
+      </h2>
+      <p class="b24-premium-award__description">
+        Современная UC-платформа собирает вокруг себя совместную работу, клиентские коммуникации,
+        интеграции с бизнес-системами, защиту данных, инструменты ИИ и видеозвонки. Всё это собрано в Битрикс24!
+      </p>
+
+      <div class="b24-premium-award__footer">
+        <div class="b24-premium-award__criteria">
+          <p>Эксперты оценивали</p>
+          <ul aria-label="Критерии рейтинга">
+            <li>Функциональность</li>
+            <li>Безопасность</li>
+            <li>ИИ-возможности</li>
+            <li>Цена и поддержка</li>
+          </ul>
+        </div>
+
+        <a class="b24-premium-award__link" href="https://www.cnews.ru/reviews/unifitsirovannye_kommunikatsii_2025/articles/rossijskie_platformy_unifitsirovannyh" target="_blank" rel="noopener noreferrer">
+          <span>Смотреть рейтинг</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p class="b24-premium-award__note">
+    ComNews Research (ООО «Медиа-Бизнес»), июнь 2026 г.
+  </p>
+</section>
+
+<style>
+  /*
+   * The page builder gives adjacent HTML fragments separate block containers.
+   * Neutralize both containers so their boundary cannot cover the continuous
+   * page-level cosmic background with different solid or gradient layers.
+   */
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform),
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award) {
+    --bg: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-crossplatform)::after,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-premium-award)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .b24-premium-award {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: clamp(56px, 8vw, 112px) clamp(18px, 4vw, 56px);
+    color: #fff;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .b24-premium-award::before,
+  .b24-premium-award::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .b24-premium-award,
+  .b24-premium-award * {
+    box-sizing: border-box;
+  }
+
+  .b24-premium-award__badge {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: max-content;
+    min-height: 55px;
+    margin: 0 auto clamp(24px, 3vw, 34px);
+    padding: 17px 44px;
+    overflow: hidden;
+    color: #ffffff;
+    border: 1px solid rgba(181, 245, 255, 0.42);
+    border-radius: 999px;
+    background:
+      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.26) 0 9%, transparent 34%),
+      radial-gradient(ellipse at 88% 78%, rgba(115, 99, 255, 0.2) 0 12%, transparent 38%),
+      linear-gradient(117deg, rgba(3, 10, 31, 0.88) 0%, rgba(6, 23, 62, 0.82) 32%, rgba(12, 45, 86, 0.78) 56%, rgba(6, 19, 54, 0.86) 100%);
+    box-shadow:
+      0 0 0 1px rgba(140, 236, 255, 0.16),
+      0 0 28px rgba(80, 226, 255, 0.24),
+      0 0 58px rgba(26, 217, 180, 0.22),
+      0 0 82px rgba(125, 105, 255, 0.18),
+      0 18px 54px rgba(3, 17, 55, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.54),
+      inset 0 -1px 0 rgba(137, 238, 255, 0.18),
+      inset 0 0 26px rgba(96, 232, 255, 0.18),
+      inset 0 -18px 34px rgba(1, 7, 28, 0.42);
+    backdrop-filter: blur(20px) saturate(1.35);
+    -webkit-backdrop-filter: blur(20px) saturate(1.35);
+    font-size: clamp(17px, 1.42vw, 20px);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0.18px;
+    text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-premium-award__badge::before,
+  .b24-premium-award__badge::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .b24-premium-award__badge::before {
+    z-index: 0;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 12% 56%, rgba(255, 255, 255, 0.32) 0 1px, rgba(114, 241, 255, 0.42) 2px, transparent 11px),
+      radial-gradient(ellipse at 91% 47%, rgba(255, 255, 255, 0.26) 0 1px, rgba(72, 236, 198, 0.4) 2px, transparent 12px),
+      radial-gradient(ellipse at 76% 23%, rgba(0, 255, 190, 0.36) 0 3%, transparent 20%),
+      radial-gradient(ellipse at 31% 80%, rgba(37, 232, 184, 0.3) 0 5%, transparent 28%),
+      radial-gradient(ellipse at 65% 72%, rgba(97, 106, 255, 0.26) 0 8%, transparent 36%),
+      linear-gradient(104deg, transparent 0 12%, rgba(44, 237, 255, 0.1) 21%, rgba(53, 255, 206, 0.34) 31%, rgba(42, 225, 255, 0.2) 42%, transparent 56%),
+      linear-gradient(76deg, transparent 5%, rgba(8, 186, 166, 0.18) 26%, rgba(75, 255, 213, 0.3) 42%, rgba(120, 115, 255, 0.16) 63%, transparent 84%),
+      linear-gradient(136deg, rgba(6, 17, 52, 0.18), rgba(3, 42, 74, 0.34) 42%, rgba(2, 22, 56, 0.2));
+    background-size: auto, auto, 120% 130%, 140% 140%, 150% 150%, 220% 120%, 240% 140%, 100% 100%;
+    background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center;
+    opacity: 0.96;
+    mix-blend-mode: screen;
+    filter: saturate(1.18) blur(0.15px);
+    animation: b24-premium-badge-aurora 10.8s ease-in-out infinite;
+    transition: opacity 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-premium-award__badge::after {
+    z-index: 1;
+    inset: -1px;
+    padding: 1px;
+    background: linear-gradient(112deg, rgba(179, 247, 255, 0.85), rgba(78, 232, 255, 0.76) 20%, rgba(54, 244, 203, 0.82) 39%, rgba(134, 117, 255, 0.68) 62%, rgba(157, 218, 255, 0.76) 82%, rgba(229, 253, 255, 0.82));
+    background-size: 260% 260%;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.54), 0 0 14px rgba(71, 228, 255, 0.3), 0 0 22px rgba(42, 235, 196, 0.18);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: b24-premium-badge-border 9.6s ease-in-out infinite;
+    transition: filter 0.55s ease, opacity 0.55s ease;
+  }
+
+  .b24-premium-award__badge:hover {
+    border-color: rgba(193, 251, 255, 0.58);
+    filter: brightness(1.06) saturate(1.12);
+    box-shadow: 0 0 0 1px rgba(167, 247, 255, 0.24), 0 0 34px rgba(74, 232, 255, 0.34), 0 0 70px rgba(28, 238, 195, 0.3), 0 0 96px rgba(135, 113, 255, 0.24), 0 20px 60px rgba(3, 24, 68, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.68), inset 0 -1px 0 rgba(153, 246, 255, 0.24), inset 0 0 34px rgba(94, 238, 255, 0.25), inset 0 0 46px rgba(46, 241, 198, 0.16), inset 0 -18px 34px rgba(1, 7, 28, 0.36);
+  }
+
+  .b24-premium-award__badge:hover::before {
+    opacity: 1;
+    filter: saturate(1.3) brightness(1.12) blur(0.12px);
+    animation-duration: 8s;
+  }
+
+  .b24-premium-award__badge:hover::after {
+    opacity: 1;
+    filter: brightness(1.08);
+    animation-duration: 7.2s;
+  }
+
+  .b24-premium-award__badge-dot,
+  .b24-premium-award__badge-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .b24-premium-award__badge-dot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #8ffcff;
+    box-shadow:
+      0 0 0 4px rgba(71, 238, 255, 0.14),
+      0 0 18px rgba(85, 230, 255, 0.9),
+      0 0 28px rgba(48, 241, 196, 0.58);
+  }
+
+  .b24-premium-award__badge-text {
+    color: #ffffff;
+  }
+
+  .b24-premium-award__card {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(300px, .78fr) minmax(0, 1.42fr);
+    width: 100%;
+    max-width: 1220px;
+    min-height: 570px;
+    margin: 0 auto;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 46%, rgba(45, 210, 255, .16), transparent 34%),
+      radial-gradient(circle at 88% 18%, rgba(140, 80, 255, .18), transparent 36%),
+      radial-gradient(circle at 45% 105%, rgba(40, 220, 210, .1), transparent 42%),
+      linear-gradient(135deg, rgba(10, 34, 88, .92), rgba(15, 42, 115, .92) 48%, rgba(30, 34, 115, .9));
+    border: 1px solid rgba(150, 230, 255, .38);
+    border-radius: 36px;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, .04) inset,
+      0 0 22px rgba(80, 220, 255, .2),
+      0 0 42px rgba(120, 90, 255, .12),
+      0 28px 90px rgba(0, 0, 0, .34);
+    backdrop-filter: blur(24px) saturate(1.12);
+    -webkit-backdrop-filter: blur(24px) saturate(1.12);
+  }
+
+  .b24-premium-award__card::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 0, rgba(0, 8, 35, .16) 72%),
+      linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(0, 0, 0, .08));
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .b24-premium-award__card::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(90deg, rgba(80, 230, 255, .2), transparent 22%, transparent 74%, rgba(155, 95, 255, .18)),
+      linear-gradient(180deg, rgba(160, 235, 255, .18), transparent 18%);
+    opacity: .55;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  .b24-premium-award__visual {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    min-height: 570px;
+    place-items: center;
+    overflow: visible;
+  }
+
+  .b24-premium-award__visual,
+  .b24-premium-award__content {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .b24-premium-award__visual::before,
+  .b24-premium-award__visual::after,
+  .b24-premium-award__content::before,
+  .b24-premium-award__content::after {
+    content: none;
+    display: none;
+  }
+
+  .b24-premium-award__halo {
+    position: absolute;
+    width: clamp(250px, 27vw, 345px);
+    aspect-ratio: 1;
+    background:
+      radial-gradient(circle, transparent 33%, rgba(84, 231, 255, .15) 35%, transparent 56%),
+      conic-gradient(from 20deg, transparent, rgba(76, 227, 247, .22), transparent 28%, rgba(145, 98, 255, .22), transparent 58%, rgba(55, 243, 205, .18), transparent);
+    border: 1px solid rgba(157, 244, 255, .2);
+    border-radius: 50%;
+    box-shadow:
+      0 0 35px rgba(48, 238, 255, .38),
+      0 0 64px rgba(48, 225, 255, .18),
+      0 0 96px rgba(124, 78, 255, .14),
+      inset 0 0 56px rgba(71, 225, 255, .12);
+    animation: b24-premium-halo 18s linear infinite;
+  }
+
+  .b24-premium-award__laurel {
+    position: absolute;
+    width: min(91%, 390px);
+    height: auto;
+    opacity: 1;
+    filter:
+      drop-shadow(0 0 10px rgba(213, 255, 255, .34))
+      drop-shadow(0 0 18px rgba(70, 240, 255, .28))
+      drop-shadow(0 0 34px rgba(110, 90, 255, .16));
+  }
+
+  .b24-premium-award__medal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: clamp(174px, 17vw, 216px);
+    aspect-ratio: 1;
+    color: #fff;
+    background:
+      radial-gradient(circle at 34% 25%, rgba(255, 255, 255, .22), transparent 20%),
+      radial-gradient(circle at 50% 74%, rgba(55, 236, 216, .17), transparent 48%),
+      linear-gradient(145deg, rgba(22, 78, 137, .82), rgba(15, 25, 78, .94));
+    border: 1px solid rgba(190, 250, 255, .58);
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 0 7px rgba(154, 235, 255, .035),
+      inset 0 0 45px rgba(75, 220, 255, .25),
+      0 0 0 7px rgba(93, 220, 255, .025),
+      0 0 24px rgba(56, 240, 255, .3),
+      0 0 48px rgba(56, 231, 255, .2),
+      0 0 72px rgba(139, 75, 255, .14),
+      0 24px 55px rgba(1, 8, 40, .38);
+    filter:
+      drop-shadow(0 0 18px rgba(70, 240, 255, .28))
+      drop-shadow(0 0 34px rgba(110, 90, 255, .16));
+  }
+
+  .b24-premium-award__medal::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border: 1px solid rgba(149, 240, 244, .19);
+    border-radius: inherit;
+  }
+
+  .b24-premium-award__medal strong {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: clamp(60px, 7vw, 86px);
+    font-weight: 650;
+    line-height: .92;
+    letter-spacing: -.08em;
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, .5),
+      0 0 24px rgba(127, 238, 255, .58),
+      0 0 48px rgba(127, 173, 255, .28);
+  }
+
+  .b24-premium-award__medal-top,
+  .b24-premium-award__medal-bottom {
+    color: rgba(225, 250, 255, .7);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  .b24-premium-award__medal-top { margin-bottom: 10px; }
+  .b24-premium-award__medal-bottom { margin-top: 10px; }
+
+  .b24-premium-award__spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #d7ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px 3px rgba(87, 239, 255, .65);
+  }
+
+  .b24-premium-award__spark--one { top: 24%; left: 21%; }
+  .b24-premium-award__spark--two { top: 36%; right: 15%; width: 3px; height: 3px; }
+  .b24-premium-award__spark--three { right: 23%; bottom: 23%; width: 4px; height: 4px; }
+
+  .b24-premium-award__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: clamp(46px, 5.2vw, 72px) clamp(38px, 5.5vw, 78px);
+  }
+
+  .b24-premium-award__eyebrow {
+    margin: 0 0 20px;
+    color: #9bfff4;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .16em;
+    text-shadow: 0 0 16px rgba(79, 255, 238, .48);
+    text-transform: uppercase;
+  }
+
+  .b24-premium-award__title {
+    max-width: 720px;
+    margin: 0;
+    color: #fff;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: clamp(29px, 3.15vw, 43px);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -.032em;
+    text-wrap: balance;
+  }
+
+  .b24-premium-award__description {
+    max-width: 690px;
+    margin: 22px 0 0;
+    color: rgba(244, 249, 255, .94);
+    font-size: clamp(16px, 1.35vw, 18px);
+    line-height: 1.6;
+  }
+
+  .b24-premium-award__footer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-top: clamp(34px, 4.5vw, 50px);
+    padding-top: 28px;
+    border-top: 0;
+  }
+
+  .b24-premium-award__footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(113, 239, 255, .55), rgba(165, 113, 255, .3), transparent);
+    box-shadow: 0 0 12px rgba(82, 225, 255, .2);
+  }
+
+  .b24-premium-award__criteria p {
+    margin: 0 0 13px;
+    color: rgba(224, 246, 255, .7);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .b24-premium-award__criteria ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 9px 24px;
+    width: min(100%, 360px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .b24-premium-award__criteria li {
+    position: relative;
+    padding-left: 13px;
+    color: rgba(245, 253, 255, .92);
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .b24-premium-award__criteria li::before {
+    content: "";
+    position: absolute;
+    top: .43em;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background: #9afff4;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #7cfff1, 0 0 14px rgba(70, 255, 230, .75);
+  }
+
+  .b24-premium-award__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    gap: 12px;
+    min-height: 52px;
+    padding: 14px 19px 14px 23px;
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(80, 170, 255, .12));
+    border: 1px solid rgba(140, 230, 255, .34);
+    border-radius: 15px;
+    box-shadow:
+      0 0 18px rgba(80, 220, 255, .16),
+      inset 0 0 0 1px rgba(255, 255, 255, .04);
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1;
+    text-decoration: none;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  }
+
+  .b24-premium-award__link svg {
+    width: 21px;
+    height: 21px;
+    transition: transform .25s ease;
+  }
+
+  .b24-premium-award__link:hover,
+  .b24-premium-award__link:focus-visible {
+    color: #fff;
+    border-color: rgba(174, 252, 255, .56);
+    box-shadow:
+      0 0 24px rgba(80, 240, 255, .48),
+      0 0 52px rgba(130, 90, 255, .34),
+      inset 0 0 0 1px rgba(255, 255, 255, .08);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .b24-premium-award__link:hover svg,
+  .b24-premium-award__link:focus-visible svg {
+    transform: translateX(3px);
+  }
+
+  .b24-premium-award__link:focus-visible {
+    outline: 3px solid rgba(117, 243, 232, .6);
+    outline-offset: 4px;
+  }
+
+  .b24-premium-award__note {
+    width: 100%;
+    max-width: 1220px;
+    margin: 17px auto 0;
+    padding: 0 5px;
+    color: rgba(220, 230, 255, .62);
+    font-size: 12px;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  @keyframes b24-premium-badge-aurora {
+    0%, 100% { background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center; }
+    50% { background-position: center, center, 63% 30%, 34% 72%, 58% 46%, 128% 50%, -35% 54%, center; }
+  }
+
+  @keyframes b24-premium-badge-border {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes b24-premium-halo {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 980px) {
+    .b24-premium-award__card {
+      grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
+    }
+
+    .b24-premium-award__footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .b24-premium-award__card {
+      display: block;
+      min-height: 0;
+      border-radius: 30px;
+    }
+
+    .b24-premium-award__visual {
+      min-height: 390px;
+    }
+
+    .b24-premium-award__laurel {
+      width: min(84%, 330px);
+    }
+
+    .b24-premium-award__content {
+      padding: 42px clamp(24px, 7vw, 48px) 46px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .b24-premium-award {
+      padding: 48px 16px;
+    }
+
+    .b24-premium-award__badge {
+      min-height: 48px;
+      padding: 14px 25px;
+      font-size: 15px;
+    }
+
+    .b24-premium-award__visual {
+      min-height: 335px;
+    }
+
+    .b24-premium-award__medal {
+      width: 164px;
+    }
+
+    .b24-premium-award__title {
+      font-size: clamp(27px, 8vw, 34px);
+    }
+
+    .b24-premium-award__description {
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .b24-premium-award__link {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .b24-premium-award__badge::before,
+    .b24-premium-award__badge::after,
+    .b24-premium-award__halo {
+      animation: none;
+    }
+
+    .b24-premium-award__link,
+    .b24-premium-award__link svg {
+      transition: none;
+    }
+  }
+</style>
