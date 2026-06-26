@@ -59,7 +59,14 @@
     </div>
 
     <div class="b24-calls__actions">
-      <a class="b24-calls__button" href="https://www.bitrix24.ru/create.php?b24_type=social"><span class="b24-calls__button-text">Получить бесплатно</span><span class="b24-calls__button-arrow" aria-hidden="true">→</span></a>
+      <a class="b24-calls__button" href="https://www.bitrix24.ru/create.php?b24_type=social">
+        <span class="b24-calls__button-text">Получить бесплатно</span>
+        <span class="b24-calls__button-arrow" aria-hidden="true">
+          <svg viewBox="0 0 18 18" focusable="false">
+            <path d="M3.75 9h10.5m-4.4-4.35L14.25 9l-4.4 4.35" />
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>
@@ -523,16 +530,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-height: 58px;
-    padding: 0 48px;
+    gap: 8px;
+    min-height: 60px;
+    padding: 0 54px;
     border-radius: 18px;
     color: #112200;
     background: linear-gradient(135deg, #dcff3f 0%, #c7f52b 45%, #aef01c 100%);
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.45),
-      0 0 28px rgba(199, 245, 43, 0.42),
-      0 16px 38px rgba(130, 190, 20, 0.34),
+      0 0 0 1px rgba(220, 255, 120, 0.44),
+      0 0 26px rgba(199, 245, 43, 0.38),
+      0 16px 38px rgba(130, 190, 20, 0.32),
       inset 0 1px 0 rgba(255, 255, 255, 0.45);
     font-size: 19px;
     font-weight: 700;
@@ -548,25 +555,40 @@
   }
 
   .b24-calls__button-arrow {
-    display: inline-block;
-    font-size: 0.95em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
     line-height: 1;
-    transform: translateY(-0.5px);
     transition: transform 0.28s ease;
+  }
+
+  .b24-calls__button-arrow svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .b24-calls__button:hover {
     color: #142100;
     box-shadow:
-      0 0 0 1px rgba(229, 255, 141, 0.62),
-      0 0 34px rgba(199, 245, 43, 0.56),
-      0 18px 42px rgba(130, 190, 20, 0.42),
+      0 0 0 1px rgba(229, 255, 141, 0.6),
+      0 0 34px rgba(199, 245, 43, 0.5),
+      0 18px 42px rgba(130, 190, 20, 0.38),
       inset 0 1px 0 rgba(255, 255, 255, 0.55);
     transform: translateY(-2px);
   }
 
   .b24-calls__button:hover .b24-calls__button-arrow {
-    transform: translate(4px, -0.5px);
+    transform: translateX(3px);
   }
 
   .b24-calls__button:active {
@@ -693,8 +715,8 @@
 
     .b24-calls__button {
       width: 100%;
-      min-height: 56px;
-      padding: 0 28px;
+      min-height: 58px;
+      padding: 0 32px;
       border-radius: 18px;
       font-size: 18px;
     }
