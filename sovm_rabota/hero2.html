@@ -150,9 +150,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
     width: 100%;
-    max-width: 950px;
+    max-width: 980px;
     margin: clamp(32px, 3.2vw, 44px) auto 0;
     animation-delay: 0.28s;
   }
@@ -164,10 +164,11 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: 180px;
-    min-width: 180px;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: max-content;
     height: 54px;
-    padding: 0 24px;
+    padding: 0 28px;
     white-space: nowrap;
     border-radius: 999px;
     font-size: 17px;
@@ -556,10 +557,10 @@
     100% { background-position: 240% 50%; }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1025px) {
     .b24-collab-hero__chips {
       flex-wrap: nowrap;
-      max-width: 950px;
+      max-width: 980px;
     }
   }
 
@@ -585,10 +586,10 @@
     }
 
     .b24-collab-hero__chip {
-      width: min(180px, calc(50vw - 20px));
-      min-width: min(180px, calc(50vw - 20px));
+      width: auto;
+      min-width: max-content;
       height: 50px;
-      padding: 0 16px;
+      padding: 0 20px;
       font-size: clamp(15px, 3.7vw, 16px);
     }
 
@@ -671,10 +672,10 @@
     }
 
     .b24-collab-hero__chip {
-      width: 100%;
-      min-width: 0;
-      max-width: 260px;
-      padding: 0 12px;
+      width: auto;
+      min-width: max-content;
+      max-width: 100%;
+      padding: 0 16px;
     }
   }
 </style>
