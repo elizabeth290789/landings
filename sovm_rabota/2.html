@@ -364,18 +364,20 @@
     min-height: 146px;
     margin: 0;
     padding: 16px;
-    border: 1px solid rgba(225, 255, 255, 0.5);
+    border: 1px solid rgba(139, 228, 246, 0.62);
     border-radius: 20px;
     background:
-      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.66), transparent 42%),
-      radial-gradient(ellipse at 90% 100%, rgba(126, 119, 232, 0.16), transparent 52%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.42), rgba(211, 255, 250, 0.24) 52%, rgba(220, 230, 255, 0.18));
+      radial-gradient(ellipse at 18% 10%, rgba(255, 255, 255, 0.72), transparent 34%),
+      radial-gradient(ellipse at 88% 0%, rgba(132, 119, 255, 0.22), transparent 46%),
+      radial-gradient(ellipse at 92% 100%, rgba(31, 205, 173, 0.28), transparent 50%),
+      linear-gradient(145deg, rgba(205, 224, 255, 0.82) 0%, rgba(176, 225, 255, 0.78) 44%, rgba(170, 239, 224, 0.76) 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.58),
-      0 12px 30px rgba(18, 80, 112, 0.11),
-      0 0 28px rgba(66, 215, 224, 0.08);
-    backdrop-filter: blur(16px) saturate(1.14);
-    -webkit-backdrop-filter: blur(16px) saturate(1.14);
+      inset 0 1px 0 rgba(255, 255, 255, 0.72),
+      inset 0 -1px 0 rgba(20, 136, 164, 0.08),
+      0 14px 32px rgba(8, 54, 96, 0.18),
+      0 0 30px rgba(35, 212, 207, 0.14);
+    backdrop-filter: blur(10px) saturate(1.2);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
   }
 
   .b24-messenger__card:nth-child(odd)::after,
@@ -397,15 +399,15 @@
     justify-content: center;
     flex: 0 0 auto;
     overflow: hidden;
-    color: #087c8d;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #046b7c;
+    border: 1px solid rgba(255, 255, 255, 0.64);
     border-radius: 15px;
     background:
       radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.86), transparent 42%),
       linear-gradient(145deg, rgba(75, 229, 201, 0.38), rgba(74, 194, 241, 0.28) 54%, rgba(126, 119, 232, 0.18));
     box-shadow:
-      0 8px 22px rgba(17, 138, 163, 0.15),
-      0 0 18px rgba(53, 219, 206, 0.18),
+      0 8px 22px rgba(8, 103, 137, 0.2),
+      0 0 18px rgba(31, 195, 188, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.76);
     backdrop-filter: blur(12px) saturate(1.18);
     -webkit-backdrop-filter: blur(12px) saturate(1.18);
@@ -439,9 +441,9 @@
 
   .b24-messenger__card-title {
     margin: 0;
-    color: #061f46;
+    color: #031a3d;
     font-size: 19px;
-    font-weight: 850;
+    font-weight: 900;
     line-height: 1.18;
     letter-spacing: -0.015em;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
@@ -449,10 +451,10 @@
 
   .b24-messenger__card-text {
     margin: 8px 0 0;
-    color: rgba(8, 38, 73, 0.9);
+    color: rgba(4, 27, 59, 0.94);
     font-size: 15px;
-    font-weight: 600;
-    line-height: 1.56;
+    font-weight: 650;
+    line-height: 1.62;
   }
 
   .b24-messenger__note {
@@ -465,29 +467,32 @@
     width: 100%;
     margin: 4px 0 0;
     padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(126, 224, 239, 0.58);
     border-radius: 20px;
     background:
-      radial-gradient(ellipse at 12% 50%, rgba(56, 221, 190, 0.22), transparent 48%),
-      linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(190, 244, 247, 0.22) 52%, rgba(209, 215, 255, 0.18));
+      radial-gradient(ellipse at 12% 48%, rgba(39, 211, 181, 0.34), transparent 48%),
+      radial-gradient(ellipse at 84% 18%, rgba(126, 112, 255, 0.2), transparent 46%),
+      linear-gradient(135deg, rgba(204, 223, 255, 0.8), rgba(169, 230, 248, 0.74) 52%, rgba(157, 235, 216, 0.72));
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.46),
-      0 12px 30px rgba(18, 80, 112, 0.08);
+      inset 0 1px 0 rgba(255, 255, 255, 0.68),
+      inset 0 -1px 0 rgba(7, 122, 145, 0.08),
+      0 14px 32px rgba(8, 54, 96, 0.16),
+      0 0 28px rgba(37, 210, 193, 0.12);
   }
 
   .b24-messenger__note-icon {
     width: 46px;
     height: 46px;
-    color: #057a6d;
-    border-color: rgba(255, 255, 255, 0.56);
+    color: #03695f;
+    border-color: rgba(255, 255, 255, 0.66);
   }
 
   .b24-messenger__note p {
     margin: 0;
-    color: rgba(6, 32, 66, 0.92);
+    color: rgba(3, 24, 55, 0.96);
     font-size: 15.5px;
-    font-weight: 650;
-    line-height: 1.5;
+    font-weight: 700;
+    line-height: 1.58;
   }
 
   .b24-messenger__actions {
