@@ -442,19 +442,39 @@
   .b24-messenger__card-title {
     margin: 0;
     color: #031a3d;
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: #031a3d;
+    -webkit-text-stroke: 0;
     font-size: 19px;
     font-weight: 900;
     line-height: 1.18;
     letter-spacing: -0.015em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+    text-shadow: none;
+    filter: none;
+  }
+
+  .b24-messenger__card-title::before,
+  .b24-messenger__card-title::after,
+  .b24-messenger__card-text::before,
+  .b24-messenger__card-text::after {
+    content: none;
   }
 
   .b24-messenger__card-text {
     margin: 8px 0 0;
     color: rgba(4, 27, 59, 0.94);
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: rgba(4, 27, 59, 0.94);
+    -webkit-text-stroke: 0;
     font-size: 15px;
     font-weight: 650;
     line-height: 1.62;
+    text-shadow: none;
+    filter: none;
   }
 
   .b24-messenger__note {
