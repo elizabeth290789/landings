@@ -16,7 +16,7 @@
         <div class="b24-calls__image-frame">
           <img
             class="b24-calls__image"
-            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/videocalling/1.1900w.png.webp?1782806399083"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/videocalling/7.1440w.png.webp?1782806399083"
             alt="Интерфейс видеозвонка в Битрикс24"
             loading="lazy"
           />
@@ -256,9 +256,9 @@
 
   .b24-calls__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.9fr) minmax(360px, 0.85fr);
+    grid-template-columns: minmax(0, 2.12fr) minmax(360px, 0.88fr);
     align-items: center;
-    gap: clamp(18px, 2vw, 28px);
+    gap: clamp(16px, 1.8vw, 24px);
   }
 
   .b24-calls__visual {
@@ -287,14 +287,15 @@
 
   .b24-calls__visual::before {
     z-index: -1;
-    inset: 6% 4% 2%;
+    inset: -8% -4% -10%;
     border-radius: 50%;
     background:
-      radial-gradient(ellipse at 22% 76%, rgba(61, 235, 214, 0.24), transparent 48%),
-      radial-gradient(ellipse at 82% 78%, rgba(93, 202, 255, 0.24), transparent 46%),
-      radial-gradient(ellipse at 64% 24%, rgba(132, 104, 255, 0.2), transparent 44%);
-    filter: blur(34px);
-    opacity: 0.9;
+      radial-gradient(ellipse at 18% 70%, rgba(51, 245, 218, 0.34), transparent 50%),
+      radial-gradient(ellipse at 76% 76%, rgba(75, 204, 255, 0.32), transparent 48%),
+      radial-gradient(ellipse at 62% 26%, rgba(137, 104, 255, 0.3), transparent 46%),
+      radial-gradient(ellipse at 44% 50%, rgba(45, 153, 255, 0.18), transparent 58%);
+    filter: blur(42px);
+    opacity: 0.96;
     transition: opacity 0.3s ease, filter 0.3s ease;
   }
 
@@ -323,7 +324,7 @@
   .b24-calls__image-frame {
     position: relative;
     z-index: 1;
-    width: min(100%, 1160px);
+    width: min(100%, 1240px);
     overflow: visible;
     border: 0;
     border-radius: 0;
@@ -331,13 +332,42 @@
     background-color: transparent;
     box-shadow: none;
     filter:
-      drop-shadow(0 24px 62px rgba(0, 0, 0, 0.32))
-      drop-shadow(0 0 30px rgba(72, 202, 255, 0.24));
+      drop-shadow(0 28px 70px rgba(0, 0, 0, 0.34))
+      drop-shadow(0 0 34px rgba(72, 202, 255, 0.28))
+      drop-shadow(0 0 58px rgba(84, 244, 221, 0.16));
   }
 
   .b24-calls__image-frame::before,
   .b24-calls__image-frame::after {
-    content: none;
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .b24-calls__image-frame::before {
+    z-index: -1;
+    inset: -7% -5% -9%;
+    border-radius: 42px;
+    background:
+      radial-gradient(ellipse at 24% 20%, rgba(113, 235, 255, 0.34), transparent 44%),
+      radial-gradient(ellipse at 86% 28%, rgba(121, 105, 255, 0.3), transparent 48%),
+      radial-gradient(ellipse at 52% 92%, rgba(42, 255, 205, 0.28), transparent 52%),
+      linear-gradient(135deg, rgba(54, 232, 255, 0.16), rgba(114, 91, 255, 0.12) 58%, rgba(32, 247, 208, 0.12));
+    filter: blur(30px);
+    opacity: 0.88;
+    mix-blend-mode: screen;
+  }
+
+  .b24-calls__image-frame::after {
+    z-index: 2;
+    inset: -2%;
+    border-radius: 34px;
+    background:
+      linear-gradient(120deg, rgba(111, 235, 255, 0.16), transparent 26%, transparent 70%, rgba(135, 112, 255, 0.14)),
+      radial-gradient(ellipse at 50% 100%, rgba(50, 255, 211, 0.16), transparent 54%);
+    filter: blur(12px);
+    opacity: 0.64;
+    mix-blend-mode: screen;
   }
 
   .b24-calls__image {
