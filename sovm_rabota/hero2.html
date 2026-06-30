@@ -42,15 +42,20 @@
     <a href="https://www.bitrix24.ru/promo/workspace/#b291706" class="b24-collab-hero__award" aria-label="Битрикс24 — лидер российского рынка коммуникационных платформ">
       <span class="b24-collab-hero__award-icon" aria-hidden="true">
         <svg viewBox="0 0 56 56" focusable="false" role="img">
-          <path class="b24-collab-hero__award-ribbon b24-collab-hero__award-ribbon--left" d="M18.4 34.4 13.6 50l10.2-5.7 7 8.1 3.6-15.2"/>
-          <path class="b24-collab-hero__award-ribbon b24-collab-hero__award-ribbon--right" d="M37.6 34.4 42.4 50l-10.2-5.7-7 8.1-3.6-15.2"/>
-          <circle class="b24-collab-hero__award-glow" cx="28" cy="22.5" r="18.5"/>
-          <circle class="b24-collab-hero__award-medal" cx="28" cy="22.5" r="16"/>
-          <circle class="b24-collab-hero__award-ring" cx="28" cy="22.5" r="11.2"/>
-          <path class="b24-collab-hero__award-laurel b24-collab-hero__award-laurel--left" d="M18.7 24.4c-2.1-2.1-2.6-5.1-1.1-7.9M20.6 18.8c-2.5-.8-4.4-2.7-5-5.1M21 25.7c-2.2.4-4.4-.2-6-1.8"/>
-          <path class="b24-collab-hero__award-laurel b24-collab-hero__award-laurel--right" d="M37.3 24.4c2.1-2.1 2.6-5.1 1.1-7.9M35.4 18.8c2.5-.8 4.4-2.7 5-5.1M35 25.7c2.2.4 4.4-.2 6-1.8"/>
-          <text class="b24-collab-hero__award-number" x="28" y="26.3" text-anchor="middle">№1</text>
-          <path class="b24-collab-hero__award-star" d="M43.5 5.2 45 8.4l3.4.5-2.5 2.4.6 3.4-3-1.6-3.1 1.6.6-3.4-2.5-2.4 3.5-.5z"/>
+          <defs>
+            <linearGradient id="b24-collab-hero-trophy-gold" x1="17" y1="8" x2="39" y2="48" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fff6a7"/>
+              <stop offset="0.45" stop-color="#d8f343"/>
+              <stop offset="1" stop-color="#f1b942"/>
+            </linearGradient>
+          </defs>
+          <ellipse class="b24-collab-hero__award-halo" cx="28" cy="29" rx="22" ry="21"/>
+          <path class="b24-collab-hero__award-handle" d="M18.5 17.6h-5.2c0 8.4 3.8 13.4 10.1 14.2"/>
+          <path class="b24-collab-hero__award-handle" d="M37.5 17.6h5.2c0 8.4-3.8 13.4-10.1 14.2"/>
+          <path class="b24-collab-hero__award-cup" d="M18.2 11.8h19.6v10.8c0 6.4-4.1 11.6-9.8 11.6s-9.8-5.2-9.8-11.6z"/>
+          <path class="b24-collab-hero__award-stem" d="M28 34.2v8.1"/>
+          <path class="b24-collab-hero__award-base" d="M20.7 47.2h14.6M23.1 42.3h9.8"/>
+          <text class="b24-collab-hero__award-number" x="28" y="25.2" text-anchor="middle">№1</text>
         </svg>
       </span>
       <span class="b24-collab-hero__award-divider" aria-hidden="true"></span>
@@ -482,10 +487,10 @@
     width: 54px;
     height: 54px;
     flex: 0 0 54px;
-    color: #f060df;
+    color: #d8f343;
     filter:
-      drop-shadow(0 0 15px rgba(219, 77, 255, 0.44))
-      drop-shadow(0 0 9px rgba(198, 242, 45, 0.18));
+      drop-shadow(0 0 13px rgba(240, 96, 223, 0.22))
+      drop-shadow(0 0 10px rgba(198, 242, 45, 0.24));
   }
 
   .b24-collab-hero__award-icon svg {
@@ -495,61 +500,39 @@
     overflow: visible;
   }
 
-  .b24-collab-hero__award-ribbon {
-    fill: rgba(198, 242, 45, 0.22);
-    stroke: rgba(198, 242, 45, 0.92);
-    stroke-width: 2.2;
+  .b24-collab-hero__award-halo {
+    fill: rgba(240, 96, 223, 0.1);
+    stroke: rgba(198, 242, 45, 0.18);
+    stroke-width: 1.2;
+  }
+
+  .b24-collab-hero__award-cup {
+    fill: url(#b24-collab-hero-trophy-gold);
+    stroke: rgba(255, 255, 255, 0.78);
+    stroke-width: 2.4;
     stroke-linecap: round;
     stroke-linejoin: round;
-    opacity: 0.98;
   }
 
-  .b24-collab-hero__award-ribbon--left {
-    fill: rgba(240, 96, 223, 0.22);
-    stroke: rgba(240, 96, 223, 0.9);
-  }
-
-  .b24-collab-hero__award-medal {
-    fill: rgba(15, 34, 92, 0.96);
-    stroke: rgba(240, 96, 223, 0.98);
-    stroke-width: 3.2;
-  }
-
-  .b24-collab-hero__award-glow {
-    fill: rgba(240, 96, 223, 0.16);
-    stroke: rgba(198, 242, 45, 0.28);
-    stroke-width: 1.4;
-  }
-
-  .b24-collab-hero__award-ring {
-    fill: rgba(255, 255, 255, 0.08);
-    stroke: rgba(198, 242, 45, 0.9);
-    stroke-width: 1.8;
-  }
-
-  .b24-collab-hero__award-laurel {
+  .b24-collab-hero__award-handle,
+  .b24-collab-hero__award-stem,
+  .b24-collab-hero__award-base {
     fill: none;
-    stroke: rgba(255, 255, 255, 0.72);
-    stroke-width: 1.5;
+    stroke: url(#b24-collab-hero-trophy-gold);
+    stroke-width: 3.2;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
 
   .b24-collab-hero__award-number {
-    fill: #ffffff;
+    fill: #07183f;
     font-family: inherit;
-    font-size: 10.8px;
+    font-size: 10.2px;
     font-weight: 900;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.07em;
     paint-order: stroke;
-    stroke: rgba(7, 24, 63, 0.82);
-    stroke-width: 0.9px;
-  }
-
-  .b24-collab-hero__award-star {
-    fill: #c6f22d;
-    stroke: rgba(255, 255, 255, 0.72);
-    stroke-width: 0.8;
+    stroke: rgba(255, 246, 167, 0.72);
+    stroke-width: 0.8px;
   }
 
   .b24-collab-hero__award-divider {
