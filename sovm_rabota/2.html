@@ -355,21 +355,21 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2vw, 24px);
     width: 100%;
+    padding: clamp(26px, 2.8vw, 34px);
     overflow: hidden;
-    border: 1px solid rgba(142, 226, 255, 0.26);
+    border: 1px solid rgba(142, 226, 255, 0.24);
     border-radius: 28px;
     background:
-      radial-gradient(ellipse at 18% 8%, rgba(76, 205, 237, 0.18), transparent 42%),
-      radial-gradient(ellipse at 92% 92%, rgba(45, 229, 204, 0.12), transparent 46%),
-      linear-gradient(142deg, rgba(7, 24, 55, 0.78) 0%, rgba(7, 44, 73, 0.64) 48%, rgba(5, 18, 47, 0.82) 100%);
+      radial-gradient(ellipse at 18% 10%, rgba(96, 202, 255, 0.105), transparent 48%),
+      linear-gradient(142deg, rgba(6, 22, 52, 0.82) 0%, rgba(7, 34, 63, 0.68) 52%, rgba(5, 17, 45, 0.84) 100%);
     box-shadow:
-      inset 0 1px 0 rgba(216, 250, 255, 0.18),
-      inset 0 0 48px rgba(73, 218, 255, 0.075),
-      inset 0 -28px 70px rgba(0, 9, 34, 0.18),
+      inset 0 1px 0 rgba(216, 250, 255, 0.16),
+      inset 0 -24px 58px rgba(0, 9, 34, 0.14),
       0 22px 58px rgba(0, 10, 36, 0.24);
-    backdrop-filter: blur(18px) saturate(1.12);
-    -webkit-backdrop-filter: blur(18px) saturate(1.12);
+    backdrop-filter: blur(18px) saturate(1.08);
+    -webkit-backdrop-filter: blur(18px) saturate(1.08);
   }
 
   .b24-messenger__cards::before {
@@ -377,46 +377,22 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 34%),
-      linear-gradient(180deg, rgba(98, 215, 255, 0.055), rgba(40, 255, 221, 0.025));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%);
     pointer-events: none;
   }
 
   .b24-messenger__card {
     position: relative;
-    min-height: 158px;
+    min-height: 146px;
     margin: 0;
-    padding: 31px 28px 29px;
-    background:
-      radial-gradient(ellipse at 20% 12%, rgba(165, 247, 255, 0.18), transparent 56%),
-      radial-gradient(ellipse at 88% 86%, rgba(62, 238, 218, 0.09), transparent 48%),
-      linear-gradient(145deg, rgba(77, 217, 248, 0.14), rgba(36, 126, 181, 0.066) 48%, rgba(47, 246, 219, 0.088));
-    box-shadow:
-      inset 0 1px 0 rgba(237, 254, 255, 0.16),
-      inset 0 0 0 1px rgba(150, 238, 255, 0.085),
-      inset 0 20px 42px rgba(111, 231, 255, 0.045),
-      inset 0 -20px 38px rgba(0, 12, 42, 0.075);
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
-  .b24-messenger__card:nth-child(odd)::after {
-    content: "";
-    position: absolute;
-    top: 24px;
-    right: 0;
-    bottom: 24px;
-    width: 1px;
-    background: linear-gradient(180deg, transparent, rgba(177, 244, 255, 0.28), transparent);
-  }
-
+  .b24-messenger__card:nth-child(odd)::after,
   .b24-messenger__card:nth-child(-n + 2)::before {
-    content: "";
-    position: absolute;
-    right: 26px;
-    bottom: 0;
-    left: 26px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(177, 244, 255, 0.26), transparent);
+    content: none;
   }
 
   .b24-messenger__card > * {
@@ -433,26 +409,20 @@
     justify-content: center;
     flex: 0 0 auto;
     overflow: hidden;
-    color: #c4fbff;
-    border: 1px solid rgba(177, 249, 255, 0.54);
+    color: #bdeff7;
+    border: 1px solid rgba(177, 249, 255, 0.22);
     border-radius: 15px;
-    background:
-      radial-gradient(circle at 30% 22%, rgba(219, 254, 255, 0.4), transparent 44%),
-      radial-gradient(circle at 72% 82%, rgba(75, 242, 218, 0.18), transparent 46%),
-      linear-gradient(180deg, rgba(72, 177, 212, 0.39), rgba(21, 91, 133, 0.24));
+    background: rgba(95, 190, 225, 0.11);
     box-shadow:
-      0 0 0 1px rgba(126, 236, 255, 0.08),
-      0 0 22px rgba(69, 226, 255, 0.24),
-      0 8px 22px rgba(0, 12, 42, 0.18),
-      inset 0 1px 0 rgba(242, 254, 255, 0.32),
-      inset 0 0 22px rgba(88, 232, 255, 0.16);
-    backdrop-filter: blur(10px) saturate(1.12);
-    -webkit-backdrop-filter: blur(10px) saturate(1.12);
+      0 8px 20px rgba(0, 12, 42, 0.14),
+      inset 0 1px 0 rgba(242, 254, 255, 0.16);
+    backdrop-filter: blur(10px) saturate(1.02);
+    -webkit-backdrop-filter: blur(10px) saturate(1.02);
   }
 
   .b24-messenger__icon {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     margin-bottom: 18px;
   }
 
@@ -467,15 +437,13 @@
   .b24-messenger__note-icon svg {
     position: relative;
     z-index: 1;
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
     stroke: currentColor;
-    stroke-width: 2.25;
+    stroke-width: 2.15;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter:
-      drop-shadow(0 0 6px rgba(114, 239, 255, 0.24))
-      drop-shadow(0 1px 3px rgba(0, 8, 22, 0.34));
+    filter: drop-shadow(0 1px 3px rgba(0, 8, 22, 0.28));
   }
 
   .b24-messenger__card-title {
@@ -485,12 +453,12 @@
     font-weight: 800;
     line-height: 1.18;
     letter-spacing: -0.015em;
-    text-shadow: 0 1px 10px rgba(122, 233, 255, 0.14);
+    text-shadow: 0 1px 8px rgba(122, 233, 255, 0.09);
   }
 
   .b24-messenger__card-text {
     margin: 8px 0 0;
-    color: #cfefff;
+    color: rgba(207, 239, 255, 0.82);
     font-size: 15px;
     font-weight: 500;
     line-height: 1.56;
@@ -504,29 +472,23 @@
     align-items: center;
     gap: 16px;
     width: 100%;
-    margin: 0;
-    padding: 24px 28px 26px;
-    border-top: 1px solid rgba(190, 248, 255, 0.34);
-    background:
-      radial-gradient(ellipse at 12% 50%, rgba(144, 246, 255, 0.18), transparent 46%),
-      radial-gradient(ellipse at 88% 100%, rgba(57, 246, 216, 0.11), transparent 44%),
-      linear-gradient(105deg, rgba(69, 225, 248, 0.16), rgba(39, 109, 169, 0.078) 50%, rgba(64, 245, 217, 0.12));
-    box-shadow:
-      inset 0 1px 0 rgba(238, 254, 255, 0.14),
-      inset 0 0 0 1px rgba(146, 239, 255, 0.075),
-      inset 0 18px 42px rgba(92, 229, 255, 0.045);
+    margin: 4px 0 0;
+    padding: 23px 0 0;
+    border-top: 1px solid rgba(190, 248, 255, 0.14);
+    background: transparent;
+    box-shadow: none;
   }
 
   .b24-messenger__note-icon {
-    width: 48px;
-    height: 48px;
-    color: #bafff8;
-    border-color: rgba(172, 255, 249, 0.54);
+    width: 46px;
+    height: 46px;
+    color: #baf6ef;
+    border-color: rgba(172, 255, 249, 0.22);
   }
 
   .b24-messenger__note p {
     margin: 0;
-    color: #e4fbff;
+    color: rgba(228, 251, 255, 0.88);
     font-size: 15.5px;
     font-weight: 550;
     line-height: 1.5;
@@ -676,21 +638,12 @@
 
     .b24-messenger__card {
       min-height: 0;
-      padding: 22px 20px;
+      padding: 0;
     }
 
-    .b24-messenger__card:nth-child(odd)::after {
-      content: none;
-    }
-
+    .b24-messenger__card:nth-child(odd)::after,
     .b24-messenger__card:nth-child(-n + 3)::before {
-      content: "";
-      position: absolute;
-      right: 20px;
-      bottom: 0;
-      left: 20px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(166, 237, 255, 0.18), transparent);
+      content: none;
     }
 
     .b24-messenger__icon {
