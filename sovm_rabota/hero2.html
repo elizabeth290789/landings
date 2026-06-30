@@ -455,26 +455,6 @@
       drop-shadow(0 8px 20px rgba(239, 178, 60, 0.22));
   }
 
-  .b24-collab-hero__award::after {
-    content: "";
-    position: absolute;
-    left: clamp(18px, 12vw, 180px);
-    right: clamp(18px, 12vw, 180px);
-    bottom: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      rgba(43, 116, 255, 0),
-      rgba(43, 116, 255, 0.6),
-      rgba(127, 93, 255, 0.54),
-      rgba(240, 96, 223, 0.5),
-      rgba(198, 242, 45, 0.52),
-      rgba(43, 116, 255, 0)
-    );
-    background-size: 240% 100%;
-    opacity: 0.48;
-    animation: b24-collab-hero-trust-line 12s linear infinite;
-  }
 
   .b24-collab-hero__award-icon {
     position: relative;
@@ -584,10 +564,6 @@
     50% { transform: translate3d(0, -10px, 0); opacity: 0.8; }
   }
 
-  @keyframes b24-collab-hero-trust-line {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 240% 50%; }
-  }
 
   @media (min-width: 1025px) {
     .b24-collab-hero__chips {
