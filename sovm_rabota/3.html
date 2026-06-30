@@ -275,7 +275,6 @@
     border-radius: 0;
     background: transparent;
     box-shadow: none;
-    transition: filter 0.3s ease;
   }
 
   .b24-calls__visual::before,
@@ -296,7 +295,6 @@
       radial-gradient(ellipse at 44% 50%, rgba(45, 153, 255, 0.18), transparent 58%);
     filter: blur(42px);
     opacity: 0.96;
-    transition: opacity 0.3s ease, filter 0.3s ease;
   }
 
   .b24-calls__visual::after {
@@ -312,14 +310,6 @@
     opacity: 0.72;
   }
 
-  .b24-calls__visual:hover {
-    filter: saturate(1.04) brightness(1.02);
-  }
-
-  .b24-calls__visual:hover::before {
-    opacity: 1;
-    filter: blur(16px) saturate(1.08);
-  }
 
   .b24-calls__image-frame {
     position: relative;
@@ -340,7 +330,6 @@
       0 0 0 1px rgba(255, 255, 255, 0.06),
       0 0 28px rgba(80, 200, 255, 0.18),
       0 24px 80px rgba(0, 0, 0, 0.28);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
   .b24-calls__image-frame::before,
@@ -360,7 +349,6 @@
       radial-gradient(ellipse at 76% 8%, rgba(132, 104, 255, 0.15), transparent 42%);
     filter: blur(18px);
     opacity: 0.86;
-    transition: opacity 0.3s ease, filter 0.3s ease;
   }
 
   .b24-calls__image-frame::after {
@@ -375,19 +363,6 @@
     opacity: 0.78;
   }
 
-  .b24-calls__image-frame:hover {
-    border-color: rgba(184, 236, 255, 0.5);
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.08),
-      0 0 36px rgba(80, 210, 255, 0.26),
-      0 0 58px rgba(83, 238, 219, 0.12),
-      0 24px 80px rgba(0, 0, 0, 0.28);
-  }
-
-  .b24-calls__image-frame:hover::before {
-    opacity: 1;
-    filter: blur(16px) saturate(1.08);
-  }
 
   .b24-calls__image {
     position: relative;
