@@ -39,7 +39,7 @@
       />
     </div>
 
-    <a href="https://www.bitrix24.ru/promo/workspace/#b291706" class="b24-collab-hero__award" aria-label="Битрикс24 — лидер российского рынка коммуникационных платформ">
+    <a href="https://www.bitrix24.ru/promo/workspace/#b291706" class="b24-collab-hero__award" aria-label="Перейти к рейтингу коммуникационных платформ" onclick="window.location.assign(this.href); return false;">
       <span class="b24-collab-hero__award-icon" aria-hidden="true">
         <svg viewBox="0 0 56 56" focusable="false" role="img">
           <defs>
@@ -448,12 +448,11 @@
     text-decoration: none;
   }
 
-  .b24-collab-hero__award:hover .b24-collab-hero__award-text,
-  .b24-collab-hero__award:focus-visible .b24-collab-hero__award-text {
-    text-decoration: underline;
-    text-decoration-color: rgba(198, 242, 45, 0.58);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
+  .b24-collab-hero__award:hover .b24-collab-hero__award-icon,
+  .b24-collab-hero__award:focus-visible .b24-collab-hero__award-icon {
+    filter:
+      drop-shadow(0 0 18px rgba(216, 243, 67, 0.34))
+      drop-shadow(0 8px 20px rgba(239, 178, 60, 0.22));
   }
 
   .b24-collab-hero__award::after {
