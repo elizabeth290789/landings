@@ -359,17 +359,23 @@
     width: 100%;
     padding: clamp(26px, 2.8vw, 34px);
     overflow: hidden;
-    border: 1px solid rgba(142, 226, 255, 0.24);
+    border: 1px solid rgba(217, 252, 255, 0.5);
     border-radius: 28px;
     background:
-      radial-gradient(ellipse at 18% 10%, rgba(96, 202, 255, 0.105), transparent 48%),
-      linear-gradient(142deg, rgba(6, 22, 52, 0.82) 0%, rgba(7, 34, 63, 0.68) 52%, rgba(5, 17, 45, 0.84) 100%);
+      radial-gradient(ellipse at 13% 8%, rgba(255, 255, 255, 0.72), transparent 34%),
+      radial-gradient(ellipse at 10% 78%, rgba(33, 213, 178, 0.34), transparent 48%),
+      radial-gradient(ellipse at 82% 15%, rgba(85, 223, 241, 0.38), transparent 46%),
+      radial-gradient(ellipse at 86% 92%, rgba(117, 111, 231, 0.24), transparent 48%),
+      linear-gradient(142deg, rgba(224, 252, 250, 0.86) 0%, rgba(191, 244, 249, 0.76) 42%, rgba(215, 221, 255, 0.72) 100%);
     box-shadow:
-      inset 0 1px 0 rgba(216, 250, 255, 0.16),
-      inset 0 -24px 58px rgba(0, 9, 34, 0.14),
-      0 22px 58px rgba(0, 10, 36, 0.24);
-    backdrop-filter: blur(18px) saturate(1.08);
-    -webkit-backdrop-filter: blur(18px) saturate(1.08);
+      inset 0 1px 0 rgba(255, 255, 255, 0.72),
+      inset 0 -24px 64px rgba(53, 211, 210, 0.14),
+      inset 0 0 42px rgba(255, 255, 255, 0.18),
+      0 0 0 1px rgba(106, 235, 224, 0.08),
+      0 22px 58px rgba(0, 10, 36, 0.18),
+      0 0 44px rgba(66, 215, 224, 0.12);
+    backdrop-filter: blur(22px) saturate(1.22);
+    -webkit-backdrop-filter: blur(22px) saturate(1.22);
   }
 
   .b24-messenger__cards::before {
@@ -377,7 +383,10 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 42%);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.58), transparent 38%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04));
+    opacity: 0.82;
     pointer-events: none;
   }
 
@@ -385,9 +394,13 @@
     position: relative;
     min-height: 146px;
     margin: 0;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.26), rgba(220, 255, 251, 0.12));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.38),
+      0 10px 26px rgba(18, 80, 112, 0.07);
   }
 
   .b24-messenger__card:nth-child(odd)::after,
@@ -409,15 +422,18 @@
     justify-content: center;
     flex: 0 0 auto;
     overflow: hidden;
-    color: #bdeff7;
-    border: 1px solid rgba(177, 249, 255, 0.22);
+    color: #087c8d;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 15px;
-    background: rgba(95, 190, 225, 0.11);
+    background:
+      radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.86), transparent 42%),
+      linear-gradient(145deg, rgba(75, 229, 201, 0.38), rgba(74, 194, 241, 0.28) 54%, rgba(126, 119, 232, 0.18));
     box-shadow:
-      0 8px 20px rgba(0, 12, 42, 0.14),
-      inset 0 1px 0 rgba(242, 254, 255, 0.16);
-    backdrop-filter: blur(10px) saturate(1.02);
-    -webkit-backdrop-filter: blur(10px) saturate(1.02);
+      0 8px 22px rgba(17, 138, 163, 0.15),
+      0 0 18px rgba(53, 219, 206, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.76);
+    backdrop-filter: blur(12px) saturate(1.18);
+    -webkit-backdrop-filter: blur(12px) saturate(1.18);
   }
 
   .b24-messenger__icon {
@@ -443,22 +459,22 @@
     stroke-width: 2.15;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter: drop-shadow(0 1px 3px rgba(0, 8, 22, 0.28));
+    filter: drop-shadow(0 2px 5px rgba(0, 155, 167, 0.22));
   }
 
   .b24-messenger__card-title {
     margin: 0;
-    color: #f7fdff;
+    color: #092854;
     font-size: 19px;
     font-weight: 800;
     line-height: 1.18;
     letter-spacing: -0.015em;
-    text-shadow: 0 1px 8px rgba(122, 233, 255, 0.09);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
   }
 
   .b24-messenger__card-text {
     margin: 8px 0 0;
-    color: rgba(207, 239, 255, 0.82);
+    color: rgba(19, 58, 94, 0.78);
     font-size: 15px;
     font-weight: 500;
     line-height: 1.56;
@@ -473,22 +489,27 @@
     gap: 16px;
     width: 100%;
     margin: 4px 0 0;
-    padding: 23px 0 0;
-    border-top: 1px solid rgba(190, 248, 255, 0.14);
-    background: transparent;
-    box-shadow: none;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 20px;
+    background:
+      radial-gradient(ellipse at 12% 50%, rgba(56, 221, 190, 0.22), transparent 48%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(190, 244, 247, 0.22) 52%, rgba(209, 215, 255, 0.18));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.46),
+      0 12px 30px rgba(18, 80, 112, 0.08);
   }
 
   .b24-messenger__note-icon {
     width: 46px;
     height: 46px;
-    color: #baf6ef;
-    border-color: rgba(172, 255, 249, 0.22);
+    color: #057a6d;
+    border-color: rgba(255, 255, 255, 0.56);
   }
 
   .b24-messenger__note p {
     margin: 0;
-    color: rgba(228, 251, 255, 0.88);
+    color: rgba(8, 43, 78, 0.86);
     font-size: 15.5px;
     font-weight: 550;
     line-height: 1.5;
