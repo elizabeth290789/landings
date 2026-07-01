@@ -4,7 +4,7 @@
 
   <div class="b24-crossplatform__container">
     <header class="b24-crossplatform__header">
-      <p class="b24-crossplatform__badge"><span class="b24-crossplatform__badge-dot" aria-hidden="true"></span><span class="b24-crossplatform__badge-text">Кроссплатформенность</span></p>
+      <a class="b24-crossplatform__badge" href="https://www.bitrix24.ru/create.php?b24_type=social"><span class="b24-crossplatform__badge-dot" aria-hidden="true"></span><span class="b24-crossplatform__badge-text">Кроссплатформенность</span></a>
       <h2 class="b24-crossplatform__title" id="b24-crossplatform-title">Работайте там, где удобно</h2>
       <p class="b24-crossplatform__subtitle">
         Битрикс24 доступен в браузере, десктопном и мобильном приложении. А развернуть систему можно в облаке или на своих серверах.
@@ -85,6 +85,10 @@
       <span class="b24-crossplatform__summary-icon" aria-hidden="true">✦</span>
       Один аккаунт, одна команда и все рабочие инструменты на любом устройстве.
     </p>
+
+    <div class="b24-crossplatform__actions">
+      <a class="b24-crossplatform__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
+    </div>
   </div>
 </section>
 
@@ -196,7 +200,18 @@
     line-height: 1;
     letter-spacing: 0.18px;
     text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    text-decoration: none;
+    cursor: pointer;
     transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
+  }
+
+  .b24-crossplatform__badge:visited,
+  .b24-crossplatform__badge:hover,
+  .b24-crossplatform__badge:focus,
+  .b24-crossplatform__badge:focus-visible,
+  .b24-crossplatform__badge:active {
+    color: #ffffff;
+    text-decoration: none;
   }
 
   .b24-crossplatform__badge::before,
@@ -513,6 +528,72 @@
 
   .b24-crossplatform__summary-icon { color: #88d7ff; text-shadow: 0 0 14px rgba(95, 190, 255, 0.9); }
 
+  .b24-crossplatform__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: clamp(52px, calc(3.4vw + 18px), 62px) auto 0;
+  }
+
+  .b24-crossplatform__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 226px;
+    min-height: 62px;
+    padding: 18px 44px;
+    border-radius: 14px;
+    color: #112200;
+    background: #c7f52b;
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.34),
+      0 0 26px rgba(190, 255, 40, 0.34),
+      0 18px 42px rgba(164, 220, 32, 0.42);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transform: translateY(0) scale(1);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease;
+  }
+
+  .b24-crossplatform__button:hover,
+  .b24-crossplatform__button:focus-visible {
+    color: #112200;
+    background-color: #d2ff3a;
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+      0 0 0 1px rgba(226, 255, 136, 0.46),
+      0 0 34px rgba(202, 255, 54, 0.48),
+      0 22px 50px rgba(174, 230, 36, 0.48);
+  }
+
+  .b24-crossplatform__button:focus-visible {
+    outline: 2px solid rgba(236, 255, 164, 0.72);
+    outline-offset: 4px;
+  }
+
+  .b24-crossplatform__button:visited,
+  .b24-crossplatform__button:focus,
+  .b24-crossplatform__button:active {
+    text-decoration: none;
+  }
+
+  .b24-crossplatform__button:active {
+    color: #112200;
+    background-color: #c7f52b;
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.34),
+      0 0 24px rgba(190, 255, 40, 0.34),
+      0 14px 34px rgba(164, 220, 32, 0.34);
+  }
+
   @keyframes b24-crossplatform-badge-aurora {
     0%, 100% { background-position: center, center, 78% 18%, 18% 85%, 76% 64%, -65% 50%, 120% 42%, center; }
     50% { background-position: center, center, 63% 30%, 34% 72%, 58% 46%, 128% 50%, -35% 54%, center; }
@@ -557,6 +638,7 @@
     .b24-crossplatform__cloud > span:last-child, .b24-crossplatform__server > span:last-child { font-size: 7px; }
     .b24-crossplatform__cloud b, .b24-crossplatform__server b { font-size: 8px; }
     .b24-crossplatform__summary { align-items: flex-start; margin-top: 30px; padding: 15px 17px; border-radius: 16px; text-align: left; font-size: 14px; }
+    .b24-crossplatform__button { min-width: 210px; min-height: 58px; padding: 16px 34px; font-size: 17px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
