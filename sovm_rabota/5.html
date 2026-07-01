@@ -409,29 +409,27 @@
     line-height: 1;
     text-decoration: none;
     transition:
-      background 0.25s ease,
       box-shadow 0.25s ease,
-      transform 0.25s ease,
       color 0.25s ease;
   }
 
-  .b24-workflow__button:hover {
+  .b24-workflow__button:hover,
+  .b24-workflow__button:focus-visible {
     color: #142100;
-    background: linear-gradient(135deg, #cfff18, #b8ff1a);
+    background: #c7f52b;
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.55),
-      0 0 30px rgba(190, 255, 40, 0.54),
-      0 16px 42px rgba(180, 255, 30, 0.36);
-    transform: translateY(-1px);
+      0 0 0 1px rgba(220, 255, 120, 0.42),
+      0 0 28px rgba(190, 255, 40, 0.42),
+      0 18px 42px rgba(164, 220, 32, 0.42);
   }
 
   .b24-workflow__button:active {
     color: #142100;
+    background: #c7f52b;
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.4),
-      0 0 18px rgba(190, 255, 40, 0.36),
-      0 10px 28px rgba(164, 220, 32, 0.28);
-    transform: translateY(0);
+      0 0 0 1px rgba(220, 255, 120, 0.34),
+      0 0 24px rgba(190, 255, 40, 0.34),
+      0 14px 34px rgba(164, 220, 32, 0.34);
   }
 
   @keyframes b24-workflow-eyebrow-aurora {
