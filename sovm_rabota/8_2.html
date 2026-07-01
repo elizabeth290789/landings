@@ -309,11 +309,10 @@
   .b24-crossplatform__cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    justify-content: space-between;
+    justify-content: center;
     justify-items: center;
     align-items: start;
-    column-gap: clamp(24px, 3vw, 38px);
-    row-gap: clamp(28px, 4vw, 42px);
+    gap: clamp(28px, 3vw, 40px);
     width: 100%;
     margin-top: clamp(42px, 5vw, 66px);
   }
@@ -324,7 +323,7 @@
     align-items: center;
     min-width: 0;
     width: 100%;
-    max-width: 260px;
+    max-width: 240px;
     padding: 0;
     text-align: center;
     background: transparent;
@@ -335,10 +334,13 @@
   }
 
   .b24-crossplatform__card-icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 84px;
     width: 84px;
     height: 84px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     color: #f4fbff;
     background: transparent;
     border: 0;
@@ -359,8 +361,28 @@
     vector-effect: non-scaling-stroke;
   }
 
-  .b24-crossplatform__card-title { width: 100%; margin: 0; color: #ffffff; font-size: 19px; font-weight: 650; line-height: 1.25; letter-spacing: -0.02em; text-align: center; }
-  .b24-crossplatform__card-text { width: 100%; margin: 10px 0 0; color: rgba(222, 238, 255, 0.78); font-size: 15px; line-height: 1.5; text-align: center; }
+  .b24-crossplatform__card-title {
+    width: 100%;
+    min-height: 48px;
+    margin: 20px 0 0;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 650;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .b24-crossplatform__card-text {
+    width: 100%;
+    max-width: 230px;
+    min-height: 68px;
+    margin: 10px auto 0;
+    color: rgba(222, 238, 255, 0.78);
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+  }
 
   .b24-crossplatform__ecosystem {
     position: relative;
@@ -763,7 +785,7 @@
     .b24-crossplatform__title { font-size: clamp(36px, 11vw, 46px); line-height: 1.125; }
     .b24-crossplatform__subtitle { font-size: 16px; line-height: 1.5; }
     .b24-crossplatform__cards { grid-template-columns: 1fr; gap: 24px; margin-top: 34px; }
-    .b24-crossplatform__card-icon { width: 72px; height: 72px; margin: 0 auto 18px; }
+    .b24-crossplatform__card-icon { flex-basis: 72px; width: 72px; height: 72px; }
     .b24-crossplatform__icon-svg { width: 50px; height: 50px; }
     .b24-crossplatform__ecosystem { margin-top: 44px; padding: 4px 0; overflow: hidden; }
     .b24-crossplatform__orbit { width: 105%; height: 145px; }
