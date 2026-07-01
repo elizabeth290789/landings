@@ -42,10 +42,6 @@
             <h3 class="b24-guests__point-title">Нет хаоса</h3>
             <p class="b24-guests__point-text">Не нужно собирать переписки из разных мессенджеров</p>
           </article>
-
-          <article class="b24-guests__point b24-guests__point--accent" role="listitem">
-            <p class="b24-guests__point-text b24-guests__point-text--accent">Клиенты и подрядчики работают рядом с командой, но доступ остаётся под контролем.</p>
-          </article>
         </div>
       </div>
     </div>
@@ -342,7 +338,7 @@
 
   .b24-guests__points {
     display: grid;
-    gap: 22px;
+    gap: clamp(24px, 2vw, 30px);
   }
 
   .b24-guests__point {
@@ -378,26 +374,6 @@
     font-size: clamp(15px, 1.08vw, 17px);
     font-weight: 400;
     line-height: 1.52;
-  }
-
-  .b24-guests__point--accent {
-    margin-top: 6px;
-  }
-
-  .b24-guests__point--accent::before {
-    top: 0.64em;
-    width: 9px;
-    height: 9px;
-    background: #d4ff38;
-    box-shadow: 0 0 0 5px rgba(199, 245, 43, 0.1), 0 0 14px rgba(199, 245, 43, 0.2);
-  }
-
-  .b24-guests__point-text--accent {
-    margin-top: 0;
-    color: #eef6ff;
-    font-size: clamp(16px, 1.14vw, 18px);
-    font-weight: 600;
-    line-height: 1.48;
   }
 
   .b24-guests__actions {
@@ -525,15 +501,11 @@
     }
 
     .b24-guests__points {
-      gap: 18px;
+      gap: 20px;
     }
 
     .b24-guests__point {
       padding-left: 24px;
-    }
-
-    .b24-guests__point--accent {
-      margin-top: 4px;
     }
   }
 
