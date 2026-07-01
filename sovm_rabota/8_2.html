@@ -403,37 +403,20 @@
     width: 56px;
     height: 56px;
     margin-bottom: 22px;
-    border: 1px solid rgba(224, 252, 255, 0.24);
-    outline: 0;
-    border-radius: 50%;
-    color: #ffffff;
-    background:
-      radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.48) 0 12%, rgba(185, 246, 255, 0.2) 27%, transparent 48%),
-      linear-gradient(135deg, rgba(92, 204, 255, 0.34), rgba(58, 102, 255, 0.24) 54%, rgba(122, 92, 255, 0.18));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -10px 22px rgba(9, 30, 90, 0.18),
-      0 0 24px rgba(80, 229, 255, 0.34),
-      0 12px 28px rgba(5, 16, 54, 0.24);
-    backdrop-filter: blur(12px) saturate(1.35);
-    -webkit-backdrop-filter: blur(12px) saturate(1.35);
-    transition: transform 0.36s ease, box-shadow 0.36s ease, background 0.36s ease, border-color 0.36s ease;
+    color: #f4fbff;
+    transition: transform 0.36s ease, color 0.36s ease, filter 0.36s ease;
   }
 
   .b24-crossplatform__card:hover .b24-crossplatform__card-icon {
     transform: translateY(-1px);
-    border-color: rgba(239, 254, 255, 0.34);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.5),
-      inset 0 -10px 22px rgba(9, 30, 90, 0.14),
-      0 0 34px rgba(92, 238, 255, 0.48),
-      0 16px 34px rgba(5, 16, 54, 0.3);
+    color: #ffffff;
+    filter: drop-shadow(0 0 10px rgba(105, 221, 255, 0.32));
   }
 
   .b24-crossplatform__icon-svg {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     stroke: currentColor;
     stroke-width: 1.75;
     stroke-linecap: round;
@@ -822,8 +805,8 @@
     .b24-crossplatform__subtitle { font-size: 16px; line-height: 1.5; }
     .b24-crossplatform__cards { grid-template-columns: 1fr; gap: 12px; margin-top: 34px; }
     .b24-crossplatform__card { min-height: 0; padding: 20px; border-radius: 22px; }
-    .b24-crossplatform__card-icon { width: 48px; height: 48px; margin-bottom: 17px; border-radius: 50%; }
-    .b24-crossplatform__icon-svg { width: 26px; height: 26px; }
+    .b24-crossplatform__card-icon { width: 48px; height: 48px; margin-bottom: 17px; }
+    .b24-crossplatform__icon-svg { width: 30px; height: 30px; }
     .b24-crossplatform__ecosystem { margin-top: 44px; padding: 4px 0; overflow: hidden; }
     .b24-crossplatform__orbit { width: 105%; height: 145px; }
     .b24-crossplatform__image { width: 100%; max-height: 330px; }
