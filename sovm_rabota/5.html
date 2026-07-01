@@ -5,7 +5,7 @@
 
   <div class="b24-workflow__container">
     <header class="b24-workflow__header">
-      <p class="b24-workflow__eyebrow"><span class="b24-workflow__eyebrow-text">Задачи и проекты</span></p>
+      <a class="b24-workflow__eyebrow" href="https://www.bitrix24.ru/create.php?b24_type=tasks" aria-label="Зарегистрироваться в Битрикс24 для работы с задачами и проектами"><span class="b24-workflow__eyebrow-text">Задачи и проекты</span></a>
       <h2 class="b24-workflow__title" id="b24-workflow-title">Обсуждение там, где идёт работа</h2>
       <p class="b24-workflow__subtitle">
         Задачи, комментарии, звонки и документы объединены в одном пространстве — команда видит контекст и быстрее двигает проекты вперёд.
@@ -165,6 +165,8 @@
     line-height: 1;
     letter-spacing: 0.18px;
     text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    text-decoration: none;
+    cursor: pointer;
     transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
   }
 
@@ -207,6 +209,15 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: b24-workflow-eyebrow-border 9.6s ease-in-out infinite;
+  }
+
+  .b24-workflow__eyebrow,
+  .b24-workflow__eyebrow:hover,
+  .b24-workflow__eyebrow:focus,
+  .b24-workflow__eyebrow:active,
+  .b24-workflow__eyebrow:visited {
+    color: #ffffff;
+    text-decoration: none;
   }
 
   .b24-workflow__eyebrow:hover {
