@@ -23,45 +23,26 @@
       </div>
 
       <div class="b24-workflow__content">
-        <div class="b24-workflow__cards">
-          <article class="b24-workflow__card">
-            <span class="b24-workflow__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M7.5 18.5 4 21v-4.7A7.5 7.5 0 1 1 7.5 18.5Z"/><path d="M8 10h8M8 13.5h5.5"/></svg>
-            </span>
-            <h3 class="b24-workflow__card-title">Чат внутри задачи</h3>
-            <p class="b24-workflow__card-text">Вся история обсуждений рядом с работой</p>
+        <div class="b24-workflow__points" role="list">
+          <article class="b24-workflow__point" role="listitem">
+            <h3 class="b24-workflow__point-title">Чат внутри задачи</h3>
+            <p class="b24-workflow__point-text">Вся история обсуждений рядом с работой</p>
           </article>
 
-          <article class="b24-workflow__card">
-            <span class="b24-workflow__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14v14H5z"/><path d="M9 5v14M15 5v14M5 10h14"/></svg>
-            </span>
-            <h3 class="b24-workflow__card-title">Канбан и проекты</h3>
-            <p class="b24-workflow__card-text">Гибкое управление задачами и этапами</p>
+          <article class="b24-workflow__point" role="listitem">
+            <h3 class="b24-workflow__point-title">Канбан и проекты</h3>
+            <p class="b24-workflow__point-text">Гибкое управление задачами и этапами</p>
           </article>
 
-          <article class="b24-workflow__card">
-            <span class="b24-workflow__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="m8.5 12.5 5.8-5.8a3 3 0 1 1 4.2 4.2l-7 7a4.5 4.5 0 0 1-6.4-6.4l6.7-6.7"/><path d="m10.5 14.5 5.7-5.7"/></svg>
-            </span>
-            <h3 class="b24-workflow__card-title">Файлы и комментарии</h3>
-            <p class="b24-workflow__card-text">Документы, решения и правки не теряются</p>
+          <article class="b24-workflow__point" role="listitem">
+            <h3 class="b24-workflow__point-title">Файлы и комментарии</h3>
+            <p class="b24-workflow__point-text">Документы, решения и правки не теряются</p>
           </article>
 
-          <article class="b24-workflow__card">
-            <span class="b24-workflow__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="m13 2-8 12h6l-1 8 9-13h-6l0-7Z"/></svg>
-            </span>
-            <h3 class="b24-workflow__card-title">Быстрые решения</h3>
-            <p class="b24-workflow__card-text">Меньше переключений — выше скорость работы</p>
+          <article class="b24-workflow__point" role="listitem">
+            <h3 class="b24-workflow__point-title">Быстрые решения</h3>
+            <p class="b24-workflow__point-text">Меньше переключений — выше скорость работы</p>
           </article>
-        </div>
-
-        <div class="b24-workflow__note">
-          <span class="b24-workflow__note-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-          </span>
-          <p>Обсуждение, файлы и решения остаются внутри задачи — команда всегда понимает, что делать дальше.</p>
         </div>
       </div>
     </div>
@@ -337,206 +318,58 @@
   .b24-workflow__content {
     min-width: 0;
     display: grid;
-    gap: 16px;
+    align-content: center;
+    gap: 24px;
+    padding: clamp(24px, 2.6vw, 34px);
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+    background: none;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
-  .b24-workflow__cards {
+  .b24-workflow__points {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: clamp(24px, 2vw, 30px);
   }
 
-  .b24-workflow__card {
+  .b24-workflow__point {
     position: relative;
-    min-height: 176px;
     margin: 0;
-    padding: 22px;
-    overflow: hidden;
-    border: 1px solid rgba(180, 220, 255, 0.12);
-    border-radius: 22px;
-    background:
-      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.14) 0 10%, transparent 36%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.032));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.09),
-      0 16px 40px rgba(0, 0, 0, 0.12);
-    backdrop-filter: blur(12px) saturate(1.18);
-    -webkit-backdrop-filter: blur(12px) saturate(1.18);
-    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+    padding: 0 0 0 28px;
   }
 
-  .b24-workflow__card::before {
+  .b24-workflow__point::before {
     content: "";
     position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background:
-      linear-gradient(118deg, transparent 0 18%, rgba(255, 255, 255, 0.12) 31%, rgba(104, 228, 255, 0.08) 43%, transparent 60%),
-      radial-gradient(ellipse at 82% 86%, rgba(89, 227, 255, 0.12), transparent 42%);
-    opacity: 0.72;
-    pointer-events: none;
-    mix-blend-mode: screen;
-    transition: opacity 0.28s ease, transform 0.28s ease;
-  }
-
-  .b24-workflow__card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(128, 224, 255, 0.3);
-    background:
-      radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.17) 0 10%, transparent 36%),
-      linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.04));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.13),
-      0 24px 58px rgba(0, 8, 31, 0.18);
-  }
-
-  .b24-workflow__card:hover::before {
-    opacity: 0.92;
-    transform: translateX(8px);
-  }
-
-  .b24-workflow__card > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .b24-workflow__icon,
-  .b24-workflow__note-icon {
-    position: relative;
-    isolation: isolate;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    overflow: hidden;
-    color: #effcff;
-    border: 1px solid rgba(150, 220, 255, 0.28);
+    top: 0.58em;
+    left: 0;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background:
-      radial-gradient(circle at 30% 30%, rgba(110, 220, 255, 0.28), rgba(60, 110, 255, 0.16) 45%, rgba(20, 35, 90, 0.18) 100%),
-      linear-gradient(180deg, rgba(70, 120, 255, 0.22), rgba(20, 35, 90, 0.18));
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-      0 0 18px rgba(80, 190, 255, 0.18),
-      0 0 36px rgba(70, 160, 255, 0.1),
-      0 14px 34px rgba(4, 22, 72, 0.22);
-    backdrop-filter: blur(10px) saturate(1.18);
-    -webkit-backdrop-filter: blur(10px) saturate(1.18);
+    background: #c7f52b;
+    box-shadow: 0 0 0 5px rgba(199, 245, 43, 0.08);
   }
 
-  .b24-workflow__icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 22px;
-  }
-
-  .b24-workflow__icon::before,
-  .b24-workflow__note-icon::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    z-index: -1;
-    border-radius: inherit;
-    background:
-      radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.38), transparent 20%),
-      radial-gradient(circle at 50% 55%, rgba(37, 218, 255, 0.42), transparent 58%),
-      linear-gradient(135deg, rgba(34, 214, 255, 0.32), rgba(75, 95, 255, 0.12) 58%, rgba(12, 26, 72, 0.24));
-    opacity: 0.92;
-    mix-blend-mode: screen;
-  }
-
-  .b24-workflow__icon::after,
-  .b24-workflow__note-icon::after {
-    content: "";
-    position: absolute;
-    inset: 7px;
-    z-index: -1;
-    border-radius: inherit;
-    background: radial-gradient(circle, rgba(37, 226, 255, 0.3), transparent 70%);
-    filter: blur(8px);
-    opacity: 0.72;
-  }
-
-  .b24-workflow__icon svg,
-  .b24-workflow__note-icon svg {
-    position: relative;
-    z-index: 1;
-    width: 25px;
-    height: 25px;
-    stroke: currentColor;
-    stroke-width: 1.85;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter:
-      drop-shadow(0 0 5px rgba(121, 232, 255, 0.55))
-      drop-shadow(0 0 12px rgba(61, 170, 255, 0.32));
-  }
-
-  .b24-workflow__card-title {
+  .b24-workflow__point-title {
     margin: 0;
     color: #ffffff;
-    font-size: 19px;
+    font-size: clamp(18px, 1.35vw, 21px);
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.015em;
+    line-height: 1.24;
+    letter-spacing: -0.018em;
   }
 
-  .b24-workflow__card-text {
-    margin: 9px 0 0;
+  .b24-workflow__point-text {
+    margin: 7px 0 0;
     color: #c9daf6;
-    font-size: 15px;
-    line-height: 1.48;
-  }
-
-  .b24-workflow__note {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    margin: 0;
-    padding: 18px;
-    border: 1px solid rgba(120, 230, 255, 0.18);
-    border-radius: 22px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(80, 220, 255, 0.08));
-    box-shadow:
-      0 16px 44px rgba(0, 0, 0, 0.14),
-      0 0 28px rgba(80, 220, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .b24-workflow__note-icon {
-    width: 56px;
-    height: 56px;
-    color: #f0fffb;
-    border-color: rgba(130, 255, 220, 0.36);
-    background:
-      radial-gradient(circle at 30% 30%, rgba(120, 255, 210, 0.35), rgba(25, 190, 170, 0.26) 45%, rgba(10, 80, 100, 0.22) 100%),
-      linear-gradient(180deg, rgba(70, 230, 200, 0.26), rgba(15, 90, 110, 0.2));
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-      0 0 22px rgba(60, 255, 210, 0.28),
-      0 0 48px rgba(20, 210, 180, 0.16),
-      0 14px 34px rgba(4, 50, 58, 0.24);
-  }
-
-  .b24-workflow__note-icon::before {
-    background:
-      radial-gradient(circle at 34% 24%, rgba(255, 255, 255, 0.42), transparent 20%),
-      radial-gradient(circle at 50% 55%, rgba(67, 255, 209, 0.48), transparent 58%),
-      linear-gradient(135deg, rgba(38, 240, 205, 0.36), rgba(32, 186, 170, 0.16) 58%, rgba(9, 68, 84, 0.24));
-  }
-
-  .b24-workflow__note-icon::after {
-    background: radial-gradient(circle, rgba(67, 255, 209, 0.34), transparent 70%);
-  }
-
-  .b24-workflow__note p {
-    margin: 0;
-    color: #e1ecff;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.45;
+    font-size: clamp(15px, 1.08vw, 17px);
+    font-weight: 400;
+    line-height: 1.52;
   }
 
   .b24-workflow__actions {
@@ -624,9 +457,6 @@
       object-fit: contain;
     }
 
-    .b24-workflow__card {
-      min-height: 180px;
-    }
   }
 
   @media (max-width: 640px) {
@@ -670,30 +500,17 @@
       border-radius: 17px;
     }
 
-    .b24-workflow__cards {
-      grid-template-columns: 1fr;
-      gap: 12px;
+    .b24-workflow__content {
+      padding: 22px 0;
+      border-radius: 0;
     }
 
-    .b24-workflow__card {
-      min-height: 0;
-      padding: 20px;
-      border-radius: 20px;
+    .b24-workflow__points {
+      gap: 20px;
     }
 
-    .b24-workflow__icon,
-    .b24-workflow__note-icon {
-      width: 52px;
-      height: 52px;
-    }
-
-    .b24-workflow__icon {
-      margin-bottom: 18px;
-    }
-
-    .b24-workflow__note {
-      align-items: flex-start;
-      padding: 16px;
+    .b24-workflow__point {
+      padding-left: 24px;
     }
   }
 
@@ -704,7 +521,6 @@
       animation: none;
     }
 
-    .b24-workflow__card,
     .b24-workflow__visual,
     .b24-workflow__eyebrow {
       transition: none;
