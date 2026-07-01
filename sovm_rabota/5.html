@@ -408,24 +408,41 @@
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
+    cursor: pointer;
+    transform: translateY(0) scale(1);
     transition:
-      box-shadow 0.25s ease,
-      color 0.25s ease;
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease;
   }
 
   .b24-workflow__button:hover,
   .b24-workflow__button:focus-visible {
-    color: #142100;
-    background: #c7f52b;
+    color: #112200;
+    background-color: #d2ff3a;
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.02);
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.42),
-      0 0 28px rgba(190, 255, 40, 0.42),
-      0 18px 42px rgba(164, 220, 32, 0.42);
+      0 0 0 1px rgba(226, 255, 136, 0.46),
+      0 0 34px rgba(202, 255, 54, 0.48),
+      0 22px 50px rgba(174, 230, 36, 0.48);
+  }
+
+  .b24-workflow__button:focus-visible {
+    outline: 2px solid rgba(236, 255, 164, 0.72);
+    outline-offset: 4px;
+  }
+
+  .b24-workflow__button:visited,
+  .b24-workflow__button:focus,
+  .b24-workflow__button:active {
+    text-decoration: none;
   }
 
   .b24-workflow__button:active {
-    color: #142100;
-    background: #c7f52b;
+    color: #112200;
+    background-color: #c7f52b;
+    transform: translateY(0) scale(1);
     box-shadow:
       0 0 0 1px rgba(220, 255, 120, 0.34),
       0 0 24px rgba(190, 255, 40, 0.34),
