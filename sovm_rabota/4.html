@@ -42,9 +42,11 @@
             <h3 class="b24-guests__point-title">Нет хаоса</h3>
             <p class="b24-guests__point-text">Не нужно собирать переписки из разных мессенджеров</p>
           </article>
-        </div>
 
-        <p class="b24-guests__note">Клиенты и подрядчики работают рядом с командой, но доступ остаётся под контролем.</p>
+          <article class="b24-guests__point b24-guests__point--accent" role="listitem">
+            <p class="b24-guests__point-text b24-guests__point-text--accent">Клиенты и подрядчики работают рядом с командой, но доступ остаётся под контролем.</p>
+          </article>
+        </div>
       </div>
     </div>
 
@@ -378,33 +380,24 @@
     line-height: 1.52;
   }
 
-  .b24-guests__note {
-    position: relative;
-    margin: 8px 0 0;
-    padding: 22px 0 0 28px;
-    border: 0;
-    border-top: 1px solid rgba(201, 218, 246, 0.12);
-    outline: 0;
-    border-radius: 0;
-    color: #eef6ff;
-    background: none;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-    font-size: clamp(15px, 1.08vw, 17px);
-    font-weight: 600;
-    line-height: 1.48;
+  .b24-guests__point--accent {
+    margin-top: 6px;
   }
 
-  .b24-guests__note::before {
-    content: "";
-    position: absolute;
-    top: 22px;
-    bottom: 0;
-    left: 14px;
-    width: 2px;
-    border-radius: 999px;
-    background: rgba(199, 245, 43, 0.72);
+  .b24-guests__point--accent::before {
+    top: 0.64em;
+    width: 9px;
+    height: 9px;
+    background: #d4ff38;
+    box-shadow: 0 0 0 5px rgba(199, 245, 43, 0.1), 0 0 14px rgba(199, 245, 43, 0.2);
+  }
+
+  .b24-guests__point-text--accent {
+    margin-top: 0;
+    color: #eef6ff;
+    font-size: clamp(16px, 1.14vw, 18px);
+    font-weight: 600;
+    line-height: 1.48;
   }
 
   .b24-guests__actions {
@@ -539,14 +532,8 @@
       padding-left: 24px;
     }
 
-    .b24-guests__note {
-      padding: 20px 0 0 26px;
-    }
-
-    .b24-guests__note::before {
-      top: 20px;
-      bottom: 0;
-      left: 13px;
+    .b24-guests__point--accent {
+      margin-top: 4px;
     }
   }
 
