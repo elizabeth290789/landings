@@ -6,7 +6,7 @@
 
   <div class="b24-collab-ai__container">
     <header class="b24-collab-ai__header">
-      <p class="b24-collab-ai__eyebrow"><span class="b24-collab-ai__eyebrow-text">AI в Битрикс24</span></p>
+      <a class="b24-collab-ai__eyebrow" href="https://www.bitrix24.ru/create.php?b24_type=social" aria-label="Зарегистрироваться в Битрикс24 для работы с AI"><span class="b24-collab-ai__eyebrow-text">AI в Битрикс24</span></a>
       <h2 class="b24-collab-ai__title" id="b24-collab-ai-title">AI помогает команде работать быстрее</h2>
       <p class="b24-collab-ai__subtitle">
         BitrixGPT подключается к коммуникациям и рабочим процессам: подводит итоги встреч, помогает с текстами и снимает часть рутины с команды.
@@ -152,6 +152,8 @@
     line-height: 1;
     letter-spacing: 0.18px;
     text-shadow: 0 1px 1px rgba(0, 8, 28, 0.48);
+    text-decoration: none;
+    cursor: pointer;
     transition: box-shadow 0.55s ease, border-color 0.55s ease, filter 0.55s ease;
   }
 
@@ -194,6 +196,15 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: b24-collab-ai-eyebrow-border 9.6s ease-in-out infinite;
+  }
+
+  .b24-collab-ai__eyebrow,
+  .b24-collab-ai__eyebrow:hover,
+  .b24-collab-ai__eyebrow:focus,
+  .b24-collab-ai__eyebrow:active,
+  .b24-collab-ai__eyebrow:visited {
+    color: #ffffff;
+    text-decoration: none;
   }
 
   .b24-collab-ai__eyebrow:hover {
@@ -259,49 +270,69 @@
 
   .b24-collab-ai__action {
     display: flex;
+    align-items: center;
     justify-content: center;
     width: 100%;
-    margin: 0 auto;
+    margin: clamp(52px, calc(3.4vw + 18px), 62px) auto 0;
   }
 
   .b24-collab-ai__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 220px;
-    min-height: 58px;
-    padding: 0 34px;
+    min-width: 226px;
+    min-height: 62px;
+    padding: 18px 44px;
     border-radius: 14px;
     color: #112200;
     background: #c7f52b;
-    box-shadow: 0 16px 34px rgba(164, 220, 32, 0.32);
-    font-size: 17px;
-    font-weight: 600;
+    box-shadow:
+      0 0 0 1px rgba(220, 255, 120, 0.34),
+      0 0 26px rgba(190, 255, 40, 0.34),
+      0 18px 42px rgba(164, 220, 32, 0.42);
+    font-size: 18px;
+    font-weight: 700;
     line-height: 1;
     text-decoration: none;
+    cursor: pointer;
+    transform: translateY(0) scale(1);
     transition:
-      background 0.25s ease,
-      box-shadow 0.25s ease,
-      transform 0.25s ease,
-      color 0.25s ease;
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease;
   }
 
-  .b24-collab-ai__button:hover {
-    color: #142100;
-    background: linear-gradient(135deg, #cfff18, #b8ff1a);
+  .b24-collab-ai__button:hover,
+  .b24-collab-ai__button:focus-visible {
+    color: #112200;
+    background-color: #d2ff3a;
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.02);
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.45),
-      0 0 22px rgba(190, 255, 40, 0.45),
-      0 12px 34px rgba(180, 255, 30, 0.28);
-    transform: translateY(-1px);
+      0 0 0 1px rgba(226, 255, 136, 0.46),
+      0 0 34px rgba(202, 255, 54, 0.48),
+      0 22px 50px rgba(174, 230, 36, 0.48);
+  }
+
+  .b24-collab-ai__button:focus-visible {
+    outline: 2px solid rgba(236, 255, 164, 0.72);
+    outline-offset: 4px;
+  }
+
+  .b24-collab-ai__button:visited,
+  .b24-collab-ai__button:focus,
+  .b24-collab-ai__button:active {
+    text-decoration: none;
   }
 
   .b24-collab-ai__button:active {
-    color: #142100;
+    color: #112200;
+    background-color: #c7f52b;
+    transform: translateY(0) scale(1);
     box-shadow:
-      0 0 0 1px rgba(220, 255, 120, 0.35),
-      0 0 14px rgba(190, 255, 40, 0.32);
-    transform: translateY(0);
+      0 0 0 1px rgba(220, 255, 120, 0.34),
+      0 0 24px rgba(190, 255, 40, 0.34),
+      0 14px 34px rgba(164, 220, 32, 0.34);
   }
 
   @keyframes b24-collab-ai-eyebrow-aurora {
@@ -371,8 +402,10 @@
     }
 
     .b24-collab-ai__button {
-      width: min(100%, 360px);
-      min-width: 0;
+      min-width: 210px;
+      min-height: 58px;
+      padding: 16px 34px;
+      font-size: 17px;
     }
   }
 
