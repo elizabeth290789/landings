@@ -40,10 +40,12 @@
 
 <style>
   :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
-    --bg: #ffffff !important;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
+    --bg: #06142d !important;
+    background:
+      radial-gradient(circle at 50% 24%, rgba(59, 226, 255, 0.16), transparent 34%),
+      radial-gradient(circle at 82% 38%, rgba(127, 93, 255, 0.15), transparent 34%),
+      linear-gradient(180deg, #061d3d 0%, #07152f 48%, #050b1f 100%) !important;
+    background-color: #06142d !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -59,10 +61,15 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    padding: 24px clamp(18px, 3vw, 32px) 32px;
+    min-height: clamp(320px, 32vw, 420px);
+    padding: 48px clamp(18px, 3vw, 32px);
     overflow: hidden;
     color: #ffffff;
-    background: #ffffff !important;
+    background:
+      radial-gradient(circle at 50% 34%, rgba(66, 232, 255, 0.18), transparent 32%),
+      radial-gradient(circle at 74% 62%, rgba(132, 86, 255, 0.14), transparent 36%),
+      radial-gradient(circle at 22% 76%, rgba(31, 222, 190, 0.08), transparent 32%),
+      linear-gradient(180deg, #061d3d 0%, #07152f 48%, #050b1f 100%) !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -153,7 +160,7 @@
   }
 
   .b24-collab-final__ambient {
-    display: none;
+    display: block;
     position: absolute;
     z-index: -1;
     width: min(62vw, 860px);
@@ -176,8 +183,8 @@
   }
 
   .b24-collab-final__container {
-    width: 80vw;
-    max-width: 1440px;
+    width: min(100%, 1440px);
+    min-height: inherit;
     margin: 0 auto;
   }
 
@@ -185,31 +192,26 @@
     position: relative;
     isolation: isolate;
     display: flex;
-    min-height: 328px;
-    overflow: hidden;
-    padding: 18px clamp(36px, 5vw, 64px) 24px;
-    border: 1px solid rgba(150, 220, 255, 0.18);
-    border-radius: 36px;
-    background:
-      radial-gradient(circle at 50% 18%, rgba(70, 230, 255, 0.18), transparent 35%),
-      radial-gradient(circle at 88% 56%, rgba(130, 90, 255, 0.17), transparent 39%),
-      radial-gradient(circle at 8% 78%, rgba(31, 222, 190, 0.1), transparent 34%),
-      #07152f;
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    min-height: inherit;
+    overflow: visible;
+    padding: 0 clamp(18px, 4vw, 64px);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .b24-collab-final__card::before {
     content: "";
     position: absolute;
     z-index: -1;
-    inset: 0;
+    inset: 14% 16% 8%;
     background:
-      linear-gradient(115deg, transparent 20%, rgba(113, 241, 255, 0.055) 46%, transparent 70%),
-      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.09), transparent 32%);
+      radial-gradient(ellipse at 50% 36%, rgba(93, 237, 255, 0.18), transparent 45%),
+      radial-gradient(ellipse at 50% 70%, rgba(198, 255, 24, 0.08), transparent 46%);
+    filter: blur(8px);
     pointer-events: none;
   }
 
@@ -353,13 +355,14 @@
     }
 
     .b24-collab-final {
-      padding: 24px 14px 28px;
+      min-height: 360px;
+      padding: 44px 14px;
     }
 
     .b24-collab-final__card {
-      min-height: 390px;
-      padding: 18px 22px 24px;
-      border-radius: 28px;
+      min-height: inherit;
+      padding: 0 16px;
+      border-radius: 0;
     }
 
     .b24-collab-final__container {
@@ -400,9 +403,9 @@
     }
 
     .b24-collab-final__card {
-      min-height: 418px;
-      padding: 16px 16px 22px;
-      border-radius: 24px;
+      min-height: inherit;
+      padding: 0 8px;
+      border-radius: 0;
     }
 
     .b24-collab-final__number {
