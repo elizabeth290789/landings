@@ -8,6 +8,12 @@
       />
     </a>
 
+    <div class="b24-collab-menu__links" aria-label="Разделы страницы">
+      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
+      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
+      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
+    </div>
+
     <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
   </div>
 </nav>
@@ -92,6 +98,53 @@
     object-fit: contain;
   }
 
+  .b24-collab-menu__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    gap: clamp(18px, 2.6vw, 34px);
+    min-width: 0;
+  }
+
+  .b24-collab-menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #2f3742;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .b24-collab-menu__link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0;
+    transform: scaleX(0.65);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .b24-collab-menu__link:hover {
+    color: #0b8fff;
+  }
+
+  .b24-collab-menu__link:hover::after {
+    opacity: 0.24;
+    transform: scaleX(1);
+  }
+
   .b24-collab-menu__button {
     display: inline-flex;
     align-items: center;
@@ -135,9 +188,16 @@
   }
 
   .b24-collab-menu__button:focus-visible,
-  .b24-collab-menu__logo-link:focus-visible {
+  .b24-collab-menu__logo-link:focus-visible,
+  .b24-collab-menu__link:focus-visible {
     outline: 2px solid rgba(199, 245, 43, 0.95);
     outline-offset: 4px;
+  }
+
+  @media (max-width: 920px) {
+    .b24-collab-menu__links {
+      display: none;
+    }
   }
 
   @media (max-width: 640px) {
