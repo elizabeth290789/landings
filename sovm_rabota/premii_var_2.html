@@ -273,51 +273,27 @@
     isolation: isolate;
     display: grid;
     grid-template-columns: minmax(300px, .78fr) minmax(0, 1.42fr);
+    align-items: center;
+    gap: clamp(30px, 4vw, 58px);
     width: 100%;
     max-width: 1220px;
     min-height: 570px;
     margin: 0 auto;
-    overflow: hidden;
-    background:
-      radial-gradient(circle at 18% 46%, rgba(45, 210, 255, .16), transparent 34%),
-      radial-gradient(circle at 88% 18%, rgba(140, 80, 255, .18), transparent 36%),
-      radial-gradient(circle at 45% 105%, rgba(40, 220, 210, .1), transparent 42%),
-      linear-gradient(135deg, rgba(10, 34, 88, .92), rgba(15, 42, 115, .92) 48%, rgba(30, 34, 115, .9));
-    border: 1px solid rgba(150, 230, 255, .38);
-    border-radius: 36px;
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, .04) inset,
-      0 0 22px rgba(80, 220, 255, .2),
-      0 0 42px rgba(120, 90, 255, .12),
-      0 28px 90px rgba(0, 0, 0, .34);
-    backdrop-filter: blur(24px) saturate(1.12);
-    -webkit-backdrop-filter: blur(24px) saturate(1.12);
+    padding: clamp(18px, 2.4vw, 34px) 0;
+    overflow: visible;
+    background: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
-  .b24-premium-award__card::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    background:
-      radial-gradient(circle at 50% 50%, transparent 0, rgba(0, 8, 35, .16) 72%),
-      linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(0, 0, 0, .08));
-    border-radius: inherit;
-    pointer-events: none;
-  }
-
+  .b24-premium-award__card::before,
   .b24-premium-award__card::after {
-    content: "";
-    position: absolute;
-    z-index: 3;
-    inset: 0;
-    border-radius: inherit;
-    background:
-      linear-gradient(90deg, rgba(80, 230, 255, .2), transparent 22%, transparent 74%, rgba(155, 95, 255, .18)),
-      linear-gradient(180deg, rgba(160, 235, 255, .18), transparent 18%);
-    opacity: .55;
-    mix-blend-mode: screen;
-    pointer-events: none;
+    content: none;
+    display: none;
   }
 
   .b24-premium-award__visual {
