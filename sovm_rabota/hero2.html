@@ -7,7 +7,8 @@
   <div class="b24-collab-hero__container">
     <div class="b24-collab-hero__content">
       <h1 class="b24-collab-hero__title" id="b24-collab-hero-title">
-        Битрикс24 для совместной работы
+        Битрикс24<br>
+        <span class="hero-title-nowrap">для совместной работы</span>
       </h1>
 
       <p class="b24-collab-hero__subtitle">
@@ -335,6 +336,10 @@
     animation-delay: 0.08s;
   }
 
+  .hero-title-nowrap {
+    white-space: nowrap;
+  }
+
   .b24-collab-hero__subtitle {
     margin: clamp(14px, 1.8vw, 20px) auto 0;
     color: #d4e3ff;
@@ -611,6 +616,10 @@
     .b24-collab-hero__title {
       font-size: clamp(34px, 10vw, 48px);
       line-height: 1.05;
+    }
+
+    .hero-title-nowrap {
+      white-space: normal;
     }
 
     .b24-collab-hero__subtitle {
