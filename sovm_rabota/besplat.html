@@ -2,8 +2,8 @@
   <div class="sovm-besplat__container">
     <h2 class="sovm-besplat__title" id="sovm-besplat-title">Битрикс24 можно использовать бесплатно</h2>
     <p class="sovm-besplat__text">
-      Некоторые функции и лимиты могут отличаться от платных тарифов.
-      <span class="sovm-besplat__nowrap">Подробности — на странице <a class="sovm-besplat__link" href="https://www.bitrix24.ru/prices/">«Цены»</a>.</span>
+      Некоторые функции и лимиты могут отличаться от платных тарифов. Подробности — на странице
+      <a class="sovm-besplat__link" href="https://www.bitrix24.ru/prices/">«Цены»</a>.
     </p>
   </div>
 </section>
@@ -55,7 +55,7 @@
   }
 
   .sovm-besplat__container {
-    width: min(100%, 960px);
+    width: min(100%, 1200px);
     margin: 0 auto;
     text-align: center;
   }
@@ -71,13 +71,14 @@
   }
 
   .sovm-besplat__text {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     color: #6b7280;
     font-size: clamp(15px, 1.25vw, 17px);
     font-weight: 400;
     line-height: 1.55;
     text-align: center;
+    white-space: nowrap;
   }
 
   .sovm-besplat__link {
@@ -89,9 +90,6 @@
     transition: color 0.2s ease, text-decoration-color 0.2s ease;
   }
 
-  .sovm-besplat__nowrap {
-    white-space: nowrap;
-  }
 
   .sovm-besplat__link:hover {
     color: #005bd7;
@@ -118,9 +116,6 @@
     .sovm-besplat__text {
       font-size: 15px;
       line-height: 1.5;
-    }
-
-    .sovm-besplat__nowrap {
       white-space: normal;
     }
   }
