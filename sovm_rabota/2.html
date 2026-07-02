@@ -22,45 +22,31 @@
       </div>
 
       <div class="b24-messenger__content">
-        <div class="b24-messenger__cards">
-          <article class="b24-messenger__card">
-            <span class="b24-messenger__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M8 18.5 4 21v-5.1A8 8 0 1 1 8 18.5Z"/><path d="M8 10h8M8 14h5"/></svg>
-            </span>
-            <h3 class="b24-messenger__card-title">Чаты команды</h3>
-            <p class="b24-messenger__card-text">Личные и групповые чаты для работы</p>
+        <div class="b24-messenger__points" role="list">
+          <article class="b24-messenger__point" role="listitem">
+            <h3 class="b24-messenger__point-title">Чаты команды</h3>
+            <p class="b24-messenger__point-text">Личные и групповые чаты для работы</p>
           </article>
 
-          <article class="b24-messenger__card">
-            <span class="b24-messenger__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="m5 14-2-2 2-2h3l8-5v14l-8-5H5Z"/><path d="M8 14v4a2 2 0 0 0 2 2h1M19 9a4 4 0 0 1 0 6"/></svg>
-            </span>
-            <h3 class="b24-messenger__card-title">Каналы</h3>
-            <p class="b24-messenger__card-text">Новости компании, отделов и проектов</p>
+          <article class="b24-messenger__point" role="listitem">
+            <h3 class="b24-messenger__point-title">Каналы</h3>
+            <p class="b24-messenger__point-text">Новости компании, отделов и проектов</p>
           </article>
 
-          <article class="b24-messenger__card">
-            <span class="b24-messenger__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.2 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg>
-            </span>
-            <h3 class="b24-messenger__card-title">Реакции и emoji</h3>
-            <p class="b24-messenger__card-text">Быстрая коммуникация без лишних сообщений</p>
+          <article class="b24-messenger__point" role="listitem">
+            <h3 class="b24-messenger__point-title">Реакции и emoji</h3>
+            <p class="b24-messenger__point-text">Быстрая коммуникация без лишних сообщений</p>
           </article>
 
-          <article class="b24-messenger__card">
-            <span class="b24-messenger__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 16.5v-9Z"/><path d="M8 13h8"/></svg>
-            </span>
-            <h3 class="b24-messenger__card-title">Папки чатов</h3>
-            <p class="b24-messenger__card-text">Обсуждения по проектам и командам</p>
+          <article class="b24-messenger__point" role="listitem">
+            <h3 class="b24-messenger__point-title">Папки чатов</h3>
+            <p class="b24-messenger__point-text">Обсуждения по проектам и командам</p>
           </article>
 
-          <div class="b24-messenger__note">
-            <span class="b24-messenger__note-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
-            </span>
-            <p>Вся история общения, файлы и решения остаются в рабочем пространстве команды.</p>
-          </div>
+          <article class="b24-messenger__point" role="listitem">
+            <h3 class="b24-messenger__point-title">Вся история общения</h3>
+            <p class="b24-messenger__point-text">Файлы и решения остаются в рабочем пространстве команды</p>
+          </article>
         </div>
       </div>
     </div>
@@ -348,165 +334,59 @@
 
   .b24-messenger__content {
     min-width: 0;
-    display: flex;
-  }
-
-  .b24-messenger__cards {
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(20px, 2.1vw, 26px);
-    width: 100%;
-  }
-
-  .b24-messenger__card {
-    position: relative;
-    min-height: 156px;
-    margin: 0;
-    padding: 20px;
-    border: 1px solid rgba(146, 218, 235, 0.54);
-    border-radius: 20px;
-    background:
-      radial-gradient(ellipse at 18% 10%, rgba(255, 255, 255, 0.72), transparent 34%),
-      radial-gradient(ellipse at 88% 0%, rgba(153, 145, 236, 0.15), transparent 46%),
-      radial-gradient(ellipse at 92% 100%, rgba(84, 199, 181, 0.19), transparent 50%),
-      linear-gradient(145deg, rgba(214, 229, 252, 0.78) 0%, rgba(193, 226, 247, 0.74) 44%, rgba(190, 235, 224, 0.72) 100%);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.72),
-      inset 0 -1px 0 rgba(20, 136, 164, 0.08),
-      0 16px 34px rgba(8, 54, 96, 0.16),
-      0 0 26px rgba(58, 190, 190, 0.1);
-    backdrop-filter: blur(10px) saturate(1.06);
-    -webkit-backdrop-filter: blur(10px) saturate(1.06);
-  }
-
-  .b24-messenger__card:nth-child(odd)::after,
-  .b24-messenger__card:nth-child(-n + 2)::before {
-    content: none;
-  }
-
-  .b24-messenger__card > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .b24-messenger__icon,
-  .b24-messenger__note-icon {
-    position: relative;
-    isolation: isolate;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    overflow: visible;
-    color: #035f70;
+    align-content: center;
+    gap: 24px;
+    padding: clamp(24px, 2.6vw, 34px);
     border: 0;
+    outline: 0;
     border-radius: 0;
-    background: transparent;
+    background: none;
+    background-color: transparent;
+    background-image: none;
     box-shadow: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
 
-  .b24-messenger__icon {
-    width: 54px;
-    height: 54px;
-    margin-bottom: 18px;
+  .b24-messenger__points {
+    display: grid;
+    gap: clamp(24px, 2vw, 30px);
   }
 
-  .b24-messenger__icon::before,
-  .b24-messenger__note-icon::before,
-  .b24-messenger__icon::after,
-  .b24-messenger__note-icon::after {
-    content: none;
-  }
-
-  .b24-messenger__icon svg,
-  .b24-messenger__note-icon svg {
+  .b24-messenger__point {
     position: relative;
-    z-index: 1;
-    width: 42px;
-    height: 42px;
-    stroke: currentColor;
-    stroke-width: 2.15;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: drop-shadow(0 2px 5px rgba(0, 155, 167, 0.22));
-  }
-
-  .b24-messenger__card-title {
     margin: 0;
-    color: #031a3d;
-    background: none;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-text-fill-color: #031a3d;
-    -webkit-text-stroke: 0;
-    font-size: 19px;
-    font-weight: 900;
-    line-height: 1.18;
-    letter-spacing: -0.015em;
-    text-shadow: none;
-    filter: none;
+    padding: 0 0 0 28px;
   }
 
-  .b24-messenger__card-title::before,
-  .b24-messenger__card-title::after,
-  .b24-messenger__card-text::before,
-  .b24-messenger__card-text::after {
-    content: none;
+  .b24-messenger__point::before {
+    content: "";
+    position: absolute;
+    top: 0.58em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c7f52b;
+    box-shadow: 0 0 0 5px rgba(199, 245, 43, 0.08);
   }
 
-  .b24-messenger__card-text {
-    margin: 8px 0 0;
-    color: rgba(4, 27, 59, 0.94);
-    background: none;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-text-fill-color: rgba(4, 27, 59, 0.94);
-    -webkit-text-stroke: 0;
-    font-size: 15px;
-    font-weight: 450;
-    line-height: 1.62;
-    text-shadow: none;
-    filter: none;
-  }
-
-  .b24-messenger__note {
-    position: relative;
-    z-index: 1;
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    width: 100%;
-    margin: 4px 0 0;
-    padding: 20px;
-    border: 1px solid rgba(134, 214, 230, 0.52);
-    border-radius: 20px;
-    background:
-      radial-gradient(ellipse at 12% 48%, rgba(88, 202, 184, 0.23), transparent 48%),
-      radial-gradient(ellipse at 84% 18%, rgba(151, 142, 236, 0.14), transparent 46%),
-      linear-gradient(135deg, rgba(214, 229, 252, 0.76), rgba(188, 228, 243, 0.7) 52%, rgba(185, 233, 221, 0.68));
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.68),
-      inset 0 -1px 0 rgba(7, 122, 145, 0.08),
-      0 16px 34px rgba(8, 54, 96, 0.14),
-      0 0 24px rgba(62, 184, 178, 0.1);
-  }
-
-  .b24-messenger__note-icon {
-    width: 54px;
-    height: 54px;
-    color: #035f55;
-  }
-
-  .b24-messenger__note p {
+  .b24-messenger__point-title {
     margin: 0;
-    color: rgba(3, 24, 55, 0.94);
-    font-size: 15.5px;
-    font-weight: 450;
-    line-height: 1.6;
+    color: #ffffff;
+    font-size: clamp(18px, 1.35vw, 21px);
+    font-weight: 700;
+    line-height: 1.24;
+    letter-spacing: -0.018em;
+  }
+
+  .b24-messenger__point-text {
+    margin: 7px 0 0;
+    color: #c9daf6;
+    font-size: clamp(15px, 1.08vw, 17px);
+    font-weight: 400;
+    line-height: 1.52;
   }
 
   .b24-messenger__actions {
@@ -610,10 +490,6 @@
       width: min(100%, 900px);
       margin: 0 auto;
     }
-
-    .b24-messenger__card {
-      min-height: 160px;
-    }
   }
 
   @media (max-width: 640px) {
@@ -655,43 +531,6 @@
 
     .b24-messenger__image {
       border-radius: 16px;
-    }
-
-    .b24-messenger__cards {
-      grid-template-columns: 1fr;
-      border-radius: 22px;
-    }
-
-    .b24-messenger__card {
-      min-height: 0;
-      padding: 0;
-    }
-
-    .b24-messenger__card:nth-child(odd)::after,
-    .b24-messenger__card:nth-child(-n + 3)::before {
-      content: none;
-    }
-
-    .b24-messenger__icon {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 14px;
-    }
-
-    .b24-messenger__note {
-      align-items: flex-start;
-      padding: 18px 20px 20px;
-    }
-
-    .b24-messenger__note-icon {
-      width: 48px;
-      height: 48px;
-    }
-
-    .b24-messenger__icon svg,
-    .b24-messenger__note-icon svg {
-      width: 39px;
-      height: 39px;
     }
 
     .b24-messenger__actions {
