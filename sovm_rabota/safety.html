@@ -82,6 +82,27 @@
 </section>
 
 <style>
+  :where(.block-wrapper, .landing-block):has(.b24-security) {
+    --bg: #08265f !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(34, 120, 255, 0.22) 0%, rgba(34, 120, 255, 0) 36%),
+      radial-gradient(circle at 78% 45%, rgba(83, 72, 255, 0.26) 0%, rgba(83, 72, 255, 0) 42%),
+      linear-gradient(135deg, #08265f 0%, #0b2f78 42%, #232579 100%) !important;
+    background-color: #08265f !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-security)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-security)::after {
+    content: none !important;
+    display: none !important;
+  }
+
   .b24-security,
   .b24-security * {
     box-sizing: border-box;
@@ -95,7 +116,11 @@
     padding: clamp(76px, 9vw, 128px) clamp(20px, 4vw, 56px);
     overflow: hidden;
     color: #ffffff;
-    background: transparent;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(34, 120, 255, 0.22) 0%, rgba(34, 120, 255, 0) 36%),
+      radial-gradient(circle at 78% 45%, rgba(83, 72, 255, 0.26) 0%, rgba(83, 72, 255, 0) 42%),
+      linear-gradient(135deg, #08265f 0%, #0b2f78 42%, #232579 100%);
+    background-color: #08265f;
     font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
