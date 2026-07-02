@@ -1,6 +1,6 @@
 <nav class="b24-collab-menu" aria-label="Основное меню">
   <div class="b24-collab-menu__container">
-    <a class="b24-collab-menu__logo-link" href="#" aria-label="Вернуться к началу лендинга">
+    <a class="b24-collab-menu__logo-link" href="https://www.bitrix24.ru/promo/workspace/" aria-label="Вернуться к началу лендинга">
       <img
         class="b24-collab-menu__logo"
         src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/d4f/szj80g9amg8b51trrdd67mohmkkuldfv.png.webp?1742975371867"
@@ -9,9 +9,9 @@
     </a>
 
     <div class="b24-collab-menu__links" aria-label="Разделы страницы">
-      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
-      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
-      <a class="b24-collab-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
+      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
+      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
+      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
     </div>
 
     <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
@@ -108,17 +108,17 @@
     margin-left: clamp(44px, 6vw, 80px);
   }
 
-  .b24-collab-menu__link,
-  .b24-collab-menu__link:hover,
-  .b24-collab-menu__link:focus,
-  .b24-collab-menu__link:active,
-  .b24-collab-menu__link:visited {
+  .sovm-menu__link,
+  .sovm-menu__link:hover,
+  .sovm-menu__link:focus,
+  .sovm-menu__link:active,
+  .sovm-menu__link:visited {
     border-bottom: none;
     box-shadow: none;
     text-decoration: none;
   }
 
-  .b24-collab-menu__link {
+  .sovm-menu__link {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -131,13 +131,13 @@
     transition: color 0.2s ease;
   }
 
-  .b24-collab-menu__link::after,
-  .b24-collab-menu__link:hover::after {
+  .sovm-menu__link::after,
+  .sovm-menu__link:hover::after {
     content: none;
     display: none;
   }
 
-  .b24-collab-menu__link:hover {
+  .sovm-menu__link:hover {
     color: #1aaee8;
     cursor: pointer;
   }
@@ -186,7 +186,7 @@
 
   .b24-collab-menu__button:focus-visible,
   .b24-collab-menu__logo-link:focus-visible,
-  .b24-collab-menu__link:focus-visible {
+  .sovm-menu__link:focus-visible {
     outline: 2px solid rgba(199, 245, 43, 0.95);
     outline-offset: 4px;
   }
@@ -238,13 +238,3 @@
     }
   }
 </style>
-
-<script>
-  document.querySelector('.b24-collab-menu__logo-link')?.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  });
-</script>
