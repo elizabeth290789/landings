@@ -9,14 +9,33 @@
     </a>
 
     <div class="b24-collab-menu__links" aria-label="Разделы страницы">
-      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
-      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
-      <a class="sovm-menu__link" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
+      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
+      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
+      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
     </div>
 
     <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
   </div>
 </nav>
+
+<script>
+  (function () {
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a');
+
+      if (!link) {
+        return;
+      }
+
+      if (
+        link.classList.contains('sovm-menu__external-link') ||
+        link.dataset.noScroll === 'true'
+      ) {
+        event.stopImmediatePropagation();
+      }
+    }, true);
+  })();
+</script>
 
 <style>
   :root {
