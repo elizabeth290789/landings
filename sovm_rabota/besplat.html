@@ -1,0 +1,135 @@
+<section class="sovm-besplat" aria-labelledby="sovm-besplat-title">
+  <div class="sovm-besplat__container">
+    <h2 class="sovm-besplat__title" id="sovm-besplat-title">Битрикс24 можно использовать бесплатно</h2>
+    <p class="sovm-besplat__text">
+      Некоторые функции и лимиты могут отличаться от платных тарифов.
+      Подробности — на странице
+      <a class="sovm-besplat__link" href="https://www.bitrix24.ru/prices/">«Цены»</a>.
+    </p>
+  </div>
+</section>
+
+<style>
+  :where(.block-wrapper, .landing-block):has(.sovm-besplat) {
+    --bg: #ffffff !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.sovm-besplat)::before,
+  :where(.block-wrapper, .landing-block):has(.sovm-besplat)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .sovm-besplat,
+  .sovm-besplat * {
+    box-sizing: border-box;
+  }
+
+  .sovm-besplat {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 0;
+    padding: 40px clamp(18px, 4vw, 48px);
+    color: #1f2937;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 0;
+    box-shadow: none;
+    font-family: Montserrat, Manrope, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .sovm-besplat::before,
+  .sovm-besplat::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .sovm-besplat__container {
+    width: min(100%, 960px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .sovm-besplat__title {
+    margin: 0 0 10px;
+    color: #1f2937;
+    font-size: clamp(22px, 2.1vw, 28px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-align: center;
+  }
+
+  .sovm-besplat__text {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #6b7280;
+    font-size: clamp(15px, 1.25vw, 17px);
+    font-weight: 400;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .sovm-besplat__link {
+    color: #0b74ff;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+
+  .sovm-besplat__link:hover {
+    color: #005bd7;
+    text-decoration-color: rgba(0, 91, 215, 0.65);
+  }
+
+  .sovm-besplat__link:focus-visible {
+    outline: 2px solid #0b74ff;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .sovm-besplat {
+      padding: 30px 18px;
+    }
+
+    .sovm-besplat__title {
+      margin-bottom: 8px;
+      font-size: 21px;
+      line-height: 1.28;
+    }
+
+    .sovm-besplat__text {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .sovm-besplat {
+      padding: 26px 14px;
+    }
+
+    .sovm-besplat__title {
+      font-size: 20px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sovm-besplat__link {
+      transition: none;
+    }
+  }
+</style>
