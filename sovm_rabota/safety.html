@@ -83,14 +83,26 @@
   </section>
 
 <style>
+  /* Safety and final CTA sit on the same page-level canvas as the other landing sections. */
+  body {
+    background-color: #07183f;
+    background-image:
+      radial-gradient(circle at 15% 38%, rgba(43, 116, 255, 0.28), transparent 24%),
+      radial-gradient(circle at 86% 18%, rgba(111, 93, 255, 0.32), transparent 28%),
+      radial-gradient(circle at 75% 70%, rgba(48, 91, 220, 0.18), transparent 30%),
+      linear-gradient(180deg, #07183f 0%, #0b2360 45%, #07183f 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .b24-security-final-wrapper {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    background:
-      radial-gradient(circle at 22% 18%, rgba(36, 118, 255, 0.22) 0%, rgba(36, 118, 255, 0) 34%),
-      radial-gradient(circle at 82% 42%, rgba(75, 70, 255, 0.24) 0%, rgba(75, 70, 255, 0) 42%),
-      linear-gradient(135deg, #071f50 0%, #0b3279 42%, #22247a 100%);
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
   }
 
   :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper),
