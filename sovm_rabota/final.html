@@ -40,10 +40,16 @@
 
 <style>
   :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
-    --bg: transparent !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
+    --bg: #08265f !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    background:
+      radial-gradient(circle at 28% 35%, rgba(34, 120, 255, 0.18) 0%, rgba(34, 120, 255, 0) 38%),
+      radial-gradient(circle at 78% 40%, rgba(83, 72, 255, 0.24) 0%, rgba(83, 72, 255, 0) 44%),
+      linear-gradient(135deg, #08265f 0%, #0b2f78 45%, #232579 100%) !important;
+    background-color: #08265f !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -63,9 +69,11 @@
     padding: 28px clamp(18px, 3vw, 32px) 52px;
     overflow: hidden;
     color: #ffffff;
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
+    background:
+      radial-gradient(circle at 28% 35%, rgba(34, 120, 255, 0.18) 0%, rgba(34, 120, 255, 0) 38%),
+      radial-gradient(circle at 78% 40%, rgba(83, 72, 255, 0.24) 0%, rgba(83, 72, 255, 0) 44%),
+      linear-gradient(135deg, #08265f 0%, #0b2f78 45%, #232579 100%) !important;
+    background-color: #08265f !important;
     border: 0 !important;
     box-shadow: none !important;
   }
