@@ -40,12 +40,11 @@
 
 <style>
   :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
-    --bg: #06142d !important;
-    background:
-      radial-gradient(circle at 50% 24%, rgba(59, 226, 255, 0.16), transparent 34%),
-      radial-gradient(circle at 82% 38%, rgba(127, 93, 255, 0.15), transparent 34%),
-      linear-gradient(180deg, #061d3d 0%, #07152f 48%, #050b1f 100%) !important;
-    background-color: #06142d !important;
+    --bg: transparent !important;
+    margin-top: -1px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -61,15 +60,13 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    min-height: clamp(320px, 32vw, 420px);
-    padding: 48px clamp(18px, 3vw, 32px);
+    min-height: clamp(280px, 28vw, 360px);
+    padding: 28px clamp(18px, 3vw, 32px) 58px;
     overflow: hidden;
     color: #ffffff;
-    background:
-      radial-gradient(circle at 50% 34%, rgba(66, 232, 255, 0.18), transparent 32%),
-      radial-gradient(circle at 74% 62%, rgba(132, 86, 255, 0.14), transparent 36%),
-      radial-gradient(circle at 22% 76%, rgba(31, 222, 190, 0.08), transparent 32%),
-      linear-gradient(180deg, #061d3d 0%, #07152f 48%, #050b1f 100%) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -77,6 +74,29 @@
   .b24-collab-final,
   .b24-collab-final * {
     box-sizing: border-box;
+  }
+
+  .b24-collab-final::before,
+  .b24-collab-final::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    pointer-events: none;
+  }
+
+  .b24-collab-final::before {
+    z-index: -2;
+    inset-block: -18% 0;
+    background:
+      radial-gradient(ellipse at 50% 34%, rgba(66, 232, 255, 0.12), transparent 36%),
+      radial-gradient(ellipse at 66% 54%, rgba(132, 86, 255, 0.09), transparent 42%);
+  }
+
+  .b24-collab-final::after {
+    z-index: -1;
+    bottom: 0;
+    height: 72px;
+    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.035) 58%, rgba(255, 255, 255, 0.08) 100%);
   }
 
   :where(.block-wrapper, .landing-block):has(.b24-collab-free-info) {
@@ -207,11 +227,11 @@
     content: "";
     position: absolute;
     z-index: -1;
-    inset: 14% 16% 8%;
+    inset: 8% 18% 0;
     background:
-      radial-gradient(ellipse at 50% 36%, rgba(93, 237, 255, 0.18), transparent 45%),
-      radial-gradient(ellipse at 50% 70%, rgba(198, 255, 24, 0.08), transparent 46%);
-    filter: blur(8px);
+      radial-gradient(ellipse at 50% 34%, rgba(93, 237, 255, 0.14), transparent 46%),
+      radial-gradient(ellipse at 50% 72%, rgba(198, 255, 24, 0.07), transparent 48%);
+    filter: blur(12px);
     pointer-events: none;
   }
 
@@ -355,8 +375,8 @@
     }
 
     .b24-collab-final {
-      min-height: 360px;
-      padding: 44px 14px;
+      min-height: 320px;
+      padding: 32px 14px 54px;
     }
 
     .b24-collab-final__card {
