@@ -8,13 +8,15 @@
       />
     </a>
 
-    <div class="b24-collab-menu__links" aria-label="Разделы страницы">
-      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
-      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
-      <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
-    </div>
+    <div class="b24-collab-menu__right">
+      <div class="b24-collab-menu__links" aria-label="Разделы страницы">
+        <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b294578">Возможности</a>
+        <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296174">Кроссплатформенность</a>
+        <a class="sovm-menu__link sovm-menu__external-link" data-no-scroll="true" href="https://www.bitrix24.ru/promo/workspace/#b296274">Безопасность</a>
+      </div>
 
-    <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
+      <a class="b24-collab-menu__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
+    </div>
   </div>
 </nav>
 
@@ -117,15 +119,23 @@
     object-fit: contain;
   }
 
+  .b24-collab-menu__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    gap: clamp(18px, 2.6vw, 34px);
+    min-width: 0;
+    margin-left: auto;
+  }
+
   .b24-collab-menu__links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     gap: clamp(18px, 2.6vw, 34px);
     min-width: 0;
-    margin-left: clamp(90px, 10vw, 150px);
-    padding-right: clamp(28px, 4vw, 58px);
   }
 
   .sovm-menu__link,
