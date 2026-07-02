@@ -40,10 +40,10 @@
 
 <style>
   :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
-    --bg: transparent !important;
+    --bg: #0b2f78 !important;
     margin-top: -1px !important;
-    background: transparent !important;
-    background-color: transparent !important;
+    background: #0b2f78 !important;
+    background-color: #0b2f78 !important;
     background-image: none !important;
     border: 0 !important;
     box-shadow: none !important;
@@ -60,13 +60,19 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    min-height: clamp(280px, 28vw, 360px);
-    padding: 28px clamp(18px, 3vw, 32px) 58px;
+    min-height: clamp(300px, 30vw, 380px);
+    padding: 28px clamp(18px, 3vw, 32px) 52px;
     overflow: hidden;
     color: #ffffff;
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(39, 115, 255, 0.22) 0%, rgba(39, 115, 255, 0) 42%),
+      radial-gradient(circle at 75% 30%, rgba(90, 65, 255, 0.24) 0%, rgba(90, 65, 255, 0) 45%),
+      linear-gradient(180deg, #0b2f78 0%, #081f54 55%, #061538 100%) !important;
+    background-color: #081f54 !important;
+    background-image:
+      radial-gradient(circle at 50% 35%, rgba(39, 115, 255, 0.22) 0%, rgba(39, 115, 255, 0) 42%),
+      radial-gradient(circle at 75% 30%, rgba(90, 65, 255, 0.24) 0%, rgba(90, 65, 255, 0) 45%),
+      linear-gradient(180deg, #0b2f78 0%, #081f54 55%, #061538 100%) !important;
     border: 0 !important;
     box-shadow: none !important;
   }
@@ -78,25 +84,8 @@
 
   .b24-collab-final::before,
   .b24-collab-final::after {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    pointer-events: none;
-  }
-
-  .b24-collab-final::before {
-    z-index: -2;
-    inset-block: -18% 0;
-    background:
-      radial-gradient(ellipse at 50% 34%, rgba(66, 232, 255, 0.12), transparent 36%),
-      radial-gradient(ellipse at 66% 54%, rgba(132, 86, 255, 0.09), transparent 42%);
-  }
-
-  .b24-collab-final::after {
-    z-index: -1;
-    bottom: 0;
-    height: 72px;
-    background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.035) 58%, rgba(255, 255, 255, 0.08) 100%);
+    content: none;
+    display: none;
   }
 
   :where(.block-wrapper, .landing-block):has(.b24-collab-free-info) {
@@ -259,8 +248,8 @@
 
   .b24-collab-final__number {
     margin: 0;
-    color: #ffffff;
-    background: linear-gradient(90deg, #ffffff 8%, #8ff8ff 52%, #b7fff1 92%);
+    color: #58f3ff;
+    background: linear-gradient(90deg, #2bdcff 0%, #69f6ff 52%, #19c8ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -376,7 +365,7 @@
 
     .b24-collab-final {
       min-height: 320px;
-      padding: 32px 14px 54px;
+      padding: 32px 14px 48px;
     }
 
     .b24-collab-final__card {
