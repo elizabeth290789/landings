@@ -1,8 +1,9 @@
-<section class="b24-security" aria-labelledby="b24-security-title">
-  <span class="b24-security__glow b24-security__glow--center" aria-hidden="true"></span>
-  <span class="b24-security__glow b24-security__glow--right" aria-hidden="true"></span>
+<section class="b24-security-final-wrapper">
+  <section class="b24-security" aria-labelledby="b24-security-title">
+    <span class="b24-security__glow b24-security__glow--center" aria-hidden="true"></span>
+    <span class="b24-security__glow b24-security__glow--right" aria-hidden="true"></span>
 
-  <div class="b24-security__container">
+    <div class="b24-security__container">
     <header class="b24-security__header">
       <span class="b24-security__badge">
         <span class="b24-security__badge-dot" aria-hidden="true"></span>
@@ -78,29 +79,49 @@
         <span class="b24-security__item-text">Мониторинг помогает быстрее замечать события и реагировать на угрозы.</span>
       </a>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
 <style>
-  :where(.block-wrapper, .landing-block):has(.b24-security) {
-    --bg: #08265f !important;
+  .b24-security-final-wrapper {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 22% 18%, rgba(36, 118, 255, 0.22) 0%, rgba(36, 118, 255, 0) 34%),
+      radial-gradient(circle at 82% 42%, rgba(75, 70, 255, 0.24) 0%, rgba(75, 70, 255, 0) 42%),
+      linear-gradient(135deg, #071f50 0%, #0b3279 42%, #22247a 100%);
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper),
+  :where(.block-wrapper, .landing-block):has(.b24-security),
+  :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
+    --bg: transparent !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    background:
-      radial-gradient(circle at 25% 20%, rgba(34, 120, 255, 0.22) 0%, rgba(34, 120, 255, 0) 36%),
-      radial-gradient(circle at 78% 45%, rgba(83, 72, 255, 0.26) 0%, rgba(83, 72, 255, 0) 42%),
-      linear-gradient(135deg, #08265f 0%, #0b2f78 42%, #232579 100%) !important;
-    background-color: #08265f !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
+    border-top: 0 !important;
     box-shadow: none !important;
   }
 
+  :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper)::after,
   :where(.block-wrapper, .landing-block):has(.b24-security)::before,
-  :where(.block-wrapper, .landing-block):has(.b24-security)::after {
+  :where(.block-wrapper, .landing-block):has(.b24-security)::after,
+  :where(.block-wrapper, .landing-block):has(.b24-collab-final)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-collab-final)::after {
     content: none !important;
     display: none !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
   }
 
   .b24-security,
@@ -116,11 +137,9 @@
     padding: clamp(76px, 9vw, 128px) clamp(20px, 4vw, 56px);
     overflow: hidden;
     color: #ffffff;
-    background:
-      radial-gradient(circle at 25% 20%, rgba(34, 120, 255, 0.22) 0%, rgba(34, 120, 255, 0) 36%),
-      radial-gradient(circle at 78% 45%, rgba(83, 72, 255, 0.26) 0%, rgba(83, 72, 255, 0) 42%),
-      linear-gradient(135deg, #08265f 0%, #0b2f78 42%, #232579 100%);
-    background-color: #08265f;
+    background: transparent;
+    background-image: none;
+    background-color: transparent;
     font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 

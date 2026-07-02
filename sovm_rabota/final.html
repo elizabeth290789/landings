@@ -1,14 +1,6 @@
 <section class="b24-collab-final" aria-labelledby="b24-collab-final-title">
-  <span class="b24-collab-final__ambient b24-collab-final__ambient--cyan" aria-hidden="true"></span>
-  <span class="b24-collab-final__ambient b24-collab-final__ambient--violet" aria-hidden="true"></span>
-
   <div class="b24-collab-final__container">
     <div class="b24-collab-final__card">
-      <span class="b24-collab-final__star b24-collab-final__star--1" aria-hidden="true"></span>
-      <span class="b24-collab-final__star b24-collab-final__star--2" aria-hidden="true"></span>
-      <span class="b24-collab-final__star b24-collab-final__star--3" aria-hidden="true"></span>
-      <span class="b24-collab-final__star b24-collab-final__star--4" aria-hidden="true"></span>
-
       <div class="b24-collab-final__content">
         <div class="b24-collab-final__headline">
           <p class="b24-collab-final__number" aria-label="Более 15 миллионов">15 000 000+</p>
@@ -25,6 +17,7 @@
     </div>
   </div>
 </section>
+</section>
 
 <section class="b24-collab-free-info" aria-labelledby="b24-collab-free-info-title">
   <div class="b24-collab-free-info__container">
@@ -40,17 +33,16 @@
 
 <style>
   :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
-    --bg: #08265f !important;
+    --bg: transparent !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    background:
-      radial-gradient(circle at 28% 35%, rgba(34, 120, 255, 0.18) 0%, rgba(34, 120, 255, 0) 38%),
-      radial-gradient(circle at 78% 40%, rgba(83, 72, 255, 0.24) 0%, rgba(83, 72, 255, 0) 44%),
-      linear-gradient(135deg, #08265f 0%, #0b2f78 45%, #232579 100%) !important;
-    background-color: #08265f !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
+    border-top: 0 !important;
     box-shadow: none !important;
   }
 
@@ -58,6 +50,11 @@
   :where(.block-wrapper, .landing-block):has(.b24-collab-final)::after {
     content: none !important;
     display: none !important;
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    box-shadow: none !important;
   }
 
   .b24-collab-final {
@@ -69,12 +66,11 @@
     padding: 28px clamp(18px, 3vw, 32px) 52px;
     overflow: hidden;
     color: #ffffff;
-    background:
-      radial-gradient(circle at 28% 35%, rgba(34, 120, 255, 0.18) 0%, rgba(34, 120, 255, 0) 38%),
-      radial-gradient(circle at 78% 40%, rgba(83, 72, 255, 0.24) 0%, rgba(83, 72, 255, 0) 44%),
-      linear-gradient(135deg, #08265f 0%, #0b2f78 45%, #232579 100%) !important;
-    background-color: #08265f !important;
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
     border: 0 !important;
+    border-top: 0 !important;
     box-shadow: none !important;
   }
 
@@ -87,6 +83,11 @@
   .b24-collab-final::after {
     content: none;
     display: none;
+    background: transparent;
+    background-image: none;
+    border: 0;
+    border-top: 0;
+    box-shadow: none;
   }
 
   :where(.block-wrapper, .landing-block):has(.b24-collab-free-info) {
@@ -169,10 +170,6 @@
     border-radius: 3px;
   }
 
-  .b24-collab-final__ambient {
-    display: none;
-  }
-
   .b24-collab-final__container {
     width: min(100%, 1440px);
     min-height: inherit;
@@ -195,15 +192,8 @@
   }
 
   .b24-collab-final__card::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 8% 18% 0;
-    background:
-      radial-gradient(ellipse at 50% 34%, rgba(93, 237, 255, 0.14), transparent 46%),
-      radial-gradient(ellipse at 50% 72%, rgba(198, 255, 24, 0.07), transparent 48%);
-    filter: blur(12px);
-    pointer-events: none;
+    content: none;
+    display: none;
   }
 
   .b24-collab-final__content {
@@ -306,28 +296,6 @@
     outline-offset: 4px;
   }
 
-  .b24-collab-final__star {
-    position: absolute;
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #dffcff;
-    box-shadow: 0 0 6px #baf8ff, 0 0 15px rgba(96, 229, 255, 0.75);
-    animation: b24-collab-final-star 4.2s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .b24-collab-final__star--1 { top: 18%; left: 9%; }
-  .b24-collab-final__star--2 { top: 28%; right: 11%; width: 3px; height: 3px; animation-delay: 1.1s; }
-  .b24-collab-final__star--3 { bottom: 20%; left: 15%; width: 3px; height: 3px; animation-delay: 2.2s; }
-  .b24-collab-final__star--4 { right: 16%; bottom: 14%; animation-delay: 0.6s; }
-
-  @keyframes b24-collab-final-star {
-    0%, 100% { opacity: 0.25; transform: scale(0.75); }
-    50% { opacity: 0.9; transform: scale(1.2); }
-  }
-
   @media (max-width: 768px) {
     .b24-collab-free-info {
       padding: 24px 16px;
@@ -409,10 +377,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .b24-collab-final__star {
-      animation: none;
-    }
-
     .b24-collab-final__button {
       transition: none;
     }
