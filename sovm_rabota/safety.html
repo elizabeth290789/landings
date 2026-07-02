@@ -79,8 +79,27 @@
         <span class="b24-security__item-text">Мониторинг помогает быстрее замечать события и реагировать на угрозы.</span>
       </a>
     </div>
+
+    <div class="safety-final-cta" aria-labelledby="safety-final-cta-title">
+      <div class="safety-final-number" aria-label="Более 15 миллионов">15 000 000+</div>
+      <div class="safety-final-text" id="safety-final-cta-title">компаний уже зарегистрированы в Битрикс24</div>
+      <a class="safety-final-button" href="https://www.bitrix24.ru/create.php">Получить бесплатно</a>
+    </div>
     </div>
   </section>
+</section>
+
+<section class="b24-collab-free-info" aria-labelledby="b24-collab-free-info-title">
+  <div class="b24-collab-free-info__container">
+    <h2 class="b24-collab-free-info__title" id="b24-collab-free-info-title">
+      Битрикс24 можно использовать бесплатно
+    </h2>
+
+    <p class="b24-collab-free-info__text">
+      Некоторые функции и лимиты могут отличаться от платных тарифов. Подробности — на странице «<a class="b24-collab-free-info__link" href="https://www.bitrix24.ru/prices/">Цены</a>».
+    </p>
+  </div>
+</section>
 
 <style>
   /* Safety and final CTA sit on the same page-level canvas as the other landing sections. */
@@ -106,8 +125,7 @@
   }
 
   :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper),
-  :where(.block-wrapper, .landing-block):has(.b24-security),
-  :where(.block-wrapper, .landing-block):has(.b24-collab-final) {
+  :where(.block-wrapper, .landing-block):has(.b24-security) {
     --bg: transparent !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -124,9 +142,7 @@
   :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper)::before,
   :where(.block-wrapper, .landing-block):has(.b24-security-final-wrapper)::after,
   :where(.block-wrapper, .landing-block):has(.b24-security)::before,
-  :where(.block-wrapper, .landing-block):has(.b24-security)::after,
-  :where(.block-wrapper, .landing-block):has(.b24-collab-final)::before,
-  :where(.block-wrapper, .landing-block):has(.b24-collab-final)::after {
+  :where(.block-wrapper, .landing-block):has(.b24-security)::after {
     content: none !important;
     display: none !important;
     background: transparent !important;
@@ -146,7 +162,7 @@
     isolation: isolate;
     width: 100%;
     margin: 0;
-    padding: clamp(76px, 9vw, 128px) clamp(20px, 4vw, 56px);
+    padding: clamp(76px, 9vw, 128px) clamp(20px, 4vw, 56px) 0;
     overflow: hidden;
     color: #ffffff;
     background: transparent;
@@ -366,6 +382,167 @@
     text-wrap: balance;
   }
 
+
+
+  .safety-final-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 2vw, 24px);
+    width: 100%;
+    margin: clamp(100px, 9vw, 140px) auto 0;
+    padding: 0 0 clamp(90px, 8vw, 120px);
+    color: #ffffff;
+    text-align: center;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .safety-final-number {
+    margin: 0;
+    color: #58f3ff;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+    text-shadow:
+      0 0 24px rgba(88, 243, 255, 0.38),
+      0 0 54px rgba(25, 200, 255, 0.2);
+  }
+
+  .safety-final-text {
+    max-width: 920px;
+    margin: -4px auto 4px;
+    color: #ffffff;
+    font-size: clamp(30px, 3.4vw, 44px);
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: -0.04em;
+    opacity: 1;
+    text-wrap: balance;
+  }
+
+  .safety-final-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    min-height: 56px;
+    padding: 16px 36px;
+    color: #142100;
+    border: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #cfff18, #b8ff1a);
+    box-shadow:
+      0 0 22px rgba(190, 255, 40, 0.36),
+      0 14px 34px rgba(180, 255, 30, 0.22);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  }
+
+  .safety-final-button:hover {
+    color: #142100;
+    box-shadow:
+      0 0 30px rgba(200, 255, 60, 0.48),
+      0 18px 44px rgba(180, 255, 30, 0.28);
+    transform: translateY(-1px);
+  }
+
+  .safety-final-button:active {
+    color: #142100;
+    transform: translateY(0);
+  }
+
+  .safety-final-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-collab-free-info) {
+    --bg: #ffffff !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :where(.block-wrapper, .landing-block):has(.b24-collab-free-info)::before,
+  :where(.block-wrapper, .landing-block):has(.b24-collab-free-info)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .b24-collab-free-info {
+    width: 100%;
+    margin: 0;
+    padding: 28px clamp(18px, 3vw, 32px);
+    background: #ffffff !important;
+    color: rgb(38, 38, 38);
+    border: 0;
+    box-shadow: none;
+  }
+
+  .b24-collab-free-info,
+  .b24-collab-free-info * {
+    box-sizing: border-box;
+  }
+
+  .b24-collab-free-info__container {
+    width: min(100%, 1280px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .b24-collab-free-info__title {
+    margin: 0 0 12px;
+    color: rgb(38, 38, 38);
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .b24-collab-free-info__text {
+    margin: 0 auto;
+    color: rgb(38, 38, 38);
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .b24-collab-free-info__link {
+    color: #0b74ff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    transition: color 0.22s ease, text-decoration-color 0.22s ease;
+  }
+
+  .b24-collab-free-info__link:hover {
+    color: #005bd7;
+    text-decoration-color: rgba(0, 91, 215, 0.55);
+  }
+
+  .b24-collab-free-info__link:focus-visible {
+    outline: 2px solid #0b74ff;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
   @media (max-width: 1080px) {
     .b24-security__grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -375,7 +552,37 @@
 
   @media (max-width: 720px) {
     .b24-security {
-      padding: 64px 18px 72px;
+      padding: 64px 18px 0;
+    }
+
+    .safety-final-cta {
+      margin-top: 88px;
+      padding-bottom: 82px;
+    }
+
+    .safety-final-text {
+      font-size: clamp(28px, 7.2vw, 36px);
+    }
+
+    .safety-final-button {
+      width: min(100%, 380px);
+      min-width: 0;
+    }
+
+    .b24-collab-free-info {
+      padding: 24px 16px;
+    }
+
+    .b24-collab-free-info__title {
+      font-size: 21px;
+      line-height: 26px;
+      white-space: normal;
+    }
+
+    .b24-collab-free-info__text {
+      font-size: 15px;
+      line-height: 20px;
+      white-space: normal;
     }
 
     .b24-security__header {
@@ -411,6 +618,35 @@
 
     .b24-security__item-text {
       max-width: 280px;
+    }
+
+    .safety-final-cta {
+      margin-top: 78px;
+      padding-bottom: 76px;
+    }
+
+    .safety-final-number {
+      font-size: clamp(42px, 13.2vw, 56px);
+    }
+
+    .safety-final-text {
+      font-size: clamp(27px, 8.2vw, 34px);
+    }
+
+    .b24-collab-free-info {
+      padding: 22px 14px;
+    }
+
+    .b24-collab-free-info__title {
+      font-size: 19px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .safety-final-button {
+      transition: none;
     }
   }
 </style>
