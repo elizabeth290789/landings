@@ -1,6 +1,6 @@
 <section class="sovm-final2" aria-labelledby="sovm-final2-title">
   <div class="sovm-final2__container">
-    <div class="sovm-final2__number" aria-label="Более 15 миллионов">15 000 000+</div>
+    <div class="sovm-final2__number" aria-label="Более 15 миллионов"><span class="final-counter" data-target="15000000">15 000 000+</span></div>
     <div class="sovm-final2__text" id="sovm-final2-title">компаний уже зарегистрированы в Битрикс24</div>
     <a class="sovm-final2__button" href="https://www.bitrix24.ru/create.php?b24_type=social">Получить бесплатно</a>
   </div>
@@ -209,3 +209,90 @@
     }
   }
 </style>
+
+<script>
+  (function () {
+    var counter = document.querySelector('.final-counter');
+    var finalBlock = document.querySelector('.sovm-final2');
+
+    if (!counter || !finalBlock) {
+      return;
+    }
+
+    var target = Number(counter.dataset.target) || 15000000;
+    var start = 14700000;
+    var duration = 1500;
+    var hasAnimated = false;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function formatNumber(value) {
+      return Math.round(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    function setFinalValue() {
+      counter.textContent = formatNumber(target) + '+';
+    }
+
+    function easeInOutCubic(progress) {
+      return progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
+    function animateCounter() {
+      if (hasAnimated) {
+        return;
+      }
+
+      hasAnimated = true;
+
+      if (reduceMotion) {
+        setFinalValue();
+        return;
+      }
+
+      var startTime = null;
+      counter.textContent = formatNumber(start);
+
+      function tick(timestamp) {
+        if (!startTime) {
+          startTime = timestamp;
+        }
+
+        var elapsed = timestamp - startTime;
+        var progress = Math.min(elapsed / duration, 1);
+        var easedProgress = easeInOutCubic(progress);
+        var currentValue = start + (target - start) * easedProgress;
+
+        counter.textContent = formatNumber(currentValue);
+
+        if (progress < 1) {
+          window.requestAnimationFrame(tick);
+          return;
+        }
+
+        setFinalValue();
+      }
+
+      window.requestAnimationFrame(tick);
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      animateCounter();
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter();
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.35
+    });
+
+    observer.observe(finalBlock);
+  })();
+</script>
