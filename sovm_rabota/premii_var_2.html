@@ -76,12 +76,12 @@
           </svg>
         </a>
       </div>
+
+      <p class="b24-premium-award__note">
+        <span>ComNews Research (ООО «Медиа-Бизнес»), июнь 2026 г.</span>
+      </p>
     </div>
   </div>
-
-  <p class="b24-premium-award__note">
-    <span>ComNews Research (ООО «Медиа-Бизнес»), июнь 2026 г.</span>
-  </p>
 </section>
 
 <style>
@@ -584,22 +584,12 @@
   }
 
   .b24-premium-award__note {
-    display: grid;
-    grid-template-columns: minmax(300px, .78fr) minmax(0, 1.42fr);
-    gap: clamp(30px, 4vw, 58px);
-    width: 100%;
-    max-width: 1220px;
-    margin: -152px auto 0;
+    margin: clamp(28px, 3vw, 40px) 0 0;
     padding: 0;
     color: rgba(220, 230, 255, .62);
     font-size: 12px;
     line-height: 1.5;
     text-wrap: pretty;
-  }
-
-  .b24-premium-award__note span {
-    grid-column: 2;
-    padding-left: clamp(38px, 5.5vw, 78px);
   }
 
   @keyframes b24-premium-badge-aurora {
@@ -621,9 +611,6 @@
       grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
     }
 
-    .b24-premium-award__note {
-      grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
-    }
 
     .b24-premium-award__footer {
       align-items: flex-start;
@@ -650,14 +637,6 @@
       padding: 42px clamp(24px, 7vw, 48px) 46px;
     }
 
-    .b24-premium-award__note {
-      display: block;
-    }
-
-    .b24-premium-award__note span {
-      display: block;
-      padding-left: clamp(24px, 7vw, 48px);
-    }
   }
 
   @media (max-width: 520px) {
