@@ -5,41 +5,56 @@
   <div class="crm-tools-value__container">
     <div class="crm-tools-value__panel">
       <header class="crm-tools-value__header">
-        <p class="crm-tools-value__eyebrow">По данным исследования iKS-Consulting</p>
-        <h2 class="crm-tools-value__title" id="crm-tools-value-title">CRM — только часть Битрикс24</h2>
-        <p class="crm-tools-value__lead">Вместе с CRM вы получаете задачи, чаты и видеозвонки, сайты, автоматизацию и другие инструменты для работы бизнеса — в одной платформе.</p>
+        <p class="crm-tools-value__eyebrow">Исследование iKS-Consulting, 2026</p>
+        <h2 class="crm-tools-value__title" id="crm-tools-value-title">CRM и всё необходимое для работы бизнеса — в одном Битрикс24</h2>
+        <p class="crm-tools-value__lead">Не нужно отдельно покупать сервисы для продаж, задач, коммуникаций, сайтов и автоматизации.</p>
       </header>
 
       <div class="crm-tools-value__highlight">
         <p class="crm-tools-value__amount">До 2,75 млн ₽</p>
         <p class="crm-tools-value__amount-caption">разницы в стоимости за год</p>
-        <p class="crm-tools-value__explanation">Для компании до 100 сотрудников — между Битрикс24 и наиболее дорогой из рассмотренных связок отдельных сервисов в сценариях исследования.</p>
+        <p class="crm-tools-value__comparison-caption">между Битрикс24 и набором отдельных сервисов</p>
+        <p class="crm-tools-value__explanation">В сценарии исследования iKS-Consulting для компании до 100 сотрудников.</p>
       </div>
 
       <div class="crm-tools-value__comparison" aria-label="Сравнение годовой стоимости">
         <article class="crm-tools-value__card crm-tools-value__card--accent">
           <h3 class="crm-tools-value__card-title">Битрикс24</h3>
-          <p class="crm-tools-value__price">117 516 ₽ <span>в год</span></p>
+          <p class="crm-tools-value__price">117 516 ₽ в год</p>
           <p class="crm-tools-value__card-caption">Стоимость связки для компании до 100 сотрудников в сценарии исследования</p>
           <ul class="crm-tools-value__chips" aria-label="Инструменты Битрикс24">
             <li class="crm-tools-value__chip">CRM</li>
-            <li class="crm-tools-value__chip">Задачи и проекты</li>
+            <li class="crm-tools-value__chip">Задачи</li>
             <li class="crm-tools-value__chip">Чаты и видеозвонки</li>
             <li class="crm-tools-value__chip">Сайты</li>
             <li class="crm-tools-value__chip">Автоматизация</li>
+          </ul>
+          <ul class="crm-tools-value__features" aria-label="Преимущества Битрикс24">
+            <li>Одна платформа</li>
+            <li>Единый тариф</li>
+            <li>Инструменты работают вместе</li>
           </ul>
         </article>
 
         <article class="crm-tools-value__card crm-tools-value__card--plain">
           <h3 class="crm-tools-value__card-title">Набор отдельных сервисов</h3>
-          <p class="crm-tools-value__price">до 2 871 200 ₽ <span>в год</span></p>
+          <p class="crm-tools-value__price">до 2 871 200 ₽ в год</p>
           <p class="crm-tools-value__card-caption">Максимальная стоимость рассмотренной связки для компании того же размера</p>
+          <ul class="crm-tools-value__features" aria-label="Характеристики набора отдельных сервисов">
+            <li>Несколько поставщиков</li>
+            <li>Отдельные лицензии</li>
+            <li>Дополнительные интеграции</li>
+          </ul>
         </article>
       </div>
 
       <div class="crm-tools-value__action">
-        <p class="crm-tools-value__benefit">Меньше отдельных лицензий, интеграций и расходов на администрирование.</p>
-        <a class="crm-tools-value__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить Битрикс24 бесплатно</a>
+        <ul class="crm-tools-value__benefits" aria-label="Преимущества единой платформы">
+          <li>Меньше отдельных лицензий</li>
+          <li>Меньше интеграций</li>
+          <li>Проще администрирование</li>
+        </ul>
+        <a class="crm-tools-value__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Создать Битрикс24 бесплатно</a>
         <!-- TODO: добавить ссылку на исследование iKS-Consulting -->
       </div>
 
@@ -63,7 +78,7 @@
     isolation: isolate;
     width: 100%;
     overflow: hidden;
-    padding: clamp(110px, 9vw, 140px) clamp(16px, 4vw, 56px);
+    padding: clamp(100px, 8vw, 120px) clamp(20px, 4vw, 56px);
     color: #121426;
     background: #f4f6ff;
     font-family: 'Montserrat', sans-serif;
@@ -99,12 +114,8 @@
   }
 
   .crm-tools-value__panel {
-    padding: clamp(48px, 6vw, 78px);
-    overflow: hidden;
-    border: 1px solid rgba(82, 94, 158, 0.1);
-    border-radius: 32px;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 28px 80px rgba(42, 53, 112, 0.1);
+    width: 100%;
+    background: transparent;
   }
 
   .crm-tools-value__header,
@@ -115,7 +126,7 @@
     text-align: center;
   }
 
-  .crm-tools-value__header { max-width: 930px; }
+  .crm-tools-value__header { max-width: 1160px; }
 
   .crm-tools-value__eyebrow {
     display: inline-flex;
@@ -133,7 +144,7 @@
 
   .crm-tools-value__title {
     margin: 0;
-    font-size: clamp(36px, 4.1vw, 58px);
+    font-size: clamp(36px, 3.8vw, 54px);
     line-height: 1.08;
     font-weight: 500;
     letter-spacing: -0.035em;
@@ -170,11 +181,19 @@
     font-weight: 600;
   }
 
+  .crm-tools-value__comparison-caption {
+    margin: 9px 0 0;
+    color: #24283e;
+    font-size: clamp(17px, 1.55vw, 21px);
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
   .crm-tools-value__explanation {
     max-width: 760px;
     margin: 18px auto 0;
     color: #686f83;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
   }
 
@@ -187,15 +206,24 @@
 
   .crm-tools-value__card {
     min-width: 0;
-    min-height: 330px;
+    min-height: 430px;
     padding: clamp(30px, 3.2vw, 42px);
     border-radius: 28px;
+    display: flex;
+    flex-direction: column;
   }
 
   .crm-tools-value__card--accent {
     color: #fff;
     background: linear-gradient(135deg, #187be9 0%, #713adb 53%, #dc438f 100%);
     box-shadow: 0 22px 50px rgba(101, 66, 216, 0.25), 0 0 38px rgba(47, 128, 237, 0.12);
+  }
+
+  .crm-tools-value__card--accent .crm-tools-value__card-title,
+  .crm-tools-value__card--accent .crm-tools-value__price,
+  .crm-tools-value__card--accent .crm-tools-value__card-caption,
+  .crm-tools-value__card--accent .crm-tools-value__features {
+    color: #fff;
   }
 
   .crm-tools-value__card--plain {
@@ -217,12 +245,6 @@
     line-height: 1.12;
     font-weight: 700;
     letter-spacing: -0.04em;
-  }
-
-  .crm-tools-value__price span {
-    display: inline-block;
-    font-size: 0.52em;
-    letter-spacing: 0;
   }
 
   .crm-tools-value__card-caption {
@@ -247,9 +269,34 @@
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.13);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.25;
     font-weight: 600;
+  }
+
+  .crm-tools-value__features {
+    display: grid;
+    gap: 12px;
+    margin: auto 0 0;
+    padding: 28px 0 0;
+    list-style: none;
+    color: #565d73;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .crm-tools-value__features li {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .crm-tools-value__features li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '\2713';
+    opacity: 0.72;
   }
 
   .crm-tools-value__action {
@@ -257,11 +304,23 @@
     margin-top: clamp(40px, 4.2vw, 58px);
   }
 
-  .crm-tools-value__benefit {
+  .crm-tools-value__benefits {
+    display: flex;
+    justify-content: center;
+    gap: 18px 34px;
     margin: 0;
-    font-size: clamp(17px, 1.6vw, 21px);
-    line-height: 1.5;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.45;
     font-weight: 600;
+  }
+
+  .crm-tools-value__benefits li::before {
+    margin-right: 8px;
+    color: #a8d900;
+    content: '\2713';
+    font-weight: 700;
   }
 
   .crm-tools-value__cta {
@@ -277,11 +336,9 @@
     background: #caff16;
     box-shadow: 0 18px 36px rgba(202, 255, 22, 0.29), 0 10px 28px rgba(42, 53, 112, 0.14);
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.15;
     font-weight: 700;
-    letter-spacing: 0.018em;
     transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
   }
 
@@ -314,25 +371,23 @@
 
   @media (max-width: 1024px) {
     .crm-tools-value { padding-top: 96px; padding-bottom: 96px; }
-    .crm-tools-value__panel { padding: 52px 44px; }
     .crm-tools-value__comparison { grid-template-columns: 1fr; }
     .crm-tools-value__card { min-height: 0; }
   }
 
   @media (max-width: 767px) {
     .crm-tools-value { padding: 72px 14px; }
-    .crm-tools-value__panel { padding: 38px 20px; border-radius: 28px; }
     .crm-tools-value__eyebrow { margin-bottom: 18px; font-size: 11px; }
     .crm-tools-value__lead { margin-top: 18px; }
     .crm-tools-value__highlight { margin-top: 42px; }
     .crm-tools-value__card { padding: 28px 24px; border-radius: 24px; }
     .crm-tools-value__cta { width: calc(100% - 8px); }
+    .crm-tools-value__benefits { flex-direction: column; align-items: flex-start; width: max-content; max-width: 100%; margin-right: auto; margin-left: auto; }
     .crm-tools-value__footnote { margin-top: 40px; text-align: left; }
   }
 
   @media (max-width: 420px) {
     .crm-tools-value { padding-right: 10px; padding-left: 10px; }
-    .crm-tools-value__panel { padding-right: 16px; padding-left: 16px; }
     .crm-tools-value__price { font-size: 29px; }
     .crm-tools-value__amount { font-size: 48px; }
   }
