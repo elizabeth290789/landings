@@ -1,0 +1,80 @@
+<!-- ============================================
+     БЛОК 09 — ДИСКЛЕЙМЕР «БЕСПЛАТНО»
+     Префикс классов: b24tz-note-
+     Вставлять ПОСЛЕДНИМ блоком, после финального CTA.
+     ============================================ -->
+<style>
+.b24tz-note{
+    box-sizing:border-box;
+    padding:0 20px 40px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-note *{box-sizing:border-box;}
+
+.b24tz-note__panel{
+    max-width:1160px;
+    margin:0 auto;
+    padding:34px 44px;
+    border-radius:22px;
+    background:#f5faff;
+    text-align:center;
+}
+
+.b24tz-note__title{
+    margin:0 0 8px;
+    font-size:23px;
+    line-height:1.3;
+    font-weight:800;
+    letter-spacing:-.01em;
+    color:#111417;
+}
+.b24tz-note__text{
+    margin:0;
+    font-size:17px;
+    line-height:1.5;
+    color:#41505f;
+}
+.b24tz-note__text a{
+    color:#1e93fd;
+    text-decoration:underline;
+    text-underline-offset:2px;
+    transition:color .18s ease;
+}
+.b24tz-note__text a:hover{color:#0f7bfb;}
+.b24tz-note__text a:focus-visible{outline:2px solid #1e93fd;outline-offset:3px;border-radius:3px;}
+
+.b24tz-note__legal{
+    margin:22px 0 0;
+    font-size:12px;
+    line-height:1.4;
+    color:#9aa5b4;
+    text-align:center;
+}
+
+@media (max-width:1024px){
+    .b24tz-note__title{font-size:20px;}
+    .b24tz-note__text{font-size:16px;}
+}
+@media (max-width:640px){
+    .b24tz-note{padding:0 16px 32px;}
+    .b24tz-note__panel{padding:26px 22px;border-radius:18px;}
+    .b24tz-note__title{font-size:18px;}
+    .b24tz-note__text{font-size:15px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-note__text a{transition:none;}
+}
+</style>
+
+<section class="b24tz-note">
+  <div class="b24tz-note__panel">
+    <h2 class="b24tz-note__title">Битрикс24 можно использовать бесплатно</h2>
+    <p class="b24tz-note__text">
+      Некоторые функции и лимиты могут отличаться от платных тарифов.
+      Подробности — на странице <a href="https://www.bitrix24.ru/prices/">«Цены»</a>.
+    </p>
+  </div>
+
+  <p class="b24tz-note__legal">Реклама. ООО «1С-Битрикс» ИНН 7717586110</p>
+</section>
