@@ -1,0 +1,276 @@
+<!-- ============================================
+     БЛОК 03 — ЧТО МОЖНО АВТОМАТИЗИРОВАТЬ В ЗАДАЧАХ
+     Префикс классов: b24tz-auto-
+     Фон секции: синий градиент
+     Заменяет прежние файлы 03a / 03b / 03c
+     ============================================ -->
+<style>
+.b24tz-auto{
+    box-sizing:border-box;
+    max-width:1560px;
+    margin:0 auto;
+    padding:92px 46px 100px;
+    background:linear-gradient(180deg,#0f7bfb 0%,#1e8dfd 48%,#79c2fe 84%,#cfe9ff 100%);
+    border-radius:44px;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-auto *{box-sizing:border-box;}
+.b24tz-auto__inner{max-width:1200px;margin:0 auto;}
+
+.b24tz-auto__title{
+    margin:0 0 16px;
+    font-size:40px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#fff;
+    text-align:center;
+}
+.b24tz-auto__sub{
+    max-width:700px;
+    margin:0 auto 56px;
+    font-size:18px;
+    line-height:1.5;
+    color:rgba(255,255,255,.9);
+    text-align:center;
+}
+
+.b24tz-auto__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:34px 30px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+/* ---- Карточка-«лепесток» ---- */
+.b24tz-auto__card{
+    position:relative;
+    padding:34px 34px 52px;
+    background:#fff;
+    border-radius:46px 46px 46px 46px / 40px 40px 40px 40px;
+    box-shadow:0 12px 34px rgba(4,60,130,.16);
+    transition:transform .22s ease, box-shadow .22s ease;
+}
+.b24tz-auto__card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 46px rgba(4,60,130,.24);
+}
+
+.b24tz-auto__card-title{
+    margin:0 0 14px;
+    font-size:21px;
+    line-height:1.25;
+    font-weight:800;
+    letter-spacing:-.01em;
+    color:#111417;
+}
+.b24tz-auto__list{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.b24tz-auto__list li{
+    position:relative;
+    padding-left:16px;
+    margin-bottom:9px;
+    font-size:16px;
+    line-height:1.5;
+    color:#41505f;
+}
+.b24tz-auto__list li:last-child{margin-bottom:0;}
+.b24tz-auto__list li::before{
+    content:"";
+    position:absolute;
+    left:0;top:10px;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:#2a5cf5;
+    opacity:.5;
+}
+
+/* ---- Лаймовый шестиугольник ---- */
+.b24tz-auto__mark{
+    position:absolute;
+    right:26px;
+    bottom:-22px;
+    width:62px;
+    height:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#c5f048;
+    clip-path:polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0% 50%);
+    transition:transform .22s ease;
+}
+.b24tz-auto__card:hover .b24tz-auto__mark{transform:scale(1.08) rotate(-6deg);}
+.b24tz-auto__mark svg{width:26px;height:26px;display:block;}
+
+/* ---- Демонстрация интерфейса ---- */
+.b24tz-auto__shot{
+    max-width:1040px;
+    margin:56px auto 0;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 54px rgba(2,60,120,.28);
+}
+.b24tz-auto__shot img{display:block;width:100%;height:auto;}
+.b24tz-auto__caption{
+    margin:16px auto 0;
+    max-width:760px;
+    font-size:15px;
+    line-height:1.45;
+    color:rgba(255,255,255,.88);
+    text-align:center;
+}
+
+/* ---- Кнопка под сеткой ---- */
+.b24tz-auto__cta-wrap{margin-top:52px;text-align:center;}
+.b24tz-auto__cta{
+    display:inline-block;
+    padding:20px 50px;
+    border-radius:16px;
+    background:#c5f048;
+    color:#111417 !important;
+    font-size:18px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    box-shadow:0 10px 28px rgba(2,60,120,.18);
+    transition:background .18s ease, transform .18s ease;
+}
+.b24tz-auto__cta.b24tz-auto__cta:hover,.b24tz-auto__cta:hover{background:#d3fa5f;transform:translateY(-2px);text-decoration:none;color:#111417 !important;}
+.b24tz-auto__cta:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+@media (max-width:1024px){
+    .b24tz-auto__title{font-size:31px;}
+    .b24tz-auto__grid{grid-template-columns:repeat(2,1fr);gap:30px 24px;}
+    .b24tz-auto__card{padding:30px 28px 48px;}
+}
+@media (max-width:640px){
+    .b24tz-auto{padding:56px 18px 64px;border-radius:28px;}
+    .b24tz-auto__title{font-size:24px;}
+    .b24tz-auto__sub{font-size:16px;margin-bottom:34px;}
+    .b24tz-auto__grid{grid-template-columns:1fr;gap:28px;}
+    .b24tz-auto__card{
+        padding:26px 24px 44px;
+        border-radius:34px 34px 34px 34px / 30px 30px 30px 30px;
+    }
+    .b24tz-auto__card-title{font-size:19px;}
+    .b24tz-auto__mark{width:54px;height:48px;right:20px;bottom:-19px;}
+    .b24tz-auto__shot{margin-top:36px;border-radius:14px;}
+    .b24tz-auto__caption{font-size:14px;}
+    .b24tz-auto__cta-wrap{margin-top:32px;}
+    .b24tz-auto__cta{display:block;padding:18px 24px;font-size:17px;}
+    .b24tz-auto__mark svg{width:23px;height:23px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-auto__card,.b24tz-auto__mark,.b24tz-auto__cta{transition:none;}
+    .b24tz-auto__cta:hover{transform:none;}
+    .b24tz-auto__card:hover{transform:none;}
+    .b24tz-auto__card:hover .b24tz-auto__mark{transform:none;}
+}
+</style>
+
+<section class="b24tz-auto">
+  <div class="b24tz-auto__inner">
+
+    <h2 class="b24tz-auto__title">Что можно автоматизировать<br>в задачах</h2>
+    <p class="b24tz-auto__sub">
+      Шесть сценариев, которые закрывают большую часть рутины в любой команде.
+    </p>
+
+    <ul class="b24tz-auto__grid">
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Автоматическая постановка задач</h3>
+        <ul class="b24tz-auto__list">
+          <li>Новая заявка → задача менеджеру</li>
+          <li>Новый сотрудник → чек-лист на онбординг</li>
+          <li>Новый договор → задачи юристу и бухгалтерии</li>
+          <li>Смена этапа сделки → задача следующему исполнителю</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Напоминания и контроль сроков</h3>
+        <ul class="b24tz-auto__list">
+          <li>Напоминание сотруднику за день до дедлайна</li>
+          <li>Уведомление руководителю при просрочке</li>
+          <li>Эскалация задачи, если она не взята в работу</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Шаблоны и чек-листы</h3>
+        <ul class="b24tz-auto__list">
+          <li>Типовые задачи с готовым описанием и сроками</li>
+          <li>Повторяющиеся процессы без ручного ввода</li>
+          <li>Единый стандарт работы для всей команды</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Задачи между отделами</h3>
+        <ul class="b24tz-auto__list">
+          <li>Продажи → бухгалтерия → логистика</li>
+          <li>Маркетинг → дизайнер → руководитель</li>
+          <li>HR → IT → руководитель подразделения</li>
+          <li>Система сама передаёт задачу дальше по цепочке</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Цикличные и регулярные задачи</h3>
+        <ul class="b24tz-auto__list">
+          <li>Ежемесячные отчёты</li>
+          <li>Регулярные проверки</li>
+          <li>Повторные продажи и сервис</li>
+          <li>Плановые работы и обслуживание</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+      <li class="b24tz-auto__card">
+        <h3 class="b24tz-auto__card-title">Аналитика и KPI</h3>
+        <ul class="b24tz-auto__list">
+          <li>Кто и как выполняет задачи</li>
+          <li>Где возникают задержки</li>
+          <li>Реальная загрузка сотрудников</li>
+          <li>Выполнение задач по срокам и приоритетам</li>
+        </ul>
+        <span class="b24tz-auto__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+        </span>
+      </li>
+
+    </ul>
+
+    <div class="b24tz-auto__shot">
+      <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/1.1900w.png.webp?1784204064972" alt="Роботы и триггеры: настройка автоправил в Битрикс24" loading="lazy">
+    </div>
+    <p class="b24tz-auto__caption">
+      Правила настраиваются мышкой — без программистов и внешних сервисов
+    </p>
+
+    <div class="b24tz-auto__cta-wrap">
+      <a class="b24tz-auto__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&b24_type=tasks">Попробовать бесплатно</a>
+    </div>
+
+  </div>
+</section>
