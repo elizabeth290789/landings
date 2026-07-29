@@ -1,0 +1,212 @@
+<!-- ============================================
+     БЛОК 02 — ПОЧЕМУ ЗАДАЧИ «НЕ РАБОТАЮТ» БЕЗ АВТОМАТИЗАЦИИ
+     Префикс классов: b24tz-pain-
+     Фон секции: #ffffff, панель: #eaf4ff
+     ============================================ -->
+<style>
+.b24tz-pain{
+    box-sizing:border-box;
+    padding:92px 20px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24tz-pain *{box-sizing:border-box;}
+.b24tz-pain__inner{max-width:1200px;margin:0 auto;}
+
+.b24tz-pain__title{
+    margin:0 0 16px;
+    font-size:40px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    text-align:center;
+}
+.b24tz-pain__sub{
+    max-width:700px;
+    margin:0 auto 46px;
+    font-size:18px;
+    line-height:1.5;
+    color:#5a6473;
+    text-align:center;
+}
+
+/* ---- Панель ---- */
+.b24tz-pain__panel{
+    padding:60px 56px;
+    border-radius:28px;
+    background:#eaf4ff;
+}
+.b24tz-pain__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:52px 44px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.b24tz-pain__item{margin:0;}
+
+/* ---- Иконка-«лепесток» ---- */
+.b24tz-pain__ico{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:76px;
+    height:76px;
+    margin-bottom:26px;
+    background:linear-gradient(145deg,#ff8566 0%,#ec5a43 100%);
+    border-radius:34% 66% 34% 66% / 66% 34% 66% 34%;
+    box-shadow:0 10px 24px rgba(236,90,67,.26);
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+.b24tz-pain__ico svg{width:34px;height:34px;display:block;}
+.b24tz-pain__item:hover .b24tz-pain__ico{
+    transform:translateY(-4px) rotate(-6deg);
+    box-shadow:0 16px 32px rgba(236,90,67,.34);
+}
+
+.b24tz-pain__item-title{
+    margin:0 0 12px;
+    font-size:21px;
+    line-height:1.25;
+    font-weight:800;
+    letter-spacing:-.01em;
+    color:#111417;
+}
+.b24tz-pain__item-text{
+    margin:0;
+    font-size:16px;
+    line-height:1.55;
+    color:#41505f;
+}
+
+/* ---- Вывод ---- */
+.b24tz-pain__note{
+    max-width:900px;
+    margin:44px auto 0;
+    font-size:20px;
+    line-height:1.45;
+    font-weight:700;
+    text-align:center;
+    color:#111417;
+}
+.b24tz-pain__note b{color:#2a5cf5;font-weight:800;}
+
+@media (max-width:1024px){
+    .b24tz-pain__title{font-size:31px;}
+    .b24tz-pain__panel{padding:48px 36px;}
+    .b24tz-pain__grid{grid-template-columns:repeat(2,1fr);gap:44px 32px;}
+}
+@media (max-width:640px){
+    .b24tz-pain{padding:56px 16px;}
+    .b24tz-pain__title{font-size:24px;}
+    .b24tz-pain__sub{font-size:16px;margin-bottom:30px;}
+    .b24tz-pain__panel{padding:34px 22px;border-radius:22px;}
+    .b24tz-pain__grid{grid-template-columns:1fr;gap:34px;}
+    .b24tz-pain__ico{width:64px;height:64px;margin-bottom:18px;}
+    .b24tz-pain__ico svg{width:29px;height:29px;}
+    .b24tz-pain__item-title{font-size:19px;}
+    .b24tz-pain__note{font-size:17px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-pain__ico{transition:none;}
+    .b24tz-pain__item:hover .b24tz-pain__ico{transform:none;}
+}
+</style>
+
+<section class="b24tz-pain">
+  <div class="b24tz-pain__inner">
+
+    <h2 class="b24tz-pain__title">Почему задачи «не работают»<br>без автоматизации</h2>
+    <p class="b24tz-pain__sub">
+      Знакомая картина: инструмент вроде есть, а работа всё равно держится
+      на памяти сотрудников.
+    </p>
+
+    <div class="b24tz-pain__panel">
+      <ul class="b24tz-pain__grid">
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Ставятся вручную</h3>
+          <p class="b24tz-pain__item-text">
+            Задачи заводят руками — а значит, часть из них просто забывают завести.
+          </p>
+        </li>
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Сроки без контроля</h3>
+          <p class="b24tz-pain__item-text">
+            Нет напоминаний о дедлайнах, о просрочке узнают уже по факту.
+          </p>
+        </li>
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.3 4.3 2 19h20L13.7 4.3a2 2 0 0 0-3.4 0Z"/><path d="M12 10v4"/><path d="M12 17.5h.01"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Руководитель узнаёт поздно</h3>
+          <p class="b24tz-pain__item-text">
+            Проблема всплывает, когда сроки уже сорваны и клиент недоволен.
+          </p>
+        </li>
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/><path d="M8 11h8M8 15h4"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Живут в мессенджерах</h3>
+          <p class="b24tz-pain__item-text">
+            Договорённости разбросаны по чатам, почте и голове сотрудников.
+          </p>
+        </li>
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 20V10"/><path d="M9 20V4"/><path d="M15 20v-7"/><path d="M21 20v-11"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Загрузка непрозрачна</h3>
+          <p class="b24tz-pain__item-text">
+            Сложно понять, кто перегружен, а у кого есть свободные руки.
+          </p>
+        </li>
+
+        <li class="b24tz-pain__item">
+          <div class="b24tz-pain__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/>
+              <path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-pain__item-title">Процессы каждый раз заново</h3>
+          <p class="b24tz-pain__item-text">
+            Одни и те же цепочки шагов собирают с нуля вместо готового шаблона.
+          </p>
+        </li>
+
+      </ul>
+    </div>
+
+    <p class="b24tz-pain__note">
+      Автоматизация убирает ручной ввод: <b>задача создаётся сама</b>, уходит нужному
+      человеку и контролируется до результата.
+    </p>
+
+  </div>
+</section>
