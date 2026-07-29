@@ -1,0 +1,108 @@
+<!-- ============================================
+     БЛОК 08 — ФИНАЛЬНЫЙ CTA (15 000 000 компаний)
+     Префикс классов: b24tz-cta-
+     Фон секции: #ffffff, панель: синий градиент
+     ============================================ -->
+<style>
+.b24tz-cta{
+    box-sizing:border-box;
+    padding:96px 20px 44px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-cta *{box-sizing:border-box;}
+
+.b24tz-cta__panel{
+    position:relative;
+    max-width:1160px;
+    margin:0 auto;
+    padding:82px 56px;
+    border-radius:32px;
+    background:linear-gradient(140deg,#0f7bfb 0%,#1e93fd 52%,#3fa9fe 100%);
+    box-shadow:0 20px 52px rgba(15,123,251,.24);
+    overflow:hidden;
+    text-align:center;
+}
+
+/* мягкие световые пятна на панели */
+.b24tz-cta__panel::before,
+.b24tz-cta__panel::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+}
+.b24tz-cta__panel::before{
+    width:340px;height:340px;
+    top:-140px;right:-90px;
+    background:radial-gradient(circle,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 70%);
+}
+.b24tz-cta__panel::after{
+    width:300px;height:300px;
+    bottom:-130px;left:-70px;
+    background:radial-gradient(circle,rgba(255,255,255,.2) 0%,rgba(255,255,255,0) 70%);
+}
+
+.b24tz-cta__inner{position:relative;z-index:1;}
+
+.b24tz-cta__num{
+    display:block;
+    margin:0 0 10px;
+    font-size:58px;
+    line-height:1;
+    font-weight:800;
+    letter-spacing:-.03em;
+    color:#c5f048;
+}
+.b24tz-cta__title{
+    max-width:760px;
+    margin:0 auto 38px;
+    font-size:31px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#fff;
+}
+.b24tz-cta__btn{
+    display:inline-block;
+    padding:22px 56px;
+    border-radius:16px;
+    background:#c5f048;
+    color:#111417 !important;
+    font-size:19px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    box-shadow:0 12px 32px rgba(2,60,120,.22);
+    transition:background .18s ease, transform .18s ease;
+}
+.b24tz-cta__btn.b24tz-cta__btn:hover,.b24tz-cta__btn:hover{background:#d3fa5f;transform:translateY(-2px);text-decoration:none;color:#111417 !important;}
+.b24tz-cta__btn:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+@media (max-width:1024px){
+    .b24tz-cta__panel{padding:64px 40px;}
+    .b24tz-cta__num{font-size:50px;}
+    .b24tz-cta__title{font-size:27px;}
+}
+@media (max-width:640px){
+    .b24tz-cta{padding:56px 16px 30px;}
+    .b24tz-cta__panel{padding:44px 24px;border-radius:24px;}
+    .b24tz-cta__num{font-size:36px;}
+    .b24tz-cta__title{font-size:21px;margin-bottom:28px;}
+    .b24tz-cta__btn{display:block;padding:18px 24px;font-size:17px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-cta__btn{transition:none;}
+    .b24tz-cta__btn:hover{transform:none;}
+}
+</style>
+
+<section class="b24tz-cta">
+  <div class="b24tz-cta__panel">
+    <div class="b24tz-cta__inner">
+      <span class="b24tz-cta__num">15 000 000</span>
+      <h2 class="b24tz-cta__title">компаний уже работают в Битрикс24</h2>
+      <a class="b24tz-cta__btn" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&b24_type=tasks">Попробовать бесплатно</a>
+    </div>
+  </div>
+</section>
