@@ -1,0 +1,204 @@
+<!-- ============================================
+     БЛОК 07 — БИТРИКС24 ЦЕЛИКОМ + ФИНАЛЬНЫЙ CTA
+     Префикс классов: b24tz-eco-
+     Фон секции: синий #0f9bfd + фоновая картинка с 3D-фигурами
+     ============================================ -->
+<style>
+.b24tz-eco{
+    position:relative;
+    box-sizing:border-box;
+    padding:120px 20px 130px;
+    min-height:700px;
+    display:flex;
+    align-items:center;
+    background-color:#0f9bfd;
+    border-radius:0 0 44px 44px;
+    overflow:hidden;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-eco *{box-sizing:border-box;}
+
+/* фоновый слой: выходит за края секции, чтобы скруглённые углы картинки не попадали в кадр */
+.b24tz-eco::before{
+    content:"";
+    position:absolute;
+    top:-3%;
+    left:-3%;
+    width:106%;
+    height:106%;
+    background-image:url('https://www.bitrix24.ru/upload/landing/44f/czug8mf4ud7zi6pz0vlvsx58stgbvgs8.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:0;
+    pointer-events:none;
+}
+.b24tz-eco__inner{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;}
+
+/* ---- Плавающие иконки ---- */
+.b24tz-eco__float{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+.b24tz-eco__ic{
+    position:absolute;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:124px;
+    height:124px;
+    border-radius:36px;
+    box-shadow:0 16px 40px rgba(2,60,120,.24);
+}
+.b24tz-eco__ic svg{width:60px;height:60px;display:block;}
+
+.b24tz-eco__ic--1{top:6%;  left:10%; background:#ff3d9a;}
+.b24tz-eco__ic--2{top:38%; left:3%;  background:#ffd452;}
+.b24tz-eco__ic--3{top:71%; left:13%; background:#12141a;}
+.b24tz-eco__ic--4{top:7%;  right:11%;background:#ff9a2b;}
+.b24tz-eco__ic--5{top:40%; right:3%; background:#f5333f;}
+.b24tz-eco__ic--6{top:72%; right:12%;background:#5b34f0;}
+
+/* ---- Текст ---- */
+.b24tz-eco__title{
+    margin:0 0 22px;
+    font-size:44px;
+    line-height:1.14;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#fff;
+}
+.b24tz-eco__sub{
+    max-width:600px;
+    margin:0 auto 40px;
+    font-size:21px;
+    line-height:1.4;
+    color:rgba(255,255,255,.94);
+}
+
+/* ---- Пилюли сервисов ---- */
+.b24tz-eco__tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    max-width:760px;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
+}
+.b24tz-eco__tag{
+    padding:11px 24px;
+    border-radius:100px;
+    border:1px solid rgba(255,255,255,.4);
+    background:linear-gradient(180deg,rgba(255,255,255,.26) 0%,rgba(255,255,255,.11) 100%);
+    color:#fff;
+    font-size:15px;
+    line-height:1.2;
+    font-weight:600;
+    text-shadow:0 1px 2px rgba(2,60,130,.2);
+    backdrop-filter:blur(8px) saturate(140%);
+    -webkit-backdrop-filter:blur(8px) saturate(140%);
+    box-shadow:0 4px 14px rgba(2,60,130,.16), inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .18s ease, background .18s ease;
+}
+.b24tz-eco__tag:hover{
+    background:linear-gradient(180deg,rgba(255,255,255,.4) 0%,rgba(255,255,255,.18) 100%);
+    transform:translateY(-2px);
+}
+
+
+@media (max-width:1200px){
+    .b24tz-eco__ic{width:98px;height:98px;border-radius:30px;}
+    .b24tz-eco__ic svg{width:48px;height:48px;}
+    .b24tz-eco__ic--1{left:4%;}
+    .b24tz-eco__ic--2{left:1%;}
+    .b24tz-eco__ic--3{left:6%;}
+    .b24tz-eco__ic--4{right:4%;}
+    .b24tz-eco__ic--5{right:1%;}
+    .b24tz-eco__ic--6{right:6%;}
+}
+@media (max-width:1024px){
+    .b24tz-eco__title,}
+@media (max-width:900px){
+    .b24tz-eco__float{display:none;}
+}
+@media (max-width:640px){
+    .b24tz-eco{padding:58px 16px 66px;min-height:0;border-radius:0 0 28px 28px;}
+        .b24tz-eco__title,    .b24tz-eco__sub{font-size:16px;margin-bottom:26px;}
+    .b24tz-eco__tags{gap:9px;}
+    .b24tz-eco__tag{font-size:13px;padding:9px 17px;}
+    }
+@media (prefers-reduced-motion:reduce){
+    .b24tz-eco__tag,    .b24tz-eco__tag:hover,}
+</style>
+
+<section class="b24tz-eco">
+
+  <div class="b24tz-eco__float" aria-hidden="true">
+    <!-- Магазин -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 3h2.2l2.3 12.2a1.8 1.8 0 0 0 1.8 1.4h8.6a1.8 1.8 0 0 0 1.8-1.4L20.5 7H5.2"/>
+        <circle cx="9.5" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/>
+      </svg>
+    </span>
+    <!-- Видеозвонки -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#12141a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="6" width="13" height="12" rx="3"/>
+        <path d="m15.5 11 6-3.2v8.4l-6-3.2Z"/>
+      </svg>
+    </span>
+    <!-- AI -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 18 8.5 6l4.5 12"/><path d="M5.6 14h5.8"/><path d="M17.5 6v12"/>
+      </svg>
+    </span>
+    <!-- Фильтр/воронка -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 5h18l-7 8v6l-4 2v-8Z"/>
+      </svg>
+    </span>
+    <!-- Настройки -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--5">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/>
+      </svg>
+    </span>
+    <!-- Команда -->
+    <span class="b24tz-eco__ic b24tz-eco__ic--6">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 20v-1.8a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.2V20"/>
+        <circle cx="9" cy="8" r="3.4"/>
+        <path d="M21 20v-1.8a3.6 3.6 0 0 0-2.7-3.5"/>
+        <path d="M16.4 4.7a3.6 3.6 0 0 1 0 6.8"/>
+      </svg>
+    </span>
+  </div>
+
+  <div class="b24tz-eco__inner">
+
+    <h2 class="b24tz-eco__title">Вместо десятка сервисов для<br>бизнеса — одно решение<br>Битрикс24</h2>
+    <p class="b24tz-eco__sub">
+      Битрикс24 — это полноценное рабочее место, где есть всё необходимое
+    </p>
+
+    <ul class="b24tz-eco__tags">
+      <li class="b24tz-eco__tag">Задачи и проекты</li>
+      <li class="b24tz-eco__tag">Совместная работа</li>
+      <li class="b24tz-eco__tag">Доски</li>
+      <li class="b24tz-eco__tag">CRM</li>
+      <li class="b24tz-eco__tag">Мессенджер</li>
+      <li class="b24tz-eco__tag">Автоматизация</li>
+      <li class="b24tz-eco__tag">Искусственный интеллект</li>
+      <li class="b24tz-eco__tag">Сайты и Магазины</li>
+    </ul>
+
+  </div>
+</section>
