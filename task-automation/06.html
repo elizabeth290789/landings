@@ -1,0 +1,118 @@
+<!-- ============================================
+     БЛОК 06 — БИТРИКС24 ТАСК-ТРЕКЕР №1 (рейтинг CNews)
+     Префикс классов: b24tz-rate-
+     Фон секции: #ffffff, панель: #f2f7ff
+     Место на странице: после блока «Внедрение», перед экосистемой
+     ============================================ -->
+<style>
+.b24tz-rate{
+    box-sizing:border-box;
+    padding:56px 20px 72px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-rate *{box-sizing:border-box;}
+
+.b24tz-rate__panel{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,0.78fr);
+    align-items:center;
+    gap:20px;
+    max-width:1080px;
+    margin:0 auto;
+    padding:44px 0 44px 52px;
+    border-radius:26px;
+    background:#f2f7ff;
+    overflow:hidden;
+}
+
+.b24tz-rate__title{
+    margin:0 0 16px;
+    font-size:29px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#111417;
+}
+.b24tz-rate__text{
+    max-width:520px;
+    margin:0 0 26px;
+    font-size:16px;
+    line-height:1.55;
+    color:#41505f;
+}
+.b24tz-rate__btn{
+    display:inline-block;
+    padding:16px 36px;
+    border-radius:14px;
+    background:#1e93fd;
+    color:#fff !important;
+    font-size:16px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    box-shadow:0 10px 26px rgba(30,147,253,.28);
+    transition:background .18s ease, transform .18s ease;
+}
+.b24tz-rate__btn.b24tz-rate__btn:hover,.b24tz-rate__btn:hover{background:#0f7bfb;transform:translateY(-2px);text-decoration:none;color:#fff !important;}
+.b24tz-rate__btn:focus-visible{outline:3px solid #111417;outline-offset:3px;}
+
+.b24tz-rate__media{align-self:stretch;display:flex;align-items:center;}
+.b24tz-rate__media img{
+    display:block;
+    width:100%;
+    height:auto;
+    transform:scale(1.06);
+    transform-origin:center left;
+}
+
+@media (max-width:1024px){
+    .b24tz-rate__panel{padding:36px 0 36px 34px;gap:14px;}
+    .b24tz-rate__title{font-size:26px;}
+    .b24tz-rate__text{font-size:15px;margin-bottom:22px;}
+}
+@media (max-width:860px){
+    .b24tz-rate__panel{
+        grid-template-columns:1fr;
+        padding:36px 28px 0;
+        gap:24px;
+        text-align:center;
+    }
+    .b24tz-rate__text{margin-left:auto;margin-right:auto;}
+    .b24tz-rate__media img{transform:none;}
+}
+@media (max-width:640px){
+    .b24tz-rate{padding:34px 16px 48px;}
+    .b24tz-rate__panel{padding:28px 20px 0;border-radius:20px;}
+    .b24tz-rate__title{font-size:22px;}
+    .b24tz-rate__text{font-size:16px;}
+    .b24tz-rate__btn{display:block;padding:17px 24px;font-size:16px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-rate__btn{transition:none;}
+    .b24tz-rate__btn:hover{transform:none;}
+}
+</style>
+
+<section class="b24tz-rate">
+  <div class="b24tz-rate__panel">
+
+    <div class="b24tz-rate__text-col">
+      <h2 class="b24tz-rate__title">Битрикс24 — таск-трекер №1</h2>
+      <p class="b24tz-rate__text">
+        В рейтинге российских систем управления задачами, опубликованном CNewsMarket.
+        Участники оценивались по более чем 70 параметрам, включая функциональность,
+        архитектурные особенности, интеграции и качество технической поддержки.
+      </p>
+      <a class="b24tz-rate__btn"
+         href="https://www.cnews.ru/reviews/preview_articles/578193689e0ce828672"
+         target="_blank" rel="noopener">Читать подробнее</a>
+    </div>
+
+    <div class="b24tz-rate__media">
+      <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/rk/fc1/8n4z7kjs32y8v1jnbduesmyj5mqq40so.1216w.png.webp?1784204064972"
+           alt="Битрикс24 — таск-трекер №1 по версии CNewsMarket" loading="lazy">
+    </div>
+
+  </div>
+</section>
