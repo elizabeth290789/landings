@@ -1,0 +1,199 @@
+<!-- ============================================
+     БЛОК 00 — ВЕРХНЕЕ ЗАКРЕПЛЁННОЕ МЕНЮ
+     Префикс классов: b24tz-nav-
+     Вставлять ПЕРВЫМ блоком на странице, перед hero.
+     Ссылки пунктов — заглушки, заменить на якоря блоков.
+     ============================================ -->
+<style>
+.b24tz-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:9999;
+    box-sizing:border-box;
+    padding:14px 28px;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    box-shadow:0 2px 18px rgba(4,60,130,.09);
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24tz-nav *{box-sizing:border-box;}
+
+.b24tz-nav__inner{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    max-width:1400px;
+    margin:0 auto;
+}
+
+/* ---- Логотип ---- */
+.b24tz-nav__logo{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    text-decoration:none;
+}
+.b24tz-nav__logo img{
+    height:28px;
+    width:auto;
+    display:block;
+}
+
+/* ---- Пункты ---- */
+.b24tz-nav__list{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin:0 0 0 auto;
+    padding:0;
+    list-style:none;
+}
+.b24tz-nav__link{
+    display:inline-block;
+    padding:6px 0;
+    color:#2f3742;
+    font-size:15px;
+    font-weight:600;
+    line-height:1.2;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:color .18s ease;
+}
+.b24tz-nav__link.b24tz-nav__link:hover,.b24tz-nav__link:hover{color:#1e93fd;text-decoration:none;}
+.b24tz-nav__link:focus-visible{outline:2px solid #1e93fd;outline-offset:3px;border-radius:3px;}
+
+/* ---- Кнопка ---- */
+.b24tz-nav__cta{
+    flex:0 0 auto;
+    display:inline-block;
+    padding:13px 28px;
+    border-radius:12px;
+    background:#c5f048;
+    color:#111417 !important;
+    font-size:15px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    white-space:nowrap;
+    box-shadow:0 6px 16px rgba(4,60,130,.12);
+    transition:background .18s ease, transform .18s ease;
+}
+.b24tz-nav__cta.b24tz-nav__cta:hover,.b24tz-nav__cta:hover{background:#d3fa5f;transform:translateY(-1px);text-decoration:none;color:#111417 !important;}
+.b24tz-nav__cta:focus-visible{outline:3px solid #111417;outline-offset:3px;}
+
+/* ---- Бургер ---- */
+.b24tz-nav__burger{
+    display:none;
+    flex:0 0 auto;
+    width:42px;
+    height:42px;
+    margin-left:auto;
+    padding:0;
+    border:none;
+    border-radius:11px;
+    background:#f0f5fc;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+}
+.b24tz-nav__burger span{
+    position:relative;
+    display:block;
+    width:19px;
+    height:2px;
+    border-radius:2px;
+    background:#111417;
+}
+.b24tz-nav__burger span::before,
+.b24tz-nav__burger span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    width:19px;
+    height:2px;
+    border-radius:2px;
+    background:#111417;
+}
+.b24tz-nav__burger span::before{top:-6px;}
+.b24tz-nav__burger span::after{top:6px;}
+
+/* Раскрытие меню на мобильных — чистый CSS, без JS */
+.b24tz-nav__toggle{position:absolute;width:0;height:0;opacity:0;pointer-events:none;}
+
+@media (max-width:1100px){
+    .b24tz-nav__list{gap:20px;}
+    .b24tz-nav__link{font-size:14px;}
+}
+@media (max-width:900px){
+    .b24tz-nav{padding:12px 18px;}
+    .b24tz-nav__burger{display:flex;}
+    .b24tz-nav__list{
+        position:absolute;
+        left:0;
+        right:0;
+        top:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        margin:0;
+        padding:0 18px;
+        max-height:0;
+        overflow:hidden;
+        background:#fff;
+        box-shadow:0 12px 22px rgba(4,60,130,.1);
+        transition:max-height .28s ease, padding .28s ease;
+    }
+    .b24tz-nav__toggle:checked ~ .b24tz-nav__list{
+        max-height:340px;
+        padding:8px 18px 16px;
+    }
+    .b24tz-nav__list li{width:100%;}
+    .b24tz-nav__link{
+        display:block;
+        width:100%;
+        padding:13px 0;
+        font-size:16px;
+        border-bottom:1px solid #eef2f8;
+    }
+    .b24tz-nav__cta{
+        order:-1;
+        padding:11px 20px;
+        font-size:14px;
+        margin-left:auto;
+    }
+    .b24tz-nav__burger{margin-left:14px;}
+}
+@media (max-width:520px){
+    .b24tz-nav__logo img{height:24px;}
+    .b24tz-nav__cta{padding:10px 16px;font-size:13px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-nav__link,.b24tz-nav__cta,.b24tz-nav__list{transition:none;}
+    .b24tz-nav__cta:hover{transform:none;}
+}
+</style>
+
+<nav class="b24tz-nav">
+  <div class="b24tz-nav__inner">
+
+    <a class="b24tz-nav__logo" href="https://www.bitrix24.ru/">
+      <img src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/ab3/4wb2gd9r953tzcle0l6z8vianzdeuqej.951w.png.webp?1784204064972" alt="Битрикс24">
+    </a>
+
+    <input class="b24tz-nav__toggle" type="checkbox" id="b24tz-nav-toggle" aria-label="Открыть меню">
+
+    <ul class="b24tz-nav__list">
+      <li><a class="b24tz-nav__link" href="https://www.bitrix24.ru/promo/task-automation/#b298826">Возможности</a></li>
+      <li><a class="b24tz-nav__link" href="https://www.bitrix24.ru/promo/task-automation/#b298842">ИИ в задачах</a></li>
+      <li><a class="b24tz-nav__link" href="https://www.bitrix24.ru/promo/task-automation/#b298866">Внедрение</a></li>
+    </ul>
+
+    <label class="b24tz-nav__burger" for="b24tz-nav-toggle" aria-hidden="true"><span></span></label>
+
+    <a class="b24tz-nav__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-tasks&b24_type=tasks">Попробовать бесплатно</a>
+
+  </div>
+</nav>
