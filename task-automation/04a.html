@@ -1,0 +1,186 @@
+<!-- ============================================
+     БЛОК 04a — ИИ В ЗАДАЧАХ
+     Префикс классов: b24tz-ai-
+     Фон секции: #ffffff, панель: #e8f2ff
+     ============================================ -->
+<style>
+.b24tz-ai{
+    box-sizing:border-box;
+    padding:92px 20px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24tz-ai *{box-sizing:border-box;}
+.b24tz-ai__inner{max-width:1200px;margin:0 auto;}
+
+.b24tz-ai__title{
+    margin:0 0 16px;
+    font-size:40px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    text-align:center;
+}
+.b24tz-ai__sub{
+    max-width:720px;
+    margin:0 auto 52px;
+    font-size:20px;
+    line-height:1.45;
+    color:#41505f;
+    text-align:center;
+}
+
+/* ---- Панель ---- */
+.b24tz-ai__panel{
+    padding:62px 58px;
+    border-radius:26px;
+    background:#e8f2ff;
+}
+.b24tz-ai__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:44px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.b24tz-ai__item{margin:0;}
+
+/* ---- Иконка-«лепесток» ---- */
+.b24tz-ai__ico{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100px;
+    height:100px;
+    margin-bottom:34px;
+    background:linear-gradient(150deg,#c05ce8 0%,#a83fdc 100%);
+    border-radius:38% 62% 38% 62% / 62% 38% 62% 38%;
+    box-shadow:0 10px 26px rgba(168,63,220,.24);
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+.b24tz-ai__ico svg{width:44px;height:44px;display:block;}
+.b24tz-ai__item:hover .b24tz-ai__ico{
+    transform:translateY(-4px) rotate(-5deg);
+    box-shadow:0 16px 34px rgba(168,63,220,.32);
+}
+
+.b24tz-ai__item-title{
+    margin:0 0 16px;
+    font-size:21px;
+    line-height:1.3;
+    font-weight:800;
+    letter-spacing:-.01em;
+    color:#111417;
+}
+.b24tz-ai__item-text{
+    margin:0;
+    font-size:17px;
+    line-height:1.55;
+    color:#41505f;
+}
+
+
+/* ---- Демонстрация интерфейса ---- */
+.b24tz-ai__shot{
+    max-width:1040px;
+    margin:52px auto 0;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 18px 46px rgba(4,60,130,.16);
+}
+.b24tz-ai__shot img{display:block;width:100%;height:auto;}
+
+@media (max-width:1024px){
+    .b24tz-ai__title{font-size:31px;}
+    .b24tz-ai__sub{font-size:18px;}
+    .b24tz-ai__panel{padding:48px 36px;}
+    .b24tz-ai__grid{gap:32px;}
+    .b24tz-ai__ico{width:86px;height:86px;margin-bottom:26px;}
+    .b24tz-ai__ico svg{width:38px;height:38px;}
+}
+@media (max-width:760px){
+    .b24tz-ai__grid{grid-template-columns:1fr;gap:38px;}
+}
+@media (max-width:640px){
+    .b24tz-ai{padding:56px 16px;}
+    .b24tz-ai__title{font-size:24px;}
+    .b24tz-ai__sub{font-size:16px;margin-bottom:32px;}
+    .b24tz-ai__panel{padding:34px 24px;border-radius:20px;}
+    .b24tz-ai__ico{width:76px;height:76px;margin-bottom:22px;}
+    .b24tz-ai__ico svg{width:34px;height:34px;}
+    .b24tz-ai__item-title{font-size:19px;}
+    .b24tz-ai__item-text{font-size:16px;}
+    .b24tz-ai__shot{margin-top:34px;border-radius:14px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24tz-ai__ico{transition:none;}
+    .b24tz-ai__item:hover .b24tz-ai__ico{transform:none;}
+}
+</style>
+
+<section class="b24tz-ai">
+  <div class="b24tz-ai__inner">
+
+    <h2 class="b24tz-ai__title">ИИ в задачах</h2>
+    <p class="b24tz-ai__sub">
+      для работы без лишних кликов и ручного заполнения
+    </p>
+
+    <div class="b24tz-ai__panel">
+      <ul class="b24tz-ai__grid">
+
+        <li class="b24tz-ai__item">
+          <div class="b24tz-ai__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="2" width="6" height="12" rx="3"/>
+              <path d="M5 11a7 7 0 0 0 14 0"/>
+              <path d="M12 18v4"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-ai__item-title">Аудиозадачи с AI</h3>
+          <p class="b24tz-ai__item-text">
+            Отправьте голосовое сообщение в чат — AI сам поймёт, о чём идёт речь,
+            создаст задачу и заполнит все нужные поля
+          </p>
+        </li>
+
+        <li class="b24tz-ai__item">
+          <div class="b24tz-ai__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/>
+              <path d="M8 11h8M8 15h5"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-ai__item-title">Чат прямо в задаче</h3>
+          <p class="b24tz-ai__item-text">
+            Обсуждайте детали, созванивайтесь, обменивайтесь файлами
+            и отслеживайте все изменения, не выходя из карточки
+          </p>
+        </li>
+
+        <li class="b24tz-ai__item">
+          <div class="b24tz-ai__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="5" rx="2"/>
+              <rect x="3" y="12" width="18" height="5" rx="2"/>
+              <path d="M7 20h10"/>
+            </svg>
+          </div>
+          <h3 class="b24tz-ai__item-title">Задачи как сообщения</h3>
+          <p class="b24tz-ai__item-text">
+            Листайте задачи, читайте новые сообщения и отвечайте на них
+            прямо в чате — быстро и привычно
+          </p>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="b24tz-ai__shot">
+      <img src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/88.1900w.png.webp?1784204064972" alt="BitrixGPT в карточке задачи Битрикс24" loading="lazy">
+    </div>
+
+  </div>
+</section>
