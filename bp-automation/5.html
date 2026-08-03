@@ -1,0 +1,238 @@
+<!-- ============================================
+     БЛОК 04 — ЧТО АВТОМАТИЗИРУЕТСЯ В БИТРИКС24
+     Часть 1: заголовок раздела + подразделы CRM, HR
+     Префикс классов: b24ab-auto-
+     Фон секции: #fcfcfc
+     ВАЖНО: этот файл содержит <style> для всего блока 04.
+     Части 2–4 идут без стилей — вставлять ПОСЛЕ этого блока по порядку.
+     ============================================ -->
+<style>
+.b24ab-auto{
+    box-sizing:border-box;
+    padding:92px 20px 30px;
+    background:#fcfcfc;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24ab-auto *{box-sizing:border-box;}
+.b24ab-auto__inner{max-width:1200px;margin:0 auto;}
+
+.b24ab-auto__title{
+    margin:0 0 14px;
+    font-size:40px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    text-align:center;
+}
+.b24ab-auto__title span{color:#33bbf5;}
+.b24ab-auto__sub{
+    max-width:700px;
+    margin:0 auto;
+    font-size:19px;
+    line-height:1.45;
+    color:#5a6473;
+    text-align:center;
+}
+
+/* ---- Строка подраздела ---- */
+.b24ab-auto-row{
+    box-sizing:border-box;
+    padding:44px 20px;
+    background:#fcfcfc;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24ab-auto-row *{box-sizing:border-box;}
+.b24ab-auto-row__inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:56px;
+    max-width:1200px;
+    margin:0 auto;
+}
+.b24ab-auto-row--flip .b24ab-auto-row__media{order:2;}
+
+.b24ab-auto-row__eyebrow{
+    display:inline-block;
+    margin:0 0 14px;
+    padding:7px 16px;
+    border-radius:100px;
+    background:#eaf6ff;
+    color:#1e93fd;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+}
+.b24ab-auto-row__title{
+    margin:0 0 14px;
+    font-size:30px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.015em;
+}
+.b24ab-auto-row__desc{
+    margin:0 0 22px;
+    font-size:17px;
+    line-height:1.5;
+    color:#41505f;
+}
+.b24ab-auto-row__ref{
+    color:#1e93fd !important;
+    text-decoration:underline;
+    text-underline-offset:2px;
+    text-decoration-thickness:1px;
+    transition:color .18s ease;
+}
+.b24ab-auto-row__ref:hover{color:#0f7bfb !important;}
+.b24ab-auto-row__exlabel{
+    margin:0 0 12px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:#8a94a3;
+}
+.b24ab-auto-row__list{margin:0 0 24px;padding:0;list-style:none;}
+.b24ab-auto-row__list li{
+    position:relative;
+    padding:0 0 0 28px;
+    margin-bottom:12px;
+    font-size:16px;
+    line-height:1.45;
+    color:#2f3742;
+}
+.b24ab-auto-row__list li:last-child{margin-bottom:0;}
+.b24ab-auto-row__list li::before{
+    content:"";
+    position:absolute;
+    left:0;top:6px;
+    width:15px;height:8px;
+    border-left:2.5px solid #22a447;
+    border-bottom:2.5px solid #22a447;
+    transform:rotate(-45deg);
+}
+.b24ab-auto-row__result{
+    margin:0;
+    padding:16px 20px;
+    border-radius:14px;
+    background:#f0f9f2;
+    border-left:4px solid #22a447;
+    font-size:16px;
+    line-height:1.45;
+    font-weight:600;
+    color:#1a1f26;
+}
+.b24ab-auto-row__result b{color:#1a8a3c;}
+
+.b24ab-auto-row__media{
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 16px 46px rgba(4,60,130,.14);
+}
+.b24ab-auto-row__media img{display:block;width:100%;height:auto;}
+.b24ab-auto-row__ph{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    aspect-ratio:1460/1000;
+    padding:20px;
+    background:repeating-linear-gradient(135deg,#eef1f6 0 14px,#e4e8ef 14px 28px);
+    color:#5a6473;
+    font-size:15px;
+    font-weight:600;
+    text-align:center;
+}
+
+@media (max-width:1024px){
+    .b24ab-auto__title{font-size:31px;}
+    .b24ab-auto-row__inner{gap:36px;}
+    .b24ab-auto-row__title{font-size:25px;}
+}
+@media (max-width:860px){
+    .b24ab-auto-row__inner{grid-template-columns:1fr;gap:28px;}
+    .b24ab-auto-row--flip .b24ab-auto-row__media{order:0;}
+}
+@media (max-width:640px){
+    .b24ab-auto{padding:56px 16px 20px;}
+    .b24ab-auto__title{font-size:24px;}
+    .b24ab-auto__sub{font-size:16px;}
+    .b24ab-auto-row{padding:30px 16px;}
+    .b24ab-auto-row__title{font-size:22px;}
+    .b24ab-auto-row__desc{font-size:16px;}
+    .b24ab-auto-row__list li{font-size:15px;}
+}
+</style>
+
+<section class="b24ab-auto">
+  <div class="b24ab-auto__inner">
+    <h2 class="b24ab-auto__title">Что автоматизируется<br><span>в Битрикс24</span></h2>
+    <p class="b24ab-auto__sub">
+      Семь направлений, где система берёт рутину на себя — от продаж до поддержки клиентов.
+    </p>
+  </div>
+</section>
+
+<!-- ---- CRM и продажи ---- -->
+<section class="b24ab-auto-row">
+  <div class="b24ab-auto-row__inner">
+    <div class="b24ab-auto-row__media">
+      <div class="b24ab-auto-row__ph">Скриншот 1460×1000 — воронка CRM<br>с настроенными триггерами</div>
+      <!-- <img src="ССЫЛКА.png" alt="Автоматизация CRM и продаж" loading="lazy"> -->
+    </div>
+    <div class="b24ab-auto-row__text">
+      <span class="b24ab-auto-row__eyebrow">CRM №1 в России</span>
+      <h3 class="b24ab-auto-row__title">CRM и продажи</h3>
+      <p class="b24ab-auto-row__desc">
+        Автоматизация лидов, сделок, триггеров, напоминаний и рассылок — больше сделок
+        без ручных действий. Управляйте клиентами и увеличивайте продажи с <a class="b24ab-auto-row__ref" href="https://json.tv/analytic/analiz-populyarnosti-crm-na-rossijskom-rynke/" target="_blank" rel="noopener">CRM №1 в России</a>
+        и встроенным искусственным интеллектом.
+      </p>
+      <p class="b24ab-auto-row__exlabel">Примеры</p>
+      <ul class="b24ab-auto-row__list">
+        <li>Менеджеру ставится задача связаться с клиентом в течение заданного времени</li>
+        <li>Клиенту автоматически уходит письмо или сообщение в мессенджере с подтверждением заявки</li>
+        <li>После первого контакта система сама отправляет коммерческое предложение</li>
+        <li>Менеджер не вышел на связь вовремя — руководителю приходит уведомление</li>
+        <li>При переходе сделки между этапами создаются новые задачи и напоминания</li>
+        <li>Для цикличных продаж задаются параметры следующего контакта</li>
+      </ul>
+      <p class="b24ab-auto-row__result">
+        <b>Результат:</b> ни одна заявка не теряется, скорость обработки растёт,
+        руководитель видит реальные задержки.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ---- HR и персонал ---- -->
+<section class="b24ab-auto-row b24ab-auto-row--flip">
+  <div class="b24ab-auto-row__inner">
+    <div class="b24ab-auto-row__media">
+      <div class="b24ab-auto-row__ph">Скриншот 1460×1000 — карточка кандидата<br>и процесс онбординга</div>
+      <!-- <img src="ССЫЛКА.png" alt="Автоматизация HR и персонала" loading="lazy"> -->
+    </div>
+    <div class="b24ab-auto-row__text">
+      <span class="b24ab-auto-row__eyebrow">Подбор и адаптация</span>
+      <h3 class="b24ab-auto-row__title">HR и персонал</h3>
+      <p class="b24ab-auto-row__desc">
+        Онбординг, заявки на вакансию, кадровый документооборот и согласования —
+        всё без потерь.
+      </p>
+      <p class="b24ab-auto-row__exlabel">Примеры</p>
+      <ul class="b24ab-auto-row__list">
+        <li>Заявка на вакансию автоматически уходит на согласование руководителю</li>
+        <li>После утверждения вакансия публикуется на Авито и HH</li>
+        <li>Резюме собираются в единой карточке кандидата</li>
+        <li>Подходящим кандидатам автоматически назначаются интервью</li>
+        <li>После выхода сотрудника запускается онбординг: доступы, чек-листы, задачи наставнику, приветственные письма</li>
+        <li>Документы подписываются в КЭДО в один клик</li>
+      </ul>
+      <p class="b24ab-auto-row__result">
+        <b>Результат:</b> меньше хаоса в подборе, быстрее адаптация новых сотрудников.
+      </p>
+    </div>
+  </div>
+</section>
