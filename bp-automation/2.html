@@ -1,0 +1,186 @@
+<!-- ============================================
+     БЛОК 01 — ГЛАВНЫЙ ЭКРАН (HERO), голубая версия
+     Лендинг: Автоматизация бизнеса с Битрикс24
+     Префикс классов: b24ab-hero-
+     ============================================ -->
+<style>
+/* Подключение шрифта. Достаточно один раз на странице — в самом первом блоке.
+   Если Montserrat уже подключён глобально на сайте, эту строку можно удалить. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.b24ab-hero{
+    --b24ab-h-ink:#111417;
+    --b24ab-h-accent:#c5f048;
+    box-sizing:border-box;
+    position:relative;
+    padding:86px 20px 0;
+    background-color:#0177fe;
+    border-radius:0 0 44px 44px;
+    overflow:hidden;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.b24ab-hero *{box-sizing:border-box;}
+
+/* фоновый слой: выходит за края секции, чтобы скруглённые углы картинки не попадали в кадр */
+.b24ab-hero::before{
+    content:"";
+    position:absolute;
+    top:-3%;
+    left:-3%;
+    width:106%;
+    height:106%;
+    background-image:url('https://www.bitrix24.ru/upload/landing/1d7/28iv5uijcr7x7xbjx072gvc5lrt2gr1x.png');
+    background-size:cover;
+    background-position:center bottom;
+    background-repeat:no-repeat;
+    z-index:0;
+    pointer-events:none;
+}
+
+.b24ab-hero__inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;text-align:center;}
+
+.b24ab-hero__title{
+    margin:0 0 20px;
+    font-size:58px;
+    line-height:1.08;
+    font-weight:800;
+    letter-spacing:-.025em;
+    color:#fff;
+}
+.b24ab-hero__lead{
+    max-width:760px;
+    margin:0 auto 34px;
+    font-size:22px;
+    line-height:1.45;
+    font-weight:400;
+    color:rgba(255,255,255,.95);
+}
+
+/* ---- Поинты «кому подойдёт» ---- */
+.b24ab-hero__points{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    max-width:940px;
+    margin:0 auto 38px;
+    padding:0;
+    list-style:none;
+}
+.b24ab-hero__point{
+    position:relative;
+    padding:12px 24px;
+    border-radius:100px;
+    border:1px solid rgba(255,255,255,.38);
+    background:linear-gradient(180deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.13) 100%);
+    color:#fff;
+    font-size:15px;
+    line-height:1.2;
+    font-weight:600;
+    text-shadow:0 1px 2px rgba(2,60,130,.22);
+    backdrop-filter:blur(8px) saturate(140%);
+    -webkit-backdrop-filter:blur(8px) saturate(140%);
+    box-shadow:
+        0 4px 14px rgba(2,60,130,.18),
+        inset 0 1px 0 rgba(255,255,255,.55);
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.b24ab-hero__point:hover{
+    background:linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.20) 100%);
+    transform:translateY(-2px);
+    box-shadow:
+        0 8px 22px rgba(2,60,130,.24),
+        inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+/* ---- CTA ---- */
+.b24ab-hero__cta{
+    display:inline-block;
+    padding:21px 52px;
+    border-radius:16px;
+    background:var(--b24ab-h-accent);
+    color:var(--b24ab-h-ink) !important;
+    font-size:19px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    transition:background .18s ease, transform .18s ease, box-shadow .18s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,.14);
+}
+.b24ab-hero__cta.b24ab-hero__cta:hover,.b24ab-hero__cta:hover{background:#d3fa5f;transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.2);text-decoration:none;color:#111417 !important;}
+.b24ab-hero__cta:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+/* ---- Скриншот ---- */
+.b24ab-hero__shot{
+    max-width:1080px;
+    margin:56px auto 0;
+    border-radius:14px 14px 0 0;
+    overflow:hidden;
+    box-shadow:0 -4px 70px rgba(4,60,120,.3);
+}
+.b24ab-hero__shot img{display:block;width:100%;height:auto;}
+
+/* ПЛЕЙСХОЛДЕР — удалить при подстановке реального <img> */
+.b24ab-hero__ph{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    aspect-ratio:2200/1200;
+    background:repeating-linear-gradient(135deg,#eef1f6 0 14px,#e4e8ef 14px 28px);
+    color:#5a6473;
+    font-size:15px;
+    font-weight:600;
+    text-align:center;
+    padding:20px;
+}
+
+/* ---- Адаптив ---- */
+@media (max-width:1024px){
+    .b24ab-hero__title{font-size:42px;}
+    .b24ab-hero__lead{font-size:19px;}
+}
+@media (max-width:640px){
+    .b24ab-hero{padding:52px 16px 0;border-radius:0 0 28px 28px;}
+    .b24ab-hero__title{font-size:29px;}
+    .b24ab-hero__lead{font-size:17px;margin-bottom:26px;}
+    .b24ab-hero__point{font-size:13px;padding:9px 16px;}
+    .b24ab-hero__points{gap:9px;margin-bottom:28px;}
+    .b24ab-hero__cta{display:block;padding:18px 24px;font-size:17px;}
+    .b24ab-hero__shot{margin-top:36px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24ab-hero__cta,.b24ab-hero__point{transition:none;}
+    .b24ab-hero__cta:hover,.b24ab-hero__point:hover{transform:none;}
+}
+</style>
+
+<section class="b24ab-hero">
+
+  <div class="b24ab-hero__inner">
+
+    <h1 class="b24ab-hero__title">Автоматизация бизнеса<br>с Битрикс24</h1>
+
+    <p class="b24ab-hero__lead">
+      Освободите сотрудников от рутины, стандартизируйте процессы и отчёты,
+      сосредоточьтесь на развитии бизнеса.
+    </p>
+
+    <ul class="b24ab-hero__points">
+      <li class="b24ab-hero__point">Автоматизация рутины</li>
+      <li class="b24ab-hero__point">Повторные продажи</li>
+      <li class="b24ab-hero__point">Речевая аналитика</li>
+      <li class="b24ab-hero__point">Сквозная аналитика</li>
+    </ul>
+
+    <a class="b24ab-hero__cta" href="https://www.bitrix24.ru/create.php?b24_type=bizproc_automation">Попробовать бесплатно</a>
+
+    <!-- СКРИНШОТ: 2200×1200, без теней и скруглений в самом файле -->
+    <div class="b24ab-hero__shot">
+      <div class="b24ab-hero__ph">
+        Скриншот 2200×1200 — автоматизация бизнес-процессов<br>в Битрикс24
+      </div>
+      <!-- <img src="ССЫЛКА_НА_СКРИНШОТ.png" alt="Автоматизация бизнеса в Битрикс24" loading="lazy"> -->
+    </div>
+
+  </div>
+</section>
