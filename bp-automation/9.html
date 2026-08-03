@@ -1,0 +1,238 @@
+<!-- ============================================
+     БЛОК 05 — АВТОМАТИЗАЦИЯ С AI
+     Лендинг: Автоматизация бизнеса с Битрикс24
+     Префикс классов: b24ab-ai-
+     Фон секции: #ffffff, панель: #f4f0ff
+     ============================================ -->
+<style>
+.b24ab-ai{
+    box-sizing:border-box;
+    padding:92px 20px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24ab-ai *{box-sizing:border-box;}
+.b24ab-ai__inner{max-width:1200px;margin:0 auto;}
+
+/* ---- Вводная плашка ---- */
+.b24ab-ai__intro{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    align-items:center;
+    gap:34px;
+    padding:44px 48px;
+    margin-bottom:44px;
+    border-radius:26px;
+    background:linear-gradient(140deg,#7b3fe4 0%,#9b4fe0 55%,#b95cd8 100%);
+    box-shadow:0 18px 46px rgba(123,63,228,.22);
+}
+.b24ab-ai__badge{
+    flex:0 0 auto;
+    width:88px;
+    height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:38% 62% 38% 62% / 62% 38% 62% 38%;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);
+}
+.b24ab-ai__badge svg{width:44px;height:44px;display:block;}
+.b24ab-ai__intro-text{margin:0;}
+.b24ab-ai__intro-title{
+    margin:0 0 10px;
+    font-size:30px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#fff;
+}
+.b24ab-ai__intro-desc{
+    margin:0;
+    font-size:17px;
+    line-height:1.55;
+    color:rgba(255,255,255,.92);
+}
+
+/* ---- Сетка фич ---- */
+.b24ab-ai__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.b24ab-ai__card{
+    display:flex;
+    flex-direction:column;
+    padding:32px 30px;
+    border:1px solid #ece6fb;
+    border-radius:20px;
+    background:#faf8ff;
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.b24ab-ai__card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(123,63,228,.14);
+}
+.b24ab-ai__ico{
+    width:54px;
+    height:54px;
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:38% 62% 38% 62% / 62% 38% 62% 38%;
+    background:linear-gradient(150deg,#8f4ee8 0%,#7b3fe4 100%);
+    box-shadow:0 8px 20px rgba(123,63,228,.24);
+}
+.b24ab-ai__ico svg{width:28px;height:28px;display:block;}
+.b24ab-ai__card-title{
+    margin:0 0 10px;
+    font-size:20px;
+    line-height:1.28;
+    font-weight:800;
+    letter-spacing:-.01em;
+}
+.b24ab-ai__card-text{
+    margin:0;
+    font-size:16px;
+    line-height:1.5;
+    color:#5a6473;
+}
+
+@media (max-width:1024px){
+    .b24ab-ai__intro-title{font-size:25px;}
+    .b24ab-ai__grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:760px){
+    .b24ab-ai__intro{grid-template-columns:1fr;text-align:center;justify-items:center;gap:20px;padding:34px 26px;}
+    .b24ab-ai__grid{grid-template-columns:1fr;}
+}
+@media (max-width:640px){
+    .b24ab-ai{padding:56px 16px;}
+    .b24ab-ai__intro-title{font-size:22px;}
+    .b24ab-ai__intro-desc{font-size:16px;}
+    .b24ab-ai__card{padding:26px 24px;}
+    .b24ab-ai__card-title{font-size:18px;}
+}
+.b24ab-ai__cta-wrap{margin-top:44px;text-align:center;}
+.b24ab-ai__cta-btn{
+    display:inline-block;
+    padding:20px 50px;
+    border-radius:16px;
+    background:#c5f048;
+    color:#111417 !important;
+    font-size:18px;
+    font-weight:700;
+    line-height:1.2;
+    text-decoration:none;
+    box-shadow:0 10px 28px rgba(4,60,130,.14);
+    transition:background .18s ease, transform .18s ease;
+}
+.b24ab-ai__cta-btn.b24ab-ai__cta-btn:hover,.b24ab-ai__cta-btn:hover{background:#d3fa5f !important;transform:translateY(-2px);color:#111417 !important;text-decoration:none;}
+.b24ab-ai__cta-btn:focus-visible{outline:3px solid #111417;outline-offset:3px;}
+
+@media (prefers-reduced-motion:reduce){
+    .b24ab-ai__card,.b24ab-ai__cta-btn{transition:none;}
+    .b24ab-ai__card:hover,.b24ab-ai__cta-btn:hover{transform:none;}
+}
+</style>
+
+<section class="b24ab-ai">
+  <div class="b24ab-ai__inner">
+
+    <div class="b24ab-ai__intro">
+      <div class="b24ab-ai__badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+      <div class="b24ab-ai__intro-text">
+        <h2 class="b24ab-ai__intro-title">Автоматизация с AI</h2>
+        <p class="b24ab-ai__intro-desc">
+          Встроенный в Битрикс24 интеллектуальный ассистент расшифровывает звонки,
+          заполняет CRM, анализирует разговоры менеджеров, генерирует описания товаров
+          и документы, а также даёт рекомендации по оптимизации процессов.
+        </p>
+      </div>
+    </div>
+
+    <ul class="b24ab-ai__grid">
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h10M4 18h7"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Готовые скрипты продаж</h3>
+        <p class="b24ab-ai__card-text">
+          Целый набор скриптов, которые можно сразу использовать. Их легко адаптировать
+          под уникальные процессы компании.
+        </p>
+      </li>
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15V9M9 18V6M14 15V9M19 12V8"/><path d="M3 21h18"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Оценка звонков от BitrixGPT</h3>
+        <p class="b24ab-ai__card-text">
+          AI покажет, насколько звонок соответствует скрипту, даст рекомендации
+          и составит рейтинг менеджеров — сам, без вашего участия.
+        </p>
+      </li>
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Идеальное ТЗ в один клик</h3>
+        <p class="b24ab-ai__card-text">
+          Напишите или надиктуйте BitrixGPT суть задачи — AI превратит описание в грамотное ТЗ,
+          структурирует, создаст чек-лист или подзадачи.
+        </p>
+      </li>
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 2 4-6"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Улучшит процессы</h3>
+        <p class="b24ab-ai__card-text">
+          Прочитает десятки комментариев за вас и сделает краткую сводку, проанализирует
+          потоки задач и найдёт узкие места.
+        </p>
+      </li>
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Станет вашим копирайтером</h3>
+        <p class="b24ab-ai__card-text">
+          Напишет за вас текст, придумает уникальные идеи или подскажет нестандартные
+          решения. Просто откройте чат с BitrixGPT.
+        </p>
+      </li>
+
+      <li class="b24ab-ai__card">
+        <div class="b24ab-ai__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 11 6-3.2v8.4l-6-3.2Z"/></svg>
+        </div>
+        <h3 class="b24ab-ai__card-title">Сделает созвоны продуктивнее</h3>
+        <p class="b24ab-ai__card-text">
+          AI расшифровывает и анализирует звонки, фиксирует договорённости, даёт обратную
+          связь и учит проводить конфколлы с пользой.
+        </p>
+      </li>
+
+    </ul>
+
+    <div class="b24ab-ai__cta-wrap">
+      <a class="b24ab-ai__cta-btn" href="https://www.bitrix24.ru/create.php?b24_type=bizproc_automation">Попробовать бесплатно</a>
+    </div>
+  </div>
+</section>
