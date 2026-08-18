@@ -1,0 +1,202 @@
+<!-- ============================================
+     БЛОК 10 — ВНЕДРЕНИЕ
+     Префикс классов: b24ab-impl-
+     Фон секции: #ffffff
+     ============================================ -->
+<style>
+.b24ab-impl{
+    box-sizing:border-box;
+    padding:88px 20px;
+    background:#ffffff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    color:#111417;
+}
+.b24ab-impl *{box-sizing:border-box;}
+.b24ab-impl__inner{max-width:1160px;margin:0 auto;}
+
+.b24ab-impl__title{
+    margin:0 0 14px;
+    font-size:40px;
+    line-height:1.16;
+    font-weight:800;
+    letter-spacing:-.02em;
+    text-align:center;
+}
+.b24ab-impl__sub{
+    max-width:720px;
+    margin:0 auto 52px;
+    font-size:20px;
+    line-height:1.45;
+    color:#41505f;
+    text-align:center;
+}
+
+.b24ab-impl__grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-bottom:44px;
+}
+.b24ab-impl__card{
+    padding:34px 30px;
+    border:none;
+    border-radius:34px 34px 34px 34px / 30px 30px 30px 30px;
+    background:#f4f8ff;
+    box-shadow:0 6px 20px rgba(4,60,130,.07);
+    transition:transform .22s ease, box-shadow .22s ease;
+}
+.b24ab-impl__card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 36px rgba(4,60,130,.13);
+}
+.b24ab-impl__step{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:62px;
+    height:62px;
+    margin-bottom:24px;
+    border-radius:38% 62% 38% 62% / 62% 38% 62% 38%;
+    background:linear-gradient(150deg,#3d8bfd 0%,#1266ea 100%);
+    color:#fff;
+    font-size:22px;
+    font-weight:800;
+    line-height:1;
+    box-shadow:0 8px 20px rgba(18,102,234,.26);
+    transition:transform .22s ease;
+}
+.b24ab-impl__card:hover .b24ab-impl__step{transform:rotate(-6deg) scale(1.05);}
+.b24ab-impl__card-title{
+    margin:0 0 9px;
+    font-size:19px;
+    line-height:1.28;
+    font-weight:800;
+    letter-spacing:-.01em;
+}
+.b24ab-impl__card-text{
+    margin:0;
+    font-size:16px;
+    line-height:1.5;
+    color:#5a6473;
+}
+
+/* ---- Плашка с CTA ---- */
+.b24ab-impl__cta-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:26px;
+    padding:44px 50px;
+    border-radius:26px;
+    background:linear-gradient(140deg,#0f7bfb 0%,#2e97fd 100%);
+    box-shadow:0 14px 38px rgba(15,123,251,.22);
+}
+.b24ab-impl__cta-text{max-width:640px;}
+.b24ab-impl__cta-title{
+    margin:0 0 8px;
+    color:#fff;
+    font-size:28px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.015em;
+}
+.b24ab-impl__cta-desc{
+    margin:0;
+    font-size:17px;
+    line-height:1.5;
+    color:rgba(255,255,255,.9);
+}
+.b24ab-impl__cta{
+    flex:0 0 auto;
+    display:inline-block;
+    padding:19px 44px;
+    border-radius:16px;
+    background:#c5f048;
+    color:#111417 !important;
+    font-size:18px;
+    font-weight:700;
+    line-height:1;
+    text-decoration:none;
+    transition:background .18s ease, transform .18s ease;
+}
+.b24ab-impl__cta.b24ab-impl__cta:hover,.b24ab-impl__cta:hover{background:#d3fa5f;transform:translateY(-2px);text-decoration:none;color:#111417 !important;}
+.b24ab-impl__cta:focus-visible{outline:3px solid #fff;outline-offset:3px;}
+
+@media (max-width:1024px){
+    .b24ab-impl__title{font-size:31px;}
+}
+@media (max-width:640px){
+    .b24ab-impl{padding:56px 16px;}
+    .b24ab-impl__title{font-size:24px;}
+    .b24ab-impl__sub{font-size:16px;margin-bottom:32px;}
+    .b24ab-impl__grid{grid-template-columns:1fr;}
+    .b24ab-impl__card{padding:24px 22px;}
+    .b24ab-impl__cta-box{padding:28px 22px;}
+    .b24ab-impl__cta-title{font-size:21px;}
+    .b24ab-impl__cta{display:block;width:100%;text-align:center;padding:17px 20px;}
+}
+@media (prefers-reduced-motion:reduce){
+    .b24ab-impl__cta,.b24ab-impl__card,.b24ab-impl__step{transition:none;}
+    .b24ab-impl__cta:hover,.b24ab-impl__card:hover{transform:none;}
+    .b24ab-impl__card:hover .b24ab-impl__step{transform:none;}
+}
+</style>
+
+<section class="b24ab-impl">
+  <div class="b24ab-impl__inner">
+
+    <h2 class="b24ab-impl__title">Переход на Битрикс24 — это просто</h2>
+    <p class="b24ab-impl__sub">
+      начать можно за один день, без программистов
+    </p>
+
+    <div class="b24ab-impl__grid">
+
+      <article class="b24ab-impl__card">
+        <span class="b24ab-impl__step">1</span>
+        <h3 class="b24ab-impl__card-title">Регистрация</h3>
+        <p class="b24ab-impl__card-text">
+          Заведите портал и пригласите команду. Бесплатный тариф без ограничения по срокам.
+        </p>
+      </article>
+
+      <article class="b24ab-impl__card">
+        <span class="b24ab-impl__step">2</span>
+        <h3 class="b24ab-impl__card-title">Перенос данных</h3>
+        <p class="b24ab-impl__card-text">
+          Импорт из Excel, Google-таблиц и других систем. Сотрудники, проекты и текущие задачи
+          переезжают целиком.
+        </p>
+      </article>
+
+      <article class="b24ab-impl__card">
+        <span class="b24ab-impl__step">3</span>
+        <h3 class="b24ab-impl__card-title">Настройка автоматизации</h3>
+        <p class="b24ab-impl__card-text">
+          Шаблоны задач, правила и напоминания настраиваются мышкой, без программирования.
+        </p>
+      </article>
+
+      <article class="b24ab-impl__card">
+        <span class="b24ab-impl__step">4</span>
+        <h3 class="b24ab-impl__card-title">Помощь партнёров</h3>
+        <p class="b24ab-impl__card-text">
+          Сертифицированные партнёры возьмут внедрение на себя: настроят процессы и обучат команду.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="b24ab-impl__cta-box">
+      <div class="b24ab-impl__cta-text">
+        <h3 class="b24ab-impl__cta-title">Нужна помощь с внедрением?</h3>
+        <p class="b24ab-impl__cta-desc">
+          Оставьте заявку — подберём партнёра и рассчитаем стоимость внедрения для вашей компании.
+        </p>
+      </div>
+      <a class="b24ab-impl__cta" href="https://www.bitrix24.ru/promo/business-process-automation/#b302686">Оставить заявку</a>
+    </div>
+
+  </div>
+</section>
