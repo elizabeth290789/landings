@@ -386,17 +386,17 @@
 
   @media (max-width: 767px) {
     .crm2-ai {
-      padding: 32px 16px 72px;
+      padding: 28px 16px 60px;
     }
 
     .crm2-ai__product {
       margin: 0;
-      padding: 22px 16px 24px;
+      padding: 16px 14px 20px;
       border-radius: 24px;
     }
 
     .crm2-ai__tabs-scroll {
-      margin: 0 0 28px;
+      margin: 0 0 18px;
       padding: 0;
       overflow: visible;
     }
@@ -404,7 +404,7 @@
     .crm2-ai__tabs {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       min-width: 0;
     }
@@ -414,9 +414,9 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      min-height: 48px;
-      padding: 10px 12px 12px;
-      border-radius: 16px;
+      min-height: 44px;
+      padding: 7px 10px 9px;
+      border-radius: 14px;
       font-size: 14px;
       line-height: 1.25;
       text-align: center;
@@ -425,37 +425,57 @@
     }
 
     .crm2-ai__tab::after {
-      right: 14px;
-      left: 14px;
+      right: 32%;
+      bottom: 4px;
+      left: 32%;
       height: 2px;
+    }
+
+    .crm2-ai__tab.is-active,
+    .crm2-ai__tab.is-current,
+    .crm2-ai__tab.is-selected,
+    .crm2-ai__tab[aria-current="true"],
+    .crm2-ai__tab[aria-selected="true"],
+    .crm2-ai__tab[aria-pressed="true"] {
+      box-shadow: 0 3px 12px rgba(47, 128, 237, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+      transform: none;
     }
 
     .crm2-ai__panel {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 14px;
     }
 
     .crm2-ai__label {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(47, 128, 237, 0.09);
+      font-size: 12px;
+      line-height: 1;
     }
 
-    .crm2-ai__panel-title,
     .crm2-ai__title {
-      font-size: clamp(32px, 9.6vw, 38px);
-      line-height: 1.08;
+      font-size: clamp(38px, 10.8vw, 42px);
+      line-height: 1.1;
+    }
+
+    .crm2-ai__panel-title {
+      font-size: clamp(30px, 8.8vw, 34px);
+      line-height: 1.1;
     }
 
     .crm2-ai__text {
-      margin-top: 14px;
-      font-size: 16px;
-      line-height: 1.5;
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 1.4;
     }
 
     .crm2-ai__media,
     .crm2-ai__media--compact {
       width: 100%;
       max-width: none;
-      margin: 4px auto 0;
+      margin: 0 auto;
       overflow: visible;
       border-radius: 18px;
     }
@@ -475,7 +495,7 @@
     }
 
     .crm2-ai__product {
-      padding: 20px 14px 22px;
+      padding: 14px 12px 18px;
     }
   }
 
