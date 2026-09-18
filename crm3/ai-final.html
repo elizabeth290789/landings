@@ -88,6 +88,22 @@
       }
 
       const setActiveTab = (nextIndex, shouldScroll = true) => {
+        if (nextIndex === null && mobileQuery.matches) {
+          activeIndex = -1;
+
+          tabs.forEach((tab) => {
+            tab.classList.remove('is-active');
+            tab.setAttribute('aria-expanded', 'false');
+            tab.setAttribute('tabindex', '0');
+          });
+
+          panels.forEach((panel) => {
+            panel.classList.remove('is-active');
+            panel.setAttribute('aria-hidden', 'true');
+          });
+          return;
+        }
+
         const normalizedIndex = (nextIndex + tabs.length) % tabs.length;
         activeIndex = normalizedIndex;
 
@@ -101,7 +117,8 @@
         panels.forEach((panel, index) => {
           const isActive = index === activeIndex;
           panel.classList.toggle('is-active', isActive);
-          panel.hidden = !isActive;
+          panel.hidden = mobileQuery.matches ? false : !isActive;
+          panel.setAttribute('aria-hidden', String(!isActive));
         });
 
         if (shouldScroll && !mobileQuery.matches) {
@@ -115,21 +132,38 @@
             tab.setAttribute('role', 'button');
             tab.setAttribute('aria-expanded', String(index === activeIndex));
             tab.removeAttribute('aria-selected');
+            tab.setAttribute('tabindex', '0');
+            panels[index].hidden = false;
+            panels[index].setAttribute('aria-hidden', String(index !== activeIndex));
             tabsContainer.insertBefore(panels[index], tab.nextSibling);
           });
         } else {
+          if (activeIndex < 0) {
+            activeIndex = 0;
+          }
+
           tabs.forEach((tab, index) => {
+            const isActive = index === activeIndex;
             tab.setAttribute('role', 'tab');
-            tab.setAttribute('aria-selected', String(index === activeIndex));
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', String(isActive));
+            tab.setAttribute('tabindex', isActive ? '0' : '-1');
             tab.removeAttribute('aria-expanded');
           });
-          panels.forEach((panel) => viewport.appendChild(panel));
+          panels.forEach((panel, index) => {
+            const isActive = index === activeIndex;
+            panel.classList.toggle('is-active', isActive);
+            panel.hidden = !isActive;
+            panel.setAttribute('aria-hidden', String(!isActive));
+            viewport.appendChild(panel);
+          });
         }
       };
 
       tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
-          setActiveTab(index);
+          const shouldCollapse = mobileQuery.matches && activeIndex === index;
+          setActiveTab(shouldCollapse ? null : index);
           arrangeForViewport();
         });
         tab.addEventListener('keydown', (event) => {
@@ -498,9 +532,30 @@
     }
 
     .crm2-ai__panel {
+      display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
+      max-height: 0;
+      padding: 0 2px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-6px);
+      animation: none;
+      visibility: hidden;
+      transition: max-height 0.45s ease, padding 0.35s ease, opacity 0.25s ease, transform 0.35s ease, visibility 0s linear 0.45s;
+    }
+
+    .crm2-ai__panel[hidden] {
+      display: grid;
+    }
+
+    .crm2-ai__panel.is-active {
+      max-height: 1000px;
       padding: 8px 2px 10px;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      transition: max-height 0.55s ease, padding 0.35s ease, opacity 0.3s ease 0.08s, transform 0.35s ease;
     }
 
     .crm2-ai__label {
