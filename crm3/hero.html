@@ -673,21 +673,25 @@
       width: min(92%, 500px);
     }
 
-    .crm2-trust-panel {
+    .crm2-hero-custom .crm2-trust-panel {
       grid-template-columns: 1fr;
       gap: 10px;
       margin-top: 24px;
       padding: 14px;
-      border: none;
-      outline: none;
+      border: 0 !important;
+      outline: 0 !important;
       border-radius: var(--crm2-radius-md);
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.07));
-      box-shadow: 0 18px 50px rgba(40, 20, 120, 0.18);
+      box-shadow: 0 18px 50px rgba(40, 20, 120, 0.18) !important;
     }
 
-    .crm2-trust-panel::before,
-    .crm2-trust-panel::after {
-      content: none;
+    .crm2-hero-custom .crm2-trust-panel::before,
+    .crm2-hero-custom .crm2-trust-panel::after {
+      content: none !important;
+      display: none !important;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
     }
 
     .crm2-trust-item {
