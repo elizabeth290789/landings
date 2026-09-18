@@ -442,7 +442,7 @@
 
     .crm2-ai__tab {
       display: grid;
-      grid-template-columns: 30px minmax(0, 1fr) 20px;
+      grid-template-columns: minmax(0, 1fr) 20px;
       gap: 10px;
       align-items: center;
       width: 100%;
@@ -459,16 +459,8 @@
     }
 
     .crm2-ai__tab::before {
-      color: #8b96a8;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      display: none;
     }
-
-    .crm2-ai__tab[data-tab-index="0"]::before { content: "01"; }
-    .crm2-ai__tab[data-tab-index="1"]::before { content: "02"; }
-    .crm2-ai__tab[data-tab-index="2"]::before { content: "03"; }
-    .crm2-ai__tab[data-tab-index="3"]::before { content: "04"; }
 
     .crm2-ai__tab::after {
       content: "";
@@ -512,12 +504,7 @@
     }
 
     .crm2-ai__label {
-      margin-bottom: 8px;
-      padding: 5px 8px;
-      border-radius: 999px;
-      background: rgba(47, 128, 237, 0.09);
-      font-size: 12px;
-      line-height: 1;
+      display: none;
     }
 
     .crm2-ai__title {
