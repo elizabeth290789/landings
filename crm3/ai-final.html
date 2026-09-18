@@ -74,6 +74,9 @@
     tabBlocks.forEach((block) => {
       const tabs = Array.from(block.querySelectorAll('.crm2-ai__tab'));
       const panels = Array.from(block.querySelectorAll('.crm2-ai__panel'));
+      const tabsContainer = block.querySelector('.crm2-ai__tabs');
+      const viewport = block.querySelector('.crm2-ai__viewport');
+      const mobileQuery = window.matchMedia('(max-width: 767px)');
       let activeIndex = tabs.findIndex((tab) => tab.classList.contains('is-active'));
 
       if (!tabs.length || !panels.length) {
@@ -101,14 +104,39 @@
           panel.hidden = !isActive;
         });
 
-        if (shouldScroll) {
+        if (shouldScroll && !mobileQuery.matches) {
           tabs[activeIndex].scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
         }
       };
 
+      const arrangeForViewport = () => {
+        if (mobileQuery.matches) {
+          tabs.forEach((tab, index) => {
+            tab.setAttribute('role', 'button');
+            tab.setAttribute('aria-expanded', String(index === activeIndex));
+            tab.removeAttribute('aria-selected');
+            tabsContainer.insertBefore(panels[index], tab.nextSibling);
+          });
+        } else {
+          tabs.forEach((tab, index) => {
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-selected', String(index === activeIndex));
+            tab.removeAttribute('aria-expanded');
+          });
+          panels.forEach((panel) => viewport.appendChild(panel));
+        }
+      };
+
       tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => setActiveTab(index));
+        tab.addEventListener('click', () => {
+          setActiveTab(index);
+          arrangeForViewport();
+        });
         tab.addEventListener('keydown', (event) => {
+          if (mobileQuery.matches) {
+            return;
+          }
+
           if (event.key === 'ArrowRight') {
             event.preventDefault();
             setActiveTab(activeIndex + 1);
@@ -124,6 +152,8 @@
       });
 
       setActiveTab(activeIndex, false);
+      arrangeForViewport();
+      mobileQuery.addEventListener('change', arrangeForViewport);
     });
   })();
 </script>
@@ -391,44 +421,67 @@
 
     .crm2-ai__product {
       margin: 0;
-      padding: 16px 14px 20px;
-      border-radius: 24px;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
     }
 
     .crm2-ai__tabs-scroll {
-      margin: 0 0 18px;
+      margin: 0;
       padding: 0;
       overflow: visible;
     }
 
     .crm2-ai__tabs {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       width: 100%;
       min-width: 0;
     }
 
     .crm2-ai__tab {
-      display: flex;
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr) 20px;
+      gap: 10px;
       align-items: center;
-      justify-content: center;
       width: 100%;
-      min-height: 44px;
-      padding: 7px 10px 9px;
-      border-radius: 14px;
-      font-size: 14px;
-      line-height: 1.25;
-      text-align: center;
-      white-space: normal;
-      overflow-wrap: anywhere;
+      min-height: 58px;
+      padding: 10px 16px;
+      border: 1px solid #edf0f4;
+      border-radius: 16px;
+      color: #20242c;
+      background: #f7f8fa;
+      font-size: 15px;
+      line-height: 1.3;
+      text-align: left;
+      white-space: nowrap;
     }
 
+    .crm2-ai__tab::before {
+      color: #8b96a8;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .crm2-ai__tab[data-tab-index="0"]::before { content: "01"; }
+    .crm2-ai__tab[data-tab-index="1"]::before { content: "02"; }
+    .crm2-ai__tab[data-tab-index="2"]::before { content: "03"; }
+    .crm2-ai__tab[data-tab-index="3"]::before { content: "04"; }
+
     .crm2-ai__tab::after {
-      right: 32%;
-      bottom: 4px;
-      left: 32%;
-      height: 2px;
+      content: "";
+      position: static;
+      width: 8px;
+      height: 8px;
+      margin: -4px 2px 0 auto;
+      border-right: 1.5px solid #687386;
+      border-bottom: 1.5px solid #687386;
+      border-radius: 0;
+      background: transparent;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
     }
 
     .crm2-ai__tab.is-active,
@@ -437,13 +490,25 @@
     .crm2-ai__tab[aria-current="true"],
     .crm2-ai__tab[aria-selected="true"],
     .crm2-ai__tab[aria-pressed="true"] {
-      box-shadow: 0 3px 12px rgba(47, 128, 237, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-color: #e2e7ee;
+      background: #ffffff;
+      box-shadow: 0 4px 18px rgba(33, 52, 79, 0.08);
       transform: none;
+    }
+
+    .crm2-ai__tab[aria-expanded="true"]::after {
+      margin-top: 4px;
+      transform: rotate(225deg);
+    }
+
+    .crm2-ai__viewport {
+      display: none;
     }
 
     .crm2-ai__panel {
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 20px;
+      padding: 8px 2px 10px;
     }
 
     .crm2-ai__label {
@@ -466,9 +531,9 @@
     }
 
     .crm2-ai__text {
-      margin-top: 10px;
-      font-size: 18px;
-      line-height: 1.4;
+      margin-top: 12px;
+      font-size: 17px;
+      line-height: 1.42;
     }
 
     .crm2-ai__media,
@@ -494,9 +559,6 @@
       padding-right: 12px;
     }
 
-    .crm2-ai__product {
-      padding: 14px 12px 18px;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
