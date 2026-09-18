@@ -588,50 +588,79 @@
     }
   }
 
-  @media (max-width: 560px) {
+  /* Conversion-focused mobile layout. Desktop styles above remain unchanged. */
+  @media (max-width: 767px) {
     .crm2-hero-custom {
-      padding: 30px 14px 42px;
+      min-height: auto;
+      padding: 20px 14px 42px;
     }
 
     .crm2-hero-title {
-      max-width: 480px;
+      max-width: 100%;
+      font-size: clamp(42px, 12vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
     }
 
     .crm2-hero-subtitle {
-      font-size: 16px;
-      line-height: 1.42;
+      max-width: 600px;
+      margin-top: 10px;
+      font-size: clamp(17px, 4.6vw, 20px);
+      line-height: 1.32;
     }
 
     .crm2-feature-chips {
-      gap: 9px;
-      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .crm2-feature-chips li {
-      flex: 0 0 auto;
-      width: auto;
-      min-width: max-content;
+      width: 100%;
+      min-width: 0;
+    }
+
+    /* Keep the four highest-value benefits before the primary CTA. */
+    .crm2-feature-chips li:nth-child(6) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .crm2-feature-chips li:nth-child(4),
+    .crm2-feature-chips li:nth-child(5),
+    .crm2-feature-chips li:nth-child(7) {
+      display: none;
     }
 
     .crm2-feature-chip {
-      width: auto;
-      min-width: max-content;
+      width: 100%;
+      min-width: 0;
       height: 44px;
       min-height: 44px;
       justify-content: center;
-      padding-right: 32px;
-      padding-left: 32px;
+      gap: 7px;
+      padding: 0 10px;
+      font-size: clamp(12px, 3.55vw, 16px);
+      line-height: 1.1;
       text-align: center;
+    }
+
+    .crm2-feature-chip span {
+      width: 18px;
+      height: 18px;
+      flex-basis: 18px;
+      font-size: 11px;
     }
 
     .crm2-hero-cta {
       width: min(100%, 360px);
       min-height: 56px;
-      margin-top: 22px;
+      margin-top: 16px;
     }
 
     .crm2-product-showcase {
-      margin-top: 12px;
+      margin-top: 28px;
     }
 
     .crm2-product-showcase::before {
@@ -641,7 +670,7 @@
     }
 
     .crm2-product-image {
-      width: min(100%, 500px);
+      width: min(92%, 500px);
     }
 
     .crm2-trust-panel {
