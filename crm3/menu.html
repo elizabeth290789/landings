@@ -266,7 +266,28 @@
     pointer-events: none;}@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))){.b24-landing-header{background: rgba(245, 251, 255, 0.96);}}@media (max-width: 1024px){.b24-landing-header__inner{padding-top: 18px;
       padding-bottom: 18px;
       gap: 18px;}.b24-landing-header.is-scrolled .b24-landing-header__inner{padding-top: 12px;
-      padding-bottom: 12px;}.b24-landing-header__nav{gap: 14px;}}@media (max-width: 767px){.b24-landing-header{background: var(--b24-header-mobile-bg);
+      padding-bottom: 12px;}.b24-landing-header__nav{gap: 14px;}}@media (max-width: 767px){.b24-landing-header,
+    .b24-landing-header.is-hidden,
+    .b24-landing-header.header-hidden,
+    .b24-landing-header.menu-hidden,
+    .b24-landing-header.scrolled-down,
+    .b24-landing-header.nav-up,
+    .b24-landing-header.hide{display: block !important;
+      position: fixed !important;
+      top: 0 !important;
+      right: auto !important;
+      bottom: auto !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+      overflow: visible !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      translate: none !important;
+      background: var(--b24-header-mobile-bg);
       z-index: 9999;}.b24-landing-header__inner{min-height: 68px;
       width: 100%;
       max-width: 100%;
@@ -504,7 +525,7 @@
       setSpacerHeight(reservedHeight);}function setMenuState(isOpen){if (!burger || !nav){return;}header.classList.toggle('is-menu-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
       burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-      nav.setAttribute('aria-hidden', String(!isOpen && mobileMedia.matches));}function closeMenu(){setMenuState(false);}function updateScrollState(){header.classList.toggle('is-scrolled', window.scrollY > 4);
+      nav.setAttribute('aria-hidden', String(!isOpen && mobileMedia.matches));}function closeMenu(){setMenuState(false);}function updateScrollState(){header.classList.toggle('is-scrolled', !mobileMedia.matches && window.scrollY > 4);
       updateHeaderHeight(false);
       ticking = false;}function requestUpdate(){if (!ticking){window.requestAnimationFrame(updateScrollState);
         ticking = true;}}function handleResize(){reservedHeight = 0;
