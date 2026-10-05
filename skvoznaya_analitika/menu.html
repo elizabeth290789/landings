@@ -13,6 +13,12 @@
       >
     </a>
 
+    <nav class="ip-telephony-menu__nav" aria-label="Разделы лендинга">
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286198">Коллтрекинг</a>
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286126">Отчёты</a>
+      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286102">Интеграции</a>
+    </nav>
+
     <a
       class="ip-telephony-menu__cta"
       href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b287870"
@@ -50,7 +56,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 32px;
     width: min(1180px, calc(100% - 48px));
     min-height: 78px;
     margin: 0 auto;
@@ -73,6 +79,7 @@
   }
 
   .ip-telephony-menu__logo-link:focus-visible,
+  .ip-telephony-menu__link:focus-visible,
   .ip-telephony-menu__cta:focus-visible {
     outline: 3px solid rgba(14, 165, 233, .26);
     outline-offset: 6px;
@@ -84,6 +91,61 @@
     max-width: 178px;
     height: 38px;
     object-fit: contain;
+  }
+
+  .ip-telephony-menu__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .ip-telephony-menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    color: #172033;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .22s ease, background-color .22s ease, transform .22s ease;
+  }
+
+  .ip-telephony-menu__link::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 8px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+    opacity: 0;
+    transform: scaleX(.4);
+    transform-origin: center;
+    transition: opacity .22s ease, transform .22s ease;
+  }
+
+  .ip-telephony-menu__link:hover,
+  .ip-telephony-menu__link:focus-visible {
+    color: #0ea5e9;
+    background: rgba(14, 165, 233, .08);
+    transform: translateY(-1px);
+  }
+
+  .ip-telephony-menu__link:hover::after,
+  .ip-telephony-menu__link:focus-visible::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .ip-telephony-menu__cta,
@@ -146,6 +208,10 @@
     .ip-telephony-menu__logo {
       max-width: 146px;
       height: 32px;
+    }
+
+    .ip-telephony-menu__nav {
+      display: none;
     }
 
     .ip-telephony-menu__cta {
