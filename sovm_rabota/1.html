@@ -65,6 +65,10 @@
           <span class="b24-collab-tabs__hud-corner b24-collab-tabs__hud-corner--bl"></span>
         </span>
       </div>
+      <div class="b24-collab-tabs__description" aria-atomic="true">
+        <h3 class="b24-collab-tabs__description-title">Все рабочие обсуждения под рукой</h3>
+        <p class="b24-collab-tabs__description-text">Общайтесь с коллегами в личных и групповых чатах, создавайте каналы, обменивайтесь файлами и голосовыми сообщениями. Все нужные инструменты для командного общения — прямо в Битрикс24.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -429,6 +433,29 @@
     margin: clamp(44px, 4vw, 58px) auto 0;
   }
 
+  .b24-collab-tabs__description {
+    max-width: 860px;
+    margin: clamp(28px, 3vw, 40px) auto 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+
+  .b24-collab-tabs__description-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(22px, 2.2vw, 30px);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .b24-collab-tabs__description-text {
+    margin: 14px 0 0;
+    color: #d2e2ff;
+    font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.6;
+  }
+
   .b24-collab-tabs__screen-shell {
     position: relative;
     width: 100%;
@@ -558,7 +585,8 @@
     transition: opacity 0.28s ease, transform 0.28s ease;
   }
 
-  .b24-collab-tabs__screen.is-switching {
+  .b24-collab-tabs__screen.is-switching,
+  .b24-collab-tabs__description.is-switching {
     opacity: 0;
     transform: translateY(8px) scale(0.992);
   }
@@ -713,55 +741,78 @@
     const slides = [
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/1.1600w.png.webp?1780063682225',
-        alt: 'Интерфейс Битрикс24 для рабочих чатов и каналов'
+        alt: 'Интерфейс Битрикс24 для рабочих чатов и каналов',
+        title: 'Все рабочие обсуждения под рукой',
+        description: 'Общайтесь с коллегами в личных и групповых чатах, создавайте каналы, обменивайтесь файлами и голосовыми сообщениями. Все нужные инструменты для командного общения — прямо в Битрикс24.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chat/3.1600w.png.webp?1780063682225',
-        alt: 'Интерфейс Битрикс24 для видеовстреч команды'
+        alt: 'Интерфейс Битрикс24 для видеовстреч команды',
+        title: 'Видеозвонки для любых рабочих вопросов',
+        description: 'Собирайте коллег на онлайн-встречи, демонстрируйте экран и обсуждайте проекты в реальном времени. Подключиться к разговору можно с компьютера или телефона.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/tasks/1.1600w.png.webp?1780063682225',
-        alt: 'Интерфейс Битрикс24 для задач и проектов'
+        alt: 'Интерфейс Битрикс24 для задач и проектов',
+        title: 'От планирования до результата',
+        description: 'Распределяйте задачи между сотрудниками, устанавливайте сроки и отслеживайте выполнение. Используйте Канбан, Скрам, диаграмму Ганта и другие инструменты управления проектами.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/copilot/88.1600w.png.webp?1780063682225',
-        alt: 'Интерфейс Битрикс24 с AI-помощником'
+        alt: 'Интерфейс Битрикс24 с AI-помощником',
+        title: 'Умный помощник для повседневных задач',
+        description: 'Встроенный AI помогает создавать и редактировать тексты, придумывать идеи, обрабатывать информацию и экономить время на рутинной работе.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/chart/3.1176w.png.webp?1781520906432',
-        alt: 'Интерфейс Битрикс24 для командных досок'
+        alt: 'Интерфейс Битрикс24 для командных досок',
+        title: 'Пространство для совместных идей',
+        description: 'Создавайте интерактивные доски, добавляйте заметки, схемы и изображения. Вместе с коллегами проводите мозговые штурмы, визуализируйте процессы и планируйте проекты.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/6.1176w.png.webp?1781520906432',
-        alt: 'Интерфейс Битрикс24 для календаря команды'
+        alt: 'Интерфейс Битрикс24 для календаря команды',
+        title: 'Общие планы без путаницы',
+        description: 'Планируйте встречи и события, просматривайте занятость коллег и согласовывайте удобное время. Личные и командные расписания всегда под рукой.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/docs/3.1440w.png.webp?1781520906432',
-        alt: 'Интерфейс Битрикс24 для документов и диска'
+        alt: 'Интерфейс Битрикс24 для документов и диска',
+        title: 'Файлы и документы всегда доступны',
+        description: 'Создавайте, храните и редактируйте документы совместно с коллегами. Организуйте файлы по папкам, управляйте доступом и делитесь материалами по ссылке.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/note/9.1440w.png.webp?1784895106946',
-        alt: 'Интерфейс Битрикс24 для базы знаний'
+        alt: 'Интерфейс Битрикс24 для базы знаний',
+        title: 'Корпоративная информация в быстром доступе',
+        description: 'Создавайте единую библиотеку инструкций, регламентов и обучающих материалов. Нужную информацию легко найти, а новые сотрудники быстрее осваиваются в компании.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/mail/5.1440w.png.webp?1781520906432',
-        alt: 'Интерфейс Битрикс24 для корпоративной почты'
+        alt: 'Интерфейс Битрикс24 для корпоративной почты',
+        title: 'Деловая переписка внутри Битрикс24',
+        description: 'Подключайте рабочие почтовые ящики, отправляйте и получайте письма. Управляйте перепиской с клиентами и партнёрами из рабочего пространства.'
       },
       {
         image: 'https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/company/19.1176w.png.webp?1781520906432',
-        alt: 'Интерфейс Битрикс24 для соцсети компании'
+        alt: 'Интерфейс Битрикс24 для соцсети компании',
+        title: 'Новости и события вашей команды',
+        description: 'Публикуйте объявления, делитесь достижениями, проводите опросы и обсуждайте корпоративные новости. Помогайте сотрудникам быть в курсе жизни компании.'
       }
     ];
 
     const initCollabTabs = function (root) {
       const tabs = Array.from(root.querySelectorAll('.b24-collab-tabs__tab'));
       const image = root.querySelector('.b24-collab-tabs__screen');
+      const description = root.querySelector('.b24-collab-tabs__description');
+      const descriptionTitle = root.querySelector('.b24-collab-tabs__description-title');
+      const descriptionText = root.querySelector('.b24-collab-tabs__description-text');
       let activeIndex = 0;
       let switchTimer = null;
       let switchRequest = 0;
       const imageCache = new Map();
 
-      if (!tabs.length || !image) {
+      if (!tabs.length || !image || !description || !descriptionTitle || !descriptionText) {
         return;
       }
 
@@ -809,6 +860,7 @@
         setActiveTab(nextIndex);
         window.clearTimeout(switchTimer);
         image.classList.remove('is-switching');
+        description.classList.remove('is-switching');
 
         preloadSlide(slide).then(function () {
           if (requestId !== switchRequest) {
@@ -816,6 +868,7 @@
           }
 
           image.classList.add('is-switching');
+          description.classList.add('is-switching');
           switchTimer = window.setTimeout(function () {
             if (requestId !== switchRequest) {
               return;
@@ -823,10 +876,13 @@
 
             image.src = slide.image;
             image.alt = slide.alt;
+            descriptionTitle.textContent = slide.title;
+            descriptionText.textContent = slide.description;
             window.requestAnimationFrame(function () {
               window.requestAnimationFrame(function () {
                 if (requestId === switchRequest) {
                   image.classList.remove('is-switching');
+                  description.classList.remove('is-switching');
                 }
               });
             });
