@@ -1,89 +1,158 @@
-<section class="scrum-benefits" aria-label="Преимущества управления бизнес-процессами в Битрикс24">
-  <div class="scrum-benefits__container">
-    <div class="scrum-benefits__grid">
-      <article class="scrum-benefits__card">
-        <div class="scrum-benefits__icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="10" width="48" height="44" rx="10" stroke="currentColor" stroke-width="2.5" />
-            <path d="M18 42L30 30L38 36L46 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M41 24H46V29" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M18 20V44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-            <path d="M18 44H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-          </svg>
-        </div>
-        <p>Онлайн-доски для отрисовки процессов</p>
-      </article>
+<section class="bpm-boards" aria-labelledby="bpm-boards-title">
+  <div class="bpm-boards__container">
+    <div class="bpm-boards__content">
+      <h2 id="bpm-boards-title" class="bpm-boards__title">Онлайн-доски для отрисовки текущего процесса</h2>
+      <p class="bpm-boards__text">
+        Нарисуйте текущий бизнес-процесс на встроенной онлайн-доске: покажите этапы, участников и связи между ними.
+        Начните с готового шаблона и адаптируйте схему под задачи компании.
+        Обсудите её с командой перед настройкой автоматизации.
+      </p>
+      <a class="bpm-boards__button" href="https://www.bitrix24.ru/journal/chto-takoe-bpmn/">
+        Узнать о нотации BPMN
+      </a>
+    </div>
 
-      <article class="scrum-benefits__card">
-        <div class="scrum-benefits__icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 14H29L33 24L27 28C29.8 33.5 34.5 38.2 40 41L44 35L54 39V48C54 50.8 51.8 53 49 53C29.1 53 13 36.9 13 17C13 14.2 15.2 12 18 12H20V14Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M36 17C40.4 17 44 20.6 44 25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-            <path d="M36 11C43.7 11 50 17.3 50 25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-          </svg>
-        </div>
-        <p>AI-ноды для быстрой настройки</p>
-      </article>
-
-      <article class="scrum-benefits__card">
-        <div class="scrum-benefits__icon" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="12" width="48" height="40" rx="9" stroke="currentColor" stroke-width="2.5" />
-            <path d="M8 24H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-            <circle cx="16" cy="18" r="1.6" fill="currentColor" />
-            <circle cx="22" cy="18" r="1.6" fill="currentColor" />
-            <circle cx="28" cy="18" r="1.6" fill="currentColor" />
-            <rect x="16" y="31" width="16" height="11" rx="3" stroke="currentColor" stroke-width="2.5" />
-            <path d="M38 33H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-            <path d="M38 40H46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-          </svg>
-        </div>
-        <p>Готовые шаблоны бизнес-процессов</p>
-      </article>
+    <div class="bpm-boards__visual">
+      <img
+        class="bpm-boards__image"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/9b9/sihggvk4aaez2y6cd2u97js0bekq8pnc.1920w.png.webp?1791967704466"
+        alt="Онлайн-доска Битрикс24 для визуализации бизнес-процесса"
+        loading="lazy"
+        decoding="async"
+      >
     </div>
   </div>
 </section>
 
 <style>
-  .scrum-benefits,
-  .scrum-benefits *{box-sizing: border-box;}.scrum-benefits{background: #f7faff;
-    padding: 56px 0 72px;}.scrum-benefits__container{width: min(1240px, 100% - 40px);
-    margin: 0 auto;}.scrum-benefits__grid{display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;}.scrum-benefits__card{min-height: 160px;
-    padding: 24px;
-    border-radius: 22px;
-    background: #ffffff;
-    border: 1px solid #e7eefc;
-    box-shadow: 0 12px 32px rgba(25, 70, 139, 0.08);
-    display: flex;
+  .bpm-boards,
+  .bpm-boards *,
+  .bpm-boards *::before,
+  .bpm-boards *::after {
+    box-sizing: border-box;
+  }
+
+  .bpm-boards {
+    padding: clamp(38px, 6vw, 80px) 0;
+    background: #f7faff;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
+  }
+
+  .bpm-boards__container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
-    gap: 16px;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-    color: #2a5edb;}.scrum-benefits__card:hover{transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(25, 70, 139, 0.14);}.scrum-benefits__icon{width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    background: linear-gradient(180deg, rgba(67, 120, 239, 0.12) 0%, rgba(67, 120, 239, 0.06) 100%);
+    gap: clamp(28px, 4vw, 56px);
+    width: min(1240px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .bpm-boards__content,
+  .bpm-boards__visual {
+    min-width: 0;
+  }
+
+  .bpm-boards__title {
+    margin: 0;
+    color: #0f2945;
+    font-size: clamp(28px, 3.2vw, 42px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+  }
+
+  .bpm-boards__text {
+    margin: 24px 0 0;
+    color: #48627b;
+    font-size: clamp(17px, 1.6vw, 20px);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .bpm-boards__button,
+  .bpm-boards__button:link,
+  .bpm-boards__button:visited {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #2f67e7;
-    flex-shrink: 0;}.scrum-benefits__icon svg{width: 32px;
-    height: 32px;}.scrum-benefits__card p{margin: 0;
-    font-family: "Montserrat", "Segoe UI", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
+    max-width: 100%;
+    min-height: 52px;
+    margin-top: 28px;
+    padding: 14px 24px;
+    border: 2px solid #3277fd;
+    border-radius: 999px;
+    background: transparent;
+    color: #3277fd;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 1.35;
-    color: #1f2b4d;}@media (max-width: 1024px){.scrum-benefits{padding: 48px 0 64px;}.scrum-benefits__grid{grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;}.scrum-benefits__card{min-height: 140px;
-      padding: 22px 20px;}.scrum-benefits__card p{font-size: 18px;}}@media (max-width: 680px){.scrum-benefits{padding: 38px 0 52px;}.scrum-benefits__container{width: min(1240px, 100% - 24px);}.scrum-benefits__grid{grid-template-columns: 1fr;
-      gap: 16px;}.scrum-benefits__card{min-height: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+  }
+
+  .bpm-boards__button:hover {
+    background: #3277fd;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .bpm-boards__button:focus-visible {
+    outline: 3px solid #3277fd;
+    outline-offset: 4px;
+    background: #3277fd;
+    color: #ffffff;
+  }
+
+  .bpm-boards__visual {
+    overflow: hidden;
+    border: 1px solid #e7eefc;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 22px 52px rgba(16, 44, 94, 0.14);
+  }
+
+  .bpm-boards__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 1024px) {
+    .bpm-boards__container {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .bpm-boards__container {
+      width: calc(100% - 24px);
+      gap: 24px;
+    }
+
+    .bpm-boards__text {
+      margin-top: 18px;
+    }
+
+    .bpm-boards__button {
+      margin-top: 22px;
+    }
+
+    .bpm-boards__visual {
       border-radius: 18px;
-      padding: 18px 16px;
-      gap: 14px;
-      align-items: flex-start;}.scrum-benefits__icon{width: 48px;
-      height: 48px;
-      border-radius: 12px;}.scrum-benefits__icon svg{width: 28px;
-      height: 28px;}.scrum-benefits__card p{font-size: 17px;
-      line-height: 1.35;}}</style>
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bpm-boards__button {
+      transition: none;
+    }
+
+    .bpm-boards__button:hover {
+      transform: none;
+    }
+  }
+</style>
