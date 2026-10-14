@@ -1,11 +1,10 @@
-<section class="crm-analytics-cards" aria-label="CRM аналитика">
+<section class="crm-analytics-cards" aria-label="Бизнес-процессы в финансовых заявках, закупках и HR">
   <article class="analytics-card">
-    <h2 class="analytics-card__title">Отчет по лидам и сделкам</h2>
-    <p class="analytics-card__text">
-      В CRM доступны подробности каждой сделки. Вы можете проследить путь клиента от обращения до
-      заключения сделки, изучив источники трафика. В карточке сделки хранится вся история
-      взаимодействия с клиентом, и здесь же можно связаться с ним и планировать дальнейшие шаги.
-    </p>
+    <h2 class="analytics-card__title">БП в Финансовых заявках и закупках</h2>
+    <ul class="analytics-card__text analytics-card__list">
+      <li><strong>Заявка на оплату (расходные операции):</strong> Согласование счетов от подрядчиков, покупка расходников для офиса (например, заказ воды) с фиксацией бюджета.</li>
+      <li><strong>Согласование командировочных или представительских расходов</strong></li>
+    </ul>
     <div class="analytics-card__image-wrap">
       <img
         class="analytics-card__image"
@@ -17,11 +16,13 @@
   </article>
 
   <article class="analytics-card">
-    <h2 class="analytics-card__title">План продаж</h2>
-    <p class="analytics-card__text">
-      Отображает планы по продажам, стоящие перед отделом и каждым сотрудником. Сразу видно,
-      сколько сделок осталось заключить и какой процент уже был выполнен.
-    </p>
+    <h2 class="analytics-card__title">БП в HR и управление персоналом</h2>
+    <ul class="analytics-card__text analytics-card__list">
+      <li><strong>Прием нового сотрудника (Онбординг):</strong> Автоматическое создание задач на подготовку рабочего места, выдачу доступов к почте и CRM, прохождение вводного обучения и добавление в нужные отделы.</li>
+      <li><strong>Заявления на отпуск и отгулы:</strong> Подача заявки сотрудником, автоматический расчет, согласование с руководителем и передача в кадры/бухгалтерию.</li>
+      <li><strong>Командировки:</strong> Согласование поездки, постановка задач бухгалтеру на покупку билетов/бронь отеля и постановка задач на отчет после возвращения.</li>
+      <li><strong>Увольнение сотрудника:</strong> Чек-лист по сдаче техники, отключению учетных записей и закрытию доступов.</li>
+    </ul>
     <div class="analytics-card__image-wrap">
       <img
         class="analytics-card__image"
@@ -34,6 +35,18 @@
 </section>
 
 <style>
+  .crm-analytics-cards .analytics-card__list {
+    padding-left: 22px;
+  }
+
+  .crm-analytics-cards .analytics-card__list li + li {
+    margin-top: 16px;
+  }
+
+  .crm-analytics-cards .analytics-card__list strong {
+    font-weight: 600;
+  }
+
   .crm-analytics-cards{--text-color: rgb(18, 18, 18);
     --card-bg: #f5f8ff;
 
