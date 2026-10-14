@@ -1,11 +1,11 @@
-<section class="analytics-comparison" aria-label="Сквозная аналитика: сравнение отчетов">
+<section class="analytics-comparison" aria-label="Бизнес-процессы в документообороте и продажах">
   <article class="analytics-comparison__card">
-    <h2 class="analytics-comparison__title">Отчет об окупаемости рекламы</h2>
-    <p class="analytics-comparison__text">
-      Узнайте, какие рекламные каналы приносят прибыль, а какие тратят бюджет зря. CRM сама собирает
-      данные о расходах и трафике и показывает продажи. Отчеты обновляются в реальном времени и
-      доступны за любой период.
-    </p>
+    <h2 class="analytics-comparison__title">Бизнес-процессы в документообороте</h2>
+    <ul class="analytics-comparison__text analytics-comparison__list">
+      <li><strong>Согласование договоров и счетов:</strong> Автоматическая отправка документа по цепочке руководителей (юрист, финансовый директор, генеральный директор) с возможностью доработки или утверждения.</li>
+      <li><strong>Утверждение документов со статусами:</strong> Движение файла от черновика до финальной публикации в компании.</li>
+      <li><strong>Ознакомление сотрудников с приказами:</strong> Рассылка регламентов или приказов с трекингом того, кто из сотрудников и когда нажал кнопку «Ознакомлен».</li>
+    </ul>
     <div class="analytics-comparison__image-wrap">
       <img
         class="analytics-comparison__image"
@@ -17,12 +17,12 @@
   </article>
 
   <article class="analytics-comparison__card">
-    <h2 class="analytics-comparison__title">Влияние трафика на продажи</h2>
-    <p class="analytics-comparison__text">
-      CRM помогает оценить эффективность работы менеджеров с клиентами из разных источников. Вы можете
-      увидеть, как менеджеры обрабатывают каждую сделку и какой трафик они лучше всего конвертируют в
-      сделки.
-    </p>
+    <h2 class="analytics-comparison__title">БП в продажах</h2>
+    <ul class="analytics-comparison__text analytics-comparison__list">
+      <li><strong>Уведомление при изменении стадии сделки:</strong> Автоматические оповещения руководителю отдела продаж, когда сделка переходит на важный этап (например, «Оплата» или «Отгрузка»).</li>
+      <li><strong>Напоминание об изменении статуса лида:</strong> Перевод зависшего лида в работу по истечении таймера с отправкой задачи менеджеру.</li>
+      <li><strong>Автоматическое создание задач и событий в календаре</strong></li>
+    </ul>
     <div class="analytics-comparison__image-wrap">
       <img
         class="analytics-comparison__image"
@@ -35,6 +35,18 @@
 </section>
 
 <style>
+  .analytics-comparison__list {
+    padding-left: 22px;
+  }
+
+  .analytics-comparison__list li + li {
+    margin-top: 16px;
+  }
+
+  .analytics-comparison__list strong {
+    font-weight: 600;
+  }
+
   .analytics-comparison{--text-color: rgb(18, 18, 18);
     --card-bg: #f5f8ff;
 
