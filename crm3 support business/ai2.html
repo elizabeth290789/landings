@@ -1,0 +1,344 @@
+<section class="crm2-ai2" aria-labelledby="crm2-ai2-title">
+  <div class="crm2-ai2__shell">
+    <div class="crm2-ai2__intro">
+      <h2 class="crm2-ai2__title" id="crm2-ai2-title">Автоматизация с AI</h2>
+      <p class="crm2-ai2__subtitle">
+        Встроенный в Битрикс24 интеллектуальный ассистент расшифровывает звонки, заполняет CRM, анализирует разговоры менеджеров, генерирует описания товаров и документы, а также даёт рекомендации по оптимизации процессов.
+      </p>
+    </div>
+
+    <div class="crm2-ai2__tabs" role="tablist" aria-label="Возможности автоматизации с AI">
+      <button class="crm2-ai2__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="crm2-ai2-panel" id="crm2-ai2-tab-0" data-crm2-ai2-tab data-crm2-ai2-index="0">
+        <span class="crm2-ai2__tab-text">AI в чате</span>
+        <span class="crm2-ai2__tab-icon" aria-hidden="true">+</span>
+      </button>
+      <button class="crm2-ai2__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai2-panel" id="crm2-ai2-tab-1" data-crm2-ai2-tab data-crm2-ai2-index="1" tabindex="-1">
+        <span class="crm2-ai2__tab-text">AI в видеозвонках</span>
+        <span class="crm2-ai2__tab-icon" aria-hidden="true">+</span>
+      </button>
+      <button class="crm2-ai2__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai2-panel" id="crm2-ai2-tab-2" data-crm2-ai2-tab data-crm2-ai2-index="2" tabindex="-1">
+        <span class="crm2-ai2__tab-text">AI в CRM</span>
+        <span class="crm2-ai2__tab-icon" aria-hidden="true">+</span>
+      </button>
+      <button class="crm2-ai2__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai2-panel" id="crm2-ai2-tab-3" data-crm2-ai2-tab data-crm2-ai2-index="3" tabindex="-1">
+        <span class="crm2-ai2__tab-text">AI в сайтах</span>
+        <span class="crm2-ai2__tab-icon" aria-hidden="true">+</span>
+      </button>
+      <button class="crm2-ai2__tab" type="button" role="tab" aria-selected="false" aria-controls="crm2-ai2-panel" id="crm2-ai2-tab-4" data-crm2-ai2-tab data-crm2-ai2-index="4" tabindex="-1">
+        <span class="crm2-ai2__tab-text">AI в задачах</span>
+        <span class="crm2-ai2__tab-icon" aria-hidden="true">+</span>
+      </button>
+    </div>
+
+    <div class="crm2-ai2__screen" id="crm2-ai2-panel" role="tabpanel" aria-labelledby="crm2-ai2-tab-0" data-crm2-ai2-screen>
+      <img class="crm2-ai2__image is-active" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/10.1900w.png.webp?1780063682225" alt="AI в чате Битрикс24" loading="eager" data-crm2-ai2-image="0" />
+      <img class="crm2-ai2__image" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/11.1840w.png.webp?1780063682225" alt="AI в видеозвонках Битрикс24" loading="lazy" data-crm2-ai2-image="1" />
+      <img class="crm2-ai2__image" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/12.1900w.png.webp?1780063682225" alt="AI в CRM Битрикс24" loading="lazy" data-crm2-ai2-image="2" />
+      <img class="crm2-ai2__image" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/13.1900w.png.webp?1780063682225" alt="AI в сайтах Битрикс24" loading="lazy" data-crm2-ai2-image="3" />
+      <img class="crm2-ai2__image" src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/14.1900w.png.webp?1780063682225" alt="AI в задачах Битрикс24" loading="lazy" data-crm2-ai2-image="4" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .crm2-ai2,
+  .crm2-ai2 * {
+    box-sizing: border-box;
+  }
+
+  .crm2-ai2 {
+    --crm2-ai2-bg: #ffffff;
+    --crm2-ai2-panel: #f6f8fc;
+    --crm2-ai2-card: #ffffff;
+    --crm2-ai2-text: #07000e;
+    --crm2-ai2-muted: #111827;
+    --crm2-ai2-blue: #28aeea;
+    --crm2-ai2-blue-soft: #e7f8ff;
+    --crm2-ai2-radius: clamp(36px, 4.1vw, 48px);
+    --crm2-ai2-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    width: 100%;
+    padding: clamp(28px, 4vw, 42px) clamp(14px, 3vw, 28px);
+    background: var(--crm2-ai2-bg);
+    color: var(--crm2-ai2-text);
+    font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .crm2-ai2__shell {
+    width: min(100%, 1380px);
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--crm2-ai2-radius);
+    background: var(--crm2-ai2-panel);
+    padding: clamp(44px, 5.2vw, 72px) clamp(20px, 5vw, 104px) clamp(42px, 5vw, 70px);
+  }
+
+  .crm2-ai2__intro {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .crm2-ai2__title {
+    margin: 0;
+    font-size: clamp(42px, 5.25vw, 72px);
+    line-height: 0.96;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    color: var(--crm2-ai2-text);
+  }
+
+  .crm2-ai2__subtitle {
+    max-width: 750px;
+    margin: clamp(18px, 1.9vw, 24px) auto 0;
+    font-size: clamp(16px, 1.2vw, 19px);
+    line-height: 1.46;
+    font-weight: 500;
+    color: var(--crm2-ai2-muted);
+  }
+
+  .crm2-ai2__tabs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(148px, 1fr));
+    gap: clamp(12px, 1.4vw, 18px);
+    max-width: 1060px;
+    margin: clamp(34px, 3.9vw, 48px) auto 0;
+  }
+
+  .crm2-ai2__tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 62px;
+    border: 0;
+    border-radius: 16px;
+    padding: 16px 17px 16px 22px;
+    overflow: hidden;
+    background: var(--crm2-ai2-card);
+    color: var(--crm2-ai2-text);
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    transition: transform 220ms var(--crm2-ai2-ease), background-color 220ms var(--crm2-ai2-ease);
+  }
+
+  .crm2-ai2__tab::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--crm2-ai2-blue);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms var(--crm2-ai2-ease);
+  }
+
+  .crm2-ai2__tab:hover,
+  .crm2-ai2__tab:focus-visible {
+    background: #fbfdff;
+    transform: translateY(-1px);
+  }
+
+  .crm2-ai2__tab:focus-visible {
+    outline: 3px solid rgba(40, 174, 234, 0.32);
+    outline-offset: 3px;
+  }
+
+  .crm2-ai2__tab.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .crm2-ai2__tab-text {
+    font-size: clamp(15px, 1.05vw, 17px);
+    line-height: 1.1;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .crm2-ai2__tab-icon {
+    display: inline-grid;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--crm2-ai2-blue);
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 800;
+    transition: background-color 220ms var(--crm2-ai2-ease), transform 220ms var(--crm2-ai2-ease);
+  }
+
+  .crm2-ai2__tab.is-active .crm2-ai2__tab-icon {
+    background: #18a6e7;
+    transform: rotate(45deg);
+  }
+
+  .crm2-ai2__screen {
+    position: relative;
+    width: min(100%, 1010px);
+    aspect-ratio: 1900 / 955;
+    margin: clamp(42px, 4.4vw, 58px) auto 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--crm2-ai2-blue-soft);
+  }
+
+  .crm2-ai2__image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(1.012);
+    transition: opacity 520ms ease, transform 700ms var(--crm2-ai2-ease);
+    pointer-events: none;
+  }
+
+  .crm2-ai2__image.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @media (max-width: 1180px) {
+    .crm2-ai2__tabs {
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .crm2-ai2 {
+      padding: 18px 10px;
+    }
+
+    .crm2-ai2__shell {
+      border-radius: 28px;
+      padding: 34px 14px 30px;
+    }
+
+    .crm2-ai2__title {
+      font-size: clamp(34px, 11vw, 46px);
+      letter-spacing: -0.045em;
+    }
+
+    .crm2-ai2__subtitle {
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
+    .crm2-ai2__tabs {
+      display: flex;
+      max-width: none;
+      margin-top: 28px;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 2px 2px 10px;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .crm2-ai2__tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .crm2-ai2__tab {
+      flex: 0 0 min(72vw, 250px);
+      min-height: 58px;
+      padding: 14px 14px 14px 18px;
+      scroll-snap-align: start;
+    }
+
+    .crm2-ai2__tab-text {
+      white-space: normal;
+    }
+
+    .crm2-ai2__screen {
+      width: 100%;
+      margin-top: 26px;
+      border-radius: 16px;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .crm2-ai2__screen {
+      aspect-ratio: 1.55;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.querySelector('.crm2-ai2');
+
+    if (!root) {
+      return;
+    }
+
+    const tabs = Array.from(root.querySelectorAll('[data-crm2-ai2-tab]'));
+    const images = Array.from(root.querySelectorAll('[data-crm2-ai2-image]'));
+    const panel = root.querySelector('[data-crm2-ai2-screen]');
+    const switchDelay = 3600;
+    let activeIndex = 0;
+    let autoSwitchTimer = null;
+
+    if (!tabs.length || tabs.length !== images.length || !panel) {
+      return;
+    }
+
+    const normalizeIndex = (index) => (index + tabs.length) % tabs.length;
+
+    const setActiveTab = (nextIndex) => {
+      activeIndex = normalizeIndex(nextIndex);
+
+      tabs.forEach((tab, index) => {
+        const isActive = index === activeIndex;
+        tab.classList.toggle('is-active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+
+      images.forEach((image, index) => {
+        image.classList.toggle('is-active', index === activeIndex);
+      });
+
+      panel.setAttribute('aria-labelledby', tabs[activeIndex].id);
+    };
+
+    const startAutoSwitch = () => {
+      window.clearInterval(autoSwitchTimer);
+      autoSwitchTimer = window.setInterval(() => {
+        setActiveTab(activeIndex + 1);
+      }, switchDelay);
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        setActiveTab(index);
+        startAutoSwitch();
+      });
+
+      tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
+          return;
+        }
+
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextIndex = normalizeIndex(activeIndex + direction);
+        setActiveTab(nextIndex);
+        tabs[nextIndex].focus();
+        startAutoSwitch();
+      });
+    });
+
+    setActiveTab(0);
+    startAutoSwitch();
+  })();
+</script>
