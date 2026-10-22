@@ -532,6 +532,44 @@
     margin-top: clamp(24px, 2.7vw, 36px);
   }
 
+  @media (min-width: 1024px) {
+    .crm2-hero-custom .crm2-hero-title {
+      width: 100%;
+      max-width: 1100px;
+      line-height: 1.1;
+    }
+
+    .crm2-hero-custom .crm2-hero-subtitle {
+      width: 100%;
+      max-width: 1168px;
+      font-size: clamp(16px, 1.5vw, 20px);
+    }
+
+    .crm2-hero-custom .crm2-feature-chips {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: clamp(10px, 1.2vw, 18px);
+    }
+
+    .crm2-hero-custom .crm2-feature-chips li {
+      min-width: 0;
+    }
+
+    .crm2-hero-custom .crm2-feature-chip {
+      width: 100%;
+      min-width: 0;
+      gap: 8px;
+      padding: 0 clamp(10px, 1.2vw, 16px);
+      font-size: clamp(13px, 1.2vw, 16px);
+    }
+
+    .crm2-hero-custom .crm2-feature-chip span {
+      width: 20px;
+      height: 20px;
+      flex-basis: 20px;
+    }
+  }
+
   @media (max-width: 1280px) {
     .crm2-hero-custom {
       padding-top: 42px;
