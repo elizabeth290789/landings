@@ -44,13 +44,22 @@
   </div>
 </section>
 
-<section class="analytics-integrations" aria-label="Интеграции и AI-помощник для сквозной аналитики">
-  <article class="analytics-integrations__card" aria-labelledby="analytics-metrika-title">
-    <h2 class="analytics-integrations__title" id="analytics-metrika-title">Яндекс.Метрика</h2>
-    <p class="analytics-integrations__text">
-      Оптимизируйте рекламу в Директе, обучайте на реальных заказах и продажах. Помогает видеть ROI
-      и реальный CPA лида или заказа.
-    </p>
+<section class="analytics-integrations" data-analytics-tabs aria-label="Интеграции и AI-помощник для сквозной аналитики">
+  <div class="analytics-integrations__tabs" role="tablist" aria-label="Выберите интеграцию" hidden>
+    <button class="analytics-integrations__tab" id="analytics-metrika-tab" type="button" role="tab" aria-selected="true" aria-controls="analytics-metrika-panel" tabindex="0">Яндекс.Метрика</button>
+    <button class="analytics-integrations__tab" id="analytics-website-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-website-panel" tabindex="-1">Интеграция с сайтом</button>
+    <button class="analytics-integrations__tab" id="analytics-calltracking-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-calltracking-panel" tabindex="-1">Roistat / Calltouch</button>
+    <button class="analytics-integrations__tab" id="analytics-ai-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-ai-panel" tabindex="-1">Встроенный AI-помощник</button>
+  </div>
+
+  <article class="analytics-integrations__card" id="analytics-metrika-panel" role="tabpanel" aria-labelledby="analytics-metrika-tab" tabindex="0">
+    <div class="analytics-integrations__content">
+      <h2 class="analytics-integrations__title" id="analytics-metrika-title">Яндекс.Метрика</h2>
+      <p class="analytics-integrations__text">
+        Оптимизируйте рекламу в Директе, обучайте на реальных заказах и продажах. Помогает видеть ROI
+        и реальный CPA лида или заказа.
+      </p>
+    </div>
     <div class="analytics-integrations__visual">
       <img
         class="analytics-integrations__image"
@@ -64,13 +73,15 @@
     </div>
   </article>
 
-  <article class="analytics-integrations__card" aria-labelledby="analytics-website-title">
-    <h2 class="analytics-integrations__title" id="analytics-website-title">Интеграция с сайтом</h2>
-    <p class="analytics-integrations__text">
-      Подключайте к популярным CMS: 1С-Битрикс, Tilda, WordPress, OpenCart и др. Менеджерам не
-      потребуется вручную заполнять обращения, и вам будет удобнее отслеживать скорость обработки.
-      Передача UTM-меток позволит лучше контролировать рекламу.
-    </p>
+  <article class="analytics-integrations__card" id="analytics-website-panel" role="tabpanel" aria-labelledby="analytics-website-tab" tabindex="0">
+    <div class="analytics-integrations__content">
+      <h2 class="analytics-integrations__title" id="analytics-website-title">Интеграция с сайтом</h2>
+      <p class="analytics-integrations__text">
+        Подключайте к популярным CMS: 1С-Битрикс, Tilda, WordPress, OpenCart и др. Менеджерам не
+        потребуется вручную заполнять обращения, и вам будет удобнее отслеживать скорость обработки.
+        Передача UTM-меток позволит лучше контролировать рекламу.
+      </p>
+    </div>
     <div class="analytics-integrations__visual">
       <img
         class="analytics-integrations__image"
@@ -84,13 +95,15 @@
     </div>
   </article>
 
-  <article class="analytics-integrations__card" aria-labelledby="analytics-calltracking-title">
-    <h2 class="analytics-integrations__title" id="analytics-calltracking-title">Roistat / Calltouch</h2>
-    <p class="analytics-integrations__text">
-      Интеграция с популярными системами сквозной аналитики Roistat или Calltouch позволит
-      автоматически создавать или обновлять лиды и сделки на основе входящих звонков и заявок
-      с сайта, передавать параметры UTM-меток.
-    </p>
+  <article class="analytics-integrations__card" id="analytics-calltracking-panel" role="tabpanel" aria-labelledby="analytics-calltracking-tab" tabindex="0">
+    <div class="analytics-integrations__content">
+      <h2 class="analytics-integrations__title" id="analytics-calltracking-title">Roistat / Calltouch</h2>
+      <p class="analytics-integrations__text">
+        Интеграция с популярными системами сквозной аналитики Roistat или Calltouch позволит
+        автоматически создавать или обновлять лиды и сделки на основе входящих звонков и заявок
+        с сайта, передавать параметры UTM-меток.
+      </p>
+    </div>
     <div class="analytics-integrations__visual">
       <img
         class="analytics-integrations__image"
@@ -104,13 +117,15 @@
     </div>
   </article>
 
-  <article class="analytics-integrations__card" aria-labelledby="analytics-ai-title">
-    <h2 class="analytics-integrations__title" id="analytics-ai-title">Встроенный AI-помощник</h2>
-    <p class="analytics-integrations__text">
-      Уже связан с Битрикс24. Помогает проанализировать данные и сделать дашборды, например,
-      составить дашборд по продажам, проанализировать зависшие сделки или конверсию воронки.
-      Общение в обычном чате.
-    </p>
+  <article class="analytics-integrations__card" id="analytics-ai-panel" role="tabpanel" aria-labelledby="analytics-ai-tab" tabindex="0">
+    <div class="analytics-integrations__content">
+      <h2 class="analytics-integrations__title" id="analytics-ai-title">Встроенный AI-помощник</h2>
+      <p class="analytics-integrations__text">
+        Уже связан с Битрикс24. Помогает проанализировать данные и сделать дашборды, например,
+        составить дашборд по продажам, проанализировать зависшие сделки или конверсию воронки.
+        Общение в обычном чате.
+      </p>
+    </div>
     <div class="analytics-integrations__visual">
       <img
         class="analytics-integrations__image"
@@ -277,10 +292,61 @@
     margin: 24px auto 72px;
     padding-inline: clamp(16px, 2.5vw, 28px);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     font-family: "Montserrat", "Segoe UI", sans-serif;
     color: var(--text-color);
+  }
+
+  .analytics-integrations__tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .analytics-integrations__tab {
+    appearance: none;
+    min-width: 0;
+    min-height: 60px;
+    margin: 0;
+    padding: 14px 18px;
+    border: 1px solid #dce7fa;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #1f2b4d;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: none;
+    white-space: normal;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .analytics-integrations__tab:hover {
+    border-color: #2f67e7;
+    background: #edf3ff;
+  }
+
+  .analytics-integrations__tab[aria-selected="true"] {
+    border-color: #2f67e7;
+    background: #2f67e7;
+    color: #ffffff;
+  }
+
+  .analytics-integrations__tab:focus-visible,
+  .analytics-integrations__card:focus-visible {
+    outline: 3px solid #2f67e7;
+    outline-offset: 4px;
+  }
+
+  .analytics-integrations__tabs[hidden],
+  .analytics-integrations__card[hidden] {
+    display: none;
   }
 
   .analytics-integrations__card {
@@ -288,9 +354,16 @@
     padding: clamp(40px, 3.2vw, 56px);
     border-radius: 40px;
     background: var(--card-bg);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(24px, 3.5vw, 56px);
     overflow: hidden;
+  }
+
+  .analytics-integrations__content {
+    min-width: 0;
+    max-width: 540px;
   }
 
   .analytics-integrations__title {
@@ -311,8 +384,8 @@
   }
 
   .analytics-integrations__visual {
-    margin-top: auto;
-    padding-top: clamp(26px, 2.2vw, 36px);
+    min-width: 0;
+    width: 100%;
   }
 
   .analytics-integrations__image {
@@ -324,7 +397,6 @@
   }
 
   .analytics-integrations__actions {
-    grid-column: 1 / -1;
     padding-top: 46px;
     display: flex;
     align-items: center;
@@ -378,13 +450,22 @@
   @media (max-width: 1024px) {
     .analytics-integrations {
       margin-bottom: 48px;
-      grid-template-columns: 1fr;
       gap: 20px;
+    }
+
+    .analytics-integrations__tabs {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .analytics-integrations__card {
       border-radius: 32px;
       padding: clamp(30px, 5vw, 42px);
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .analytics-integrations__content {
+      max-width: 100%;
     }
 
     .analytics-integrations__title {
@@ -418,6 +499,16 @@
       padding-inline: 12px;
     }
 
+    .analytics-integrations__tabs {
+      gap: 8px;
+    }
+
+    .analytics-integrations__tab {
+      padding: 12px 10px;
+      border-radius: 18px;
+      font-size: 14px;
+    }
+
     .analytics-integrations__card {
       padding: 28px 20px;
       border-radius: 24px;
@@ -432,4 +523,82 @@
       border-radius: 16px;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .analytics-integrations__tab {
+      transition: none;
+    }
+  }
 </style>
+
+<script>
+  (function () {
+    const initAnalyticsTabs = function () {
+      document.querySelectorAll('[data-analytics-tabs]').forEach(function (root) {
+        if (root.dataset.analyticsTabsInitialized === 'true') {
+          return;
+        }
+
+        const tablist = root.querySelector('.analytics-integrations__tabs');
+        const tabs = Array.from(root.querySelectorAll('.analytics-integrations__tab'));
+        const panels = Array.from(root.querySelectorAll('.analytics-integrations__card'));
+
+        if (!tablist || !tabs.length || tabs.length !== panels.length) {
+          return;
+        }
+
+        const selectTab = function (selectedIndex) {
+          tabs.forEach(function (tab, index) {
+            const isSelected = index === selectedIndex;
+            tab.setAttribute('aria-selected', String(isSelected));
+            tab.tabIndex = isSelected ? 0 : -1;
+            panels[index].hidden = !isSelected;
+          });
+        };
+
+        tabs.forEach(function (tab, index) {
+          tab.addEventListener('click', function () {
+            selectTab(index);
+          });
+
+          tab.addEventListener('keydown', function (event) {
+            if (event.altKey || event.ctrlKey || event.metaKey) {
+              return;
+            }
+
+            let nextIndex;
+            switch (event.key) {
+              case 'ArrowRight':
+                nextIndex = (index + 1) % tabs.length;
+                break;
+              case 'ArrowLeft':
+                nextIndex = (index - 1 + tabs.length) % tabs.length;
+                break;
+              case 'Home':
+                nextIndex = 0;
+                break;
+              case 'End':
+                nextIndex = tabs.length - 1;
+                break;
+              default:
+                return;
+            }
+
+            event.preventDefault();
+            selectTab(nextIndex);
+            tabs[nextIndex].focus();
+          });
+        });
+
+        selectTab(0);
+        tablist.hidden = false;
+        root.dataset.analyticsTabsInitialized = 'true';
+      });
+    };
+
+    initAnalyticsTabs();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAnalyticsTabs, { once: true });
+    }
+  })();
+</script>
