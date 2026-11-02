@@ -1,4 +1,4 @@
-<section class="block-wrapper crm2-hero-custom" aria-label="Бесплатный набор инструментов для роста продаж">
+<section class="block-wrapper crm2-hero-custom" aria-label="Поддержка бизнеса и предпринимателей от Битрикс24">
   <div class="crm2-hero-bg" aria-hidden="true">
     <span class="crm2-hero-orb crm2-hero-orb--blue"></span>
     <span class="crm2-hero-orb crm2-hero-orb--violet"></span>
@@ -7,17 +7,18 @@
 
   <div class="crm2-hero-inner">
     <div class="crm2-hero-content">
-      <h1 class="crm2-hero-title">Бесплатный набор инструментов для роста продаж</h1>
+      <h1 class="crm2-hero-title">Поддержка бизнеса и предпринимателей от Битрикс24</h1>
 
       <p class="crm2-hero-subtitle">
-        Битрикс24 объединяет CRM, задачи, AI и инструменты автоматизации в единой платформе. Увеличивайте продажи, сохраняйте клиентов и контролируйте все процессы бизнеса.
+        Продажи, задачи, мессенджер и AI-инструменты — в единой платформе. Меньше ручной работы, больше возможностей для бизнеса.
       </p>
 
-      <ul class="crm2-hero-benefits" aria-label="Преимущества Битрикс24">
-        <li><span class="crm2-hero-benefit-check" aria-hidden="true">✓</span><span>50+ бесплатных CRM-инструментов</span></li>
-        <li><span class="crm2-hero-benefit-check" aria-hidden="true">✓</span><span>Быстрый старт без долгих настроек</span></li>
-        <li><span class="crm2-hero-benefit-check" aria-hidden="true">✓</span><span>5 000+ готовых интеграций</span></li>
-        <li><span class="crm2-hero-benefit-check" aria-hidden="true">✓</span><span>Все процессы бизнеса под контролем</span></li>
+      <ul class="crm2-feature-chips" aria-label="Инструменты для бизнеса">
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>CRM и продажи</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Задачи и проекты</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Мессенджер</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>Автоматизация</button></li>
+        <li><button class="crm2-feature-chip is-active" type="button" aria-pressed="true"><span aria-hidden="true">✓</span>AI-помощник</button></li>
       </ul>
 
       <a
@@ -88,6 +89,15 @@
     </a>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('.crm2-feature-chip').forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const isActive = chip.classList.toggle('is-active');
+      chip.setAttribute('aria-pressed', String(isActive));
+    });
+  });
+</script>
 
 <style>
   .crm2-hero-custom,
@@ -205,7 +215,7 @@
   }
 
   .crm2-hero-title {
-    max-width: 1040px;
+    max-width: 780px;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -246,48 +256,128 @@
     border-radius: 4px;
   }
 
-  .crm2-hero-benefits {
+  .crm2-feature-chips {
     width: 100%;
-    max-width: 900px;
-    margin: clamp(22px, 2.6vw, 32px) 0 0;
+    max-width: 1168px;
+    margin: clamp(24px, 2.6vw, 36px) auto 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 16px;
-    list-style: none;
-    text-align: left;
-  }
-
-  .crm2-hero-benefits > li {
-    min-width: 0;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-    padding: 14px 18px;
-    border: 1px solid var(--crm2-border);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--crm2-white);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.45;
-    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 14px 18px;
+    list-style: none;
   }
 
-  .crm2-hero-benefit-check {
-    width: 24px;
-    height: 24px;
-    flex: 0 0 24px;
+  .crm2-feature-chips li {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: stretch;
+    width: auto;
+    min-width: max-content;
+  }
+
+  .crm2-feature-chip {
+    width: auto;
+    min-width: max-content;
+    flex: 0 0 auto;
+    height: 46px;
+    min-height: 46px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    padding: 0 32px;
+    border: 1px solid rgba(194, 255, 0, 0.6);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.13));
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    cursor: pointer;
+    outline: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  .crm2-feature-chip span {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.42);
     border-radius: 50%;
-    background: var(--crm2-lime);
-    color: #101510;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1;
+    background: rgba(255, 255, 255, 0.13);
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 13px;
+    font-weight: 900;
+    box-shadow: none;
+    transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  }
+
+  .crm2-feature-chip.is-active,
+  .crm2-feature-chip.active,
+  .crm2-feature-chip.selected,
+  .crm2-feature-chip.checked {
+    border: 1px solid rgba(198, 255, 0, 0.9);
+    outline: none !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.31), rgba(202, 255, 22, 0.16));
+    box-shadow: none;
+  }
+
+  .crm2-feature-chip.is-active span {
+    border-color: #19de1d;
+    background: #19de1d;
+    color: #fff;
+    box-shadow: none;
+  }
+
+  .crm2-feature-chip:not(.is-active) {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07));
+    box-shadow: none;
+    opacity: 0.82;
+  }
+
+  .crm2-feature-chip:hover,
+  .crm2-feature-chip:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(202, 255, 22, 0.9);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(202, 255, 22, 0.17));
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .crm2-feature-chip:hover,
+  .crm2-feature-chip:active,
+  .crm2-feature-chip:focus,
+  .crm2-feature-chip:focus-visible,
+  .crm2-feature-chip.active,
+  .crm2-feature-chip.selected,
+  .crm2-feature-chip.checked,
+  .crm2-feature-chip.is-active,
+  input:checked + .crm2-feature-chip,
+  button.crm2-feature-chip:focus,
+  button.crm2-feature-chip:focus-visible {
+    outline: none !important;
+    box-shadow: none;
+  }
+
+  .crm2-feature-chip::-moz-focus-inner {
+    border: 0;
   }
 
   .crm2-hero-cta {
@@ -454,6 +544,40 @@
       max-width: 780px;
       font-size: clamp(18px, 1.6vw, 22px);
     }
+
+    .crm2-hero-custom .crm2-feature-chips {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: clamp(10px, 1.2vw, 18px);
+    }
+
+    .crm2-hero-custom .crm2-feature-chips li {
+      min-width: 0;
+      grid-column: span 2;
+    }
+
+    .crm2-hero-custom .crm2-feature-chips li:first-child {
+      grid-column: 2 / span 2;
+    }
+
+    .crm2-hero-custom .crm2-feature-chips li:nth-child(2) {
+      grid-column: 4 / span 2;
+    }
+
+    .crm2-hero-custom .crm2-feature-chip {
+      width: 100%;
+      min-width: 0;
+      gap: 8px;
+      padding: 0 clamp(10px, 1.2vw, 16px);
+      font-size: clamp(13px, 1.2vw, 16px);
+    }
+
+    .crm2-hero-custom .crm2-feature-chip span {
+      width: 20px;
+      height: 20px;
+      flex-basis: 20px;
+    }
   }
 
   @media (max-width: 1280px) {
@@ -471,6 +595,21 @@
       min-height: auto;
     }
 
+    .crm2-feature-chips {
+      max-width: 760px;
+    }
+
+    .crm2-feature-chips li {
+      flex: 0 0 auto;
+      width: auto;
+      min-width: max-content;
+    }
+
+    .crm2-feature-chip {
+      width: auto;
+      min-width: max-content;
+    }
+
     .crm2-product-image {
       width: min(100%, 880px);
     }
@@ -481,7 +620,7 @@
     }
   }
 
-  /* Stack the benefits on mobile so every statement stays readable. */
+  /* Conversion-focused mobile layout. Desktop styles above remain unchanged. */
   @media (max-width: 767px) {
     .crm2-hero-custom {
       min-height: auto;
@@ -502,19 +641,34 @@
       line-height: 1.32;
     }
 
-    .crm2-hero-benefits {
-      max-width: 560px;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 8px;
-      margin-top: 20px;
+    .crm2-feature-chips {
+      gap: 10px;
+      margin-top: 16px;
     }
 
-    .crm2-hero-benefits > li {
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-size: 15px;
-      line-height: 1.4;
+    .crm2-feature-chips li {
+      width: auto;
+      min-width: 0;
+    }
+
+    .crm2-feature-chip {
+      width: 100%;
+      min-width: 0;
+      height: 44px;
+      min-height: 44px;
+      justify-content: center;
+      gap: 7px;
+      padding: 0 10px;
+      font-size: clamp(12px, 3.55vw, 16px);
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .crm2-feature-chip span {
+      width: 18px;
+      height: 18px;
+      flex-basis: 18px;
+      font-size: 11px;
     }
 
     .crm2-hero-cta {
@@ -584,6 +738,44 @@
     .crm2-hero-cta--bottom {
       margin-top: 24px;
     }
+  }
+
+
+  .crm2-hero-custom .crm2-feature-chip,
+  .crm2-hero-custom .crm2-feature-chip:hover,
+  .crm2-hero-custom .crm2-feature-chip:active,
+  .crm2-hero-custom .crm2-feature-chip:focus,
+  .crm2-hero-custom .crm2-feature-chip:focus-visible,
+  .crm2-hero-custom .crm2-feature-chip.active,
+  .crm2-hero-custom .crm2-feature-chip.selected,
+  .crm2-hero-custom .crm2-feature-chip.checked,
+  .crm2-hero-custom .crm2-feature-chip.is-active,
+  .crm2-hero-custom input:checked + label.crm2-feature-chip,
+  .crm2-hero-custom input:checked + .crm2-feature-chip,
+  .crm2-hero-custom button.crm2-feature-chip:focus,
+  .crm2-hero-custom button.crm2-feature-chip:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  .crm2-hero-custom .crm2-feature-chip:hover,
+  .crm2-hero-custom .crm2-feature-chip:active,
+  .crm2-hero-custom .crm2-feature-chip:focus,
+  .crm2-hero-custom .crm2-feature-chip:focus-visible,
+  .crm2-hero-custom .crm2-feature-chip.active,
+  .crm2-hero-custom .crm2-feature-chip.selected,
+  .crm2-hero-custom .crm2-feature-chip.checked,
+  .crm2-hero-custom .crm2-feature-chip.is-active,
+  .crm2-hero-custom input:checked + label.crm2-feature-chip,
+  .crm2-hero-custom input:checked + .crm2-feature-chip {
+    border: 1px solid rgba(198, 255, 0, 0.9) !important;
+  }
+
+  .crm2-hero-custom .crm2-feature-chip,
+  .crm2-hero-custom .crm2-feature-chip * {
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   @media (max-width: 380px) {
