@@ -548,6 +548,7 @@
   }
 
   .bpm-boards {
+    scroll-margin-top: 100px;
     padding: clamp(38px, 6vw, 80px) 0;
     background: #f7faff;
     font-family: "Montserrat", "Segoe UI", sans-serif;
@@ -686,6 +687,7 @@
 
   .analytics-comparison{--text-color: rgb(18, 18, 18);
     --card-bg: #f5f8ff;
+    scroll-margin-top: 100px;
 
     width: min(100%, 1400px);
     margin-top: 24px;
@@ -999,9 +1001,8 @@
     </a>
 
     <nav class="ip-telephony-menu__nav" aria-label="Разделы лендинга">
-      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286198">Онлайн-Доска</a>
-      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286126">Готовые бизнес-процессы</a>
-      <a class="ip-telephony-menu__link" href="https://www.bitrix24.ru/promo/skvoznaya_analitika/#b286238">Кейсы автоматизации</a>
+      <a class="ip-telephony-menu__link" href="#online-doski">Онлайн-Доска</a>
+      <a class="ip-telephony-menu__link" href="#business-process">Готовые бизнес-процессы</a>
     </nav>
 
     <a
@@ -1116,7 +1117,7 @@
 </section>
 
   <!-- online-doski.html -->
-<section class="bpm-boards" aria-labelledby="bpm-boards-title">
+<section id="online-doski" class="bpm-boards" aria-labelledby="bpm-boards-title">
   <div class="bpm-boards__container">
     <div class="bpm-boards__content">
       <h2 id="bpm-boards-title" class="bpm-boards__title">Онлайн-доски для отрисовки текущего процесса</h2>
@@ -1143,7 +1144,7 @@
 </section>
 
   <!-- business-process.html -->
-<section class="analytics-comparison" aria-label="Бизнес-процессы в документообороте и продажах">
+<section id="business-process" class="analytics-comparison" aria-label="Бизнес-процессы в документообороте и продажах">
   <article class="analytics-comparison__card">
     <h2 class="analytics-comparison__title">БП в документообороте</h2>
     <ul class="analytics-comparison__text analytics-comparison__list">
