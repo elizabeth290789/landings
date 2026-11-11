@@ -1,1 +1,483 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7faff">
+  <meta name="description" content="Бесплатная CRM Битрикс24 для смартфона: клиенты, сделки, сообщения, счета и документы — всё под рукой. Начните бесплатно.">
+  <title>Мобильная CRM Битрикс24 — вся CRM в смартфоне</title>
+  <link rel="preconnect" href="https://www.bitrix24.ru">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #19233d;
+      --muted: #5e6a83;
+      --blue: #1977f4;
+      --dark-blue: #112c91;
+      --purple: #7546df;
+      --pink: #da4fbd;
+      --lime: #caff16;
+      --lime-hover: #d9ff4d;
+      --paper: #f7faff;
+      --line: #e6eaf5;
+      --radius: 28px;
+      --wide: 1100px;
+    }
+    *, *::before, *::after {box-sizing: border-box}
+    html {scroll-behavior: smooth; scroll-padding-top: 78px}
+    body {margin: 0; min-width: 320px; overflow-x: hidden; background: #fff; color: var(--ink); font-family: Montserrat, Arial, sans-serif; -webkit-font-smoothing: antialiased}
+    a {color: inherit; text-decoration: none}
+    button {font: inherit}
+    img {max-width: 100%; height: auto}
+    button, a {-webkit-tap-highlight-color: transparent}
+    :focus-visible {outline: 3px solid #166fe5; outline-offset: 4px}
+    .container {width: min(100% - 36px, var(--wide)); margin-inline: auto}
+    .sr-only {position: absolute!important; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap}
+    .icons {position: absolute; width: 0; height: 0; overflow: hidden}
+    .ico {width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none}
+    .eyebrow {display: inline-flex; align-items: center; gap: 7px; margin: 0 0 14px; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase}
+    .eyebrow::before {content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: currentColor}
+    .section-title {font-size: clamp(28px, 4vw, 46px); letter-spacing: -.055em; line-height: 1.12; font-weight: 800; margin: 0 0 15px}
+    .section-intro {color: var(--muted); font-size: 15px; line-height: 1.67; margin: 0}
+    .section-head {max-width: 710px; margin: 0 auto 26px; text-align: center}
+    .section-head .eyebrow {color: #476ee6}
+    .cta {display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 16px 24px; min-height: 54px; border-radius: 999px; color: #172027; background: var(--lime); box-shadow: 0 10px 28px rgba(23, 29, 49, .16); font-size: 13px; line-height: 1.3; font-weight: 800; text-align: center; transition: background .2s ease, transform .2s ease, box-shadow .2s ease}
+    .cta:hover {background: var(--lime-hover); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(23, 29, 49, .21)}
+    .cta .ico {width: 18px; height: 18px}
 
+    /* Compact header. No burger: this is a short campaign landing. */
+    .site-header {position: sticky; top: 0; z-index: 50; background: rgba(249,251,255,.95); border-bottom: 1px solid rgba(190,202,223,.5); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px)}
+    .header-inner {width: min(100% - 32px, var(--wide)); min-height: 66px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 10px}
+    .brand {display: flex; flex: none; align-items: center; width: 122px; min-height: 42px}
+    .brand img {display: block; width: 100%; max-height: 35px; object-fit: contain; object-position: left center}
+    .brand-fallback {display: none; font-size: 21px; font-weight: 900; letter-spacing: -.06em; color: #12a8e9}
+    .brand.is-fallback img {display: none}
+    .brand.is-fallback .brand-fallback {display: block}
+    .header-cta {display: flex; justify-content: center; align-items: center; flex: 0 1 auto; min-width: 0; max-width: 185px; min-height: 42px; padding: 9px 15px; background: var(--lime); color: #1a2227; border-radius: 100px; white-space: nowrap; text-align: center; font-size: 10px; font-weight: 800; letter-spacing: -.025em; transition: background .2s ease}
+    .header-cta:hover {background: var(--lime-hover)}
+
+    /* Hero — CRM's value and registration, never an app-install ad. */
+    .hero {position: relative; isolation: isolate; overflow: hidden; color: #fff; background: radial-gradient(ellipse at 4% 18%, rgba(9,161,252,.9), transparent 46%), radial-gradient(ellipse at 97% 30%, rgba(255,82,180,.77), transparent 52%), radial-gradient(ellipse at 51% 10%, rgba(153,76,245,.65), transparent 45%), linear-gradient(122deg, #176ee5 0%, #7140dd 55%, #c12fb1 100%)}
+    .hero::before {content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,29,95,.16), transparent 63%); z-index: -1; pointer-events: none}
+    .hero-inner {display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 24px; min-height: 650px; padding-top: 64px; padding-bottom: 35px}
+    .hero-copy {position: relative; z-index: 2}
+    .hero .eyebrow {color: #e1f7ff; opacity: .94; margin-bottom: 16px}
+    .hero h1 {font-size: clamp(40px, 4.9vw, 66px); line-height: 1.05; letter-spacing: -.07em; font-weight: 900; margin: 0 0 19px; max-width: 610px}
+    .hero h1 .highlight {color: var(--lime)}
+    .hero-lead {font-size: clamp(16px, 1.65vw, 19px); line-height: 1.58; font-weight: 500; margin: 0; max-width: 535px; opacity: .98}
+    .hero-chips {display: flex; flex-wrap: wrap; gap: 8px; margin: 23px 0 25px; padding: 0; list-style: none}
+    .hero-chips li {display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.14); padding: 9px 11px; border-radius: 100px; font-size: 11px; font-weight: 700; white-space: nowrap}
+    .hero-chips .ico {width: 14px; height: 14px; color: var(--lime); stroke-width: 2.6}
+    .hero-cta {min-width: 244px}
+    .hero-note {margin: 13px 0 0; color: rgba(255,255,255,.83); font-size: 11px; font-weight: 500}
+    .hero-art {position: relative; display: flex; justify-content: center; align-items: center; isolation: isolate; min-width: 0; min-height: 500px}
+    .hero-art::before {content: ""; width: 78%; height: 70%; position: absolute; border-radius: 50%; background: rgba(255,255,255,.28); filter: blur(60px); z-index: -1}
+    .hero-art img {position: relative; display: block; width: 670px; max-width: none; height: auto; transform: translateX(1%); filter: drop-shadow(0 24px 40px rgba(17,25,81,.22))}
+    .hero-art-fallback {display: none; background: rgba(255,255,255,.12); border: 2px dashed rgba(255,255,255,.5); border-radius: 28px; color: #fff; padding: 35px; text-align: center; line-height: 1.5}
+    .hero-art.is-fallback img {display: none}
+    .hero-art.is-fallback .hero-art-fallback {display: block}
+    .hero-art-fallback strong {display: block; font-size: 18px; margin-bottom: 12px}
+
+    /* Main product block: precisely four accessible, working scenarios. */
+    .scenarios {padding: 84px 0 80px; background: linear-gradient(#fff, #f7faff)}
+    .scenario-shell {background: #fff; border: 1px solid #e9edf9; border-radius: 32px; box-shadow: 0 22px 75px rgba(28,66,141,.09); overflow: hidden}
+    .tabs-wrap {position: relative; padding: 13px 13px 0; border-bottom: 1px solid var(--line)}
+    .tabs {display: flex; gap: 7px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; scroll-snap-type: x proximity; overscroll-behavior-x: contain; padding: 0 0 13px}
+    .tabs::-webkit-scrollbar {display: none}
+    .tab {scroll-snap-align: start; flex: 1 0 auto; appearance: none; border: 1px solid transparent; background: #f3f6fd; border-radius: 14px; color: #56627d; min-height: 48px; padding: 12px 17px; cursor: pointer; font-size: 12px; font-weight: 800; white-space: nowrap; transition: background .2s ease, color .2s ease, box-shadow .2s ease}
+    .tab:hover {background: #e9efff; color: #273b72}
+    .tab[aria-selected="true"] {background: #253eff; color: #fff; box-shadow: 0 7px 20px rgba(40,61,246,.18)}
+    .scenario-panel {display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); align-items: center; gap: 22px; min-height: 480px; padding: 34px 32px; animation: panel-in .26s ease both}
+    [hidden] {display: none!important}
+    @keyframes panel-in {from {opacity: .5; transform: translateY(5px)} to {opacity: 1; transform: none}}
+    .scenario-copy {padding: 8px 14px 8px 8px}
+    .scenario-number {display: inline-flex; align-items: center; gap: 9px; font-size: 11px; color: #6077ec; font-weight: 800; letter-spacing: .1em; margin-bottom: 18px}
+    .scenario-number::after {content:""; width: 32px; height: 1px; background: #aab9ee}
+    .scenario-copy h3 {font-size: clamp(25px, 3vw, 35px); line-height: 1.17; letter-spacing: -.055em; margin: 0 0 15px}
+    .scenario-copy p {font-size: 15px; line-height: 1.75; color: var(--muted); margin: 0 0 25px}
+    .inline-link {font-size: 12px; color: #175ad7; font-weight: 800; display: inline-flex; align-items: center; gap: 7px}
+    .inline-link .ico {width: 17px; height: 17px}
+    .scenario-visual {width: 100%; min-width: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #f2f7ff 0%, #f7f4ff 54%, #fdf5fd 100%); border-radius: 25px; height: 408px; overflow: hidden; padding: 10px}
+    .scenario-visual img {display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain}
+    .real-screen {position: relative}
+    .asset-fallback {display: none}
+    .real-screen.is-fallback img {display: none}
+    .real-screen.is-fallback .asset-fallback {display: flex}
+    .asset-placeholder {width: min(85%, 290px); height: 94%; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; border: 2px dashed #adbae0; border-radius: 25px; background: rgba(255,255,255,.65); padding: 26px; color: #42547c; text-align: center}
+    .asset-placeholder .ico {width: 35px; height: 35px; color: #617bd5}
+    .asset-placeholder strong {font-size: 15px; line-height: 1.45; letter-spacing: -.03em}
+    .asset-placeholder span {font-size: 12px; line-height: 1.6}
+    .asset-placeholder code {background: #e5ecff; border-radius: 6px; padding: 5px 8px; font-size: 12px; font-weight: 800}
+    .asset-fallback {height: 94%}
+
+    /* Sales journey: one continuous compact process. */
+    .journey {padding: 74px 0 83px; background: #fff}
+    .journey-list {max-width: 880px; margin: 36px auto 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px}
+    .journey-item {position: relative; padding: 22px 18px 20px; border-radius: 22px; background: #f5f8ff; border: 1px solid #e8eefb}
+    .journey-index {display: inline-grid; place-items: center; width: 38px; height: 38px; background: #dbeaff; border-radius: 12px; color: #2059cd; font-size: 12px; font-weight: 800; margin-bottom: 15px}
+    .journey-item h3 {font-size: 15px; line-height: 1.35; letter-spacing: -.025em; margin: 0 0 9px}
+    .journey-item p {font-size: 12px; line-height: 1.55; color: var(--muted); margin: 0}
+
+    /* Channels and context: communication stays in the customer's CRM history. */
+    .channels {position: relative; overflow: hidden; background: #182b7e; color: #fff; padding: 80px 0}
+    .channels::before {content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 90% 7%, rgba(194,71,242,.58), transparent 48%), radial-gradient(ellipse at 5% 94%, rgba(17,148,253,.4), transparent 55%)}
+    .channels-grid {position: relative; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: center; gap: 38px}
+    .channels .eyebrow {color: #b7d3ff}
+    .channels .section-title {max-width: 530px}
+    .channels-intro {max-width: 520px; font-size: 15px; line-height: 1.7; color: #dce4ff; margin: 0}
+    .channel-list {list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 12px}
+    .channel-item {display: flex; align-items: center; gap: 14px; border: 1px solid rgba(255,255,255,.18); padding: 13px 15px; border-radius: 17px; background: rgba(255,255,255,.08)}
+    .channel-icon {display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 13px; flex: none; background: rgba(255,255,255,.15); color: #c7f5ff}
+    .channel-item strong {font-size: 13px}
+    .channel-item p {margin: 5px 0 0; color: #d9e3ff; font-size: 12px; line-height: 1.5}
+    .channels-art {display: flex; min-width: 0; min-height: 370px; align-items: center; justify-content: center; position: relative}
+    .channels-art::before {content: ""; background: rgba(255,255,255,.2); filter: blur(40px); width: 65%; height: 55%; border-radius: 50%; position: absolute}
+    .channels-art img {position: relative; display: block; max-width: min(100%, 480px); max-height: 410px; object-fit: contain; filter: drop-shadow(0 12px 30px rgba(0,0,0,.14))}
+    .channels-art.is-fallback img {display: none}
+    .channels-art .asset-fallback {color: #fff; padding: 35px; text-align: center; line-height: 1.5}
+    .channels-art.is-fallback .asset-fallback {display: block}
+
+    /* Three practical benefits, no extra giant gallery. */
+    .benefits {padding: 84px 0 88px; background: #f7faff}
+    .benefit-grid {display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-top: 36px}
+    .benefit {background: #fff; border: 1px solid #e8edfa; border-radius: 24px; padding: 25px 22px}
+    .benefit-icon {display: grid; place-items: center; width: 48px; height: 48px; border-radius: 17px; color: #395edf; background: #eaf1ff; margin-bottom: 18px}
+    .benefit-icon .ico {width: 25px; height: 25px}
+    .benefit h3 {font-size: 16px; line-height: 1.35; margin: 0 0 12px; letter-spacing: -.03em}
+    .benefit p {margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7}
+
+    .final {padding: 76px 0 85px; background: radial-gradient(circle at 0 0, rgba(31,170,248,.8), transparent 52%), radial-gradient(circle at 100% 100%, rgba(255,90,180,.7), transparent 51%), linear-gradient(125deg, #186bdf, #7436ce 64%, #c23fa7); color: #fff; text-align: center}
+    .final .section-title {max-width: 700px; margin: 0 auto 18px}
+    .final p {max-width: 550px; margin: 0 auto 25px; color: rgba(255,255,255,.9); font-size: 15px; line-height: 1.7}
+    .final .eyebrow {color: #dceaff}
+    .final .cta {min-width: 245px}
+    .final-note {display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 18px; font-size: 12px; color: #e9eaff}
+    .final-note .ico {width: 17px; height: 17px}
+    .site-footer {background: #f8faff; color: #77839e; padding: 24px 18px; text-align: center; font-size: 11px}
+
+    @media(max-width: 850px) {
+      .hero-inner {grid-template-columns: minmax(0,1fr); gap: 0; min-height: 0; padding-top: 39px; padding-bottom: 0}
+      .hero-copy {max-width: 590px; margin-inline: auto; text-align: center}
+      .hero-chips {justify-content: center}
+      .hero-art {min-height: 370px; height: 390px; margin-top: 10px}
+      .hero-art img {width: 660px}
+      .scenario-panel {grid-template-columns: 1fr; min-height: 0; gap: 14px}
+      .scenario-copy {padding: 0; text-align: center}
+      .scenario-copy p {margin-bottom: 14px}
+      .scenario-visual {height: 390px}
+      .channels-grid {grid-template-columns: 1fr; gap: 14px}
+      .channels-art {min-height: 285px}
+      .channels-art img {max-height: 300px}
+    }
+    @media(max-width: 600px) {
+      .container {width: calc(100% - 36px)}
+      .hero-inner {padding-top: 29px}
+      .hero .eyebrow {font-size: 9px; margin-bottom: 14px}
+      .hero h1 {font-size: clamp(31px, 9.1vw, 40px); margin-bottom: 13px; line-height: 1.09; letter-spacing: -.065em}
+      .hero-lead {font-size: 14px; line-height: 1.57}
+      .hero-chips {gap: 6px; margin: 16px 0 19px}
+      .hero-chips li {font-size: 10px; padding: 8px 9px}
+      .hero-cta {width: min(100%, 305px); min-height: 52px}
+      .hero-note {margin-top: 10px}
+      .hero-art {height: 305px; min-height: 305px; margin-top: 7px; overflow: hidden; margin-inline: -18px}
+      .hero-art img {width: 520px; transform: translateY(6px)}
+      .hero-art::before {width: 95%; height: 75%; filter: blur(35px)}
+      .section-title {font-size: clamp(27px, 7.4vw, 34px)}
+      .section-intro {font-size: 14px}
+      .section-head {margin-bottom: 23px}
+      .scenarios {padding: 58px 0 64px}
+      .scenario-shell {border-radius: 25px}
+      .tabs-wrap {padding: 10px 10px 0}
+      .tabs {gap: 6px; padding-bottom: 10px}
+      .tab {min-height: 46px; padding: 11px 14px; font-size: 11px}
+      .scenario-panel {padding: 25px 14px 16px; gap: 17px}
+      .scenario-number {margin-bottom: 10px; font-size: 10px}
+      .scenario-copy h3 {font-size: 25px; margin-bottom: 9px}
+      .scenario-copy p {font-size: 13px; line-height: 1.65; min-height: 62px}
+      .scenario-visual {height: 300px; border-radius: 18px; padding: 7px}
+      .asset-placeholder {width: min(83%, 240px); padding: 15px; gap: 9px; border-radius: 18px}
+      .asset-placeholder strong {font-size: 12px}
+      .asset-placeholder span {font-size: 10px}
+      .asset-placeholder .ico {width: 27px; height: 27px}
+      .journey {padding: 60px 0 65px}
+      .journey-list {grid-template-columns: 1fr; gap: 0; margin-top: 27px; position: relative}
+      .journey-list::before {content: ""; position: absolute; width: 2px; top: 25px; bottom: 25px; left: 20px; background: #c9dbff}
+      .journey-item {display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 0 12px; padding: 10px 0 14px; border: 0; border-radius: 0; background: transparent}
+      .journey-index {grid-row: 1 / span 2; position: relative; z-index: 1; margin: 0}
+      .journey-item h3 {font-size: 14px; padding-top: 2px; margin-bottom: 5px}
+      .journey-item p {font-size: 12px}
+      .channels {padding: 60px 0 44px}
+      .channels-grid {gap: 10px}
+      .channels-intro {font-size: 13px}
+      .channel-list {gap: 9px; margin-top: 20px}
+      .channel-item {padding: 10px 12px; border-radius: 15px}
+      .channel-icon {width: 36px; height: 36px; border-radius: 11px}
+      .channel-item strong {font-size: 12px}
+      .channel-item p {font-size: 11px; margin-top: 3px}
+      .channels-art {min-height: 265px}
+      .channels-art img {max-height: 260px}
+      .benefits {padding: 63px 0 67px}
+      .benefit-grid {grid-template-columns: 1fr; gap: 11px; margin-top: 25px}
+      .benefit {display: grid; grid-template-columns: 46px minmax(0,1fr); gap: 0 14px; padding: 17px 16px; border-radius: 18px}
+      .benefit-icon {grid-row: 1 / span 2; width: 43px; height: 43px; border-radius: 14px; margin: 0}
+      .benefit h3 {font-size: 14px; margin-bottom: 5px}
+      .benefit p {font-size: 12px; line-height: 1.65}
+      .final {padding: 61px 0 66px}
+      .final p {font-size: 13px}
+      .final .cta {width: min(100%, 315px)}
+    }
+    @media(max-width: 355px) {
+      .header-inner {width: calc(100% - 28px)}
+      .brand {width: 112px}
+      .header-cta {font-size: 9px; padding: 9px 10px}
+      .container {width: calc(100% - 30px)}
+      .hero h1 {font-size: 30px}
+      .hero-chips li {font-size: 9px; padding: 7px 8px}
+      .hero-art {margin-inline: -15px}
+    }
+    @media(prefers-reduced-motion: reduce) {
+      html {scroll-behavior: auto}
+      *, *::before, *::after {animation-duration: .01ms!important; transition-duration: .01ms!important}
+    }
+  </style>
+</head>
+<body>
+  <!-- Icon system: no third-party JS, font/icon dependencies or fictitious product UI. -->
+  <svg class="icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h4l2 5-3 2c1 2 3 4 5 5l2-3 5 2v4c0 2-2 3-4 3C9 21 3 15 3 7c0-2 1-4 3-4Z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 10h8M8 14h5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18H5a4 4 0 0 1 0-8 7 7 0 0 1 13-2 5 5 0 0 1 0 10H7Z"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-5 4 4 3-3 4 4"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand" aria-label="Битрикс24 — к началу страницы">
+        <!-- Real logo from landings/crm3/menu.html -->
+        <img src="https://www.bitrix24.ru/upload/landing/5cd/oh9as8m0d97fy4easzqmgw487pansxbo.png" alt="Битрикс24" width="150" height="38">
+        <span class="brand-fallback" aria-hidden="true">Битрикс24</span>
+      </a>
+      <a class="header-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">CRM Битрикс24 · Продажи всегда под рукой</p>
+          <h1 id="hero-title">Вся CRM — <span class="highlight">в вашем смартфоне</span></h1>
+          <p class="hero-lead">Клиенты, сделки, переписка, счета и оплата — управляйте продажами откуда угодно. Всё в Битрикс24.</p>
+          <ul class="hero-chips">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Клиенты и сделки</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Счета и оплата</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Бесплатный старт</li>
+          </ul>
+          <a class="cta hero-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">
+            Получить бесплатно <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <p class="hero-note">Работайте в CRM со смартфона и с компьютера</p>
+        </div>
+        <div class="hero-art" aria-label="Реальный интерфейс мобильной CRM Битрикс24">
+          <!-- Verified official screenshot. If updating to a local asset, preferred artboard: 1000×630px transparent PNG/WebP. -->
+          <img src="https://www.bitrix24.ru/images/content_ru/features/crm/mobile-crm/1.png" alt="Мобильная CRM Битрикс24: сделки и взаимодействие с клиентами на смартфоне" width="1000" height="630" fetchpriority="high">
+          <div class="hero-art-fallback"><strong>Нужен визуал мобильной CRM</strong>Три смартфона с интерфейсом Битрикс24.<br>Размер: 1000 × 630 px, прозрачный PNG/WebP.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scenarios" id="mobile-crm" aria-labelledby="scenarios-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Полноценная мобильная CRM</p>
+          <h2 class="section-title" id="scenarios-title">Полноценная CRM.<br>Даже без компьютера</h2>
+          <p class="section-intro">Ведите клиентов и сделки, оформляйте документы и принимайте оплату прямо со смартфона.</p>
+        </div>
+        <div class="scenario-shell">
+          <div class="tabs-wrap">
+            <div class="tabs" role="tablist" aria-label="Возможности мобильной CRM">
+              <button class="tab" id="tab-deals" type="button" role="tab" aria-controls="panel-deals" aria-selected="true" tabindex="0">Сделки и воронка</button>
+              <button class="tab" id="tab-contacts" type="button" role="tab" aria-controls="panel-contacts" aria-selected="false" tabindex="-1">Клиентская база</button>
+              <button class="tab" id="tab-payments" type="button" role="tab" aria-controls="panel-payments" aria-selected="false" tabindex="-1">Счета и оплата</button>
+              <button class="tab" id="tab-docs" type="button" role="tab" aria-controls="panel-docs" aria-selected="false" tabindex="-1">Документы</button>
+            </div>
+          </div>
+
+          <div class="scenario-panel" id="panel-deals" role="tabpanel" aria-labelledby="tab-deals" tabindex="0">
+            <div class="scenario-copy">
+              <div class="scenario-number">01 / 04</div>
+              <h3>Управляйте сделками на ходу</h3>
+              <p>Меняйте стадии воронки, назначайте ответственных и контролируйте продажи прямо с телефона.</p>
+              <a class="inline-link" href="https://www.bitrix24.ru/features/crm/mobile-crm/" target="_blank" rel="noopener noreferrer">Подробнее о мобильной CRM <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="scenario-visual real-screen">
+              <!-- Verified official screenshot of funnel and deal list, 1000×785px. -->
+              <img src="https://www.bitrix24.ru/images/content_ru/features/crm/mobile-crm/2.png" alt="Воронка и список сделок в мобильной CRM Битрикс24" width="1000" height="785" loading="lazy" decoding="async">
+              <div class="asset-placeholder asset-fallback"><svg class="ico" aria-hidden="true"><use href="#i-image"/></svg><strong>Воронка сделок в мобильной CRM</strong><code>1000 × 785 px</code><span>PNG/WebP, интерфейс приложения без дорисовки</span></div>
+            </div>
+          </div>
+
+          <div class="scenario-panel" id="panel-contacts" role="tabpanel" aria-labelledby="tab-contacts" tabindex="0" hidden>
+            <div class="scenario-copy">
+              <div class="scenario-number">02 / 04</div>
+              <h3>Клиенты всегда под рукой</h3>
+              <p>Контакты, компании и история взаимодействий — в одной CRM, даже когда вы не за компьютером.</p>
+              <a class="inline-link" href="https://www.bitrix24.ru/features/crm/mobile-crm/" target="_blank" rel="noopener noreferrer">Подробнее о мобильной CRM <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="scenario-visual">
+              <!-- TODO ASSET: replace this placeholder with a verified CRM contacts list / contact card screenshot. -->
+              <div class="asset-placeholder"><svg class="ico" aria-hidden="true"><use href="#i-image"/></svg><strong>Нужен скриншот списка клиентов или карточки контакта</strong><code>390 × 844 px</code><span>PNG/WebP, вертикальный, без рамки смартфона</span></div>
+            </div>
+          </div>
+
+          <div class="scenario-panel" id="panel-payments" role="tabpanel" aria-labelledby="tab-payments" tabindex="0" hidden>
+            <div class="scenario-copy">
+              <div class="scenario-number">03 / 04</div>
+              <h3>Отправляйте счета, принимайте оплату</h3>
+              <p>Формируйте счета из CRM, отправляйте клиентам и используйте оплату по QR-коду.</p>
+              <a class="inline-link" href="https://www.bitrix24.ru/features/crm/mobile-crm/" target="_blank" rel="noopener noreferrer">Подробнее о мобильной CRM <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="scenario-visual real-screen">
+              <!-- Verified official screenshot of invoice and QR payment, 1000×785px. -->
+              <img src="https://www.bitrix24.ru/images/content_ru/features/crm/mobile-crm/4.png" alt="Счёт и оплата по QR-коду в мобильной CRM Битрикс24" width="1000" height="785" loading="lazy" decoding="async">
+              <div class="asset-placeholder asset-fallback"><svg class="ico" aria-hidden="true"><use href="#i-image"/></svg><strong>Счёт и QR-оплата в мобильной CRM</strong><code>1000 × 785 px</code><span>PNG/WebP, реальный интерфейс приложения</span></div>
+            </div>
+          </div>
+
+          <div class="scenario-panel" id="panel-docs" role="tabpanel" aria-labelledby="tab-docs" tabindex="0" hidden>
+            <div class="scenario-copy">
+              <div class="scenario-number">04 / 04</div>
+              <h3>Документы — прямо из сделки</h3>
+              <p>Создавайте договоры и коммерческие предложения по шаблону, редактируйте и отправляйте клиентам.</p>
+              <a class="inline-link" href="https://www.bitrix24.ru/features/crm/mobile-crm/" target="_blank" rel="noopener noreferrer">Подробнее о мобильной CRM <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="scenario-visual">
+              <!-- TODO ASSET: replace this placeholder with a verified CRM document editor / commercial offer screenshot. -->
+              <div class="asset-placeholder"><svg class="ico" aria-hidden="true"><use href="#i-image"/></svg><strong>Нужен скриншот редактора документов или компреда</strong><code>390 × 844 px</code><span>PNG/WebP, вертикальный, без рамки смартфона</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey" id="sales" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Продажи от А до Я</p>
+          <h2 class="section-title" id="journey-title">Весь процесс продаж — в вашем телефоне</h2>
+          <p class="section-intro">От первого обращения до оплаты — каждый этап под контролем.</p>
+        </div>
+        <ol class="journey-list">
+          <li class="journey-item"><span class="journey-index">01</span><h3>Получайте заявки</h3><p>Обращения клиентов поступают в CRM.</p></li>
+          <li class="journey-item"><span class="journey-index">02</span><h3>Общайтесь</h3><p>Звонки и сообщения сохраняются в истории.</p></li>
+          <li class="journey-item"><span class="journey-index">03</span><h3>Ведите сделки</h3><p>Двигайте продажи по этапам воронки.</p></li>
+          <li class="journey-item"><span class="journey-index">04</span><h3>Принимайте оплату</h3><p>Выставляйте счета прямо с телефона.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="channels" id="channels" aria-labelledby="channels-title">
+      <div class="container channels-grid">
+        <div>
+          <p class="eyebrow">Клиенты на связи</p>
+          <h2 class="section-title" id="channels-title">Ни одно обращение не потеряется</h2>
+          <p class="channels-intro">Звонки, письма и сообщения связаны с CRM. История общения доступна там, где вы работаете.</p>
+          <ul class="channel-list">
+            <li class="channel-item"><span class="channel-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></span><div><strong>Телефония</strong><p>Звоните клиентам и сохраняйте историю звонков.</p></div></li>
+            <li class="channel-item"><span class="channel-icon"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg></span><div><strong>Мессенджеры</strong><p>Отвечайте на сообщения со смартфона.</p></div></li>
+            <li class="channel-item"><span class="channel-icon"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></span><div><strong>Почта</strong><p>Переписка сохраняется в CRM.</p></div></li>
+          </ul>
+        </div>
+        <div class="channels-art" aria-label="История общения в карточке сделки">
+          <!-- Verified official screenshot: email history in a CRM timeline. -->
+          <img src="https://www.bitrix24.ru/images/content_ru/features/crm/mobile-crm/8.png" alt="История почтовых сообщений в таймлайне сделки Битрикс24" width="1000" height="785" loading="lazy" decoding="async">
+          <div class="asset-fallback">Нужен скриншот истории общения в карточке CRM.<br>1000 × 785 px, PNG/WebP.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Свобода работать где угодно</p>
+          <h2 class="section-title" id="benefits-title">CRM всегда с вами</h2>
+          <p class="section-intro">Начните работу со смартфона и продолжайте там, где удобно.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit"><span class="benefit-icon"><svg class="ico" aria-hidden="true"><use href="#i-mobile"/></svg></span><h3>Быстрый старт</h3><p>Настраивайте стадии воронки и работайте со сделками прямо с телефона.</p></article>
+          <article class="benefit"><span class="benefit-icon"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Важное под контролем</h3><p>Уведомления и напоминания подскажут, что сделать сейчас.</p></article>
+          <article class="benefit"><span class="benefit-icon"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></span><h3>Единая CRM</h3><p>Ваши клиенты и сделки доступны в приложении и веб-версии.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="start" aria-labelledby="final-title">
+      <div class="container">
+        <p class="eyebrow">Начните бесплатно</p>
+        <h2 class="section-title" id="final-title">Начните продавать со смартфона</h2>
+        <p>Создайте бесплатный Битрикс24 и управляйте клиентами и продажами где угодно.</p>
+        <a class="cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="final-note"><svg class="ico" aria-hidden="true"><use href="#i-mobile"/></svg> Мобильное приложение для Android и iOS</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Битрикс24 · Мобильная CRM для продаж</footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+      var panels = tabs.map(function (tab) {
+        return document.getElementById(tab.getAttribute('aria-controls'));
+      });
+      function activate(index, focus) {
+        tabs.forEach(function (tab, i) {
+          var selected = i === index;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          panels[i].hidden = !selected;
+        });
+        // Scroll inside the tab row only. Never trigger a page jump.
+        var active = tabs[index];
+        if (active) {
+          var row = active.parentElement;
+          var left = active.offsetLeft - row.offsetLeft;
+          var right = left + active.offsetWidth;
+          if (left < row.scrollLeft) { row.scrollLeft = left; }
+          if (right > row.scrollLeft + row.clientWidth) { row.scrollLeft = right - row.clientWidth; }
+          if (focus) { active.focus({preventScroll: true}); }
+        }
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { activate(i, false); });
+        tab.addEventListener('keydown', function (event) {
+          var index = i;
+          if (event.key === 'ArrowRight') { index = (i + 1) % tabs.length; }
+          else if (event.key === 'ArrowLeft') { index = (i - 1 + tabs.length) % tabs.length; }
+          else if (event.key === 'Home') { index = 0; }
+          else if (event.key === 'End') { index = tabs.length - 1; }
+          else { return; }
+          event.preventDefault();
+          activate(index, true);
+        });
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('img'), function (img) {
+        function failed() {
+          var parent = img.closest('.brand, .hero-art, .real-screen, .channels-art');
+          if (parent) { parent.classList.add('is-fallback'); }
+        }
+        img.addEventListener('error', failed);
+        if (img.complete && img.naturalWidth === 0) { failed(); }
+      });
+    }());
+  </script>
+</body>
+</html>
