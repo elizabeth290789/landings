@@ -359,6 +359,7 @@
   }
 
   .analytics-hero__visual {
+    scroll-margin-top: 100px;
     margin-top: clamp(28px, 5vw, 52px);
     border-radius: clamp(16px, 2vw, 24px);
     overflow: hidden;
@@ -539,7 +540,28 @@
       height: 28px;}.scrum-benefits__card p{font-size: 17px;
       line-height: 1.35;}}
 
-  /* online-doski.html */
+  /* Clickable benefits */
+  .scrum-benefits__card,
+  .scrum-benefits__card:visited {
+    text-decoration: none;
+  }
+
+  .scrum-benefits__card:focus-visible {
+    outline: 3px solid #3277fd;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scrum-benefits__card {
+      transition: none;
+    }
+
+    .scrum-benefits__card:hover {
+      transform: none;
+    }
+  }
+
+  /* Online boards */
 .bpm-boards,
   .bpm-boards *,
   .bpm-boards *::before,
@@ -791,6 +813,148 @@
       padding: clamp(30px, 5vw, 42px);}.analytics-card__title{font-size: clamp(30px, 6vw, 36px);}.analytics-card__text{max-width: 100%;}.analytics-card__image-wrap{margin-top: 28px;
       min-height: 0;}}
 
+  /* Automation cases */
+.bpm-cases,
+  .bpm-cases *,
+  .bpm-cases *::before,
+  .bpm-cases *::after {
+    box-sizing: border-box;
+  }
+
+  .bpm-cases {
+    scroll-margin-top: 100px;
+    padding: clamp(64px, 5.5vw, 80px) 20px;
+    background: #f7faff;
+    color: #0f2945;
+    font-family: "Montserrat", Arial, sans-serif;
+  }
+
+  .bpm-cases__container {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+  }
+
+  .bpm-cases__title {
+    margin: 0;
+    font-size: clamp(28px, 3.2vw, 42px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .bpm-cases__intro {
+    max-width: 760px;
+    margin: 18px auto 0;
+    color: #48627b;
+    font-size: 18px;
+    line-height: 1.55;
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  .bpm-cases__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 36px;
+  }
+
+  .bpm-cases__category {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid #e7eefc;
+    border-radius: 24px;
+    background: #ffffff;
+  }
+
+  .bpm-cases__category-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+  }
+
+  .bpm-cases__list {
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bpm-cases__list li + li {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #e7eefc;
+  }
+
+  .bpm-cases__link,
+  .bpm-cases__link:link,
+  .bpm-cases__link:visited {
+    display: block;
+    border-radius: 8px;
+    color: #0f2945;
+    text-decoration: none;
+    overflow-wrap: break-word;
+  }
+
+  .bpm-cases__link-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.45;
+    transition: color 0.2s ease;
+  }
+
+  .bpm-cases__arrow {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    color: #3277fd;
+  }
+
+  .bpm-cases__description {
+    display: block;
+    margin-top: 8px;
+    color: #48627b;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .bpm-cases__link:hover .bpm-cases__link-heading,
+  .bpm-cases__link:focus-visible .bpm-cases__link-heading {
+    color: #3277fd;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .bpm-cases__link:focus-visible {
+    outline: 3px solid #3277fd;
+    outline-offset: 5px;
+  }
+
+  @media (max-width: 760px) {
+    .bpm-cases {
+      padding-inline: 16px;
+    }
+
+    .bpm-cases__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bpm-cases__link-heading {
+      transition: none;
+    }
+  }
+
   /* setup.html */
 .bpm-setup,
   .bpm-setup *,
@@ -1003,6 +1167,7 @@
     <nav class="ip-telephony-menu__nav" aria-label="Разделы лендинга">
       <a class="ip-telephony-menu__link" href="#online-doski">Онлайн-Доска</a>
       <a class="ip-telephony-menu__link" href="#business-process">Готовые бизнес-процессы</a>
+      <a class="ip-telephony-menu__link" href="#automation-cases">Кейсы автоматизации</a>
     </nav>
 
     <a
@@ -1040,7 +1205,7 @@
   <div class="analytics-hero__container">
     <h1 id="analytics-hero-title" class="analytics-hero__title">BPM-программа Битрикс24 для управления бизнес-процессами</h1>
     <p class="analytics-hero__subtitle">
-      Low-code платформа с ИИ для автоматизации бизнес-процессов компании
+      удобный конструктор с ИИ для автоматизации бизнес-процессов компании
     </p>
     <div class="analytics-hero__actions" role="group" aria-label="Основные действия">
       <a
@@ -1057,10 +1222,10 @@
       >
     </div>
 
-    <div class="analytics-hero__visual">
+    <div id="ai-nodes" class="analytics-hero__visual">
       <img
         class="analytics-hero__image"
-        src="https://www.bitrix24.ru/upload/landing/1a8/dhvar4gm99cur1ma32r2934ihqoagozs.png?1794395337130"
+        src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/automatization/business-processes/1.1900w.png.webp?1794395337130"
         alt="Интерфейс управления бизнес-процессами в Битрикс24"
         loading="eager"
         decoding="async"
@@ -1073,7 +1238,7 @@
 <section class="scrum-benefits" aria-label="Преимущества управления бизнес-процессами в Битрикс24">
   <div class="scrum-benefits__container">
     <div class="scrum-benefits__grid">
-      <article class="scrum-benefits__card">
+      <a class="scrum-benefits__card" href="#online-doski">
         <div class="scrum-benefits__icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="10" width="48" height="44" rx="10" stroke="currentColor" stroke-width="2.5" />
@@ -1084,9 +1249,9 @@
           </svg>
         </div>
         <p>Онлайн-доски для отрисовки процессов</p>
-      </article>
+      </a>
 
-      <article class="scrum-benefits__card">
+      <a class="scrum-benefits__card" href="#ai-nodes">
         <div class="scrum-benefits__icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 14H29L33 24L27 28C29.8 33.5 34.5 38.2 40 41L44 35L54 39V48C54 50.8 51.8 53 49 53C29.1 53 13 36.9 13 17C13 14.2 15.2 12 18 12H20V14Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -1095,9 +1260,9 @@
           </svg>
         </div>
         <p>AI-ноды для быстрой настройки</p>
-      </article>
+      </a>
 
-      <article class="scrum-benefits__card">
+      <a class="scrum-benefits__card" href="#business-process">
         <div class="scrum-benefits__icon" aria-hidden="true">
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="12" width="48" height="40" rx="9" stroke="currentColor" stroke-width="2.5" />
@@ -1111,7 +1276,7 @@
           </svg>
         </div>
         <p>Готовые шаблоны бизнес-процессов</p>
-      </article>
+      </a>
     </div>
   </div>
 </section>
@@ -1219,6 +1384,76 @@
   </article>
 </section>
 
+  <!-- Automation cases -->
+<section id="automation-cases" class="bpm-cases" aria-labelledby="bpm-cases-title">
+  <div class="bpm-cases__container">
+    <h2 id="bpm-cases-title" class="bpm-cases__title">Кейсы по автоматизации</h2>
+    <p class="bpm-cases__intro">Как компании автоматизируют продажи, HR, закупки и проекты с Битрикс24.</p>
+
+    <div class="bpm-cases__grid">
+      <article class="bpm-cases__category">
+        <h3 class="bpm-cases__category-title">Автоматизация отдела продаж</h3>
+        <ul class="bpm-cases__list" role="list">
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/23662822/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>Завод напитков «Альпина»</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Роботы связывают продажи с производством и логистикой: ставят задачи, уведомляют менеджеров и переводят сделки по стадиям.</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="bpm-cases__category">
+        <h3 class="bpm-cases__category-title">Автоматизация в HR-отделе</h3>
+        <ul class="bpm-cases__list" role="list">
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/22160574/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>«Ташир пицца»</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Единая HR-воронка объединяет заявки на подбор, отклики, собеседования и адаптацию сотрудников в сети из 130 ресторанов.</span>
+            </a>
+          </li>
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/24943430/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>Bridge Group</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Битрикс24 и КЭДО объединяют подбор, оформление, адаптацию и увольнение сотрудников в одном цифровом процессе.</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="bpm-cases__category">
+        <h3 class="bpm-cases__category-title">Автоматизация закупок</h3>
+        <ul class="bpm-cases__list" role="list">
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/26858052/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>ИП Козлов М. А. — поставщик запчастей</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Заказ клиента автоматически создаёт заявку на закупку, а связанные процессы объединяют менеджеров и снабженцев.</span>
+            </a>
+          </li>
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/24050422/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>«Ювекс»</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Смарт-процессы автоматизируют закупки и расчёт себестоимости, а интеграция с 1С связывает продажи, снабжение и склад.</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="bpm-cases__category">
+        <h3 class="bpm-cases__category-title">Автоматизация проектов</h3>
+        <ul class="bpm-cases__list" role="list">
+          <li>
+            <a class="bpm-cases__link" href="https://www.bitrix24.ru/partners/case/16315940/" target="_blank" rel="noopener">
+              <span class="bpm-cases__link-heading"><span>Юридическая фирма «Нартекс»</span><svg class="bpm-cases__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="bpm-cases__description">Бизнес-процессы согласуют участников юридических проектов, создают задачи и связывают встречи с календарями.</span>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
   <!-- setup.html -->
 <section class="bpm-setup" aria-labelledby="bpm-setup-title">
   <div class="bpm-setup__content">
@@ -1292,6 +1527,18 @@
   <div class="bpm-application__container">
     <h2 id="bpm-application-title" class="bpm-application__title">Оставьте заявку</h2>
     <script data-b24-form="inline/2135/8gjbpx" data-skip-moving="true">
+      window.addEventListener('b24:form:init:before', function (event) {
+        var options = event.detail && event.detail.data;
+        var container = document.getElementById('consultation');
+        if (!options || !options.identification ||
+            String(options.identification.id) !== '2135' ||
+            options.identification.sec !== '8gjbpx' ||
+            !container || !options.node || !container.contains(options.node)) {
+          return;
+        }
+        options.title = 'Узнайте стоимость автоматизации бизнес-процессов';
+      });
+
       (function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
       var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://bitrix24.team/upload/crm/form/loader_2135_8gjbpx.js');
     </script>
