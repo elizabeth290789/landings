@@ -1,0 +1,1866 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сквозная аналитика в Битрикс24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --analytics-menu-height: 78px;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    main > section[id] {
+      scroll-margin-top: calc(var(--analytics-menu-height) + 14px);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
+    .analytics-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .analytics-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 344px;
+      max-width: 100%;
+      min-height: 52px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: #b5ed00;
+      color: #1d2438;
+      font: 700 18px/1.3 Montserrat, Arial, sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .analytics-cta:last-child {
+      width: 265px;
+    }
+
+    .analytics-cta:hover {
+      background: #a8de00;
+    }
+
+    .analytics-cta:focus-visible {
+      outline: 3px solid #1d2438;
+      outline-offset: 4px;
+    }
+
+    .analytics-report-actions {
+      padding: 0 16px clamp(40px, 5vw, 72px);
+    }
+
+    .analytics-setup {
+      color: #121212;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .analytics-setup__content {
+      padding: clamp(28px, 2.4vw, 34px) 20px clamp(44px, 5.2vw, 72px);
+      background: #f5f8ff;
+    }
+
+    .analytics-setup__container {
+      width: min(1040px, 100%);
+      margin-inline: auto;
+    }
+
+    .analytics-setup__title {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .analytics-setup__intro {
+      max-width: 760px;
+      margin: 14px auto 0;
+      font-size: clamp(17px, 1.45vw, 20px);
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .analytics-setup__steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 28px;
+      margin: clamp(32px, 5.25vw, 72px) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .analytics-setup__image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .analytics-setup__text {
+      margin: 16px 0 0;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .analytics-setup__actions {
+      padding: clamp(24px, 2.4vw, 34px) 16px clamp(32px, 4.1vw, 58px);
+    }
+
+    @media (max-width: 900px) {
+      .analytics-setup__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .analytics-actions {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .analytics-cta,
+      .analytics-cta:last-child {
+        width: 344px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .analytics-setup__steps {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 400px;
+        margin-inline: auto;
+      }
+    }
+
+    .analytics-application {
+      padding: clamp(24px, 4vw, 48px) 16px;
+      background: linear-gradient(90deg, #409eef 0%, #2fc7f7 100%);
+    }
+
+    .analytics-pricing-footer {
+      padding: 14px 16px 18px;
+      background: #f2f9fc;
+      color: #262626;
+      font-family: Montserrat, Arial, sans-serif;
+      text-align: center;
+    }
+
+    .analytics-pricing-footer__title {
+      margin: 0;
+      font-size: clamp(20px, 2.1vw, 24px);
+      font-weight: 600;
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    .analytics-pricing-footer__text {
+      margin: 6px auto 0;
+      font-size: clamp(15px, 1.55vw, 18px);
+      line-height: 1.35;
+      text-wrap: pretty;
+    }
+
+    .analytics-pricing-footer__link {
+      color: #006ef5;
+      text-decoration: none;
+    }
+
+    .analytics-pricing-footer__link:hover,
+    .analytics-pricing-footer__link:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* menu.html */
+    .ip-telephony-menu,
+    .ip-telephony-menu *,
+    .ip-telephony-menu__spacer {
+      box-sizing: border-box;
+    }
+
+    .ip-telephony-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      width: 100%;
+      min-height: var(--analytics-menu-height);
+      border-bottom: 1px solid rgba(255, 255, 255, .34);
+      background: rgba(255, 255, 255, .58);
+      box-shadow: 0 18px 42px rgba(3, 37, 65, .08), inset 0 1px 0 rgba(255, 255, 255, .36);
+      backdrop-filter: blur(18px) saturate(142%);
+      -webkit-backdrop-filter: blur(18px) saturate(142%);
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+
+    .ip-telephony-menu__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      width: min(1180px, calc(100% - 48px));
+      min-height: var(--analytics-menu-height);
+      margin: 0 auto;
+    }
+
+    .ip-telephony-menu__logo-link {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      min-width: 0;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .22s ease, opacity .22s ease;
+    }
+
+    .ip-telephony-menu__logo-link:hover,
+    .ip-telephony-menu__logo-link:focus-visible {
+      opacity: .92;
+      transform: translateY(-1px);
+    }
+
+    .ip-telephony-menu__logo-link:focus-visible,
+    .ip-telephony-menu__link:focus-visible,
+    .ip-telephony-menu__cta:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, .26);
+      outline-offset: 6px;
+    }
+
+    .ip-telephony-menu__logo {
+      display: block;
+      width: auto;
+      max-width: 178px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .ip-telephony-menu__nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1 1 auto;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .ip-telephony-menu__link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      color: #172033;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .22s ease, background-color .22s ease, transform .22s ease;
+    }
+
+    .ip-telephony-menu__link::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 8px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0ea5e9, #06b6d4);
+      opacity: 0;
+      transform: scaleX(.4);
+      transform-origin: center;
+      transition: opacity .22s ease, transform .22s ease;
+    }
+
+    .ip-telephony-menu__link:hover,
+    .ip-telephony-menu__link:focus-visible {
+      color: #0ea5e9;
+      background: rgba(14, 165, 233, .08);
+      transform: translateY(-1px);
+    }
+
+    .ip-telephony-menu__link:hover::after,
+    .ip-telephony-menu__link:focus-visible::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .ip-telephony-menu__cta,
+    .ip-telephony-menu__cta:visited,
+    .ip-telephony-menu__cta:focus,
+    .ip-telephony-menu__cta:active {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-height: 46px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #bdf300 0%, #b4eb00 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .38),
+        0 12px 24px rgba(94, 132, 0, .24),
+        0 0 0 1px rgba(145, 188, 0, .34);
+      color: #111111;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transform: translateZ(0);
+      transition: background .28s ease, box-shadow .28s ease, transform .24s ease;
+    }
+
+    .ip-telephony-menu__cta:hover,
+    .ip-telephony-menu__cta:focus-visible {
+      background: linear-gradient(135deg, #d7ff2f 0%, #c9f913 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .5),
+        0 16px 28px rgba(90, 128, 0, .3),
+        0 0 26px rgba(191, 247, 28, .45),
+        0 0 0 1px rgba(170, 220, 8, .44);
+      color: #111111;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .ip-telephony-menu__spacer {
+      width: 100%;
+      height: var(--analytics-menu-height);
+    }
+
+    @media (max-width: 920px) {
+      :root {
+        --analytics-menu-height: 100px;
+      }
+
+      .ip-telephony-menu__container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-content: center;
+        gap: 4px 12px;
+        width: min(100% - 32px, 1180px);
+        padding-block: 8px 4px;
+      }
+
+      .ip-telephony-menu__logo {
+        max-width: 146px;
+        height: 32px;
+      }
+
+      .ip-telephony-menu__nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .ip-telephony-menu__link {
+        min-height: 36px;
+        padding-inline: 10px;
+        font-size: 13px;
+      }
+
+      .ip-telephony-menu__cta {
+        grid-column: 2;
+        grid-row: 1;
+        margin-left: auto;
+        min-height: 40px;
+        padding: 0 16px;
+        font-size: 11px;
+        letter-spacing: .03em;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, .34),
+          0 10px 20px rgba(100, 141, 0, .22),
+          0 0 0 1px rgba(155, 201, 0, .24);
+      }
+    }
+
+    @media (max-width: 460px) {
+      .ip-telephony-menu__container {
+        width: min(100% - 24px, 1180px);
+        column-gap: 8px;
+      }
+
+      .ip-telephony-menu__logo {
+        max-width: min(112px, 100%);
+        height: 28px;
+      }
+
+      .ip-telephony-menu__cta {
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 10px;
+      }
+    }
+
+    /* hero.html */
+    .analytics-hero {
+      background: #f5f9ff;
+      padding: clamp(48px, 7vw, 84px) 16px clamp(24px, 5vw, 56px);
+    }
+
+    .analytics-hero__container {
+      width: min(1240px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .analytics-hero__title {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(2.35rem, 7vw, 72px);
+      line-height: clamp(2.65rem, 7.6vw, 78px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: rgb(15, 41, 69);
+    }
+
+    .analytics-hero__subtitle {
+      margin: clamp(18px, 2.4vw, 26px) auto 0;
+      max-width: min(900px, 86vw);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 3.2vw, 28px);
+      line-height: clamp(1.9rem, 4.2vw, 40px);
+      color: rgb(72, 98, 123);
+    }
+
+    .analytics-hero__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: clamp(26px, 3.4vw, 38px);
+    }
+
+    .analytics-hero__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      padding: 0 36px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+      opacity: 1;
+      mix-blend-mode: normal;
+      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .analytics-hero__cta,
+    .analytics-hero__cta:link,
+    .analytics-hero__cta:visited {
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .analytics-hero__cta--primary,
+    .analytics-hero__cta--primary:link,
+    .analytics-hero__cta--primary:visited {
+      background: #bdf300;
+      color: #12112f;
+    }
+
+    .analytics-hero__cta--secondary,
+    .analytics-hero__cta--secondary:link,
+    .analytics-hero__cta--secondary:visited {
+      background: transparent;
+      border-color: #3277fd;
+      color: #3277fd;
+    }
+
+    .analytics-hero__cta--primary:hover,
+    .analytics-hero__cta--primary:focus,
+    .analytics-hero__cta--primary:focus-visible,
+    .analytics-hero__cta--primary:active {
+      background: #bdf300;
+      color: #12112f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35);
+      outline: none;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .analytics-hero__cta--secondary:hover,
+    .analytics-hero__cta--secondary:focus,
+    .analytics-hero__cta--secondary:focus-visible,
+    .analytics-hero__cta--secondary:active {
+      background: #3277fd;
+      border-color: #3277fd;
+      color: #fff;
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .analytics-hero__cta:focus-visible {
+      box-shadow: 0 0 0 4px rgba(50, 119, 253, 0.18);
+    }
+
+    .analytics-hero__cta--primary:focus-visible {
+      box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35), 0 0 0 4px rgba(189, 243, 0, 0.28);
+    }
+
+    .analytics-hero__visual {
+      margin-top: clamp(28px, 5vw, 52px);
+      border-radius: clamp(16px, 2vw, 24px);
+      overflow: hidden;
+      box-shadow: 0 28px 65px rgba(16, 44, 94, 0.16);
+      background: #ffffff;
+    }
+
+    .analytics-hero__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 1024px) {
+      .analytics-hero {
+        padding-top: clamp(48px, 7vw, 72px);
+      }
+
+      .analytics-hero__visual {
+        margin-top: clamp(24px, 4.5vw, 38px);
+        box-shadow: 0 22px 52px rgba(16, 44, 94, 0.14);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .analytics-hero {
+        padding-inline: 12px;
+      }
+
+      .analytics-hero__subtitle {
+        max-width: 100%;
+        font-size: clamp(1.1rem, 5vw, 1.4rem);
+        line-height: 1.55;
+      }
+
+      .analytics-hero__actions {
+        gap: 14px;
+      }
+
+      .analytics-hero__cta {
+        width: min(100%, 340px);
+        padding: 0 24px;
+      }
+
+      .analytics-hero__visual {
+        margin-top: 22px;
+      }
+    }
+
+    /* Mobile header fix: keep only logo (left) and CTA button (right). */
+    @media (max-width: 768px) {
+      :is(
+          .header,
+          .top-header,
+          .site-header,
+          .b24-header,
+          .landing-header,
+          .bitrix24-header
+        ) {
+        overflow-x: clip;
+      }
+
+      :is(
+          .header__inner,
+          .top-header__inner,
+          .site-header__inner,
+          .b24-header__inner,
+          .landing-header__inner,
+          .bitrix24-header__inner,
+          .header-inner,
+          .topbar__inner
+        ) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      :is(
+          .header nav,
+          .top-header nav,
+          .site-header nav,
+          .b24-header nav,
+          .landing-header nav,
+          .bitrix24-header nav,
+          .header .nav,
+          .header .menu,
+          .header .menu-list,
+          .header .main-menu,
+          .header .top-menu,
+          .top-header .nav,
+          .top-header .menu,
+          .site-header .nav,
+          .site-header .menu
+        ) {
+        display: none !important;
+      }
+
+      :is(
+          .header .cta,
+          .header .btn,
+          .header .button,
+          .header .header-cta,
+          .header .top-cta,
+          .top-header .cta,
+          .top-header .btn,
+          .site-header .cta,
+          .site-header .btn,
+          .b24-header .cta,
+          .b24-header .btn,
+          .landing-header .cta,
+          .landing-header .btn,
+          .bitrix24-header .cta,
+          .bitrix24-header .btn
+        ) {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      :is(
+          .header .logo,
+          .header .brand,
+          .header .header-logo,
+          .top-header .logo,
+          .site-header .logo,
+          .b24-header .logo,
+          .landing-header .logo,
+          .bitrix24-header .logo
+        ) {
+        min-width: 0;
+        flex: 0 1 auto;
+      }
+    }
+
+    /* bullets.html */
+    .scrum-benefits,
+    .scrum-benefits * {
+      box-sizing: border-box;
+    }
+
+    .scrum-benefits {
+      background: #f7faff;
+      padding: 56px 0 72px;
+    }
+
+    .scrum-benefits__container {
+      width: min(1240px, 100% - 40px);
+      margin: 0 auto;
+    }
+
+    .scrum-benefits__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .scrum-benefits__card {
+      min-height: 160px;
+      padding: 24px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid #e7eefc;
+      box-shadow: 0 12px 32px rgba(25, 70, 139, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      color: #2a5edb;
+    }
+
+    .scrum-benefits__card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(25, 70, 139, 0.14);
+    }
+
+    .scrum-benefits__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(67, 120, 239, 0.12) 0%, rgba(67, 120, 239, 0.06) 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #2f67e7;
+      flex-shrink: 0;
+    }
+
+    .scrum-benefits__icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .scrum-benefits__card p {
+      margin: 0;
+      font-family: "Montserrat", "Segoe UI", sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.35;
+      color: #1f2b4d;
+    }
+
+    @media (max-width: 1024px) {
+      .scrum-benefits {
+        padding: 48px 0 64px;
+      }
+
+      .scrum-benefits__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .scrum-benefits__card {
+        min-height: 140px;
+        padding: 22px 20px;
+      }
+
+      .scrum-benefits__card p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .scrum-benefits {
+        padding: 38px 0 52px;
+      }
+
+      .scrum-benefits__container {
+        width: min(1240px, 100% - 24px);
+      }
+
+      .scrum-benefits__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .scrum-benefits__card {
+        min-height: 0;
+        border-radius: 18px;
+        padding: 18px 16px;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .scrum-benefits__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+      }
+
+      .scrum-benefits__icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .scrum-benefits__card p {
+        font-size: 17px;
+        line-height: 1.35;
+      }
+    }
+
+    .analytics-integrations,
+    .analytics-integrations * {
+      box-sizing: border-box;
+    }
+
+    .analytics-integrations {
+      --text-color: rgb(18, 18, 18);
+      --card-bg: #f5f8ff;
+
+      width: min(100%, 1400px);
+      margin: 24px auto 72px;
+      padding-inline: clamp(16px, 2.5vw, 28px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+      font-family: "Montserrat", "Segoe UI", sans-serif;
+      color: var(--text-color);
+    }
+
+    .analytics-integrations__tabs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .analytics-integrations__tab {
+      appearance: none;
+      min-width: 0;
+      min-height: 60px;
+      margin: 0;
+      padding: 14px 18px;
+      border: 1px solid #dce7fa;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1f2b4d;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: normal;
+      text-align: center;
+      text-transform: none;
+      white-space: normal;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .analytics-integrations__tab:hover {
+      border-color: #2f67e7;
+      background: #edf3ff;
+    }
+
+    .analytics-integrations__tab[aria-selected="true"] {
+      border-color: #2f67e7;
+      background: #2f67e7;
+      color: #ffffff;
+    }
+
+    .analytics-integrations__tab:focus-visible,
+    .analytics-integrations__card:focus-visible {
+      outline: 3px solid #2f67e7;
+      outline-offset: 4px;
+    }
+
+    .analytics-integrations__tabs[hidden],
+    .analytics-integrations__card[hidden] {
+      display: none;
+    }
+
+    .analytics-integrations__card {
+      min-width: 0;
+      padding: clamp(40px, 3.2vw, 56px);
+      border-radius: 40px;
+      background: var(--card-bg);
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: center;
+      gap: clamp(24px, 3.5vw, 56px);
+      overflow: hidden;
+    }
+
+    .analytics-integrations__content {
+      min-width: 0;
+      max-width: 540px;
+    }
+
+    .analytics-integrations__title {
+      margin: 0;
+      font-size: clamp(34px, 2.35vw, 38px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .analytics-integrations__text {
+      margin: 20px 0 0;
+      font-size: clamp(17px, 1.15vw, 18px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
+    .analytics-integrations__visual {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .analytics-integrations__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      object-fit: contain;
+    }
+
+    .analytics-integrations__actions {
+      padding-top: 46px;
+    }
+
+    @media (max-width: 1024px) {
+      .analytics-integrations {
+        margin-bottom: 48px;
+        gap: 20px;
+      }
+
+      .analytics-integrations__tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .analytics-integrations__card {
+        border-radius: 32px;
+        padding: clamp(30px, 5vw, 42px);
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .analytics-integrations__content {
+        max-width: 100%;
+      }
+
+      .analytics-integrations__title {
+        font-size: clamp(30px, 6vw, 36px);
+      }
+
+      .analytics-integrations__visual {
+        width: 100%;
+        max-width: 700px;
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .analytics-integrations__actions {
+        padding-top: 28px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .analytics-integrations {
+        padding-inline: 12px;
+      }
+
+      .analytics-integrations__tabs {
+        gap: 8px;
+      }
+
+      .analytics-integrations__tab {
+        padding: 12px 10px;
+        border-radius: 18px;
+        font-size: 14px;
+      }
+
+      .analytics-integrations__card {
+        padding: 28px 20px;
+        border-radius: 24px;
+      }
+
+      .analytics-integrations__title {
+        font-size: 28px;
+        overflow-wrap: anywhere;
+      }
+
+      .analytics-integrations__image {
+        border-radius: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .analytics-integrations__tab {
+        transition: none;
+      }
+    }
+
+    /* 1.html */
+    .traffic-channels {
+      --text-color: rgb(18, 18, 18);
+      --card-bg: #f5f8ff;
+      --accent: #1f86ff;
+
+      width: min(100%, 1400px);
+      margin-top: 48px;
+      margin-bottom: 72px;
+      margin-inline: auto;
+      padding-inline: clamp(16px, 2.5vw, 28px);
+      box-sizing: border-box;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .traffic-channels__card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: clamp(36px, 3.2vw, 56px);
+      color: var(--text-color);
+      display: grid;
+      grid-template-columns: minmax(300px, 1fr) minmax(420px, 1.25fr);
+      gap: clamp(24px, 3.5vw, 56px);
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .traffic-channels__content {
+      max-width: 560px;
+    }
+
+    .traffic-channels__title {
+      margin: 0;
+      font-size: clamp(34px, 2.35vw, 38px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .traffic-channels__list {
+      margin: clamp(20px, 1.8vw, 28px) 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .traffic-channels__item {
+      position: relative;
+      padding-left: 34px;
+      font-size: clamp(17px, 1.15vw, 18px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
+    .traffic-channels__item::before {
+      content: "";
+      position: absolute;
+      top: 0.65em;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #35a7ff 0%, var(--accent) 100%);
+      box-shadow: 0 0 0 6px rgba(31, 134, 255, 0.12);
+      transform: translateY(-50%);
+    }
+
+    .traffic-channels__image-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .traffic-channels__image {
+      width: min(100%, 820px);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    @media (max-width: 1024px) {
+      .traffic-channels {
+        margin-top: 24px;
+        margin-bottom: 48px;
+      }
+
+      .traffic-channels__card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        border-radius: 32px;
+        padding: clamp(30px, 5vw, 42px);
+      }
+
+      .traffic-channels__title {
+        font-size: clamp(30px, 6vw, 36px);
+      }
+
+      .traffic-channels__content {
+        max-width: 100%;
+      }
+
+      .traffic-channels__image-wrap {
+        justify-content: center;
+      }
+
+      .traffic-channels__image {
+        width: 100%;
+        max-width: 760px;
+      }
+    }
+
+    /* 2.html */
+    .analytics-comparison {
+      --text-color: rgb(18, 18, 18);
+      --card-bg: #f5f8ff;
+
+      width: min(100%, 1400px);
+      margin-top: 24px;
+      margin-bottom: 72px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .analytics-comparison__card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: clamp(40px, 3.2vw, 56px);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: clamp(560px, 48vw, 720px);
+      overflow: hidden;
+    }
+
+    .analytics-comparison__title {
+      margin: 0;
+      font-size: clamp(34px, 2.35vw, 38px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .analytics-comparison__text {
+      margin: 20px 0 0;
+      font-size: clamp(17px, 1.15vw, 18px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--text-color);
+      max-width: 96%;
+    }
+
+    .analytics-comparison__image-wrap {
+      margin-top: auto;
+      padding-top: clamp(26px, 2.2vw, 36px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: clamp(230px, 19vw, 300px);
+    }
+
+    .analytics-comparison__image {
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+      filter: none;
+    }
+
+    @media (max-width: 1024px) {
+      .analytics-comparison {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 24px;
+        margin-bottom: 48px;
+      }
+
+      .analytics-comparison__card {
+        min-height: 0;
+        border-radius: 32px;
+        padding: clamp(30px, 5vw, 42px);
+      }
+
+      .analytics-comparison__title {
+        font-size: clamp(30px, 6vw, 36px);
+      }
+
+      .analytics-comparison__text {
+        max-width: 100%;
+      }
+
+      .analytics-comparison__image-wrap {
+        margin-top: 28px;
+        min-height: 0;
+      }
+    }
+
+    /* 3.html */
+    .crm-analytics-cards {
+      --text-color: rgb(18, 18, 18);
+      --card-bg: #f5f8ff;
+
+      width: min(100%, 1400px);
+      margin-top: 24px;
+      margin-bottom: 72px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .analytics-card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: clamp(40px, 3.2vw, 56px);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: clamp(560px, 48vw, 720px);
+      overflow: hidden;
+    }
+
+    .analytics-card__title {
+      margin: 0;
+      font-size: clamp(34px, 2.35vw, 38px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .analytics-card__text {
+      margin: 20px 0 0;
+      font-size: clamp(17px, 1.15vw, 18px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--text-color);
+      max-width: 96%;
+    }
+
+    .analytics-card__image-wrap {
+      margin-top: auto;
+      padding-top: clamp(26px, 2.2vw, 36px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: clamp(230px, 19vw, 300px);
+    }
+
+    .analytics-card__image {
+      width: 100%;
+      max-width: 560px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+      filter: none;
+    }
+
+    @media (max-width: 1024px) {
+      .crm-analytics-cards {
+        margin-top: 24px;
+        margin-bottom: 48px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .analytics-card {
+        min-height: 0;
+        border-radius: 32px;
+        padding: clamp(30px, 5vw, 42px);
+      }
+
+      .analytics-card__title {
+        font-size: clamp(30px, 6vw, 36px);
+      }
+
+      .analytics-card__text {
+        max-width: 100%;
+      }
+
+      .analytics-card__image-wrap {
+        margin-top: 28px;
+        min-height: 0;
+      }
+    }
+
+    /* integrations */
+    .integrations-block {
+      --text-color: rgb(18, 18, 18);
+      --card-bg: #f5f8ff;
+
+      width: min(100%, 1400px);
+      margin-top: 24px;
+      margin-bottom: 72px;
+      margin-inline: auto;
+      padding-inline: clamp(16px, 2.5vw, 28px);
+      box-sizing: border-box;
+      font-family: Montserrat, sans-serif;
+    }
+
+    .integrations-block__card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: clamp(38px, 3.2vw, 56px);
+      display: grid;
+      grid-template-columns: minmax(320px, 1fr) minmax(460px, 1.2fr);
+      gap: clamp(24px, 3vw, 56px);
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .integrations-block__content {
+      max-width: 560px;
+      color: var(--text-color);
+    }
+
+    .integrations-block__title {
+      margin: 0;
+      font-size: clamp(34px, 2.35vw, 38px);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .integrations-block__text {
+      margin: 0;
+      font-size: clamp(17px, 1.15vw, 18px);
+      line-height: 1.55;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
+    .integrations-block__text + .integrations-block__text {
+      margin-top: 18px;
+    }
+
+    .integrations-block__text:first-of-type {
+      margin-top: clamp(20px, 1.8vw, 28px);
+    }
+
+    .integrations-block__image-wrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .integrations-block__image {
+      width: min(100%, 760px);
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    @media (max-width: 1024px) {
+      .integrations-block {
+        margin-top: 24px;
+        margin-bottom: 48px;
+      }
+
+      .integrations-block__card {
+        grid-template-columns: 1fr;
+        border-radius: 32px;
+        padding: clamp(30px, 5vw, 42px);
+        gap: 28px;
+      }
+
+      .integrations-block__title {
+        font-size: clamp(30px, 6vw, 36px);
+      }
+
+      .integrations-block__content {
+        max-width: 100%;
+      }
+
+      .integrations-block__image-wrap {
+        justify-content: center;
+      }
+
+      .integrations-block__image {
+        width: 100%;
+        max-width: 700px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="ip-telephony-menu" aria-label="Главное меню сквозной аналитики">
+    <div class="ip-telephony-menu__container">
+      <a class="ip-telephony-menu__logo-link" href="#top" aria-label="Bitrix24 — на начало страницы">
+        <img
+          class="ip-telephony-menu__logo"
+          src="https://www.bitrix24.ru/upload/landing/b91/d5ckuwwyq14z5y61av9wtxk1as4wvepx.png?1778228180222"
+          alt="Bitrix24"
+          loading="eager"
+        >
+      </a>
+
+      <nav class="ip-telephony-menu__nav" aria-label="Разделы лендинга">
+        <a class="ip-telephony-menu__link" href="#b286198">Коллтрекинг</a>
+        <a class="ip-telephony-menu__link" href="#b286126">Отчёты</a>
+        <a class="ip-telephony-menu__link" href="#b286238">Интеграции</a>
+      </nav>
+
+      <a
+        class="ip-telephony-menu__cta"
+        href="#b287870"
+      >
+        бесплатная консультация
+      </a>
+    </div>
+  </header>
+  <div class="ip-telephony-menu__spacer" aria-hidden="true"></div>
+
+  <main>
+    <section class="analytics-hero" aria-labelledby="analytics-hero-title">
+      <div class="analytics-hero__container">
+        <h1 id="analytics-hero-title" class="analytics-hero__title">Сквозная аналитика в Битрикс24</h1>
+        <p class="analytics-hero__subtitle">
+          Помогает бизнесу принимать решения на основе данных. Создавайте свои отчёты по окупаемости рекламы в удобном конструкторе
+        </p>
+        <div class="analytics-hero__actions" role="group" aria-label="Основные действия">
+          <a
+            class="analytics-hero__cta analytics-hero__cta--primary"
+            href="#b287870"
+            role="button"
+            >Бесплатная консультация</a
+          >
+          <a
+            class="analytics-hero__cta analytics-hero__cta--secondary"
+            href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm"
+            role="button"
+            >Попробовать демо</a
+          >
+        </div>
+
+        <div class="analytics-hero__visual">
+          <img
+            class="analytics-hero__image"
+            src="https://www.bitrix24.ru/upload/landing/68c/tddywtrec11rrhx8lt3x528tboifhs8m.png?1779436408272"
+            alt="Интерфейс Сквозная аналитика в Битрикс24"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="scrum-benefits" aria-label="Преимущества сквозной аналитики в Битрикс24">
+      <div class="scrum-benefits__container">
+        <div class="scrum-benefits__grid">
+          <article class="scrum-benefits__card">
+            <div class="scrum-benefits__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="10" width="48" height="44" rx="10" stroke="currentColor" stroke-width="2.5" />
+                <path d="M18 42L30 30L38 36L46 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M41 24H46V29" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 20V44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M18 44H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <p>Передача заказов из CRM в Яндекс.Метрику</p>
+          </article>
+
+          <article class="scrum-benefits__card">
+            <div class="scrum-benefits__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 14H29L33 24L27 28C29.8 33.5 34.5 38.2 40 41L44 35L54 39V48C54 50.8 51.8 53 49 53C29.1 53 13 36.9 13 17C13 14.2 15.2 12 18 12H20V14Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M36 17C40.4 17 44 20.6 44 25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M36 11C43.7 11 50 17.3 50 25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <p>Статический коллтрекинг</p>
+          </article>
+
+          <article class="scrum-benefits__card">
+            <div class="scrum-benefits__icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="12" width="48" height="40" rx="9" stroke="currentColor" stroke-width="2.5" />
+                <path d="M8 24H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <circle cx="16" cy="18" r="1.6" fill="currentColor" />
+                <circle cx="22" cy="18" r="1.6" fill="currentColor" />
+                <circle cx="28" cy="18" r="1.6" fill="currentColor" />
+                <rect x="16" y="31" width="16" height="11" rx="3" stroke="currentColor" stroke-width="2.5" />
+                <path d="M38 33H48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M38 40H46" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <p>Формы обратной связи и виджеты на сайте</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="analytics-integrations" data-analytics-tabs aria-label="Интеграции и AI-помощник для сквозной аналитики">
+      <div class="analytics-integrations__tabs" role="tablist" aria-label="Выберите интеграцию" hidden>
+        <button class="analytics-integrations__tab" id="analytics-metrika-tab" type="button" role="tab" aria-selected="true" aria-controls="analytics-metrika-panel" tabindex="0">Яндекс.Метрика</button>
+        <button class="analytics-integrations__tab" id="analytics-website-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-website-panel" tabindex="-1">Интеграция с сайтом</button>
+        <button class="analytics-integrations__tab" id="analytics-calltracking-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-calltracking-panel" tabindex="-1">Roistat / Calltouch</button>
+        <button class="analytics-integrations__tab" id="analytics-ai-tab" type="button" role="tab" aria-selected="false" aria-controls="analytics-ai-panel" tabindex="-1">Встроенный AI-помощник</button>
+      </div>
+
+      <article class="analytics-integrations__card" id="analytics-metrika-panel" role="tabpanel" aria-labelledby="analytics-metrika-tab" tabindex="0">
+        <div class="analytics-integrations__content">
+          <h2 class="analytics-integrations__title" id="analytics-metrika-title">Яндекс.Метрика</h2>
+          <p class="analytics-integrations__text">
+            Оптимизируйте рекламу в Директе, обучайте на реальных заказах и продажах. Помогает видеть ROI
+            и реальный CPA лида или заказа.
+          </p>
+        </div>
+        <div class="analytics-integrations__visual">
+          <img
+            class="analytics-integrations__image"
+            src="https://www.bitrix24.ru/upload/landing/040/19zu6eblqmv2itljefzmkqn0urnu8oof.png?1793286272172"
+            alt="Интеграция Битрикс24 с Яндекс.Метрикой"
+            width="1200"
+            height="750"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <article class="analytics-integrations__card" id="analytics-website-panel" role="tabpanel" aria-labelledby="analytics-website-tab" tabindex="0">
+        <div class="analytics-integrations__content">
+          <h2 class="analytics-integrations__title" id="analytics-website-title">Интеграция с сайтом</h2>
+          <p class="analytics-integrations__text">
+            Подключайте к популярным CMS: 1С-Битрикс, Tilda, WordPress, OpenCart и др. Менеджерам не
+            потребуется вручную заполнять обращения, и вам будет удобнее отслеживать скорость обработки.
+            Передача UTM-меток позволит лучше контролировать рекламу.
+          </p>
+        </div>
+        <div class="analytics-integrations__visual">
+          <img
+            class="analytics-integrations__image"
+            src="https://www.bitrix24.ru/upload/landing/d47/n8k00pxx41q2514sia6ncrmf357dhlnh.png?1793286272172"
+            alt="Подключение сайта к Битрикс24"
+            width="1200"
+            height="750"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <article class="analytics-integrations__card" id="analytics-calltracking-panel" role="tabpanel" aria-labelledby="analytics-calltracking-tab" tabindex="0">
+        <div class="analytics-integrations__content">
+          <h2 class="analytics-integrations__title" id="analytics-calltracking-title">Roistat / Calltouch</h2>
+          <p class="analytics-integrations__text">
+            Интеграция с популярными системами сквозной аналитики Roistat или Calltouch позволит
+            автоматически создавать или обновлять лиды и сделки на основе входящих звонков и заявок
+            с сайта, передавать параметры UTM-меток.
+          </p>
+        </div>
+        <div class="analytics-integrations__visual">
+          <img
+            class="analytics-integrations__image"
+            src="https://www.bitrix24.ru/upload/landing/b23/hyi3f5cthuvyj6ysfoyhai0f8pevqlsk.png?1793286272172"
+            alt="Интеграция Calltouch с Битрикс24"
+            width="1200"
+            height="750"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <article class="analytics-integrations__card" id="analytics-ai-panel" role="tabpanel" aria-labelledby="analytics-ai-tab" tabindex="0">
+        <div class="analytics-integrations__content">
+          <h2 class="analytics-integrations__title" id="analytics-ai-title">Встроенный AI-помощник</h2>
+          <p class="analytics-integrations__text">
+            Уже связан с Битрикс24. Помогает проанализировать данные и сделать дашборды, например,
+            составить дашборд по продажам, проанализировать зависшие сделки или конверсию воронки.
+            Общение в обычном чате.
+          </p>
+        </div>
+        <div class="analytics-integrations__visual">
+          <img
+            class="analytics-integrations__image"
+            src="https://www.bitrix24.ru/upload/landing/e47/ncedb47ugdexe8kpb04xu3mnif7jirym.png?1793286272172"
+            alt="Дашборд продаж и аналитики в Битрикс24"
+            width="1200"
+            height="750"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </article>
+
+      <div class="analytics-actions analytics-integrations__actions" role="group" aria-label="Консультация и демо Битрикс24">
+        <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
+        <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+      </div>
+    </section>
+
+    <section id="b286198" class="traffic-channels" aria-label="Учет рекламных каналов">
+      <article class="traffic-channels__card">
+        <div class="traffic-channels__content">
+          <h2 class="traffic-channels__title">Учет всех рекламных каналов</h2>
+          <ul class="traffic-channels__list">
+            <li class="traffic-channels__item">
+              Быстрое подключение VK, Яндекс.Директ, Google Ads и других рекламных источников
+            </li>
+            <li class="traffic-channels__item">
+              Все сайты, магазины и CRM-формы, созданные в Битрикс24, подключаются автоматически
+            </li>
+            <li class="traffic-channels__item">
+              Подключение офлайн-источников, например, звонков или раздачи флаеров
+            </li>
+          </ul>
+        </div>
+
+        <div class="traffic-channels__image-wrap">
+          <img
+            class="traffic-channels__image"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/3.1440w.png.webp?1779436408272"
+            alt="Учет всех рекламных каналов в CRM аналитике"
+            loading="lazy"
+          />
+        </div>
+      </article>
+    </section>
+
+    <section id="b286126" class="analytics-comparison" aria-label="Сквозная аналитика: сравнение отчетов">
+      <article class="analytics-comparison__card">
+        <h2 class="analytics-comparison__title">Отчет об окупаемости рекламы</h2>
+        <p class="analytics-comparison__text">
+          Узнайте, какие рекламные каналы приносят прибыль, а какие тратят бюджет зря. CRM сама собирает
+          данные о расходах и трафике и показывает продажи. Отчеты обновляются в реальном времени и
+          доступны за любой период.
+        </p>
+        <div class="analytics-comparison__image-wrap">
+          <img
+            class="analytics-comparison__image"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/6.1176w.png.webp?1779436408272"
+            alt="Отчет об окупаемости рекламы в сквозной аналитике"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <article class="analytics-comparison__card">
+        <h2 class="analytics-comparison__title">Влияние трафика на продажи</h2>
+        <p class="analytics-comparison__text">
+          CRM помогает оценить эффективность работы менеджеров с клиентами из разных источников. Вы можете
+          увидеть, как менеджеры обрабатывают каждую сделку и какой трафик они лучше всего конвертируют в
+          сделки.
+        </p>
+        <div class="analytics-comparison__image-wrap">
+          <img
+            class="analytics-comparison__image"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/7.1176w.png.webp?1779436408272"
+            alt="Влияние трафика на продажи в CRM"
+            loading="lazy"
+          />
+        </div>
+      </article>
+    </section>
+
+    <section class="crm-analytics-cards" aria-label="CRM аналитика">
+      <article class="analytics-card">
+        <h2 class="analytics-card__title">Отчет по лидам и сделкам</h2>
+        <p class="analytics-card__text">
+          В CRM доступны подробности каждой сделки. Вы можете проследить путь клиента от обращения до
+          заключения сделки, изучив источники трафика. В карточке сделки хранится вся история
+          взаимодействия с клиентом, и здесь же можно связаться с ним и планировать дальнейшие шаги.
+        </p>
+        <div class="analytics-card__image-wrap">
+          <img
+            class="analytics-card__image"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/5.1900w.png.webp?1779436408272"
+            alt="Отчет по лидам и сделкам в CRM"
+            loading="lazy"
+          />
+        </div>
+      </article>
+
+      <article class="analytics-card">
+        <h2 class="analytics-card__title">План продаж</h2>
+        <p class="analytics-card__text">
+          Отображает планы по продажам, стоящие перед отделом и каждым сотрудником. Сразу видно,
+          сколько сделок осталось заключить и какой процент уже был выполнен.
+        </p>
+        <div class="analytics-card__image-wrap">
+          <img
+            class="analytics-card__image"
+            src="https://www.bitrix24.ru/upload/optimizer/converted/images/content_ru/features/crm/analytics/9.1176w.png.webp?1779436408272"
+            alt="План продаж по отделу и сотрудникам"
+            loading="lazy"
+          />
+        </div>
+      </article>
+    </section>
+
+    <div class="analytics-actions analytics-report-actions" role="group" aria-label="Консультация и демо по отчётам">
+      <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
+      <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+    </div>
+
+    <section id="b286238" class="integrations-block" aria-label="Интеграции с популярными сервисами">
+      <article class="integrations-block__card">
+        <div class="integrations-block__content">
+          <h2 class="integrations-block__title">5000+ интеграций с популярными сервисами</h2>
+
+          <p class="integrations-block__text">
+            Бесшовные интеграции с популярными сервисами доступны в Битрикс24 Маркетплейсе.
+          </p>
+          <p class="integrations-block__text">
+            В пару кликов подключите сервисы, которые вы используете.
+          </p>
+          <p class="integrations-block__text">
+            Данные синхронизируются автоматически и обновляются в реальном времени.
+          </p>
+        </div>
+
+        <div class="integrations-block__image-wrap">
+          <img
+            class="integrations-block__image"
+            src="https://www.bitrix24.ru/upload/landing/bc8/rmm8687v8r57lkzxwjmagwecc9j2l3dj.png"
+            alt="Интеграции Битрикс24 с популярными сервисами"
+            loading="lazy"
+          />
+        </div>
+      </article>
+    </section>
+
+    <section class="analytics-setup" aria-labelledby="analytics-setup-title">
+      <div class="analytics-setup__content">
+        <div class="analytics-setup__container">
+          <h2 id="analytics-setup-title" class="analytics-setup__title">Настроим за несколько дней!</h2>
+          <p class="analytics-setup__intro">
+            Расскажите о ваших целях и задачах, и мы подберем для вас идеальное решение по самой низкой стоимости
+          </p>
+
+          <ol class="analytics-setup__steps" role="list">
+            <li>
+              <img class="analytics-setup__image"
+                src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/d72/3422bzjy0grbpjm3a31ott0v8va2zwzj.1080w.png.webp"
+                alt="" width="1080" height="640" loading="lazy" decoding="async">
+              <p class="analytics-setup__text">Подайте заявку на расчет стоимости внедрения сквозной аналитики</p>
+            </li>
+            <li>
+              <img class="analytics-setup__image"
+                src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/1e6/seky2a2zcqnuzg3011cmuxokwnrjld4m.1080w.png.webp"
+                alt="" width="1080" height="640" loading="lazy" decoding="async">
+              <p class="analytics-setup__text">Получите предложения от трех наших сертифи&shy;цированных партнеров</p>
+            </li>
+            <li>
+              <img class="analytics-setup__image"
+                src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/274/elql3w3c2wof443r6f02vj9yply728wo.1080w.png.webp"
+                alt="" width="1080" height="640" loading="lazy" decoding="async">
+              <p class="analytics-setup__text">Выберите компанию-разработчика, условия которой вам подходят</p>
+            </li>
+            <li>
+              <img class="analytics-setup__image"
+                src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/440/reu05b2bvb9oapuxzpnd8ru6ypx6drpi.1080w.png.webp"
+                alt="" width="1080" height="640" loading="lazy" decoding="async">
+              <p class="analytics-setup__text">Запускайте в работу настроенную под ваши процессы CRM со сквозной аналитикой</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="analytics-actions analytics-setup__actions" role="group" aria-label="Консультация и демо по внедрению">
+        <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
+        <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+      </div>
+    </section>
+
+    <section id="b287870" class="analytics-application" aria-label="Заявка на бесплатную консультацию">
+      <script data-b24-form="inline/3827/gbo232" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://bitrix24.team/upload/crm/form/loader_3827_gbo232.js');</script>
+    </section>
+  </main>
+
+  <footer class="analytics-pricing-footer">
+    <h2 class="analytics-pricing-footer__title">Битрикс24 можно использовать бесплатно</h2>
+    <p class="analytics-pricing-footer__text">
+      Некоторые функции и лимиты могут отличаться от платных тарифов. Подробности — на странице
+      <a class="analytics-pricing-footer__link" href="https://www.bitrix24.ru/prices/">«Цены»</a>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      const initAnalyticsTabs = function () {
+        document.querySelectorAll('[data-analytics-tabs]').forEach(function (root) {
+          if (root.dataset.analyticsTabsInitialized === 'true') {
+            return;
+          }
+
+          const tablist = root.querySelector('.analytics-integrations__tabs');
+          const tabs = Array.from(root.querySelectorAll('.analytics-integrations__tab'));
+          const panels = Array.from(root.querySelectorAll('.analytics-integrations__card'));
+
+          if (!tablist || !tabs.length || tabs.length !== panels.length) {
+            return;
+          }
+
+          const selectTab = function (selectedIndex) {
+            tabs.forEach(function (tab, index) {
+              const isSelected = index === selectedIndex;
+              tab.setAttribute('aria-selected', String(isSelected));
+              tab.tabIndex = isSelected ? 0 : -1;
+              panels[index].hidden = !isSelected;
+            });
+          };
+
+          tabs.forEach(function (tab, index) {
+            tab.addEventListener('click', function () {
+              selectTab(index);
+            });
+
+            tab.addEventListener('keydown', function (event) {
+              if (event.altKey || event.ctrlKey || event.metaKey) {
+                return;
+              }
+
+              let nextIndex;
+              switch (event.key) {
+                case 'ArrowRight':
+                  nextIndex = (index + 1) % tabs.length;
+                  break;
+                case 'ArrowLeft':
+                  nextIndex = (index - 1 + tabs.length) % tabs.length;
+                  break;
+                case 'Home':
+                  nextIndex = 0;
+                  break;
+                case 'End':
+                  nextIndex = tabs.length - 1;
+                  break;
+                default:
+                  return;
+              }
+
+              event.preventDefault();
+              selectTab(nextIndex);
+              tabs[nextIndex].focus();
+            });
+          });
+
+          selectTab(0);
+          tablist.hidden = false;
+          root.dataset.analyticsTabsInitialized = 'true';
+        });
+      };
+
+      initAnalyticsTabs();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnalyticsTabs, { once: true });
+      }
+    })();
+  </script>
+</body>
+</html>
