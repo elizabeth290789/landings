@@ -241,9 +241,22 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 #b24-mail .integration-form { min-width: 0; }
 #b24-mail .form-fallback { text-align: center; margin-top: 12px; color: #1645cb; font-size: .91rem; }
 #b24-mail .form-fallback a { text-underline-offset: 3px; }
-#b24-mail .ending { display: grid; place-items: center; min-height: 235px; position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(122deg, #2533db, #1378f9 85%); }
+#b24-mail .ending {
+  display: grid;
+  place-items: center;
+  padding: clamp(44px, 6vw, 78px) 18px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(122deg, #2533db, #1378f9 85%);
+}
+#b24-mail .ending-copy { width: min(100%, 46rem); }
+#b24-mail .ending h2 { color: #fff; font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 800; }
+#b24-mail .ending p { max-width: 39rem; margin: 16px auto 0; color: #fff; font-size: clamp(1rem, 1.6vw, 1.125rem); }
 #b24-mail .ending-decoration { position: absolute; z-index: -1; inset: -42% 1%; background: repeating-radial-gradient(ellipse at center, transparent 0 32px, #dce8ff35 33px 34px, transparent 35px 60px); transform: rotate(-12deg); }
-#b24-mail .ending .button { min-height: 57px; padding-inline: 33px; }
+#b24-mail .ending .button { min-height: 57px; margin-top: 24px; padding-inline: 33px; }
 @media (max-width: 1120px) {
 #b24-mail .shell { width: calc(100% - 64px); }
 #b24-mail .hero-layout { gap: 26px; }
@@ -316,7 +329,6 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 #b24-mail .migration-section { border-radius: 26px 26px 0 0; }
 #b24-mail .step { padding: 16px 12px; border-radius: 15px; }
 #b24-mail .integration { grid-template-columns: minmax(0,1fr); padding: 18px 14px; margin-top: 36px; }
-#b24-mail .ending { min-height: 170px; }
 }
 @media (max-width: 360px) {
 #b24-mail .hero-checks, #b24-mail .features-grid, #b24-mail .steps { grid-template-columns: minmax(0,1fr); }
@@ -960,9 +972,13 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
         </div>
       </div>
     </section>
-    <section class="ending" aria-label="Попробовать Битрикс24">
+    <section class="ending" aria-labelledby="b24-mail-ending-title">
       <div class="ending-decoration" aria-hidden="true"></div>
-      <a class="button button-lime" href="https://www.bitrix24.ru/create.php?b24_type=social">Попробовать Битрикс24</a>
+      <div class="ending-copy">
+        <h2 id="b24-mail-ending-title">Перенесите корпоративную почту в Битрикс24</h2>
+        <p>Свой домен, привычные адреса, история переписки, мобильная работа и управление — в рамках одной платформы.</p>
+        <a class="button button-lime" href="https://www.bitrix24.ru/create.php?b24_type=social">Попробовать Битрикс24</a>
+      </div>
     </section>
   </div>
 </div>
