@@ -38,6 +38,9 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
   --surface: #f5f8fe;
   --line: #e3eaf7;
   --shell: 1200px;
+  --header-top: 20px;
+  --header-height: 62px;
+  --header-space: calc(var(--header-top) + var(--header-measured-height, var(--header-height)));
 }
 #b24-mail *, #b24-mail *::before, #b24-mail *::after { box-sizing: border-box; }
 #b24-mail { margin: 0; background: #fff; color: var(--ink); font: 500 1rem/1.6 Montserrat, Arial, sans-serif; }
@@ -47,8 +50,8 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 #b24-mail p { text-wrap: pretty; }
 #b24-mail a { color: inherit; }
 #b24-mail a:focus-visible { outline: 3px solid #ff9c48; outline-offset: 5px; }
-#b24-mail section[id] { scroll-margin-top: 28px; }
-#b24-mail .skip-link { position: fixed; z-index: 5; top: 12px; left: 12px; transform: translateY(-160%); padding: 8px 16px; background: #fff; color: var(--ink); border-radius: 8px; }
+#b24-mail :is(section[id], .hero-layout[id]) { scroll-margin-top: calc(var(--header-space) + 14px); }
+#b24-mail .skip-link { position: fixed; z-index: 20; top: 12px; left: 12px; transform: translateY(-160%); padding: 8px 16px; background: #fff; color: var(--ink); border-radius: 8px; }
 #b24-mail .skip-link:focus { transform: translateY(0); }
 #b24-mail .shell { width: min(var(--shell), calc(100% - 96px)); margin-inline: auto; }
 #b24-mail .hero {
@@ -56,6 +59,7 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
   overflow: hidden;
   isolation: isolate;
   min-height: 650px;
+  padding-top: var(--header-space);
   color: #fff;
   border-radius: 0 0 36px 36px;
   background:
@@ -73,21 +77,24 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
   opacity: .14;
   mask-image: linear-gradient(110deg, transparent 48%, #000 90%);
 }
+#b24-mail .site-header-slot { position: sticky; top: var(--header-top); z-index: 10; height: 0; }
 #b24-mail .site-header {
   width: min(100%, 1000px);
-  margin: 20px auto 0;
-  min-height: 62px;
+  margin-inline: auto;
+  min-height: var(--header-height);
   border: 1px solid #ffffff35;
   border-radius: 100px;
-  padding: 7px 20px 7px 26px;
+  padding: 7px 10px 7px 26px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 25px;
-  background: #ffffff15;
-  box-shadow: 0 7px 32px #070f8e18;
+  gap: 14px;
+  background: rgb(29 57 202 / .94);
+  color: #fff;
+  box-shadow: 0 7px 32px #070f8e2c;
   backdrop-filter: blur(14px);
 }
+#b24-mail .site-header .nav { margin-inline-start: auto; }
+#b24-mail .site-header .button { min-height: 42px; padding: 8px 16px; font-size: .875rem; white-space: nowrap; }
 #b24-mail .wordmark { display: inline-flex; }
 #b24-mail .wordmark img { width: 148px; height: auto; }
 #b24-mail .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; font-size: .94rem; font-weight: 750; }
@@ -95,7 +102,7 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 #b24-mail .nav a:hover { background: #ffffff24; }
 #b24-mail .hero-layout { min-height: 560px; display: grid; align-items: center; grid-template-columns: minmax(0, .99fr) minmax(0, 1.01fr); gap: 40px; padding-block: 52px 77px; outline: none; }
 #b24-mail .hero-copy { position: relative; z-index: 1; }
-#b24-mail .hero-copy h1 { font-size: clamp(2.5rem, 4.03vw, 3.8rem); font-weight: 800; text-wrap: initial; }
+#b24-mail .hero-copy h1 { color: #fff; font-size: clamp(2.5rem, 4.03vw, 3.8rem); font-weight: 800; text-wrap: initial; }
 #b24-mail .hero-copy h1 span { color: #e8ff76; white-space: nowrap; }
 #b24-mail .hero-copy > p { max-width: 525px; margin-top: 21px; color: #f0f4ff; font-size: clamp(1rem, 1.55vw, 1.2rem); }
 #b24-mail .checks { margin: 0; padding: 0; list-style: none; display: grid; }
@@ -246,6 +253,20 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 #b24-mail .security-grid { gap: 12px 24px; }
 }
 @media (max-width: 870px) {
+#b24-mail { --header-top: 12px; --header-height: 92px; }
+#b24-mail .site-header {
+  width: min(100%, 600px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "logo action" "nav nav";
+  gap: 3px 8px;
+  padding: 7px 12px 5px;
+  border-radius: 22px;
+}
+#b24-mail .site-header .wordmark { grid-area: logo; justify-self: start; }
+#b24-mail .site-header .wordmark img { width: min(124px, 100%); }
+#b24-mail .site-header .nav { grid-area: nav; justify-content: center; margin-inline-start: 0; }
+#b24-mail .site-header .button { grid-area: action; }
 #b24-mail .hero { min-height: 0; }
 #b24-mail .hero-layout { grid-template-columns: minmax(0,1fr); gap: 30px; padding-block: 52px 49px; }
 #b24-mail .hero-visual { width: min(100%, 610px); min-height: 385px; margin-inline: auto; }
@@ -259,9 +280,10 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 }
 @media (max-width: 660px) {
 #b24-mail .shell { width: calc(100% - 36px); }
-#b24-mail .site-header { flex-direction: column; justify-content: center; align-items: center; gap: 9px; padding: 13px 4px 5px; border-radius: 24px; }
-#b24-mail .nav { justify-content: center; font-size: .82rem; gap: 1px; }
-#b24-mail .nav a { padding: 9px 7px; }
+#b24-mail .site-header { padding-inline: 8px; }
+#b24-mail .site-header .button { font-size: .8rem; padding-inline: 10px; }
+#b24-mail .nav { font-size: .82rem; gap: 0 2px; }
+#b24-mail .nav a { padding: 8px 6px; }
 #b24-mail .hero { border-radius: 0 0 26px 26px; }
 #b24-mail .hero-break { display: none; }
 #b24-mail .hero-layout { padding-block: 39px 31px; gap: 20px; }
@@ -680,7 +702,7 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
 </style>
 <div id="b24-mail">
 <a class="skip-link" href="#b24-mail-main">К содержанию</a>
-  <header class="hero" id="b24-mail-top">
+  <div class="site-header-slot">
     <div class="shell">
       <div class="site-header">
         <a class="wordmark" href="#b24-mail-top" aria-label="Битрикс24, наверх"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgMjUwIDQ1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoKPGcgaWQ9IiYjMjA4OyYjMTU1OyYjMjA4OyYjMTkwOyYjMjA4OyYjMTc5OyYjMjA4OyYjMTkwOyYjMjA5OyYjMTMwOyYjMjA4OyYjMTg0OyYjMjA4OyYjMTkxO18wMiI+Cgo8ZyBpZD0iR3JvdXAgMjEzMTMyODc3MyI+CjxnIGlkPSJDYW52YXMiPgo8ZyBpZD0iYml0cml4MjQtbG9nby1ydSI+CjxnIGlkPSJHcm91cCI+CjxnIGlkPSJWZWN0b3JfMiI+CjxwYXRoIGlkPSJWZWN0b3IiIGQ9Ik02LjA5NjgzIDI4LjI4MDlWMTguMDg2MUg4LjU2MTY0QzEwLjc2NzIgMTguMDg2MSAxMi41ODMzIDE4LjM0NCAxMy44ODA5IDE5LjExOTJDMTUuMTc4NSAxOS44OTI4IDE1Ljk1NjEgMjEuMTgzOCAxNS45NTYxIDIzLjI0ODRDMTUuOTU2MSAyNi43MzM3IDEzLjg4MDkgMjguMjgwOSA4Ljk1MTI0IDI4LjI4MDlINi4wOTY4M1pNMC4xMzAzOTYgMzMuMTg1M0g4LjgyMDg0QzE4LjU0OTcgMzMuMTg1MyAyMi4wNTI5IDI4LjkyNjQgMjIuMDUyOSAyMi45OTA1QzIyLjA1MjkgMTguOTg5NSAyMC4zNjczIDE2LjI3OTQgMTcuMzgyNSAxNC43MzA1QzE1LjA0ODEgMTMuNDM5NiAxMi4wNjMzIDEzLjA1MzUgOC40MzEyNCAxMy4wNTM1SDYuMDk2ODNWNS4zMDkzNEgxOS4xOTg1TDIwLjc1NTMgMC41MzQ2NjhIMFYzMy4xODUzSDAuMTMwMzk2Wk0yNi4wNzQ1IDMzLjE4NTNIMzEuNzgxN0wzOS4xNzYyIDIyLjYwMjlDNDAuNjAyNiAyMC42NjY0IDQxLjY0MSAxOC43MzE2IDQyLjI4OTggMTcuNjk4NUg0Mi40MjAyQzQyLjI4OTggMTkuMTE3NiA0Mi4xNjEgMjAuOTI0MyA0Mi4xNjEgMjIuNzMxVjMzLjA1NTZINDcuOTk4NlY5LjgyNjEzSDQyLjI5MTRMMzQuODk2OSAyMC40MDg2QzMzLjU5OTMgMjIuMzQ1IDMyLjQzMjEgMjQuMjc5OSAzMS43ODMzIDI1LjMxM0gzMS42NTI5QzMxLjc4MzMgMjMuODkzOSAzMS45MTIxIDIyLjA4NzEgMzEuOTEyMSAyMC4yODA0VjkuOTU1ODZIMjYuMDc0NVYzMy4xODUzWk01Ny45ODY3IDMzLjE4NTNINjMuOTUzMVYxNC43MzA1SDcwLjk1NzlMNzIuNTE0NyA5LjgyNjEzSDUwLjg1MTRWMTQuNzMwNUg1Ny45ODY3VjMzLjE4NTNaTTc0LjU5MTUgNDQuOTI5SDgwLjQyOTJWMzMuMTg1M0M4MS41OTY0IDMzLjU3MjkgODIuNzYzNiAzMy43MDExIDg0LjA2MTIgMzMuNzAxMUM5MS40NTU2IDMzLjcwMTEgOTYuMjU0OCAyOC42Njg1IDk2LjI1NDggMjEuNDQwMUM5Ni4yNTQ4IDE0LjIxMTYgOTEuODQzNiA5LjE3OTA3IDgzLjQxMjQgOS4xNzkwN0M4MC4xNyA5LjE3OTA3IDc3LjA1NjMgOS44MjQ1NSA3NC40NjExIDEwLjU5ODJMNzQuNTkxNSA0NC45Mjc0VjQ0LjkyOVpNODAuNDI5MiAyOC4xNTEyVjE0LjQ3MjdDODEuMzM3MiAxNC4yMTQ4IDgyLjExNDggMTQuMDg1MSA4My4xNTMyIDE0LjA4NTFDODcuNDM0IDE0LjA4NTEgOTAuMTU4IDE2LjQwNzUgOTAuMTU4IDIxLjQ0MTdDOTAuMTU4IDI1Ljk1ODQgODcuOTUyNCAyOC43OTgzIDgzLjU0MjggMjguNzk4M0M4Mi4zNzU2IDI4Ljc5ODMgODEuNDY3NiAyOC41NDA0IDgwLjQyOTIgMjguMTUyOFYyOC4xNTEyWk05OS43NTggMzMuMTgzN0gxMDUuNDY1TDExMi44NiAyMi42MDEzQzExNC4yODYgMjAuNjY0OSAxMTUuMzI1IDE4LjczIDExNS45NzMgMTcuNjk2OUgxMTYuMTA0QzExNS45NzMgMTkuMTE2IDExNS44NDUgMjAuOTIyNyAxMTUuODQ1IDIyLjcyOTVWMzMuMDU0SDEyMS42ODJWOS44MjYxM0gxMTUuOTc1TDEwOC41OCAyMC40MDg2QzEwNy4yODMgMjIuMzQ1IDEwNi4xMTYgMjQuMjc5OSAxMDUuNDY3IDI1LjMxM0gxMDUuMzM2QzEwNS40NjcgMjMuODkzOSAxMDUuNTk2IDIyLjA4NzEgMTA1LjU5NiAyMC4yODA0VjkuOTU1ODZIOTkuNzU4VjMzLjE4NTNWMzMuMTgzN1pNMTI2LjM1MSAzMy4xODM3SDEzMi4zMTdWMjMuNTA0N0gxMzUuODIxQzEzNi40NjkgMjMuNTA0NyAxMzcuMTE4IDI0LjE1MDEgMTM3Ljg5NiAyNS42OTlMMTQwLjg3OSAzMy4xODM3SDE0Ny4yMzVMMTQyLjk1NCAyNC4yNzgzQzE0Mi4xNzcgMjIuNzI5NSAxNDEuMzk3IDIxLjgyNjEgMTQwLjIzIDIxLjQzODVWMjEuMzA4OEMxNDIuMTc3IDIwLjE0NzUgMTQyLjQzNiAxNi43OTIgMTQzLjYwMyAxNS4xMTM0QzE0My45OTMgMTQuNTk3NiAxNDQuNTExIDE0LjMzOTggMTQ1LjI4OSAxNC4zMzk4QzE0NS42NzggMTQuMzM5OCAxNDYuMTk3IDE0LjMzOTggMTQ2LjU4NiAxNC41OTc2VjkuNTY1MDlDMTQ1LjkzNyA5LjMwNzIyIDE0NC43NyA5LjE3NzQ5IDE0NC4xMjEgOS4xNzc0OUMxNDIuMDQ2IDkuMTc3NDkgMTQwLjc0OSA5Ljk1MTEyIDEzOS44NDEgMTEuMjQyMUMxMzcuODk0IDE0LjA4MTkgMTM3Ljg5NCAxOC45ODYzIDEzNS4wNDEgMTguOTg2M0gxMzIuMzE3VjkuODI2MTNIMTI2LjM1MVYzMy4xODUzVjMzLjE4MzdaTTE2MC40NjcgMzMuNjk5NUMxNjMuNzEgMzMuNjk5NSAxNjYuNjk0IDMyLjY2NjQgMTY4LjUxIDMxLjM3N0wxNjYuODI1IDI3LjM3NkMxNjUuMTM5IDI4LjI3OTMgMTYzLjU4MiAyOC45MjQ4IDE2MS4zNzcgMjguOTI0OEMxNTcuMzU1IDI4LjkyNDggMTU0Ljc2MSAyNi4zNDI5IDE1NC43NjEgMjEuNTY4MkMxNTQuNzYxIDE3LjMwOTMgMTU3LjM1NyAxMy45NTM3IDE2MS43NjYgMTMuOTUzN0MxNjQuMTAxIDEzLjk1MzcgMTY1Ljc4OCAxNC41OTkyIDE2Ny40NzQgMTUuNzYwNVYxMC43Mjc5QzE2Ni4xNzYgOS45NTQyOCAxNjQuMTAxIDkuMTc5MDcgMTYxLjExOCA5LjE3OTA3QzE1NC4xMTMgOS4xNzkwNyAxNDguNjY1IDE0LjM0MTMgMTQ4LjY2NSAyMS42OTc5QzE0OC42NjUgMjguNDA5MSAxNTIuODE1IDMzLjcwMTEgMTYwLjQ2OSAzMy43MDExTDE2MC40NjcgMzMuNjk5NVoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPC9nPgo8L2c+CjwvZz4KPGcgaWQ9IlZlY3Rvcl8zIj4KPHBhdGggZD0iTTIzNi45MjMgMjUuMTEzN0MyMjkuOTQ0IDI1LjExMzcgMjI0LjM4NiAxOS42MDM0IDIyNC4yNTggMTIuNTU2OUMyMjQuMjU4IDUuNjM3NTUgMjI5Ljk0NCAwIDIzNi45MjMgMEMyNDMuOTAyIDAgMjQ5LjU4OCA1LjYzNzU1IDI0OS41ODggMTIuNTU2OUMyNDkuNTg4IDE5LjQ3NjIgMjQzLjkwMiAyNS4xMTM3IDIzNi45MjMgMjUuMTEzN1pNMjM2LjkyMyAzLjA2MzAzQzIzMS42NTcgMy4wNjMwMyAyMjcuMzQ4IDcuMzM1NTcgMjI3LjM0OCAxMi41NTY5QzIyNy40NjggMTcuODk3NSAyMzEuNjU3IDIyLjA1MDcgMjM2LjkyMyAyMi4wNTA3QzI0Mi4xOSAyMi4wNTA3IDI0Ni40OTkgMTcuNzc4MSAyNDYuNDk5IDEyLjU1NjlDMjQ2LjQ5OSA3LjMzNTU3IDI0Mi4xOSAzLjA2MzAzIDIzNi45MjMgMy4wNjMwM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMzcuNzg3IDYuMTI0NDlIMjM1LjMxOFYxNC4zODUzSDIzNy43ODdWNi4xMjQ0OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNDMuNjUgMTQuMzg1M1YxMS45MzhIMjM1LjMxOEwyMzUuMzE4IDE0LjM4NTNMMjQzLjY1IDE0LjM4NTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTk0LjQ2NSAzMi45NDU3VjI3Ljk0OUgxNzkuNDcyQzE4MS41NCAxOS43NDc5IDE5NC4yMDYgMTcuOTU0MSAxOTQuMjA2IDguODU2MTJDMTk0LjIwNiAzLjk4NjY5IDE5MC44NDYgMC4zOTkwMTQgMTgzLjczNyAwLjM5OTAxNEMxNzkuMzQyIDAuMzk5MDE0IDE3NS40NjUgMS42ODA3NyAxNzIuODgxIDIuOTYyNTRMMTc0LjQzMiA3LjU3NTkzQzE3Ni43NTggNi40MjI5OCAxNzkuNDcyIDUuMzk3MjUgMTgyLjgzMiA1LjM5NzI1QzE4NS40MTggNS4zOTcyNSAxODcuODcyIDYuNTUwMjEgMTg3Ljg3MiA5LjQ5N0MxODcuODcyIDE2LjE2MDMgMTczLjAxIDE2LjY3MjMgMTcxLjcxNyAzMi45NDU3SDE5NC40NjVaTTE5NS4xMTEgMjUuMDAwN0gyMDkuNzE1VjMyLjk0NTdIMjE1LjUzMlYyNS4wMDA3SDIyMC40NDNWMjAuMTMxMkgyMTUuNTMyVjAuMzk5MDE0SDIxMS4yNjdMMTk1LjExMSAyMS4xNTY5VjI1LjAwMDdaTTIwMS43MDIgMjAuMzg3M0wyMDkuOTc0IDkuMzY2NjNDMjA5Ljk3NCAxMC4yNjM1IDIwOS43MTUgMTMuMDgzMSAyMDkuNzE1IDE1LjY0NTFWMjAuMjU4NUgyMDUuODM5QzIwNC42NzYgMjAuMjU4NSAyMDIuNDc4IDIwLjM4NzMgMjAxLjcwNCAyMC4zODczSDIwMS43MDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjwvZz4KPC9nPgo8L3N2Zz4K" width="250" height="45" alt=""></a>
@@ -689,7 +711,23 @@ body:has(#b24-mail) :is(.block-wrapper, .landing-block, .landing-block-node-cont
           <a href="#b24-mail-features">Возможности</a>
           <a href="#b24-mail-migration">Как перенести</a>
         </nav>
+        <a class="button button-lime" href="https://www.bitrix24.ru/create.php?b24_type=social">Попробовать Битрикс24</a>
       </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      if (!('ResizeObserver' in window)) return;
+      const landing = document.getElementById('b24-mail');
+      const header = landing.querySelector('.site-header');
+      new ResizeObserver(() => {
+        const height = Math.ceil(header.getBoundingClientRect().height);
+        landing.style.setProperty('--header-measured-height', height + 'px');
+      }).observe(header);
+    })();
+  </script>
+  <header class="hero" id="b24-mail-top">
+    <div class="shell">
       <div class="hero-layout" id="b24-mail-main" tabindex="-1">
         <div class="hero-copy">
           <h1>Корпоративная<br class="hero-break"> почта <span>Битрикс24</span></h1>
