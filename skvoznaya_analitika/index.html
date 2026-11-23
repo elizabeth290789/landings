@@ -45,18 +45,22 @@
       padding: 12px 20px;
       border-radius: 999px;
       background: #b5ed00;
-      color: #1d2438;
       font: 700 18px/1.3 Montserrat, Arial, sans-serif;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    .analytics-cta:any-link {
+      color: #1d2438;
       text-decoration: none;
     }
 
-    .analytics-cta:last-child {
+    .analytics-cta--demo {
       width: 265px;
     }
 
-    .analytics-cta:hover {
+    .analytics-cta:hover,
+    .analytics-cta:active {
       background: #a8de00;
     }
 
@@ -138,10 +142,12 @@
         gap: 16px;
       }
 
-      .analytics-cta,
-      .analytics-cta:last-child {
-        width: 344px;
+      .analytics-cta {
         font-size: 16px;
+      }
+
+      .analytics-cta--demo {
+        width: 344px;
       }
     }
 
@@ -241,8 +247,7 @@
     }
 
     .ip-telephony-menu__logo-link:focus-visible,
-    .ip-telephony-menu__link:focus-visible,
-    .ip-telephony-menu__cta:focus-visible {
+    .ip-telephony-menu__link:focus-visible {
       outline: 3px solid rgba(14, 165, 233, .26);
       outline-offset: 6px;
     }
@@ -310,45 +315,13 @@
       transform: scaleX(1);
     }
 
-    .ip-telephony-menu__cta,
-    .ip-telephony-menu__cta:visited,
-    .ip-telephony-menu__cta:focus,
-    .ip-telephony-menu__cta:active {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .ip-telephony-menu__cta {
       flex: 0 0 auto;
+      width: auto;
       min-height: 46px;
       padding: 0 24px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #bdf300 0%, #b4eb00 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .38),
-        0 12px 24px rgba(94, 132, 0, .24),
-        0 0 0 1px rgba(145, 188, 0, .34);
-      color: #111111;
       font-size: 13px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: .035em;
-      text-transform: uppercase;
-      text-decoration: none;
       white-space: nowrap;
-      transform: translateZ(0);
-      transition: background .28s ease, box-shadow .28s ease, transform .24s ease;
-    }
-
-    .ip-telephony-menu__cta:hover,
-    .ip-telephony-menu__cta:focus-visible {
-      background: linear-gradient(135deg, #d7ff2f 0%, #c9f913 100%);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .5),
-        0 16px 28px rgba(90, 128, 0, .3),
-        0 0 26px rgba(191, 247, 28, .45),
-        0 0 0 1px rgba(170, 220, 8, .44);
-      color: #111111;
-      text-decoration: none;
-      transform: translateY(-1px);
     }
 
     .ip-telephony-menu__spacer {
@@ -395,11 +368,6 @@
         min-height: 40px;
         padding: 0 16px;
         font-size: 11px;
-        letter-spacing: .03em;
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, .34),
-          0 10px 20px rgba(100, 141, 0, .22),
-          0 0 0 1px rgba(155, 201, 0, .24);
       }
     }
 
@@ -454,87 +422,7 @@
     }
 
     .analytics-hero__actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
       margin-top: clamp(26px, 3.4vw, 38px);
-    }
-
-    .analytics-hero__cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      height: 60px;
-      padding: 0 36px;
-      border: 2px solid transparent;
-      border-radius: 999px;
-      font-family: "Montserrat", sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      line-height: 1;
-      text-decoration: none;
-      white-space: nowrap;
-      opacity: 1;
-      mix-blend-mode: normal;
-      transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease,
-        box-shadow 0.25s ease;
-    }
-
-    .analytics-hero__cta,
-    .analytics-hero__cta:link,
-    .analytics-hero__cta:visited {
-      opacity: 1;
-      text-decoration: none;
-    }
-
-    .analytics-hero__cta--primary,
-    .analytics-hero__cta--primary:link,
-    .analytics-hero__cta--primary:visited {
-      background: #bdf300;
-      color: #12112f;
-    }
-
-    .analytics-hero__cta--secondary,
-    .analytics-hero__cta--secondary:link,
-    .analytics-hero__cta--secondary:visited {
-      background: transparent;
-      border-color: #3277fd;
-      color: #3277fd;
-    }
-
-    .analytics-hero__cta--primary:hover,
-    .analytics-hero__cta--primary:focus,
-    .analytics-hero__cta--primary:focus-visible,
-    .analytics-hero__cta--primary:active {
-      background: #bdf300;
-      color: #12112f;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35);
-      outline: none;
-      filter: none;
-      mix-blend-mode: normal;
-    }
-
-    .analytics-hero__cta--secondary:hover,
-    .analytics-hero__cta--secondary:focus,
-    .analytics-hero__cta--secondary:focus-visible,
-    .analytics-hero__cta--secondary:active {
-      background: #3277fd;
-      border-color: #3277fd;
-      color: #fff;
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .analytics-hero__cta:focus-visible {
-      box-shadow: 0 0 0 4px rgba(50, 119, 253, 0.18);
-    }
-
-    .analytics-hero__cta--primary:focus-visible {
-      box-shadow: 0 10px 25px rgba(189, 243, 0, 0.35), 0 0 0 4px rgba(189, 243, 0, 0.28);
     }
 
     .analytics-hero__visual {
@@ -572,15 +460,6 @@
         max-width: 100%;
         font-size: clamp(1.1rem, 5vw, 1.4rem);
         line-height: 1.55;
-      }
-
-      .analytics-hero__actions {
-        gap: 14px;
-      }
-
-      .analytics-hero__cta {
-        width: min(100%, 340px);
-        padding: 0 24px;
       }
 
       .analytics-hero__visual {
@@ -1413,12 +1292,7 @@
         <a class="ip-telephony-menu__link" href="#b286238">Интеграции</a>
       </nav>
 
-      <a
-        class="ip-telephony-menu__cta"
-        href="#b287870"
-      >
-        бесплатная консультация
-      </a>
+      <a class="analytics-cta ip-telephony-menu__cta" href="#b287870">Бесплатная консультация</a>
     </div>
   </header>
   <div class="ip-telephony-menu__spacer" aria-hidden="true"></div>
@@ -1430,19 +1304,9 @@
         <p class="analytics-hero__subtitle">
           Помогает бизнесу принимать решения на основе данных. Создавайте свои отчёты по окупаемости рекламы в удобном конструкторе
         </p>
-        <div class="analytics-hero__actions" role="group" aria-label="Основные действия">
-          <a
-            class="analytics-hero__cta analytics-hero__cta--primary"
-            href="#b287870"
-            role="button"
-            >Бесплатная консультация</a
-          >
-          <a
-            class="analytics-hero__cta analytics-hero__cta--secondary"
-            href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm"
-            role="button"
-            >Попробовать демо</a
-          >
+        <div class="analytics-actions analytics-hero__actions" role="group" aria-label="Основные действия">
+          <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
+          <a class="analytics-cta analytics-cta--demo" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
         </div>
 
         <div class="analytics-hero__visual">
@@ -1600,7 +1464,7 @@
 
       <div class="analytics-actions analytics-integrations__actions" role="group" aria-label="Консультация и демо Битрикс24">
         <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
-        <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+        <a class="analytics-cta analytics-cta--demo" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
       </div>
     </section>
 
@@ -1705,7 +1569,7 @@
 
     <div class="analytics-actions analytics-report-actions" role="group" aria-label="Консультация и демо по отчётам">
       <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
-      <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+      <a class="analytics-cta analytics-cta--demo" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
     </div>
 
     <section id="b286238" class="integrations-block" aria-label="Интеграции с популярными сервисами">
@@ -1774,7 +1638,7 @@
 
       <div class="analytics-actions analytics-setup__actions" role="group" aria-label="Консультация и демо по внедрению">
         <a class="analytics-cta" href="#b287870">Бесплатная консультация</a>
-        <a class="analytics-cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
+        <a class="analytics-cta analytics-cta--demo" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Попробовать демо</a>
       </div>
     </section>
 
