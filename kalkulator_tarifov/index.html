@@ -1,1 +1,1005 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Подбор тарифа Битрикс24</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  .tc-widget{
+    --tc-font:inherit;
 
+    --tc-ink:#1d2129;
+    --tc-ink-soft:#525c69;
+    --tc-ink-faint:#8a93a6;
+    --tc-line:#dfe7f3;
+    --tc-surface:#ffffff;
+    --tc-tile:#f0f5ff;
+    --tc-tile-hover:#e5eeff;
+
+    --tc-blue:#22abee;
+    --tc-blue-soft:#e3f4fd;
+    --tc-green:#01b343;
+    --tc-purple:#a843e4;
+    --tc-purple-tile:#f6f4ff;
+
+    --tc-height:680px;        /* узкая раскладка */
+
+    container:tc / inline-size;
+    box-sizing:border-box;
+    width:100%;
+    max-width:920px;
+    font-family:var(--tc-font);
+    font-size:15px;
+    line-height:1.4;
+    color:var(--tc-ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .tc-widget *{box-sizing:border-box;}
+  .tc-widget [hidden]{display:none !important;}
+  .tc-widget button{font-family:inherit;}
+
+  .tc-frame{
+    height:var(--tc-height);
+    background:var(--tc-surface);
+    border:1px solid var(--tc-line);
+    border-radius:24px;
+    box-shadow:0 18px 50px -28px rgba(30,60,120,0.30);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  @media (max-width:600px){
+    .tc-frame{height:min(var(--tc-height), calc(100svh - 32px));border-radius:20px;}
+  }
+
+  /* ---- шапка ---- */
+  .tc-top{flex:0 0 auto;padding:22px 28px 0;display:flex;flex-direction:column;gap:12px;}
+  .tc-top-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+  .tc-progress-track{height:6px;border-radius:3px;background:var(--tc-tile);overflow:hidden;}
+  .tc-progress-fill{height:100%;border-radius:3px;background:var(--tc-blue);width:0%;}
+  @media (prefers-reduced-motion:no-preference){.tc-progress-fill{transition:width .25s ease;}}
+  .tc-steplabel{font-size:13px;color:var(--tc-ink-faint);font-weight:600;white-space:nowrap;}
+
+  /* ---- шаг: тело + закреплённый низ ---- */
+  .tc-step,.tc-result{display:none;flex:1 1 auto;min-height:0;flex-direction:column;}
+  .tc-step.visible,.tc-result.visible{display:flex;}
+  .tc-body{
+    flex:1 1 auto;min-height:0;overflow-y:auto;
+    padding:20px 28px;display:flex;flex-direction:column;gap:14px;
+    scrollbar-width:thin;scrollbar-color:#c9d6ea transparent;
+  }
+  .tc-body::-webkit-scrollbar{width:6px;}
+  .tc-body::-webkit-scrollbar-thumb{background:#c9d6ea;border-radius:3px;}
+  .tc-foot{
+    flex:0 0 auto;padding:14px 28px 20px;border-top:1px solid var(--tc-line);
+    background:var(--tc-surface);display:flex;flex-direction:column;gap:10px;
+  }
+  @media (max-width:600px){
+    .tc-top{padding:20px 18px 0;}
+    .tc-body{padding:18px;}
+    .tc-foot{padding:12px 18px 16px;}
+  }
+
+  .tc-hint{margin:-6px 0 0;color:var(--tc-ink-soft);font-size:14px;line-height:1.45;}
+
+  /* ---- кнопки ---- */
+  .tc-nav-row{display:flex;justify-content:space-between;align-items:center;gap:10px 16px;flex-wrap:wrap;}
+  .tc-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:44px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;
+    font-weight:700;font-size:15px;line-height:1;cursor:pointer;text-decoration:none;white-space:nowrap;
+  }
+  .tc-btn:focus-visible{outline:3px solid rgba(34,171,238,0.4);outline-offset:2px;}
+  .tc-btn-primary{background:var(--tc-blue);color:#fff;}
+  .tc-btn-primary:hover{background:#0f9be0;}
+  .tc-btn-primary:disabled{background:#bfe3f7;cursor:not-allowed;}
+  .tc-btn-ghost{background:#fff;border-color:var(--tc-line);color:var(--tc-ink-soft);}
+  .tc-btn-ghost:hover{border-color:#c4d2e8;color:var(--tc-ink);}
+  .tc-btn-cta{background:var(--tc-green);color:#fff;}
+  .tc-btn-cta:hover{background:#00a03b;}
+  .tc-btn-secondary{background:#fff;border-color:var(--tc-line);color:var(--tc-ink);}
+  .tc-btn-secondary:hover{border-color:#c4d2e8;}
+
+  .tc-link{background:none;border:none;padding:2px;color:var(--tc-blue);font-weight:600;font-size:14px;cursor:pointer;text-align:center;}
+  .tc-link:hover{color:#0f9be0;text-decoration:underline;}
+  .tc-link:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
+  /* узко: ссылка «вручную» уходит под кнопки на всю ширину */
+  .tc-nav-row .tc-link{order:3;flex:1 0 100%;}
+
+  /* ---- шаг 1: отрасли ---- */
+  .tc-industry-grid{display:flex;flex-wrap:wrap;gap:8px;}
+  .tc-ind-pill{
+    border:1.5px solid transparent;background:var(--tc-tile);border-radius:999px;
+    padding:10px 16px;font-size:14px;font-weight:500;line-height:1.25;cursor:pointer;color:var(--tc-ink);text-align:left;
+  }
+  .tc-ind-pill:hover{background:var(--tc-tile-hover);}
+  .tc-ind-pill:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
+  .tc-ind-pill.selected{background:var(--tc-blue);color:#fff;}
+
+  /* ---- шаг 2: размер ---- */
+  .tc-size-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:10px;}
+  .tc-pill{border:1.5px solid transparent;background:var(--tc-tile);border-radius:16px;padding:16px 6px;text-align:center;cursor:pointer;}
+  .tc-pill .tc-num{display:block;white-space:nowrap;font-weight:800;font-size:18px;color:var(--tc-ink);font-variant-numeric:tabular-nums;}
+  .tc-pill .tc-unit{display:block;font-size:12px;color:var(--tc-ink-soft);margin-top:2px;}
+  .tc-pill:hover{background:var(--tc-tile-hover);}
+  .tc-pill:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
+  .tc-pill.selected{background:var(--tc-blue);}
+  .tc-pill.selected .tc-num,.tc-pill.selected .tc-unit{color:#fff;}
+
+  /* ---- шаг 3: вопросы ---- */
+  .tc-quiz-layout{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;}
+  .tc-ans-grid{display:grid;grid-template-columns:1fr;gap:14px 8px;}
+  /* бейдж в стиле «Популярный» над карточкой Профессионального на /prices */
+  .tc-ans{position:relative;}
+  .tc-pop{
+    position:absolute;top:-9px;right:12px;pointer-events:none;
+    font-size:10.5px;font-weight:700;line-height:17px;padding:0 8px;border-radius:999px;
+    background:var(--tc-blue);color:#fff;white-space:nowrap;
+  }
+  .tc-ans{
+    display:flex;align-items:center;gap:12px;width:100%;min-height:52px;
+    border:1.5px solid transparent;background:var(--tc-tile);border-radius:14px;
+    padding:10px 16px;font-size:15px;font-weight:500;line-height:1.3;
+    text-align:left;cursor:pointer;color:var(--tc-ink);
+  }
+  .tc-ans::before{content:"";flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:1.5px solid #b9c7dd;background:#fff;}
+  .tc-ans svg{display:none;}
+  .tc-ans:hover{background:var(--tc-tile-hover);}
+  .tc-ans:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
+  .tc-ans.selected{background:var(--tc-blue-soft);border-color:var(--tc-blue);}
+  .tc-ans.selected::before{
+    border-color:var(--tc-blue);
+    background:var(--tc-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;
+  }
+
+  /* ---- «Подберём под ваши ответы»: узко — полоса над кнопками ---- */
+  .tc-picked{flex:0 0 auto;display:flex;flex-direction:column;gap:8px;padding:12px 14px;margin:0 28px 12px;border-radius:14px;background:var(--tc-tile);}
+  @media (max-width:600px){ .tc-picked{margin:0 18px 10px;} }
+  .tc-picked-title{font-size:13px;font-weight:700;color:var(--tc-ink);display:flex;align-items:center;gap:6px;}
+    min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--tc-blue);color:#fff;
+    font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;
+  }
+  .tc-picked-list{
+    display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;margin:0 -14px;padding:0 14px 2px;
+    scrollbar-width:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 28px),transparent);
+            mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 28px),transparent);
+  }
+  .tc-picked-list::-webkit-scrollbar{display:none;}
+  .tc-picked-chip{
+    flex:0 0 auto;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:500;line-height:1.3;padding:6px 12px;border-radius:999px;
+    background:#fff;color:var(--tc-ink);
+  }
+  .tc-picked-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--tc-blue);flex:0 0 auto;}
+  .tc-picked-empty{font-size:13px;color:var(--tc-ink-faint);line-height:1.4;}
+
+  /* ---- шаг 3, ручной режим ---- */
+  .tc-subhead{font-size:14px;font-weight:700;color:var(--tc-ink-soft);margin-top:4px;}
+  .tc-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;}
+  .tc-feature{
+    border:1.5px solid transparent;background:var(--tc-tile);border-radius:14px;
+    padding:12px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;text-align:left;
+  }
+  .tc-feature:hover{background:var(--tc-tile-hover);}
+  .tc-feature:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
+  .tc-feature .tc-icon{flex:0 0 auto;width:30px;height:30px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--tc-blue);}
+  .tc-feature .tc-icon svg{width:16px;height:16px;}
+  .tc-feature.selected{background:var(--tc-blue-soft);border-color:var(--tc-blue);}
+  .tc-feature.selected .tc-icon{background:var(--tc-blue);color:#fff;}
+  .tc-feature .tc-txt{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .tc-feature .tc-t{font-weight:700;font-size:14px;color:var(--tc-ink);line-height:1.25;}
+  .tc-feature .tc-d{font-size:12.5px;color:var(--tc-ink-soft);line-height:1.35;}
+  .tc-feature .tc-int{font-size:11px;font-weight:600;color:var(--tc-purple);}
+  .tc-feature .tc-check{margin-left:auto;flex:0 0 auto;width:18px;height:18px;border-radius:50%;border:1.5px solid #b9c7dd;background:#fff;}
+  .tc-feature.selected .tc-check{background:var(--tc-blue);border-color:var(--tc-blue);position:relative;}
+  .tc-feature.selected .tc-check::after{content:"";position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(40deg);}
+
+
+  body{
+    margin:0;background:#fff;color:#1d2129;padding:40px 16px;
+    font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  }
+  .tc-widget{margin-inline:auto;--tc-height-wide:620px;}
+  .tc-widget h1,.tc-widget h2,.tc-widget h3{margin:0;line-height:1.25;}
+  .tc-widget h1{font-size:22px;font-weight:800;}
+  .tc-widget:not([data-screen="industry"]) h1{font-size:14px;color:var(--tc-ink-soft);font-weight:600;}
+  .tc-widget h2{font-size:22px;font-weight:800;letter-spacing:-.015em;}
+  .tc-widget h3{font-size:16px;font-weight:700;}
+  .tc-widget [tabindex="-1"]:focus{outline:none;}
+  .tc-widget .tc-foot.tc-nav-row{flex-direction:row;}
+  .tc-next{margin-inline-start:auto;}
+  .tc-nav-row .tc-link{color:var(--tc-ink-soft);text-decoration:underline;text-underline-offset:3px;font-size:13px;}
+  .tc-nav-row .tc-link:hover{color:var(--tc-ink);}
+  .tc-btn-primary{background:#087db9;}
+  .tc-btn-primary:hover{background:#066b9e;}
+  .tc-btn-primary:disabled{color:#36566a;}
+  .tc-btn-cta{background:#04823a;}
+  .tc-btn-cta:hover{background:#03692f;}
+  .tc-ind-pill.selected,.tc-pill.selected{background:#087db9;}
+  .tc-ans-grid{min-width:0;}
+  .tc-ans-grid:has(.tc-pop){padding-top:8px;}
+  .tc-pop{background:#087db9;}
+  .tc-question-content{display:flex;flex-direction:column;gap:14px;}
+  .tc-quiz-layout>.tc-body{min-width:0;}
+  .tc-picked-list{min-width:0;}
+  .tc-manual-grid{display:grid;gap:12px;}
+  .tc-manual-grid>.tc-subhead{font-size:14px;}
+  .tc-feature .tc-int{color:#6a3397;}
+  .tc-feature svg{display:block;}
+
+  .tc-result-body{gap:12px;}
+  .tc-result-card{
+    --tc-result-bg:var(--tc-tile);display:grid;gap:8px;flex:none;
+    min-width:0;background:var(--tc-result-bg);border-radius:18px;padding:16px 20px;
+  }
+  .tc-result-card[data-tier="4"]{--tc-result-bg:var(--tc-purple-tile);}
+  .tc-result-top{display:flex;gap:14px 24px;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+  .tc-recommendation{min-width:0;max-width:100%;}
+  .tc-tag{
+    display:inline-block;background:#d8ecff;color:#16547c;border-radius:99px;
+    font-size:12px;font-weight:700;padding:3px 9px;margin-bottom:4px;
+  }
+  [data-tier="4"] .tc-tag{color:#6a3397;background:#ede2ff;}
+  .tc-result-card h2{font-size:25px;overflow-wrap:anywhere;}
+  .tc-users{margin:3px 0 0;color:var(--tc-ink-soft);font-size:13px;}
+  .tc-payment{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;}
+  .tc-price{font-size:28px;font-weight:800;line-height:1.1;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .tc-period{font-size:12px;color:var(--tc-ink-soft);margin-top:3px;}
+  .tc-annual{display:flex;align-items:baseline;gap:8px;color:var(--tc-ink-soft);font-size:13px;margin:0;}
+  .tc-discount{flex:none;font-weight:700;color:#045b32;background:#d9f5e4;border-radius:99px;padding:2px 7px;}
+  .tc-res-reason{margin:0;font-size:13px;color:var(--tc-ink-soft);}
+  .tc-addon{
+    display:flex;align-items:flex-start;justify-content:space-between;gap:8px 16px;
+    background:#fff;border:1px solid #d9c7f4;border-radius:12px;padding:8px 12px;
+  }
+  .tc-addon-tag,.tc-addon-promo{font-size:12px;font-weight:700;color:#6a3397;}
+  .tc-addon-name,.tc-addon-price{font-size:15px;font-weight:800;}
+  .tc-addon-why,.tc-addon-period{font-size:12px;color:var(--tc-ink-soft);}
+  .tc-addon-prices{display:grid;justify-items:end;text-align:right;flex:none;}
+  .tc-addon-price,.tc-addon-period{white-space:nowrap;}
+
+  .tc-why{flex:none;min-width:0;padding-inline:2px;}
+  .tc-why-head{display:flex;align-items:baseline;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;}
+  .tc-why-head a,.tc-demo a,.tc-why-more summary{
+    width:fit-content;color:#056895;font-size:13px;font-weight:700;text-underline-offset:3px;
+  }
+  .tc-why-list{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:6px 20px;
+    list-style:none;padding:0;margin:9px 0 0;
+  }
+  .tc-why-list li{display:flex;align-items:baseline;gap:7px;min-width:0;font-size:13px;}
+  .tc-why-mark{flex:none;color:#087db9;align-self:start;}
+  .tc-why-mark svg{width:14px;height:14px;vertical-align:middle;}
+  .tc-why-feature{overflow-wrap:anywhere;}
+  .tc-why-addon{color:#6a3397;font-size:12px;font-weight:700;white-space:nowrap;}
+  .tc-why-feature[data-reason]{position:relative;text-decoration:underline dotted;text-underline-offset:3px;cursor:help;}
+  .tc-why-feature[data-reason]:is(:hover,:focus)::after{
+    content:attr(data-reason);position:absolute;z-index:1;inset-inline-start:0;top:calc(100% + 4px);
+    width:max-content;max-width:min(235px,72vw);padding:6px 9px;border-radius:7px;
+    color:#fff;background:#273347;font-size:12px;line-height:1.35;box-shadow:0 3px 10px #15274133;
+  }
+  .tc-why-more{margin-top:7px;}
+  .tc-why-more summary{cursor:pointer;text-decoration:underline;}
+  .tc-demo{
+    flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:3px 14px;flex-wrap:wrap;
+    background:#eef8ff;padding:10px 14px;border-radius:12px;font-size:13px;color:var(--tc-ink-soft);
+  }
+  .tc-demo p{margin:0;}
+  .tc-demo strong{color:var(--tc-ink);}
+  .tc-res-foot{flex-direction:row;justify-content:space-between;}
+  .tc-l-short{display:none;}
+
+  @media (min-width:601px){
+    .tc-why-list{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:600px){
+    body{padding:16px 12px;}
+    .tc-widget h2{font-size:20px;}
+    .tc-result-card{padding:13px 14px;}
+    .tc-payment{width:100%;}
+    .tc-price{font-size:24px;}
+    .tc-addon{flex-wrap:wrap;}
+    .tc-addon-prices{justify-items:start;text-align:left;}
+    .tc-res-foot{gap:8px;}
+    .tc-res-foot .tc-btn{min-width:0;flex:1;padding-inline:6px;font-size:13px;}
+    .tc-l-short{display:inline;}
+    .tc-l-long{display:none;}
+  }
+
+  @container tc (min-width:860px){
+    .tc-frame{height:var(--tc-height-wide);}
+    .tc-top-row{flex-wrap:nowrap;}
+    .tc-quiz-layout{flex-direction:row;}
+    .tc-quiz-layout>.tc-body{padding-right:20px;}
+    .tc-ans-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .tc-picked{width:245px;margin:20px 28px 20px 0;padding:14px;min-height:0;}
+    .tc-picked-list{
+      flex:1 1 auto;min-height:0;flex-direction:column;align-items:flex-start;overflow:auto;
+      margin:0;padding:0;mask-image:none;
+    }
+    .tc-picked-chip{white-space:normal;max-width:100%;align-items:flex-start;}
+    .tc-picked-chip::before{margin-top:6px;}
+
+    .tc-manual-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
+    .tc-manual-grid>.tc-feature-grid{display:contents;}
+    .tc-manual-grid>.tc-subhead{grid-column:1/-1;margin-top:4px;}
+    .tc-feature{padding:7px 9px;align-items:center;gap:8px;min-height:46px;}
+    .tc-feature .tc-icon{width:26px;height:26px;border-radius:8px;}
+    .tc-feature .tc-icon svg{width:14px;height:14px;}
+    .tc-feature .tc-t{font-size:13px;}
+    .tc-feature .tc-d,.tc-feature .tc-check{display:none;}
+    .tc-nav-row .tc-link{order:0;flex:0 1 auto;}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .tc-ind-pill,.tc-pill,.tc-feature,.tc-btn,.tc-ans{
+      transition:background-color .15s ease,border-color .15s ease,color .15s ease;
+    }
+  }
+  .tc-sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+</style>
+</head>
+<body>
+<main class="tc-widget" id="tcWidget" aria-labelledby="tcTitle">
+  <div class="tc-frame">
+    <header class="tc-top">
+      <div class="tc-top-row">
+        <h1 id="tcTitle">Подбор тарифа Битрикс24</h1>
+        <span class="tc-steplabel" id="tcStepLabel" aria-live="polite">Шаг 1 из 7</span>
+      </div>
+      <div class="tc-progress-track" aria-hidden="true"><div class="tc-progress-fill" id="tcProgress"></div></div>
+    </header>
+
+    <section class="tc-step visible" data-step="1" aria-labelledby="tcIndustryTitle">
+      <div class="tc-body">
+        <h2 id="tcIndustryTitle" tabindex="-1">В какой сфере работает ваша компания?</h2>
+        <div class="tc-industry-grid" id="tcIndustryGrid"></div>
+      </div>
+      <div class="tc-foot tc-nav-row">
+        <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToStep2" disabled>Далее</button>
+      </div>
+    </section>
+
+    <section class="tc-step" data-step="2" aria-labelledby="tcSizeTitle">
+      <div class="tc-body">
+        <h2 id="tcSizeTitle" tabindex="-1">Сколько человек работает в вашей компании?</h2>
+        <p class="tc-hint">Укажите с учётом роста на ближайший год</p>
+        <div class="tc-size-grid" id="tcSizeGrid"></div>
+      </div>
+      <div class="tc-foot tc-nav-row">
+        <button type="button" class="tc-btn tc-btn-ghost" id="tcToStep1">Назад</button>
+        <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToStep3" disabled>Далее</button>
+      </div>
+    </section>
+
+    <section class="tc-step" data-step="3" aria-label="Выбор возможностей">
+      <div class="tc-quiz-layout">
+        <div class="tc-body">
+          <div id="tcQuiz" class="tc-question-content">
+            <h2 id="tcQuizTitle" tabindex="-1"></h2>
+            <p class="tc-hint" id="tcQuizHint"></p>
+            <div id="tcQuestions"></div>
+          </div>
+          <div id="tcManual" class="tc-question-content" hidden>
+            <h2 id="tcManualTitle" tabindex="-1">Выберите функции</h2>
+            <div class="tc-manual-grid">
+              <div class="tc-feature-grid" id="tcFeatureGrid"></div>
+              <h3 class="tc-subhead">Интеграции</h3>
+              <div class="tc-feature-grid" id="tcIntegrationGrid"></div>
+            </div>
+          </div>
+        </div>
+        <aside class="tc-picked" id="tcPicked" aria-label="Подберём под ваши ответы" hidden>
+          <div class="tc-picked-title">Подберём под ваши ответы</div>
+          <div class="tc-picked-list" id="tcPickedList" aria-live="polite"></div>
+          <div class="tc-picked-empty" id="tcPickedEmpty">Отмеченные функции появятся здесь.</div>
+        </aside>
+      </div>
+      <div class="tc-foot tc-nav-row">
+        <button type="button" class="tc-btn tc-btn-ghost" id="tcToStep2Back">Назад</button>
+        <button type="button" class="tc-link" id="tcModeToggle">Подобрать по списку функций, а не по задачам</button>
+        <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToResult">Далее</button>
+      </div>
+    </section>
+
+    <section class="tc-result" id="tcResult" aria-labelledby="tcResName">
+      <div class="tc-body tc-result-body">
+        <div class="tc-result-card" id="tcResCard">
+          <div class="tc-result-top">
+            <div class="tc-recommendation">
+              <span class="tc-tag">Рекомендуем</span>
+              <h2 id="tcResName" tabindex="-1"></h2>
+              <p class="tc-users" id="tcResUsers"></p>
+            </div>
+            <div class="tc-payment">
+              <div>
+                <div class="tc-price" id="tcResPrice"></div>
+                <div class="tc-period">в месяц за компанию</div>
+              </div>
+              <a class="tc-btn tc-btn-cta" id="tcBuyBtn" target="_blank" rel="noopener">Купить</a>
+            </div>
+          </div>
+          <p class="tc-annual"><span class="tc-discount">−20%</span> <span id="tcResAnnual"></span></p>
+          <p class="tc-res-reason" id="tcResReason" hidden></p>
+          <p class="tc-res-reason" id="tcLargeTeam" hidden>Цена указана за 250 пользователей. Стоимость для большей команды рассчитаем на консультации.</p>
+          <div class="tc-addon" id="tcResAddon" hidden>
+            <div>
+              <span class="tc-addon-tag">Рекомендуем добавить</span>
+              <div class="tc-addon-name">Подписка BitrixGPT + Маркетплейс</div>
+              <div class="tc-addon-why" id="tcResAddonWhy"></div>
+            </div>
+            <div class="tc-addon-prices">
+              <span class="tc-addon-price" id="tcResAddonPrice"></span>
+              <span class="tc-addon-period">в месяц, без НДС</span>
+              <span class="tc-addon-promo" id="tcResAddonPromo" hidden>−50% на первую покупку</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="tc-why" aria-labelledby="tcWhyTitle">
+          <div class="tc-why-head">
+            <h3 id="tcWhyTitle">Что входит в тариф</h3>
+            <a href="https://www.bitrix24.ru/prices/compare_cloud_plans.php" target="_blank" rel="noopener">Все возможности</a>
+          </div>
+          <ul class="tc-why-list" id="tcWhyList"></ul>
+          <details class="tc-why-more" id="tcWhyMore" hidden>
+            <summary id="tcWhyMoreLabel"></summary>
+            <ul class="tc-why-list" id="tcWhyMoreList"></ul>
+          </details>
+        </section>
+
+        <aside class="tc-demo">
+          <p><strong>Хотите сначала попробовать?</strong> Попробуйте возможности тарифа «Профессиональный» в течение 15 дней.</p>
+          <a href="https://helpdesk.bitrix24.ru/open/21538090/" target="_blank" rel="noopener">Как включить демо</a>
+        </aside>
+      </div>
+      <div class="tc-foot tc-res-foot">
+        <button type="button" class="tc-btn tc-btn-ghost" id="tcRestartBtn">Пройти заново</button>
+        <a class="tc-btn tc-btn-secondary" id="tcConsultBtn" href="https://www.bitrix24.ru/prices/request.php" target="_blank" rel="noopener"><span class="tc-l-long">Получить консультацию</span><span class="tc-l-short">Консультация</span></a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+(() => {
+  'use strict';
+  const TIERS = {
+    1: {
+      name:'Базовый', monthly:2490, annual:1990, users:'До 5 пользователей', product:'BASIC1',
+      highlights:['CRM и воронки продаж','Задачи, проекты и диаграмма Ганта','Онлайн-запись и CRM-формы','Диск 1 ТБ'],
+    },
+    2: {
+      name:'Стандартный', monthly:6990, annual:5590, users:'До 50 пользователей', product:'STD1',
+      highlights:['До 10 воронок продаж','Рассылки и реклама по базе','КЭДО и Госключ','BI-отчёты'],
+    },
+    3: {
+      name:'Профессиональный', monthly:13990, annual:11190, users:'До 100 пользователей', product:'PRO1001',
+      highlights:['До 20 воронок продаж','Бизнес-процессы и согласования','Сквозная аналитика','Скрам и шаблоны задач'],
+    },
+    4: {
+      name:'Энтерпрайз', monthly:33990, annual:27190, users:'Пакет на 250 пользователей', product:'ENT2501',
+      highlights:['Филиалы со своими данными','SLA 99,95% и личный менеджер','Расширенные настройки безопасности','Бизнес-процессы и сквозная аналитика'],
+    },
+  };
+
+  const SIZES = [
+    { id:'1-5', label:'1–5', minTier:1 },
+    { id:'6-50', label:'6–50', minTier:2 },
+    { id:'51-100', label:'51–100', minTier:3 },
+    { id:'101-250', label:'101–250', minTier:4 },
+    { id:'251+', label:'251+', minTier:4 },
+  ];
+
+  // Акция на первую покупку подписки действует по 31 декабря 2026 года.
+  const ADDON_PROMO_END = Date.parse('2027-01-01T00:00:00+03:00');
+  const ADDON_PRICING = {
+    1:{ monthly:1000, promo:500 },
+    2:{ monthly:3000, promo:1500 },
+    3:{ monthly:6000, promo:3000 },
+    4:{ monthly:13600, promo:6800 },
+  };
+
+  const ICONS = {
+    telephony:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l2 5-2 1.3a12 12 0 0 0 5.7 5.7L15 14l5 2v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 4z"/></svg>',
+    booking:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8.5 15l2 2 4-4"/></svg>',
+    warehouse:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-5 9 5v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/><path d="M9 20v-7h6v7"/></svg>',
+    marketing:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11v2a2 2 0 0 0 2 2h1l3 5V4L6 9H5a2 2 0 0 0-2 2z"/><path d="M14 8a4 4 0 0 1 0 8"/><path d="M17 5a8 8 0 0 1 0 14"/></svg>',
+    documents:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8.5 17.5l1-3 6-6 2 2-6 6z"/></svg>',
+    automation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5" cy="12" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M7 12h5M12 12l5-5.3M12 12l5 5.3"/></svg>',
+    timetracking:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>',
+    analytics:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M11 20V4M18 20v-7"/></svg>',
+    ai:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18 9.5l-4.2 1.8L12 16l-1.8-4.7L6 9.5l4.2-1.8L12 3z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></svg>',
+    marketplace:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l1-4h14l1 4"/><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8z"/><path d="M9 12a3 3 0 0 0 6 0"/></svg>',
+    crm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>',
+    tasks:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5l1.5 1.5L8 5"/><path d="M11 6h9"/><path d="M4 12.5l1.5 1.5L8 11"/><path d="M11 12h9"/><path d="M4 18.5l1.5 1.5L8 17"/><path d="M11 18h9"/></svg>',
+    whiteboard:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M12 17v4M8 21h8"/><path d="M7 9h4M7 12.5h6"/></svg>',
+    multipipeline:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h8l-3 4v6l-2 1v-7z"/><path d="M13 5h8l-3 4v4l-2 1v-5z"/></svg>',
+    payments:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><path d="M6 15h4"/></svg>',
+    projects:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="16" rx="1.5"/><rect x="10.5" y="4" width="6" height="10" rx="1.5"/><rect x="18" y="4" width="3" height="7" rx="1.5"/></svg>',
+    portal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="6" r="0.8" fill="currentColor" stroke="none"/><circle cx="10" cy="6" r="0.8" fill="currentColor" stroke="none"/></svg>',
+    onec:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>',
+    onlinebank:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9"/><path d="M3 19h18"/></svg>',
+  };
+
+
+  // Минимальные тарифы функций в опросе. Подписка учитывается отдельно.
+  const FEATS = {
+    quotes: { label:'Разбор заявок и коммерческие предложения', minTier:2 },
+    onecSync: { label:'Двусторонний обмен с 1С', minTier:3 },
+    booking: { label:'Онлайн-запись с напоминаниями', minTier:1 },
+    multiDay: { label:'Бронирование на несколько дней', minTier:2 },
+    waitlist: { label:'Лист ожидания и повторные визиты', minTier:3 },
+    catalog5000: { label:'Каталог до 5 000 товаров', minTier:2 },
+    catalogOver5000: { label:'Каталог больше 5 000 товаров', minTier:3 },
+    marketing: { label:'Рассылки и реклама по базе клиентов', minTier:2 },
+    adsAnalytics: { label:'Сквозная аналитика рекламы', minTier:3 },
+    workload: { label:'Загрузка и KPI сотрудников', minTier:2 },
+    reports: { label:'Совместная работа с документами и отчётами', minTier:2 },
+    edo: { label:'КЭДО и подписание в Госключе', minTier:2 },
+    scrum: { label:'Шаблоны задач и скрам', minTier:3 },
+    worktime: { label:'Учёт рабочего времени', minTier:3 },
+    approvals: { label:'Бизнес-процессы и согласования документов', minTier:3 },
+    smartProcesses: { label:'Смарт-процессы для закупок и производства', minTier:3 },
+    access: { label:'Права доступа и вход по IP', minTier:3 },
+    branches: { label:'Филиалы со своими данными', minTier:4 },
+    sla: { label:'SLA 99,95% и личный менеджер', minTier:4 },
+    telephony: { label:'Подключение телефонии и виртуальной АТС', minTier:1 },
+    bank: { label:'Платежи и выписки из онлайн-банка в CRM', minTier:1, addon:true, short:'онлайн-банка' },
+    delivery: { label:'Расчёт и отслеживание доставки', minTier:1, addon:true, short:'служб доставки' },
+    marketplaces: { label:'Заказы с маркетплейсов в CRM', minTier:1, addon:true, short:'заказов с маркетплейсов' },
+    edoext: { label:'Документооборот с контрагентами через операторов ЭДО', minTier:1, addon:true, short:'документооборота через операторов ЭДО' },
+    gpt: { label:'ИИ-помощник BitrixGPT', minTier:1, addon:true, short:'ИИ-помощника BitrixGPT' },
+  };
+
+  const QUESTIONS = [
+    {
+      id:'clients',
+      title:'Кто ваши клиенты?',
+      hint:'Можно выбрать несколько вариантов.',
+      required:true,
+      options:[
+        { id:'b2b', label:'Оказываем услуги компаниям (B2B)' },
+        { id:'private', label:'Оказываем услуги частным клиентам' },
+        { id:'goods', label:'Продаём или производим товары' },
+        { id:'none', label:'Внешних клиентов нет — нужна работа внутри команды' },
+      ],
+    },
+    {
+      id:'sales',
+      title:'Что важно в продажах и маркетинге?',
+      hint:'Можно выбрать несколько вариантов.',
+      options:[
+        { id:'quotes', label:'Разбор заявок и КП', feat:'quotes', clients:['b2b','goods'] },
+        { id:'onecSync', label:'Двусторонний обмен с 1С', feat:'onecSync', clients:['b2b','goods'] },
+        { id:'booking', label:'Онлайн-запись с напоминаниями', feat:'booking', clients:['private'] },
+        { id:'multiDay', label:'Брони на несколько дней', feat:'multiDay', clients:['private'] },
+        { id:'waitlist', label:'Лист ожидания, повторные визиты', feat:'waitlist', clients:['private'] },
+        { id:'catalog5000', label:'3 000–5 000 товаров в каталоге', feat:'catalog5000', clients:['goods'], group:'catalog' },
+        { id:'catalogOver5000', label:'Больше 5 000 товаров', feat:'catalogOver5000', clients:['goods'], group:'catalog' },
+        { id:'marketing', label:'Рассылки и реклама по базе', feat:'marketing' },
+        { id:'adsAnalytics', label:'Окупаемость рекламы', feat:'adsAnalytics' },
+      ],
+    },
+    {
+      id:'team',
+      title:'Что нужно для работы команды?',
+      hint:'Можно выбрать несколько вариантов.',
+      options:[
+        { id:'workload', label:'Загрузка и KPI сотрудников', feat:'workload' },
+        { id:'reports', label:'Общие документы и отчёты', feat:'reports' },
+        { id:'edo', label:'Кадровые документы онлайн', feat:'edo' },
+        { id:'scrum', label:'Шаблоны задач и скрам', feat:'scrum' },
+        { id:'worktime', label:'Учёт рабочего времени', feat:'worktime' },
+        { id:'approvals', label:'Согласования документов', feat:'approvals' },
+        { id:'smartProcesses', label:'Свои процессы: закупки, цех', feat:'smartProcesses' },
+        { id:'access', label:'Права доступа и вход по IP', feat:'access' },
+        { id:'branches', label:'Филиалы со своими данными', feat:'branches', size:'51-100' },
+        { id:'sla', label:'SLA 99,95% и личный менеджер', feat:'sla', size:'51-100' },
+      ],
+    },
+    {
+      id:'connections',
+      title:'Что хотите подключить к Битрикс24?',
+      hint:'Можно выбрать несколько вариантов.',
+      options:[
+        { id:'telephony', label:'Телефония или виртуальная АТС', feat:'telephony' },
+        { id:'bank', label:'Онлайн-банк', feat:'bank' },
+        { id:'delivery', label:'Службы доставки: СДЭК, Почта России и другие', feat:'delivery', clients:['goods'] },
+        { id:'marketplaces', label:'Ozon, Wildberries и другие маркетплейсы', feat:'marketplaces', clients:['goods'] },
+        { id:'edoext', label:'Документооборот с контрагентами через операторов ЭДО', feat:'edoext' },
+        { id:'gpt', label:'ИИ-помощник: тексты, ответы клиентам, итоги встреч', feat:'gpt' },
+      ],
+    },
+  ];
+
+  const INDUSTRIES = [
+    { id:'legal', label:'Юридические услуги', client:'b2b', popular:{ sales:['quotes'], team:['approvals'], connections:['telephony','edoext'] } },
+    { id:'gov', label:'Государственные организации', client:'none', popular:{ team:['reports','approvals'], connections:['edoext'] } },
+    { id:'services', label:'Сфера услуг', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
+    { id:'medicine', label:'Медицина', client:'private', popular:{ sales:['booking','waitlist'], connections:['telephony'] } },
+    { id:'wholesale', label:'Оптовая торговля', client:'goods', popular:{ sales:['quotes','onecSync'], connections:['bank','delivery'] } },
+    { id:'manufacturing', label:'Производство', client:'goods', popular:{ sales:['quotes','onecSync'], team:['smartProcesses'], connections:['bank','edoext'] } },
+    { id:'it', label:'IT', client:'b2b', popular:{ sales:['quotes'], team:['scrum'], connections:['gpt'] } },
+    { id:'retail', label:'Розничная торговля', client:'goods', popular:{ sales:['onecSync'], connections:['delivery','marketplaces'] } },
+    { id:'agency', label:'Рекламное агентство', client:'b2b', popular:{ sales:['adsAnalytics'], team:['workload'], connections:['gpt'] } },
+    { id:'logistics', label:'Логистика и транспорт', client:'b2b', popular:{ sales:['quotes','onecSync'], connections:['telephony','delivery'] } },
+    { id:'education', label:'Образование', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
+    { id:'horeca', label:'Отели, рестораны, кафе', client:'private', popular:{ sales:['booking','multiDay'], connections:['telephony'] } },
+    { id:'finance', label:'Финансовые услуги', client:'b2b', popular:{ sales:['quotes'], team:['access'], connections:['bank','telephony'] } },
+    { id:'tourism', label:'Туризм', client:'private', popular:{ sales:['multiDay'], connections:['telephony'] } },
+    { id:'realestate', label:'Недвижимость и строительство', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
+    { id:'other', label:'Другая сфера' },
+  ];
+
+  const FEATURES = [
+    { id:'crm', icon:'crm', title:'CRM и продажи', desc:'Сделки, контакты и воронка продаж', minTier:0 },
+    { id:'tasks', icon:'tasks', title:'Задачи и совместная работа', desc:'Задачи, чаты и календарь команды', minTier:0 },
+    { id:'whiteboard', icon:'whiteboard', title:'Онлайн-доски', desc:'Общая доска для идей и схем', minTier:0 },
+    { id:'booking', icon:'booking', title:'Онлайн-запись', desc:'Расписание и напоминания клиентам', minTier:1 },
+    { id:'warehouse', icon:'warehouse', title:'Склад и товары', desc:'Остатки, поставки и себестоимость', minTier:1 },
+    { id:'payments', icon:'payments', title:'Оплата и доставка', desc:'Оплата в CRM, онлайн-касса и оформление доставки', minTier:1 },
+    { id:'projects', icon:'projects', title:'Проекты и диаграмма Ганта', desc:'Планирование сроков и канбан команд', minTier:1 },
+    { id:'ai', icon:'ai', title:'ИИ в продажах', desc:'Разбор звонков и подсказки менеджерам', minTier:1, addon:true, short:'ИИ в продажах' },
+    { id:'marketplace', icon:'marketplace', title:'Приложения Маркетплейса', desc:'Подключение сторонних сервисов к Битрикс24', minTier:1, addon:true, short:'приложений Маркетплейса' },
+    { id:'multipipeline', icon:'multipipeline', title:'Больше 5 воронок продаж', desc:'До 10 воронок на Стандартном, до 20 на Профессиональном', minTier:2 },
+    { id:'marketing', icon:'marketing', title:'Маркетинг и рассылки', desc:'Рассылки и реклама по базе клиентов', minTier:2 },
+    { id:'documents', icon:'documents', title:'КЭДО и Госключ', desc:'Подписание кадровых документов онлайн', minTier:2 },
+    { id:'bi', icon:'analytics', title:'BI-отчёты', desc:'Дашборды по данным Битрикс24', minTier:2 },
+    { id:'automation', icon:'automation', title:'Бизнес-процессы', desc:'Автоматизация согласований и типовых действий', minTier:3 },
+    { id:'scrum', icon:'tasks', title:'Скрам и шаблоны задач', desc:'Спринты и шаблоны повторяющихся задач', minTier:3 },
+    { id:'timetracking', icon:'timetracking', title:'Учёт рабочего времени', desc:'Графики, отчёты и отсутствия', minTier:3 },
+    { id:'analytics', icon:'analytics', title:'Сквозная аналитика', desc:'Заявки и продажи по рекламным каналам', minTier:3 },
+    { id:'access', icon:'portal', title:'Права доступа и вход по IP', desc:'Настройка прав и ограничений на вход', minTier:3 },
+    { id:'branches', icon:'portal', title:'Филиалы', desc:'Отдельные порталы для подразделений', minTier:4 },
+  ];
+
+  const INTEGRATIONS = [
+    { id:'telephony', icon:'telephony', title:'Телефония и АТС', desc:'Приём звонков, IP-телефония и запись разговоров', minTier:1 },
+    { id:'onec', icon:'onec', title:'1С', desc:'Подключение встроенного коннектора к 1С', minTier:1 },
+    { id:'onlinebank', icon:'onlinebank', title:'Онлайн-банки', desc:'Сверка платежей и выписки в CRM', minTier:1, addon:true, short:'онлайн-банков' },
+  ];
+
+  const root = document.getElementById('tcWidget');
+  const $ = selector => root.querySelector(selector);
+  const $$ = selector => [...root.querySelectorAll(selector)];
+  const numberFormat = new Intl.NumberFormat('ru-RU');
+  const pluralRules = new Intl.PluralRules('ru-RU');
+  const money = (amount, tier) => (tier === 4 ? 'от ' : '') + numberFormat.format(amount) + ' ₽';
+  const check = '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const emptyState = () => ({
+    industry:null, size:null, screen:'industry', manual:false, clientsEdited:false,
+    answers:Object.fromEntries(QUESTIONS.map(question => [question.id, []])),
+    manualSelection:new Set(), pickedIds:[],
+  });
+  let state = emptyState();
+
+  function selectable(id, className, label, onClick) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = className;
+    button.dataset.id = id;
+    button.setAttribute('aria-pressed', 'false');
+    button.textContent = label;
+    button.addEventListener('click', onClick);
+    return button;
+  }
+
+  function setPressed(button, pressed) {
+    button.classList.toggle('selected', pressed);
+    button.setAttribute('aria-pressed', String(pressed));
+  }
+
+  const sortedIndustries = [...INDUSTRIES].sort((a, b) =>
+    (a.id === 'other') - (b.id === 'other') || a.label.localeCompare(b.label, 'ru'));
+  sortedIndustries.forEach(industry => {
+    const button = selectable(industry.id, 'tc-ind-pill', industry.label, () => {
+      state.industry = industry.id;
+      if (!state.clientsEdited) state.answers.clients = industry.client ? [industry.client] : [];
+      pruneAnswers();
+      render();
+    });
+    $('#tcIndustryGrid').append(button);
+  });
+
+  SIZES.forEach(size => {
+    const button = selectable(size.id, 'tc-pill', '', () => {
+      state.size = size.id;
+      pruneAnswers();
+      render();
+    });
+    button.innerHTML = `<span class="tc-num">${size.label}</span><span class="tc-unit">чел.</span>`;
+    $('#tcSizeGrid').append(button);
+  });
+
+  const questionGrids = new Map();
+  QUESTIONS.forEach(question => {
+    const grid = document.createElement('div');
+    grid.className = 'tc-ans-grid';
+    grid.dataset.q = question.id;
+    const buttons = new Map();
+    question.options.forEach(option => {
+      const button = selectable(option.id, 'tc-ans', option.label, () => toggleAnswer(question, option));
+      const badge = document.createElement('span');
+      badge.className = 'tc-pop';
+      badge.textContent = 'Часто в вашей сфере';
+      badge.setAttribute('aria-hidden', 'true');
+      button.append(badge);
+      buttons.set(option.id, button);
+    });
+    questionGrids.set(question.id, { grid, buttons });
+    $('#tcQuestions').append(grid);
+  });
+
+  function populateManual(tiles, grid) {
+    tiles.forEach(tile => {
+      const button = selectable(tile.id, 'tc-feature', '', () => {
+        if (state.manualSelection.has(tile.id)) state.manualSelection.delete(tile.id);
+        else state.manualSelection.add(tile.id);
+        setPressed(button, state.manualSelection.has(tile.id));
+      });
+      button.innerHTML = `<span class="tc-icon" aria-hidden="true">${ICONS[tile.icon]}</span>
+        <span class="tc-txt"><span class="tc-t">${tile.title}</span><span class="tc-d">${tile.desc}</span>
+          ${tile.addon ? '<span class="tc-int">По подписке</span>' : ''}</span>
+        <span class="tc-check" aria-hidden="true"></span>`;
+      grid.append(button);
+    });
+  }
+  populateManual(FEATURES, $('#tcFeatureGrid'));
+  populateManual(INTEGRATIONS, $('#tcIntegrationGrid'));
+
+  function route() {
+    if (state.manual) return ['industry', 'size', 'manual', 'result'];
+    const questions = QUESTIONS.filter(q => q.id !== 'sales' || !state.answers.clients.includes('none'));
+    return ['industry', 'size', ...questions.map(q => q.id), 'result'];
+  }
+
+  function visibleOptions(question) {
+    return question.options.filter(option =>
+      (!option.size || option.size === state.size) &&
+      (!option.clients || option.clients.some(client => state.answers.clients.includes(client))));
+  }
+
+  function pruneAnswers() {
+    const active = route();
+    QUESTIONS.forEach(question => {
+      // Ручной режим сохраняет ответы для возвращения к опросу.
+      if (question.id === 'clients' || state.manual) return;
+      const allowed = active.includes(question.id) ? visibleOptions(question).map(option => option.id) : [];
+      state.answers[question.id] = state.answers[question.id].filter(id => allowed.includes(id));
+    });
+  }
+
+  function toggleAnswer(question, option) {
+    const selected = state.answers[question.id];
+    if (selected.includes(option.id)) {
+      state.answers[question.id] = selected.filter(id => id !== option.id);
+    } else if (question.id === 'clients') {
+      state.answers.clients = option.id === 'none' ? ['none'] : [...selected.filter(id => id !== 'none'), option.id];
+    } else {
+      const replaced = option.group ? question.options.filter(other => other.group === option.group) : [];
+      state.answers[question.id] = [...selected.filter(id => !replaced.some(other => other.id === id)), option.id];
+    }
+    if (question.id === 'clients') state.clientsEdited = true;
+    pruneAnswers();
+    renderQuiz();
+    renderProgress();
+  }
+
+  function currentFeatures() {
+    if (state.manual) {
+      return [...FEATURES, ...INTEGRATIONS].filter(tile => state.manualSelection.has(tile.id))
+        .map(tile => ({ ...tile, label:tile.title, answer:tile.title }));
+    }
+    return QUESTIONS.flatMap(question => question.options
+      .filter(option => option.feat && state.answers[question.id].includes(option.id))
+      .map(option => ({ id:option.feat, ...FEATS[option.feat], answer:option.label })));
+  }
+
+  function renderPicked() {
+    const features = currentFeatures();
+    const fresh = features.filter(feature => !state.pickedIds.includes(feature.id));
+    state.pickedIds = [...fresh.map(feature => feature.id), ...state.pickedIds.filter(id => features.some(feature => feature.id === id))];
+    const list = $('#tcPickedList');
+    list.replaceChildren(...state.pickedIds.map(id => {
+      const feature = features.find(item => item.id === id);
+      const chip = document.createElement('span');
+      chip.className = 'tc-picked-chip';
+      chip.textContent = feature.label;
+      return chip;
+    }));
+    list.hidden = !features.length;
+    $('#tcPickedEmpty').hidden = Boolean(features.length);
+    list.scrollTop = 0;
+    list.scrollLeft = 0;
+  }
+
+  function renderQuiz() {
+    const question = QUESTIONS.find(item => item.id === state.screen);
+    const manual = state.screen === 'manual';
+    $('#tcQuiz').hidden = manual;
+    $('#tcManual').hidden = !manual;
+    $('#tcPicked').hidden = manual || state.screen === 'clients';
+    const toggle = $('#tcModeToggle');
+    toggle.hidden = !manual && state.screen !== 'clients';
+    toggle.textContent = manual ? 'Вернуться к подбору по задачам' : 'Подобрать по списку функций, а не по задачам';
+    if (manual) {
+      $$('.tc-feature').forEach(button => setPressed(button, state.manualSelection.has(button.dataset.id)));
+    } else {
+      $('#tcQuizTitle').textContent = question.title;
+      $('#tcQuizHint').textContent = question.hint;
+      const industry = INDUSTRIES.find(item => item.id === state.industry);
+      const popular = industry?.popular?.[question.id] || [];
+      const options = visibleOptions(question).map(option => option.id);
+      const activeOptions = [...options.filter(id => popular.includes(id)), ...options.filter(id => !popular.includes(id))];
+      questionGrids.forEach(({ grid }, id) => { grid.hidden = id !== question.id; });
+      const { grid, buttons } = questionGrids.get(question.id);
+      const nextButtons = activeOptions.map(id => {
+        const button = buttons.get(id);
+        setPressed(button, state.answers[question.id].includes(id));
+        button.querySelector('.tc-pop').hidden = !popular.includes(id);
+        return button;
+      });
+      // При обычном выборе оставляем фокус на той же кнопке.
+      if (nextButtons.some((button, index) => button !== grid.children[index]) || nextButtons.length !== grid.children.length) {
+        grid.replaceChildren(...nextButtons);
+      }
+      if (!$('#tcPicked').hidden) renderPicked();
+    }
+
+    const skip = !manual && !question.required && !state.answers[question.id].length;
+    const next = $('#tcToResult');
+    next.disabled = !manual && Boolean(question.required) && !state.answers[question.id].length;
+    next.classList.toggle('tc-btn-ghost', skip);
+    next.classList.toggle('tc-btn-primary', !skip);
+    next.textContent = skip ? 'Пропустить' : (manual ? 'Показать тариф' : 'Далее');
+  }
+
+  function renderProgress() {
+    const pages = route();
+    const index = pages.indexOf(state.screen) + 1;
+    $('#tcStepLabel').textContent = `Шаг ${index} из ${pages.length}`;
+    $('#tcProgress').style.width = `${index / pages.length * 100}%`;
+  }
+
+  function render() {
+    const quiz = !['industry', 'size', 'result'].includes(state.screen);
+    root.dataset.screen = state.screen;
+    $('[data-step="1"]').classList.toggle('visible', state.screen === 'industry');
+    $('[data-step="2"]').classList.toggle('visible', state.screen === 'size');
+    $('[data-step="3"]').classList.toggle('visible', quiz);
+    $('#tcResult').classList.toggle('visible', state.screen === 'result');
+    $$('.tc-ind-pill').forEach(button => setPressed(button, button.dataset.id === state.industry));
+    $$('.tc-pill').forEach(button => setPressed(button, button.dataset.id === state.size));
+    $('#tcToStep2').disabled = !state.industry;
+    $('#tcToStep3').disabled = !state.size;
+    if (quiz) renderQuiz();
+    if (state.screen === 'result') renderResult();
+    renderProgress();
+  }
+
+  function goTo(screen) {
+    state.screen = screen;
+    render();
+    $$('.tc-body').forEach(body => { body.scrollTop = 0; });
+    $('.visible h2').focus({ preventScroll:true });
+    root.scrollIntoView({ block:'nearest' });
+  }
+
+  function move(offset) {
+    const pages = route();
+    goTo(pages[pages.indexOf(state.screen) + offset]);
+  }
+
+  function purchaseUrl(plan, subscription) {
+    const url = new URL('https://www.bitrix24.ru/prices/');
+    url.searchParams.set('product', plan.product);
+    if (subscription) url.searchParams.set('subscr', 'y');
+    url.searchParams.set('utm_source', 'tariff_calculator');
+    url.searchParams.set('utm_medium', 'referral');
+    url.searchParams.set('utm_campaign', 'tariff_calculator');
+    url.searchParams.set('utm_content', plan.product + (subscription ? '_subscr' : ''));
+    return url.href;
+  }
+
+  function resultFeature(feature) {
+    const row = document.createElement('li');
+    row.innerHTML = `<span class="tc-why-mark">${check}</span><span><span class="tc-why-feature"></span>
+      ${feature.addon ? '<span class="tc-why-addon"> · По подписке</span>' : ''}</span>`;
+    const label = row.querySelector('.tc-why-feature');
+    label.textContent = feature.label;
+    if (feature.answer) {
+      const reason = document.createElement('span');
+      reason.className = 'tc-sr-only';
+      reason.id = 'tcReason-' + feature.id;
+      reason.textContent = `Ваш выбор: «${feature.answer}»`;
+      label.dataset.reason = reason.textContent;
+      label.tabIndex = 0;
+      label.setAttribute('aria-describedby', reason.id);
+      row.append(reason);
+    }
+    return row;
+  }
+
+  function renderFeatures(plan, features) {
+    const included = features.filter(feature => !feature.addon);
+    const subscription = features.filter(feature => feature.addon);
+    const highlights = plan.highlights.filter(label => !features.some(feature => feature.label === label));
+    const fallback = highlights.slice(0, Math.max(0, 4 - features.length, 1 - included.length));
+    const displayed = [...included, ...fallback.map(label => ({ label })), ...subscription];
+    const rows = displayed.map(resultFeature);
+    $('#tcWhyList').replaceChildren(...rows.slice(0, 4));
+    $('#tcWhyMoreList').replaceChildren(...rows.slice(4));
+    const more = rows.length - 4;
+    const details = $('#tcWhyMore');
+    details.hidden = more <= 0;
+    details.open = false;
+    const noun = { one:'функция', few:'функции', many:'функций' }[pluralRules.select(more)];
+    $('#tcWhyMoreLabel').textContent = more > 0 ? `И ещё ${more} ${noun}` : '';
+  }
+
+  function renderReason(tier, sizeTier, features) {
+    const reason = $('#tcResReason');
+    reason.hidden = tier <= sizeTier;
+    if (reason.hidden) return;
+    const deciding = features.filter(feature => feature.minTier === tier);
+    const lower = Math.max(sizeTier, ...features.filter(feature => feature.minTier < tier).map(feature => feature.minTier));
+    const selected = deciding.slice(0, 2).map(feature => `«${feature.answer}»`).join(', ');
+    const extra = deciding.length > 2 ? ` и ещё ${deciding.length - 2}` : '';
+    const summary = deciding.length === 1 ? 'Тариф выбран из-за ответа' : 'Тариф выбран из-за ответов';
+    const condition = deciding.length === 1 ? 'Без этой функции' : 'Без этих функций';
+    const savings = money(TIERS[tier].annual - TIERS[lower].annual);
+    reason.textContent = `${summary} ${selected}${extra}. ${condition} хватило бы тарифа «${TIERS[lower].name}», на ${savings}/мес дешевле при оплате за год.`;
+  }
+
+  function renderResult() {
+    const sizeTier = SIZES.find(size => size.id === state.size).minTier;
+    const features = currentFeatures();
+    const tier = Math.max(sizeTier, ...features.map(feature => feature.minTier));
+    const plan = TIERS[tier];
+    const subscription = features.filter(feature => feature.addon);
+    const largeTeam = state.size === '251+';
+    $('#tcResCard').dataset.tier = tier;
+    $('#tcResName').textContent = plan.name;
+    $('#tcResUsers').textContent = plan.users;
+    $('#tcResPrice').textContent = money(plan.monthly, tier);
+    $('#tcResAnnual').textContent = `${money(plan.annual, tier)}/мес при оплате за год`;
+    $('#tcBuyBtn').href = purchaseUrl(plan, subscription.length > 0);
+    $('#tcLargeTeam').hidden = !largeTeam;
+    $('#tcConsultBtn').href = largeTeam ? 'https://www.bitrix24.ru/enterprise/' : 'https://www.bitrix24.ru/prices/request.php';
+    renderReason(tier, sizeTier, features);
+    renderFeatures(plan, features);
+
+    $('#tcResAddon').hidden = !subscription.length;
+    if (subscription.length) {
+      const price = ADDON_PRICING[tier];
+      const promo = Date.now() < ADDON_PROMO_END;
+      $('#tcResAddonPrice').textContent = money(promo ? price.promo : price.monthly, tier);
+      $('#tcResAddonPromo').hidden = !promo;
+      $('#tcResAddonWhy').textContent = 'Для ' + subscription.map(feature => feature.short).join(', ') + '.';
+    }
+  }
+
+  $('#tcToStep2').addEventListener('click', () => move(1));
+  $('#tcToStep1').addEventListener('click', () => move(-1));
+  $('#tcToStep3').addEventListener('click', () => move(1));
+  $('#tcToStep2Back').addEventListener('click', () => move(-1));
+  $('#tcToResult').addEventListener('click', () => move(1));
+  $('#tcModeToggle').addEventListener('click', () => {
+    state.manual = !state.manual;
+    if (!state.manual) pruneAnswers();
+    goTo(state.manual ? 'manual' : 'clients');
+  });
+  $('#tcRestartBtn').addEventListener('click', () => {
+    state = emptyState();
+    goTo('industry');
+  });
+  render();
+})();
+</script>
+</body>
+</html>
