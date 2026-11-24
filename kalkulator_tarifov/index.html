@@ -103,12 +103,6 @@
   .tc-btn-secondary{background:#fff;border-color:var(--tc-line);color:var(--tc-ink);}
   .tc-btn-secondary:hover{border-color:#c4d2e8;}
 
-  .tc-link{background:none;border:none;padding:2px;color:var(--tc-blue);font-weight:600;font-size:14px;cursor:pointer;text-align:center;}
-  .tc-link:hover{color:#0f9be0;text-decoration:underline;}
-  .tc-link:focus-visible{outline:2px solid var(--tc-blue);outline-offset:2px;}
-  /* узко: ссылка «вручную» уходит под кнопки на всю ширину */
-  .tc-nav-row .tc-link{order:3;flex:1 0 100%;}
-
   /* ---- шаг 1: отрасли ---- */
   .tc-industry-grid{display:flex;flex-wrap:wrap;gap:8px;}
   .tc-ind-pill{
@@ -212,13 +206,17 @@
   .tc-widget [tabindex="-1"]:focus{outline:none;}
   .tc-widget .tc-foot.tc-nav-row{flex-direction:row;}
   .tc-next{margin-inline-start:auto;}
-  .tc-nav-row .tc-link{color:var(--tc-ink-soft);text-decoration:underline;text-underline-offset:3px;font-size:13px;}
-  .tc-nav-row .tc-link:hover{color:var(--tc-ink);}
   .tc-btn-cta{background:#04823a;}
   .tc-btn-cta:hover{background:#03692f;}
   .tc-ans-grid{min-width:0;}
   .tc-ans-grid:has(.tc-pop){padding-top:8px;}
   .tc-pop{background:#087db9;}
+  .tc-question-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;}
+  .tc-mode-toggle{
+    max-width:100%;padding:8px 16px;background:var(--tc-blue-soft);color:#056895;
+    font-size:14px;line-height:1.3;white-space:normal;text-align:center;
+  }
+  .tc-mode-toggle:hover{background:#cfeaff;}
   .tc-question-content{display:flex;flex-direction:column;gap:14px;}
   .tc-quiz-layout>.tc-body{min-width:0;}
   .tc-picked-list{min-width:0;}
@@ -328,7 +326,6 @@
     .tc-feature .tc-icon svg{width:14px;height:14px;}
     .tc-feature .tc-t{font-size:13px;}
     .tc-feature .tc-d,.tc-feature .tc-check{display:none;}
-    .tc-nav-row .tc-link{order:0;flex:0 1 auto;}
   }
 
   @media (prefers-reduced-motion:no-preference){
@@ -375,13 +372,15 @@
     <section class="tc-step" data-step="3" aria-label="Выбор возможностей">
       <div class="tc-quiz-layout">
         <div class="tc-body">
-          <div id="tcQuiz" class="tc-question-content">
+          <div class="tc-question-head">
             <h2 id="tcQuizTitle" tabindex="-1"></h2>
+            <button type="button" class="tc-btn tc-mode-toggle" id="tcModeToggle" hidden>Выбрать функции вручную</button>
+          </div>
+          <div id="tcQuiz" class="tc-question-content">
             <p class="tc-hint" id="tcQuizHint"></p>
             <div id="tcQuestions"></div>
           </div>
           <div id="tcManual" class="tc-question-content" hidden>
-            <h2 id="tcManualTitle" tabindex="-1">Выберите функции</h2>
             <div class="tc-manual-grid">
               <div class="tc-feature-grid" id="tcFeatureGrid"></div>
               <h3 class="tc-subhead">Интеграции</h3>
@@ -397,7 +396,6 @@
       </div>
       <div class="tc-foot tc-nav-row">
         <button type="button" class="tc-btn tc-btn-ghost" id="tcToStep2Back">Назад</button>
-        <button type="button" class="tc-link" id="tcModeToggle">Подобрать по списку функций, а не по задачам</button>
         <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToResult">Далее</button>
       </div>
     </section>
@@ -822,11 +820,11 @@
     $('#tcPicked').hidden = manual || state.screen === 'clients';
     const toggle = $('#tcModeToggle');
     toggle.hidden = !manual && state.screen !== 'clients';
-    toggle.textContent = manual ? 'Вернуться к подбору по задачам' : 'Подобрать по списку функций, а не по задачам';
+    toggle.textContent = manual ? 'Вернуться к опросу' : 'Выбрать функции вручную';
+    $('#tcQuizTitle').textContent = manual ? 'Выберите функции' : question.title;
     if (manual) {
       $$('.tc-feature').forEach(button => setPressed(button, state.manualSelection.has(button.dataset.id)));
     } else {
-      $('#tcQuizTitle').textContent = question.title;
       $('#tcQuizHint').textContent = question.hint;
       const industry = INDUSTRIES.find(item => item.id === state.industry);
       const popular = industry?.popular?.[question.id] || [];
