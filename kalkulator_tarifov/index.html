@@ -148,10 +148,6 @@
     background:var(--tc-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;
   }
 
-  .tc-tier-hint{flex:none;margin:0 28px;color:#056895;font-size:14px;font-weight:600;}
-  .tc-tier-hint:not(:empty){padding-bottom:12px;}
-  @media (max-width:600px){.tc-tier-hint{margin-inline:18px;}}
-
   /* ---- шаг 3, ручной режим ---- */
   .tc-subhead{font-size:14px;font-weight:700;color:var(--tc-ink-soft);margin-top:4px;}
   .tc-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;}
@@ -188,13 +184,30 @@
   .tc-widget .tc-foot.tc-nav-row{flex-direction:row;}
   .tc-next{margin-inline-start:auto;}
   .tc-ans-grid{min-width:0;}
-  .tc-ans-grid:has(.tc-pop){padding-top:8px;}
+  .tc-ans-grid:has(.tc-pop:not([hidden])){padding-top:8px;}
   .tc-question-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;}
   .tc-mode-toggle{
     max-width:100%;padding:8px 16px;background:var(--tc-blue-soft);color:#056895;
     font-size:14px;line-height:1.3;white-space:normal;text-align:center;
   }
   .tc-mode-toggle:hover{background:#cfeaff;}
+  .tc-quiz-nav:has(>.tc-mode-toggle:not([hidden])){
+    display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  }
+  .tc-quiz-nav > :first-child{justify-self:start;}
+  .tc-quiz-nav > .tc-mode-toggle{
+    justify-self:center;padding:4px 0;background:transparent;color:var(--tc-ink-soft);
+    font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px;
+  }
+  .tc-quiz-nav > .tc-mode-toggle:hover{color:#056895;}
+  @container tc (max-width:620px){
+    .tc-quiz-nav:has(>.tc-mode-toggle:not([hidden])){
+      grid-template-columns:auto minmax(0,1fr) auto;gap:8px;
+    }
+    .tc-quiz-nav:has(>.tc-mode-toggle:not([hidden])) .tc-btn:not(.tc-mode-toggle){
+      padding-inline:12px;font-size:14px;
+    }
+  }
   .tc-question-content{display:flex;flex-direction:column;gap:14px;}
   .tc-manual-grid{display:grid;gap:12px;}
   .tc-manual-grid>.tc-subhead{font-size:14px;}
@@ -354,7 +367,6 @@
       <div class="tc-body">
         <div class="tc-question-head">
           <h2 id="tcQuizTitle" tabindex="-1"></h2>
-          <button type="button" class="tc-btn tc-mode-toggle" id="tcModeToggle" hidden>Выбрать функции вручную</button>
         </div>
         <div id="tcQuiz" class="tc-question-content">
           <p class="tc-hint" id="tcQuizHint"></p>
@@ -368,9 +380,9 @@
           </div>
         </div>
       </div>
-      <p class="tc-tier-hint" id="tcTierHint" role="status"></p>
-      <div class="tc-foot tc-nav-row">
+      <div class="tc-foot tc-nav-row tc-quiz-nav">
         <button type="button" class="tc-btn tc-btn-ghost" id="tcToStep2Back">Назад</button>
+        <button type="button" class="tc-btn tc-mode-toggle" id="tcModeToggle" hidden>Подобрать по списку функций, а не по задачам</button>
         <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToResult">Далее</button>
       </div>
     </section>
@@ -544,7 +556,7 @@
     {
       id:'clients',
       title:'Кто ваши клиенты?',
-      hint:'Можно выбрать несколько вариантов.',
+      hint:'Можно выбрать несколько — от этого зависят следующие вопросы.',
       required:true,
       options:[
         { id:'b2b', label:'Оказываем услуги компаниям (B2B)' },
@@ -759,8 +771,6 @@
   }
 
   function toggleAnswer(question, option) {
-    const sizeTier = teamSizeTier();
-    const previousTier = recommendedTier(sizeTier, currentFeatures());
     const selected = state.answers[question.id];
     if (selected.includes(option.id)) {
       state.answers[question.id] = selected.filter(id => id !== option.id);
@@ -772,10 +782,6 @@
     }
     if (question.id === 'clients') state.clientsEdited = true;
     pruneAnswers();
-    const tier = recommendedTier(sizeTier, currentFeatures());
-    $('#tcTierHint').textContent = tier > previousTier
-      ? `Для функции «${option.label}» нужен тариф «${TIERS[tier].name}».`
-      : '';
     renderQuiz();
     renderProgress();
   }
@@ -790,23 +796,19 @@
       .map(option => ({ id:option.feat, ...FEATS[option.feat], answer:option.label })));
   }
 
-  function teamSizeTier() {
-    return SIZES.find(size => size.id === state.size).minTier;
-  }
-
-  function recommendedTier(sizeTier, features) {
-    return Math.max(sizeTier, ...features.map(feature => feature.minTier));
-  }
-
   function renderQuiz() {
     const question = QUESTIONS.find(item => item.id === state.screen);
     const manual = state.screen === 'manual';
     $('#tcQuiz').hidden = manual;
     $('#tcManual').hidden = !manual;
     const toggle = $('#tcModeToggle');
+    const title = $('#tcQuizTitle');
+    const next = $('#tcToResult');
+    const toggleParent = manual ? title.parentElement : next.parentElement;
+    if (toggle.parentElement !== toggleParent) toggleParent.insertBefore(toggle, manual ? null : next);
     toggle.hidden = !manual && state.screen !== 'clients';
-    toggle.textContent = manual ? 'Вернуться к опросу' : 'Выбрать функции вручную';
-    $('#tcQuizTitle').textContent = manual ? 'Выберите функции' : question.title;
+    toggle.textContent = manual ? 'Вернуться к опросу' : 'Подобрать по списку функций, а не по задачам';
+    title.textContent = manual ? 'Выберите функции' : question.title;
     if (manual) {
       $$('.tc-feature').forEach(button => setPressed(button, state.manualSelection.has(button.dataset.id)));
     } else {
@@ -830,7 +832,6 @@
     }
 
     const skip = !manual && !question.required && !state.answers[question.id].length;
-    const next = $('#tcToResult');
     next.disabled = !manual && Boolean(question.required) && !state.answers[question.id].length;
     next.classList.toggle('tc-btn-ghost', skip);
     next.classList.toggle('tc-btn-primary', !skip);
@@ -862,7 +863,6 @@
 
   function goTo(screen) {
     state.screen = screen;
-    $('#tcTierHint').textContent = '';
     render();
     $$('.tc-body').forEach(body => { body.scrollTop = 0; });
     $('.visible h2').focus({ preventScroll:true });
@@ -936,9 +936,9 @@
   }
 
   function renderResult() {
-    const sizeTier = teamSizeTier();
+    const sizeTier = SIZES.find(size => size.id === state.size).minTier;
     const features = currentFeatures();
-    const tier = recommendedTier(sizeTier, features);
+    const tier = Math.max(sizeTier, ...features.map(feature => feature.minTier));
     const plan = TIERS[tier];
     const subscription = features.filter(feature => feature.addon);
     const largeTeam = state.size === '251+';
