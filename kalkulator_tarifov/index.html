@@ -692,7 +692,6 @@
     const button = selectable(industry.id, 'tc-ind-pill', industry.label, () => {
       state.industry = industry.id;
       if (!state.clientsEdited) state.answers.clients = industry.client ? [industry.client] : [];
-      pruneAnswers();
       render();
     });
     $('#tcIndustryGrid').append(button);
@@ -701,7 +700,6 @@
   SIZES.forEach(size => {
     const button = selectable(size.id, 'tc-pill', '', () => {
       state.size = size.id;
-      pruneAnswers();
       render();
     });
     button.innerHTML = `<span class="tc-num">${size.label}</span><span class="tc-unit">чел.</span>`;
@@ -756,14 +754,9 @@
       (!option.clients || option.clients.some(client => state.answers.clients.includes(client))));
   }
 
-  function pruneAnswers() {
-    const active = route();
-    QUESTIONS.forEach(question => {
-      // Ручной режим сохраняет ответы для возвращения к опросу.
-      if (question.id === 'clients' || state.manual) return;
-      const allowed = active.includes(question.id) ? visibleOptions(question).map(option => option.id) : [];
-      state.answers[question.id] = state.answers[question.id].filter(id => allowed.includes(id));
-    });
+  // Скрытые отметки сохраняются до конца опроса.
+  function selectedOptions(question) {
+    return visibleOptions(question).filter(option => state.answers[question.id].includes(option.id));
   }
 
   function toggleAnswer(question, option) {
@@ -777,7 +770,6 @@
       state.answers[question.id] = [...selected.filter(id => !replaced.some(other => other.id === id)), option.id];
     }
     if (question.id === 'clients') state.clientsEdited = true;
-    pruneAnswers();
     renderQuiz();
     renderProgress();
   }
@@ -787,9 +779,11 @@
       return [...FEATURES, ...INTEGRATIONS].filter(tile => state.manualSelection.has(tile.id))
         .map(tile => ({ ...tile, label:tile.title, answer:tile.title }));
     }
-    return QUESTIONS.flatMap(question => question.options
-      .filter(option => option.feat && state.answers[question.id].includes(option.id))
-      .map(option => ({ ...FEATS[option.feat], answer:option.label })));
+    const activePages = route();
+    return QUESTIONS.filter(question => activePages.includes(question.id))
+      .flatMap(question => selectedOptions(question)
+        .filter(option => option.feat)
+        .map(option => ({ ...FEATS[option.feat], answer:option.label })));
   }
 
   function renderQuiz() {
@@ -827,8 +821,9 @@
       }
     }
 
-    const skip = !manual && !question.required && !state.answers[question.id].length;
-    next.disabled = !manual && Boolean(question.required) && !state.answers[question.id].length;
+    const hasAnswer = !manual && selectedOptions(question).length > 0;
+    const skip = !manual && !question.required && !hasAnswer;
+    next.disabled = !manual && Boolean(question.required) && !hasAnswer;
     next.classList.toggle('tc-btn-ghost', skip);
     next.classList.toggle('tc-btn-primary', !skip);
     next.textContent = skip ? 'Пропустить' : (manual ? 'Показать тариф' : 'Далее');
@@ -957,7 +952,6 @@
   $('#tcToResult').addEventListener('click', () => move(1));
   $('#tcModeToggle').addEventListener('click', () => {
     state.manual = !state.manual;
-    if (!state.manual) pruneAnswers();
     goTo(state.manual ? 'manual' : 'clients');
   });
   $('#tcRestartBtn').addEventListener('click', () => {
