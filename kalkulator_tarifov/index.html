@@ -124,7 +124,6 @@
   .tc-pill.selected .tc-num,.tc-pill.selected .tc-unit{color:#fff;}
 
   /* ---- шаг 3: вопросы ---- */
-  .tc-quiz-layout{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;}
   .tc-ans-grid{display:grid;grid-template-columns:1fr;gap:14px 8px;}
   /* бейдж в стиле «Популярный» над карточкой Профессионального на /prices */
   .tc-ans{position:relative;}
@@ -149,27 +148,9 @@
     background:var(--tc-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;
   }
 
-  /* ---- «Подберём под ваши ответы»: узко — полоса над кнопками ---- */
-  .tc-picked{flex:0 0 auto;display:flex;flex-direction:column;gap:8px;padding:12px 14px;margin:0 28px 12px;border-radius:14px;background:var(--tc-tile);}
-  @media (max-width:600px){ .tc-picked{margin:0 18px 10px;} }
-  .tc-picked-title{font-size:13px;font-weight:700;color:var(--tc-ink);display:flex;align-items:center;gap:6px;}
-    min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--tc-blue);color:#fff;
-    font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;
-  }
-  .tc-picked-list{
-    display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;margin:0 -14px;padding:0 14px 2px;
-    scrollbar-width:none;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 28px),transparent);
-            mask-image:linear-gradient(90deg,transparent 0,#000 14px,#000 calc(100% - 28px),transparent);
-  }
-  .tc-picked-list::-webkit-scrollbar{display:none;}
-  .tc-picked-chip{
-    flex:0 0 auto;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;
-    font-size:13px;font-weight:500;line-height:1.3;padding:6px 12px;border-radius:999px;
-    background:#fff;color:var(--tc-ink);
-  }
-  .tc-picked-chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--tc-blue);flex:0 0 auto;}
-  .tc-picked-empty{font-size:13px;color:var(--tc-ink-faint);line-height:1.4;}
+  .tc-tier-hint{flex:none;margin:0 28px;color:#056895;font-size:14px;font-weight:600;}
+  .tc-tier-hint:not(:empty){padding-bottom:12px;}
+  @media (max-width:600px){.tc-tier-hint{margin-inline:18px;}}
 
   /* ---- шаг 3, ручной режим ---- */
   .tc-subhead{font-size:14px;font-weight:700;color:var(--tc-ink-soft);margin-top:4px;}
@@ -210,7 +191,6 @@
   .tc-btn-cta:hover{background:#03692f;}
   .tc-ans-grid{min-width:0;}
   .tc-ans-grid:has(.tc-pop){padding-top:8px;}
-  .tc-pop{background:#087db9;}
   .tc-question-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;}
   .tc-mode-toggle{
     max-width:100%;padding:8px 16px;background:var(--tc-blue-soft);color:#056895;
@@ -218,8 +198,6 @@
   }
   .tc-mode-toggle:hover{background:#cfeaff;}
   .tc-question-content{display:flex;flex-direction:column;gap:14px;}
-  .tc-quiz-layout>.tc-body{min-width:0;}
-  .tc-picked-list{min-width:0;}
   .tc-manual-grid{display:grid;gap:12px;}
   .tc-manual-grid>.tc-subhead{font-size:14px;}
   .tc-feature .tc-int{color:#6a3397;}
@@ -307,17 +285,7 @@
   @container tc (min-width:860px){
     .tc-frame{height:var(--tc-height-wide);}
     .tc-top-row{flex-wrap:nowrap;}
-    .tc-quiz-layout{flex-direction:row;}
-    .tc-quiz-layout>.tc-body{padding-right:20px;}
     .tc-ans-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-    .tc-picked{width:245px;margin:20px 28px 20px 0;padding:14px;min-height:0;}
-    .tc-picked-list{
-      flex:1 1 auto;min-height:0;flex-direction:column;align-items:flex-start;overflow:auto;
-      margin:0;padding:0;mask-image:none;
-    }
-    .tc-picked-chip{white-space:normal;max-width:100%;align-items:flex-start;}
-    .tc-picked-chip::before{margin-top:6px;}
-
     .tc-manual-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
     .tc-manual-grid>.tc-feature-grid{display:contents;}
     .tc-manual-grid>.tc-subhead{grid-column:1/-1;margin-top:4px;}
@@ -370,30 +338,24 @@
     </section>
 
     <section class="tc-step" data-step="3" aria-label="Выбор возможностей">
-      <div class="tc-quiz-layout">
-        <div class="tc-body">
-          <div class="tc-question-head">
-            <h2 id="tcQuizTitle" tabindex="-1"></h2>
-            <button type="button" class="tc-btn tc-mode-toggle" id="tcModeToggle" hidden>Выбрать функции вручную</button>
-          </div>
-          <div id="tcQuiz" class="tc-question-content">
-            <p class="tc-hint" id="tcQuizHint"></p>
-            <div id="tcQuestions"></div>
-          </div>
-          <div id="tcManual" class="tc-question-content" hidden>
-            <div class="tc-manual-grid">
-              <div class="tc-feature-grid" id="tcFeatureGrid"></div>
-              <h3 class="tc-subhead">Интеграции</h3>
-              <div class="tc-feature-grid" id="tcIntegrationGrid"></div>
-            </div>
+      <div class="tc-body">
+        <div class="tc-question-head">
+          <h2 id="tcQuizTitle" tabindex="-1"></h2>
+          <button type="button" class="tc-btn tc-mode-toggle" id="tcModeToggle" hidden>Выбрать функции вручную</button>
+        </div>
+        <div id="tcQuiz" class="tc-question-content">
+          <p class="tc-hint" id="tcQuizHint"></p>
+          <div id="tcQuestions"></div>
+        </div>
+        <div id="tcManual" class="tc-question-content" hidden>
+          <div class="tc-manual-grid">
+            <div class="tc-feature-grid" id="tcFeatureGrid"></div>
+            <h3 class="tc-subhead">Интеграции</h3>
+            <div class="tc-feature-grid" id="tcIntegrationGrid"></div>
           </div>
         </div>
-        <aside class="tc-picked" id="tcPicked" aria-label="Подберём под ваши ответы" hidden>
-          <div class="tc-picked-title">Подберём под ваши ответы</div>
-          <div class="tc-picked-list" id="tcPickedList" aria-live="polite"></div>
-          <div class="tc-picked-empty" id="tcPickedEmpty">Отмеченные функции появятся здесь.</div>
-        </aside>
       </div>
+      <p class="tc-tier-hint" id="tcTierHint" role="status"></p>
       <div class="tc-foot tc-nav-row">
         <button type="button" class="tc-btn tc-btn-ghost" id="tcToStep2Back">Назад</button>
         <button type="button" class="tc-btn tc-btn-primary tc-next" id="tcToResult">Далее</button>
@@ -668,7 +630,7 @@
   const emptyState = () => ({
     industry:null, size:null, screen:'industry', manual:false, clientsEdited:false,
     answers:Object.fromEntries(QUESTIONS.map(question => [question.id, []])),
-    manualSelection:new Set(), pickedIds:[],
+    manualSelection:new Set(),
   });
   let state = emptyState();
 
@@ -769,6 +731,8 @@
   }
 
   function toggleAnswer(question, option) {
+    const sizeTier = teamSizeTier();
+    const previousTier = recommendedTier(sizeTier, currentFeatures());
     const selected = state.answers[question.id];
     if (selected.includes(option.id)) {
       state.answers[question.id] = selected.filter(id => id !== option.id);
@@ -780,6 +744,10 @@
     }
     if (question.id === 'clients') state.clientsEdited = true;
     pruneAnswers();
+    const tier = recommendedTier(sizeTier, currentFeatures());
+    $('#tcTierHint').textContent = tier > previousTier
+      ? `Для функции «${option.label}» нужен тариф «${TIERS[tier].name}».`
+      : '';
     renderQuiz();
     renderProgress();
   }
@@ -794,22 +762,12 @@
       .map(option => ({ id:option.feat, ...FEATS[option.feat], answer:option.label })));
   }
 
-  function renderPicked() {
-    const features = currentFeatures();
-    const fresh = features.filter(feature => !state.pickedIds.includes(feature.id));
-    state.pickedIds = [...fresh.map(feature => feature.id), ...state.pickedIds.filter(id => features.some(feature => feature.id === id))];
-    const list = $('#tcPickedList');
-    list.replaceChildren(...state.pickedIds.map(id => {
-      const feature = features.find(item => item.id === id);
-      const chip = document.createElement('span');
-      chip.className = 'tc-picked-chip';
-      chip.textContent = feature.label;
-      return chip;
-    }));
-    list.hidden = !features.length;
-    $('#tcPickedEmpty').hidden = Boolean(features.length);
-    list.scrollTop = 0;
-    list.scrollLeft = 0;
+  function teamSizeTier() {
+    return SIZES.find(size => size.id === state.size).minTier;
+  }
+
+  function recommendedTier(sizeTier, features) {
+    return Math.max(sizeTier, ...features.map(feature => feature.minTier));
   }
 
   function renderQuiz() {
@@ -817,7 +775,6 @@
     const manual = state.screen === 'manual';
     $('#tcQuiz').hidden = manual;
     $('#tcManual').hidden = !manual;
-    $('#tcPicked').hidden = manual || state.screen === 'clients';
     const toggle = $('#tcModeToggle');
     toggle.hidden = !manual && state.screen !== 'clients';
     toggle.textContent = manual ? 'Вернуться к опросу' : 'Выбрать функции вручную';
@@ -842,7 +799,6 @@
       if (nextButtons.some((button, index) => button !== grid.children[index]) || nextButtons.length !== grid.children.length) {
         grid.replaceChildren(...nextButtons);
       }
-      if (!$('#tcPicked').hidden) renderPicked();
     }
 
     const skip = !manual && !question.required && !state.answers[question.id].length;
@@ -878,6 +834,7 @@
 
   function goTo(screen) {
     state.screen = screen;
+    $('#tcTierHint').textContent = '';
     render();
     $$('.tc-body').forEach(body => { body.scrollTop = 0; });
     $('.visible h2').focus({ preventScroll:true });
@@ -951,9 +908,9 @@
   }
 
   function renderResult() {
-    const sizeTier = SIZES.find(size => size.id === state.size).minTier;
+    const sizeTier = teamSizeTier();
     const features = currentFeatures();
-    const tier = Math.max(sizeTier, ...features.map(feature => feature.minTier));
+    const tier = recommendedTier(sizeTier, features);
     const plan = TIERS[tier];
     const subscription = features.filter(feature => feature.addon);
     const largeTeam = state.size === '251+';
