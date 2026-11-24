@@ -222,7 +222,9 @@
   .tc-result-card[data-tier="4"]{--tc-result-bg:var(--tc-purple-tile);}
   .tc-result-top{display:flex;gap:14px 24px;justify-content:space-between;align-items:center;flex-wrap:wrap;}
   .tc-recommendation{min-width:0;max-width:100%;}
-  .tc-name-row,.tc-addon-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;}
+  .tc-name-row,.tc-addon-head{display:flex;flex-wrap:wrap;gap:4px 8px;}
+  .tc-name-row{align-items:center;}
+  .tc-addon-head{align-items:baseline;}
   .tc-tag{
     display:inline-block;background:#d8ecff;color:#16547c;border-radius:99px;
     font-size:12px;font-weight:700;padding:3px 10px;
@@ -269,12 +271,6 @@
   .tc-why-mark svg{width:13px;height:13px;}
   .tc-why-feature{overflow-wrap:anywhere;font-weight:600;}
   .tc-why-addon{color:#6a3397;font-size:12px;font-weight:700;white-space:nowrap;}
-  .tc-why-feature[data-reason]{position:relative;text-decoration:underline dotted;text-underline-offset:3px;cursor:help;}
-  .tc-why-feature[data-reason]:is(:hover,:focus)::after{
-    content:attr(data-reason);position:absolute;z-index:1;inset-inline-start:0;top:calc(100% + 4px);
-    width:max-content;max-width:min(235px,72vw);padding:6px 9px;border-radius:7px;
-    color:#fff;background:#273347;font-size:12px;line-height:1.35;box-shadow:0 3px 10px #15274133;
-  }
   .tc-why-more{margin-top:7px;}
   .tc-why-more summary{cursor:pointer;text-decoration:underline;}
   .tc-demo{
@@ -793,7 +789,7 @@
     }
     return QUESTIONS.flatMap(question => question.options
       .filter(option => option.feat && state.answers[question.id].includes(option.id))
-      .map(option => ({ id:option.feat, ...FEATS[option.feat], answer:option.label })));
+      .map(option => ({ ...FEATS[option.feat], answer:option.label })));
   }
 
   function renderQuiz() {
@@ -889,18 +885,7 @@
     const row = document.createElement('li');
     row.innerHTML = `<span class="tc-why-mark">${check}</span><span><span class="tc-why-feature"></span>
       ${feature.addon ? '<span class="tc-why-addon"> · По подписке</span>' : ''}</span>`;
-    const label = row.querySelector('.tc-why-feature');
-    label.textContent = feature.label;
-    if (feature.answer) {
-      const reason = document.createElement('span');
-      reason.className = 'tc-sr-only';
-      reason.id = 'tcReason-' + feature.id;
-      reason.textContent = `Ваш выбор: «${feature.answer}»`;
-      label.dataset.reason = reason.textContent;
-      label.tabIndex = 0;
-      label.setAttribute('aria-describedby', reason.id);
-      row.append(reason);
-    }
+    row.querySelector('.tc-why-feature').textContent = feature.label;
     return row;
   }
 
