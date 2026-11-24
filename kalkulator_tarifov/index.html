@@ -408,7 +408,7 @@
               <a class="tc-btn tc-btn-cta" id="tcBuyBtn" target="_blank" rel="noopener">Купить</a>
             </div>
           </div>
-          <p class="tc-res-reason" id="tcResReason" hidden></p>
+          <p class="tc-res-reason" id="tcResReason"></p>
           <p class="tc-res-reason" id="tcLargeTeam" hidden>Цена указана за 250 пользователей. Стоимость для большей команды рассчитаем на консультации.</p>
           <div class="tc-addon" id="tcResAddon" hidden>
             <div>
@@ -444,8 +444,8 @@
 
         <aside class="tc-demo">
           <p>
-            <strong>Хотите сначала попробовать?</strong> Попробуйте возможности тарифа «Профессиональный» в течение 15 дней.
-            <a href="https://helpdesk.bitrix24.ru/open/21538090/" target="_blank" rel="noopener">Как включить демо</a>
+            <strong>Хотите сначала попробовать?</strong> Начните с бесплатного тарифа.
+            <a href="https://www.bitrix24.ru/create.php" target="_blank" rel="noopener">Создать Битрикс24 бесплатно</a>
           </p>
         </aside>
       </div>
@@ -460,6 +460,7 @@
 <script>
 (() => {
   'use strict';
+  const MARKETING_LABEL = 'Рассылки и реклама по базе клиентов';
   const TIERS = {
     1: {
       name:'Базовый', monthly:2490, annual:1990, users:'До 5 пользователей', product:'BASIC1',
@@ -467,7 +468,7 @@
     },
     2: {
       name:'Стандартный', monthly:6990, annual:5590, users:'До 50 пользователей', product:'STD1',
-      highlights:['До 10 воронок продаж','Рассылки и реклама по базе','КЭДО и Госключ','BI-отчёты'],
+      highlights:['До 10 воронок продаж',MARKETING_LABEL,'КЭДО и Госключ','BI-отчёты'],
     },
     3: {
       name:'Профессиональный', monthly:13990, annual:11190, users:'До 100 пользователей', product:'PRO1001',
@@ -528,7 +529,7 @@
     waitlist: { label:'Лист ожидания и повторные визиты', minTier:3 },
     catalog5000: { label:'Каталог до 5 000 товаров', minTier:2 },
     catalogOver5000: { label:'Каталог больше 5 000 товаров', minTier:3 },
-    marketing: { label:'Рассылки и реклама по базе клиентов', minTier:2 },
+    marketing: { label:MARKETING_LABEL, minTier:2 },
     adsAnalytics: { label:'Сквозная аналитика рекламы', minTier:3 },
     workload: { label:'Загрузка и KPI сотрудников', minTier:2 },
     reports: { label:'Совместная работа с документами и отчётами', minTier:2 },
@@ -610,21 +611,21 @@
   ];
 
   const INDUSTRIES = [
-    { id:'legal', label:'Юридические услуги', client:'b2b', popular:{ sales:['quotes'], team:['approvals'], connections:['telephony','edoext'] } },
-    { id:'gov', label:'Государственные организации', client:'none', popular:{ team:['reports','approvals'], connections:['edoext'] } },
-    { id:'services', label:'Сфера услуг', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
-    { id:'medicine', label:'Медицина', client:'private', popular:{ sales:['booking','waitlist'], connections:['telephony'] } },
-    { id:'wholesale', label:'Оптовая торговля', client:'goods', popular:{ sales:['quotes','onecSync'], connections:['bank','delivery'] } },
-    { id:'manufacturing', label:'Производство', client:'goods', popular:{ sales:['quotes','onecSync'], team:['smartProcesses'], connections:['bank','edoext'] } },
-    { id:'it', label:'IT', client:'b2b', popular:{ sales:['quotes'], team:['scrum'], connections:['gpt'] } },
-    { id:'retail', label:'Розничная торговля', client:'goods', popular:{ sales:['onecSync'], connections:['delivery','marketplaces'] } },
-    { id:'agency', label:'Рекламное агентство', client:'b2b', popular:{ sales:['adsAnalytics'], team:['workload'], connections:['gpt'] } },
-    { id:'logistics', label:'Логистика и транспорт', client:'b2b', popular:{ sales:['quotes','onecSync'], connections:['telephony','delivery'] } },
-    { id:'education', label:'Образование', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
-    { id:'horeca', label:'Отели, рестораны, кафе', client:'private', popular:{ sales:['booking','multiDay'], connections:['telephony'] } },
-    { id:'finance', label:'Финансовые услуги', client:'b2b', popular:{ sales:['quotes'], team:['access'], connections:['bank','telephony'] } },
-    { id:'tourism', label:'Туризм', client:'private', popular:{ sales:['multiDay'], connections:['telephony'] } },
-    { id:'realestate', label:'Недвижимость и строительство', client:'private', popular:{ sales:['booking'], connections:['telephony'] } },
+    { id:'legal', label:'Юридические услуги', client:'b2b', popular:{ sales:['quotes'], team:['reports','approvals'], connections:['telephony','edoext'] } },
+    { id:'gov', label:'Государственные организации', client:'none', popular:{ team:['edo','worktime','approvals'], connections:['edoext'] } },
+    { id:'services', label:'Сфера услуг', client:'private', popular:{ sales:['booking','marketing'], connections:['telephony'] } },
+    { id:'medicine', label:'Медицина', client:'private', popular:{ sales:['booking','waitlist'], team:['worktime','edo'], connections:['telephony'] } },
+    { id:'wholesale', label:'Оптовая торговля', client:'goods', popular:{ sales:['quotes','onecSync'], team:['approvals'], connections:['delivery','bank'] } },
+    { id:'manufacturing', label:'Производство', client:'goods', popular:{ sales:['quotes','onecSync'], team:['smartProcesses','approvals','worktime'], connections:['edoext','bank'] } },
+    { id:'it', label:'IT', client:'b2b', popular:{ sales:['quotes'], team:['scrum','workload'], connections:['gpt'] } },
+    { id:'retail', label:'Розничная торговля', client:'goods', popular:{ sales:['marketing'], team:['worktime'], connections:['marketplaces','delivery'] } },
+    { id:'agency', label:'Рекламное агентство', client:'b2b', popular:{ sales:['quotes'], team:['workload','scrum'], connections:['gpt'] } },
+    { id:'logistics', label:'Логистика и транспорт', client:'b2b', popular:{ sales:['quotes'], team:['smartProcesses','approvals'], connections:['telephony','delivery'] } },
+    { id:'education', label:'Образование', client:'private', popular:{ sales:['booking','marketing'], connections:['telephony'] } },
+    { id:'horeca', label:'Отели, рестораны, кафе', client:'private', popular:{ sales:['booking','multiDay'], team:['worktime'], connections:['telephony'] } },
+    { id:'finance', label:'Финансовые услуги', client:'b2b', popular:{ sales:['quotes'], team:['reports','access'], connections:['bank','telephony'] } },
+    { id:'tourism', label:'Туризм', client:'private', popular:{ sales:['multiDay','marketing'], connections:['telephony'] } },
+    { id:'realestate', label:'Недвижимость и строительство', client:'private', popular:{ sales:['adsAnalytics'], team:['workload'], connections:['telephony'] } },
     { id:'other', label:'Другая сфера' },
   ];
 
@@ -639,7 +640,7 @@
     { id:'ai', icon:'ai', title:'ИИ в продажах', desc:'Разбор звонков и подсказки менеджерам', minTier:1, addon:true, short:'ИИ в продажах' },
     { id:'marketplace', icon:'marketplace', title:'Приложения Маркетплейса', desc:'Подключение сторонних сервисов к Битрикс24', minTier:1, addon:true, short:'приложений Маркетплейса' },
     { id:'multipipeline', icon:'multipipeline', title:'Больше 5 воронок продаж', desc:'До 10 воронок на Стандартном, до 20 на Профессиональном', minTier:2 },
-    { id:'marketing', icon:'marketing', title:'Маркетинг и рассылки', desc:'Рассылки и реклама по базе клиентов', minTier:2 },
+    { id:'marketing', icon:'marketing', title:'Маркетинг и рассылки', desc:MARKETING_LABEL, resultLabel:MARKETING_LABEL, minTier:2 },
     { id:'documents', icon:'documents', title:'КЭДО и Госключ', desc:'Подписание кадровых документов онлайн', minTier:2 },
     { id:'bi', icon:'analytics', title:'BI-отчёты', desc:'Дашборды по данным Битрикс24', minTier:2 },
     { id:'automation', icon:'automation', title:'Бизнес-процессы', desc:'Автоматизация согласований и типовых действий', minTier:3 },
@@ -777,7 +778,7 @@
   function currentFeatures() {
     if (state.manual) {
       return [...FEATURES, ...INTEGRATIONS].filter(tile => state.manualSelection.has(tile.id))
-        .map(tile => ({ ...tile, label:tile.title, answer:tile.title }));
+        .map(tile => ({ ...tile, label:tile.resultLabel || tile.title, answer:tile.title }));
     }
     const activePages = route();
     return QUESTIONS.filter(question => activePages.includes(question.id))
@@ -822,11 +823,12 @@
     }
 
     const hasAnswer = !manual && selectedOptions(question).length > 0;
-    const skip = !manual && !question.required && !hasAnswer;
+    const showTariff = manual || question.id === 'connections';
+    const skip = !showTariff && !question.required && !hasAnswer;
     next.disabled = !manual && Boolean(question.required) && !hasAnswer;
     next.classList.toggle('tc-btn-ghost', skip);
     next.classList.toggle('tc-btn-primary', !skip);
-    next.textContent = skip ? 'Пропустить' : (manual ? 'Показать тариф' : 'Далее');
+    next.textContent = showTariff ? 'Показать тариф' : (skip ? 'Пропустить' : 'Далее');
   }
 
   function renderProgress() {
@@ -901,24 +903,27 @@
     $('#tcWhyMoreLabel').textContent = more > 0 ? `И ещё ${more} ${noun}` : '';
   }
 
-  function renderReason(tier, sizeTier, features) {
+  function renderReason(tier, size, features) {
     const reason = $('#tcResReason');
-    reason.hidden = tier <= sizeTier;
-    if (reason.hidden) return;
+    const sizeTier = size.minTier;
+    if (tier === sizeTier) {
+      reason.textContent = `Размер команды (${size.label} чел.) определил тариф «${TIERS[tier].name}».`;
+      return;
+    }
     const deciding = features.filter(feature => feature.minTier === tier);
     const lower = Math.max(sizeTier, ...features.filter(feature => feature.minTier < tier).map(feature => feature.minTier));
     const selected = deciding.slice(0, 2).map(feature => `«${feature.answer}»`).join(', ');
     const extra = deciding.length > 2 ? ` и ещё ${deciding.length - 2}` : '';
-    const summary = deciding.length === 1 ? 'Тариф выбран из-за ответа' : 'Тариф выбран из-за ответов';
+    const summary = deciding.length === 1 ? 'Для выбранной функции' : 'Для выбранных функций';
     const condition = deciding.length === 1 ? 'Без этой функции' : 'Без этих функций';
     const savings = money(TIERS[tier].annual - TIERS[lower].annual);
-    reason.textContent = `${summary} ${selected}${extra}. ${condition} хватило бы тарифа «${TIERS[lower].name}», на ${savings}/мес дешевле при оплате за год.`;
+    reason.textContent = `По размеру команды (${size.label} чел.) достаточно тарифа «${TIERS[sizeTier].name}». ${summary} ${selected}${extra} нужен тариф «${TIERS[tier].name}». ${condition} хватило бы тарифа «${TIERS[lower].name}», на ${savings}/мес дешевле при оплате за год.`;
   }
 
   function renderResult() {
-    const sizeTier = SIZES.find(size => size.id === state.size).minTier;
+    const size = SIZES.find(item => item.id === state.size);
     const features = currentFeatures();
-    const tier = Math.max(sizeTier, ...features.map(feature => feature.minTier));
+    const tier = Math.max(size.minTier, ...features.map(feature => feature.minTier));
     const plan = TIERS[tier];
     const subscription = features.filter(feature => feature.addon);
     const largeTeam = state.size === '251+';
@@ -930,7 +935,7 @@
     $('#tcBuyBtn').href = purchaseUrl(plan, subscription.length > 0);
     $('#tcLargeTeam').hidden = !largeTeam;
     $('#tcConsultBtn').href = largeTeam ? 'https://www.bitrix24.ru/enterprise/' : 'https://www.bitrix24.ru/prices/request.php';
-    renderReason(tier, sizeTier, features);
+    renderReason(tier, size, features);
     renderFeatures(plan, features);
 
     $('#tcResAddon').hidden = !subscription.length;
