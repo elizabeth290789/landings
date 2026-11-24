@@ -187,8 +187,6 @@
   .tc-widget [tabindex="-1"]:focus{outline:none;}
   .tc-widget .tc-foot.tc-nav-row{flex-direction:row;}
   .tc-next{margin-inline-start:auto;}
-  .tc-btn-cta{background:#04823a;}
-  .tc-btn-cta:hover{background:#03692f;}
   .tc-ans-grid{min-width:0;}
   .tc-ans-grid:has(.tc-pop){padding-top:8px;}
   .tc-question-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;}
@@ -203,50 +201,60 @@
   .tc-feature .tc-int{color:#6a3397;}
   .tc-feature svg{display:block;}
 
-  .tc-result-body{gap:12px;}
+  .tc-result-body{gap:16px;}
   .tc-result-card{
-    --tc-result-bg:var(--tc-tile);display:grid;gap:8px;flex:none;
-    min-width:0;background:var(--tc-result-bg);border-radius:18px;padding:16px 20px;
+    --tc-result-bg:var(--tc-tile);display:grid;gap:10px;flex:none;
+    min-width:0;background:var(--tc-result-bg);border-radius:20px;padding:18px 20px;
   }
   .tc-result-card[data-tier="4"]{--tc-result-bg:var(--tc-purple-tile);}
   .tc-result-top{display:flex;gap:14px 24px;justify-content:space-between;align-items:center;flex-wrap:wrap;}
   .tc-recommendation{min-width:0;max-width:100%;}
+  .tc-name-row,.tc-addon-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;}
   .tc-tag{
     display:inline-block;background:#d8ecff;color:#16547c;border-radius:99px;
-    font-size:12px;font-weight:700;padding:3px 9px;margin-bottom:4px;
+    font-size:12px;font-weight:700;padding:3px 10px;
   }
-  [data-tier="4"] .tc-tag{color:#6a3397;background:#ede2ff;}
-  .tc-result-card h2{font-size:25px;overflow-wrap:anywhere;}
-  .tc-users{margin:3px 0 0;color:var(--tc-ink-soft);font-size:13px;}
-  .tc-payment{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;}
-  .tc-price{font-size:28px;font-weight:800;line-height:1.1;white-space:nowrap;font-variant-numeric:tabular-nums;}
-  .tc-period{font-size:12px;color:var(--tc-ink-soft);margin-top:3px;}
-  .tc-annual{display:flex;align-items:baseline;gap:8px;color:var(--tc-ink-soft);font-size:13px;margin:0;}
-  .tc-discount{flex:none;font-weight:700;color:#045b32;background:#d9f5e4;border-radius:99px;padding:2px 7px;}
-  .tc-res-reason{margin:0;font-size:13px;color:var(--tc-ink-soft);}
+  [data-tier="4"] .tc-tag{background:var(--tc-purple);color:#fff;}
+  .tc-result-card h2{font-size:24px;overflow-wrap:anywhere;}
+  .tc-users{margin:4px 0 0;color:var(--tc-ink-soft);font-size:13px;}
+  .tc-payment{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;}
+  .tc-price-block{text-align:right;}
+  .tc-price-before-row{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-bottom:2px;}
+  .tc-price-before{color:var(--tc-ink-soft);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .tc-discount{flex:none;font-size:11px;font-weight:700;color:#fff;background:#ff6a3d;border-radius:99px;padding:2px 7px;}
+  .tc-price{font-size:28px;font-weight:800;line-height:1.05;white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .tc-period,.tc-price-note{font-size:12px;color:var(--tc-ink-soft);}
+  .tc-period{margin-top:4px;}
+  .tc-res-reason{margin:0;font-size:14px;}
   .tc-addon{
     display:flex;align-items:flex-start;justify-content:space-between;gap:8px 16px;
-    background:#fff;border:1px solid #d9c7f4;border-radius:12px;padding:8px 12px;
+    background:#fff;border:1px solid var(--tc-purple);border-radius:14px;padding:8px 12px;
   }
-  .tc-addon-tag,.tc-addon-promo{font-size:12px;font-weight:700;color:#6a3397;}
-  .tc-addon-name,.tc-addon-price{font-size:15px;font-weight:800;}
+  .tc-addon-tag{font-size:11px;font-weight:700;color:#6a3397;text-transform:uppercase;}
+  .tc-addon-name{font-size:14px;font-weight:800;}
   .tc-addon-why,.tc-addon-period{font-size:12px;color:var(--tc-ink-soft);}
-  .tc-addon-prices{display:grid;justify-items:end;text-align:right;flex:none;}
-  .tc-addon-price,.tc-addon-period{white-space:nowrap;}
+  .tc-addon-prices{display:grid;justify-items:end;text-align:right;flex:none;max-width:100%;}
+  .tc-addon-price{font-size:17px;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums;}
 
-  .tc-why{flex:none;min-width:0;padding-inline:2px;}
+  .tc-why{flex:none;min-width:0;}
   .tc-why-head{display:flex;align-items:baseline;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;}
   .tc-why-head a,.tc-demo a,.tc-why-more summary{
     width:fit-content;color:#056895;font-size:13px;font-weight:700;text-underline-offset:3px;
   }
   .tc-why-list{
-    display:grid;grid-template-columns:minmax(0,1fr);gap:6px 20px;
-    list-style:none;padding:0;margin:9px 0 0;
+    display:grid;grid-template-columns:minmax(0,1fr);column-gap:24px;
+    list-style:none;padding:0;margin:6px 0 0;
   }
-  .tc-why-list li{display:flex;align-items:baseline;gap:7px;min-width:0;font-size:13px;}
-  .tc-why-mark{flex:none;color:#087db9;align-self:start;}
-  .tc-why-mark svg{width:14px;height:14px;vertical-align:middle;}
-  .tc-why-feature{overflow-wrap:anywhere;}
+  .tc-why-list li{
+    display:flex;align-items:center;gap:10px;min-width:0;padding:6px 0;
+    border-bottom:1px solid var(--tc-line);font-size:14px;
+  }
+  .tc-why-mark{
+    display:grid;place-items:center;flex:0 0 22px;height:22px;align-self:start;
+    border-radius:50%;background:var(--tc-blue-soft);color:#087db9;
+  }
+  .tc-why-mark svg{width:13px;height:13px;}
+  .tc-why-feature{overflow-wrap:anywhere;font-weight:600;}
   .tc-why-addon{color:#6a3397;font-size:12px;font-weight:700;white-space:nowrap;}
   .tc-why-feature[data-reason]{position:relative;text-decoration:underline dotted;text-underline-offset:3px;cursor:help;}
   .tc-why-feature[data-reason]:is(:hover,:focus)::after{
@@ -257,11 +265,12 @@
   .tc-why-more{margin-top:7px;}
   .tc-why-more summary{cursor:pointer;text-decoration:underline;}
   .tc-demo{
-    flex:none;display:flex;justify-content:space-between;align-items:baseline;gap:3px 14px;flex-wrap:wrap;
-    background:#eef8ff;padding:10px 14px;border-radius:12px;font-size:13px;color:var(--tc-ink-soft);
+    flex:none;background:#edfff2;padding:11px 14px;border-radius:14px;
+    font-size:13px;color:var(--tc-ink-soft);
   }
   .tc-demo p{margin:0;}
   .tc-demo strong{color:var(--tc-ink);}
+  .tc-demo a{color:#087937;}
   .tc-res-foot{flex-direction:row;justify-content:space-between;}
   .tc-l-short{display:none;}
 
@@ -273,6 +282,9 @@
     .tc-widget h2{font-size:20px;}
     .tc-result-card{padding:13px 14px;}
     .tc-payment{width:100%;}
+    .tc-payment .tc-btn{flex:1 1 100%;}
+    .tc-price-block{text-align:left;}
+    .tc-price-before-row{justify-content:flex-start;}
     .tc-price{font-size:24px;}
     .tc-addon{flex-wrap:wrap;}
     .tc-addon-prices{justify-items:start;text-align:left;}
@@ -285,6 +297,7 @@
   @container tc (min-width:860px){
     .tc-frame{height:var(--tc-height-wide);}
     .tc-top-row{flex-wrap:nowrap;}
+    .tc-payment .tc-btn{min-width:150px;}
     .tc-ans-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
     .tc-manual-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;}
     .tc-manual-grid>.tc-feature-grid{display:contents;}
@@ -367,38 +380,51 @@
         <div class="tc-result-card" id="tcResCard">
           <div class="tc-result-top">
             <div class="tc-recommendation">
-              <span class="tc-tag">Рекомендуем</span>
-              <h2 id="tcResName" tabindex="-1"></h2>
+              <div class="tc-name-row">
+                <h2 id="tcResName" tabindex="-1"></h2>
+                <span class="tc-tag">Рекомендуем</span>
+              </div>
               <p class="tc-users" id="tcResUsers"></p>
             </div>
             <div class="tc-payment">
-              <div>
+              <div class="tc-price-block">
+                <div class="tc-price-before-row">
+                  <span class="tc-sr-only">При помесячной оплате</span>
+                  <del class="tc-price-before" id="tcResPriceBefore"></del>
+                  <span class="tc-discount">−20%</span>
+                </div>
                 <div class="tc-price" id="tcResPrice"></div>
                 <div class="tc-period">в месяц за компанию</div>
+                <div class="tc-price-note">при оплате за год</div>
               </div>
               <a class="tc-btn tc-btn-cta" id="tcBuyBtn" target="_blank" rel="noopener">Купить</a>
             </div>
           </div>
-          <p class="tc-annual"><span class="tc-discount">−20%</span> <span id="tcResAnnual"></span></p>
           <p class="tc-res-reason" id="tcResReason" hidden></p>
           <p class="tc-res-reason" id="tcLargeTeam" hidden>Цена указана за 250 пользователей. Стоимость для большей команды рассчитаем на консультации.</p>
           <div class="tc-addon" id="tcResAddon" hidden>
             <div>
-              <span class="tc-addon-tag">Рекомендуем добавить</span>
-              <div class="tc-addon-name">Подписка BitrixGPT + Маркетплейс</div>
+              <div class="tc-addon-head">
+                <span class="tc-addon-tag">Рекомендуем добавить</span>
+                <span class="tc-addon-name">Подписка BitrixGPT + Маркетплейс</span>
+              </div>
               <div class="tc-addon-why" id="tcResAddonWhy"></div>
             </div>
             <div class="tc-addon-prices">
+              <div class="tc-price-before-row" id="tcResAddonPromo" hidden>
+                <span class="tc-sr-only">Обычная цена подписки</span>
+                <del class="tc-price-before" id="tcResAddonPriceBefore"></del>
+                <span class="tc-discount">−50%</span>
+              </div>
               <span class="tc-addon-price" id="tcResAddonPrice"></span>
-              <span class="tc-addon-period">в месяц, без НДС</span>
-              <span class="tc-addon-promo" id="tcResAddonPromo" hidden>−50% на первую покупку</span>
+              <span class="tc-addon-period" id="tcResAddonPeriod"></span>
             </div>
           </div>
         </div>
 
         <section class="tc-why" aria-labelledby="tcWhyTitle">
           <div class="tc-why-head">
-            <h3 id="tcWhyTitle">Что входит в тариф</h3>
+            <h3 id="tcWhyTitle">Что входит в стоимость</h3>
             <a href="https://www.bitrix24.ru/prices/compare_cloud_plans.php" target="_blank" rel="noopener">Все возможности</a>
           </div>
           <ul class="tc-why-list" id="tcWhyList"></ul>
@@ -409,8 +435,10 @@
         </section>
 
         <aside class="tc-demo">
-          <p><strong>Хотите сначала попробовать?</strong> Попробуйте возможности тарифа «Профессиональный» в течение 15 дней.</p>
-          <a href="https://helpdesk.bitrix24.ru/open/21538090/" target="_blank" rel="noopener">Как включить демо</a>
+          <p>
+            <strong>Хотите сначала попробовать?</strong> Попробуйте возможности тарифа «Профессиональный» в течение 15 дней.
+            <a href="https://helpdesk.bitrix24.ru/open/21538090/" target="_blank" rel="noopener">Как включить демо</a>
+          </p>
         </aside>
       </div>
       <div class="tc-foot tc-res-foot">
@@ -917,8 +945,8 @@
     $('#tcResCard').dataset.tier = tier;
     $('#tcResName').textContent = plan.name;
     $('#tcResUsers').textContent = plan.users;
-    $('#tcResPrice').textContent = money(plan.monthly, tier);
-    $('#tcResAnnual').textContent = `${money(plan.annual, tier)}/мес при оплате за год`;
+    $('#tcResPriceBefore').textContent = money(plan.monthly, tier);
+    $('#tcResPrice').textContent = money(plan.annual, tier);
     $('#tcBuyBtn').href = purchaseUrl(plan, subscription.length > 0);
     $('#tcLargeTeam').hidden = !largeTeam;
     $('#tcConsultBtn').href = largeTeam ? 'https://www.bitrix24.ru/enterprise/' : 'https://www.bitrix24.ru/prices/request.php';
@@ -929,7 +957,9 @@
     if (subscription.length) {
       const price = ADDON_PRICING[tier];
       const promo = Date.now() < ADDON_PROMO_END;
+      $('#tcResAddonPriceBefore').textContent = money(price.monthly, tier);
       $('#tcResAddonPrice').textContent = money(promo ? price.promo : price.monthly, tier);
+      $('#tcResAddonPeriod').textContent = promo ? 'в месяц, без НДС, при первой покупке' : 'в месяц, без НДС';
       $('#tcResAddonPromo').hidden = !promo;
       $('#tcResAddonWhy').textContent = 'Для ' + subscription.map(feature => feature.short).join(', ') + '.';
     }
