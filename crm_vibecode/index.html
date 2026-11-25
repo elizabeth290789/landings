@@ -1,1 +1,185 @@
-
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бесплатная онлайн-CRM для продаж</title>
+<meta name="description" content="База клиентов, сделки, автоматизация и аналитика в одной CRM.">
+<style>
+:root{--ink:#132c2b;--muted:#47605d;--paper:#f7faf6;--green:#d9fa89;--line:#cddbd3;--teal:#0b3733}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:3px solid #4b9c88;outline-offset:4px}
+.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:850;font-size:22px;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:26px;flex-wrap:wrap}
+nav a{font-weight:650;font-size:.9rem;text-decoration:none}
+nav a:hover{text-decoration:underline}
+.cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;background:var(--green);color:#152e23;border:1px solid transparent;border-radius:9px;text-decoration:none;font-weight:800;white-space:nowrap}
+.cta:hover{background:#c2ed69}
+.hero{padding:76px 0;background:radial-gradient(ellipse at 100% 0%,#236457,transparent 62%),var(--teal);color:#f9fff8}
+.hero-grid,.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:64px}
+.hero h1{font-size:clamp(2.6rem,5.7vw,5.2rem);line-height:.98;letter-spacing:-.065em;margin:0 0 28px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{color:#deeee5;font-size:1.2rem;max-width:38ch}
+.tags{padding:0;margin:22px 0 28px;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{border:1px solid #72958a;border-radius:5px;padding:4px 9px;font-size:.9rem}
+.board{padding:18px;background:#f1f6ef;color:var(--ink);border:1px solid #bacdc5;border-radius:14px;box-shadow:0 25px 65px #06211c50}
+.board-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 0 15px;border-bottom:1px solid var(--line)}
+.board-top span,.card small{color:var(--muted)}
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:14px}
+.column{background:#e4eee7;border-radius:7px;padding:8px}
+.column b{display:block;font-size:.8rem;margin:3px 0 9px}
+.card{background:white;border:1px solid #d4e0d7;border-radius:6px;padding:9px;margin-bottom:7px;font-size:.83rem;overflow-wrap:anywhere}
+.card small{display:block;margin-top:6px}
+.section{padding:80px 0}
+h2{font-size:clamp(2rem,4vw,3.55rem);line-height:1.04;letter-spacing:-.045em;margin:0 0 20px}
+h3{line-height:1.18;font-size:1.4rem;margin:0 0 10px;letter-spacing:-.02em}
+p{margin:0 0 20px}
+.section p{color:var(--muted)}
+.migration{border-bottom:1px solid var(--line)}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.steps li{padding:14px 0;border-bottom:1px solid var(--line);font-weight:650}
+.steps li::before{content:"✓";color:#277b63;margin-right:12px}
+.ai{background:#e8f0eb}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 14px}
+.tab{border:1px solid #819d90;background:transparent;border-radius:7px;padding:9px 14px;color:var(--ink);cursor:pointer}
+.tab[aria-selected=true]{background:var(--teal);color:white;border-color:var(--teal)}
+.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:28px;max-width:820px}
+.panel p{margin:0}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.feature{padding:24px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.feature p{margin:0}
+.mobile{background:#e4f2e6}
+.phone{width:min(100%,300px);padding:20px;margin:auto;background:#fcfdfa;border:8px solid #213e35;border-radius:28px;box-shadow:18px 18px 0 #a6c7ab}
+.phone h3{margin-bottom:16px}
+.phone .card{padding:14px}
+.security{background:var(--teal);color:white}
+.security p{color:#deeee5}
+.security .features{grid-template-columns:repeat(3,minmax(0,1fr))}
+.security .feature{background:#19463e;border-color:#5c8679}
+@media(max-width:900px){.hero-grid,.split{gap:30px}.nav{flex-wrap:wrap;padding:10px 0;gap:10px}nav{order:3;width:100%;gap:8px 18px}.features{grid-template-columns:repeat(2,minmax(0,1fr))}html{scroll-padding-top:130px}}
+@media(max-width:680px){.hero-grid,.split{grid-template-columns:1fr}.hero,.section{padding:50px 0}.wrap{width:calc(100% - 32px)}.features,.security .features{grid-template-columns:1fr}.brand{font-size:1.05rem}.nav .cta{font-size:.85rem;padding:9px 12px}.board{padding:10px}.column{padding:4px}.card{padding:6px}.board-top{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">CRM для продаж</a>
+    <nav aria-label="Разделы лендинга">
+      <a href="#features">Возможности</a><a href="#ai">ИИ в CRM</a>
+      <a href="#mobile">Мобильная CRM</a><a href="#security">Безопасность</a>
+    </nav>
+    <a class="cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Создать бесплатно</a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Бесплатная <em>онлайн-CRM</em></h1>
+        <p>Управляйте клиентами, ведите сделки и автоматизируйте работу отдела продаж в Битрикс24.</p>
+        <ul class="tags">
+          <li>База клиентов</li><li>Лиды и сделки</li><li>Воронка продаж</li>
+          <li>Мессенджеры и соцсети</li><li>Сквозная аналитика</li>
+          <li>Задачи и проекты</li><li>Автоматизация продаж</li>
+        </ul>
+        <a class="cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно</a>
+      </div>
+      <div class="board" aria-label="Пример воронки продаж">
+        <div class="board-top"><strong>Сделки</strong><span>Пример воронки</span></div>
+        <div class="columns">
+          <div class="column"><b>Новые</b><div class="card">Запрос на поставку<small>64 000 ₽</small></div><div class="card">Заявка с сайта<small>28 000 ₽</small></div></div>
+          <div class="column"><b>В работе</b><div class="card">Согласование проекта<small>120 000 ₽</small></div><div class="card">Комплектация офиса<small>85 000 ₽</small></div></div>
+          <div class="column"><b>К оплате</b><div class="card">Счёт за обслуживание<small>45 000 ₽</small></div><div class="card">Продление договора<small>36 000 ₽</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section migration">
+    <div class="wrap split">
+      <div><h2>Переезд на Битрикс24</h2><p>Соберите клиентскую базу и рабочие процессы в одной CRM. Начните с импорта контактов и настройте воронку под этапы ваших продаж.</p></div>
+      <ul class="steps"><li>Перенесите контакты и компании</li><li>Настройте этапы сделок и права доступа</li><li>Пригласите команду и подключите каналы общения</li></ul>
+    </div>
+  </section>
+  <section class="section ai" id="ai">
+    <div class="wrap">
+      <h2>ИИ берёт на себя рутину</h2>
+      <div class="tabs" role="tablist" aria-label="Возможности ИИ">
+        <button class="tab" type="button" role="tab" id="tab-scripts" aria-controls="scripts" aria-selected="true">Скрипты продаж</button>
+        <button class="tab" type="button" role="tab" id="tab-calls" aria-controls="calls" aria-selected="false" tabindex="-1">Записи звонков</button>
+        <button class="tab" type="button" role="tab" id="tab-deals" aria-controls="deals" aria-selected="false" tabindex="-1">Карточки сделок</button>
+        <button class="tab" type="button" role="tab" id="tab-text" aria-controls="text" aria-selected="false" tabindex="-1">Тексты</button>
+      </div>
+      <div class="panel" id="scripts" role="tabpanel" aria-labelledby="tab-scripts" tabindex="0"><h3>Скрипты продаж с ИИ</h3><p>Анализируйте звонки по скрипту и разбирайте с командой, какие этапы разговора можно улучшить.</p></div>
+      <div class="panel" id="calls" role="tabpanel" aria-labelledby="tab-calls" tabindex="0" hidden><h3>Расшифровка разговоров</h3><p>Возвращайтесь к деталям разговора по текстовой расшифровке и краткому итогу звонка.</p></div>
+      <div class="panel" id="deals" role="tabpanel" aria-labelledby="tab-deals" tabindex="0" hidden><h3>Заполнение карточек</h3><p>Используйте сведения из звонка для заполнения полей. Проверьте данные перед сохранением.</p></div>
+      <div class="panel" id="text" role="tabpanel" aria-labelledby="tab-text" tabindex="0" hidden><h3>Черновики для переписки</h3><p>Подготовьте первый вариант письма или сообщения и отредактируйте его перед отправкой клиенту.</p></div>
+    </div>
+  </section>
+  <section class="section" id="features">
+    <div class="wrap">
+      <h2>Всё для работы отдела продаж</h2>
+      <div class="features">
+        <article class="feature"><h3>Заявки из разных каналов</h3><p>Собирайте обращения с сайта, из мессенджеров и соцсетей в CRM.</p></article>
+        <article class="feature"><h3>Единая база клиентов</h3><p>Храните контакты, историю общения, задачи и сделки в карточке клиента.</p></article>
+        <article class="feature"><h3>Совместная работа</h3><p>Назначайте ответственных, обсуждайте сделки и фиксируйте договорённости внутри команды.</p></article>
+        <article class="feature"><h3>Автоматизация и документы</h3><p>Настраивайте действия по этапам сделки и готовьте документы по шаблонам.</p></article>
+        <article class="feature"><h3>Воронка продаж</h3><p>Следите за сроками и суммами сделок и замечайте, на каких этапах они задерживаются.</p></article>
+        <article class="feature"><h3>Аналитика</h3><p>Смотрите результаты менеджеров и сравнивайте вклад каналов в продажи.</p></article>
+        <article class="feature"><h3>Интеграции</h3><p>Подключайте телефонию, почту и другие сервисы, которыми пользуется команда.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section mobile" id="mobile">
+    <div class="wrap split">
+      <div><h2>Мобильная CRM</h2><p>Открывайте сделки и контакты с телефона, отвечайте клиентам и обновляйте статус сделки сразу после встречи.</p><a class="cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно</a></div>
+      <div class="phone"><h3>Сделки</h3><div class="card">Обновление оборудования<small>В работе · 110 000 ₽</small></div><div class="card">Договор на обслуживание<small>К оплате · 45 000 ₽</small></div><div class="card">Встреча с клиентом<small>Сегодня · 15:30</small></div></div>
+    </div>
+  </section>
+  <section class="section security" id="security">
+    <div class="wrap">
+      <h2>Безопасность CRM</h2>
+      <div class="features">
+        <article class="feature"><h3>Права доступа</h3><p>Управляйте доступом сотрудников к клиентским данным и сделкам.</p></article>
+        <article class="feature"><h3>Защита входа</h3><p>Подключайте двухфакторную аутентификацию для учётных записей.</p></article>
+        <article class="feature"><h3>Защищённое соединение</h3><p>Работа с облачной CRM через зашифрованное подключение HTTPS.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function selectTab(active) {
+  for (const tab of tabs) {
+    const selected = tab === active;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+  }
+}
+for (const [index, tab] of tabs.entries()) {
+  tab.addEventListener('click', () => selectTab(tab));
+  tab.addEventListener('keydown', event => {
+    const targets = {
+      ArrowLeft: (index + tabs.length - 1) % tabs.length,
+      ArrowRight: (index + 1) % tabs.length,
+      Home: 0,
+      End: tabs.length - 1
+    };
+    if (!Object.hasOwn(targets, event.key)) return;
+    event.preventDefault();
+    const target = tabs[targets[event.key]];
+    selectTab(target);
+    target.focus();
+  });
+}
+</script>
+</body>
+</html>
