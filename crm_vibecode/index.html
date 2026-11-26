@@ -1,82 +1,337 @@
 <style>
 .crm-vibecode-block {
-  --ink:#16191c;
-  --nav:#f6fbff;
-  --lime:#ccff13;
-  --blue:#1481dd;
-  --violet:#824cf2;
-  --mobile:#f6fbff;
-  --design-width:1536px;
-  --header-height:88px;
+  --crm-ink: #16191c;
+  --crm-header-offset: 104px;
+  color: var(--crm-ink);
+  background: #fff;
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  overflow-x: clip;
+  -webkit-user-select: text;
+  user-select: text;
 }
-.crm-vibecode-block * { box-sizing:border-box }
-.crm-vibecode-block { margin:0; background:white; color:var(--ink); font-family:Arial,"Helvetica Neue",sans-serif; overflow-x:clip }
-.crm-vibecode-block h1, .crm-vibecode-block h2, .crm-vibecode-block h3, .crm-vibecode-block p { margin-top:0 }
-.crm-vibecode-block h1, .crm-vibecode-block h2, .crm-vibecode-block h3 { line-height:1.08 }
-.crm-vibecode-block p, .crm-vibecode-block li { line-height:1.55 }
-.crm-vibecode-block a { color:inherit }
-.crm-vibecode-block button { font:inherit; color:inherit }
-.crm-vibecode-block button, .crm-vibecode-block [role="tab"] { cursor:pointer }
-.crm-vibecode-block img { max-width:100%; display:block }
-.crm-vibecode-block em { font-style:normal; color:var(--violet) }
-.crm-vibecode-block :focus-visible { outline:3px solid #066ee9; outline-offset:4px }
-.crm-vibecode-block .sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
-.crm-vibecode-block .site-header { position:sticky; top:0; z-index:5; background:var(--nav) }
-.crm-vibecode-block .shot { position:relative; width:min(100%,var(--design-width)); margin-inline:auto }
-.crm-vibecode-block .shot-image { width:100%; height:auto }
-.crm-vibecode-block .hero-shot, .crm-vibecode-block .mobile-shot { isolation:isolate }
-.crm-vibecode-block .edge { position:absolute; top:0; width:max(0px,calc((100vw - var(--design-width))/2 + 1px)); height:100%; object-fit:fill; z-index:-1; max-width:none }
-.crm-vibecode-block .edge-left { right:calc(100% - 1px) }
-.crm-vibecode-block .edge-right { left:calc(100% - 1px) }
-.crm-vibecode-block .mobile { background:var(--mobile) }
-.crm-vibecode-block .spot { position:absolute; display:block; color:transparent; background:transparent; border:0; padding:0; border-radius:1.5em; text-decoration:none }
-.crm-vibecode-block .spot:focus-visible { outline-color:white; box-shadow:0 0 0 6px #126cdf }
-.crm-vibecode-block .header-shot .spot:focus-visible, .crm-vibecode-block .features-shot .spot:focus-visible, .crm-vibecode-block .security-shot .spot:focus-visible { outline-color:#0c69d7; box-shadow:none }
-.crm-vibecode-block .header-shot .spot:hover { background:#2065cc0a }
-.crm-vibecode-block .hero-shot .spot:hover, .crm-vibecode-block .migration-shot .spot:hover, .crm-vibecode-block .mobile-shot .spot:hover { background:#dcff6a24 }
-.crm-vibecode-block .flow-actions { display:none }
-@media(min-width:760px) {
-  .crm-vibecode-block .flow { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
-  .crm-vibecode-block .flow img { display:none }
+
+.crm-vibecode-block, .crm-vibecode-block :where(*, *::before, *::after) {
+  box-sizing: border-box;
 }
-@media(max-width:759px) {
-  .crm-vibecode-block { --header-height:108px }
-  .crm-vibecode-block .desktop { display:none !important }
-  .crm-vibecode-block .flow-actions { display:block }
-  .crm-vibecode-block .inner { width:min(100% - 36px,620px); margin-inline:auto; padding:46px 0 }
-  .crm-vibecode-block .mobile-header { width:100%; padding:10px 16px }
-  .crm-vibecode-block .header-row { display:flex; align-items:center; justify-content:space-between; gap:12px }
-  .crm-vibecode-block .brand { width:min(36vw,154px); height:auto }
-  .crm-vibecode-block .mobile-nav { margin-top:12px; display:flex; gap:7px 14px; flex-wrap:wrap }
-  .crm-vibecode-block .mobile-nav a { font-size:.72rem; font-weight:750; text-decoration:none }
-  .crm-vibecode-block .button { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; background:var(--lime); padding:.84em 1.45em; color:#141700; font-size:.88rem; font-weight:800; text-align:center; text-decoration:none }
-  .crm-vibecode-block .button:hover { background:#aff000 }
-  .crm-vibecode-block .header-row .button { font-size:.72rem }
-  .crm-vibecode-block h1 { font-size:clamp(2.1rem,7vw,3.35rem); letter-spacing:-.03em; margin-bottom:20px }
-  .crm-vibecode-block h2 { font-size:clamp(1.8rem,6vw,2.8rem); letter-spacing:-.025em; margin-bottom:20px }
-  .crm-vibecode-block h3 { font-size:1.43rem; margin-bottom:12px }
-  .crm-vibecode-block .hero { background:radial-gradient(ellipse at 0% 40%,#2871de,transparent 60%),linear-gradient(125deg,#2a7fe8,#743dec 55%,#bc338d); color:white; text-align:center }
-  .crm-vibecode-block .hero em { color:var(--lime) }
-  .crm-vibecode-block .hero .lead { max-width:36ch; margin:0 auto 24px; font-size:1.14rem; font-weight:550 }
-  .crm-vibecode-block .pills, .crm-vibecode-block .benefits { padding:0; list-style:none }
-  .crm-vibecode-block .pills { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:0 0 24px }
-  .crm-vibecode-block .pills li { border:1px solid var(--lime); background:#ffffff26; border-radius:999px; padding:4px 10px; font-size:.88rem }
-  .crm-vibecode-block .pills li::before { content:"✓"; background:#10bd23; border-radius:50%; padding:0 3px; margin-right:5px }
-  .crm-vibecode-block .hero-visual { margin:24px auto }
-  .crm-vibecode-block .hero-visual img { border-radius:12px; mix-blend-mode:normal }
-  .crm-vibecode-block .benefits { display:grid; grid-template-columns:1fr 1fr; gap:12px; border:1px solid #ffffff55; border-radius:18px; background:#ffffff22; padding:17px; margin:0 0 22px; font-weight:700; font-size:.9rem }
-  .crm-vibecode-block .split { display:grid; gap:20px; align-items:center }
-  .crm-vibecode-block .visual { width:100%; height:auto; border-radius:15px }
-  .crm-vibecode-block .features h2, .crm-vibecode-block .mobile h2, .crm-vibecode-block .security h2 { text-align:center }
-  .crm-vibecode-block .feature-row { margin-top:40px }
-  .crm-vibecode-block .icon { width:48px; height:48px; object-fit:contain; margin:0 0 10px }
-  .crm-vibecode-block .mobile > .inner > p, .crm-vibecode-block .security > .inner > p { text-align:center }
-  .crm-vibecode-block .mobile .flow-actions { margin-top:23px; text-align:center }
-  .crm-vibecode-block .security-links { display:flex; flex-wrap:wrap; justify-content:center; gap:21px 12px }
-  .crm-vibecode-block .security-links a { display:grid; justify-items:center; align-content:start; gap:3px; color:var(--blue); flex:0 1 130px; font-size:.86rem; text-align:center }
+
+.crm-vibecode-block :where(h1, h2, h3, p, figure) { margin: 0; }
+.crm-vibecode-block :where(img) { display: block; max-width: 100%; height: auto; }
+.crm-vibecode-block :where([id]) { scroll-margin-top: var(--crm-header-offset); }
+.crm-vibecode-block :where(a):focus-visible { outline: 2px solid #075bea; outline-offset: 4px; }
+
+.crm-vibecode-block .crm-lead-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #f4f9fb;
+  container: crm-lead-header / inline-size;
 }
-@media(min-width:760px) and (max-width:1535px) { .crm-vibecode-block { --header-height:5.7291667vw } }
-.crm-vibecode-block [id] { scroll-margin-top:calc(var(--header-height) + 10px) }
+
+.crm-vibecode-block .crm-lead-header__row {
+  width: min(100% - 48px, 1350px);
+  min-height: 80px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo navigation register";
+  gap: clamp(14px, 3vw, 48px);
+  align-items: center;
+}
+
+.crm-vibecode-block .crm-lead-header__brand { grid-area: logo; }
+.crm-vibecode-block .crm-lead-header__brand img {
+  display: block;
+  width: clamp(140px, 12.5vw, 196px);
+  height: auto;
+  mix-blend-mode: darken;
+}
+
+.crm-vibecode-block .crm-lead-header__nav {
+  grid-area: navigation;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px clamp(12px, 2.5vw, 38px);
+}
+
+.crm-vibecode-block .crm-lead-header__nav a {
+  color: #16232f;
+  font-size: clamp(11px, 1.04vw, 14px);
+  line-height: 1.25;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.crm-vibecode-block .crm-lead-header__nav a:hover { color: #075bea; }
+.crm-vibecode-block .crm-lead-header__nav strong {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: linear-gradient(95deg, #623cef, #af2ce4);
+  color: #fff;
+}
+
+.crm-vibecode-block a.crm-lead-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: .76em clamp(20px, 3.4vw, 48px);
+  border-radius: 999px;
+  background: #cbfb00;
+  color: #171c00;
+  font-size: clamp(13px, 1.17vw, 17px);
+  line-height: 1.25;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.crm-vibecode-block a.crm-lead-button:hover { background: #baed00; }
+.crm-vibecode-block a.crm-lead-header__cta {
+  grid-area: register;
+  min-height: 42px;
+  padding-inline: clamp(12px, 2.1vw, 29px);
+  font-size: clamp(11px, 1.05vw, 14px);
+  box-shadow: 0 7px 19px #a0cc0036;
+  white-space: nowrap;
+}
+
+.crm-vibecode-block .crm-lead-hero {
+  padding: clamp(46px, 5.1vw, 80px) 0 clamp(49px, 5.2vw, 80px);
+  background: radial-gradient(ellipse at 12% 13%, #2874e9 0, transparent 58%),
+    radial-gradient(ellipse at 91% 77%, #b72e8d 0, transparent 58%),
+    linear-gradient(125deg, #2861d0 5%, #7034d5 53%, #a6309c 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.crm-vibecode-block .crm-lead-hero__inner { width: min(100% - 44px, 1120px); margin-inline: auto; }
+.crm-vibecode-block .crm-lead-hero h1 {
+  margin: 0 0 clamp(16px, 2.15vw, 34px);
+  color: #fff;
+  font-size: clamp(32px, 3.55vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-lead-hero__intro {
+  max-width: min(100%, 760px);
+  margin: 0 auto clamp(24px, 2.9vw, 42px);
+  font-size: clamp(16px, 1.75vw, 23px);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.crm-vibecode-block .crm-lead-hero em { color: #dafa31; font-style: normal; }
+.crm-vibecode-block .crm-lead-hero__pills,
+.crm-vibecode-block .crm-lead-hero__benefits { padding: 0; list-style: none; }
+
+.crm-vibecode-block .crm-lead-hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px clamp(8px, 1.4vw, 18px);
+  max-width: 1060px;
+  margin: 0 auto clamp(26px, 2.85vw, 42px);
+}
+
+.crm-vibecode-block .crm-lead-hero__pills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: .57em clamp(11px, 2.1vw, 30px);
+  border: 1px solid #d6f844;
+  border-radius: 999px;
+  background: linear-gradient(160deg, #ffffff3b, #ffffff15);
+  color: #fff;
+  font-size: clamp(13px, 1.52vw, 19px);
+  line-height: 1.25;
+  text-align: left;
+}
+
+.crm-vibecode-block .crm-lead-hero__pills li::before {
+  content: '✓';
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: #11851f;
+  color: #fff;
+  font-size: .86em;
+  font-weight: 800;
+}
+
+.crm-vibecode-block .crm-lead-hero .crm-lead-button { box-shadow: 0 10px 26px #bada0040; }
+.crm-vibecode-block .crm-lead-hero__visual {
+  position: relative;
+  width: min(100%, 980px);
+  margin: clamp(24px, 2.4vw, 35px) auto clamp(26px, 3.25vw, 48px);
+}
+
+.crm-vibecode-block .crm-lead-hero__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(10px, 1.8vw, 24px);
+  mask-image: linear-gradient(to right, transparent, #000 1.25% 98.75%, transparent),
+    linear-gradient(to bottom, transparent, #000 1.25% 98.75%, transparent);
+  mask-composite: intersect;
+}
+
+.crm-vibecode-block a.crm-lead-hero__badge {
+  position: absolute;
+  top: 51.8%;
+  right: 1.4%;
+  display: grid;
+  place-content: center;
+  width: 17.6%;
+  min-width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #62d7ff, #0886d5 68%);
+  color: #fff;
+  text-decoration: none;
+  font-size: clamp(8px, 1.55vw, 24px);
+  line-height: 1.08;
+  font-weight: 800;
+  text-shadow: 0 1px 2px #0052859e;
+}
+
+.crm-vibecode-block a.crm-lead-hero__badge:hover { background: linear-gradient(145deg, #55c8fc, #0272bd 68%); }
+.crm-vibecode-block .crm-lead-hero__benefits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 24px);
+  max-width: 942px;
+  margin: 0 auto clamp(28px, 3.2vw, 46px);
+  padding: clamp(17px, 2.4vw, 33px);
+  border: 1px solid #ffffff60;
+  border-radius: clamp(18px, 3vw, 35px);
+  background: #ffffff22;
+}
+
+.crm-vibecode-block .crm-lead-hero__benefits li {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: auto 1fr;
+  gap: 11px;
+  font-size: clamp(13px, 1.5vw, 18px);
+  line-height: 1.25;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon {
+  position: relative;
+  display: block;
+  width: 29px;
+  height: 29px;
+  color: #d9ff37;
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon--world {
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon--world::before,
+.crm-vibecode-block .crm-lead-benefit-icon--world::after {
+  position: absolute;
+  content: '';
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon--world::before { inset: 0 6px; border: 2px solid currentColor; border-radius: 50%; }
+.crm-vibecode-block .crm-lead-benefit-icon--world::after { inset: 8px 0; border-block: 2px solid currentColor; }
+.crm-vibecode-block .crm-lead-benefit-icon--integration::before,
+.crm-vibecode-block .crm-lead-benefit-icon--integration::after {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  content: '';
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon--integration::before { right: 0; top: 1px; }
+.crm-vibecode-block .crm-lead-benefit-icon--integration::after { left: 0; bottom: 1px; }
+.crm-vibecode-block .crm-lead-benefit-icon--settings {
+  background: radial-gradient(circle at 6px 7px, currentColor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 20px 14px, currentColor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 12px 21px, currentColor 0 3px, transparent 3.5px),
+    repeating-linear-gradient(to bottom, transparent 0 6px, currentColor 6px 8px, transparent 8px 13px) center / 100% 24px no-repeat;
+}
+
+.crm-vibecode-block .crm-lead-benefit-icon--products {
+  background: currentColor;
+  clip-path: polygon(50% 2%, 95% 26%, 95% 74%, 50% 98%, 5% 74%, 5% 26%, 50% 2%,
+    50% 12%, 14% 31%, 50% 50%, 86% 31%, 50% 12%, 50% 2%, 95% 26%, 86% 37%, 54% 55%,
+    54% 87%, 86% 70%, 86% 37%, 95% 26%, 95% 74%, 50% 98%, 45% 87%, 45% 55%, 14% 37%,
+    14% 70%, 45% 87%, 50% 98%);
+}
+
+.crm-vibecode-block .crm-lead-migration {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(22px, 3.2vw, 46px);
+  width: min(100% - 44px, 1110px);
+  margin-inline: auto;
+  padding-top: clamp(45px, 5.1vw, 74px);
+}
+
+.crm-vibecode-block .crm-lead-migration__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(18px, 2.9vw, 34px);
+}
+
+.crm-vibecode-block .crm-lead-migration h2 {
+  margin: 0 0 clamp(16px, 2.2vw, 28px);
+  color: #16191c;
+  font-size: clamp(27px, 3.15vw, 43px);
+  line-height: 1.13;
+  letter-spacing: -.026em;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-lead-migration p {
+  margin: 0 0 clamp(21px, 2.3vw, 30px);
+  color: #262e36;
+  font-size: clamp(16px, 1.68vw, 22px);
+  line-height: 1.5;
+}
+
+@container crm-lead-header (max-width: 1000px) {
+  .crm-vibecode-block .crm-lead-header__row {
+    width: min(100% - 30px, 760px);
+    min-height: 0;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'logo register' 'navigation navigation';
+    gap: 9px 12px;
+    padding: 9px 0 12px;
+  }
+  .crm-vibecode-block .crm-lead-header__nav { justify-content: flex-start; gap: 7px 14px; }
+}
+
+@media (max-width: 759px) {
+  .crm-vibecode-block .crm-lead-header__brand img { width: min(34vw, 154px); }
+  .crm-vibecode-block a.crm-lead-header__cta { min-height: 37px; }
+  .crm-vibecode-block .crm-lead-hero__inner,
+  .crm-vibecode-block .crm-lead-migration { width: min(100% - 32px, 620px); }
+  .crm-vibecode-block .crm-lead-hero__intro { max-width: 36ch; }
+  .crm-vibecode-block .crm-lead-hero__benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .crm-vibecode-block .crm-lead-migration { grid-template-columns: minmax(0, 1fr); }
+}
 
 .crm-ai {
   --crm-ai-ink: #142641;
@@ -238,38 +493,244 @@
 @media (prefers-reduced-motion: reduce) {
   .crm-ai .crm-ai__tabs label { transition: none; }
 }
-</style>
-<div id="crm-vibecode-top" class="crm-vibecode-block" lang="ru">
-<!-- Десктопные изображения встроены из PDF. Текстовая разметка используется на узких экранах и доступна вспомогательным технологиям. -->
 
-<header class="site-header">
-  <nav aria-label="Навигация" class="desktop"><div class="shot header-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/header-desktop-8d634ac4.webp" alt="" width="1920" height="110" loading="eager" decoding="async"><a class="spot" href="#crm-vibecode-top" style="left:5.937500%;top:18.181818%;width:12.812500%;height:56.363636%"><span class="sr">Битрикс24</span></a><a class="spot" href="#features" style="left:28.593750%;top:31.818182%;width:7.604167%;height:36.363636%"><span class="sr">ВОЗМОЖНОСТИ</span></a><a class="spot" href="#ai" style="left:39.583333%;top:31.818182%;width:4.322917%;height:36.363636%"><span class="sr">AI В CRM</span></a><a class="spot" href="#mobile" style="left:47.239583%;top:31.818182%;width:8.697917%;height:36.363636%"><span class="sr">МОБИЛЬНАЯ CRM</span></a><a class="spot" href="#security" style="left:59.270833%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">БЕЗОПАСНОСТЬ</span></a><a class="spot" href="https://www.bitrix24.ru/prices/" style="left:70.468750%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">СКИДКИ −20%</span></a><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:80.989583%;top:18.181818%;width:12.864583%;height:63.636364%"><span class="sr">СОЗДАТЬ БЕСПЛАТНО</span></a></div></nav>
-  <div class="flow mobile-header">
-    <div class="header-row"><a href="#crm-vibecode-top" aria-label="Битрикс24"><img class="brand" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/logo-d7967da8.webp" alt="" width="245" height="42" loading="eager" decoding="async"></a><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">СОЗДАТЬ БЕСПЛАТНО</a></div>
-    <nav class="mobile-nav" aria-label="Навигация"><a class="" href="#features">ВОЗМОЖНОСТИ</a><a class="" href="#ai">AI В CRM</a><a class="" href="#mobile">МОБИЛЬНАЯ CRM</a><a class="" href="#security">БЕЗОПАСНОСТЬ</a><a class="" href="https://www.bitrix24.ru/prices/">СКИДКИ −20%</a></nav>
+.crm-vibecode-block .crm-detail {
+  --crm-detail-ink: #16191c;
+  --crm-detail-copy: #343c48;
+  --crm-detail-blue: #075bea;
+  color: var(--crm-detail-ink);
+}
+
+.crm-vibecode-block .crm-detail__wrap {
+  width: min(100% - 48px, 1224px);
+  margin-inline: auto;
+}
+
+.crm-vibecode-block .crm-detail__title {
+  max-width: 27ch;
+  margin: 0 auto clamp(28px, 4vw, 60px);
+  color: var(--crm-detail-ink);
+  font-size: clamp(1.9rem, 3.5vw, 3.25rem);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-detail--features {
+  padding: clamp(36px, 5vw, 76px) 0 clamp(56px, 8vw, 112px);
+}
+
+.crm-vibecode-block .crm-detail__rows {
+  display: grid;
+  gap: clamp(42px, 6.2vw, 92px);
+}
+
+.crm-vibecode-block .crm-detail__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: 'copy art';
+  align-items: start;
+  gap: clamp(24px, 4vw, 68px);
+}
+
+.crm-vibecode-block .crm-detail__row--reverse { grid-template-areas: 'art copy'; }
+
+.crm-vibecode-block .crm-detail__copy {
+  grid-area: copy;
+  min-width: 0;
+  color: var(--crm-detail-copy);
+  font-size: clamp(1rem, 1.23vw, 1.125rem);
+  line-height: 1.55;
+}
+
+.crm-vibecode-block .crm-detail__copy h3 {
+  max-width: 28ch;
+  margin: 0 0 12px;
+  color: var(--crm-detail-ink);
+  font-size: clamp(1.35rem, 2.05vw, 2rem);
+  font-weight: 750;
+  line-height: 1.16;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-detail__copy p,
+.crm-vibecode-block .crm-detail__copy ul { margin: 0 0 12px; }
+
+.crm-vibecode-block .crm-detail__copy ul { padding-inline-start: 1.25em; }
+
+.crm-vibecode-block .crm-detail__copy p:last-child,
+.crm-vibecode-block .crm-detail__copy ul:last-child { margin-bottom: 0; }
+
+.crm-vibecode-block .crm-detail__icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 0 16px;
+  object-fit: contain;
+}
+
+.crm-vibecode-block .crm-detail__art {
+  display: block;
+  grid-area: art;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(16px, 2.5vw, 30px);
+}
+
+.crm-vibecode-block .crm-detail__mobile-stage {
+  padding: clamp(36px, 6vw, 80px) 0 clamp(24px, 3vw, 40px);
+  border-radius: clamp(20px, 3vw, 48px) clamp(20px, 3vw, 48px) 0 0;
+  background: #f4fafc;
+}
+
+.crm-vibecode-block .crm-detail--mobile .crm-detail__title {
+  max-width: 20ch;
+  margin-bottom: 12px;
+}
+
+.crm-vibecode-block .crm-detail__lead {
+  max-width: 65ch;
+  margin: 0 auto clamp(24px, 4vw, 52px);
+  color: var(--crm-detail-copy);
+  font-size: clamp(1rem, 1.65vw, 1.3rem);
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.crm-vibecode-block .crm-detail__lead span { color: var(--crm-detail-blue); }
+
+.crm-vibecode-block .crm-detail__mobile-items {
+  display: grid;
+  gap: clamp(24px, 3vw, 42px);
+  align-self: center;
+}
+
+.crm-vibecode-block .crm-detail__mobile-items strong { color: var(--crm-detail-ink); }
+
+.crm-vibecode-block .crm-detail__action {
+  margin: clamp(24px, 3vw, 42px) auto 0;
+  padding-inline: 14px;
+  text-align: center;
+}
+
+.crm-vibecode-block .crm-detail__cta {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px clamp(22px, 3.5vw, 48px);
+  border-radius: 999px;
+  background: var(--lime, #ccff13);
+  color: #16191c;
+  font-size: clamp(.875rem, 1.25vw, 1.0625rem);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.crm-vibecode-block .crm-detail__cta:hover { background: #b8ee00; }
+
+.crm-vibecode-block .crm-detail--security { padding: clamp(48px, 7vw, 96px) 0; }
+.crm-vibecode-block .crm-detail--security .crm-detail__title { margin-bottom: 14px; }
+
+.crm-vibecode-block .crm-detail__security-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(16px, 2.7vw, 38px) clamp(12px, 2.4vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crm-vibecode-block .crm-detail__security-links li { flex: 0 1 156px; }
+
+.crm-vibecode-block .crm-detail__security-links a {
+  display: grid;
+  min-height: 48px;
+  justify-items: center;
+  align-content: start;
+  gap: 9px;
+  color: var(--crm-detail-blue);
+  font-size: clamp(.875rem, 1.22vw, 1.0625rem);
+  font-weight: 650;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.crm-vibecode-block .crm-detail__security-links a:hover { text-decoration: underline; }
+.crm-vibecode-block .crm-detail__security-links .crm-detail__icon { margin: 0; }
+
+@media (max-width: 760px) {
+  .crm-vibecode-block .crm-detail__wrap { width: min(100% - 32px, 620px); }
+  .crm-vibecode-block .crm-detail__row {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'copy' 'art';
+  }
+  .crm-vibecode-block .crm-detail__icon { width: 36px; height: 36px; margin-bottom: 12px; }
+  .crm-vibecode-block .crm-detail__security-links li { flex-basis: min(42%, 146px); }
+}
+</style>
+
+<div id="crm-vibecode-top" class="crm-vibecode-block" lang="ru">
+
+<header class="crm-lead-header">
+  <div class="crm-lead-header__row">
+    <a class="crm-lead-header__brand" href="#crm-vibecode-top" aria-label="Битрикс24 — начало страницы">
+      <img src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/logo-d7967da8.webp" alt="Битрикс24" width="245" height="42" decoding="async">
+    </a>
+    <nav class="crm-lead-header__nav" aria-label="Навигация">
+      <a href="#features">Возможности</a>
+      <a href="#ai">AI в CRM</a>
+      <a href="#mobile">Мобильная CRM</a>
+      <a href="#security">Безопасность</a>
+      <a href="https://www.bitrix24.ru/prices/">Скидки <strong>−20%</strong></a>
+    </nav>
+    <a class="crm-lead-button crm-lead-header__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Создать бесплатно</a>
   </div>
 </header>
+
 <div class="crm-vibecode-content">
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="flow inner hero-copy">
+<section class="crm-lead-hero" aria-labelledby="hero-title">
+  <div class="crm-lead-hero__inner">
     <h1 id="hero-title">Бесплатная онлайн CRM</h1>
-    <p class="lead">Управляйте клиентами, автоматизируйте работу менеджеров и увеличивайте продажи с <em>CRM-системой №1</em> в России</p>
-    <ul class="pills"><li>База клиентов</li><li>Лиды и сделки</li><li>Воронка продаж</li><li>Мессенджеры и соцсети</li><li>Сквозная аналитика</li><li>Задачи и проекты</li><li>Автоматизация продаж</li></ul>
-    <div class="flow-actions"><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">ПОЛУЧИТЬ БЕСПЛАТНО</a></div>
-    <a class="flow-actions hero-visual" href="#mobile" aria-label="Удобная мобильная CRM"><img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/hero-mobile-978684ae.webp" alt="" width="1268" height="592" loading="eager" decoding="async"></a>
-    <ul class="benefits"><li>15 млн+ компаний доверяют Битрикс24</li><li>5 000+ готовых интеграций</li><li>50+ бесплатных CRM-инструментов</li><li>5 ключевых сервисов для бизнеса</li></ul>
-    <div class="flow-actions"><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">ПОЛУЧИТЬ БЕСПЛАТНО</a></div>
+    <p class="crm-lead-hero__intro">Управляйте клиентами, автоматизируйте работу менеджеров и увеличивайте продажи с <em>CRM-системой №1</em> в России</p>
+    <ul class="crm-lead-hero__pills">
+      <li>База клиентов</li>
+      <li>Лиды и сделки</li>
+      <li>Воронка продаж</li>
+      <li>Мессенджеры и соцсети</li>
+      <li>Сквозная аналитика</li>
+      <li>Задачи и проекты</li>
+      <li>Автоматизация продаж</li>
+    </ul>
+    <a class="crm-lead-button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно</a>
+    <div class="crm-lead-hero__visual">
+      <img src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/hero-mobile-978684ae.webp" alt="CRM Битрикс24 на ноутбуке и смартфоне" width="1268" height="592" fetchpriority="high" decoding="async">
+      <a class="crm-lead-hero__badge" href="#mobile"><span>Удобная<br>мобильная<br>CRM</span></a>
+    </div>
+    <ul class="crm-lead-hero__benefits">
+      <li><span class="crm-lead-benefit-icon crm-lead-benefit-icon--world" aria-hidden="true"></span>15 млн+ компаний доверяют Битрикс24</li>
+      <li><span class="crm-lead-benefit-icon crm-lead-benefit-icon--integration" aria-hidden="true"></span>5 000+ готовых интеграций</li>
+      <li><span class="crm-lead-benefit-icon crm-lead-benefit-icon--settings" aria-hidden="true"></span>50+ бесплатных CRM-инструментов</li>
+      <li><span class="crm-lead-benefit-icon crm-lead-benefit-icon--products" aria-hidden="true"></span>5 ключевых сервисов для бизнеса</li>
+    </ul>
+    <a class="crm-lead-button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">Получить бесплатно</a>
   </div>
-  <div class="shot hero-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/hero-desktop-054bc6bb.webp" alt="" width="1920" height="1650" loading="eager" decoding="async"><img class="edge edge-left" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/hero-left-aa7ef44a.webp" alt="" width="8" height="1650" loading="eager" decoding="async"><img class="edge edge-right" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/hero-right-64d1c358.webp" alt="" width="8" height="1650" loading="eager" decoding="async"><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:40.208333%;top:30.060606%;width:19.583333%;height:4.545455%"><span class="sr">ПОЛУЧИТЬ БЕСПЛАТНО</span></a><a class="spot" href="#mobile" style="left:70.000000%;top:54.909091%;width:11.562500%;height:13.151515%"><span class="sr">Удобная мобильная CRM</span></a><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:40.208333%;top:90.181818%;width:19.583333%;height:4.848485%"><span class="sr">ПОЛУЧИТЬ БЕСПЛАТНО</span></a></div>
 </section>
 
-<section class="migration" aria-labelledby="migration-title">
-  <div class="flow inner split">
-    <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/migration-mobile-88d87d53.webp" alt="" width="681" height="500" loading="lazy" decoding="async">
-    <div><h2 id="migration-title">Переход на Битрикс24 — это просто</h2><p>Перенесём данные из Excel или другой CRM и настроим Битрикс24 под ваши процессы. Без потерь данных и с минимальным участием вашей команды.</p><div class="flow-actions"><a class="button" href="https://b24-m3i20s.bitrix24.site/crm_form_0uivd/">ОСТАВИТЬ ЗАЯВКУ</a></div></div>
+<section class="crm-lead-migration" aria-labelledby="migration-title">
+  <img class="crm-lead-migration__image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/migration-mobile-88d87d53.webp" alt="Перенос данных из таблицы в CRM Битрикс24" width="681" height="500" loading="lazy" decoding="async">
+  <div class="crm-lead-migration__copy">
+    <h2 id="migration-title">Переход на Битрикс24 — это просто</h2>
+    <p>Перенесём данные из Excel или другой CRM и настроим Битрикс24 под ваши процессы. Без потерь данных и с минимальным участием вашей команды.</p>
+    <a class="crm-lead-button" href="https://b24-m3i20s.bitrix24.site/crm_form_0uivd/">Оставить заявку</a>
   </div>
-  <div class="shot migration-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/migration-desktop-abfdad00.webp" alt="" width="1920" height="705" loading="lazy" decoding="async"><a class="spot" href="https://b24-m3i20s.bitrix24.site/crm_form_0uivd/" style="left:52.604167%;top:47.092199%;width:16.510417%;height:10.212766%"><span class="sr">ОСТАВИТЬ ЗАЯВКУ</span></a></div>
 </section>
 
 <section id="ai" class="crm-ai" aria-labelledby="crm-ai-title">
@@ -318,70 +779,171 @@
   </fieldset>
 </section>
 
-<section class="features" id="features" aria-labelledby="features-title">
-  <div class="flow inner">
-    <h2 id="features-title">Битрикс24 CRM помогает продавать больше</h2>
-    <article class="split feature-row ">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/sales-icon-058cd460.webp" alt="" width="67" height="65" loading="lazy" decoding="async"><h3>Заявки из всех каналов сразу попадают в CRM</h3>
-        <p>CRM собирает обращения из всех каналов:</p><ul><li>сайт и формы</li><li>e-mail</li><li>телефон</li><li>мессенджеры и соцсети.</li></ul><p>Все заявки автоматически фиксируются в системе и распределяются между менеджерами.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/sales-mobile-58cc7651.webp" alt="" width="646" height="513" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row reverse">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/clients-icon-3c9e027f.webp" alt="" width="65" height="68" loading="lazy" decoding="async"><h3>Все клиенты — в одной системе</h3>
-        <p>История общения, сделки, задачи и документы — всё будет надежно храниться в CRM.</p><p>Вы всегда видите, кто работает с клиентом, на каком этапе сделка и что нужно сделать дальше.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/clients-mobile-4069fcab.webp" alt="" width="681" height="544" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row ">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/communication-icon-fbbc912d.webp" alt="" width="67" height="72" loading="lazy" decoding="async"><h3>Общайтесь с клиентами и ведите сделки в одном окне</h3>
-        <p>Вся история общения будет храниться в карточке клиента. Менеджерам не нужно переключаться между сервисами — вся работа с клиентом идет в CRM.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/communication-mobile-ae37980a.webp" alt="" width="685" height="539" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row reverse">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/payments-icon-0cd769f0.webp" alt="" width="65" height="67" loading="lazy" decoding="async"><h3>Принимайте оплату и оформляйте доставку из CRM</h3>
-        <p>Отправляйте клиентам ссылку на оплату прямо из CRM. Система помогает:</p><ul><li>выставлять счета</li><li>принимать онлайн-платежи</li><li>оформлять сделки</li><li>отслеживать оплату и доставку.</li></ul>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/payments-mobile-ca34977b.webp" alt="" width="681" height="538" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row ">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/analysis-icon-55e9dbf2.webp" alt="" width="70" height="72" loading="lazy" decoding="async"><h3>Контролируйте выполнение плана продаж</h3>
-        <p>CRM показывает движение сделок по воронке и выполнение плана. Вы видите:</p><ul><li>на каком этапе находится сделка;</li><li>где сделки замедляются или теряются;</li><li>какой объем выручки уже обеспечен;</li><li>где есть риски.</li></ul><p>CRM помогает вести сделку до результата — от первого обращения до оплаты.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/analysis-mobile-ca583a2e.webp" alt="" width="685" height="537" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row reverse">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/tools-icon-250d77ec.webp" alt="" width="79" height="72" loading="lazy" decoding="async"><h3>Аналитика помогает находить точки роста</h3>
-        <p>CRM превращает данные по клиентам и сделкам в понятные отчеты. Вы можете:</p><ul><li>анализировать эффективность менеджеров;</li><li>оценивать конверсию на этапах продаж;</li><li>прогнозировать выручку;</li><li>находить слабые места в процессе продаж.</li></ul><p>Отчеты помогают понять, где компания теряет клиентов и что можно улучшить.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/tools-mobile-1dbd6799.webp" alt="" width="681" height="532" loading="lazy" decoding="async">
-    </article>
-    <article class="split feature-row ">
-      <div><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/inventory-icon-a16b169d.webp" alt="" width="69" height="63" loading="lazy" decoding="async"><h3>5 000+ готовых интеграций</h3>
-        <p>В пару кликов подключите сервисы, которые вы используете, например:</p><ul><li>1С</li><li>телефонию</li><li>онлайн-банки</li><li>доставка</li><li>рассылки.</li></ul><p>Данные синхронизируются автоматически и обновляются в реальном времени.</p>
-      </div>
-      <img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/inventory-mobile-3c1009bd.webp" alt="" width="637" height="554" loading="lazy" decoding="async">
-    </article>
+<section id="features" aria-labelledby="features-title" class="crm-detail crm-detail--features">
+  <div class="crm-detail__wrap">
+    <h2 id="features-title" class="crm-detail__title">Битрикс24 CRM помогает продавать больше</h2>
+    <div class="crm-detail__rows">
+      <article class="crm-detail__row">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/sales-icon-058cd460.webp" alt="" width="67" height="65" loading="lazy" decoding="async">
+          <h3>Заявки из всех каналов сразу попадают в CRM</h3>
+          <p>CRM собирает обращения из всех каналов:</p>
+          <ul>
+            <li>сайт и формы</li>
+            <li>e-mail</li>
+            <li>телефон</li>
+            <li>мессенджеры и соцсети.</li>
+          </ul>
+          <p>Все заявки автоматически фиксируются в системе и распределяются между менеджерами.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/sales-mobile-58cc7651.webp" alt="" width="646" height="513" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row crm-detail__row--reverse">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/clients-icon-3c9e027f.webp" alt="" width="65" height="68" loading="lazy" decoding="async">
+          <h3>Все клиенты — в одной системе</h3>
+          <p>История общения, сделки, задачи и документы — всё будет надежно храниться в CRM.</p>
+          <p>Вы всегда видите, кто работает с клиентом, на каком этапе сделка и что нужно сделать дальше.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/clients-mobile-4069fcab.webp" alt="" width="681" height="544" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/communication-icon-fbbc912d.webp" alt="" width="67" height="72" loading="lazy" decoding="async">
+          <h3>Общайтесь с клиентами и ведите сделки в одном окне</h3>
+          <p>Вся история общения будет храниться в карточке клиента. Менеджерам не нужно переключаться между сервисами — вся работа с клиентом идет в CRM.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/communication-mobile-ae37980a.webp" alt="" width="685" height="539" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row crm-detail__row--reverse">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/payments-icon-0cd769f0.webp" alt="" width="65" height="67" loading="lazy" decoding="async">
+          <h3>Принимайте оплату и оформляйте доставку из CRM</h3>
+          <p>Отправляйте клиентам ссылку на оплату прямо из CRM. Система помогает:</p>
+          <ul>
+            <li>выставлять счета</li>
+            <li>принимать онлайн-платежи</li>
+            <li>оформлять сделки</li>
+            <li>отслеживать оплату и доставку.</li>
+          </ul>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/payments-mobile-ca34977b.webp" alt="" width="681" height="538" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/analysis-icon-55e9dbf2.webp" alt="" width="70" height="72" loading="lazy" decoding="async">
+          <h3>Контролируйте выполнение плана продаж</h3>
+          <p>CRM показывает движение сделок по воронке и выполнение плана. Вы видите:</p>
+          <ul>
+            <li>на каком этапе находится сделка;</li>
+            <li>где сделки замедляются или теряются;</li>
+            <li>какой объем выручки уже обеспечен;</li>
+            <li>где есть риски.</li>
+          </ul>
+          <p>CRM помогает вести сделку до результата — от первого обращения до оплаты.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/analysis-mobile-ca583a2e.webp" alt="" width="685" height="537" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row crm-detail__row--reverse">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/tools-icon-250d77ec.webp" alt="" width="79" height="72" loading="lazy" decoding="async">
+          <h3>Аналитика помогает находить точки роста</h3>
+          <p>CRM превращает данные по клиентам и сделкам в понятные отчеты. Вы можете:</p>
+          <ul>
+            <li>анализировать эффективность менеджеров;</li>
+            <li>оценивать конверсию на этапах продаж;</li>
+            <li>прогнозировать выручку;</li>
+            <li>находить слабые места в процессе продаж.</li>
+          </ul>
+          <p>Отчеты помогают понять, где компания теряет клиентов и что можно улучшить.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/tools-mobile-1dbd6799.webp" alt="" width="681" height="532" loading="lazy" decoding="async">
+      </article>
+      <article class="crm-detail__row">
+        <div class="crm-detail__copy">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/inventory-icon-a16b169d.webp" alt="" width="69" height="63" loading="lazy" decoding="async">
+          <h3>5 000+ готовых интеграций</h3>
+          <p>В пару кликов подключите сервисы, которые вы используете, например:</p>
+          <ul>
+            <li>1С</li>
+            <li>телефонию</li>
+            <li>онлайн-банки</li>
+            <li>доставка</li>
+            <li>рассылки.</li>
+          </ul>
+          <p>Данные синхронизируются автоматически и обновляются в реальном времени.</p>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/inventory-mobile-3c1009bd.webp" alt="" width="637" height="554" loading="lazy" decoding="async">
+      </article>
+    </div>
   </div>
-  <div class="shot features-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/features-desktop-e47a1abe.webp" alt="" width="1920" height="4850" loading="lazy" decoding="async"></div>
 </section>
 
-<section class="mobile" id="mobile" aria-labelledby="mobile-title">
-  <div class="flow inner">
-    <h2 id="mobile-title">Полноценная мобильная CRM</h2><p>в бесплатном мобильном приложении Битрикс24</p>
-    <div class="split"><div><article><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-icon-94600a60.webp" alt="" width="54" height="72" loading="lazy" decoding="async"><p><strong>Работайте где угодно.</strong> Общайтесь с командой, звоните по видеосвязи, демонстрируйте экран, обменивайтесь файлами и ставьте задачи — даже если вы не за компьютером.</p></article><article><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-notifications-icon-aae690cf.webp" alt="" width="70" height="70" loading="lazy" decoding="async"><p><strong>Все сохраняется в CRM.</strong> Вы можете начать работать на смартфоне, а потом продолжить через ноутбук. Или наоборот. Информация по заказам — всегда под рукой.</p></article></div><img class="visual" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-mobile-f0441c39.webp" alt="" width="685" height="537" loading="lazy" decoding="async"></div>
-    <div class="flow-actions"><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">ПОЛУЧИТЬ БЕСПЛАТНО</a></div>
+<section id="mobile" aria-labelledby="mobile-title" class="crm-detail crm-detail--mobile">
+  <div class="crm-detail__mobile-stage">
+    <div class="crm-detail__wrap">
+      <h2 id="mobile-title" class="crm-detail__title">Полноценная мобильная CRM</h2>
+      <p class="crm-detail__lead">в <span>бесплатном</span> мобильном приложении Битрикс24</p>
+      <div class="crm-detail__row">
+        <div class="crm-detail__copy crm-detail__mobile-items">
+          <article>
+            <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-icon-94600a60.webp" alt="" width="54" height="72" loading="lazy" decoding="async">
+            <p>
+              <strong>Работайте где угодно.</strong> Общайтесь с командой, звоните по видеосвязи, демонстрируйте экран, обменивайтесь файлами и ставьте задачи — даже если вы не за компьютером.</p>
+          </article>
+          <article>
+            <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-notifications-icon-aae690cf.webp" alt="" width="70" height="70" loading="lazy" decoding="async">
+            <p>
+              <strong>Все сохраняется в CRM.</strong> Вы можете начать работать на смартфоне, а потом продолжить через ноутбук. Или наоборот. Информация по заказам — всегда под рукой.</p>
+          </article>
+        </div>
+        <img class="crm-detail__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-mobile-f0441c39.webp" alt="" width="685" height="537" loading="lazy" decoding="async">
+      </div>
+    </div>
   </div>
-  <div class="shot mobile-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-desktop-2a0e4c09.webp" alt="" width="1920" height="1020" loading="lazy" decoding="async"><img class="edge edge-left" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-left-b239a76f.webp" alt="" width="8" height="1020" loading="lazy" decoding="async"><img class="edge edge-right" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/mobile-crm-right-d76c901f.webp" alt="" width="8" height="1020" loading="lazy" decoding="async"><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:38.281250%;top:88.137255%;width:23.437500%;height:8.725490%"><span class="sr">ПОЛУЧИТЬ БЕСПЛАТНО</span></a></div>
+  <div class="crm-detail__action">
+    <a class="crm-detail__cta" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">ПОЛУЧИТЬ БЕСПЛАТНО</a>
+  </div>
 </section>
 
-<section class="security" id="security" aria-labelledby="security-title">
-  <div class="flow inner">
-    <h2 id="security-title">Ваша CRM в безопасности</h2><p>В Битрикс24 предусмотрен комплекс мер, обеспечивающих защиту данных от несанкционированного доступа и других угроз</p>
-    <div class="flow-actions security-links"><a href="https://www.bitrix24.ru/security/"><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/cloud-icon-8f7ae0fe.webp" alt="" width="64" height="77" loading="lazy" decoding="async">Надёжность инфраструктуры</a><a href="https://www.bitrix24.ru/security/"><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/account-icon-779707a1.webp" alt="" width="65" height="77" loading="lazy" decoding="async">Защита данных</a><a href="https://www.bitrix24.ru/security/"><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/backup-icon-d0d9db3d.webp" alt="" width="70" height="77" loading="lazy" decoding="async">Безопасная разработка</a><a href="https://www.bitrix24.ru/security/"><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/encryption-icon-a071b4cf.webp" alt="" width="68" height="77" loading="lazy" decoding="async">Соответствие законодательству</a><a href="https://www.bitrix24.ru/security/"><img class="icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/certificate-icon-d0fb4547.webp" alt="" width="80" height="77" loading="lazy" decoding="async">Центр мониторинга</a></div>
+<section id="security" aria-labelledby="security-title" class="crm-detail crm-detail--security">
+  <div class="crm-detail__wrap">
+    <h2 id="security-title" class="crm-detail__title">Ваша CRM в безопасности</h2>
+    <p class="crm-detail__lead">В Битрикс24 предусмотрен комплекс мер, обеспечивающих защиту данных от несанкционированного доступа и других угроз</p>
+    <ul class="crm-detail__security-links">
+      <li>
+        <a href="https://www.bitrix24.ru/security/">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/cloud-icon-8f7ae0fe.webp" alt="" width="64" height="77" loading="lazy" decoding="async">
+          <span>Надёжность инфраструктуры</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bitrix24.ru/security/">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/account-icon-779707a1.webp" alt="" width="65" height="77" loading="lazy" decoding="async">
+          <span>Защита данных</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bitrix24.ru/security/">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/backup-icon-d0d9db3d.webp" alt="" width="70" height="77" loading="lazy" decoding="async">
+          <span>Безопасная разработка</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bitrix24.ru/security/">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/encryption-icon-a071b4cf.webp" alt="" width="68" height="77" loading="lazy" decoding="async">
+          <span>Соответствие законодательству</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bitrix24.ru/security/">
+          <img class="crm-detail__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/certificate-icon-d0fb4547.webp" alt="" width="80" height="77" loading="lazy" decoding="async">
+          <span>Центр мониторинга</span>
+        </a>
+      </li>
+    </ul>
   </div>
-  <div class="shot security-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-desktop-92738483.webp" alt="" width="1920" height="530" loading="lazy" decoding="async"><a class="spot" href="https://www.bitrix24.ru/security/" style="left:13.072917%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Надёжность инфраструктуры</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:28.802083%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Защита данных</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:44.531250%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Безопасная разработка</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:60.364583%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Соответствие законодательству</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:75.989583%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Центр мониторинга</span></a></div>
 </section>
+
 </div>
 </div>
