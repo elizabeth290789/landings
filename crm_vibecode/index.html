@@ -572,11 +572,15 @@
   margin: 0 0 15px;
 }
 
-.crm-vibecode-block .crm-ai-cards__card h3 {
-  margin: 0 0 9px;
+.crm-vibecode-block .crm-ai-cards__card h3,
+.crm-vibecode-block .crm-detail__security-links a {
   font-size: clamp(1.15rem, 1.65vw, 1.4rem);
   line-height: 1.2;
   letter-spacing: -.018em;
+}
+
+.crm-vibecode-block .crm-ai-cards__card h3 {
+  margin: 0 0 9px;
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
@@ -776,13 +780,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(16px, 2.7vw, 38px) clamp(12px, 2.4vw, 36px);
+  gap: clamp(16px, 2.7vw, 38px) clamp(12px, 2vw, 28px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.crm-vibecode-block .crm-detail__security-links li { flex: 0 1 156px; }
+.crm-vibecode-block .crm-detail__security-links li { flex: 0 1 clamp(156px, 15vw, 220px); }
 
 .crm-vibecode-block .crm-detail__security-links a {
   display: grid;
@@ -791,9 +795,7 @@
   align-content: start;
   gap: 9px;
   color: var(--crm-detail-blue);
-  font-size: clamp(.875rem, 1.22vw, 1.0625rem);
-  font-weight: 650;
-  line-height: 1.3;
+  font-weight: 750;
   text-align: center;
   text-decoration: none;
 }
@@ -812,6 +814,10 @@
   }
   .crm-vibecode-block .crm-detail__icon { width: 36px; height: 36px; margin-bottom: 12px; }
   .crm-vibecode-block .crm-detail__security-links li { flex-basis: min(42%, 146px); }
+}
+
+@media (max-width: 360px) {
+  .crm-vibecode-block .crm-detail__security-links li { flex-basis: 100%; }
 }
 
 .crm-vibecode-block .crm-research {
@@ -1183,31 +1189,31 @@
       <li>
         <a href="https://www.bitrix24.ru/security/">
           <img class="crm-detail__security-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-infrastructure-3d.webp" alt="" width="384" height="384" loading="lazy" decoding="async">
-          <span>Надёжность инфраструктуры</span>
+          <span>Надёжность <br>инфраструктуры</span>
         </a>
       </li>
       <li>
         <a href="https://www.bitrix24.ru/security/">
           <img class="crm-detail__security-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-data-protection-3d.webp" alt="" width="384" height="384" loading="lazy" decoding="async">
-          <span>Защита данных</span>
+          <span>Защита <br>данных</span>
         </a>
       </li>
       <li>
         <a href="https://www.bitrix24.ru/security/">
           <img class="crm-detail__security-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-secure-development-3d.webp" alt="" width="384" height="384" loading="lazy" decoding="async">
-          <span>Безопасная разработка</span>
+          <span>Безопасная <br>разработка</span>
         </a>
       </li>
       <li>
         <a href="https://www.bitrix24.ru/security/">
           <img class="crm-detail__security-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-compliance-3d.webp" alt="" width="384" height="384" loading="lazy" decoding="async">
-          <span>Соответствие законодательству</span>
+          <span>Соответствие <br>законодательству</span>
         </a>
       </li>
       <li>
         <a href="https://www.bitrix24.ru/security/">
           <img class="crm-detail__security-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-monitoring-3d.webp" alt="" width="384" height="384" loading="lazy" decoding="async">
-          <span>Центр мониторинга</span>
+          <span>Центр <br>мониторинга</span>
         </a>
       </li>
     </ul>
