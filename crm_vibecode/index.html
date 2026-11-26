@@ -237,7 +237,32 @@
   text-wrap: balance;
 }
 
-.crm-vibecode-block .crm-lead-hero em { color: #caff16; font-style: normal; }
+.crm-vibecode-block .crm-lead-hero__intro a {
+  color: #caff16;
+  font-weight: 600;
+  text-decoration: underline dotted 2px;
+  text-underline-offset: .2em;
+}
+
+.crm-vibecode-block .crm-lead-hero__footnote {
+  max-width: 780px;
+  margin: 14px auto 0;
+  color: #ffffffe6;
+  font-size: clamp(13px, 1.15vw, 14px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.crm-vibecode-block .crm-lead-hero__footnote a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.crm-vibecode-block .crm-lead-hero__intro a:focus-visible,
+.crm-vibecode-block .crm-lead-hero__footnote a:focus-visible { outline-color: #fff; }
+
 .crm-vibecode-block .crm-lead-hero__pills,
 .crm-vibecode-block .crm-lead-hero__benefits { padding: 0; list-style: none; }
 
@@ -779,6 +804,140 @@
   .crm-vibecode-block .crm-detail__icon { width: 36px; height: 36px; margin-bottom: 12px; }
   .crm-vibecode-block .crm-detail__security-links li { flex-basis: min(42%, 146px); }
 }
+
+.crm-vibecode-block .crm-research {
+  width: min(100% - 32px, 1220px);
+  margin: clamp(32px, 6vw, 84px) auto;
+  color: #142641;
+  container: crm-research / inline-size;
+}
+
+.crm-vibecode-block .crm-research__panel {
+  padding: clamp(18px, 4.4vw, 56px);
+  border-radius: clamp(24px, 4vw, 40px);
+  background: #f5f8fe;
+}
+
+.crm-vibecode-block .crm-research__eyebrow,
+.crm-vibecode-block .crm-research__title,
+.crm-vibecode-block .crm-research__lead { text-align: center; }
+
+.crm-vibecode-block .crm-research__eyebrow {
+  margin: 0 0 10px;
+  color: #215fc0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.crm-vibecode-block .crm-research__title {
+  margin: 0 auto 18px;
+  font-size: clamp(25px, 3.15vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-research__lead {
+  max-width: 820px;
+  margin: 0 auto clamp(22px, 4vw, 40px);
+  font-size: clamp(16px, 1.75vw, 20px);
+  line-height: 1.5;
+}
+
+.crm-vibecode-block .crm-research__grid,
+.crm-vibecode-block .crm-research__facts {
+  display: grid;
+  gap: clamp(12px, 2.1vw, 22px);
+}
+
+.crm-vibecode-block .crm-research__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.32fr); }
+.crm-vibecode-block .crm-research__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.crm-vibecode-block .crm-research__card {
+  padding: clamp(16px, 2.2vw, 28px);
+  border: 1px solid #e3eaf7;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.crm-vibecode-block .crm-research__card h3 {
+  margin: 0 0 9px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.crm-vibecode-block .crm-research__card p,
+.crm-vibecode-block .crm-research__note {
+  margin: 0;
+  color: #34465b;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.crm-vibecode-block .crm-research__result { align-content: center; }
+
+.crm-vibecode-block .crm-research__result .crm-research__stat {
+  margin: 12px 0 6px;
+  color: #075bea;
+  font-size: clamp(32px, 4.1vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.crm-vibecode-block .crm-research__result .crm-research__rank {
+  margin-top: 20px;
+  padding: 12px 15px;
+  border-radius: 14px;
+  background: #eff6de;
+  color: #243e19;
+  font-weight: 700;
+}
+
+.crm-vibecode-block .crm-research__result .crm-research__source {
+  margin-top: 16px;
+  color: #526077;
+  font-size: 13px;
+}
+
+.crm-vibecode-block .crm-research__footer {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid #e3eaf7;
+}
+
+.crm-vibecode-block a.crm-research__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border: 1px solid #3276fc;
+  border-radius: 30px;
+  background: #fff;
+  color: #075bea;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.crm-vibecode-block a.crm-research__link:hover { background: #eaf2ff; }
+
+.crm-vibecode-block .crm-research__download {
+  margin: 8px 0 0;
+  color: #526077;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@container crm-research (max-width: 850px) {
+  .crm-vibecode-block .crm-research__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@container crm-research (max-width: 480px) {
+  .crm-vibecode-block .crm-research__facts { grid-template-columns: minmax(0, 1fr); }
+}
 </style>
 
 <div id="crm-vibecode-top" class="crm-vibecode-block" lang="ru">
@@ -805,7 +964,8 @@
   <div class="crm-lead-hero__glow" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="crm-lead-hero__inner">
     <h1 id="hero-title">Бесплатная онлайн CRM</h1>
-    <p class="crm-lead-hero__intro">Управляйте клиентами, автоматизируйте работу менеджеров и увеличивайте продажи с <em>CRM-системой №1</em> в России</p>
+    <p class="crm-lead-hero__intro">Управляйте клиентами, автоматизируйте работу менеджеров и&nbsp;увеличивайте продажи с&nbsp;<a href="#crm-1" aria-describedby="crm-claim-footnote">CRM&#8209;системой №1 в&nbsp;России*</a></p>
+    <p class="crm-lead-hero__footnote" id="crm-claim-footnote">* По доле компаний, использующих систему как основную CRM: опрос 1000 российских компаний, J'son&nbsp;&amp;&nbsp;Partners Consulting, ноябрь 2025&nbsp;— январь 2026. <a href="#crm-1">Подробнее об&nbsp;исследовании&nbsp;↓</a></p>
     <ul class="crm-lead-hero__pills">
       <li>База клиентов</li>
       <li>Лиды и сделки</li>
@@ -1036,6 +1196,49 @@
         </a>
       </li>
     </ul>
+  </div>
+</section>
+
+<section id="crm-1" class="crm-research" aria-labelledby="crm-research-title" tabindex="-1">
+  <div class="crm-research__panel">
+    <p class="crm-research__eyebrow">Об исследовании</p>
+    <h2 id="crm-research-title" class="crm-research__title">Почему Битрикс24 — CRM-система №1 в&nbsp;России</h2>
+    <p class="crm-research__lead">Битрикс24 — самая распространённая CRM-система среди российских компаний, участвовавших в&nbsp;исследовании J'son&nbsp;&amp;&nbsp;Partners Consulting.</p>
+
+    <div class="crm-research__grid">
+      <article class="crm-research__card crm-research__result">
+        <h3>Результат исследования</h3>
+        <p class="crm-research__stat">Почти половина</p>
+        <p>опрошенных компаний используют Битрикс24 как основную CRM-систему.</p>
+        <p class="crm-research__rank">1-е место среди CRM-систем, вошедших в&nbsp;исследование</p>
+        <p class="crm-research__source">Данные исследования рынка CRM в&nbsp;России, J'son&nbsp;&amp;&nbsp;Partners Consulting, 2026.</p>
+      </article>
+
+      <div class="crm-research__facts">
+        <article class="crm-research__card">
+          <h3>Кто и когда провёл</h3>
+          <p>Данные собрала аналитическая компания J'son&nbsp;&amp;&nbsp;Partners Consulting с&nbsp;ноября 2025 по&nbsp;январь 2026 года. Результаты опубликованы в&nbsp;феврале 2026 года.</p>
+        </article>
+        <article class="crm-research__card">
+          <h3>Что исследовали</h3>
+          <p>Какие CRM-системы российские компании используют как основные, по&nbsp;каким критериям их выбирают и&nbsp;чего ждут от&nbsp;технологий.</p>
+        </article>
+        <article class="crm-research__card">
+          <h3>Кто участвовал</h3>
+          <p>Представители 1000 российских компаний разного размера из&nbsp;всех федеральных округов России.</p>
+        </article>
+        <article class="crm-research__card">
+          <h3>Критерий сравнения</h3>
+          <p>Доля компаний, которые используют CRM-систему как основную. Сравнение проведено среди участников опроса.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="crm-research__footer">
+      <p class="crm-research__note">Утверждение «CRM-система №1 в&nbsp;России» на&nbsp;этой странице означает первое место по&nbsp;доле компаний, использующих систему как основную CRM, среди участников исследования J'son&nbsp;&amp;&nbsp;Partners Consulting.</p>
+      <a class="crm-research__link" href="https://json.tv/analytic/analiz-populyarnosti-crm-na-rossijskom-rynke/" target="_blank" rel="noopener">Читать исследование на&nbsp;json.tv</a>
+      <p class="crm-research__download">Краткий отчёт можно скачать на&nbsp;странице исследования после входа.</p>
+    </div>
   </div>
 </section>
 
