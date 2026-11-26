@@ -1,12 +1,5 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Управляйте клиентами, автоматизируйте работу менеджеров и увеличивайте продажи с CRM-системой №1 в России">
-<title>Бесплатная онлайн CRM — Битрикс24</title>
 <style>
-:root {
+.crm-vibecode-block {
   --ink:#16191c;
   --nav:#f6fbff;
   --lime:#ccff13;
@@ -16,76 +9,74 @@
   --design-width:1536px;
   --header-height:88px;
 }
-* { box-sizing:border-box }
-html { scroll-behavior:smooth; scroll-padding-top:calc(var(--header-height) + 10px) }
-body { margin:0; background:white; color:var(--ink); font-family:Arial,"Helvetica Neue",sans-serif; overflow-x:clip }
-h1,h2,h3,p { margin-top:0 }
-h1,h2,h3 { line-height:1.08 }
-p,li { line-height:1.55 }
-a { color:inherit }
-button { font:inherit; color:inherit }
-button, [role="tab"] { cursor:pointer }
-img { max-width:100%; display:block }
-em { font-style:normal; color:var(--violet) }
-:focus-visible { outline:3px solid #066ee9; outline-offset:4px }
-.sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
-
-.site-header { position:sticky; top:0; z-index:5; background:var(--nav) }
-.shot { position:relative; width:min(100%,var(--design-width)); margin-inline:auto }
-.shot-image { width:100%; height:auto }
-.hero-shot,.mobile-shot { isolation:isolate }
-.edge { position:absolute; top:0; width:max(0px,calc((100vw - var(--design-width))/2 + 1px)); height:100%; object-fit:fill; z-index:-1; max-width:none }
-.edge-left { right:calc(100% - 1px) }
-.edge-right { left:calc(100% - 1px) }
-.mobile { background:var(--mobile) }
-.spot { position:absolute; display:block; color:transparent; background:transparent; border:0; padding:0; border-radius:1.5em; text-decoration:none }
-.spot:focus-visible { outline-color:white; box-shadow:0 0 0 6px #126cdf }
-.header-shot .spot:focus-visible,.features-shot .spot:focus-visible,.security-shot .spot:focus-visible { outline-color:#0c69d7; box-shadow:none }
-.header-shot .spot:hover { background:#2065cc0a }
-.hero-shot .spot:hover,.migration-shot .spot:hover,.mobile-shot .spot:hover { background:#dcff6a24 }
-.flow-actions { display:none }
+.crm-vibecode-block * { box-sizing:border-box }
+.crm-vibecode-block { margin:0; background:white; color:var(--ink); font-family:Arial,"Helvetica Neue",sans-serif; overflow-x:clip }
+.crm-vibecode-block h1, .crm-vibecode-block h2, .crm-vibecode-block h3, .crm-vibecode-block p { margin-top:0 }
+.crm-vibecode-block h1, .crm-vibecode-block h2, .crm-vibecode-block h3 { line-height:1.08 }
+.crm-vibecode-block p, .crm-vibecode-block li { line-height:1.55 }
+.crm-vibecode-block a { color:inherit }
+.crm-vibecode-block button { font:inherit; color:inherit }
+.crm-vibecode-block button, .crm-vibecode-block [role="tab"] { cursor:pointer }
+.crm-vibecode-block img { max-width:100%; display:block }
+.crm-vibecode-block em { font-style:normal; color:var(--violet) }
+.crm-vibecode-block :focus-visible { outline:3px solid #066ee9; outline-offset:4px }
+.crm-vibecode-block .sr { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
+.crm-vibecode-block .site-header { position:sticky; top:0; z-index:5; background:var(--nav) }
+.crm-vibecode-block .shot { position:relative; width:min(100%,var(--design-width)); margin-inline:auto }
+.crm-vibecode-block .shot-image { width:100%; height:auto }
+.crm-vibecode-block .hero-shot, .crm-vibecode-block .mobile-shot { isolation:isolate }
+.crm-vibecode-block .edge { position:absolute; top:0; width:max(0px,calc((100vw - var(--design-width))/2 + 1px)); height:100%; object-fit:fill; z-index:-1; max-width:none }
+.crm-vibecode-block .edge-left { right:calc(100% - 1px) }
+.crm-vibecode-block .edge-right { left:calc(100% - 1px) }
+.crm-vibecode-block .mobile { background:var(--mobile) }
+.crm-vibecode-block .spot { position:absolute; display:block; color:transparent; background:transparent; border:0; padding:0; border-radius:1.5em; text-decoration:none }
+.crm-vibecode-block .spot:focus-visible { outline-color:white; box-shadow:0 0 0 6px #126cdf }
+.crm-vibecode-block .header-shot .spot:focus-visible, .crm-vibecode-block .features-shot .spot:focus-visible, .crm-vibecode-block .security-shot .spot:focus-visible { outline-color:#0c69d7; box-shadow:none }
+.crm-vibecode-block .header-shot .spot:hover { background:#2065cc0a }
+.crm-vibecode-block .hero-shot .spot:hover, .crm-vibecode-block .migration-shot .spot:hover, .crm-vibecode-block .mobile-shot .spot:hover { background:#dcff6a24 }
+.crm-vibecode-block .flow-actions { display:none }
 @media(min-width:760px) {
-  .flow { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
-  .flow img { display:none }
+  .crm-vibecode-block .flow { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0 }
+  .crm-vibecode-block .flow img { display:none }
 }
 @media(max-width:759px) {
-  :root { --header-height:108px }
-  .desktop { display:none !important }
-  .flow-actions { display:block }
-  .inner { width:min(100% - 36px,620px); margin-inline:auto; padding:46px 0 }
-  .mobile-header { width:100%; padding:10px 16px }
-  .header-row { display:flex; align-items:center; justify-content:space-between; gap:12px }
-  .brand { width:min(36vw,154px); height:auto }
-  .mobile-nav { margin-top:12px; display:flex; gap:7px 14px; flex-wrap:wrap }
-  .mobile-nav a { font-size:.72rem; font-weight:750; text-decoration:none }
-  .button { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; background:var(--lime); padding:.84em 1.45em; color:#141700; font-size:.88rem; font-weight:800; text-align:center; text-decoration:none }
-  .button:hover { background:#aff000 }
-  .header-row .button { font-size:.72rem }
-  h1 { font-size:clamp(2.1rem,7vw,3.35rem); letter-spacing:-.03em; margin-bottom:20px }
-  h2 { font-size:clamp(1.8rem,6vw,2.8rem); letter-spacing:-.025em; margin-bottom:20px }
-  h3 { font-size:1.43rem; margin-bottom:12px }
-  .hero { background:radial-gradient(ellipse at 0% 40%,#2871de,transparent 60%),linear-gradient(125deg,#2a7fe8,#743dec 55%,#bc338d); color:white; text-align:center }
-  .hero em { color:var(--lime) }
-  .hero .lead { max-width:36ch; margin:0 auto 24px; font-size:1.14rem; font-weight:550 }
-  .pills,.benefits { padding:0; list-style:none }
-  .pills { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:0 0 24px }
-  .pills li { border:1px solid var(--lime); background:#ffffff26; border-radius:999px; padding:4px 10px; font-size:.88rem }
-  .pills li::before { content:"✓"; background:#10bd23; border-radius:50%; padding:0 3px; margin-right:5px }
-  .hero-visual { margin:24px auto }
-  .hero-visual img { border-radius:12px; mix-blend-mode:normal }
-  .benefits { display:grid; grid-template-columns:1fr 1fr; gap:12px; border:1px solid #ffffff55; border-radius:18px; background:#ffffff22; padding:17px; margin:0 0 22px; font-weight:700; font-size:.9rem }
-  .split { display:grid; gap:20px; align-items:center }
-  .visual { width:100%; height:auto; border-radius:15px }
-  .features h2,.mobile h2,.security h2 { text-align:center }
-  .feature-row { margin-top:40px }
-  .icon { width:48px; height:48px; object-fit:contain; margin:0 0 10px }
-  .mobile > .inner > p,.security > .inner > p { text-align:center }
-  .mobile .flow-actions { margin-top:23px; text-align:center }
-  .security-links { display:flex; flex-wrap:wrap; justify-content:center; gap:21px 12px }
-  .security-links a { display:grid; justify-items:center; align-content:start; gap:3px; color:var(--blue); flex:0 1 130px; font-size:.86rem; text-align:center }
+  .crm-vibecode-block { --header-height:108px }
+  .crm-vibecode-block .desktop { display:none !important }
+  .crm-vibecode-block .flow-actions { display:block }
+  .crm-vibecode-block .inner { width:min(100% - 36px,620px); margin-inline:auto; padding:46px 0 }
+  .crm-vibecode-block .mobile-header { width:100%; padding:10px 16px }
+  .crm-vibecode-block .header-row { display:flex; align-items:center; justify-content:space-between; gap:12px }
+  .crm-vibecode-block .brand { width:min(36vw,154px); height:auto }
+  .crm-vibecode-block .mobile-nav { margin-top:12px; display:flex; gap:7px 14px; flex-wrap:wrap }
+  .crm-vibecode-block .mobile-nav a { font-size:.72rem; font-weight:750; text-decoration:none }
+  .crm-vibecode-block .button { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; background:var(--lime); padding:.84em 1.45em; color:#141700; font-size:.88rem; font-weight:800; text-align:center; text-decoration:none }
+  .crm-vibecode-block .button:hover { background:#aff000 }
+  .crm-vibecode-block .header-row .button { font-size:.72rem }
+  .crm-vibecode-block h1 { font-size:clamp(2.1rem,7vw,3.35rem); letter-spacing:-.03em; margin-bottom:20px }
+  .crm-vibecode-block h2 { font-size:clamp(1.8rem,6vw,2.8rem); letter-spacing:-.025em; margin-bottom:20px }
+  .crm-vibecode-block h3 { font-size:1.43rem; margin-bottom:12px }
+  .crm-vibecode-block .hero { background:radial-gradient(ellipse at 0% 40%,#2871de,transparent 60%),linear-gradient(125deg,#2a7fe8,#743dec 55%,#bc338d); color:white; text-align:center }
+  .crm-vibecode-block .hero em { color:var(--lime) }
+  .crm-vibecode-block .hero .lead { max-width:36ch; margin:0 auto 24px; font-size:1.14rem; font-weight:550 }
+  .crm-vibecode-block .pills, .crm-vibecode-block .benefits { padding:0; list-style:none }
+  .crm-vibecode-block .pills { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:0 0 24px }
+  .crm-vibecode-block .pills li { border:1px solid var(--lime); background:#ffffff26; border-radius:999px; padding:4px 10px; font-size:.88rem }
+  .crm-vibecode-block .pills li::before { content:"✓"; background:#10bd23; border-radius:50%; padding:0 3px; margin-right:5px }
+  .crm-vibecode-block .hero-visual { margin:24px auto }
+  .crm-vibecode-block .hero-visual img { border-radius:12px; mix-blend-mode:normal }
+  .crm-vibecode-block .benefits { display:grid; grid-template-columns:1fr 1fr; gap:12px; border:1px solid #ffffff55; border-radius:18px; background:#ffffff22; padding:17px; margin:0 0 22px; font-weight:700; font-size:.9rem }
+  .crm-vibecode-block .split { display:grid; gap:20px; align-items:center }
+  .crm-vibecode-block .visual { width:100%; height:auto; border-radius:15px }
+  .crm-vibecode-block .features h2, .crm-vibecode-block .mobile h2, .crm-vibecode-block .security h2 { text-align:center }
+  .crm-vibecode-block .feature-row { margin-top:40px }
+  .crm-vibecode-block .icon { width:48px; height:48px; object-fit:contain; margin:0 0 10px }
+  .crm-vibecode-block .mobile > .inner > p, .crm-vibecode-block .security > .inner > p { text-align:center }
+  .crm-vibecode-block .mobile .flow-actions { margin-top:23px; text-align:center }
+  .crm-vibecode-block .security-links { display:flex; flex-wrap:wrap; justify-content:center; gap:21px 12px }
+  .crm-vibecode-block .security-links a { display:grid; justify-items:center; align-content:start; gap:3px; color:var(--blue); flex:0 1 130px; font-size:.86rem; text-align:center }
 }
-@media(min-width:760px) and (max-width:1535px) { :root { --header-height:5.7291667vw } }
-@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto } }
+@media(min-width:760px) and (max-width:1535px) { .crm-vibecode-block { --header-height:5.7291667vw } }
+.crm-vibecode-block [id] { scroll-margin-top:calc(var(--header-height) + 10px) }
 
 .crm-ai {
   --crm-ai-ink: #142641;
@@ -113,9 +104,26 @@ em { font-style:normal; color:var(--violet) }
 .crm-ai .crm-ai__title span { color: var(--crm-ai-blue); }
 
 .crm-ai .crm-ai__surface {
+  min-width: 0;
+  margin: 0;
+  border: 0;
   padding: clamp(24px, 3.25vw, 48px);
   border-radius: 32px;
   background: #f0f5fc;
+}
+
+.crm-ai .crm-ai__radio,
+.crm-ai .crm-ai__visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .crm-ai .crm-ai__tabs {
@@ -129,7 +137,9 @@ em { font-style:normal; color:var(--violet) }
   background: #e8f0fa;
 }
 
-.crm-ai .crm-ai__tabs button {
+.crm-ai .crm-ai__tabs label {
+  display: grid;
+  place-items: center;
   min-height: 48px;
   padding: 10px 8px;
   border: 0;
@@ -148,29 +158,39 @@ em { font-style:normal; color:var(--violet) }
 }
 
 @media (hover: hover) {
-  .crm-ai .crm-ai__tabs button[aria-selected="false"]:hover { background: #f6faff; }
+  .crm-ai .crm-ai__tabs label:hover { background: #f6faff; }
 }
 
-.crm-ai .crm-ai__tabs button[aria-selected="true"] {
+.crm-ai #crm-ai-script-tab:checked ~ .crm-ai__tabs label[for="crm-ai-script-tab"],
+.crm-ai #crm-ai-speech-tab:checked ~ .crm-ai__tabs label[for="crm-ai-speech-tab"],
+.crm-ai #crm-ai-repeat-tab:checked ~ .crm-ai__tabs label[for="crm-ai-repeat-tab"],
+.crm-ai #crm-ai-actions-tab:checked ~ .crm-ai__tabs label[for="crm-ai-actions-tab"] {
   background: #fff;
   color: var(--crm-ai-blue);
   box-shadow: 0 3px 10px #2150921b;
 }
 
-.crm-ai .crm-ai__tabs button:focus-visible,
-.crm-ai .crm-ai__panel:focus-visible {
+.crm-ai #crm-ai-script-tab:focus-visible ~ .crm-ai__tabs label[for="crm-ai-script-tab"],
+.crm-ai #crm-ai-speech-tab:focus-visible ~ .crm-ai__tabs label[for="crm-ai-speech-tab"],
+.crm-ai #crm-ai-repeat-tab:focus-visible ~ .crm-ai__tabs label[for="crm-ai-repeat-tab"],
+.crm-ai #crm-ai-actions-tab:focus-visible ~ .crm-ai__tabs label[for="crm-ai-actions-tab"] {
   outline: 2px solid var(--crm-ai-blue);
   outline-offset: 3px;
 }
 
 .crm-ai .crm-ai__panel {
-  display: grid;
+  display: none;
   grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
   align-items: center;
   gap: clamp(22px, 4vw, 64px);
 }
 
-.crm-ai .crm-ai__panel[hidden] { display: none; }
+.crm-ai #crm-ai-script { display: grid; }
+.crm-ai .crm-ai__radio:checked ~ #crm-ai-script { display: none; }
+.crm-ai #crm-ai-script-tab:checked ~ #crm-ai-script,
+.crm-ai #crm-ai-speech-tab:checked ~ #crm-ai-speech,
+.crm-ai #crm-ai-repeat-tab:checked ~ #crm-ai-repeat,
+.crm-ai #crm-ai-actions-tab:checked ~ #crm-ai-actions { display: grid; }
 
 .crm-ai .crm-ai__copy h3 {
   max-width: 14ch;
@@ -216,22 +236,20 @@ em { font-style:normal; color:var(--violet) }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .crm-ai .crm-ai__tabs button { transition: none; }
+  .crm-ai .crm-ai__tabs label { transition: none; }
 }
-
 </style>
-</head>
-<body id="top">
+<div id="crm-vibecode-top" class="crm-vibecode-block" lang="ru">
 <!-- Десктопные изображения встроены из PDF. Текстовая разметка используется на узких экранах и доступна вспомогательным технологиям. -->
 
 <header class="site-header">
-  <nav aria-label="Навигация" class="desktop"><div class="shot header-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/header-desktop-8d634ac4.webp" alt="" width="1920" height="110" loading="eager" decoding="async"><a class="spot" href="#top" style="left:5.937500%;top:18.181818%;width:12.812500%;height:56.363636%"><span class="sr">Битрикс24</span></a><a class="spot" href="#features" style="left:28.593750%;top:31.818182%;width:7.604167%;height:36.363636%"><span class="sr">ВОЗМОЖНОСТИ</span></a><a class="spot" href="#ai" style="left:39.583333%;top:31.818182%;width:4.322917%;height:36.363636%"><span class="sr">AI В CRM</span></a><a class="spot" href="#mobile" style="left:47.239583%;top:31.818182%;width:8.697917%;height:36.363636%"><span class="sr">МОБИЛЬНАЯ CRM</span></a><a class="spot" href="#security" style="left:59.270833%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">БЕЗОПАСНОСТЬ</span></a><a class="spot" href="https://www.bitrix24.ru/prices/" style="left:70.468750%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">СКИДКИ −20%</span></a><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:80.989583%;top:18.181818%;width:12.864583%;height:63.636364%"><span class="sr">СОЗДАТЬ БЕСПЛАТНО</span></a></div></nav>
+  <nav aria-label="Навигация" class="desktop"><div class="shot header-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/header-desktop-8d634ac4.webp" alt="" width="1920" height="110" loading="eager" decoding="async"><a class="spot" href="#crm-vibecode-top" style="left:5.937500%;top:18.181818%;width:12.812500%;height:56.363636%"><span class="sr">Битрикс24</span></a><a class="spot" href="#features" style="left:28.593750%;top:31.818182%;width:7.604167%;height:36.363636%"><span class="sr">ВОЗМОЖНОСТИ</span></a><a class="spot" href="#ai" style="left:39.583333%;top:31.818182%;width:4.322917%;height:36.363636%"><span class="sr">AI В CRM</span></a><a class="spot" href="#mobile" style="left:47.239583%;top:31.818182%;width:8.697917%;height:36.363636%"><span class="sr">МОБИЛЬНАЯ CRM</span></a><a class="spot" href="#security" style="left:59.270833%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">БЕЗОПАСНОСТЬ</span></a><a class="spot" href="https://www.bitrix24.ru/prices/" style="left:70.468750%;top:31.818182%;width:7.864583%;height:36.363636%"><span class="sr">СКИДКИ −20%</span></a><a class="spot" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm" style="left:80.989583%;top:18.181818%;width:12.864583%;height:63.636364%"><span class="sr">СОЗДАТЬ БЕСПЛАТНО</span></a></div></nav>
   <div class="flow mobile-header">
-    <div class="header-row"><a href="#top" aria-label="Битрикс24"><img class="brand" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/logo-d7967da8.webp" alt="" width="245" height="42" loading="eager" decoding="async"></a><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">СОЗДАТЬ БЕСПЛАТНО</a></div>
+    <div class="header-row"><a href="#crm-vibecode-top" aria-label="Битрикс24"><img class="brand" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/logo-d7967da8.webp" alt="" width="245" height="42" loading="eager" decoding="async"></a><a class="button" href="https://www.bitrix24.ru/create.php?coupon=autodemo-crm&amp;b24_type=crm">СОЗДАТЬ БЕСПЛАТНО</a></div>
     <nav class="mobile-nav" aria-label="Навигация"><a class="" href="#features">ВОЗМОЖНОСТИ</a><a class="" href="#ai">AI В CRM</a><a class="" href="#mobile">МОБИЛЬНАЯ CRM</a><a class="" href="#security">БЕЗОПАСНОСТЬ</a><a class="" href="https://www.bitrix24.ru/prices/">СКИДКИ −20%</a></nav>
   </div>
 </header>
-<main>
+<div class="crm-vibecode-content">
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="flow inner hero-copy">
@@ -256,43 +274,48 @@ em { font-style:normal; color:var(--violet) }
 
 <section id="ai" class="crm-ai" aria-labelledby="crm-ai-title">
   <h2 id="crm-ai-title" class="crm-ai__title">AI возьмёт <span>рутину на себя</span></h2>
-  <div class="crm-ai__surface">
-    <div class="crm-ai__tabs" role="tablist" aria-label="Возможности AI в CRM">
-      <button type="button" role="tab" id="crm-ai-script-tab" aria-selected="true" aria-controls="crm-ai-script">Скрипты продаж</button>
-      <button type="button" role="tab" id="crm-ai-speech-tab" aria-selected="false" aria-controls="crm-ai-speech" tabindex="-1">Речевая аналитика</button>
-      <button type="button" role="tab" id="crm-ai-repeat-tab" aria-selected="false" aria-controls="crm-ai-repeat" tabindex="-1">Повторные продажи</button>
-      <button type="button" role="tab" id="crm-ai-actions-tab" aria-selected="false" aria-controls="crm-ai-actions" tabindex="-1">Автоматические дела</button>
+  <fieldset class="crm-ai__surface">
+    <legend class="crm-ai__visually-hidden">Возможности AI в CRM</legend>
+    <input class="crm-ai__radio" type="radio" name="crm-ai-slide" id="crm-ai-script-tab" aria-controls="crm-ai-script" checked>
+    <input class="crm-ai__radio" type="radio" name="crm-ai-slide" id="crm-ai-speech-tab" aria-controls="crm-ai-speech">
+    <input class="crm-ai__radio" type="radio" name="crm-ai-slide" id="crm-ai-repeat-tab" aria-controls="crm-ai-repeat">
+    <input class="crm-ai__radio" type="radio" name="crm-ai-slide" id="crm-ai-actions-tab" aria-controls="crm-ai-actions">
+    <div class="crm-ai__tabs">
+      <label for="crm-ai-script-tab">Скрипты продаж</label>
+      <label for="crm-ai-speech-tab">Речевая аналитика</label>
+      <label for="crm-ai-repeat-tab">Повторные продажи</label>
+      <label for="crm-ai-actions-tab">Автоматические дела</label>
     </div>
 
-    <div class="crm-ai__panel" role="tabpanel" id="crm-ai-script" aria-labelledby="crm-ai-script-tab" tabindex="0">
+    <div class="crm-ai__panel" id="crm-ai-script">
       <div class="crm-ai__copy">
         <h3>Скрипты продаж с ИИ</h3>
         <p>Используйте готовые скрипты из CRM или создавайте свои с помощью ИИ. Опишите диалог с клиентом — система учтёт требования при анализе.</p>
       </div>
       <img class="crm-ai__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/ai-scripts-cd506ddd.webp" width="640" height="426" alt="" decoding="async">
     </div>
-    <div class="crm-ai__panel" role="tabpanel" id="crm-ai-speech" aria-labelledby="crm-ai-speech-tab" tabindex="0" hidden>
+    <div class="crm-ai__panel" id="crm-ai-speech">
       <div class="crm-ai__copy">
         <h3>Речевая аналитика</h3>
         <p>ИИ расшифровывает звонки и помогает оценить, как менеджеры выполняют скрипты продаж.</p>
       </div>
       <img class="crm-ai__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/ai-speech-77843aa2.webp" width="640" height="426" alt="" loading="lazy" decoding="async">
     </div>
-    <div class="crm-ai__panel" role="tabpanel" id="crm-ai-repeat" aria-labelledby="crm-ai-repeat-tab" tabindex="0" hidden>
+    <div class="crm-ai__panel" id="crm-ai-repeat">
       <div class="crm-ai__copy">
         <h3>Повторные продажи</h3>
         <p>Вернитесь к прошлым разговорам и сделкам, чтобы подобрать момент для следующего контакта с клиентом.</p>
       </div>
       <img class="crm-ai__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/ai-repeat-13874a46.webp" width="640" height="426" alt="" loading="lazy" decoding="async">
     </div>
-    <div class="crm-ai__panel" role="tabpanel" id="crm-ai-actions" aria-labelledby="crm-ai-actions-tab" tabindex="0" hidden>
+    <div class="crm-ai__panel" id="crm-ai-actions">
       <div class="crm-ai__copy">
         <h3>Автоматические дела</h3>
         <p>ИИ помогает превратить договорённости из разговора в следующие шаги по сделке.</p>
       </div>
       <img class="crm-ai__art" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/ai-tasks-6434e830.webp" width="640" height="426" alt="" loading="lazy" decoding="async">
     </div>
-  </div>
+  </fieldset>
 </section>
 
 <section class="features" id="features" aria-labelledby="features-title">
@@ -360,54 +383,5 @@ em { font-style:normal; color:var(--violet) }
   </div>
   <div class="shot security-shot desktop"><img class="shot-image" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/security-desktop-92738483.webp" alt="" width="1920" height="530" loading="lazy" decoding="async"><a class="spot" href="https://www.bitrix24.ru/security/" style="left:13.072917%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Надёжность инфраструктуры</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:28.802083%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Защита данных</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:44.531250%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Безопасная разработка</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:60.364583%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Соответствие законодательству</span></a><a class="spot" href="https://www.bitrix24.ru/security/" style="left:75.989583%;top:54.150943%;width:10.937500%;height:31.132075%"><span class="sr">Центр мониторинга</span></a></div>
 </section>
-</main>
-
-<script>
-(() => {
-  function initializeCrmAiSlider(scope) {
-    for (const slider of scope.querySelectorAll('.crm-ai')) {
-      if (slider.dataset.crmAiReady) continue;
-
-      const tablist = slider.querySelector('.crm-ai__tabs');
-      const tabs = [...tablist.querySelectorAll('[role="tab"]')];
-      const panelsById = new Map(
-        [...slider.querySelectorAll('[role="tabpanel"]')].map(panel => [panel.id, panel])
-      );
-      const panels = tabs.map(tab => panelsById.get(tab.getAttribute('aria-controls')));
-
-      function select(index) {
-        tabs.forEach((tab, position) => {
-          const selected = position === index;
-          tab.setAttribute('aria-selected', String(selected));
-          tab.tabIndex = selected ? 0 : -1;
-          panels[position].hidden = !selected;
-        });
-      }
-
-      tabs.forEach((tab, index) => tab.addEventListener('click', () => select(index)));
-      tablist.addEventListener('keydown', event => {
-        const current = tabs.indexOf(event.target);
-        if (current === -1) return;
-
-        const next = {
-          ArrowLeft: (current + tabs.length - 1) % tabs.length,
-          ArrowRight: (current + 1) % tabs.length,
-          Home: 0,
-          End: tabs.length - 1
-        }[event.key];
-        if (next === undefined) return;
-
-        event.preventDefault();
-        select(next);
-        tabs[next].focus();
-      });
-
-      slider.dataset.crmAiReady = 'true';
-    }
-  }
-
-  initializeCrmAiSlider(document);
-})();
-</script>
-</body>
-</html>
+</div>
+</div>
