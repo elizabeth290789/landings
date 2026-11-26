@@ -821,6 +821,8 @@
 }
 
 .crm-vibecode-block .crm-research {
+  --crm-research-blue: #3276fc;
+  --crm-research-gradient: linear-gradient(90deg, #3276fc, #8e52ee);
   width: min(100% - 32px, 1220px);
   margin: clamp(32px, 6vw, 84px) auto;
   color: #142641;
@@ -828,7 +830,7 @@
 }
 
 .crm-vibecode-block .crm-research__panel {
-  padding: clamp(18px, 4.4vw, 56px);
+  padding: clamp(36px, 5.25cqi, 64px) clamp(16px, 4.6cqi, 56px) clamp(28px, 4.6cqi, 56px);
   border-radius: clamp(24px, 4vw, 40px);
   background: #f5f8fe;
 }
@@ -838,116 +840,240 @@
 .crm-vibecode-block .crm-research__lead { text-align: center; }
 
 .crm-vibecode-block .crm-research__eyebrow {
-  margin: 0 0 10px;
-  color: #215fc0;
-  font-size: 14px;
+  margin: 0 0 12px;
+  color: #075bea;
+  font-size: 15px;
   font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 .crm-vibecode-block .crm-research__title {
-  margin: 0 auto 18px;
+  margin: 0 auto 20px;
+  font-size: clamp(26px, 3.15cqi, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  text-wrap: balance;
 }
 
 .crm-vibecode-block .crm-research__lead {
-  max-width: 820px;
-  margin: 0 auto clamp(22px, 4vw, 40px);
-  font-size: clamp(16px, 1.75vw, 20px);
+  max-width: 900px;
+  margin: 0 auto clamp(24px, 4cqi, 44px);
+  font-size: clamp(16px, 1.75cqi, 20px);
   line-height: 1.5;
 }
 
 .crm-vibecode-block .crm-research__grid,
 .crm-vibecode-block .crm-research__facts {
   display: grid;
-  gap: clamp(12px, 2.1vw, 22px);
+  gap: clamp(14px, 2cqi, 24px);
 }
 
-.crm-vibecode-block .crm-research__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.32fr); }
+.crm-vibecode-block .crm-research__grid { grid-template-columns: minmax(0, 42.4%) minmax(0, 1fr); }
 .crm-vibecode-block .crm-research__facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .crm-vibecode-block .crm-research__card {
-  padding: clamp(16px, 2.2vw, 28px);
-  border: 1px solid #e3eaf7;
-  border-radius: 22px;
+  min-width: 0;
+  padding: clamp(20px, 2.3cqi, 28px);
+  border-radius: clamp(20px, 2.3cqi, 28px);
   background: #fff;
+  box-shadow: 0 6px 30px #28468c0f;
+}
+
+.crm-vibecode-block .crm-research__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+}
+
+.crm-vibecode-block .crm-research__card--criterion {
+  box-shadow: inset 0 0 0 2px var(--crm-research-blue);
 }
 
 .crm-vibecode-block .crm-research__card h3 {
   margin: 0 0 9px;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.3;
   letter-spacing: -.018em;
 }
+
+.crm-vibecode-block .crm-research__card--criterion h3 { color: #075bea; }
 
 .crm-vibecode-block .crm-research__card p,
 .crm-vibecode-block .crm-research__note {
   margin: 0;
   color: #34465b;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
-.crm-vibecode-block .crm-research__result { align-content: center; }
+.crm-vibecode-block .crm-research__result { padding: clamp(20px, 2.8cqi, 34px); }
+
+.crm-vibecode-block .crm-research__result h3 {
+  color: #526077;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
 
 .crm-vibecode-block .crm-research__result .crm-research__stat {
-  margin: 12px 0 6px;
+  width: fit-content;
+  margin: 10px 0 6px;
   color: #075bea;
-  font-size: clamp(32px, 4.1vw, 54px);
+  font-size: clamp(56px, 6.25cqi, 76px);
   font-weight: 800;
   line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+@supports (background-clip: text) {
+  .crm-vibecode-block .crm-research__result .crm-research__stat {
+    background: var(--crm-research-gradient);
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.crm-vibecode-block .crm-research__result .crm-research__stat-caption {
+  color: #142641;
+  font-size: clamp(16px, 1.5cqi, 18px);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .crm-vibecode-block .crm-research__result .crm-research__rank {
-  margin-top: 20px;
-  padding: 12px 15px;
-  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 24px;
+  padding: 12px 14px;
+  border-radius: 16px;
   background: #eff6de;
   color: #243e19;
+  font-size: 15px;
   font-weight: 700;
+  line-height: 1.4;
+}
+
+.crm-vibecode-block .crm-research__rank-number {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #caff16;
+  color: #142641;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.crm-vibecode-block .crm-research__result .crm-research__chart-title {
+  margin: 0 0 12px;
+  color: #142641;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.crm-vibecode-block .crm-research__bars {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crm-vibecode-block .crm-research__bar {
+  display: grid;
+  grid-template-columns: minmax(84px, .9fr) minmax(24px, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(12px, 1.2cqi, 14px);
+  line-height: 1.3;
+}
+
+.crm-vibecode-block .crm-research__bar strong { min-width: 3.5em; text-align: right; }
+.crm-vibecode-block .crm-research__bar--featured { font-weight: 700; }
+
+.crm-vibecode-block .crm-research__track {
+  height: 14px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #eef1f6;
+}
+
+.crm-vibecode-block .crm-research__track span {
+  display: block;
+  width: calc(var(--crm-research-share) * 2%);
+  height: 100%;
+  border-radius: inherit;
+  background: #c3cad6;
+}
+
+.crm-vibecode-block .crm-research__bar--featured .crm-research__track span {
+  background: var(--crm-research-gradient);
 }
 
 .crm-vibecode-block .crm-research__result .crm-research__source {
   margin-top: 16px;
   color: #526077;
   font-size: 13px;
+  line-height: 1.45;
 }
 
+.crm-vibecode-block .crm-research__source a { color: #075bea; }
+
 .crm-vibecode-block .crm-research__footer {
-  margin-top: 24px;
-  padding-top: 22px;
+  margin-top: clamp(22px, 2.65cqi, 32px);
+  padding-top: clamp(20px, 2.3cqi, 28px);
   border-top: 1px solid #e3eaf7;
+}
+
+.crm-vibecode-block .crm-research__note { max-width: 900px; }
+
+.crm-vibecode-block .crm-research__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 .crm-vibecode-block a.crm-research__link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
   min-height: 48px;
-  margin-top: 16px;
   padding: 10px 20px;
-  border: 1px solid #3276fc;
+  border: 1px solid var(--crm-research-blue);
   border-radius: 30px;
   background: #fff;
   color: #075bea;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
+  text-align: center;
   text-decoration: none;
 }
 
 .crm-vibecode-block a.crm-research__link:hover { background: #eaf2ff; }
 
-.crm-vibecode-block .crm-research__download {
-  margin: 8px 0 0;
-  color: #526077;
-  font-size: 13px;
-  line-height: 1.5;
-}
+.crm-vibecode-block .crm-research__link-icon { flex: none; width: 14px; height: 14px; }
 
-@container crm-research (max-width: 850px) {
+@container crm-research (max-width: 1020px) {
   .crm-vibecode-block .crm-research__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
-@container crm-research (max-width: 480px) {
+@container crm-research (max-width: 620px) {
+  .crm-vibecode-block .crm-research__eyebrow,
+  .crm-vibecode-block .crm-research__title,
+  .crm-vibecode-block .crm-research__lead { text-align: left; }
   .crm-vibecode-block .crm-research__facts { grid-template-columns: minmax(0, 1fr); }
+  .crm-vibecode-block .crm-research__links { flex-direction: column; }
+  .crm-vibecode-block a.crm-research__link { padding-inline: 12px; }
 }
 </style>
 
@@ -1223,42 +1349,72 @@
 <section id="crm-1" class="crm-research" aria-labelledby="crm-research-title" tabindex="-1">
   <div class="crm-research__panel">
     <p class="crm-research__eyebrow">Об исследовании</p>
-    <h2 id="crm-research-title" class="crm-heading crm-research__title">Почему Битрикс24&nbsp;— <span class="crm-heading__accent">CRM-система №1 в&nbsp;России</span></h2>
-    <p class="crm-research__lead">Битрикс24 — самая распространённая CRM-система среди российских компаний, участвовавших в&nbsp;исследовании J'son&nbsp;&amp;&nbsp;Partners Consulting.</p>
+    <h2 id="crm-research-title" class="crm-research__title">Почему Битрикс24&nbsp;— CRM-система №1 в&nbsp;России</h2>
+    <p class="crm-research__lead">Битрикс24 — самая распространённая CRM-система среди российских компаний, участвовавших в&nbsp;исследовании J'son&nbsp;&amp;&nbsp;Partners Consulting. Её используют <strong>49&nbsp;% опрошенных организаций</strong> — почти половина. У&nbsp;ближайшей системы — 20&nbsp;%.</p>
 
     <div class="crm-research__grid">
       <article class="crm-research__card crm-research__result">
         <h3>Результат исследования</h3>
-        <p class="crm-research__stat">Почти половина</p>
-        <p>опрошенных компаний используют Битрикс24 как основную CRM-систему.</p>
-        <p class="crm-research__rank">1-е место среди CRM-систем, вошедших в&nbsp;исследование</p>
-        <p class="crm-research__source">Данные исследования рынка CRM в&nbsp;России, J'son&nbsp;&amp;&nbsp;Partners Consulting, 2026.</p>
+        <p class="crm-research__stat">49&nbsp;%</p>
+        <p class="crm-research__stat-caption">опрошенных компаний используют Битрикс24</p>
+        <p class="crm-research__rank"><span class="crm-research__rank-number" aria-hidden="true">1</span><span>1-е место среди CRM-систем, вошедших в&nbsp;исследование</span></p>
+        <p class="crm-research__chart-title" id="crm-research-chart-title">Доля опрошенных компаний, работающих в&nbsp;каждой CRM</p>
+        <ul class="crm-research__bars" aria-labelledby="crm-research-chart-title">
+          <li class="crm-research__bar crm-research__bar--featured">
+            <span>Битрикс24</span>
+            <span class="crm-research__track" aria-hidden="true"><span style="--crm-research-share: 49"></span></span>
+            <strong>49&nbsp;%</strong>
+          </li>
+          <li class="crm-research__bar">
+            <span>1С:CRM</span>
+            <span class="crm-research__track" aria-hidden="true"><span style="--crm-research-share: 20"></span></span>
+            <strong>20&nbsp;%</strong>
+          </li>
+          <li class="crm-research__bar">
+            <span>amoCRM</span>
+            <span class="crm-research__track" aria-hidden="true"><span style="--crm-research-share: 9"></span></span>
+            <strong>9&nbsp;%</strong>
+          </li>
+        </ul>
+        <p class="crm-research__source">Источник — исследование рынка CRM в&nbsp;России, J'son&nbsp;&amp;&nbsp;Partners Consulting, 2026. Опрошены 1000&nbsp;российских организаций с&nbsp;ноября 2025 по&nbsp;январь 2026 года. Доли округлены. <a href="https://www.bitrix24.ru/journal/crm-trends-kriterii-vybora-2026/" target="_blank" rel="noopener">Опубликованная сводка результатов</a>.</p>
       </article>
 
       <div class="crm-research__facts">
         <article class="crm-research__card">
+          <img class="crm-research__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-organizer-icon.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
           <h3>Кто и когда провёл</h3>
-          <p>Данные собрала аналитическая компания J'son&nbsp;&amp;&nbsp;Partners Consulting с&nbsp;ноября 2025 по&nbsp;январь 2026 года. Результаты опубликованы в&nbsp;феврале 2026 года.</p>
+          <p>J'son&nbsp;&amp;&nbsp;Partners Consulting — консалтинговая и&nbsp;аналитическая компания, которая более 20&nbsp;лет исследует рынки высоких технологий. Данные собраны с&nbsp;ноября 2025 по&nbsp;январь 2026 года, результаты опубликованы в&nbsp;феврале 2026 года.</p>
         </article>
         <article class="crm-research__card">
+          <img class="crm-research__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-subject-icon.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
           <h3>Что исследовали</h3>
-          <p>Какие CRM-системы российские компании используют как основные, по&nbsp;каким критериям их выбирают и&nbsp;чего ждут от&nbsp;технологий.</p>
+          <p>Уровень использования CRM-систем российскими компаниями. Какие системы они используют как основные, какие тенденции видят на&nbsp;рынке, по&nbsp;каким критериям выбирают CRM и&nbsp;чего ждут от&nbsp;технологий.</p>
         </article>
         <article class="crm-research__card">
+          <img class="crm-research__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-participants-icon.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
           <h3>Кто участвовал</h3>
-          <p>Представители 1000 российских компаний разного размера из&nbsp;всех федеральных округов России.</p>
+          <p>1000 российских организаций — малый, средний и&nbsp;крупный бизнес из&nbsp;ключевых отраслей и&nbsp;регионов России. Отвечали собственники, руководители направлений и&nbsp;IT, профильные специалисты — те, кто принимает решения о&nbsp;внедрении CRM.</p>
         </article>
-        <article class="crm-research__card">
+        <article class="crm-research__card crm-research__card--criterion">
+          <img class="crm-research__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-criterion-icon.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
           <h3>Критерий сравнения</h3>
-          <p>Доля компаний, которые используют CRM-систему как основную. Сравнение проведено среди участников опроса.</p>
+          <p>Доля компаний, которые используют CRM-систему как основную. По&nbsp;этому критерию Битрикс24 занял первое место среди участников опроса.</p>
         </article>
       </div>
     </div>
 
     <div class="crm-research__footer">
       <p class="crm-research__note">Утверждение «CRM-система №1 в&nbsp;России» на&nbsp;этой странице означает первое место по&nbsp;доле компаний, использующих систему как основную CRM, среди участников исследования J'son&nbsp;&amp;&nbsp;Partners Consulting.</p>
-      <a class="crm-research__link" href="https://json.tv/analytic/analiz-populyarnosti-crm-na-rossijskom-rynke/" target="_blank" rel="noopener">Читать исследование на&nbsp;json.tv</a>
-      <p class="crm-research__download">Краткий отчёт можно скачать на&nbsp;странице исследования после входа.</p>
+      <div class="crm-research__links">
+        <a class="crm-research__link" href="https://json.tv/analytic/analiz-populyarnosti-crm-na-rossijskom-rynke/" target="_blank" rel="noopener">
+          <span>Читать исследование на&nbsp;json.tv</span>
+          <img class="crm-research__link-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-external-link-icon.webp" alt="" width="42" height="42" loading="lazy" decoding="async">
+        </a>
+        <a class="crm-research__link" href="https://json.tv/authorization/" target="_blank" rel="noopener">
+          <span>Войти для скачивания PDF</span>
+          <img class="crm-research__link-icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/research-download-icon.webp" alt="" width="42" height="42" loading="lazy" decoding="async">
+        </a>
+      </div>
     </div>
   </div>
 </section>
