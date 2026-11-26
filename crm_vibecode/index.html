@@ -19,6 +19,8 @@
 
 .crm-vibecode-block {
   --crm-ink: #16191c;
+  --crm-heading-ink: #142641;
+  --crm-heading-accent: #075bea;
   --crm-header-offset: 104px;
   --crm-typeface: 'CRM Montserrat', Montserrat, Arial, sans-serif;
   color: var(--crm-ink);
@@ -41,6 +43,23 @@
 #crm-vibecode-top :where(h1, h2, h3, p, a, li, span, strong, em) {
   font-family: var(--crm-typeface);
 }
+
+.crm-vibecode-block .crm-heading,
+.crm-vibecode-block .crm-ai-cards__card h3,
+.crm-vibecode-block .crm-detail__copy h3,
+.crm-vibecode-block .crm-research__card h3 {
+  color: var(--crm-heading-ink);
+  font-weight: 750;
+}
+
+.crm-vibecode-block .crm-heading {
+  font-size: clamp(1.9rem, 3.5vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.crm-vibecode-block .crm-heading__accent { color: var(--crm-heading-accent); }
 
 .crm-vibecode-block .crm-lead-header {
   position: sticky;
@@ -139,6 +158,8 @@
 }
 
 .crm-vibecode-block .crm-lead-hero {
+  --crm-heading-ink: #fff;
+  --crm-heading-accent: #d6f6ff;
   position: relative;
   isolation: isolate;
   min-height: 100vh;
@@ -217,13 +238,7 @@
 .crm-vibecode-block .crm-lead-hero h1 {
   max-width: 780px;
   margin: 0;
-  color: #fff;
-  font-family: inherit;
   font-size: 50px;
-  font-weight: 600;
-  line-height: 70px;
-  letter-spacing: normal;
-  text-wrap: balance;
 }
 
 .crm-vibecode-block .crm-lead-hero__intro {
@@ -449,6 +464,7 @@
   width: min(100% - 44px, 1110px);
   margin-inline: auto;
   padding-top: 60px;
+  container-type: inline-size;
 }
 
 .crm-vibecode-block .crm-lead-migration__image {
@@ -458,14 +474,9 @@
   border-radius: clamp(18px, 2.9vw, 34px);
 }
 
-.crm-vibecode-block .crm-lead-migration h2 {
+.crm-vibecode-block .crm-lead-migration .crm-heading {
   margin: 0 0 20px;
-  color: #262626;
-  font-family: inherit;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: normal;
+  font-size: clamp(1.9rem, 3.65cqi, 2.5rem);
 }
 
 .crm-vibecode-block .crm-lead-migration p {
@@ -515,7 +526,7 @@
   .crm-vibecode-block .crm-lead-header__brand img { width: min(37vw, 150px); }
   .crm-vibecode-block a.crm-lead-header__cta { min-height: 37px; padding: 9px 13px; font-size: 10px; }
   .crm-vibecode-block .crm-lead-hero { padding: 32px 14px 42px; }
-  .crm-vibecode-block .crm-lead-hero h1 { font-size: clamp(33px, 9.5vw, 48px); line-height: 1.08; letter-spacing: -.035em; }
+  .crm-vibecode-block .crm-lead-hero h1 { font-size: clamp(33px, 9.5vw, 48px); }
   .crm-vibecode-block .crm-lead-hero__intro { max-width: 42ch; margin-top: 14px; font-size: clamp(17px, 4.6vw, 20px); line-height: 1.32; }
   .crm-vibecode-block .crm-lead-hero__pills { gap: 7px; margin-top: 20px; }
   .crm-vibecode-block .crm-lead-hero__pills li { min-height: 38px; gap: 7px; padding: 6px 10px; font-size: 13px; }
@@ -524,7 +535,6 @@
   .crm-vibecode-block .crm-lead-hero .crm-lead-button { min-height: 52px; }
   .crm-vibecode-block .crm-lead-hero__benefits li { font-size: 13px; line-height: 1.35; grid-template-rows: 38px auto; }
   .crm-vibecode-block .crm-lead-migration { width: min(100% - 32px, 620px); padding-top: 42px; grid-template-columns: minmax(0, 1fr); }
-  .crm-vibecode-block .crm-lead-migration h2 { font-size: clamp(26px, 6.5vw, 32px); }
   .crm-vibecode-block .crm-lead-migration p { font-size: 17px; }
   .crm-vibecode-block .crm-lead-migration .crm-lead-button { margin-left: 0; }
 }
@@ -538,16 +548,8 @@
 
 .crm-vibecode-block .crm-ai-cards__title {
   margin: 0 0 clamp(22px, 3vw, 38px);
-  color: #142641;
-  font-size: clamp(1.9rem, 3.5vw, 3.25rem);
-  font-weight: 750;
-  line-height: 1.1;
-  letter-spacing: -.035em;
   text-align: center;
-  text-wrap: balance;
 }
-
-.crm-vibecode-block .crm-ai-cards__title span { color: #075bea; }
 
 .crm-vibecode-block .crm-ai-cards__grid {
   display: grid;
@@ -572,9 +574,7 @@
 
 .crm-vibecode-block .crm-ai-cards__card h3 {
   margin: 0 0 9px;
-  color: #142641;
   font-size: clamp(1.15rem, 1.65vw, 1.4rem);
-  font-weight: 750;
   line-height: 1.2;
   letter-spacing: -.018em;
   overflow-wrap: anywhere;
@@ -624,23 +624,14 @@
 .crm-vibecode-block .crm-detail__title {
   max-width: 27ch;
   margin: 0 auto clamp(28px, 4vw, 60px);
-  color: var(--crm-detail-ink);
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: normal;
   text-align: center;
-  text-wrap: balance;
 }
 
 .crm-vibecode-block .crm-detail--features {
   padding: clamp(36px, 5vw, 76px) 0 clamp(56px, 8vw, 112px);
 }
 
-.crm-vibecode-block .crm-detail--features .crm-detail__title {
-  max-width: none;
-  font-size: clamp(26px, 2.7vw, 36px);
-}
+.crm-vibecode-block .crm-detail--features .crm-detail__title { max-width: none; }
 
 .crm-vibecode-block .crm-detail__rows {
   display: grid;
@@ -668,11 +659,9 @@
 .crm-vibecode-block .crm-detail__copy h3 {
   max-width: 28ch;
   margin: 0 0 12px;
-  color: var(--crm-detail-ink);
   font-size: clamp(20px, 2.2vw, 22px);
-  font-weight: 600;
   line-height: 1.3;
-  letter-spacing: normal;
+  letter-spacing: -.018em;
   text-wrap: balance;
 }
 
@@ -734,10 +723,7 @@
   background: #f4fafc;
 }
 
-.crm-vibecode-block .crm-detail--mobile .crm-detail__title {
-  max-width: 20ch;
-  margin-bottom: 12px;
-}
+.crm-vibecode-block .crm-detail--mobile .crm-detail__title { margin-bottom: 12px; }
 
 .crm-vibecode-block .crm-detail__lead {
   max-width: 65ch;
@@ -851,10 +837,6 @@
 
 .crm-vibecode-block .crm-research__title {
   margin: 0 auto 18px;
-  font-size: clamp(25px, 3.15vw, 38px);
-  font-weight: 700;
-  line-height: 1.2;
-  text-wrap: balance;
 }
 
 .crm-vibecode-block .crm-research__lead {
@@ -883,8 +865,8 @@
 .crm-vibecode-block .crm-research__card h3 {
   margin: 0 0 9px;
   font-size: 17px;
-  font-weight: 700;
   line-height: 1.3;
+  letter-spacing: -.018em;
 }
 
 .crm-vibecode-block .crm-research__card p,
@@ -983,7 +965,7 @@
 <section class="crm-lead-hero" aria-labelledby="hero-title">
   <div class="crm-lead-hero__glow" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="crm-lead-hero__inner">
-    <h1 id="hero-title">Бесплатная онлайн CRM</h1>
+    <h1 class="crm-heading" id="hero-title">Бесплатная <span class="crm-heading__accent">онлайн CRM</span></h1>
     <p class="crm-lead-hero__intro">Управляйте клиентами, автоматизируйте работу менеджеров и&nbsp;увеличивайте продажи с&nbsp;<a href="#crm-1" aria-describedby="crm-claim-footnote">CRM&#8209;системой №1 в&nbsp;России*</a></p>
     <p class="crm-lead-hero__footnote" id="crm-claim-footnote">* По доле компаний, использующих систему как основную CRM: опрос 1000 российских компаний, J'son&nbsp;&amp;&nbsp;Partners Consulting, ноябрь 2025&nbsp;— январь 2026. <a href="#crm-1">Подробнее об&nbsp;исследовании&nbsp;↓</a></p>
     <ul class="crm-lead-hero__pills">
@@ -1013,14 +995,14 @@
 <section class="crm-lead-migration" aria-labelledby="migration-title">
   <img class="crm-lead-migration__image" src="https://www.bitrix24.ru/upload/optimizer/converted/upload/landing/b95/ueibof3ziz8zwgy7376j43seqn63l029.768w.png.webp" alt="Перенос данных из таблицы в CRM Битрикс24" width="768" height="552" loading="lazy" decoding="async">
   <div class="crm-lead-migration__copy">
-    <h2 id="migration-title">Переход на Битрикс24 —<br>это просто</h2>
+    <h2 class="crm-heading" id="migration-title">Переход на Битрикс24&nbsp;— <span class="crm-heading__accent">это просто</span></h2>
     <p>Перенесём данные из Excel или другой CRM и настроим Битрикс24 под ваши процессы. Без потерь данных и с минимальным участием вашей команды.</p>
     <a class="crm-lead-button" href="https://b24-m3i20s.bitrix24.site/crm_form_0uivd/">Оставить заявку</a>
   </div>
 </section>
 
 <section class="crm-ai-cards" id="ai" aria-labelledby="crm-ai-title">
-  <h2 class="crm-ai-cards__title" id="crm-ai-title">AI возьмёт <span>рутину на себя</span></h2>
+  <h2 class="crm-heading crm-ai-cards__title" id="crm-ai-title">AI возьмёт <span class="crm-heading__accent">рутину на себя</span></h2>
   <div class="crm-ai-cards__grid">
     <article class="crm-ai-cards__card">
       <img class="crm-ai-cards__icon" src="https://raw.githubusercontent.com/elizabeth290789/landings/main/crm_vibecode/images/ai-scripts-transparent.webp" alt="" width="640" height="426" loading="lazy" decoding="async">
@@ -1055,7 +1037,7 @@
 
 <section id="features" aria-labelledby="features-title" class="crm-detail crm-detail--features">
   <div class="crm-detail__wrap">
-    <h2 id="features-title" class="crm-detail__title">Битрикс24 CRM помогает продавать больше</h2>
+    <h2 id="features-title" class="crm-heading crm-detail__title">Битрикс24 CRM помогает <span class="crm-heading__accent">продавать больше</span></h2>
     <div class="crm-detail__rows">
       <article class="crm-detail__row">
         <div class="crm-detail__copy">
@@ -1166,7 +1148,7 @@
 <section id="mobile" aria-labelledby="mobile-title" class="crm-detail crm-detail--mobile">
   <div class="crm-detail__mobile-stage">
     <div class="crm-detail__wrap">
-      <h2 id="mobile-title" class="crm-detail__title">Полноценная мобильная CRM</h2>
+      <h2 id="mobile-title" class="crm-heading crm-detail__title">Полноценная <span class="crm-heading__accent">мобильная CRM</span></h2>
       <p class="crm-detail__lead">в <span>бесплатном</span> мобильном приложении Битрикс24</p>
       <div class="crm-detail__row">
         <div class="crm-detail__copy crm-detail__mobile-items">
@@ -1192,7 +1174,7 @@
 
 <section id="security" aria-labelledby="security-title" class="crm-detail crm-detail--security">
   <div class="crm-detail__wrap">
-    <h2 id="security-title" class="crm-detail__title">Ваша CRM в безопасности</h2>
+    <h2 id="security-title" class="crm-heading crm-detail__title">Ваша CRM <span class="crm-heading__accent">в безопасности</span></h2>
     <p class="crm-detail__lead">В Битрикс24 предусмотрен комплекс мер, обеспечивающих защиту данных от несанкционированного доступа и других угроз</p>
     <ul class="crm-detail__security-links">
       <li>
@@ -1232,7 +1214,7 @@
 <section id="crm-1" class="crm-research" aria-labelledby="crm-research-title" tabindex="-1">
   <div class="crm-research__panel">
     <p class="crm-research__eyebrow">Об исследовании</p>
-    <h2 id="crm-research-title" class="crm-research__title">Почему Битрикс24 — CRM-система №1 в&nbsp;России</h2>
+    <h2 id="crm-research-title" class="crm-heading crm-research__title">Почему Битрикс24&nbsp;— <span class="crm-heading__accent">CRM-система №1 в&nbsp;России</span></h2>
     <p class="crm-research__lead">Битрикс24 — самая распространённая CRM-система среди российских компаний, участвовавших в&nbsp;исследовании J'son&nbsp;&amp;&nbsp;Partners Consulting.</p>
 
     <div class="crm-research__grid">
